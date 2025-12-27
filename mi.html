@@ -29,11 +29,6 @@
       margin: 0;
     }
     .logo a { color: #222; text-decoration: none; }
-    .weather {
-      font-size: 14px;
-      color: #555;
-      margin-top: 10px;
-    }
     .top-actions {
       position: absolute;
       top: 10px;
@@ -236,7 +231,6 @@
 <body>
   <header>
     <h1 class="logo"><a href="/">OpenAA · 美国华人生活入口</a></h1>
-    <div class="weather" id="weather" aria-live="polite">正在获取天气信息...</div>
     <div class="top-actions">
       <button onclick="addBookmark()" aria-label="收藏本站">📌 收藏本站</button>
     </div>
@@ -247,7 +241,7 @@
     <a href="/" >返回首页</a>
     <a href="/ai" >AI平台直达</a>
     <a href="/About" >关于</a>
-    <a href="https://jozl..com/" target="_blank" rel="noopener noreferrer">Jozl.com</a>
+    <a href="https://jozl.com/" target="_blank" rel="noopener noreferrer">Jozl.com</a>
   </nav>
 
   <div class="search">
@@ -269,44 +263,37 @@
       <a href="https://www.22.cn/" target="_blank" rel="noopener noreferrer">22爱名网</a>
       <a href="https://www.4.cn/" target="_blank" rel="noopener noreferrer">4.cn金名网</a>
       <a href="https://www.dnspod.cn/" target="_blank" rel="noopener noreferrer">dnspod</a>
-      <a href="https://www.gname.com/" target="_blank" rel="noopener noreferrer">gname</a> 
-      <a href="https://www.dynadot.com/" target="_blank" rel="noopener noreferrer">DYNADOT</a>           
-      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">github</a>
-      <a href="https://framer.com/" target="_blank" rel="noopener noreferrer">framer</a>
-      <a href="https://www.afternic.com" target="_blank" rel="noopener noreferrer">afternic</a>
+      <a href="https://www.gname.com/" target="_blank" rel="noopener noreferrer">gname</a>
+      <a href="https://www.dynadot.com/" target="_blank" rel="noopener noreferrer">DYNADOT</a>
       <a href="https://www.godaddy.com/" target="_blank" rel="noopener noreferrer">godaddy</a>
       <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer">cloudflare</a>
-      <a href="https://www.atom.com/" target="_blank" rel="noopener noreferrer">atom</a>
+      <a href="https://framer.com/" target="_blank" rel="noopener noreferrer">framer</a>
+      <a href="https://www.afternic.com" target="_blank" rel="noopener noreferrer">afternic</a>
       <a href="https://www.sedo.com/" target="_blank" rel="noopener noreferrer">sedo</a>
-      <a href="https://www.cctld.kg/" target="_blank" rel="noopener noreferrer">EDU.KG</a>
       <a href="https://www.weebly.com/" target="_blank" rel="noopener noreferrer">weebly</a>
       <a href="https://www.dropcatch.com/" target="_blank" rel="noopener noreferrer">域名抢注dropcatch</a>
-      <a href="https://www.shopagg.cn/" target="_blank" rel="noopener noreferrer">跨境独立站</a> 
       <a href="https://www.shopify.com/zh" target="_blank" rel="noopener noreferrer">跨境独立站</a>
       <a href="https://who.is/" target="_blank" rel="noopener noreferrer">WHOIS 查询</a>
       <a href="https://www.namecheap.com/" target="_blank" rel="noopener noreferrer">批量域名搜索</a>
       <a href="https://web.archive.org/" target="_blank" rel="noopener noreferrer">时光机</a>
       <a href="https://clideo.com/zh/editor/merge-audio" target="_blank" rel="noopener noreferrer">MP3合拼</a>
-      <a href="https://ttsmp3.com//" target="_blank" rel="noopener noreferrer">文本转语音</a>
+      <a href="https://ttsmp3.com/" target="_blank" rel="noopener noreferrer">文本转语音</a>
       <a href="https://favicon.io/favicon-converter/" target="_blank" rel="noopener noreferrer">一键生成 .ico 文件</a>
       <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer">域名备案管理系统</a>
-      <a href="https://tm.aliyun.com/" target="_blank" rel="noopener noreferrer">阿里云商标注册</a> 
-      <a href="https://www.tm.cn/" target="_blank" rel="noopener noreferrer">商标查询</a> 
+      <a href="https://tm.aliyun.com/" target="_blank" rel="noopener noreferrer">阿里云商标注册</a>
+      <a href="https://www.tm.cn/" target="_blank" rel="noopener noreferrer">商标查询</a>
       <a href="https://improvmx.com/" target="_blank" rel="noopener noreferrer">电子邮件转发</a>
-      <a href="https://www.alipan.com/sign/in?spm=aliyundrive.index.0.0.7db16f60ymMU4u" target="_blank" rel="noopener noreferrer">阿里云盘</a>
-      <a href="https://pan.baidu.com/" target="_blank" rel="noopener noreferrer">百度网盘</a>
       <a href="https://www.comparitech.com/blog/vpn-privacy/whats-the-best-vpn-for-china-5-that-still-work-in-2016/" target="_blank" rel="noopener noreferrer">最佳中国VPN推荐</a>
       <a href="https://ziyuan.baidu.com/?castk=LTE%3D" target="_blank" rel="noopener noreferrer">百度搜索资源平台</a>
       <a href="https://www.xml-sitemaps.com/" target="_blank" rel="noopener noreferrer">网站网址创建站点地图</a>
       <a href="https://search.google.com/search-console/welcome" target="_blank" rel="noopener noreferrer">Google Search Console（谷歌搜索控制台）</a>
       <a href="https://user.qzone.qq.com/81271555/main" target="_blank" rel="noopener noreferrer">Jackie的QQ空间</a>
-      <a href="https://alipan.com/" target="_blank" rel="noopener noreferrer">阿里云盘</a>
-      <a href="https://pan.baidu.com/" target="_blank" rel="noopener noreferrer">百度网盘</a>
       <a href="https://www.icloud.com/" target="_blank" rel="noopener noreferrer">苹果帐号</a>
       <a href="https://www.cadzxw.com/" target="_blank" rel="noopener noreferrer">CAD自学网</a>
       <a href="https://web-capture.net" target="_blank" rel="noopener noreferrer">网址截图1</a>
       <a href="https://screenshot.guru" target="_blank" rel="noopener noreferrer">网址截图2</a>
   </nav>
+
 <!-- 常用邮箱 -->
 <nav class="section1" aria-label="常用邮箱">
   <div><strong>📮 常用邮箱：</strong>
@@ -327,46 +314,43 @@
   <nav class="section1" aria-label="出售以下域名,323748@gmail.com">
     <div><strong>🌐 出售以下域名,323748@gmail.com：</strong>
       <a href="https://jozl.com/" target="_blank" rel="noopener noreferrer">jozl</a>
-      <a href="https://elale.com/" target="_blank" rel="noopener noreferrer">elale</a>     
+      <a href="https://elale.com/" target="_blank" rel="noopener noreferrer">elale</a>
       <a href="https://foxtoday.com/" target="_blank" rel="noopener noreferrer">FoxToday</a>
       <a href="https://openAA.com/" target="_blank" rel="noopener noreferrer">openAA</a>
       <a href="https://bobaup.com/" target="_blank" rel="noopener noreferrer">bobaUP</a>
       <a href="https://jmtea.com/" target="_blank" rel="noopener noreferrer">JMtea</a>
-      <a href="https://69nav.com/"target="_blank" rel="noopener noreferrer">69nav.com</a>
+      <a href="https://69nav.com/" target="_blank" rel="noopener noreferrer">69nav.com</a>
       <a href="https://Joabc.com/" target="_blank" rel="noopener noreferrer">joabc</a>
       <a href="https://joeabc.com/" target="_blank" rel="noopener noreferrer">joeabc</a>
       <a href="https://alititi.com/" target="_blank" rel="noopener noreferrer">alititi</a>
-      <a href="https://asa.vip/"target="_blank" rel="noopener noreferrer">asa.vip</a> 
+      <a href="https://asa.vip/" target="_blank" rel="noopener noreferrer">asa.vip</a>
       <a href="https://seekroam.com/" target="_blank" rel="noopener noreferrer">SeekRoam</a>
       <a href="https://joyhush.com/" target="_blank" rel="noopener noreferrer">JoyHush</a>
       <a href="https://all.edu.kg/" target="_blank" rel="noopener noreferrer">all.edu.kg</a>
-      <a href="https://forall.help/" target="_blank" rel="noopener noreferrer">Forall.help</a> 
-      <a href="https://helphub.vip/"target="_blank" rel="noopener noreferrer">helphub.vip</a>
-      <a href="https://tap.bi/" target="_blank" rel="noopener noreferrer">tap.bi</a>   
-      <a href="https://usa168hub.com/" target="_blank" rel="noopener noreferrer">usa168hub</a>   
+      <a href="https://forall.help/" target="_blank" rel="noopener noreferrer">Forall.help</a>
+      <a href="https://helphub.vip/" target="_blank" rel="noopener noreferrer">helphub.vip</a>
+      <a href="https://tap.bi/" target="_blank" rel="noopener noreferrer">tap.bi</a>
+      <a href="https://usa168hub.com/" target="_blank" rel="noopener noreferrer">usa168hub</a>
       <a href="https://alititi.cn/" target="_blank" rel="noopener noreferrer">alititi.cn</a>
-      <a href="https://123638.com/" target="_blank" rel="noopener noreferrer">123638</a>    
-      <a href="https://jo.edu.kg/" target="_blank" rel="noopener noreferrer">jo.edu.kg</a>     
-      <a href="https://18hot.vip/"target="_blank" rel="noopener noreferrer">18Hot.vip</a> 
-      <a href="https://18hub.vip/"target="_blank" rel="noopener noreferrer">18hub.vip</a>   
-      <a href="https://tapbi.xyz/"target="_blank" rel="noopener noreferrer">tapbi.xyz</a>
+      <a href="https://123638.com/" target="_blank" rel="noopener noreferrer">123638</a>
+      <a href="https://jo.edu.kg/" target="_blank" rel="noopener noreferrer">jo.edu.kg</a>
+      <a href="https://18hot.vip/" target="_blank" rel="noopener noreferrer">18Hot.vip</a>
+      <a href="https://18hub.vip/" target="_blank" rel="noopener noreferrer">18hub.vip</a>
+      <a href="https://tapbi.xyz/" target="_blank" rel="noopener noreferrer">tapbi.xyz</a>
   </nav>
 
   <!-- 折叠区 -->
   <nav class="section2" aria-label="其它专区">
     <div class="toggle-header" onclick="toggleSection('otherLinks')">📁 其它</div>
     <div id="otherLinks" class="toggle-content" aria-expanded="false">
-      <a href="https://dimsumsam.us/" target="_blank" rel="noopener noreferrer">金满庭 </a>
-      <a href="https://kingskitchenusa.com/" target="_blank" rel="noopener noreferrer">金煌煲煲好</a>    
+      <a href="https://dimsumsam.us/" target="_blank" rel="noopener noreferrer">金满庭</a>
+      <a href="https://kingskitchenusa.com/" target="_blank" rel="noopener noreferrer">金煌煲煲好</a>
       <a href="https://ekitchensupply.com/zh" target="_blank" rel="noopener noreferrer">ekitchensupply</a>
       <a href="https://www.pandarange.com/" target="_blank" rel="noopener noreferrer">L&T 餐厅设备公司</a>
       <a href="https://www.youtube.com/@ltadministrator6042/videos" target="_blank" rel="noopener noreferrer">L&T youtube</a>
       <a href="https://www.facebook.com/people/LT-Restaurant-Equipment-Inc/61558406247428/" target="_blank" rel="noopener noreferrer">L&T Facebook</a>
       <a href="https://acm-fan.com/" target="_blank" rel="noopener noreferrer">厨房排气扇</a>
-      <a href="https://www.youtube.com/@alititi-Jackie" target="_blank" rel="noopener noreferrer">Alititi youtube</a>    
-      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">github</a>
-      <a href="https://framer.com/" target="_blank" rel="noopener noreferrer">framer</a>
-      <a href="https://www.ename.net/" target="_blank" rel="noopener noreferrer">易名</a>
+      <a href="https://www.youtube.com/@alititi-Jackie" target="_blank" rel="noopener noreferrer">Alititi youtube</a>
       <a href="https://fauxid.com/" target="_blank" rel="noopener noreferrer">假名和身份生成器</a>
       <a href="https://www.ncsu.edu/" target="_blank" rel="noopener noreferrer">北卡罗来纳州立大学</a>
       <a href="https://youtu.be/yJ50bG9axJc?si=oCXXg-oJnc6btxt9" target="_blank" rel="noopener noreferrer">ncsu.edu教程</a>
@@ -377,7 +361,7 @@
       <a href="https://www.ringboost.com/" target="_blank" rel="noopener noreferrer">RingBoost</a>
       <a href="https://tollfreenumbers.com/" target="_blank" rel="noopener noreferrer">TollFreeNumbers</a>
       <a href="https://www.bling.cloud/" target="_blank" rel="noopener noreferrer">Bling.cloud</a>
-      <a href="https://talkroute.com/" target="_blank" rel="noopener noreferrer">Talkroute/a>
+      <a href="https://talkroute.com/" target="_blank" rel="noopener noreferrer">Talkroute</a>
       <a href="https://www.dialaxy.com/" target="_blank" rel="noopener noreferrer">Dialaxy</a>
       <a href="https://www.sxl.cn/" target="_blank" rel="noopener noreferrer">上线了</a>
       <a href="https://www.metinfo.cn/" target="_blank" rel="noopener noreferrer">米拓</a>
@@ -409,25 +393,6 @@
   </footer>
 
   <script>
-    // 天气
-    async function getLocationWeather() {
-      const weatherElem = document.getElementById('weather');
-      try {
-        const cache = localStorage.getItem('alititi_weather');
-        const cacheTime = localStorage.getItem('alititi_weather_time');
-        if (cache && cacheTime && (Date.now() - cacheTime < 6 * 60 * 60 * 1000)) {
-          weatherElem.textContent = cache;
-          return;
-        }
-        const response = await fetch('https://wttr.in/?format=%l:+%C+%t');
-        const weatherText = await response.text();
-        weatherElem.textContent = weatherText;
-        localStorage.setItem('alititi_weather', weatherText);
-        localStorage.setItem('alititi_weather_time', Date.now());
-      } catch (error) {
-        weatherElem.textContent = '天气信息获取失败，请稍后再试';
-      }
-    }
     function addBookmark() {
       alert('请使用 Ctrl+D (或 Cmd+D) 收藏本网站，或在浏览器菜单中选择“添加书签”');
     }
@@ -449,9 +414,6 @@
         section.setAttribute('aria-expanded', expanded);
       }
     }
-    document.addEventListener("DOMContentLoaded", function () {
-      getLocationWeather();
-    });
   </script>
 </body>
 </html>
