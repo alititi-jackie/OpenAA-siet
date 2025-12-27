@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenAA · 美国华人生活入口， 是一个专为在美华人打造的高效导航网站，汇聚华人常用的新闻、视频、购物、AI 工具、生活服务等网站，一键直达，轻松上网。">
+  <meta name="keywords" content="AI工具, ChatGPT, Midjourney, Claude, AI导航, 免费AI工具, 人工智能, AI写作, AI绘画, AI编程">
+  <meta property="og:title" content="joabc.com - 最全AI工具导航">
+  <meta property="og:description" content="收录最热门AI工具，一键直达永久免费。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://openaa.com/">
+  <meta property="og:image" content="https://openaa.com/logo.png">
+  <link rel="icon" href="https://openaa.com/favicon.ico">
+  <title>OpenAA.com - AI工具导航</title>
+  <style>
+    :root {
+      --main-bg: #f8f9fa;
+      --card-bg: rgba(255,255,255,0.75);
+      --card-border: linear-gradient(135deg, #39f 60%, #ff9800 100%);
+      --card-border-dark: linear-gradient(135deg, #444 60%, #ff9800 100%);
+      --accent: #007bff;
+      --accent2: #ff9800;
+      --text: #222;
+      --text-light: #fff;
+      --shadow: rgba(0,0,0,0.12);
+      --shadow-hover: rgba(0,0,0,0.18);
+    }
+    body {
+      margin: 0; font-family: Arial, sans-serif;
+      background: var(--main-bg); color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+    header, footer {
+      background: #1e1e2f; color: white; padding: 1em; text-align: center;
+    }
+    nav a { color: #fff; margin: 0 12px; text-decoration: none; font-weight: bold; }
+    .hero { padding: 2em; text-align: center; background: #e9ecef; }
+    .hero h1 { font-size: 2.5em; margin-bottom: 0.3em; }
+    .hero p { font-size: 1.1em; color: #555; }
+    .section-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #222;
+      margin: 2.5em 0 1em 0.5em;
+      text-align: left;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.6em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2em;
+      padding: 2em;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(7px);
+      border-radius: 14px;
+      border: 1.5px solid;
+      border-image: var(--card-border) 1;
+      box-shadow: 0 4px 24px var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      min-height: 145px;
+      position: relative;
+      overflow: hidden;
+      color: #222;
+      padding: 1.2em;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .card:hover, .card:focus-within {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px var(--shadow-hover);
+      border-color: #007bff;
+    }
+    .card-icon {
+      font-size: 2.2em;
+      margin-bottom: 0.3em;
+      margin-right: 0.2em;
+    }
+    .card h3 { margin: 0.2em 0 0 0; }
+    .card a {
+      display: inline-block; margin-top: 0.7em;
+      text-decoration: none; color: var(--accent);
+      font-weight: bold; border-radius: 6px;
+      padding: 0.2em 1.1em;
+      background: linear-gradient(90deg, #007bff 30%, #ff9800 100%);
+      color: #fff;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(30,144,255,0.09);
+      font-size: 1em;
+    }
+    .card a:hover { background: linear-gradient(90deg, #0056b3 60%, #ff6f00 100%); color: #fff; }
+    footer p { margin: 0.5em 0; font-size: 0.9em; }
+    .footer-buttons {
+      margin: 1.5em 0 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+    }
+    .footer-buttons button {
+      padding: 0.5em 1.6em;
+      font-size: 1em;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(90deg, #007bff 60%, #ff9800 100%);
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(30,144,255,0.09);
+      margin-top: 0.5em;
+    }
+    .footer-buttons button:hover {
+      background: linear-gradient(90deg, #0056b3 60%, #ff6f00 100%);
+    }
+    .logo {
+      font-size: 2.3em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-family: Arial Black, Arial, sans-serif;
+      display: inline-block;
+      user-select: none;
+      margin-bottom: 0.15em;
+      background: linear-gradient(90deg, #007bff 60%, #ff9800 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: logoGlow 2s infinite alternate;
+    }
+    @keyframes logoGlow {
+      from { text-shadow: 0 0 6px #007bff66, 0 0 0px #ff980000; }
+      to   { text-shadow: 0 0 0px #007bff00, 0 0 12px #ff9800cc; }
+    }
+    .logo .Open { color: #007bff; }
+    .logo .AA { color: #ff9800; }
+    .logo .com {
+      color: #fff;
+      font-size: 0.5em;
+      font-weight: normal;
+      letter-spacing: 0;
+      margin-left: 0.5em;
+      vertical-align: middle;
+      opacity: 0.7;
+    }
+    #backToTop {
+      position: fixed;
+      right: 2vw;
+      bottom: 5vh;
+      z-index: 100;
+      padding: 0.7em 1.3em;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #007bff 60%, #ff9800 100%);
+      color: #fff;
+      font-size: 1.05em;
+      font-weight: bold;
+      border: none;
+      box-shadow: 0 2px 10px rgba(30,144,255,0.15);
+      cursor: pointer;
+      opacity: 0.85;
+      display: none;
+      transition: background 0.2s, opacity 0.2s;
+      animation: fadeInUp 0.3s;
+    }
+    #backToTop:hover {
+      background: linear-gradient(90deg, #1976d2 60%, #ff6f00 100%);
+      opacity: 1;
+    }
+    .dark {
+      background: #181828 !important;
+      color: #eee !important;
+    }
+    .dark .card {
+      background: rgba(30, 30, 55, 0.85) !important;
+      color: #fff !important;
+      border-image: var(--card-border-dark) 1;
+    }
+    .dark .section-title { color: #ffffffcc; }
+    .dark .hero { background: #232342; color: #ddd; }
+    .dark .footer-buttons button { background: linear-gradient(90deg, #222a44 60%, #ff9800 100%); }
+    .dark .footer-buttons button:hover { background: linear-gradient(90deg, #444 60%, #ff6f00 100%); }
+    .dark .card a { background: linear-gradient(90deg, #444 60%, #ff9800 100%); }
+    .dark .card a:hover { background: linear-gradient(90deg, #333 60%, #ff6f00 100%); }
+    .dark header, .dark footer { background: #151525; }
+    .dark .logo { filter: brightness(1.2); }
+    @media (max-width: 600px) {
+      .logo { font-size: 1.5em; }
+      .section-title { font-size: 1.15em; margin-left: 1em; }
+      .grid { padding: 1em; }
+      #backToTop { font-size: 0.9em; right: 3vw; bottom: 3vh; }
+      .footer-buttons { flex-direction: column; gap: 0.6em; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    /* 自定义滚动条 */
+    ::-webkit-scrollbar { width: 8px; background: #ededed;}
+    ::-webkit-scrollbar-thumb { background: linear-gradient(90deg, #b2cfff 0%, #ffe0b2 100%); border-radius: 8px; }
+    .dark ::-webkit-scrollbar-thumb { background: linear-gradient(90deg, #344 0%, #ff9800 100%); }
+    .faq-section { max-width: 950px; margin: 3em auto 2em auto; background: #fffce6; border-radius: 10px; padding: 1.2em 2em; }
+    .dark .faq-section { background: #232342; color: #eee; }
+    .faq-section h2 { font-size: 1.3em; margin-top: 0.5em; }
+    .faq { margin-bottom: 1.3em; }
+    .faq h3 { margin: 0.3em 0 0.1em 0; font-size: 1em; font-weight: bold; color: #007bff; }
+    .dark .faq h3 { color: #ffd54f; }
+    .faq p { margin: 0.1em 0 0.3em 0; font-size: 0.98em; color: #444; }
+    .dark .faq p { color: #e0e0e0; }
+    /* 夜间模式切换按钮 */
+    #toggleDark {
+      position: fixed; left: 1vw; bottom: 5vh; z-index: 101;
+      background: linear-gradient(90deg, #181828 60%, #ff9800 100%);
+      color: #fff; border: none; border-radius: 30px; font-size: 1.05em;
+      font-weight: bold; box-shadow: 0 2px 10px #222a; cursor: pointer; opacity: 0.92;
+      padding: 0.7em 1.3em; transition: background 0.2s, opacity 0.2s;
+      display: block;
+      outline: none;
+    }
+    #toggleDark:hover { background: linear-gradient(90deg, #333 60%, #ff6f00 100%); opacity: 1; }
+    /* 卡片图标布局优化 */
+    .card-header {
+      display: flex; align-items: center; gap: 0.2em; margin-bottom: 0.2em;
+    }
+  </style>
+  <script>
+    // 回到顶部按钮动画优化版
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('backToTop');
+      if (window.scrollY > 300) {
+        if (btn.style.display !== 'block') {
+          btn.style.display = 'block';
+          btn.style.animation = 'fadeInUp 0.3s';
+        }
+      } else {
+        btn.style.display = 'none';
+        btn.style.animation = '';
+      }
+    });
+    function backToTop() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    // 收藏本站功能优化
+    function addFavorite() {
+      alert('请使用 Ctrl+D (Windows) 或 ⌘+D (Mac) 收藏本页。');
+    }
+    // 夜间模式切换
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('darkmode', document.body.classList.contains('dark') ? '1' : '0');
+    }
+    window.onload = function() {
+      if(localStorage.getItem('darkmode') === '1') document.body.classList.add('dark');
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="logo" aria-label="openaa.com">
+    <span class="Open">Open</span><span class="AA">AA</span><span class="com">.COM</span>
+  </div>
+  <nav aria-label="主导航">
+    <a href="/">返回首页</a>
+    <a href="https://jozl.com/" target="_blank" rel="noopener noreferrer">jozl.com</a>
+    <a href="https://joeabc.com/">跟Joe一起学英语</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>简单 · 实用 · 高效</h1>
+    <p>收录最常用的 AI 工具与在线资源，一键直达，无需注册，永久免费。</p>
+  </section>
+
+  <!-- 各分类区块 -->
+  <section aria-labelledby="ai-tools">
+    <div class="section-title" id="ai-tools">🔥 AI工具</div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🤖</span><h3>ChatGPT</h3></div>
+        <p>OpenAI 出品的强大聊天机器人，适合智能问答、内容创作。</p>
+        <a href="https://chat.openai.com" target="_blank" rel="noopener" aria-label="前往 ChatGPT">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🧠</span><h3>DeepSeek</h3></div>
+        <p>国产顶尖AI大模型，支持多轮对话与智能写作。</p>
+        <a href="https://chat.deepseek.com" target="_blank" rel="noopener" aria-label="前往 DeepSeek">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">💬</span><h3>Claude</h3></div>
+        <p>Anthropic 强力对话AI，长文本处理出色。</p>
+        <a href="https://claude.ai" target="_blank" rel="noopener" aria-label="前往 Claude">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🌟</span><h3>Gemini (Google Bard)</h3></div>
+        <p>Google官方AI助手，结合谷歌搜索。</p>
+        <a href="https://gemini.google.com" target="_blank" rel="noopener" aria-label="前往 Gemini">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🦜</span><h3>Poe</h3></div>
+        <p>多大模型聚合AI对话平台（支持ChatGPT/Claude等）。</p>
+        <a href="https://poe.com" target="_blank" rel="noopener" aria-label="前往 Poe">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🪄</span><h3>Bing Copilot</h3></div>
+        <p>微软AI助手，支持Chat、搜索、图像生成。</p>
+        <a href="https://www.bing.com/chat" target="_blank" rel="noopener" aria-label="前往 Bing Copilot">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🎨</span><h3>Midjourney</h3></div>
+        <p>高质量AI绘画，适合创意图片生成。</p>
+        <a href="https://www.midjourney.com" target="_blank" rel="noopener" aria-label="前往 Midjourney">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🌌</span><h3>Stable Diffusion Web</h3></div>
+        <p>开源AI图像生成平台，支持自定义模型。</p>
+        <a href="https://stablediffusionweb.com" target="_blank" rel="noopener" aria-label="前往 Stable Diffusion Web">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🌐</span><h3>DeepL 翻译</h3></div>
+        <p>精准自然的AI翻译工具，支持多语言。</p>
+        <a href="https://deepl.com" target="_blank" rel="noopener" aria-label="前往 DeepL 翻译">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">✍️</span><h3>QuillBot</h3></div>
+        <p>AI英文学术改写，润色与辅助写作。</p>
+        <a href="https://quillbot.com" target="_blank" rel="noopener" aria-label="前往 QuillBot">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🔎</span><h3>Perplexity AI</h3></div>
+        <p>AI搜索与问答助手，整合多源知识。</p>
+        <a href="https://www.perplexity.ai" target="_blank" rel="noopener" aria-label="前往 Perplexity AI">前往使用 →</a>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="ai-chat">
+    <div class="section-title" id="ai-chat">💬 聊天/写作/翻译类</div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-header"><span class="card-icon">📒</span><h3>Notion AI</h3></div>
+        <p>集成于Notion的AI写作与生产力工具。</p>
+        <a href="https://www.notion.so/product/ai" target="_blank" rel="noopener" aria-label="前往 Notion AI">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🚀</span><h3>Copy.ai</h3></div>
+        <p>AI文案生成，适用于营销、创意写作。</p>
+        <a href="https://www.copy.ai" target="_blank" rel="noopener" aria-label="前往 Copy.ai">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">📝</span><h3>WriteSonic</h3></div>
+        <p>多功能AI写作助手，支持多语言内容创作。</p>
+        <a href="https://writesonic.com" target="_blank" rel="noopener" aria-label="前往 WriteSonic">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🎵</span><h3>Suno AI</h3></div>
+        <p>AI音乐生成平台，输入提示即可创作歌曲。</p>
+        <a href="https://suno.ai/" target="_blank" rel="noopener" aria-label="前往 Suno AI">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">☁️</span><h3>腾讯混元大模型</h3></div>
+        <p>腾讯自研大语言模型，支持多场景AI服务。</p>
+        <a href="https://hunyuan.tencent.com/" target="_blank" rel="noopener" aria-label="前往 腾讯混元大模型">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🌈</span><h3>百川 Baichuan</h3></div>
+        <p>国产多功能大模型平台，支持多语言和插件。</p>
+        <a href="https://www.baichuan-ai.com/" target="_blank" rel="noopener" aria-label="前往 百川 Baichuan">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">✨</span><h3>讯飞星火</h3></div>
+        <p>科大讯飞AI大模型，支持教育、办公等领域。</p>
+        <a href="https://xinghuo.xfyun.cn/" target="_blank" rel="noopener" aria-label="前往 讯飞星火">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">💡</span><h3>Baidu 文心一言</h3></div>
+        <p>百度推出的AI对话和内容生成平台。</p>
+        <a href="https://yiyan.baidu.com/" target="_blank" rel="noopener" aria-label="前往 百度文心一言">前往使用 →</a>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="ai-image">
+    <div class="section-title" id="ai-image">🖼️ 图像/视频/音频生成类</div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🖌️</span><h3>Canva AI</h3></div>
+        <p>在线设计平台的AI功能，智能设计与图片生成。</p>
+        <a href="https://www.canva.com/ai/" target="_blank" rel="noopener" aria-label="前往 Canva AI">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🔲</span><h3>Remove.bg</h3></div>
+        <p>AI智能抠图工具，快速去除图片背景。</p>
+        <a href="https://remove.bg" target="_blank" rel="noopener" aria-label="前往 Remove.bg">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🎬</span><h3>腾讯智影</h3></div>
+        <p>腾讯AI视频与音频编辑平台。</p>
+        <a href="https://zenvideo.qq.com" target="_blank" rel="noopener" aria-label="前往 腾讯智影">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">📷</span><h3>美图AI</h3></div>
+        <p>美图公司出品，AI智能修图与生成。</p>
+        <a href="https://www.meitu.com/ai/" target="_blank" rel="noopener" aria-label="前往 美图AI">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🎥</span><h3>Runway ML</h3></div>
+        <p>AI视频编辑与生成平台，适合创意短片。</p>
+        <a href="https://runwayml.com" target="_blank" rel="noopener" aria-label="前往 Runway ML">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">👤</span><h3>Pica AI</h3></div>
+        <p>AI头像与漫画生成工具。</p>
+        <a href="https://www.pica-ai.com/" target="_blank" rel="noopener" aria-label="前往 Pica AI">前往使用 →</a>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="ai-office">
+    <div class="section-title" id="ai-office">🛠️ 办公/效率/编程类</div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-header"><span class="card-icon">👨‍💻</span><h3>Github Copilot</h3></div>
+        <p>AI编程助手，自动代码补全与建议。</p>
+        <a href="https://github.com/copilot" target="_blank" rel="noopener" aria-label="前往 Github Copilot">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">⚡</span><h3>Tabnine</h3></div>
+        <p>AI代码自动补全，支持多种IDE。</p>
+        <a href="https://www.tabnine.com/" target="_blank" rel="noopener" aria-label="前往 Tabnine">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">📚</span><h3>Notion</h3></div>
+        <p>集成AI的知识与项目管理平台。</p>
+        <a href="https://www.notion.so/" target="_blank" rel="noopener" aria-label="前往 Notion">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">☁️</span><h3>Google Colab</h3></div>
+        <p>谷歌云端AI编程与数据分析环境。</p>
+        <a href="https://colab.research.google.com/" target="_blank" rel="noopener" aria-label="前往 Google Colab">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🔗</span><h3>FlowGPT</h3></div>
+        <p>AI提示词分享与自动化平台。</p>
+        <a href="https://flowgpt.com/" target="_blank" rel="noopener" aria-label="前往 FlowGPT">前往使用 →</a>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="ai-other">
+    <div class="section-title" id="ai-other">🧩 其它AI工具/资源</div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🤗</span><h3>Hugging Face</h3></div>
+        <p>全球最大AI模型社区与平台，丰富资源免费用。</p>
+        <a href="https://huggingface.co/" target="_blank" rel="noopener" aria-label="前往 Hugging Face">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🎭</span><h3>OpenArt</h3></div>
+        <p>AI艺术作品分享与生成平台。</p>
+        <a href="https://openart.ai/" target="_blank" rel="noopener" aria-label="前往 OpenArt">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">📚</span><h3>Futurepedia</h3></div>
+        <p>AI工具大全，收录上千款AI网站。</p>
+        <a href="https://www.futurepedia.io/" target="_blank" rel="noopener" aria-label="前往 Futurepedia">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🛠️</span><h3>Supertools</h3></div>
+        <p>全球AI工具导航与应用评测。</p>
+        <a href="https://supertools.therundown.ai/" target="_blank" rel="noopener" aria-label="前往 Supertools">前往使用 →</a>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="free-image">
+    <div class="section-title" id="free-image">🖼️ 免费图片素材网站</div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-header"><span class="card-icon">📷</span><h3>Unsplash</h3></div>
+        <p>高质量免费图片素材，可用于商业用途，无需署名。</p>
+        <a href="https://unsplash.com" target="_blank" rel="noopener" aria-label="前往 Unsplash">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🌄</span><h3>Pexels</h3></div>
+        <p>提供高清照片与视频素材，支持商用与中文搜索。</p>
+        <a href="https://www.pexels.com/" target="_blank" rel="noopener" aria-label="前往 Pexels">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🖼️</span><h3>Pixabay</h3></div>
+        <p>包含图片、插画、视频、音乐等免版权素材。</p>
+        <a href="https://pixabay.com/" target="_blank" rel="noopener" aria-label="前往 Pixabay">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🎨</span><h3>Freepik</h3></div>
+        <p>提供矢量图、插画、PSD模板等设计资源，部分内容需署名或付费。</p>
+        <a href="https://www.freepik.com/" target="_blank" rel="noopener" aria-label="前往 Freepik">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🧑‍🎨</span><h3>Reshot</h3></div>
+        <p>风格独特的小众摄影作品平台，全部可免费商用。</p>
+        <a href="https://www.reshot.com/" target="_blank" rel="noopener" aria-label="前往 Reshot">前往使用 →</a>
+      </article>
+      <article class="card">
+        <div class="card-header"><span class="card-icon">🏞️</span><h3>Life of Pix</h3></div>
+        <p>专业摄影师分享的高分辨率摄影作品，艺术感强。</p>
+        <a href="https://www.lifeofpix.com/" target="_blank" rel="noopener" aria-label="前往 Life of Pix">前往使用 →</a>
+      </article>
+    </div>
+  </section>
+</main>
+
+<section class="faq-section" aria-labelledby="faq">
+  <h2 id="faq">常见问题（FAQ）</h2>
+  <div class="faq">
+    <h3>这些AI工具都免费吗？</h3>
+    <p>本站收录的绝大多数AI工具都可免费试用，部分高级功能可能需付费。</p>
+  </div>
+  <div class="faq">
+    <h3>如何选择适合自己的AI工具？</h3>
+    <p>根据你的用途（如写作、绘画、编程），选择对应分类下的热门工具试用体验。</p>
+  </div>
+  <div class="faq">
+    <h3>如何收藏本站？</h3>
+    <p>点击右下角“收藏本站”按钮，或使用浏览器 Ctrl+D (⌘+D) 快捷键即可。</p>
+  </div>
+  <div class="faq">
+    <h3>如何切换夜间模式？</h3>
+    <p>点击左下角“夜间模式”按钮，即可在深色/浅色主题间切换。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-buttons">
+    <button onclick="addFavorite()">收藏本站</button>
+    <button onclick="backToTop()">回到顶部</button>
+  </div>
+  <p>© 2025 OpenAA.com | 联系邮箱：<a href="mailto:323748@gmail.com">323748@gmail.com</a></p>
+  <p><a href="https://jozl.com/" style="color:#ccc;">了解更多 joabc.com →</a></p>
+</footer>
+
+<!-- 回到顶部悬浮按钮 -->
+<button id="backToTop" onclick="backToTop()" title="回到顶部">↑ 回到顶部</button>
+<!-- 夜间模式切换按钮 -->
+<button id="toggleDark" onclick="toggleDark()" title="夜间模式/DayNight">🌙 夜间模式</button>
+</body>
+</html>
