@@ -39,11 +39,6 @@
       letter-spacing: 1px;
     }
     .logo a { color: #005fa3; text-decoration: none; }
-    .weather {
-      font-size: 15px;
-      color: #555;
-      margin-top: 9px;
-    }
     .top-actions {
       position: absolute;
       top: 16px;
@@ -196,8 +191,7 @@
 </head>
 <body>
   <header>
-    <h1 class="logo"><a href="/">joabc.com - 华人joabc导航，美国各州 DMV（车辆管理局）</a></h1>
-    <div class="weather" id="weather" aria-live="polite">正在获取天气信息...</div>
+    <h1 class="logo"><a href="/">OpenAA · 美国华人生活入口，美国各州 DMV（车辆管理局）</a></h1>
     <div class="top-actions">
       <button onclick="addBookmark()" aria-label="收藏本站">📌 收藏本站</button>
     </div>
@@ -219,56 +213,56 @@
   <section class="section1" aria-label="美国各州 DMV（车辆管理局）">
     <strong>🚗 美国各州 DMV（车辆管理局）：</strong>
     <div class="dmv-list">
-      <a href="https://dmv.alabama.gov/" target="_blank">阿拉巴马州 Alabama DMV</a>
-      <a href="https://doa.alaska.gov/dmv/" target="_blank">阿拉斯加州 Alaska DMV</a>
-      <a href="https://azdot.gov/motor-vehicles" target="_blank">亚利桑那州 Arizona DMV</a>
-      <a href="https://www.dfa.arkansas.gov/driver-services/" target="_blank">阿肯色州 Arkansas DMV</a>
-      <a href="https://www.dmv.ca.gov/" target="_blank">加利福尼亚州 California DMV</a>
-      <a href="https://dmv.colorado.gov/" target="_blank">科罗拉多州 Colorado DMV</a>
-      <a href="https://portal.ct.gov/DMV" target="_blank">康涅狄格州 Connecticut DMV</a>
-      <a href="https://www.dmv.de.gov/" target="_blank">特拉华州 Delaware DMV</a>
-      <a href="https://www.flhsmv.gov/" target="_blank">佛罗里达州 Florida DMV</a>
-      <a href="https://dds.georgia.gov/" target="_blank">佐治亚州 Georgia DMV</a>
-      <a href="https://hidot.hawaii.gov/hawaiis-legal-presence-law/" target="_blank">夏威夷州 Hawaii DMV</a>
-      <a href="https://itd.idaho.gov/itddmv/" target="_blank">爱达荷州 Idaho DMV</a>
-      <a href="https://www.ilsos.gov/departments/drivers/" target="_blank">伊利诺伊州 Illinois DMV</a>
-      <a href="https://www.in.gov/bmv/" target="_blank">印第安纳州 Indiana DMV</a>
-      <a href="https://iowadot.gov/mvd" target="_blank">爱荷华州 Iowa DMV</a>
-      <a href="https://www.ksrevenue.gov/dovindex.html" target="_blank">堪萨斯州 Kansas DMV</a>
-      <a href="https://drive.ky.gov/" target="_blank">肯塔基州 Kentucky DMV</a>
-      <a href="https://www.expresslane.org/" target="_blank">路易斯安那州 Louisiana DMV</a>
-      <a href="https://www.maine.gov/sos/bmv/" target="_blank">缅因州 Maine DMV</a>
-      <a href="https://mva.maryland.gov/" target="_blank">马里兰州 Maryland DMV</a>
-      <a href="https://www.mass.gov/orgs/massachusetts-registry-of-motor-vehicles" target="_blank">马萨诸塞州 Massachusetts DMV</a>
-      <a href="https://www.michigan.gov/sos" target="_blank">密歇根州 Michigan DMV</a>
-      <a href="https://dps.mn.gov/divisions/dvs/" target="_blank">明尼苏达州 Minnesota DMV</a>
-      <a href="https://www.dor.ms.gov/drivers-license" target="_blank">密西西比州 Mississippi DMV</a>
-      <a href="https://dor.mo.gov/motor-vehicle/" target="_blank">密苏里州 Missouri DMV</a>
-      <a href="https://dojmt.gov/driving/" target="_blank">蒙大拿州 Montana DMV</a>
-      <a href="https://dmv.nebraska.gov/" target="_blank">内布拉斯加州 Nebraska DMV</a>
-      <a href="https://dmv.nv.gov/" target="_blank">内华达州 Nevada DMV</a>
-      <a href="https://www.nh.gov/safety/divisions/dmv/" target="_blank">新罕布什尔州 New Hampshire DMV</a>
-      <a href="https://www.state.nj.us/mvc/" target="_blank">新泽西州 New Jersey DMV</a>
-      <a href="https://www.mvd.newmexico.gov/" target="_blank">新墨西哥州 New Mexico DMV</a>
-      <a href="https://dmv.ny.gov/" target="_blank">纽约州 New York DMV</a>
-      <a href="https://www.ncdot.gov/dmv/" target="_blank">北卡罗来纳州 North Carolina DMV</a>
-      <a href="https://www.dot.nd.gov/" target="_blank">北达科他州 North Dakota DMV</a>
-      <a href="https://bmv.ohio.gov/" target="_blank">俄亥俄州 Ohio DMV</a>
-      <a href="https://oklahoma.gov/service/oklahoma-department-of-public-safety.html" target="_blank">俄克拉荷马州 Oklahoma DMV</a>
-      <a href="https://www.oregon.gov/ODOT/DMV/" target="_blank">俄勒冈州 Oregon DMV</a>
-      <a href="https://www.dmv.pa.gov/" target="_blank">宾夕法尼亚州 Pennsylvania DMV</a>
-      <a href="https://dmv.ri.gov/" target="_blank">罗德岛州 Rhode Island DMV</a>
-      <a href="https://www.scdmvonline.com/" target="_blank">南卡罗来纳州 South Carolina DMV</a>
-      <a href="https://dps.sd.gov/driver-licensing" target="_blank">南达科他州 South Dakota DMV</a>
-      <a href="https://www.tn.gov/safety/driver-services.html" target="_blank">田纳西州 Tennessee DMV</a>
-      <a href="https://www.txdmv.gov/" target="_blank">德克萨斯州 Texas DMV</a>
-      <a href="https://dmv.utah.gov/" target="_blank">犹他州 Utah DMV</a>
-      <a href="https://dmv.vermont.gov/" target="_blank">佛蒙特州 Vermont DMV</a>
-      <a href="https://www.dmv.virginia.gov/" target="_blank">弗吉尼亚州 Virginia DMV</a>
-      <a href="https://www.dol.wa.gov/" target="_blank">华盛顿州 Washington DMV</a>
-      <a href="https://transportation.wv.gov/dmv/Pages/default.aspx" target="_blank">西弗吉尼亚州 West Virginia DMV</a>
-      <a href="https://wisconsindot.gov/Pages/online-srvcs/external/dmv.aspx" target="_blank">威斯康星州 Wisconsin DMV</a>
-      <a href="https://www.dot.state.wy.us/home.html" target="_blank">怀俄明州 Wyoming DMV</a>
+      <a href="https://dmv.alabama.gov/" target="_blank" rel="noopener noreferrer">阿拉巴马州 Alabama DMV</a>
+      <a href="https://doa.alaska.gov/dmv/" target="_blank" rel="noopener noreferrer">阿拉斯加州 Alaska DMV</a>
+      <a href="https://azdot.gov/motor-vehicles" target="_blank" rel="noopener noreferrer">亚利桑那州 Arizona DMV</a>
+      <a href="https://www.dfa.arkansas.gov/driver-services/" target="_blank" rel="noopener noreferrer">阿肯色州 Arkansas DMV</a>
+      <a href="https://www.dmv.ca.gov/" target="_blank" rel="noopener noreferrer">加利福尼亚州 California DMV</a>
+      <a href="https://dmv.colorado.gov/" target="_blank" rel="noopener noreferrer">科罗拉多州 Colorado DMV</a>
+      <a href="https://portal.ct.gov/DMV" target="_blank" rel="noopener noreferrer">康涅狄格州 Connecticut DMV</a>
+      <a href="https://www.dmv.de.gov/" target="_blank" rel="noopener noreferrer">特拉华州 Delaware DMV</a>
+      <a href="https://www.flhsmv.gov/" target="_blank" rel="noopener noreferrer">佛罗里达州 Florida DMV</a>
+      <a href="https://dds.georgia.gov/" target="_blank" rel="noopener noreferrer">佐治亚州 Georgia DMV</a>
+      <a href="https://hidot.hawaii.gov/hawaiis-legal-presence-law/" target="_blank" rel="noopener noreferrer">夏威夷州 Hawaii DMV</a>
+      <a href="https://itd.idaho.gov/itddmv/" target="_blank" rel="noopener noreferrer">爱达荷州 Idaho DMV</a>
+      <a href="https://www.ilsos.gov/departments/drivers/" target="_blank" rel="noopener noreferrer">伊利诺伊州 Illinois DMV</a>
+      <a href="https://www.in.gov/bmv/" target="_blank" rel="noopener noreferrer">印第安纳州 Indiana DMV</a>
+      <a href="https://iowadot.gov/mvd" target="_blank" rel="noopener noreferrer">爱荷华州 Iowa DMV</a>
+      <a href="https://www.ksrevenue.gov/dovindex.html" target="_blank" rel="noopener noreferrer">堪萨斯州 Kansas DMV</a>
+      <a href="https://drive.ky.gov/" target="_blank" rel="noopener noreferrer">肯塔基州 Kentucky DMV</a>
+      <a href="https://www.expresslane.org/" target="_blank" rel="noopener noreferrer">路易斯安那州 Louisiana DMV</a>
+      <a href="https://www.maine.gov/sos/bmv/" target="_blank" rel="noopener noreferrer">缅因州 Maine DMV</a>
+      <a href="https://mva.maryland.gov/" target="_blank" rel="noopener noreferrer">马里兰州 Maryland DMV</a>
+      <a href="https://www.mass.gov/orgs/massachusetts-registry-of-motor-vehicles" target="_blank" rel="noopener noreferrer">马萨诸塞州 Massachusetts DMV</a>
+      <a href="https://www.michigan.gov/sos" target="_blank" rel="noopener noreferrer">密歇根州 Michigan DMV</a>
+      <a href="https://dps.mn.gov/divisions/dvs/" target="_blank" rel="noopener noreferrer">明尼苏达州 Minnesota DMV</a>
+      <a href="https://www.dor.ms.gov/drivers-license" target="_blank" rel="noopener noreferrer">密西西比州 Mississippi DMV</a>
+      <a href="https://dor.mo.gov/motor-vehicle/" target="_blank" rel="noopener noreferrer">密苏里州 Missouri DMV</a>
+      <a href="https://dojmt.gov/driving/" target="_blank" rel="noopener noreferrer">蒙大拿州 Montana DMV</a>
+      <a href="https://dmv.nebraska.gov/" target="_blank" rel="noopener noreferrer">内布拉斯加州 Nebraska DMV</a>
+      <a href="https://dmv.nv.gov/" target="_blank" rel="noopener noreferrer">内华达州 Nevada DMV</a>
+      <a href="https://www.nh.gov/safety/divisions/dmv/" target="_blank" rel="noopener noreferrer">新罕布什尔州 New Hampshire DMV</a>
+      <a href="https://www.state.nj.us/mvc/" target="_blank" rel="noopener noreferrer">新泽西州 New Jersey DMV</a>
+      <a href="https://www.mvd.newmexico.gov/" target="_blank" rel="noopener noreferrer">新墨西哥州 New Mexico DMV</a>
+      <a href="https://dmv.ny.gov/" target="_blank" rel="noopener noreferrer">纽约州 New York DMV</a>
+      <a href="https://www.ncdot.gov/dmv/" target="_blank" rel="noopener noreferrer">北卡罗来纳州 North Carolina DMV</a>
+      <a href="https://www.dot.nd.gov/" target="_blank" rel="noopener noreferrer">北达科他州 North Dakota DMV</a>
+      <a href="https://bmv.ohio.gov/" target="_blank" rel="noopener noreferrer">俄亥俄州 Ohio DMV</a>
+      <a href="https://oklahoma.gov/service/oklahoma-department-of-public-safety.html" target="_blank" rel="noopener noreferrer">俄克拉荷马州 Oklahoma DMV</a>
+      <a href="https://www.oregon.gov/ODOT/DMV/" target="_blank" rel="noopener noreferrer">俄勒冈州 Oregon DMV</a>
+      <a href="https://www.dmv.pa.gov/" target="_blank" rel="noopener noreferrer">宾夕法尼亚州 Pennsylvania DMV</a>
+      <a href="https://dmv.ri.gov/" target="_blank" rel="noopener noreferrer">罗德岛州 Rhode Island DMV</a>
+      <a href="https://www.scdmvonline.com/" target="_blank" rel="noopener noreferrer">南卡罗来纳州 South Carolina DMV</a>
+      <a href="https://dps.sd.gov/driver-licensing" target="_blank" rel="noopener noreferrer">南达科他州 South Dakota DMV</a>
+      <a href="https://www.tn.gov/safety/driver-services.html" target="_blank" rel="noopener noreferrer">田纳西州 Tennessee DMV</a>
+      <a href="https://www.txdmv.gov/" target="_blank" rel="noopener noreferrer">德克萨斯州 Texas DMV</a>
+      <a href="https://dmv.utah.gov/" target="_blank" rel="noopener noreferrer">犹他州 Utah DMV</a>
+      <a href="https://dmv.vermont.gov/" target="_blank" rel="noopener noreferrer">佛蒙特州 Vermont DMV</a>
+      <a href="https://www.dmv.virginia.gov/" target="_blank" rel="noopener noreferrer">弗吉尼亚州 Virginia DMV</a>
+      <a href="https://www.dol.wa.gov/" target="_blank" rel="noopener noreferrer">华盛顿州 Washington DMV</a>
+      <a href="https://transportation.wv.gov/dmv/Pages/default.aspx" target="_blank" rel="noopener noreferrer">西弗吉尼亚州 West Virginia DMV</a>
+      <a href="https://wisconsindot.gov/Pages/online-srvcs/external/dmv.aspx" target="_blank" rel="noopener noreferrer">威斯康星州 Wisconsin DMV</a>
+      <a href="https://www.dot.state.wy.us/home.html" target="_blank" rel="noopener noreferrer">怀俄明州 Wyoming DMV</a>
     </div>
   </section>
 
@@ -279,26 +273,6 @@
   </footer>
 
   <script>
-    // 天气
-    async function getLocationWeather() {
-      const weatherElem = document.getElementById('weather');
-      try {
-        const cache = localStorage.getItem('alititi_weather');
-        const cacheTime = localStorage.getItem('alititi_weather_time');
-        if (cache && cacheTime && (Date.now() - cacheTime < 6 * 60 * 60 * 1000)) {
-          weatherElem.textContent = cache;
-          return;
-        }
-        const response = await fetch('https://wttr.in/?format=%l:+%C+%t');
-        const weatherText = await response.text();
-        weatherElem.textContent = weatherText;
-        localStorage.setItem('alititi_weather', weatherText);
-        localStorage.setItem('alititi_weather_time', Date.now());
-      } catch (error) {
-        weatherElem.textContent = '天气信息获取失败，请稍后再试';
-      }
-    }
-
     function addBookmark() {
       alert('请使用 Ctrl+D (或 Cmd+D) 收藏本网站，或在浏览器菜单中选择“添加书签”');
     }
@@ -313,10 +287,6 @@
       } else {
         btn.style.display = 'none';
       }
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      getLocationWeather();
     });
   </script>
 </body>
