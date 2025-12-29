@@ -15,7 +15,6 @@
       color: #333;
     }
 
-    /* 顶部 */
     header {
       background: #0b3c5d;
       color: #fff;
@@ -42,7 +41,6 @@
       box-shadow: 0 6px 16px rgba(0,0,0,0.06);
     }
 
-    /* 返回首页（内容区） */
     .back-home {
       display: inline-block;
       margin-bottom: 16px;
@@ -54,10 +52,6 @@
       border-radius: 6px;
     }
 
-    .back-home:hover {
-      background: #e2ebf5;
-    }
-
     h2 {
       color: #0b3c5d;
       margin-top: 28px;
@@ -67,10 +61,8 @@
     p {
       line-height: 1.8;
       font-size: 15px;
-      margin: 10px 0;
     }
 
-    /* 号码卡片 */
     .number-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -96,16 +88,14 @@
       font-size: 20px;
       font-weight: 600;
       color: #0b3c5d;
-      letter-spacing: 1px;
     }
 
     .price {
-      margin-top: 6px;
       font-size: 13px;
       color: #666;
+      margin-top: 6px;
     }
 
-    /* 角标 */
     .badge {
       position: absolute;
       top: 10px;
@@ -116,17 +106,10 @@
       color: #fff;
     }
 
-    .hot {
-      background: #e5533d;
-    }
+    .hot { background: #e5533d; }
+    .sold { background: #999; }
 
-    .sold {
-      background: #999;
-    }
-
-    .sold-card {
-      opacity: 0.45;
-    }
+    .sold-card { opacity: 0.45; }
 
     .contact-box {
       background: #f1f6fb;
@@ -151,11 +134,6 @@
       color: #777;
     }
 
-    footer strong {
-      color: #0b3c5d;
-    }
-
-    /* 微信浮动按钮 */
     .wechat-float {
       position: fixed;
       right: 18px;
@@ -167,11 +145,6 @@
       font-size: 14px;
       text-decoration: none;
       box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-      z-index: 999;
-    }
-
-    .wechat-float:hover {
-      background: #06ad56;
     }
   </style>
 </head>
@@ -185,13 +158,12 @@
 
 <div class="container">
 
-  <!-- 返回首页 -->
   <a class="back-home" href="index.html">← 返回首页</a>
 
   <h2>靓号出售说明</h2>
   <p>
     出售全美各州手机靓号，包括三连号、豹子号、顺号、生日号等。
-    提供账号和密码，可转入任意运营商，支持 <strong>微信 / Zelle</strong> 支付。
+    支持 <strong>微信 / Zelle</strong> 支付。
   </p>
 
   <div class="contact-box">
@@ -200,87 +172,25 @@
   </div>
 
   <h2>纽约靓号</h2>
-
   <div class="number-grid">
-    <div class="number-card">
-      <div class="badge hot">🔥 热卖</div>
-      <div class="number">（917）516-9111</div>
-      <div class="price">$40</div>
-    </div>
-
-    <div class="number-card">
-      <div class="number">（917）382-3111</div>
-      <div class="price">$40</div>
-    </div>
-
-    <div class="number-card">
-      <div class="number">（347）640-8111</div>
-      <div class="price">$40</div>
-    </div>
-
-    <div class="number-card">
-      <div class="number">（646）956-3111</div>
-      <div class="price">$40</div>
-    </div>
-
-    <div class="number-card">
-      <div class="number">（347）868-3111</div>
-      <div class="price">$40</div>
-    </div>
-
-    <div class="number-card">
-      <div class="number">（917）970-3222</div>
-      <div class="price">$40</div>
-    </div>
-
-    <div class="number-card">
-      <div class="number">（347）971-3666</div>
-      <div class="price">$40</div>
-    </div>
-
-    <div class="number-card sold-card">
-      <div class="badge sold">已售</div>
-      <div class="number">（347）802-3666</div>
-      <div class="price">Sold</div>
-    </div>
+    <div class="number-card"><div class="badge hot">🔥 热卖</div><div class="number">（917）516-9111</div><div class="price">$40</div></div>
+    <div class="number-card"><div class="number">（917）382-3111</div><div class="price">$40</div></div>
+    <div class="number-card"><div class="number">（347）640-8111</div><div class="price">$40</div></div>
+    <div class="number-card"><div class="number">（646）956-3111</div><div class="price">$40</div></div>
+    <div class="number-card"><div class="number">（347）868-3111</div><div class="price">$40</div></div>
+    <div class="number-card"><div class="number">（917）970-3222</div><div class="price">$40</div></div>
+    <div class="number-card"><div class="number">（347）971-3666</div><div class="price">$40</div></div>
+    <div class="number-card sold-card"><div class="badge sold">已售</div><div class="number">（347）802-3666</div><div class="price">Sold</div></div>
   </div>
 
   <h2>其他州靓号</h2>
-
   <div class="number-grid">
-    <div class="number-card">
-      <div class="number">（570）371-6666</div>
-      <div class="price">咨询</div>
-    </div>
-
-    <div class="number-card">
-      <div class="number">（570）995-8888</div>
-      <div class="price">咨询</div>
-    </div>
-  </div>
-
-      <div class="number-card">
-      <div class="number">（703）952-1888</div>
-      <div class="price">咨询</div>
-    </div>
-  </div>
-
-      <div class="number-card">
-      <div class="number">（703）570-1888</div>
-      <div class="price">咨询</div>
-    </div>
-  </div>
-
-      <div class="number-card">
-      <div class="number">（703）936-9888</div>
-      <div class="price">咨询</div>
-    </div>
-  </div>
-
-      <div class="number-card">
-      <div class="number">（703）659-6888</div>
-      <div class="price">咨询</div>
-    </div>
+    <div class="number-card"><div class="number">（570）371-6666</div><div class="price">咨询</div></div>
+    <div class="number-card"><div class="number">（570）995-8888</div><div class="price">咨询</div></div>
+    <div class="number-card"><div class="number">（703）952-1888</div><div class="price">咨询</div></div>
+    <div class="number-card"><div class="number">（703）570-1888</div><div class="price">咨询</div></div>
+    <div class="number-card"><div class="number">（703）936-9888</div><div class="price">咨询</div></div>
+    <div class="number-card"><div class="number">（703）659-6888</div><div class="price">咨询</div></div>
   </div>
 
   <div class="bottom-note">
@@ -295,11 +205,7 @@
   © 2025 OpenAA.com
 </footer>
 
-<!-- 微信浮动按钮 -->
-<a class="wechat-float" href="weixin://dl/chat?hola24">
-  💬 微信联系
-</a>
+<a class="wechat-float" href="weixin://dl/chat?hola24">💬 微信联系</a>
 
 </body>
 </html>
-
