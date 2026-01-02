@@ -5,6 +5,7 @@
   <title>关于 OpenAA · 美国华人生活入口</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="关于 OpenAA，美国华人生活入口，专注为在美华人提供实用、清晰的一站式生活导航。" />
+
   <style>
     body {
       margin: 0;
@@ -13,61 +14,79 @@
       background: #f7f9fc;
       color: #333;
     }
+
     header {
+      position: relative;
       background: #0b3c5d;
       color: #fff;
       padding: 20px;
     }
+
     header h1 {
       margin: 0;
       font-size: 26px;
     }
+
     header p {
       margin: 6px 0 0;
       font-size: 14px;
       opacity: 0.9;
     }
+
+    /* 右上角返回首页按钮 */
+    .home-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ffffff;
+      color: #0b3c5d;
+      padding: 8px 14px;
+      font-size: 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .home-btn:hover {
+      background: #e9f1f6;
+    }
+
     .container {
       max-width: 900px;
-      margin: 0 auto;
+      margin: 20px auto 0;
       padding: 30px 20px;
       background: #fff;
-      margin-top: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
+
     h2 {
       color: #0b3c5d;
       margin-top: 0;
     }
+
     p {
       line-height: 1.8;
       font-size: 15px;
       margin: 12px 0;
     }
+
     ul {
       padding-left: 20px;
       line-height: 1.8;
       font-size: 15px;
     }
+
     footer {
       text-align: center;
       padding: 20px;
       font-size: 13px;
       color: #777;
     }
+
     footer strong {
       color: #0b3c5d;
-    }
-    .back {
-      display: inline-block;
-      margin-top: 20px;
-      color: #0b3c5d;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    .back:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -77,6 +96,7 @@
 <header>
   <h1>OpenAA</h1>
   <p>美国华人生活入口</p>
+  <a href="index.html" class="home-btn">返回首页</a>
 </header>
 
 <div class="container">
@@ -124,8 +144,6 @@
     如果你有建议、合作意向或希望推荐实用资源，欢迎联系我们：<br />
     📧 Email：<a href="mailto:323748@gmail.com">323748@gmail.com</a>
   </p>
-
-  <a class="back" href="index.html">← 返回首页</a>
 
 </div>
 
