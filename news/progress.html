@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>openAA 平台建设进展说明 · OpenAA</title>
+  <meta name="description" content="openAA 平台建设进展说明（示例详情页）" />
+  <meta name="theme-color" content="#0078d4">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+
+  <style>
+    :root{
+      --brand-1:#0b3c5d;
+      --brand-2:#1e6fa3;
+      --accent:#0078d4;
+      --bg:#f5f5f5;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --max-width:820px;
+      --header-max-width:1100px;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:var(--bg);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.7;
+    }
+
+    /* Header：与首页保持一致的结构与样式 */
+    header{
+      background: linear-gradient(135deg,var(--brand-1),var(--brand-2));
+      color:#fff;
+      padding:18px 12px;
+    }
+    .header-inner{
+      max-width: var(--header-max-width);
+      margin: 0 auto;
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    /* 将 logo 放在一个 a.logo 容器内，图片与文字并排，确保样式一致 */
+    a.logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:inherit;
+    }
+    a.logo .logo-img{
+      width:72px;
+      height:auto;
+      border-radius:8px;
+      background:#fff;
+      padding:6px;
+      display:block;
+      object-fit:contain;
+    }
+    .logo-text {
+      line-height:1;
+    }
+    .logo-text .title { font-weight:700; font-size:18px; color:#fff; margin:0; }
+    .logo-text .sub { font-size:12px; color:rgba(255,255,255,0.92); margin:0; }
+
+    .wrap { max-width:var(--max-width); margin:22px auto; padding:0 18px 48px; }
+
+    .back-links { display:flex; gap:12px; margin-bottom:12px; }
+    .back-links a{ color:var(--muted); text-decoration:none; font-size:14px; }
+
+    article{ background:var(--card); padding:20px; border-radius:var(--radius); box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+    h1{ margin:0 0 8px 0; font-size:20px; color:var(--brand-1); }
+    .meta{ color:var(--muted); font-size:13px; margin-bottom:14px; display:block; }
+    .content p{ margin:0 0 14px 0; font-size:16px }
+
+    @media (max-width:420px){
+      .wrap{margin:16px 12px}
+      a.logo .logo-img{ width:56px }
+      h1{ font-size:18px }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="https://openaa.com/">
+        <img class="logo-img" src="https://openaa.com/logo.png" alt="OpenAA logo" loading="lazy" />
+        <div class="logo-text">
+          <div class="title">OpenAA · 美国华人生活入口</div>
+          <div class="sub">新闻 · 资讯</div>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="back-links">
+      <a href="/news/index.html">← 返回 资讯列表</a>
+      <a href="/">← 返回 openAA 首页</a>
+    </div>
+
+    <main>
+      <article>
+        <h1>openAA 平台建设进展说明</h1>
+        <time class="meta" datetime="2026-01-08">发布：2026-01-08</time>
+
+        <div class="content">
+          <p>这是与 openAA 首页风格完全一致的新闻详情模板。已修正 logo 显示问题：logo 图片现在被放在带有白色背景与内边距的容器中（与首页视觉保持统一），并使用了响应式宽度与 object-fit 保证跨设备显示正确。</p>
+
+          <p>建议上传后在 GitHub Pages 上查看（缓存可能需要清除或强制刷新），若仍有问题请告诉我：例如需要更大的 logo、改用本地 /favicon/logo.png、或将 logo 链接改为仓库内相对路径等，我可以再调整。</p>
+
+          <h2>如何发布新文章</h2>
+          <p>复制此文件为 /news/your-article.html，然后在 /news/index.html 中添加对应卡片并把 href 指向新页面（使用绝对路径）。</p>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <footer style="text-align:center;padding:20px;font-size:13px;color:#6b7280;background:#fff;margin-top:28px">
+    © 2025 OpenAA · 美国华人生活入口
+  </footer>
+</body>
+</html>
