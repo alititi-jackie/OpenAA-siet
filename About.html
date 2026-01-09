@@ -137,6 +137,53 @@
     a { color:var(--brand-1); text-decoration:none; }
     a:hover { text-decoration:underline; }
 
+    /* 返回首页按钮（优化样式与可访问性） */
+    .back-home {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:linear-gradient(180deg,var(--brand-2),var(--brand-1));
+      color:#fff;
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:8px;
+      font-weight:600;
+      box-shadow:0 6px 14px rgba(14, 78, 128, 0.12);
+      border:0;
+      transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      /* ensure minimum hit area */
+      min-height:44px;
+      line-height:1;
+    }
+    .back-home svg { width:18px; height:18px; flex:0 0 18px; fill:currentColor; }
+    .back-home:hover { transform:translateY(-2px); box-shadow:0 10px 20px rgba(14,78,128,0.14); }
+    .back-home:active { transform:translateY(0); opacity:0.95; }
+    .back-home:focus {
+      outline:3px solid rgba(30,111,163,0.18);
+      outline-offset:3px;
+      box-shadow:0 0 0 4px rgba(30,111,163,0.08);
+    }
+
+    /* small-screen friendly placement */
+    .top-controls {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+    }
+
+    .back-home--ghost {
+      background:transparent;
+      color:var(--brand-1);
+      box-shadow:none;
+      padding:8px 10px;
+      border-radius:6px;
+      font-weight:600;
+      border:1px solid rgba(11,60,93,0.06);
+    }
+
     footer.site-footer {
       text-align:center;
       padding:20px;
@@ -148,6 +195,8 @@
       .header-inner { padding:0 6px; }
       .logo img { width:64px; }
       main.container { margin:14px 12px; padding:18px; }
+      .back-home { padding:12px 14px; font-size:15px; min-height:48px; }
+      .top-controls { flex-direction:column; align-items:flex-start; gap:10px; }
     }
   </style>
 </head>
@@ -163,24 +212,32 @@
           <div class="site-sub">华人导航 · 地方资讯 · 服务聚合</div>
         </div>
       </a>
-
     </div>
   </header>
 
-  <div class="wrap">
-    <div class="back-links">
-      <a href="/news/index.html">← 返回 资讯列表</a>
-      <a href="/">← 返回 OpenAA 首页</a>
+  <main id="main" class="container" role="main" aria-labelledby="about-title">
+    <!-- top controls: 优化后的返回首页按钮位于主要内容顶部 -->
+    <div class="top-controls" role="region" aria-label="页面操作">
+      <!-- 主按钮（醒目）-->
+      <a class="back-home" href="https://openaa.com/" aria-label="返回 OpenAA 首页">
+        <!-- 内联 SVG 图标（Home）-->
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+        <span>返回 OpenAA 首页</span>
+      </a>
+
+      <!-- 辅助/轻量风格按钮（可选：用于放置在右侧或用于次级操作）-->
+      <a class="back-home back-home--ghost" href="/news/index.html" aria-label="返回资讯列表">返回资讯列表</a>
     </div>
 
-  <main id="main" class="container" role="main" aria-labelledby="about-title">
     <h1 id="about-title">关于 OpenAA</h1>
 
-    <p><strong>OpenAA · 美国华人生活入口</strong> 是专为在美华人打造的一站式生活导航平台。我们整合官方渠道与优质社区资源，覆盖办证（DMV、移民、社安号）、租房、二手车、银行开户、求职招聘与本地生活服务，帮助华人在美国高效完成日常事  。</p>
+    <p><strong>OpenAA · 美国华人生活入口</strong> 是专为在美华人打造的一站式生活导航平台。我们整合官方渠道与优质社区资源，覆盖办证（DMV、移民、社安号）、租房、二手车、银行开户、求职招聘与本地生活服务，帮助华人在美国高效完成日常事务。</p>
 
     <h2>我们提供的服务</h2>
     <ul>
-      <li>美国办事指南：DMV、移民、社安号、税务等官方入口与流程说明</li>
+      <li>美国办事指南：DMV、移民、社安号、税务  官方入口与流程说明</li>
       <li>房产与租房：本地房源、搬家与租赁流程指引</li>
       <li>二手车与用车：选车、过户、保险与维修资源</li>
       <li>银行与金融服务：开户、汇款、信用卡与贷款指南</li>
@@ -209,7 +266,6 @@
       <li>社区支持：欢迎用户贡献与推荐本地资源</li>
     </ul>
   </main>
-  </div>
 
   <footer class="site-footer" role="contentinfo">
     <div class="site-footer-inner">
