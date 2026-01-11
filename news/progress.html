@@ -6,12 +6,12 @@
   <title>openAA 平台建设进展说明 · OpenAA</title>
   <meta name="description" content="openAA 平台建设进展说明（示例详情页）" />
   <meta name="theme-color" content="#0078d4">
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+  <!-- Favicons（news 下使用 ../ 相对路径） -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../favicon/site.webmanifest">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 
   <style>
     :root{
@@ -49,7 +49,6 @@
       align-items:center;
       gap:14px;
     }
-    /* 将 logo 放在一个 a.logo 容器内，图片与文字并排，确保样式一致 */
     a.logo{
       display:flex;
       align-items:center;
@@ -92,8 +91,8 @@
 <body>
   <header>
     <div class="header-inner">
-      <a class="logo" href="https://openaa.com/">
-        <img class="logo-img" src="https://openaa.com/logo.png" alt="OpenAA logo" loading="lazy" />
+      <a class="logo" href="../">
+        <img class="logo-img" src="../assets/images/logo.png" alt="OpenAA logo" loading="lazy" />
         <div class="logo-text">
           <div class="title">OpenAA · 美国华人生活入口</div>
           <div class="sub">新闻 · 资讯</div>
@@ -104,8 +103,8 @@
 
   <div class="wrap">
     <div class="back-links">
-      <a href="/news/index.html">← 返回 资讯列表</a>
-      <a href="/">← 返回 openAA 首页</a>
+      <a href="index.html">← 返回 资讯列表</a>
+      <a href="../">← 返回 openAA 首页</a>
     </div>
 
     <main>
@@ -114,12 +113,12 @@
         <time class="meta" datetime="2026-01-08">发布：2026-01-08</time>
 
         <div class="content">
-          <p>这是与 openAA 首页风格完全一致的新闻详情模板。已修正 logo 显示问题：logo 图片现在被放在带有白色背景与内边距的容器中（与首页视觉保持统一），并使用了响应式宽度与 object-fit 保证跨设备显示正确。</p>
+          <p>这是与 openAA 首页风格完全一致的新闻详情模板。已修正 logo 显示问题：logo 图片现在被放在带有白色背景与内边距的容器中（与首页视觉保持一致）。</p>
 
-          <p>建议上传后在 GitHub Pages 上查看（缓存可能需要清除或强制刷新），若仍有问题请告诉我：例如需要更大的 logo、改用本地 /favicon/logo.png、或将 logo 链接改为仓库内相对路径等，我可以再调整。</p>
+          <p>建议上传后在 GitHub Pages 上查看（缓存可能需要清除或强制刷新），若仍有问题请告诉我：例如需要更大的 logo、改用本地 /favicon/logo.png、或将 logo 放置到其他目录等。</p>
 
           <h2>如何发布新文章</h2>
-          <p>复制此文件为 /news/your-article.html，然后在 /news/index.html 中添加对应卡片并把 href 指向新页面（使用绝对路径）。</p>
+          <p>复制此文件为 /news/your-article.html，然后在 /news/index.html 中添加对应卡片并把 href 指向新页面（使用相对于 /news/ 的相对路径）。</p>
         </div>
       </article>
     </main>
