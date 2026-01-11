@@ -6,12 +6,12 @@
   <title>News · OpenAA / 资讯</title>
   <meta name="description" content="OpenAA 新闻与公告 — 与 OpenAA 首页风格一致的资讯页" />
   <meta name="theme-color" content="#0078d4">
-  <!-- Favicons (与站点根一致) -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+  <!-- Favicons (相对路径，news 页面需上一级引用) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../favicon/site.webmanifest">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 
   <style>
     /* 基础与配色（尽量与站点根保持一致） */
@@ -160,8 +160,8 @@
 <body>
   <header>
     <div class="header-inner">
-      <a class="logo" href="https://openaa.com/">
-        <img src="https://openaa.com/logo.png" alt="OpenAA logo" loading="lazy" />
+      <a class="logo" href="../">
+        <img src="../assets/images/logo.png" alt="OpenAA logo" loading="lazy" />
         <div>
           <div class="site-title">OpenAA · 美国华人生活入口</div>
           <div class="site-sub">华人导航 · 地方资讯 · 服务聚合</div>
@@ -172,51 +172,51 @@
 
   <div class="wrap">
     <div class="top-row">
-      <a class="back" href="/">← 返回 openAA 首页</a>
+      <a class="back" href="../">← 返回 openAA 首页</a>
       <h1 class="page-title">News / 资讯</h1>
     </div>
 
     <main>
       <section class="grid" aria-label="新闻列表">
-        <a class="card" href="/news/progress.html">
+        <a class="card" href="progress.html">
           <h2>openAA 平台建设进展说明</h2>
           <p class="excerpt">介绍 openAA 平台的开发进度、功能规划与上线时间表（占位内容）。</p>
           <time class="meta" datetime="2026-01-08">2026-01-08</time>
         </a>
 
-        <a class="card" href="/news/blue-sky-rescue.html">
+        <a class="card" href="blue-sky-rescue.html">
           <h2>蓝天救援相关资讯整理</h2>
           <p class="excerpt">整合蓝天救援的近期动态、志愿活动与联络方式，便于用户快速获取重要信息。</p>
           <time class="meta" datetime="2026-01-05">2026-01-05</time>
         </a>
 
-        <a class="card" href="/news/ongoing-updates.html">
+        <a class="card" href="ongoing-updates.html">
           <h2>内容持续更新中</h2>
           <p class="excerpt">我们会定期发布地区新闻、社区公告及平台相关更新，保持内容新鲜与准确。</p>
           <time class="meta" datetime="2026-01-03">2026-01-03</time>
         </a>
 
         <!-- 占位卡片：复制并修改 -->
-        <a class="card" href="/news/example-4.html">
+        <a class="card" href="example-4.html">
           <h2>示例新闻条目 4</h2>
           <p class="excerpt">占位示例：简短描述示例新闻条目，行数限制在 1-2 行之内。</p>
           <time class="meta" datetime="2025-12-25">2025-12-25</time>
         </a>
 
-        <a class="card" href="/news/example-5.html">
+        <a class="card" href="example-5.html">
           <h2>示例新闻条目 5</h2>
           <p class="excerpt">占位示例：用于展示网格布局在不同尺寸下的表现。</p>
           <time class="meta" datetime="2025-12-20">2025-12-20</time>
         </a>
 
-        <a class="card" href="/news/example-6.html">
+        <a class="card" href="example-6.html">
           <h2>示例新闻条目 6</h2>
           <p class="excerpt">占位示例：复制卡片可快速新增条目，编辑 href 指向详情页即可。</p>
           <time class="meta" datetime="2025-12-15">2025-12-15</time>
         </a>
       </section>
 
-      <p class="hint">提示：新增新闻只需复制一个 <code>&lt;a class="card"&gt;…&lt;/a&gt;</code>，修改 href（绝对路径）、标题、描述与日期。</p>
+      <p class="hint">提示：新增新闻只需复制一个 <code>&lt;a class="card"&gt;…&lt;/a&gt;</code>，修改 href（相对于 /news/ 目录）、标题、描述与日期。</p>
     </main>
   </div>
 
