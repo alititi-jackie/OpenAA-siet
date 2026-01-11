@@ -1,0 +1,191 @@
+* { box-sizing: border-box; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #222;
+  line-height: 1.6;
+}
+header {
+  background-color: #eef2f3;
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+.site-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.site-logo img {
+  width: 200px;
+  max-width: 25vw;
+  height: auto;
+  margin-bottom: 8px;
+}
+.main-title {
+  font-size: 2.1rem;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  color: #183a60;
+  letter-spacing: 1px;
+}
+.subtitle {
+  font-size: 1.07rem;
+  color: #3e3e3e;
+  margin-bottom: 10px;
+  letter-spacing: .5px;
+}
+.top-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+.top-actions button {
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: #0078d4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.top-actions button:hover {
+  background-color: #005fa3;
+}
+/* AI平台直达导航样式 */
+.ai-nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.2em;
+  margin: 18px auto 0 auto;
+  max-width: 95vw;
+  flex-wrap: wrap;
+}
+.ai-nav-links a {
+  color: #fff;
+  background: #0078d4;
+  padding: 7px 18px;
+  border-radius: 22px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,120,212,0.06);
+  margin-bottom: 4px;
+}
+.ai-nav-links a:hover {
+  background: #005fa3;
+  color: #fff;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 95vw;
+}
+.search form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+}
+.search input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  transition: border 0.2s;
+}
+.search input[type="text"]:focus {
+  border-color: #0078d4;
+}
+.nav, .categories, .card, .bookmark, .recommend, .section, .section1, .section2, .section3 {
+  background: #fff;
+  margin: 10px auto;
+  padding: 10px;
+  max-width: 95vw;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+.recommend a, .section a, .section1 a, .section2 a, .section3 a {
+  display: inline-block;
+  margin: 5px 10px;
+  font-size: 14px;
+  padding: 3px 7px;
+  border-radius: 5px;
+  transition: background 0.15s, color 0.15s;
+}
+.recommend a:hover, .section a:hover, .section1 a:hover, .section2 a:hover, .section3 a:hover {
+  background: #0078d41a;
+  color: #0078d4;
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+  color: #888;
+  background-color: #eef2f3;
+  margin-top: 40px;
+}
+.footer a { color: #1670b8; }
+.back-to-top {
+  display: none;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 999;
+  transition: background 0.3s, opacity 0.25s;
+  opacity: 0.85;
+}
+.back-to-top:hover {
+  background-color: #005fa3;
+  opacity: 1;
+}
+@media (max-width: 600px) {
+  .main-title { font-size: 1.1rem; }
+  .site-logo img { width: 70px; }
+  .ai-nav-links a { font-size: 13px; padding: 6px 12px; }
+  .ai-nav-links { gap: 0.5em; }
+  .recommend a, .section a { font-size: 12px; margin: 4px 6px; }
+  .section, .section1, .section2, .section3, .recommend { padding: 8px; }
+  .search { margin: 10px auto; }
+  .footer { font-size: 11px; }
+}
+/* 动画折叠内容 */
+.toggle-content {
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(.4,0,.2,1);
+  max-height: 0;
+}
+.toggle-content.open {
+  max-height: 900px;
+  transition: max-height 0.5s cubic-bezier(.4,0,.2,1);
+}
+.toggle-header {
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  padding: 6px 0;
+  color: #0078d4;
+  margin-bottom: 2px;
+}
