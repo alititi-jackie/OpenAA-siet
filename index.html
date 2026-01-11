@@ -28,13 +28,13 @@
   <meta name="twitter:description" content="在美华人一站式中文导航：DMV、移民、找工作、二手、银行与生活服务。">
   <meta name="twitter:image" content="https://openaa.com/logo.png">
 
-  <!-- Favicons (统一指向 /favicon/ 目录) -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- Favicons (统一指向 favicon/ 目录，使用相对路径以兼容仓库子路径/Pages 部署) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <meta name="msapplication-TileColor" content="#2b5797">
 
   <!-- Structured Data: Organization + WebSite + SearchAction -->
@@ -73,13 +73,13 @@
   }
   </script>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- CSS (相对路径) -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <header>
     <div class="site-logo">
-      <img src="/assets/images/logo.png" alt="OpenAA · 美国华人生活入口 openaa.com logo" width="120" height="120" loading="lazy" />
+      <img src="assets/images/logo.png" alt="OpenAA · 美国华人生活入口 openaa.com logo" width="120" height="120" loading="lazy" />
       <div class="main-title">OpenAA · 美国华人生活入口</div>
       <div class="subtitle">OpenAA · 为美国华人提供导航、资讯、服务的一站式平台 </div>
     </div>
@@ -91,31 +91,27 @@
   <section class="nav" style="text-align:center; padding: 10px; font-size:15px; line-height:1.7;">
     <p><strong>OpenAA · 美国华人生活入口</strong>，<strong>华人OpenAA</strong> 为 <strong>美国华人</strong> 打造的一站式 <strong>导航、在美华人资讯、服务平台</strong>，覆盖 DMV、移民、找工作、二手市场、银行和地区生活信息（纽约/洛杉矶/旧金山 等）。</p>
   </section>
-  <!-- 链接区块 -->
-<nav class="ai-nav-links" aria-label=" 链接区块">
-  <a href="https://openaa.com/market/number/">美国手机靓号</a>
-  <a href="https://www.168worker.com/"> 招 聘 </a>
-  <a href="https://openaa.com/nav/dmv">DMV美国各州</a>
-  <a href="https://joeabc.com/">跟Joe学英语</a>
-  <a href="https://openaa.com/market/">精品域名</a>
-  <a href="https://openaa.com/nav/mi">📑</a>
-  <button 
-    id="copy69nav" 
-    title="点击复制此链接" 
-    style="background-color:#007bff; color:#fff; border:none; border-radius:20px; padding:8px 16px; cursor:pointer;">
-    🔞69nav.com
-  </button>
-</nav>
 
-<!-- 复制提示 -->
-<div id="copyToast" 
-     style="visibility:hidden; min-width:120px; background:#333; color:#fff; text-align:center; border-radius:8px; padding:8px; position:fixed; z-index:1; bottom:30px; left:50%; transform:translateX(-50%);">
-  已复制
-</div>
+  <!-- 链接区块（外链保留） -->
+  <nav class="ai-nav-links" aria-label=" 链接区块">
+    <a href="https://openaa.com/market/number/">美国手机靓号</a>
+    <a href="https://www.168worker.com/"> 招 聘 </a>
+    <a href="https://openaa.com/nav/dmv">DMV美国各州</a>
+    <a href="https://joeabc.com/">跟Joe学英语</a>
+    <a href="https://openaa.com/market/">精品域名</a>
+    <a href="https://openaa.com/nav/mi">📑</a>
+    <button 
+      id="copy69nav" 
+      title="点击复制此链接" 
+      style="background-color:#007bff; color:#fff; border:none; border-radius:20px; padding:8px 16px; cursor:pointer;">
+      🔞69nav.com
+    </button>
+  </nav>
 
-<script>
-  /* 搜索表单（保持原有 action 指向 Google） */
-</script>
+  <div id="copyToast" 
+       style="visibility:hidden; min-width:120px; background:#333; color:#fff; text-align:center; border-radius:8px; padding:8px; position:fixed; z-index:1; bottom:30px; left:50%; transform:translateX(-50%);">
+    已复制
+  </div>
 
   <div class="search">
     <form action="https://www.google.com/search" method="get" target="_blank" autocomplete="off" role="search" aria-label="谷歌搜索">
@@ -417,11 +413,10 @@
   <footer class="footer">
     © 2025 <a href="https://openaa.com/about/" target="_blank" rel="noopener noreferrer">OpenAA.com</a> 保留所有权利 | 联系邮箱：<a href="mailto:323748@gmail.com">323748@gmail.com</a>
     <br/>
-    <span>OpenAA · 美国华人生活入口 · 华人导航 · 168招聘 · 168二手 · 美国华人资讯 · 华人AI工具 · 华人网址大全</span>
+    <span>OpenAA · 美国华人生活入口 ·   人导航 · 168招聘 · 168二手 · 美国华人资讯 · 华人AI工具 · 华人网址大全</span>
   </footer>
 
-  <script src="/assets/js/main.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
-
 
