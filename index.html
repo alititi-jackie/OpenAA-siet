@@ -19,32 +19,22 @@
   <!-- Open Graph & Twitter -->
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:title" content="OpenAA · 美国华人生活入口" />
-  <meta property="og:description" content="OpenAA 为在美华人提供一站式中文导航：DMV、移民、找工作、二手、银行与地区资讯，覆盖纽约、洛杉矶等城市。" />
-  <meta property="og:image" content="/assets/images/logo.png" />
+  <meta property="og:description" content="OpenAA 为在美华人提供一站式中文导航与实用服务：DMV、移民、找工作、二手、银行与地区资讯，覆盖纽约、洛杉矶等城市。" />
+  <meta property="og:image" content="https://openaa.com/assets/images/logo.png" />
   <meta property="og:url" content="https://openaa.com/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="OpenAA · 美国华人生活入口">
   <meta name="twitter:description" content="在美华人一站式中文导航：DMV、移民、找工作、二手、银行与生活服务。">
-  <meta name="twitter:image" content="/assets/images/logo.png">
+  <meta name="twitter:image" content="https://openaa.com/assets/images/logo.png">
 
-<<<<<<< HEAD
-  <!-- Favicons (统一指向 /favicon/ 目录 & 根 favicon.ico) -->
+  <!-- Favicons (按你给定的目录结构) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
   <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-=======
-  <!-- Favicons (统一指向 favicon/ 目录，使用相对路径以兼容仓库子路径/Pages 部署) -->
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
-  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
->>>>>>> ba31718692738abcec6be1dc4d7768787c023548
   <meta name="msapplication-TileColor" content="#2b5797">
 
   <!-- Structured Data: Organization + WebSite + SearchAction -->
@@ -57,7 +47,7 @@
         "@id": "https://openaa.com/#organization",
         "name": "OpenAA",
         "url": "https://openaa.com/",
-        "logo": "/assets/images/logo.png",
+        "logo": "https://openaa.com/logo.png",
         "contactPoint": [
           {
             "@type": "ContactPoint",
@@ -83,32 +73,219 @@
   }
   </script>
 
-  <!-- CSS (相对路径) -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #eef2f3;
+      padding: 20px 10px 20px 10px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+    }
+    .site-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .site-logo img {
+      width: 200px;
+      max-width: 25vw;
+      height: auto;
+      margin-bottom: 8px;
+    }
+    .main-title {
+      font-size: 2.1rem;
+      font-weight: bold;
+      margin: 0 0 5px 0;
+      color: #183a60;
+      letter-spacing: 1px;
+    }
+    .subtitle {
+      font-size: 1.07rem;
+      color: #3e3e3e;
+      margin-bottom: 10px;
+      letter-spacing: .5px;
+    }
+    .top-actions {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 10;
+    }
+    .top-actions button {
+      padding: 8px 14px;
+      font-size: 14px;
+      background-color: #0078d4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .top-actions button:hover {
+      background-color: #005fa3;
+    }
+    /* AI平台直达导航样式 */
+    .ai-nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2em;
+      margin: 18px auto 0 auto;
+      max-width: 95vw;
+      flex-wrap: wrap;
+    }
+    .ai-nav-links a {
+      color: #fff;
+      background: #0078d4;
+      padding: 7px 18px;
+      border-radius: 22px;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(0,120,212,0.06);
+      margin-bottom: 4px;
+    }
+    .ai-nav-links a:hover {
+      background: #005fa3;
+      color: #fff;
+    }
+    .search {
+      display: flex;
+      justify-content: center;
+      margin: 20px auto;
+      max-width: 95vw;
+    }
+    .search form {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+    }
+    .search input[type="text"] {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 25px;
+      outline: none;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+      transition: border 0.2s;
+    }
+    .search input[type="text"]:focus {
+      border-color: #0078d4;
+    }
+    .nav, .categories, .card, .bookmark, .recommend, .section, .section1, .section2, .section3 {
+      background: #fff;
+      margin: 10px auto;
+      padding: 10px;
+      max-width: 95vw;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s;
+    }
+    .recommend a, .section a, .section1 a, .section2 a, .section3 a {
+      display: inline-block;
+      margin: 5px 10px;
+      font-size: 14px;
+      padding: 3px 7px;
+      border-radius: 5px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .recommend a:hover, .section a:hover, .section1 a:hover, .section2 a:hover, .section3 a:hover {
+      background: #0078d41a;
+      color: #0078d4;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: #888;
+      background-color: #eef2f3;
+      margin-top: 40px;
+    }
+    .footer a { color: #1670b8; }
+    .back-to-top {
+      display: none;
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      padding: 10px 15px;
+      font-size: 14px;
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 999;
+      transition: background 0.3s, opacity 0.25s;
+      opacity: 0.85;
+    }
+    .back-to-top:hover {
+      background-color: #005fa3;
+      opacity: 1;
+    }
+    @media (max-width: 600px) {
+      .main-title { font-size: 1.1rem; }
+      .site-logo img { width: 70px; }
+      .ai-nav-links a { font-size: 13px; padding: 6px 12px; }
+      .ai-nav-links { gap: 0.5em; }
+      .recommend a, .section a { font-size: 12px; margin: 4px 6px; }
+      .section, .section1, .section2, .section3, .recommend { padding: 8px; }
+      .search { margin: 10px auto; }
+      .footer { font-size: 11px; }
+    }
+    /* 动画折叠内容 */
+    .toggle-content {
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(.4,0,.2,1);
+      max-height: 0;
+    }
+    .toggle-content.open {
+      max-height: 900px;
+      transition: max-height 0.5s cubic-bezier(.4,0,.2,1);
+    }
+    .toggle-header {
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      padding: 6px 0;
+      color: #0078d4;
+      margin-bottom: 2px;
+    }
+  </style>
+  
 </head>
 <body>
   <header>
     <div class="site-logo">
-<<<<<<< HEAD
-      <img src="/assets/images/logo.png" alt="OpenAA · 美国华人生活入口 openaa.com logo" width="120" height="120" loading="lazy" />
-=======
-      <img src="assets/images/logo.png" alt="OpenAA · 美国华人生活入口 openaa.com logo" width="120" height="120" loading="lazy" />
->>>>>>> ba31718692738abcec6be1dc4d7768787c023548
+      <img src="https://openaa.com/assets/images/logo.png" alt="OpenAA · 美国华人生活入口 openaa.com logo" width="120" height="120" loading="lazy" />
       <div class="main-title">OpenAA · 美国华人生活入口</div>
       <div class="subtitle">OpenAA · 为美国华人提供导航、资讯、服务的一站式平台 </div>
     </div>
     <div class="top-actions">
-      <button id="bookmarkBtn" aria-label="收藏本站">📌 收藏本站</button>
+      <button onclick="addBookmark()" aria-label="收藏本站">📌 收藏本站</button>
     </div>
   </header>
 
   <section class="nav" style="text-align:center; padding: 10px; font-size:15px; line-height:1.7;">
     <p><strong>OpenAA · 美国华人生活入口</strong>，<strong>华人OpenAA</strong> 为 <strong>美国华人</strong> 打造的一站式 <strong>导航、在美华人资讯、服务平台</strong>，覆盖 DMV、移民、找工作、二手市场、银行和地区生活信息（纽约/洛杉矶/旧金山 等）。</p>
   </section>
-<<<<<<< HEAD
   <!-- 直达链接区块 -->
 <nav class="ai-nav-links" aria-label="直达链接区块">
-  <a href="https://openaa.com/market/number">美国手机靓号</a>
+  <a href="https://openaa.com/market/number/">美国手机靓号</a>
   <a href="https://www.168worker.com/"> 招 聘 </a>
   <a href="https://openaa.com/nav/dmv">DMV美国各州</a>
   <a href="https://joeabc.com/">跟Joe学英语</a>
@@ -122,29 +299,42 @@
   </button>
   
 </nav>
-=======
->>>>>>> ba31718692738abcec6be1dc4d7768787c023548
 
-  <!-- 链接区块（外链保留） -->
-  <nav class="ai-nav-links" aria-label=" 链接区块">
-    <a href="https://openaa.com/market/number/">美国手机靓号</a>
-    <a href="https://www.168worker.com/"> 招 聘 </a>
-    <a href="https://openaa.com/nav/dmv">DMV美国各州</a>
-    <a href="https://joeabc.com/">跟Joe学英语</a>
-    <a href="https://openaa.com/market/">精品域名</a>
-    <a href="https://openaa.com/nav/mi">📑</a>
-    <button 
-      id="copy69nav" 
-      title="点击复制此链接" 
-      style="background-color:#007bff; color:#fff; border:none; border-radius:20px; padding:8px 16px; cursor:pointer;">
-      🔞69nav.com
-    </button>
-  </nav>
+<!-- 复制提示 -->
+<div id="copyToast" 
+     style="visibility:hidden; min-width:120px; background:#333; color:#fff; text-align:center; border-radius:8px; padding:8px; position:fixed; z-index:1; bottom:30px; left:50%; transform:translateX(-50%);">
+  已复制
+</div>
 
-  <div id="copyToast" 
-       style="visibility:hidden; min-width:120px; background:#333; color:#fff; text-align:center; border-radius:8px; padding:8px; position:fixed; z-index:1; bottom:30px; left:50%; transform:translateX(-50%);">
-    已复制
-  </div>
+<script>
+  // 复制链接功能（兼容性处理）
+  (function () {
+    const btn = document.getElementById("copy69nav");
+    const toast = document.getElementById("copyToast");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        const link = "https://69nav.com/";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(link).then(() => {
+            toast.style.visibility = "visible";
+            setTimeout(() => { toast.style.visibility = "hidden"; }, 1500);
+          }).catch(err => {
+            console.error("复制失败：", err);
+            alert("复制失败，请手动复制：" + link);
+          });
+        } else {
+          // fallback
+          const ta = document.createElement('textarea');
+          ta.value = link;
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); alert('已复制'); } catch (e) { alert('请手动复制：' + link); }
+          document.body.removeChild(ta);
+        }
+      });
+    }
+  })();
+</script>
 
   <div class="search">
     <form action="https://www.google.com/search" method="get" target="_blank" autocomplete="off" role="search" aria-label="谷歌搜索">
@@ -361,7 +551,7 @@
 
   <!-- 🎮 游戏 -->
 <nav class="section1" aria-label="🎮 游戏">
-  <div><strong>🎮    戏：</strong>
+  <div><strong>🎮 游戏：</strong>
       <a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer">Steam</a>
       <a href="https://www.roblox.com/" target="_blank" rel="noopener noreferrer">Roblox</a>
       <a href="https://www.epicgames.com/store/" target="_blank" rel="noopener noreferrer">Epic Games</a>
@@ -446,14 +636,36 @@
   <footer class="footer">
     © 2025 <a href="https://openaa.com/about/" target="_blank" rel="noopener noreferrer">OpenAA.com</a> 保留所有权利 | 联系邮箱：<a href="mailto:323748@gmail.com">323748@gmail.com</a>
     <br/>
-    <span>OpenAA · 美国华人生活入口 ·   人导航 · 168招聘 · 168二手 · 美国华人资讯 · 华人AI工具 · 华人网址大全</span>
+    <span>OpenAA · 美国华人生活入口 · 华人导航 · 168招聘 · 168二手 · 美国华人资讯 · 华人AI工具 · 华人网址大全</span>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
+  <script>
+    // 收藏
+    function addBookmark() {
+      alert('请使用 Ctrl+D (或 Cmd+D) 收藏本网站，或在浏览器菜单中选择“添加书签”');
+    }
+
+    // 回到顶部
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // 显示回到顶部按钮
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('backToTopBtn');
+      if (!btn) return;
+      if (window.scrollY > 200) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
+
+    // 折叠区动画
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        const expanded = section.classList.toggle('open');
+        section.setAttribute('aria-expanded', expanded);
+  </script>
 </body>
 </html>
-
-<<<<<<< HEAD
-
-=======
->>>>>>> ba31718692738abcec6be1dc4d7768787c023548
