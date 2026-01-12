@@ -5,40 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0078d4">
 
+  <!-- ======【模板配置区：只改这里】====== -->
   <script>
     const DOMAIN_NAME = "BOBAUP.COM";
+    const DOMAIN_DESC_CN = "精品奶茶 / 饮品品牌域名，短小好记，适合连锁、外卖与电商场景。";
+    const DOMAIN_DESC_EN = "Premium domain for bubble tea & beverage brands — short, memorable and ideal for chains, delivery and e‑commerce.";
     const ALIYUN_LINK = "https://mi.aliyun.com/domain-detail?domain=bobaup.com&scm=true";
     const GODADDY_LINK = "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=BOBAUP.COM";
     const RETURN_URL = "https://openaa.com";
     const COUNTDOWN_SECONDS = 10;
   </script>
+  <!-- ======【配置区结束】====== -->
 
   <title>BOBAUP.COM｜精品奶茶 / 饮品品牌域名出售 — OpenAA</title>
+  <meta name="description" content="BOBAUP.COM — 精品奶茶/饮品品牌域名，短小好记，适合线下连锁、外卖与电商品牌。由 OpenAA 精选推荐，欢迎洽谈购买。" />
+  <meta name="keywords" content="bobaup, 奶茶域名, 域名出售, 品牌域名, OpenAA" />
+  <meta name="robots" content="index, follow" />
 
   <!-- Canonical / hreflang -->
   <link rel="canonical" href="https://openaa.com/market/domain/bobaup.html" />
   <link rel="alternate" hreflang="zh-CN" href="https://openaa.com/market/domain/bobaup.html" />
   <link rel="alternate" hreflang="en-US" href="https://openaa.com/en/market/domain/bobaup.html" />
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "BOBAUP.COM",
-    "description": "BOBAUP.COM — 精品奶茶/饮品品牌域名，短小好记，适合连锁、外卖与电商品牌。由 OpenAA 精选推荐，欢迎洽谈购买。",
-    "brand": {
-      "@type": "Organization",
-      "name": "OpenAA",
-      "url": "https://openaa.com"
-    },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://openaa.com/market/domain/bobaup.html",
-      "availability": "https://schema.org/InStock"
-    }
-  }
-  </script>
+  <!-- Open Graph -->
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="BOBAUP.COM｜精品奶茶 / 饮品品牌域名出售" />
+  <meta property="og:description" content="BOBAUP.COM — 短小好记的奶   /饮品品牌域名，适合连锁与外卖品牌。由 OpenAA 推荐，欢迎洽谈购买。" />
+  <meta property="og:image" content="https://openaa.com/logo.png" />
+  <meta property="og:url" content="https://openaa.com/market/domain/bobaup.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BOBAUP.COM｜精品奶茶 / 饮品品牌域名出售" />
+  <meta name="twitter:description" content="BOBAUP.COM — 短小好记的奶茶/饮品品牌域名，适合连锁与外卖品牌。由 OpenAA 推荐。" />
+  <meta name="twitter:image" content="https://openaa.com/logo.png" />
 
   <!-- Favicons (统一指向 /favicon/) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -63,7 +64,7 @@
     },
     "offers": {
       "@type": "Offer",
-      "url": "https://openaa.com/sell/bobaup.html",
+      "url": "https://openaa.com/market/domain/bobaup.html",
       "availability": "https://schema.org/InStock"
     }
   }
@@ -109,11 +110,9 @@
     .highlight{
       background:#f1f6fb;border-left:4px solid var(--primary);padding:12px;border-radius:8px;margin-bottom:16px;
     }
-    .highlight p{margin:6px 0}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}
     .btn{display:inline-block;padding:12px 18px;border-radius:8px;text-decoration:none;color:#fff;background:var(--primary);font-weight:600}
     .btn.secondary{background:#6c8aa3}
-    .btn:hover{opacity:0.95}
     .contact{margin-top:14px;color:var(--muted)}
     .countdown{margin-top:12px;color:#666;font-size:13px}
     footer{padding:18px;text-align:center;color:var(--muted);margin-top:18px}
@@ -129,10 +128,10 @@
       let seconds = (typeof COUNTDOWN_SECONDS === 'number') ? COUNTDOWN_SECONDS : 10;
       const cnEl = document.getElementById('countdown-cn');
       const enEl = document.getElementById('countdown-en');
-      function tick(){
-        if(cnEl) cnEl.textContent = seconds;
-        if(enEl) enEl.textContent = seconds;
-        if(seconds <= 0) { window.location.href = RETURN_URL; }
+      function tick() {
+        if (cnEl) cnEl.textContent = seconds;
+        if (enEl) enEl.textContent = seconds;
+        if (seconds <= 0) { window.location.href = RETURN_URL; }
         seconds--;
       }
       tick();
