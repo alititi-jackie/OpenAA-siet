@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://openaa.com/</loc>
+  <lastmod>2026-01-12T02:02:40+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://openaa.com/market/number/</loc>
+  <lastmod>2026-01-12T02:02:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://openaa.com/nav/dmv</loc>
+  <lastmod>2026-01-12T02:02:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://openaa.com/market/domain/</loc>
+  <lastmod>2026-01-12T02:02:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://openaa.com/nav/mi</loc>
+  <lastmod>2026-01-12T02:02:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://openaa.com/about/</loc>
+  <lastmod>2026-01-12T02:02:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://openaa.com/news/index.html</loc>
+  <lastmod>2026-01-12T02:02:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://openaa.com/news/progress.html</loc>
+  <lastmod>2026-01-12T02:02:40+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://openaa.com/news/</loc>
+  <lastmod>2026-01-12T02:02:40+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>
