@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jozl · Zealous Life</title>
+<meta name="description" content="Jozl - Build, Explore, Connect.">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+
+body {
+  background: radial-gradient(circle at top, #1e293b, #020617);
+  color: #fff;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.3);
+}
+
+.nav h1 {
+  font-size: 20px;
+}
+
+.nav a {
+  color: #ccc;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 72px;
+  background: linear-gradient(90deg,#38bdf8,#6366f1);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero h2 {
+  margin-top: 15px;
+  font-size: 24px;
+}
+
+.hero p {
+  margin-top: 15px;
+  opacity: 0.8;
+}
+
+.hero-btn {
+  margin-top: 30px;
+}
+
+.hero-btn a {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #0ea5e9;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.hero-btn a:hover {
+  background: #0284c7;
+}
+
+/* SECTION */
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.section h3 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #38bdf8;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.card h4 {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 10px 0;
+  opacity: 0.8;
+}
+
+.card a {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #0ea5e9;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* ABOUT */
+.about {
+  background: rgba(255,255,255,0.04);
+  padding: 30px;
+  border-radius: 20px;
+  line-height: 1.8;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width:768px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <h1>Jozl</h1>
+  <div>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Jozl.com</h1>
+  <h2>加入我们的热情人生（Join Our Zealous Life）</h2>
+  <p>热爱域名、建站、分享实用工具与生活。欢迎探索我的小生态。</p>
+
+  <div class="hero-btn">
+    <a href="#projects">查看项目</a>
+    <a href="mailto:323748@gmail.com">联系我</a>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <h3>项目生态</h3>
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x220">
+      <h4>OpenAA.com</h4>
+      <p>美国华人综合导航门户</p>
+      <a href="https://openaa.com" target="_blank">访问站点</a>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x220">
+      <h4>joeABC.com</h4>
+      <p>英语学习 · 跟 Joe 学 ABC</p>
+      <a href="https://joeabc.com" target="_blank">访问站点</a>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x220">
+      <h4>LuckyNumberUSA.com</h4>
+      <p>美国手机靓号交易</p>
+      <a href="https://luckynumberusa.com" target="_blank">访问站点</a>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x220">
+      <h4>OneGoBuy.com</h4>
+      <p>一站式购物平台</p>
+      <a href="https://onegobuy.com" target="_blank">访问站点</a>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x220">
+      <h4>69nav.com</h4>
+      <p>成人资源导航</p>
+      <a href="https://69nav.com" target="_blank">访问站点</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <h3>关于我</h3>
+  <div class="about">
+    我专注于构建属于自己的互联网生态系统。
+
+    从域名投资，到导航网站，再到工具平台，每一个项目都是一次尝试与积累。
+    我相信，小而精的项目，通过连接，可以形成更大的价值。
+
+    我正在做的事情：
+    • 域名布局与品牌构建  
+    • 导航站与流量入口  
+    • 工具与内容整合  
+    • 持续打造个人互联网资产  
+
+    Jozl 不只是一个网站，而是一个不断扩展的数字网络。
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <h3>联系我</h3>
+  <div class="about">
+    Email：323748@gmail.com <br><br>
+    欢迎合作 / 交流 / 资源对接
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 Jozl.com · Zealous Life
+</div>
+
+</body>
+</html>
