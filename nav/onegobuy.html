@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OneGoBuy - One Stop Shopping Platform | 一站式购物导航</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="OneGoBuy 一站式购物导航平台，美国中国电商、服装、美妆、数码、家居全覆盖，支持AI智能推荐。">
+<meta name="keywords" content="OneGoBuy, 购物, 美国电商, 中国电商, AI推荐, 亚马逊, 淘宝, 京东, Shein, Nike, Sephora">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / 社交分享 -->
+<meta property="og:title" content="OneGoBuy - One Stop Shopping Platform | 一站式购物导航" />
+<meta property="og:description" content="跨境购物导航，美国中国电商全覆盖，AI智能推荐。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://OneGoBuy.com" />
+<meta property="og:image" content="/favicon/apple-touch-icon.png" />
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<meta name="msapplication-TileColor" content="#2b5797">
+
+<style>
+body { margin:0; font-family: Arial, sans-serif; background: linear-gradient(135deg,#0f172a,#020617); color:white;}
+nav { padding: 20px 40px; font-size:22px; color:#22c55e; font-weight:bold; display:flex; justify-content:space-between; align-items:center;}
+.hero { text-align:center; padding:60px 20px;}
+input { padding:12px; width:60%; border-radius:10px; border:none;}
+button { padding:12px 20px; border:none; background:#22c55e; color:white; border-radius:10px; cursor:pointer;}
+.section { padding:40px;}
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:20px;}
+.card { padding:20px; background: rgba(255,255,255,0.05); border-radius:12px; text-align:center;}
+.card a { color:white; text-decoration:none; }
+.result { margin-top:20px; color:#22c55e;}
+.return-home { padding:8px 15px; border-radius:8px; background:#64748b; color:white; text-decoration:none; font-size:14px; margin-left:10px;}
+.return-home:hover { background:#475569; }
+h2 { margin-bottom:20px; }
+.footer { background: rgba(255,255,255,0.05); text-align:center; padding:30px 20px; font-size:14px; color:#cbd5e1; }
+</style>
+</head>
+
+<body>
+
+<!-- 顶部导航 -->
+<nav>
+  <div>OneGoBuy.com</div>
+  <div>
+    <a class="return-home" href="https://OpenAA.com" target="_blank">返回 OpenAA 首页</a>
+  </div>
+</nav>
+
+<!-- Hero / AI推荐 -->
+<div class="hero">
+  <h1>AI Shopping Assistant</h1>
+  <p>输入你想买的东西 / What do you want to buy?</p>
+
+  <input id="searchInput" placeholder="e.g. iPhone / shoes / 化妆品">
+  <button onclick="recommend()">Recommend</button>
+
+  <div class="result" id="result"></div>
+</div>
+
+<!-- 美国电商 -->
+<div class="section">
+<h2>🛒 US Shopping / 美国电商</h2>
+<div class="grid">
+<div class="card"><a href="https://www.amazon.com" target="_blank">Amazon / 亚马逊</a></div>
+<div class="card"><a href="https://www.walmart.com" target="_blank">Walmart / 沃尔玛</a></div>
+<div class="card"><a href="https://www.target.com" target="_blank">Target / 塔吉特</a></div>
+<div class="card"><a href="https://www.costco.com" target="_blank">Costco / 好市多</a></div>
+<div class="card"><a href="https://www.samsclub.com" target="_blank">Sam's Club / 山姆会员店</a></div>
+<div class="card"><a href="https://www.sayweee.com" target="_blank">Weee / 华人买菜</a></div>
+<div class="card"><a href="https://www.ebay.com" target="_blank">eBay / 易趣</a></div>
+<div class="card"><a href="https://www.aliexpress.com" target="_blank">AliExpress / 全球速卖通</a></div>
+<div class="card"><a href="https://www.bestbuy.com" target="_blank">Best Buy / 百思买</a></div>
+<div class="card"><a href="https://www.overstock.com" target="_blank">Overstock / 家居折扣</a></div>
+<div class="card"><a href="https://www.newegg.com" target="_blank">Newegg / 新蛋</a></div>
+</div>
+</div>
+
+<!-- 中国电商 -->
+<div class="section">
+<h2>🇨🇳 China Shopping / 中国电商</h2>
+<div class="grid">
+<div class="card"><a href="https://www.taobao.com" target="_blank">Taobao / 淘宝</a></div>
+<div class="card"><a href="https://www.tmall.com" target="_blank">Tmall / 天猫</a></div>
+<div class="card"><a href="https://www.jd.com" target="_blank">JD / 京东</a></div>
+<div class="card"><a href="https://www.pinduoduo.com" target="_blank">Pinduoduo / 拼多多</a></div>
+<div class="card"><a href="https://www.1688.com" target="_blank">1688 / 批发平台</a></div>
+<div class="card"><a href="https://www.suning.com" target="_blank">Suning / 苏宁</a></div>
+<div class="card"><a href="https://www.vip.com" target="_blank">Vipshop / 唯品会</a></div>
+<div class="card"><a href="https://www.xiaohongshu.com" target="_blank">Xiaohongshu / 小红书</a></div>
+</div>
+</div>
+
+<!-- 服装 -->
+<div class="section">
+<h2>👕 Fashion / 服装</h2>
+<div class="grid">
+<div class="card"><a href="https://us.shein.com" target="_blank">Shein / 快时尚</a></div>
+<div class="card"><a href="https://www.nike.com" target="_blank">Nike / 运动</a></div>
+<div class="card"><a href="https://www.zara.com" target="_blank">Zara / 时尚</a></div>
+<div class="card"><a href="https://www.hm.com" target="_blank">H&M / 服饰</a></div>
+</div>
+</div>
+
+<!-- 美妆 -->
+<div class="section">
+<h2>💄 Beauty / 美妆</h2>
+<div class="grid">
+<div class="card"><a href="https://www.sephora.com" target="_blank">Sephora / 丝芙兰</a></div>
+<div class="card"><a href="https://www.ulta.com" target="_blank">Ulta / 美妆</a></div>
+<div class="card"><a href="https://www.xiaohongshu.com" target="_blank">Xiaohongshu / 小红书</a></div>
+</div>
+</div>
+
+<!-- 数码 -->
+<div class="section">
+<h2>📱 Electronics / 数码电器</h2>
+<div class="grid">
+<div class="card"><a href="https://www.apple.com" target="_blank">Apple / 苹果</a></div>
+<div class="card"><a href="https://www.bestbuy.com" target="_blank">Best Buy / 百思买</a></div>
+<div class="card"><a href="https://www.newegg.com" target="_blank">Newegg / 新蛋</a></div>
+<div class="card"><a href="https://www.samsung.com" target="_blank">Samsung / 三星</a></div>
+</div>
+</div>
+
+<!-- 家居 -->
+<div class="section">
+<h2>🏠 Home & Living / 家居生活</h2>
+<div class="grid">
+<div class="card"><a href="https://www.overstock.com" target="_blank">Overstock / 家居折扣</a></div>
+<div class="card"><a href="https://www.ikea.com" target="_blank">IKEA / 宜家</a></div>
+<div class="card"><a href="https://www.wayfair.com" target="_blank">Wayfair / 家具</a></div>
+</div>
+</div>
+
+<!-- 底部介绍 -->
+<div class="footer">
+  <p>OneGoBuy - Your one-stop shopping platform / 一站式购物导航平台</p>
+  <p>US & China Shopping, Fashion, Beauty, Electronics, Home & Living / 美国中国电商、服装、美妆、数码、家居全覆盖</p>
+  <p>AI Smart Recommendation / AI智能推荐 · Easy & Fast · Cross-border shopping / 简单快速 · 跨境购物入口</p>
+  <p>Find deals, brands & popular stores / 精选优惠、品牌店铺、热门购物平台</p>
+  <p>&copy; 2026 OneGoBuy. All rights reserved. / 版权所有</p>
+</div>
+
+<script>
+function recommend(){
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let result = document.getElementById("result");
+
+  if(input.includes("iphone") || input.includes("手机")){
+    result.innerHTML = "👉 推荐：<a href='https://www.apple.com' target='_blank'>Apple</a> / <a href='https://www.jd.com' target='_blank'>京东</a>";
+  }
+  else if(input.includes("鞋") || input.includes("shoe")){
+    result.innerHTML = "👉 推荐：<a href='https://www.nike.com' target='_blank'>Nike</a> / <a href='https://us.shein.com' target='_blank'>Shein</a>";
+  }
+  else if(input.includes("化妆") || input.includes("makeup")){
+    result.innerHTML = "👉 推荐：<a href='https://www.sephora.com' target='_blank'>Sephora</a> / <a href='https://www.xiaohongshu.com' target='_blank'>小红书</a>";
+  }
+  else if(input.includes("家居") || input.includes("furniture")){
+    result.innerHTML = "👉 推荐：<a href='https://www.ikea.com' target='_blank'>IKEA</a> / <a href='https://www.overstock.com' target='_blank'>Overstock</a>";
+  }
+  else{
+    result.innerHTML = "👉 推荐：<a href='https://www.amazon.com' target='_blank'>Amazon</a> / <a href='https://www.taobao.com' target='_blank'>淘宝</a>";
+  }
+}
+</script>
+
+</body>
+</html>
