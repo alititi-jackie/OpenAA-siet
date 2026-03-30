@@ -1,184 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Amani.love - 音乐空间">
+<meta name="theme-color" content="#000000">
 
 <title>Amani.love</title>
 
 <style>
 
-body{
-margin:0;
-background:black;
-overflow:hidden;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
-color:white;
+* {
+  box-sizing: border-box;
 }
 
-/* 星空 */
-
-.stars{
-position:fixed;
-width:100%;
-height:100%;
-background:url("https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/star.png");
-animation:starsMove 120s linear infinite;
-opacity:0.4;
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: white;
+  width: 100%;
+  height: 100vh;
 }
 
-@keyframes starsMove{
-from{background-position:0 0;}
-to{background-position:10000px 5000px;}
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/* 星空背景 */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='1' fill='white' opacity='0.8'/%3E%3Ccircle cx='30' cy='20' r='0.5' fill='white' opacity='0.6'/%3E%3Ccircle cx='50' cy='30' r='0.8' fill='white' opacity='0.7'/%3E%3Ccircle cx='70' cy='15' r='1' fill='white' opacity='0.9'/%3E%3Ccircle cx='90' cy='40' r='0.6' fill='white' opacity='0.5'/%3E%3Ccircle cx='20' cy='60' r='0.9' fill='white' opacity='0.8'/%3E%3Ccircle cx='40' cy='70' r='1' fill='white' opacity='0.7'/%3E%3Ccircle cx='60' cy='50' r='0.7' fill='white' opacity='0.6'/%3E%3Ccircle cx='80' cy='80' r='0.8' fill='white' opacity='0.8'/%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  animation: starsMove 120s linear infinite;
+  opacity: 0.4;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes starsMove {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
 }
 
 /* 能量光圈 */
-
-.ring{
-position:absolute;
-top:50%;
-left:50%;
-width:350px;
-height:350px;
-border-radius:50%;
-transform:translate(-50%,-50%);
-border:2px solid rgba(0,180,255,0.9);
-
-box-shadow:
-0 0 20px rgba(0,180,255,0.9),
-0 0 60px rgba(0,180,255,0.6),
-0 0 140px rgba(0,180,255,0.4);
-
-animation:spin 8s linear infinite;
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(0, 180, 255, 0.9);
+  box-shadow: 
+    0 0 20px rgba(0, 180, 255, 0.9),
+    0 0 60px rgba(0, 180, 255, 0.6),
+    0 0 140px rgba(0, 180, 255, 0.4);
+  animation: spin 8s linear infinite;
+  z-index: 2;
 }
 
-@keyframes spin{
-0%{transform:translate(-50%,-50%) rotate(0deg);}
-100%{transform:translate(-50%,-50%) rotate(360deg);}
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* 标题 */
-
-.title{
-
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:60px;
-letter-spacing:8px;
-
-background:linear-gradient(90deg,#fff,#9be7ff,#fff);
--webkit-background-clip:text;
-color:transparent;
-
-text-shadow:
-0 0 10px rgba(255,255,255,0.8),
-0 0 30px rgba(0,180,255,0.8),
-0 0 60px rgba(0,180,255,0.8);
-
-opacity:0;
-animation:fadein 4s forwards;
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  background: linear-gradient(90deg, #fff, #9be7ff, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  animation: fadein 4s forwards;
+  z-index: 3;
+  white-space: nowrap;
 }
 
-@keyframes fadein{
-
-0%{opacity:0; transform:translate(-50%,-40%);}
-100%{opacity:1; transform:translate(-50%,-50%);}
-
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
-/* 视频 */
+/* 视频容器 */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 5;
+}
 
-#video{
-
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-border:none;
-display:none;
-
+#video {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* 顶部导航栏 */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 10;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
 
-.nav-bar{
-position:fixed;
-top:0;
-left:0;
-right:0;
-height:60px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 30px;
-z-index:1000;
-background:linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0));
+.nav-bar.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Logo */
-
-.logo{
-font-size:24px;
-font-weight:bold;
-letter-spacing:4px;
-background:linear-gradient(90deg,#fff,#9be7ff,#fff);
--webkit-background-clip:text;
-color:transparent;
-cursor:pointer;
-transition:opacity 0.3s;
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, #fff, #9be7ff, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  white-space: nowrap;
 }
 
-.logo:hover{
-opacity:0.7;
+.logo:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.logo:active {
+  transform: scale(0.95);
 }
 
 /* 返回按钮 */
-
-.back-btn{
-padding:10px 20px;
-background:rgba(0,180,255,0.2);
-border:1px solid rgba(0,180,255,0.8);
-color:#9be7ff;
-border-radius:5px;
-cursor:pointer;
-font-size:14px;
-transition:all 0.3s;
-text-decoration:none;
+.back-btn {
+  padding: 10px 20px;
+  background: rgba(0, 180, 255, 0.15);
+  border: 1.5px solid rgba(0, 180, 255, 0.8);
+  color: #9be7ff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
 }
 
-.back-btn:hover{
-background:rgba(0,180,255,0.4);
-box-shadow:0 0 15px rgba(0,180,255,0.6);
+.back-btn:hover {
+  background: rgba(0, 180, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 180, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.back-btn:active {
+  transform: translateY(0);
 }
 
 /* 底部版权信息 */
-
-.footer{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-height:50px;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.7));
-font-size:12px;
-color:rgba(255,255,255,0.6);
-z-index:1000;
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 
-.footer a{
-color:rgba(0,180,255,0.8);
-text-decoration:none;
-transition:color 0.3s;
+.footer.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
-.footer a:hover{
-color:#9be7ff;
+.footer a {
+  color: rgba(0, 180, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin: 0 4px;
+}
+
+.footer a:hover {
+  color: #9be7ff;
+  text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .title {
+    font-size: 40px;
+    letter-spacing: 5px;
+  }
+
+  .ring {
+    width: 250px;
+    height: 250px;
+  }
+
+  .nav-bar {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  .back-btn {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+
+  .footer {
+    height: 50px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+    letter-spacing: 3px;
+  }
+
+  .ring {
+    width: 180px;
+    height: 180px;
+  }
+
+  .logo {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .back-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
 }
 
 </style>
@@ -187,15 +289,24 @@ color:#9be7ff;
 <body>
 
 <div class="stars"></div>
-
 <div class="ring"></div>
-
 <div class="title">Amani.love</div>
 
 <!-- 顶部导航栏 -->
 <div class="nav-bar">
-  <div class="logo" onclick="location.reload()">Amani.love</div>
-  <a href="https://openaa.com" class="back-btn">返回 OpenAA 首页</a>
+  <div class="logo" onclick="location.reload()" title="点击刷新页面">Amani.love</div>
+  <a href="https://openaa.com" class="back-btn" target="_blank" rel="noopener noreferrer">返回 OpenAA 首页</a>
+</div>
+
+<!-- 视频容器 -->
+<div class="video-container">
+  <iframe
+    id="video"
+    src="https://www.youtube.com/embed/9UZhX3K0o0Q?autoplay=1&controls=1&rel=0&fs=1&modestbranding=1"
+    allow="autoplay; encrypted-media; fullscreen"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
 </div>
 
 <!-- 底部版权信息 -->
@@ -203,23 +314,66 @@ color:#9be7ff;
   © 2025 OpenAA.com 保留所有权利 | 联系邮箱：<a href="mailto:323748@gmail.com">323748@gmail.com</a>
 </div>
 
-<iframe
-id="video"
-src="https://www.youtube.com/watch?v=9UZhX3K0o0Q&list=RD9UZhX3K0o0Q&start_radio=1"
-allow="autoplay; encrypted-media"
-allowfullscreen>
-</iframe>
-
 <script>
 
-setTimeout(function(){
+// 定时器变量
+let hideTimer;
 
-document.querySelector(".ring").style.display="none";
-document.querySelector(".title").style.display="none";
+// 页面加载完成后的处理
+document.addEventListener('DOMContentLoaded', function() {
+  // 6秒后显示视频并隐藏动画
+  hideTimer = setTimeout(function() {
+    document.querySelector('.ring').style.display = 'none';
+    document.querySelector('.title').style.display = 'none';
+    document.querySelector('.video-container').style.display = 'block';
+    
+    // 隐藏导航栏和底部
+    document.querySelector('.nav-bar').classList.add('hidden');
+    document.querySelector('.footer').classList.add('hidden');
+  }, 6000);
+});
 
-document.getElementById("video").style.display="block";
+// 全屏检测 - 显示/隐藏控制栏
+document.addEventListener('fullscreenchange', function() {
+  const navBar = document.querySelector('.nav-bar');
+  const footer = document.querySelector('.footer');
+  
+  if (document.fullscreenElement) {
+    navBar.classList.add('hidden');
+    footer.classList.add('hidden');
+  } else {
+    navBar.classList.remove('hidden');
+    footer.classList.remove('hidden');
+  }
+});
 
-},6000);
+// 鼠标移动显示控制栏
+let hideControlsTimer;
+document.addEventListener('mousemove', function() {
+  if (document.querySelector('.video-container').style.display !== 'none') {
+    const navBar = document.querySelector('.nav-bar');
+    const footer = document.querySelector('.footer');
+    
+    navBar.classList.remove('hidden');
+    footer.classList.remove('hidden');
+    
+    clearTimeout(hideControlsTimer);
+    hideControlsTimer = setTimeout(function() {
+      if (!document.fullscreenElement) return;
+      navBar.classList.add('hidden');
+      footer.classList.add('hidden');
+    }, 5000);
+  }
+});
+
+// 点击页面任意位置切换播放/暂停
+document.addEventListener('click', function(e) {
+  const videoContainer = document.querySelector('.video-container');
+  if (videoContainer.style.display === 'block' && e.target.id !== 'video') {
+    const iframe = document.getElementById('video');
+    // 此处可以添加播放/暂停逻辑
+  }
+});
 
 </script>
 
