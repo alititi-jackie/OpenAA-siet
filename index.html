@@ -2,10 +2,13 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <meta name="theme-color" content="#0078d4">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="OpenAA">
 
-  <!-- Title & Meta (针对在美华人常搜关键词优化) -->
+  <!-- Title & Meta -->
   <title>OpenAA · 美国华人生活入口 | 华人导航、DMV、找工作、二手</title>
   <meta name="description" content="OpenAA 为在美华人提供一站式中文导航与实用服务：DMV/移民/找工作/168招聘/二手市场/银行/生活资讯。覆盖纽约、洛杉矶、旧金山等城市，帮助在美华人快速获取本地服务与信息。">
   <meta name="keywords" content="美国华人, 美华人，meihuaren,华人openAA，美国华人168，华人导航, DMV, 移民服务, 找工作, 168招聘, 二手市场, 华人资讯, 在美生活, 华人社区">
@@ -28,16 +31,13 @@
   <meta name="twitter:description" content="在美华人一站式中文导航：DMV、移民、找工作、二手、银行与生活服务。">
   <meta name="twitter:image" content="https://openaa.com/logo.png">
 
-  <!-- Favicons (按你给定的目录结构) -->
+  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <meta name="msapplication-TileColor" content="#2b5797">
 
-  <!-- Structured Data: Organization + WebSite + SearchAction -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,632 +48,1148 @@
         "name": "OpenAA",
         "url": "https://openaa.com/",
         "logo": "https://openaa.com/logo.png",
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "email": "323748@gmail.com",
-            "contactType": "customer support",
-            "availableLanguage": ["Chinese","English"]
-          }
-        ]
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "323748@gmail.com",
+          "contactType": "customer support",
+          "availableLanguage": ["Chinese","English"]
+        }
       },
       {
         "@type": "WebSite",
         "@id": "https://openaa.com/#website",
         "url": "https://openaa.com/",
-        "name": "OpenAA · 美国华人生活入口",
-        "inLanguage": "zh-CN",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.google.com/search?q=site:openaa.com+{search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "name": "OpenAA · 美国华人生活入口"
       }
     ]
   }
   </script>
 
   <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: Arial, sans-serif;
+    * { 
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --primary: #0078d4;
+      --primary-dark: #005fa3;
+      --secondary: #50E3C2;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+
+    html, body {
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
-      color: #222;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
       line-height: 1.6;
+      font-size: 16px;
     }
+
+    /* Header 固定顶部 */
     header {
-      background-color: #eef2f3;
-      padding: 20px 10px 20px 10px;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-      position: relative;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(135deg, var(--primary) 0%, #1084d8 100%);
+      color: white;
+      padding: 12px 16px 16px;
+      box-shadow: 0 2px 12px rgba(0,120,212,0.15);
     }
-    .site-logo {
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .header-title {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-icon {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .btn-icon:active {
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* 搜索框 */
+    .search-box {
+      display: flex;
+      gap: 8px;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      background: rgba(255,255,255,0.95);
+      color: var(--text-dark);
+      outline: none;
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-light);
+    }
+
+    .search-box button {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+
+    .search-box button:active {
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* 主要内容区 */
+    main {
+      padding: 8px;
+      padding-bottom: 90px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* 分类导航 - App 风格 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 8px 0;
+      padding: 0;
+    }
+
+    .category-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      padding: 16px 8px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--text-dark);
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
     }
-    .site-logo img {
-      width: 200px;
-      max-width: 25vw;
-      height: auto;
+
+    .category-item:active {
+      transform: scale(0.95);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .category-icon {
+      font-size: 32px;
       margin-bottom: 8px;
     }
-    .main-title {
-      font-size: 2.1rem;
-      font-weight: bold;
-      margin: 0 0 5px 0;
-      color: #183a60;
-      letter-spacing: 1px;
+
+    .category-label {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.3;
     }
-    .subtitle {
-      font-size: 1.07rem;
-      color: #3e3e3e;
-      margin-bottom: 10px;
-      letter-spacing: .5px;
+
+    /* 卡片组件 */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0;
+      overflow: hidden;
     }
-    .top-actions {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 10;
-    }
-    .top-actions button {
-      padding: 8px 14px;
-      font-size: 14px;
-      background-color: #0078d4;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .top-actions button:hover {
-      background-color: #005fa3;
-    }
-    /* AI平台直达导航样式 */
-    .ai-nav-links {
+
+    .card-header {
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
+      border-bottom: 1px solid var(--border);
       display: flex;
-      justify-content: center;
-      gap: 1.2em;
-      margin: 18px auto 0 auto;
-      max-width: 95vw;
-      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
     }
-    .ai-nav-links a {
-      color: #fff;
-      background: #0078d4;
-      padding: 7px 18px;
-      border-radius: 22px;
+
+    .card-header-icon {
+      font-size: 20px;
+    }
+
+    .card-header-title {
       font-size: 15px;
-      font-weight: bold;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .card-content {
+      padding: 12px 0;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+
+    .link-item {
+      padding: 12px 16px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-      box-shadow: 0 2px 8px rgba(0,120,212,0.06);
+      color: var(--text-dark);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s;
+    }
+
+    .link-item:last-child,
+    .link-item:nth-last-child(2) {
+      border-bottom: none;
+    }
+
+    .link-item:nth-child(2n) {
+      border-right: none;
+    }
+
+    .link-item:active {
+      background: #f0f7ff;
+    }
+
+    .link-icon {
+      font-size: 16px;
+      min-width: 16px;
+    }
+
+    /* 推荐直达 */
+    .quick-links {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0;
+      padding: 0;
+    }
+
+    .quick-link {
+      display: block;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+
+    .quick-link:last-child {
+      border-bottom: none;
+    }
+
+    .quick-link:active {
+      background: #f0f7ff;
+    }
+
+    /* 底部导航栏 */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--card-bg);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      z-index: 200;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 11px;
+      transition: color 0.2s;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .nav-item.active {
+      color: var(--primary);
+    }
+
+    .nav-item-icon {
+      font-size: 22px;
       margin-bottom: 4px;
     }
-    .ai-nav-links a:hover {
-      background: #005fa3;
-      color: #fff;
+
+    /* 隐藏容器 */
+    .section-container {
+      display: none;
     }
-    .search {
-      display: flex;
-      justify-content: center;
-      margin: 20px auto;
-      max-width: 95vw;
+
+    .section-container.active {
+      display: block;
     }
-    .search form {
-      width: 100%;
-      max-width: 600px;
-      display: flex;
-    }
-    .search input[type="text"] {
-      width: 100%;
-      padding: 12px 20px;
-      font-size: 16px;
-      border: 2px solid #ddd;
-      border-radius: 25px;
-      outline: none;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-      transition: border 0.2s;
-    }
-    .search input[type="text"]:focus {
-      border-color: #0078d4;
-    }
-    .nav, .categories, .card, .bookmark, .recommend, .section, .section1, .section2, .section3 {
-      background: #fff;
-      margin: 10px auto;
-      padding: 10px;
-      max-width: 95vw;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.2s;
-    }
-    .recommend a, .section a, .section1 a, .section2 a, .section3 a {
-      display: inline-block;
-      margin: 5px 10px;
-      font-size: 14px;
-      padding: 3px 7px;
-      border-radius: 5px;
-      transition: background 0.15s, color 0.15s;
-    }
-    .recommend a:hover, .section a:hover, .section1 a:hover, .section2 a:hover, .section3 a:hover {
-      background: #0078d41a;
-      color: #0078d4;
-    }
-    .footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 12px;
-      color: #888;
-      background-color: #eef2f3;
-      margin-top: 40px;
-    }
-    .footer a { color: #1670b8; }
-    .back-to-top {
+
+    /* 模态框 */
+    .modal {
       display: none;
       position: fixed;
-      right: 20px;
-      bottom: 20px;
-      padding: 10px 15px;
-      font-size: 14px;
-      background-color: #0078d4;
-      color: white;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 300;
+      animation: fadeIn 0.2s;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background: var(--card-bg);
+      width: 100%;
+      border-radius: var(--radius) var(--radius) 0 0;
+      padding: 16px;
+      max-height: 80vh;
+      overflow-y: auto;
+      animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .close-btn {
+      background: none;
       border: none;
-      border-radius: 5px;
+      font-size: 24px;
       cursor: pointer;
-      z-index: 999;
-      transition: background 0.3s, opacity 0.25s;
-      opacity: 0.85;
+      color: var(--text-light);
     }
-    .back-to-top:hover {
-      background-color: #005fa3;
-      opacity: 1;
+
+    /* 副标题 */
+    .subtitle {
+      color: var(--text-light);
+      font-size: 13px;
+      margin: 8px 0;
+      padding: 0 16px;
     }
-    @media (max-width: 600px) {
-      .main-title { font-size: 1.1rem; }
-      .site-logo img { width: 70px; }
-      .ai-nav-links a { font-size: 13px; padding: 6px 12px; }
-      .ai-nav-links { gap: 0.5em; }
-      .recommend a, .section a { font-size: 12px; margin: 4px 6px; }
-      .section, .section1, .section2, .section3, .recommend { padding: 8px; }
-      .search { margin: 10px auto; }
-      .footer { font-size: 11px; }
+
+    /* 页脚 */
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 16px;
     }
-    /* 动画折叠内容 */
-    .toggle-content {
-      overflow: hidden;
-      transition: max-height 0.35s cubic-bezier(.4,0,.2,1);
-      max-height: 0;
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
     }
-    .toggle-content.open {
-      max-height: 900px;
-      transition: max-height 0.5s cubic-bezier(.4,0,.2,1);
+
+    /* 吐司提示 */
+    .toast {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      z-index: 400;
+      animation: slideInUp 0.3s;
+      display: none;
     }
-    .toggle-header {
-      font-weight: bold;
-      cursor: pointer;
-      user-select: none;
-      padding: 6px 0;
-      color: #0078d4;
-      margin-bottom: 2px;
+
+    .toast.show {
+      display: block;
+    }
+
+    @keyframes slideInUp {
+      from { transform: translateX(-50%) translateY(20px); opacity: 0; }
+      to { transform: translateX(-50%) translateY(0); opacity: 1; }
+    }
+
+    /* 响应式调整 */
+    @media (min-width: 600px) {
+      .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .link-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* 暗黑模式支持 */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1f1f1f;
+        --card-bg: #2d2d2d;
+        --text-dark: #f5f5f5;
+        --text-light: #a0a0a0;
+        --border: #3d3d3d;
+      }
+      
+      .card-header {
+        background: #3d3d3d;
+      }
+      
+      .link-item:active,
+      .quick-link:active {
+        background: #3d3d3d;
+      }
     }
   </style>
-
 </head>
 <body>
+  <!-- 顶部导航栏 -->
   <header>
-    <div class="site-logo">
-      <img src="https://openaa.com/logo.png" alt="OpenAA · 美国华人生活入口 openaa.com logo" width="120" height="120" loading="lazy" />
-      <div class="main-title">OpenAA · 美国华人生活入口</div>
-      <div class="subtitle">OpenAA · 为美国华人提供导航、资讯、服务的一站式平台 </div>
+    <div class="header-content">
+      <div class="header-title">OpenAA</div>
+      <div class="header-actions">
+        <button class="btn-icon" onclick="toggleBookmark()" title="收藏本站">📌</button>
+        <button class="btn-icon" onclick="toggleMenu()" title="更多">⋯</button>
+      </div>
     </div>
-    <div class="top-actions">
-      <button onclick="addBookmark()" aria-label="收藏本站">📌 收藏本站</button>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="搜索..." />
+      <button onclick="handleSearch()">🔍</button>
     </div>
   </header>
 
-  <section class="nav" style="text-align:center; padding: 10px; font-size:15px; line-height:1.7;">
-    <p><strong>OpenAA · 美国华人生活入口</strong>，<strong>华人OpenAA</strong> 为 <strong>美国华人</strong> 打造的一站式 <strong>导航、在美华人资讯、服务平台</strong>，覆盖 DMV、移民、找工作、二手市场、银行和地区生活信息（纽约/洛杉矶/旧金山 等）。</p>
-  </section>
-  <!-- 直达链接区块 -->
-<nav class="ai-nav-links" aria-label="直达链接区块">
-  <a href="https://openaa.com/market/number/">美国手机靓号</a>
-  <a href="https://openaa.com/market/domain/">精品域名</a>
-  <a href="https://onegobuy.com/">一式站购物</a>
-  <a href="https://joeabc.com/">跟Joe学英语</a>
-  <a href="https://www.168worker.com/"> 招 聘 </a>
-  <a href="https://openaa.com/nav/mi">📑</a>
-  <button 
-    id="copy69nav" 
-    title="点击复制此链接" 
-    style="background-color:#007bff; color:#fff; border:none; border-radius:20px; padding:8px 16px; cursor:pointer;">
-    🔞69nav.com
-  </button>
-  
-</nav>
+  <!-- 主要内容 -->
+  <main>
+    <!-- 首页 -->
+    <div id="home-section" class="section-container active">
+      <!-- 快速分类 -->
+      <div class="category-grid" id="quickCategories">
+        <a class="category-item" href="https://zh.dmv.ny.gov/" target="_blank">
+          <div class="category-icon">🚗</div>
+          <div class="category-label">DMV</div>
+        </a>
+        <a class="category-item" href="https://www.168worker.com/" target="_blank">
+          <div class="category-icon">💼</div>
+          <div class="category-label">招聘</div>
+        </a>
+        <a class="category-item" href="https://www.us168.com/" target="_blank">
+          <div class="category-icon">📦</div>
+          <div class="category-label">二手</div>
+        </a>
+        <a class="category-item" href="https://my.uscis.gov/" target="_blank">
+          <div class="category-icon">📋</div>
+          <div class="category-label">移民</div>
+        </a>
+        <a class="category-item" href="https://www.chase.com/" target="_blank">
+          <div class="category-icon">🏦</div>
+          <div class="category-label">银行</div>
+        </a>
+        <a class="category-item" onclick="showModal('aiModal')">
+          <div class="category-icon">🤖</div>
+          <div class="category-label">AI工具</div>
+        </a>
+        <a class="category-item" href="https://www.amazon.com/" target="_blank">
+          <div class="category-icon">🛒</div>
+          <div class="category-label">购物</div>
+        </a>
+        <a class="category-item" onclick="showModal('moreModal')">
+          <div class="category-icon">⋯</div>
+          <div class="category-label">更多</div>
+        </a>
+      </div>
 
-<!-- 复制提示 -->
-<div id="copyToast" 
-     style="visibility:hidden; min-width:120px; background:#333; color:#fff; text-align:center; border-radius:8px; padding:8px; position:fixed; z-index:1; bottom:30px; left:50%; transform:translateX(-50%);">
-  已复制
-</div>
+      <!-- 推荐直达 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">⭐</div>
+          <h3 class="card-header-title">推荐直达</h3>
+        </div>
+        <div class="quick-links">
+          <a href="https://translate.google.com/?hl=zh-cn" class="quick-link" target="_blank">Google翻译</a>
+          <a href="https://www.us168.com/#/business-info/job-board" class="quick-link" target="_blank">168招聘</a>
+          <a href="https://niuyuegongzuo.com/" class="quick-link" target="_blank">纽约工作网</a>
+          <a href="https://www.1point3acres.com/bbs/" class="quick-link" target="_blank">一亩三分地</a>
+          <a href="https://www.2redbeans.com/" class="quick-link" target="_blank">2颗红豆</a>
+          <a href="https://livinginny365.com/" class="quick-link" target="_blank">纽约华人365</a>
+        </div>
+      </div>
 
-<script>
-  // 复制链接功能（兼容性处理）
-  (function () {
-    const btn = document.getElementById("copy69nav");
-    const toast = document.getElementById("copyToast");
-    if (btn) {
-      btn.addEventListener("click", function () {
-        const link = "https://69nav.com/";
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(link).then(() => {
-            toast.style.visibility = "visible";
-            setTimeout(() => { toast.style.visibility = "hidden"; }, 1500);
-          }).catch(err => {
-            console.error("复制失败：", err);
-            alert("复制失败，请手动复制：" + link);
-          });
-        } else {
-          // fallback
-          const ta = document.createElement('textarea');
-          ta.value = link;
-          document.body.appendChild(ta);
-          ta.select();
-          try { document.execCommand('copy'); alert('已复制'); } catch (e) { alert('请手动复制：' + link); }
-          document.body.removeChild(ta);
-        }
-      });
-    }
-  })();
-</script>
+      <!-- 政府服务 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🏛️</div>
+          <h3 class="card-header-title">政府服务</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://zh.dmv.ny.gov/" class="link-item" target="_blank"><span class="link-icon">🚗</span>DMV NY</a>
+            <a href="https://www.uscis.gov/" class="link-item" target="_blank"><span class="link-icon">📋</span>移民局</a>
+            <a href="https://myaccount.uscis.gov/sign-in" class="link-item" target="_blank"><span class="link-icon">🔐</span>USCIS账户</a>
+            <a href="https://travel.state.gov/" class="link-item" target="_blank"><span class="link-icon">🛂</span>护照/签证</a>
+            <a href="https://www.irs.gov/" class="link-item" target="_blank"><span class="link-icon">📊</span>税务局</a>
+            <a href="https://www.ssa.gov/" class="link-item" target="_blank"><span class="link-icon">🆔</span>社安局</a>
+          </div>
+        </div>
+      </div>
 
-  <div class="search">
-    <form action="https://www.google.com/search" method="get" target="_blank" autocomplete="off" role="search" aria-label="谷歌搜索">
-      <input type="text" name="q" placeholder="华人OpenAA 搜索你感兴趣的内容..." aria-label="搜索内容" required>
-    </form>
-  </div>
+      <!-- 银行金融 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🏦</div>
+          <h3 class="card-header-title">银行金融</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.chase.com/" class="link-item" target="_blank"><span class="link-icon">🏦</span>摩根大通</a>
+            <a href="https://www.bankofamerica.com/" class="link-item" target="_blank"><span class="link-icon">🏦</span>美国银行</a>
+            <a href="https://www.wellsfargo.com/" class="link-item" target="_blank"><span class="link-icon">🏦</span>富国银行</a>
+            <a href="https://www.citi.com/" class="link-item" target="_blank"><span class="link-icon">🏦</span>花旗银行</a>
+            <a href="https://www.americanexpress.com/" class="link-item" target="_blank"><span class="link-icon">💳</span>美运通</a>
+            <a href="https://www.discover.com/" class="link-item" target="_blank"><span class="link-icon">💳</span>Discover</a>
+          </div>
+        </div>
+      </div>
 
- <!-- 推荐专区 -->
-  <nav class="recommend" aria-label="推荐">
-    <a href="https://translate.google.com/?hl=zh-cn&sl=auto&tl=zh-CN&op=translate" target="_blank" rel="noopener noreferrer">Google翻译</a>
-    <a href="https://www.us168.com/#/business-info/job-board" target="_blank" rel="noopener noreferrer">168招聘</a>
-    <a href="https://www.us168.com/#/business-info/marketplace?module-code=leave_unused" target="_blank" rel="noopener noreferrer">168二手</a>
-    <a href="https://niuyuegongzuo.com/" target="_blank" rel="noopener noreferrer">纽约工作网</a>
-    <a href="https://www.168worker.com/" target="_blank" rel="noopener noreferrer">美国华人168</a>
-    <a href="https://meiguogongzuo.com/" target="_blank" rel="noopener noreferrer">美国工作网</a>
-    <a href="https://www.usahuarenjie.com/category-catid-4.html#google_vignette" target="_blank" rel="noopener noreferrer">美国华人招聘网</a>
-    <a href="https://www.zhaopin311.com/" target="_blank" rel="noopener noreferrer">猪八戒美国招聘网</a>
-    <a href="https://livinginny365.com/classified/category/posts?tid=17" target="_blank" rel="noopener noreferrer">纽约华人365</a>
-    <a href="https://www.app718.com/" target="_blank" rel="noopener noreferrer">纽约生活</a>
-    <a href="https://www.1point3acres.com/bbs/" target="_blank" rel="noopener noreferrer">一亩三分地</a>
-    <a href="https://www.hungrypanda.co/zh-hans/news-center/" target="_blank" rel="noopener noreferrer">熊猫外卖</a>
-    <a href="https://www.extraspace.com/" target="_blank" rel="noopener noreferrer">自助存储</a>
-    <a href="https://livinginny365.com/classified/category/posts?tid=229" target="_blank" rel="noopener noreferrer">布魯克林招聘</a>
-    <a href="https://www.chicagochinaren.com/" target="_blank" rel="noopener noreferrer">芝加哥华人咨讯网</a>
-    <a href="https://www.chineseinla.com/" target="_blank" rel="noopener noreferrer">洛杉矶华人资讯网</a>
-    <a href="https://www.chineseinsfbay.com/" target="_blank" rel="noopener noreferrer">旧金山湾区华人资讯网</a>
-    <a href="https://www.huaren.us/" target="_blank" rel="noopener noreferrer">华人网 Huaren.us</a>
-    <a href="https://www.backchina.com/" target="_blank" rel="noopener noreferrer">倍可亲</a>
-    <a href="https://www.sinovision.net/" target="_blank" rel="noopener noreferrer">美国中文网</a>
-    <a href="https://www.chinesedaily.com/" target="_blank" rel="noopener noreferrer">世界日报</a>
-    <a href="https://www.chinaqw.com/" target="_blank" rel="noopener noreferrer">中国侨网</a>
-    <a href="https://www.ccyp.com/" target="_blank" rel="noopener noreferrer">华人工商黄页</a>
-    <a href="https://zh.dmv.ny.gov/" target="_blank" rel="noopener noreferrer">DMV NY</a>
-    <a href="https://www.2redbeans.com/" target="_blank" rel="noopener noreferrer">2颗红豆</a>   
-    <a href="https://www.voachinese.com/" target="_blank" rel="noopener noreferrer">美国之音</a>
-    <a href="https://www.nytimes.com/" target="_blank" rel="noopener noreferrer">纽约时报</a>
-    <a href="https://www.jegotrip.cn/" target="_blank" rel="noopener noreferrer">无忧行</a>
-    <a href="https://www.greyhound.com/" target="_blank" rel="noopener noreferrer">Greyhound Lines Inc长途巴士</a>
-    <a href="https://filehelper.weixin.qq.com/?from=windows&type=recommend" target="_blank" rel="noopener noreferrer">微信传输助手</a>    
-    <a href="https://www.openaa.com/nav" target="_blank" rel="noopener noreferrer">域名展示</a>
-    <a href="https://www.chinabsr.org" target="_blank" rel="noopener noreferrer">ChinaBSR 中国蓝天救援</a>
+      <!-- 工作招聘 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">💼</div>
+          <h3 class="card-header-title">工作招聘</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.168worker.com/" class="link-item" target="_blank"><span class="link-icon">💼</span>华人168</a>
+            <a href="https://niuyuegongzuo.com/" class="link-item" target="_blank"><span class="link-icon">💼</span>纽约工作</a>
+            <a href="https://meiguogongzuo.com/" class="link-item" target="_blank"><span class="link-icon">💼</span>美国工作</a>
+            <a href="https://www.1point3acres.com/bbs/" class="link-item" target="_blank"><span class="link-icon">💼</span>一亩三分地</a>
+            <a href="https://www.linkedin.com/" class="link-item" target="_blank"><span class="link-icon">💼</span>LinkedIn</a>
+            <a href="https://livinginny365.com/classified" class="link-item" target="_blank"><span class="link-icon">💼</span>纽约365</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 二手市场 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">📦</div>
+          <h3 class="card-header-title">二手市场</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.us168.com/" class="link-item" target="_blank"><span class="link-icon">📦</span>168二手</a>
+            <a href="https://offerup.com/" class="link-item" target="_blank"><span class="link-icon">📦</span>OfferUp</a>
+            <a href="https://www.facebook.com/marketplace/" class="link-item" target="_blank"><span class="link-icon">📦</span>Facebook</a>
+            <a href="https://www.ebay.com/" class="link-item" target="_blank"><span class="link-icon">📦</span>eBay</a>
+            <a href="https://www.craigslist.org/" class="link-item" target="_blank"><span class="link-icon">📦</span>Craigslist</a>
+            <a href="https://www.letgo.com/" class="link-item" target="_blank"><span class="link-icon">📦</span>Letgo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 购物平台 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🛒</div>
+          <h3 class="card-header-title">购物平台</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.amazon.com/" class="link-item" target="_blank"><span class="link-icon">🛒</span>亚马逊</a>
+            <a href="https://www.walmart.com/" class="link-item" target="_blank"><span class="link-icon">🛒</span>沃尔玛</a>
+            <a href="https://www.costco.com/" class="link-item" target="_blank"><span class="link-icon">🛒</span>好市多</a>
+            <a href="https://www.target.com/" class="link-item" target="_blank"><span class="link-icon">🛒</span>Target</a>
+            <a href="https://www.aliexpress.com/" class="link-item" target="_blank"><span class="link-icon">🛒</span>速卖通</a>
+            <a href="https://www.ebay.com/" class="link-item" target="_blank"><span class="link-icon">🛒</span>eBay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 新闻资讯 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">📰</div>
+          <h3 class="card-header-title">新闻资讯</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.nytimes.com/" class="link-item" target="_blank"><span class="link-icon">📰</span>纽约时报</a>
+            <a href="https://www.voachinese.com/" class="link-item" target="_blank"><span class="link-icon">📰</span>美国之音</a>
+            <a href="https://www.bbc.com/zhongwen" class="link-item" target="_blank"><span class="link-icon">📰</span>BBC中文</a>
+            <a href="https://www.rfa.org/mandarin/" class="link-item" target="_blank"><span class="link-icon">📰</span>自由亚洲</a>
+            <a href="https://www.worldjournal.com/" class="link-item" target="_blank"><span class="link-icon">📰</span>世界日报</a>
+            <a href="https://www.huaren.us/" class="link-item" target="_blank"><span class="link-icon">📰</span>华人网</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 社交媒体 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">👥</div>
+          <h3 class="card-header-title">社交媒体</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.facebook.com/" class="link-item" target="_blank"><span class="link-icon">👥</span>Facebook</a>
+            <a href="https://www.instagram.com/" class="link-item" target="_blank"><span class="link-icon">📷</span>Instagram</a>
+            <a href="https://www.x.com/" class="link-item" target="_blank"><span class="link-icon">𝕏</span>X</a>
+            <a href="https://www.tiktok.com/" class="link-item" target="_blank"><span class="link-icon">🎵</span>TikTok</a>
+            <a href="https://www.reddit.com/" class="link-item" target="_blank"><span class="link-icon">🔥</span>Reddit</a>
+            <a href="https://www.linkedin.com/" class="link-item" target="_blank"><span class="link-icon">💼</span>LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 视频平台 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🎬</div>
+          <h3 class="card-header-title">视频平台</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.youtube.com/" class="link-item" target="_blank"><span class="link-icon">📺</span>YouTube</a>
+            <a href="https://www.netflix.com/" class="link-item" target="_blank"><span class="link-icon">🎬</span>Netflix</a>
+            <a href="https://www.bilibili.tv/" class="link-item" target="_blank"><span class="link-icon">🎬</span>Bilibili</a>
+            <a href="https://www.tubi.tv/" class="link-item" target="_blank"><span class="link-icon">🎬</span>Tubi</a>
+            <a href="https://www.crunchyroll.com/" class="link-item" target="_blank"><span class="link-icon">🎬</span>Crunchyroll</a>
+            <a href="https://www.hulu.com/" class="link-item" target="_blank"><span class="link-icon">🎬</span>Hulu</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 通讯工具 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">📱</div>
+          <h3 class="card-header-title">通讯运营商</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.t-mobile.com/" class="link-item" target="_blank"><span class="link-icon">📱</span>T-Mobile</a>
+            <a href="https://www.verizon.com/" class="link-item" target="_blank"><span class="link-icon">📱</span>Verizon</a>
+            <a href="https://www.att.com/" class="link-item" target="_blank"><span class="link-icon">📱</span>AT&T</a>
+            <a href="https://www.uscellular.com/" class="link-item" target="_blank"><span class="link-icon">📱</span>US Cell</a>
+            <a href="https://www.mintmobile.com/" class="link-item" target="_blank"><span class="link-icon">📱</span>Mint</a>
+            <a href="https://tello.com/" class="link-item" target="_blank"><span class="link-icon">📱</span>Tello</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 邮箱 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">📮</div>
+          <h3 class="card-header-title">常用邮箱</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://mail.google.com/" class="link-item" target="_blank"><span class="link-icon">📧</span>Gmail</a>
+            <a href="https://outlook.live.com/" class="link-item" target="_blank"><span class="link-icon">📧</span>Outlook</a>
+            <a href="https://mail.qq.com/" class="link-item" target="_blank"><span class="link-icon">📧</span>QQ邮箱</a>
+            <a href="https://mail.163.com/" class="link-item" target="_blank"><span class="link-icon">📧</span>163邮箱</a>
+            <a href="https://foxmail.com/" class="link-item" target="_blank"><span class="link-icon">📧</span>Foxmail</a>
+            <a href="https://mail.aliyun.com/" class="link-item" target="_blank"><span class="link-icon">📧</span>阿里邮箱</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 国内常用 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🌐</div>
+          <h3 class="card-header-title">国内常用</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.baidu.com/" class="link-item" target="_blank"><span class="link-icon">🔍</span>百度</a>
+            <a href="https://www.taobao.com/" class="link-item" target="_blank"><span class="link-icon">🛒</span>淘宝</a>
+            <a href="https://www.jd.com/" class="link-item" target="_blank"><span class="link-icon">🛒</span>京东</a>
+            <a href="https://www.bilibili.com/" class="link-item" target="_blank"><span class="link-icon">🎬</span>B站</a>
+            <a href="https://www.zhihu.com/" class="link-item" target="_blank"><span class="link-icon">❓</span>知乎</a>
+            <a href="https://www.weibo.com/" class="link-item" target="_blank"><span class="link-icon">🐦</span>微博</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI工具页面 -->
+    <div id="ai-section" class="section-container">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🤖</div>
+          <h3 class="card-header-title">通用AI工具</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://chat.openai.com/" class="link-item" target="_blank"><span class="link-icon">🤖</span>ChatGPT</a>
+            <a href="https://gemini.google.com/" class="link-item" target="_blank"><span class="link-icon">🤖</span>Gemini</a>
+            <a href="https://claude.ai/" class="link-item" target="_blank"><span class="link-icon">🤖</span>Claude</a>
+            <a href="https://chat.deepseek.com/" class="link-item" target="_blank"><span class="link-icon">🤖</span>Deepseek</a>
+            <a href="https://copilot.microsoft.com/" class="link-item" target="_blank"><span class="link-icon">🤖</span>Copilot</a>
+            <a href="https://perplexity.ai/" class="link-item" target="_blank"><span class="link-icon">🤖</span>Perplexity</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">💻</div>
+          <h3 class="card-header-title">编程AI工具</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://github.com/copilot" class="link-item" target="_blank"><span class="link-icon">💻</span>Copilot</a>
+            <a href="https://www.cursor.sh/" class="link-item" target="_blank"><span class="link-icon">💻</span>Cursor</a>
+            <a href="https://www.phind.com/" class="link-item" target="_blank"><span class="link-icon">💻</span>Phind</a>
+            <a href="https://codeium.com/" class="link-item" target="_blank"><span class="link-icon">💻</span>Codeium</a>
+            <a href="https://www.w3schools.com/" class="link-item" target="_blank"><span class="link-icon">📚</span>W3Schools</a>
+            <a href="https://huggingface.co/" class="link-item" target="_blank"><span class="link-icon">🤗</span>Hugging Face</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🎨</div>
+          <h3 class="card-header-title">创意AI工具</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.suno.ai/" class="link-item" target="_blank"><span class="link-icon">🎵</span>Suno AI</a>
+            <a href="https://www.midjourney.com/" class="link-item" target="_blank"><span class="link-icon">🖼️</span>Midjourney</a>
+            <a href="https://www.dalleus.com/" class="link-item" target="_blank"><span class="link-icon">🖼️</span>DALL-E</a>
+            <a href="https://poe.com/" class="link-item" target="_blank"><span class="link-icon">💬</span>Poe</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 发现页面 -->
+    <div id="discover-section" class="section-container">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🚗</div>
+          <h3 class="card-header-title">汽车交易</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.cars.com/" class="link-item" target="_blank"><span class="link-icon">🚗</span>Cars.com</a>
+            <a href="https://www.carmax.com/" class="link-item" target="_blank"><span class="link-icon">🚗</span>CarMax</a>
+            <a href="https://www.autotrader.com/" class="link-item" target="_blank"><span class="link-icon">🚗</span>AutoTrader</a>
+            <a href="https://www.cargurus.com/" class="link-item" target="_blank"><span class="link-icon">🚗</span>CarGurus</a>
+            <a href="https://carfax.com/" class="link-item" target="_blank"><span class="link-icon">📋</span>Carfax</a>
+            <a href="https://offerup.com/cars/" class="link-item" target="_blank"><span class="link-icon">📦</span>OfferUp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🎮</div>
+          <h3 class="card-header-title">游戏平台</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://store.steampowered.com/" class="link-item" target="_blank"><span class="link-icon">🎮</span>Steam</a>
+            <a href="https://www.epicgames.com/store/" class="link-item" target="_blank"><span class="link-icon">🎮</span>Epic Games</a>
+            <a href="https://www.xbox.com/" class="link-item" target="_blank"><span class="link-icon">🎮</span>Xbox</a>
+            <a href="https://www.playstation.com/" class="link-item" target="_blank"><span class="link-icon">🎮</span>PlayStation</a>
+            <a href="https://www.nintendo.com/" class="link-item" target="_blank"><span class="link-icon">🎮</span>任天堂</a>
+            <a href="https://www.roblox.com/" class="link-item" target="_blank"><span class="link-icon">🎮</span>Roblox</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🛍️</div>
+          <h3 class="card-header-title">代购平台</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://pandabuy.com/" class="link-item" target="_blank"><span class="link-icon">🛍️</span>Pandabuy</a>
+            <a href="https://kakobuy.com/" class="link-item" target="_blank"><span class="link-icon">🛍️</span>Kakobuy</a>
+            <a href="https://hoobuy.com/" class="link-item" target="_blank"><span class="link-icon">🛍️</span>Hoobuy</a>
+            <a href="https://cn2you.com/" class="link-item" target="_blank"><span class="link-icon">🛍️</span>CN2You</a>
+            <a href="https://panli.com/" class="link-item" target="_blank"><span class="link-icon">🛍️</span>Panli</a>
+            <a href="https://easybuycn.com/" class="link-item" target="_blank"><span class="link-icon">🛍️</span>Easybuycn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🏋️</div>
+          <h3 class="card-header-title">生活服务</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.geico.com/" class="link-item" target="_blank"><span class="link-icon">🚗</span>Geico保险</a>
+            <a href="https://www.extraspace.com/" class="link-item" target="_blank"><span class="link-icon">📦</span>自助存储</a>
+            <a href="https://www.greyhound.com/" class="link-item" target="_blank"><span class="link-icon">🚌</span>灰狗巴士</a>
+            <a href="https://www.hungrypanda.co/" class="link-item" target="_blank"><span class="link-icon">🍜</span>熊猫外卖</a>
+            <a href="https://filehelper.weixin.qq.com/" class="link-item" target="_blank"><span class="link-icon">📱</span>微信传输</a>
+            <a href="https://www.icloud.com/" class="link-item" target="_blank"><span class="link-icon">☁️</span>苹果账号</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 分类页面 -->
+    <div id="categories-section" class="section-container">
+      <div class="category-grid" style="margin-top: 0;">
+        <a class="category-item" href="https://www.baidu.com/" target="_blank">
+          <div class="category-icon">🔍</div>
+          <div class="category-label">搜索引擎</div>
+        </a>
+        <a class="category-item" href="https://www.taobao.com/" target="_blank">
+          <div class="category-icon">🛒</div>
+          <div class="category-label">电商购物</div>
+        </a>
+        <a class="category-item" href="https://www.bilibili.com/" target="_blank">
+          <div class="category-icon">🎬</div>
+          <div class="category-label">视频平台</div>
+        </a>
+        <a class="category-item" href="https://www.zhihu.com/" target="_blank">
+          <div class="category-icon">❓</div>
+          <div class="category-label">知识社区</div>
+        </a>
+        <a class="category-item" href="https://www.weibo.com/" target="_blank">
+          <div class="category-icon">🐦</div>
+          <div class="category-label">微博</div>
+        </a>
+        <a class="category-item" href="https://www.douyan.com/" target="_blank">
+          <div class="category-icon">📽️</div>
+          <div class="category-label">豆瓣</div>
+        </a>
+        <a class="category-item" href="https://www.wechat.com/" target="_blank">
+          <div class="category-icon">💬</div>
+          <div class="category-label">微信</div>
+        </a>
+        <a class="category-item" href="https://www.qq.com/" target="_blank">
+          <div class="category-icon">🐧</div>
+          <div class="category-label">腾讯</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 我的页面 -->
+    <div id="my-section" class="section-container">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">⚙️</div>
+          <h3 class="card-header-title">设置</h3>
+        </div>
+        <div class="quick-links">
+          <a href="#" onclick="toggleBookmark(); return false;" class="quick-link">📌 收藏本站</a>
+          <a href="#" onclick="shareApp(); return false;" class="quick-link">📤 分享应用</a>
+          <a href="https://openaa.com/about/" target="_blank" class="quick-link">ℹ️ 关于我们</a>
+          <a href="mailto:323748@gmail.com" class="quick-link">📧 联系我们</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🔗</div>
+          <h3 class="card-header-title">我的链接</h3>
+        </div>
+        <div class="quick-links">
+          <a href="https://github.com/" target="_blank" class="quick-link">💻 GitHub</a>
+          <a href="https://stackoverflow.com/" target="_blank" class="quick-link">📚 Stack Overflow</a>
+          <a href="https://www.notion.so/" target="_blank" class="quick-link">📝 Notion</a>
+          <a href="https://www.figma.com/" target="_blank" class="quick-link">🎨 Figma</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">📊</div>
+          <h3 class="card-header-title">网站信息</h3>
+        </div>
+        <div style="padding: 16px; font-size: 14px; color: var(--text-light); line-height: 1.8;">
+          <p><strong>OpenAA · 美国华人生活入口</strong></p>
+          <p>为在美华人提供一站式中文导航、资讯和服务平台。涵盖DMV、移民、找工作、二手市场、银行等生活服务。</p>
+          <p style="margin-top: 12px; color: var(--text-light); font-size: 13px;">© 2025 OpenAA.com 保留所有权利</p>
+          <p style="margin: 8px 0 0 0; color: var(--text-light); font-size: 13px;">联系邮箱：<strong>323748@gmail.com</strong></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 底部导航栏 -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="switchSection('home-section', 0)">
+      <div class="nav-item-icon">🏠</div>
+      <div>首页</div>
+    </button>
+    <button class="nav-item" onclick="switchSection('ai-section', 1)">
+      <div class="nav-item-icon">🤖</div>
+      <div>AI工具</div>
+    </button>
+    <button class="nav-item" onclick="switchSection('discover-section', 2)">
+      <div class="nav-item-icon">🔍</div>
+      <div>发现</div>
+    </button>
+    <button class="nav-item" onclick="switchSection('categories-section', 3)">
+      <div class="nav-item-icon">📂</div>
+      <div>分类</div>
+    </button>
+    <button class="nav-item" onclick="switchSection('my-section', 4)">
+      <div class="nav-item-icon">👤</div>
+      <div>我的</div>
+    </button>
   </nav>
 
-  
-<!-- 分区专区 -->
-  <nav class="section" aria-label="主要分区">
-    <div><strong>🏛️ 美国政府部门：</strong>
-      <a href="https://openaa.com/nav/dmv">DMV (美国各州车辆管理局)</a>
-      <a href="https://my.uscis.gov/accounts/annual-asylum-fee/questionnaire" target="_blank" rel="noopener noreferrer">移民局缴费页面</a>
-      <a href="https://myaccount.uscis.gov/sign-in" target="_blank" rel="noopener noreferrer">USCIS 在线帐户</a>
-      <a href="https://www.usa.gov/" target="_blank" rel="noopener noreferrer">USA.gov（美国政府门户）</a>
-      <a href="https://www.irs.gov/" target="_blank" rel="noopener noreferrer">IRS（国税局）</a>
-      <a href="https://www.ssa.gov/" target="_blank" rel="noopener noreferrer">SSA（社会安全局）</a>
-      <a href="https://www.uscis.gov/" target="_blank" rel="noopener noreferrer">USCIS（移民局）</a>
-      <a href="https://travel.state.gov/" target="_blank" rel="noopener noreferrer">国务院（护照/签证）</a>
-      <a href="https://www.cbp.gov/" target="_blank" rel="noopener noreferrer">CBP（海关与边境保护局）</a>
-      <a href="https://www.dol.gov/" target="_blank" rel="noopener noreferrer">DOL（劳工部）</a>
-      <a href="https://www.ed.gov/" target="_blank" rel="noopener noreferrer">教育部</a>
-      <a href="https://www.hhs.gov/" target="_blank" rel="noopener noreferrer">卫生与公共服务部</a>
+  <!-- 模态框 - AI工具 -->
+  <div id="aiModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🤖 AI工具大全</h2>
+        <button class="close-btn" onclick="closeModal()">✕</button>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🤖</div>
+          <h3 class="card-header-title">通用AI</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://chat.openai.com/" class="link-item" target="_blank"><span class="link-icon">🤖</span>ChatGPT</a>
+            <a href="https://gemini.google.com/" class="link-item" target="_blank"><span class="link-icon">🤖</span>Gemini</a>
+            <a href="https://claude.ai/" class="link-item" target="_blank"><span class="link-icon">🤖</span>Claude</a>
+            <a href="https://chat.deepseek.com/" class="link-item" target="_blank"><span class="link-icon">🤖</span>Deepseek</a>
+            <a href="https://copilot.microsoft.com/" class="link-item" target="_blank"><span class="link-icon">🤖</span>Copilot</a>
+            <a href="https://perplexity.ai/" class="link-item" target="_blank"><span class="link-icon">🤖</span>Perplexity</a>
+          </div>
+        </div>
+      </div>
     </div>
-      <div style="margin-top:10px;"><strong>🏦 银行/Bank：</strong>
-      <a href="https://www.bankofamerica.com/" target="_blank" rel="noopener noreferrer">美国银行</a>
-      <a href="https://www.chase.com/" target="_blank" rel="noopener noreferrer">摩根大通银行</a>
-      <a href="https://www.wellsfargo.com/" target="_blank" rel="noopener noreferrer">富国银行</a>
-      <a href="https://www.citi.com/" target="_blank" rel="noopener noreferrer">花旗银行</a>
-      <a href="https://www.usbank.com/" target="_blank" rel="noopener noreferrer">美国合众银行</a>
-      <a href="https://www.capitalone.com/" target="_blank" rel="noopener noreferrer">第一资本银行</a>
-      <a href="https://www.pnc.com/" target="_blank" rel="noopener noreferrer">PNC 银行</a>
-      <a href="https://www.td.com/us/en/personal-banking/" target="_blank" rel="noopener noreferrer">道明银行</a>
-      <a href="https://www.truist.com/" target="_blank" rel="noopener noreferrer">Truist 银行</a>
-      <a href="https://www.key.com/" target="_blank" rel="noopener noreferrer">KeyBank</a>
-      <a href="https://www.huntington.com/" target="_blank" rel="noopener noreferrer">Huntington 银行</a>
-      <a href="https://www.bbt.com/" target="_blank" rel="noopener noreferrer">BB&T 银行</a>
-      <a href="https://www.synchrony.com/" target="_blank" rel="noopener noreferrer">Synchrony 银行</a>
-      <a href="https://www.ally.com/" target="_blank" rel="noopener noreferrer">Ally 银行</a>
-      <a href="https://www.discover.com/" target="_blank" rel="noopener noreferrer">Discover 银行</a>
-      <a href="https://www.americanexpress.com/" target="_blank" rel="noopener noreferrer">美国运通银行</a>
-    </div>
-    <div style="margin-top:10px;"><strong>🛒 购物：</strong>
-      <a href="https://openaa.com/nav/onegobuy" target="_blank" rel="noopener noreferrer">更多</a>
-      <a href="https://www.sayweee.com/" target="_blank" rel="noopener noreferrer">Weee</a>
-      <a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer">amazon亚马逊</a>
-      <a href="https://www.walmart.com/" target="_blank" rel="noopener noreferrer">walmart沃尔玛</a>
-      <a href="https://www.ebay.com/" target="_blank" rel="noopener noreferrer">ebay易趣</a>
-      <a href="https://www.costco.com/" target="_blank" rel="noopener noreferrer">costco好市多</a>
-      <a href="https://www.samsclub.com/" target="_blank" rel="noopener noreferrer">samsclub山姆会员店</a>
-      <a href="https://us.shein.com/" target="_blank" rel="noopener noreferrer">Shein</a>
-      <a href="https://www.target.com/" target="_blank" rel="noopener noreferrer">Target</a>
-      <a href="https://www.aliexpress.com/" target="_blank" rel="noopener noreferrer">AliExpress</a>
-      <a href="https://www.bestbuy.com/" target="_blank" rel="noopener noreferrer">BestBuy</a>
-      <a href="https://www.overstock.com/" target="_blank" rel="noopener noreferrer">Overstock</a>
-      <a href="https://www.newegg.com/" target="_blank" rel="noopener noreferrer">Newegg</a>
-    </div>
-    <div style="margin-top:10px;"><strong>📱 移动通信：</strong>
-         <a href="https://tello.com/account/login?return_to=%2Faccount%2Fhome" target="_blank" rel="noopener noreferrer">Tello Mobile</a>
-         <a href="https://www.t-mobile.com/" target="_blank" rel="noopener noreferrer">T-Mobile</a>
-        <a href="https://www.verizon.com/" target="_blank" rel="noopener noreferrer">Verizon</a>
-        <a href="https://www.att.com/" target="_blank" rel="noopener noreferrer">AT&T</a>
-        <a href="https://www.lycamobile.us/" target="_blank" rel="noopener noreferrer">Lycamobile</a>        
-        <a href="https://www.uscellular.com/" target="_blank" rel="noopener noreferrer">U.S. Cellular</a>
-        <a href="https://www.mintmobile.com/" target="_blank" rel="noopener noreferrer">Mint Mobile</a>
-        <a href="https://www.cricketwireless.com/" target="_blank" rel="noopener noreferrer">Cricket Wireless</a>
-        <a href="https://www.boostmobile.com/" target="_blank" rel="noopener noreferrer">Boost Mobile</a>
-        <a href="https://www.metropcs.com/" target="_blank" rel="noopener noreferrer">Metro by T-Mobile</a>
-        <a href="https://fi.google.com/" target="_blank" rel="noopener noreferrer">google FI</a>
-        <a href="https://www.xfinity.com/mobile" target="_blank" rel="noopener noreferrer">Xfinity Mobile</a>
-        <a href="https://www.spectrum.com/mobile" target="_blank" rel="noopener noreferrer">Spectrum Mobile</a>
-        <a href="https://www.visible.com/" target="_blank" rel="noopener noreferrer">Visible</a>
-        <a href="https://tello.com/" target="_blank" rel="noopener noreferrer">Tello</a>
-        <a href="https://www.consumercellular.com/" target="_blank" rel="noopener noreferrer">Consumer Cellular</a>
-    </div>
-    <div style="margin-top:10px;"><strong>📰 新闻：</strong>
-      <a href="https://www.168worker.com/" target="_blank" rel="noopener noreferrer">美国华人168</a>
-      <a href="https://meiguogongzuo.com/" target="_blank" rel="noopener noreferrer">美国工作网</a>
-      <a href="https://www.nytimes.com/" target="_blank" rel="noopener noreferrer">纽约时报</a>
-      <a href="https://www.voachinese.com/" target="_blank" rel="noopener noreferrer">美国之音</a>
-      <a href="https://www.worldjournal.com/" target="_blank" rel="noopener noreferrer">世界日报</a>
-      <a href="https://cn.wsj.com/" target="_blank" rel="noopener noreferrer">华尔街日报中文</a>
-      <a href="https://www.bbc.com/zhongwen" target="_blank" rel="noopener noreferrer">BBC 中文</a>
-      <a href="https://www.rfa.org/mandarin/" target="_blank" rel="noopener noreferrer">自由亚洲电台</a>
-      <a href="https://www.dw.com/zh/" target="_blank" rel="noopener noreferrer">德国之声</a>
-      <a href="https://www.chinatimes.com/" target="_blank" rel="noopener noreferrer">中时电子报</a>
-    </div>
-  </nav>
-
-  <!-- 🤖 通用 AI -->
-<nav class="section1" aria-label="🤖 通用 AI">
-  <div><strong>🤖 通用 AI：</strong>
-      <a href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer">Deepseek</a>
-      <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a>
-      <a href="https://grok.com/" target="_blank" rel="noopener noreferrer">Grok</a>
-      <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Gemini</a>
-      <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Claude</a>
-      <a href="https://copilot.microsoft.com/" target="_blank" rel="noopener noreferrer">Bing Copilot</a>
-      <a href="https://perplexity.ai/" target="_blank" rel="noopener noreferrer">Perplexity</a>
-      <a href="https://poe.com/" target="_blank" rel="noopener noreferrer">Poe</a>
-      <a href="https://www.yiyan.baidu.com/" target="_blank" rel="noopener noreferrer">文心一言</a>
-      <a href="https://kimi.moonshot.cn/" target="_blank" rel="noopener noreferrer">Kimi</a>
-      <a href="https://doubao.com/" target="_blank" rel="noopener noreferrer">豆包</a>
-      <a href="https://tongyi.aliyun.com/" target="_blank" rel="noopener noreferrer">通义千问</a>
-      <a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer">Hugging Face</a>
-      <a href="/nav/ai" target="_blank" rel="noopener noreferrer">更多AI</a>
   </div>
-        <div style="margin-top:10px;"><strong>💻 编程 AI：</strong>
-      <a href="https://github.com/copilot" target="_blank" rel="noopener noreferrer">Github Copilot</a>
-      <a href="https://www.phind.com/" target="_blank" rel="noopener noreferrer">Phind</a>
-      <a href="https://codeium.com/" target="_blank" rel="noopener noreferrer">Codeium</a>
-      <a href="https://www.cursor.sh/" target="_blank" rel="noopener noreferrer">Cursor</a>
-      <a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">w3schools</a> 
-      <a href="https://www.suno.ai/" target="_blank" rel="noopener noreferrer">Suno AI</a>
+
+  <!-- 模态框 - 更多 -->
+  <div id="moreModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🔗 更多链接</h2>
+        <button class="close-btn" onclick="closeModal()">✕</button>
+      </div>
+      <div class="quick-links">
+        <a href="https://openaa.com/market/number/" target="_blank" class="quick-link">美国手机靓号</a>
+        <a href="https://openaa.com/market/domain/" target="_blank" class="quick-link">精品域名</a>
+        <a href="https://onegobuy.com/" target="_blank" class="quick-link">一式站购物</a>
+        <a href="https://joeabc.com/" target="_blank" class="quick-link">跟Joe学英语</a>
+        <a href="https://69nav.com/" target="_blank" class="quick-link" onclick="copyLink('https://69nav.com/', event)">69nav.com (点击复制)</a>
+        <a href="https://www.chinabsr.org/" target="_blank" class="quick-link">中国蓝天救援</a>
+      </div>
     </div>
-</nav>
-
-  <!-- 汽车交易平台 -->
-<nav class="section1" aria-label="移动通信">
-  <div><strong>🚗 汽车交易平台：</strong>
-    <a href="https://www.autoempirellc.com/" target="_blank" rel="noopener noreferrer">Autoempirellc</a>
-    <a href="https://www.cars.com/" target="_blank" rel="noopener noreferrer">cars</a>
-    <a href="https://www.autotrader.com/" target="_blank" rel="noopener noreferrer">AutoTrader</a>
-    <a href="https://www.carmax.com/" target="_blank" rel="noopener noreferrer">CarMax</a>
-    <a href="https://www.cargurus.com/" target="_blank" rel="noopener noreferrer">CarGurus</a>
-    <a href="https://offerup.com/cars/" target="_blank" rel="noopener noreferrer">OfferUp Cars</a>
-    <a href="https://www.facebook.com/marketplace/" target="_blank" rel="noopener noreferrer">Facebook Marketplace</a>
-    <a href="https://carfax.com" target="_blank" rel="noopener noreferrer">carfax.com</a>
   </div>
-</nav>
 
-  <!-- 🎬 视频 -->
-<nav class="section1" aria-label="🎬 视频">
-  <div><strong>🎬 视频：</strong>
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
-      <a href="https://www.douyin.com/" target="_blank" rel="noopener noreferrer">抖音</a>
-      <a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer">小红书</a>
-      <a href="https://www.bilibili.tv/" target="_blank" rel="noopener noreferrer">Bilibili国际版</a>
-      <a href="https://www.netflix.com/" target="_blank" rel="noopener noreferrer">Netflix</a>
-      <a href="https://www.hulu.com/" target="_blank" rel="noopener noreferrer">Hulu</a>
-      <a href="https://www.iq.com/" target="_blank" rel="noopener noreferrer">爱奇艺</a>
-      <a href="https://www.viki.com/" target="_blank" rel="noopener noreferrer">Viki</a>
-      <a href="https://www.tubi.tv/" target="_blank" rel="noopener noreferrer">Tubi</a>
-      <a href="https://www.peacocktv.com/" target="_blank" rel="noopener noreferrer">Peacock</a>
-      <a href="https://www.crunchyroll.com/" target="_blank" rel="noopener noreferrer">Crunchyroll</a>
-      <a href="https://www.mgtv.com/" target="_blank" rel="noopener noreferrer">芒果TV</a>
-  </div>
-</nav>
- <!-- 👥 社交 -->
-<nav class="section1" aria-label="👥 社交">
-  <div><strong>👥 社交：</strong>
-      <a href="https://wx.qq.com/" target="_blank" rel="noopener noreferrer">微信网页版</a>
-      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://www.X.com/" target="_blank" rel="noopener noreferrer">X</a>
-      <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">TikTok</a>
-      <a href="https://line.me/" target="_blank" rel="noopener noreferrer">LINE</a>
-      <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">Discord</a>
-      <a href="https://www.snapchat.com/" target="_blank" rel="noopener noreferrer">Snapchat</a>
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://www.reddit.com/" target="_blank" rel="noopener noreferrer">Reddit</a>
-      <a href="https://www.wechat.com/" target="_blank" rel="noopener noreferrer">微信 WeChat</a>
-      <a href="https://www.weibo.com/" target="_blank" rel="noopener noreferrer">微博 Weibo</a>
-      <a href="https://www.douban.com/" target="_blank" rel="noopener noreferrer">豆瓣</a>
-  </div>
-</nav>
- <!-- 🛍️ 代购平台 -->
-<nav class="section1" aria-label="🛍️ 代购平台">
-  <div><strong>🛍️ 代购平台：</strong>
-      <a href="https://panli.com/" target="_blank" rel="noopener noreferrer">panli</a>
-      <a href="https://cn2you.com/" target="_blank" rel="noopener noreferrer">cn2you</a>
-      <a href="https://kakobuy.com/" target="_blank" rel="noopener noreferrer">kakobuy</a>
-      <a href="https://allchinabuy.com/" target="_blank" rel="noopener noreferrer">allchinabuy</a>
-      <a href="https://hoobuy.com/" target="_blank" rel="noopener noreferrer">hoobuy</a>
-      <a href="https://pandabuy.com/" target="_blank" rel="noopener noreferrer">pandabuy</a>
-      <a href="https://easybuycn.com/" target="_blank" rel="noopener noreferrer">easybuycn</a>
-      <a href="https://suqibuy.com/" target="_blank" rel="noopener noreferrer">suqibuy</a>
-  </div>
-</nav>
-
-  <!-- 🎮 游戏 -->
-<nav class="section1" aria-label="🎮 游戏">
-  <div><strong>🎮 游戏：</strong>
-      <a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer">Steam</a>
-      <a href="https://www.roblox.com/" target="_blank" rel="noopener noreferrer">Roblox</a>
-      <a href="https://www.epicgames.com/store/" target="_blank" rel="noopener noreferrer">Epic Games</a>
-      <a href="https://na.leagueoflegends.com/" target="_blank" rel="noopener noreferrer">英雄联盟</a>
-      <a href="https://www.blizzard.com/en-us/" target="_blank" rel="noopener noreferrer">暴雪 Battle.net</a>
-      <a href="https://www.genshin.hoyoverse.com/en/" target="_blank" rel="noopener noreferrer">原神</a>
-      <a href="https://www.hoyolab.com/" target="_blank" rel="noopener noreferrer">HoYoLAB</a>
-      <a href="https://www.nintendo.com/" target="_blank" rel="noopener noreferrer">任天堂</a>
-      <a href="https://www.playstation.com/" target="_blank" rel="noopener noreferrer">PlayStation</a>
-      <a href="https://www.xbox.com/" target="_blank" rel="noopener noreferrer">Xbox</a>
-      <a href="https://www.taptap.io/" target="_blank" rel="noopener noreferrer">TapTap</a>
-      <a href="https://game.163.com/" target="_blank" rel="noopener noreferrer">网易游戏</a>
-      <a href="https://www.4399.com/" target="_blank" rel="noopener noreferrer">4399</a>
-      <a href="https://www.7k7k.com/" target="_blank" rel="noopener noreferrer">7K7K</a>
-      <a href="https://www.37.com/" target="_blank" rel="noopener noreferrer">37网游</a>
-      <a href="https://www.yy.com/" target="_blank" rel="noopener noreferrer">YY游戏</a>
-      <a href="https://wan.360.cn/" target="_blank" rel="noopener noreferrer">360游戏</a>
-      <a href="https://www.51.com/" target="_blank" rel="noopener noreferrer">51游戏</a>
-      <a href="https://www.pipaw.com/" target="_blank" rel="noopener noreferrer">琵琶网</a>
-      <a href="https://www.kaixin001.com/" target="_blank" rel="noopener noreferrer">开心网</a>
-  </div>
-</nav>
-  <!-- 常用邮箱 -->
-<nav class="section1" aria-label="   用邮箱">
-  <div><strong>📮 常用邮箱：</strong>
-    <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">Gmail</a>
-    <a href="https://outlook.live.com/" target="_blank" rel="noopener noreferrer">Outlook</a>
-    <a href="https://mail.qq.com/" target="_blank" rel="noopener noreferrer">QQ邮箱</a>
-    <a href="https://mail.163.com/" target="_blank" rel="noopener noreferrer">163邮箱</a>
-    <a href="https://mail.aliyun.com/" target="_blank" rel="noopener noreferrer">阿里邮箱</a>
-    <a href="https://mail.sina.com.cn/" target="_blank" rel="noopener noreferrer">新浪邮箱</a>
-    <a href="https://foxmail.com/" target="_blank" rel="noopener noreferrer">Foxmail</a>
-    <a href="https://mail.yeah.net/" target="_blank" rel="noopener noreferrer">Yeah邮箱</a>
-    <a href="https://hicloud.com/" target="_blank" rel="noopener noreferrer">华为云邮箱</a>
-    <a href="https://mail.126.com/" target="_blank" rel="noopener noreferrer">126邮箱</a>
-  </div>
-</nav>
-  <!-- 国内常用 -->
-  <nav class="section1" aria-label="国内常用">
-    <div><strong>🌐 国内常用：</strong>
-      <a href="https://www.baidu.com/" target="_blank" rel="noopener noreferrer">百度</a>
-      <a href="https://www.qq.com/" target="_blank" rel="noopener noreferrer">腾讯网</a>
-      <a href="https://www.taobao.com/" target="_blank" rel="noopener noreferrer">淘宝网</a>
-      <a href="https://www.jd.com/" target="_blank" rel="noopener noreferrer">京东</a>
-      <a href="https://www.tmall.com/" target="_blank" rel="noopener noreferrer">天猫</a>
-      <a href="https://www.sina.com.cn/" target="_blank" rel="noopener noreferrer">新浪网</a>
-      <a href="https://www.weibo.com/" target="_blank" rel="noopener noreferrer">微博</a>
-      <a href="https://www.bilibili.com/" target="_blank" rel="noopener noreferrer">哔哩哔哩</a>
-      <a href="https://www.zhihu.com/" target="_blank" rel="noopener noreferrer">知乎</a>
-      <a href="https://www.douyin.com/" target="_blank" rel="noopener noreferrer">抖音</a>
-      <a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener noreferrer">小红书</a>
-      <a href="https://www.163.com/" target="_blank" rel="noopener noreferrer">网易</a>
-      <a href="https://www.sohu.com/" target="_blank" rel="noopener noreferrer">搜狐</a>
-      <a href="https://www.iqiyi.com/" target="_blank" rel="noopener noreferrer">爱奇艺</a>
-      <a href="https://youku.com/" target="_blank" rel="noopener noreferrer">优酷</a>
-    </div>
-  </nav>
-
-
-  <!-- 折叠专区 -->
-  <nav class="section2" aria-label="其它专区">
-    <div class="toggle-header" onclick="toggleSection('otherLinks')">📁 其它</div>
-    <div id="otherLinks" class="toggle-content" aria-expanded="false">   
-      <a href="https://americanflooring.us/" target="_blank" rel="noopener noreferrer">American Flooring </a>
-      <a href="https://app.rippling.com/" target="_blank" rel="noopener noreferrer">Rippling </a>
-      <a href="https://www.geico.com/" target="_blank" rel="noopener noreferrer">Geico </a>
-      <a href="https://www.e-zpassny.com/" target="_blank" rel="noopener noreferrer">E-ZPassNY</a>
-      <a href="https://dimsumsam.us/" target="_blank" rel="noopener noreferrer">金满庭 </a>
-      <a href="https://kingskitchenusa.com/" target="_blank" rel="noopener noreferrer">金煌煲煲好</a>    
-      <a href="https://ekitchensupply.com/zh" target="_blank" rel="noopener noreferrer">ekitchensupply</a>
-      <a href="https://www.pandarange.com/" target="_blank" rel="noopener noreferrer">L&T 餐厅设备公司</a>
-      <a href="https://www.youtube.com/@ltadministrator6042/videos" target="_blank" rel="noopener noreferrer">L&T youtube</a>
-      <a href="https://www.facebook.com/people/LT-Restaurant-Equipment-Inc/61558406247428/" target="_blank" rel="noopener noreferrer">L&T Facebook</a>
-      <a href="https://acm-fan.com/" target="_blank" rel="noopener noreferrer">厨房排气扇</a>
-      <a href="https://hangyusquare.com/lucky-number/" target="_blank" rel="noopener noreferrer">航宇通讯</a>
-      <a href="https://www.youtube.com/@chinabsr" target="_blank" rel="noopener noreferrer">ChinaBSR youtube</a>   
-      <a href="https://www.icloud.com/" target="_blank" rel="noopener noreferrer">苹果帐号</a>
-      <a href="https://openaa.com/nav/mi" target="_blank" rel="noopener noreferrer">Minav</a>
-    </div>
-  </nav>
-
-  <!-- 回到顶部按钮 -->
-  <button class="back-to-top" onclick="scrollToTop()" aria-label="回到顶部" id="backToTopBtn">⬆️ 回到顶部</button>
-
-  <!-- 底部 -->
-  <footer class="footer">
-    © 2025 <a href="https://openaa.com/about/" target="_blank" rel="noopener noreferrer">OpenAA.com</a> 保留所有权利 | 联系邮箱：<a href="mailto:323748@gmail.com">323748@gmail.com</a>
-    <br/>
-    <span>OpenAA · 美国华人生活入口 · 华人导航 · 168招聘 · 168二手 · 美国华人资讯 · 华人AI工具 · 华人网址大全</span>
-  </footer>
+  <!-- 吐司提示 -->
+  <div class="toast" id="toast"></div>
 
   <script>
-    // 收藏
-    function addBookmark() {
-      alert('请使用 Ctrl+D (或 Cmd+D) 收藏本网站，或在浏览器菜单中选择“添加书签”');
-    }
-
-    // 回到顶部
-    function scrollToTop() {
+    // 页面切换
+    function switchSection(sectionId, index) {
+      // 隐藏所有section
+      document.querySelectorAll('.section-container').forEach(el => {
+        el.classList.remove('active');
+      });
+      
+      // 显示选中的section
+      document.getElementById(sectionId).classList.add('active');
+      
+      // 更新导航栏激活状态
+      document.querySelectorAll('.nav-item').forEach(el => {
+        el.classList.remove('active');
+      });
+      document.querySelectorAll('.nav-item')[index].classList.add('active');
+      
+      // 滚动到顶部
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    // 显示回到顶部按钮
-    window.addEventListener('scroll', function() {
-      const btn = document.getElementById('backToTopBtn');
-      if (!btn) return;
-      if (window.scrollY > 200) {
-        btn.style.display = 'block';
-      } else {
-        btn.style.display = 'none';
+
+    // 搜索功能
+    function handleSearch() {
+      const query = document.getElementById('searchInput').value;
+      if (query.trim()) {
+        window.open(`https://www.google.com/search?q=site:openaa.com+${encodeURIComponent(query)}`, '_blank');
+      }
+    }
+
+    // 回车搜索
+    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        handleSearch();
       }
     });
 
-    // 折叠区动画
-    function toggleSection(id) {
-      const section = document.getElementById(id);
-      if (section) {
-        const expanded = section.classList.toggle('open');
-        section.setAttribute('aria-expanded', expanded);
+    // 收藏功能
+    function toggleBookmark() {
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf('mac') > -1) {
+        alert('请使用 Cmd+D 收藏本站');
+      } else {
+        alert('请使用 Ctrl+D 收藏本站，或在浏览器菜单中选择"添加书签"');
       }
-    } // 修复：添加缺失的右大括号
+    }
+
+    // 分享功能
+    function shareApp() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'OpenAA · 美国华人生活入口',
+          text: '为在美华人提供一站式中文导航与实用服务',
+          url: 'https://openaa.com/'
+        }).catch(err => console.log('分享取消或失败:', err));
+      } else {
+        copyLink(window.location.href);
+      }
+    }
+
+    // 复制链接
+    function copyLink(link, event) {
+      event?.preventDefault();
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(link).then(() => {
+          showToast('已复制链接');
+        }).catch(() => {
+          fallbackCopy(link);
+        });
+      } else {
+        fallbackCopy(link);
+      }
+    }
+
+    // 备用复制方法
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast('已复制');
+      } catch (err) {
+        showToast('复制失败，请手动复制');
+      }
+      document.body.removeChild(ta);
+    }
+
+    // 显示吐司
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 1500);
+    }
+
+    // 模态框控制
+    function showModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+    }
+
+    function closeModal(event) {
+      if (event && event.target !== event.currentTarget) return;
+      document.querySelectorAll('.modal.active').forEach(el => {
+        el.classList.remove('active');
+      });
+    }
+
+    // 点击外部关闭模态框
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // 阻止模态框内容冒泡
+    document.querySelectorAll('.modal-content').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    });
   </script>
 </body>
 </html>
