@@ -9,7 +9,7 @@
   <meta name="apple-mobile-web-app-title" content="AI工具">
 
   <meta name="description" content="OpenAA · AI工具导航 - 收录最热门的AI工具平台：ChatGPT、Deepseek、Claude、Midjourney等，支持对话、写作、绘画、编程，一键直达，无需注册。">
-  <meta name="keywords" content="AI工具, ChatGPT, Midjourney, Claude, AI导航, 免费AI工具, 人工智能, AI写作, AI绘画, AI编程">
+  <meta name="keywords" content="AI工具, ChatGPT, Midjourney, Claude, AI导航, 免费AI工具, 人工智能, AI   作, AI绘画, AI编程">
   <meta property="og:title" content="OpenAA · AI工具导航">
   <meta property="og:description" content="一站式AI工具导航 - 精选全球最热门的AI工具，无广告，永久免费。">
   <meta property="og:type" content="website">
@@ -541,7 +541,7 @@
         </div>
         <div class="header-actions">
           <button class="btn-icon" onclick="toggleBookmark()" title="收藏">⭐</button>
-          <button class="btn-icon" onclick="shareApp()" title="分享">📤</button>
+          <button class="btn-icon" onclick="toggleShare()" title="分享">📤</button>
         </div>
       </div>
       <p class="header-subtitle">ChatGPT · Claude · Midjourney · 精选全球热门AI工具</p>
@@ -573,32 +573,32 @@
         <div class="card-header-count">6</div>
       </div>
       <div class="ai-grid">
-        <a href="https://chat.openai.com" target="_blank" rel="noopener" class="ai-item" onclick="handleToolClick('ChatGPT')">
+        <a href="https://chat.openai.com" target="_blank" rel="noopener" class="ai-item">
           <div class="ai-icon">🤖</div>
           <div class="ai-name">ChatGPT</div>
           <div class="ai-type">对话AI</div>
         </a>
-        <a href="https://chat.deepseek.com" target="_blank" rel="noopener" class="ai-item" onclick="handleToolClick('DeepSeek')">
+        <a href="https://chat.deepseek.com" target="_blank" rel="noopener" class="ai-item">
           <div class="ai-icon">🧠</div>
           <div class="ai-name">DeepSeek</div>
           <div class="ai-type">国产AI</div>
         </a>
-        <a href="https://claude.ai" target="_blank" rel="noopener" class="ai-item" onclick="handleToolClick('Claude')">
+        <a href="https://claude.ai" target="_blank" rel="noopener" class="ai-item">
           <div class="ai-icon">💬</div>
           <div class="ai-name">Claude</div>
           <div class="ai-type">高能AI</div>
         </a>
-        <a href="https://gemini.google.com" target="_blank" rel="noopener" class="ai-item" onclick="handleToolClick('Gemini')">
+        <a href="https://gemini.google.com" target="_blank" rel="noopener" class="ai-item">
           <div class="ai-icon">🌟</div>
           <div class="ai-name">Gemini</div>
           <div class="ai-type">Google AI</div>
         </a>
-        <a href="https://www.midjourney.com" target="_blank" rel="noopener" class="ai-item" onclick="handleToolClick('Midjourney')">
+        <a href="https://www.midjourney.com" target="_blank" rel="noopener" class="ai-item">
           <div class="ai-icon">🎨</div>
           <div class="ai-name">Midjourney</div>
           <div class="ai-type">AI绘画</div>
         </a>
-        <a href="https://deepl.com" target="_blank" rel="noopener" class="ai-item" onclick="handleToolClick('DeepL')">
+        <a href="https://deepl.com" target="_blank" rel="noopener" class="ai-item">
           <div class="ai-icon">🌐</div>
           <div class="ai-name">DeepL</div>
           <div class="ai-type">AI翻译</div>
@@ -724,7 +724,7 @@
       </div>
     </div>
 
-    <!-- 内容创作工具 -->
+    <!--   容创作工具 -->
     <div class="category-card">
       <div class="category-header">
         <div class="category-header-icon">✍️</div>
@@ -811,19 +811,19 @@
 
   <!-- 底部导航栏 -->
   <nav class="bottom-nav">
-    <a href="https://openaa.com/" class="nav-item">
+    <a href="https://openaa.com/" class="nav-item" title="返回首页">
       <div class="nav-item-icon">🏠</div>
       <div>首页</div>
     </a>
-    <button class="nav-item active" onclick="showAllTools()">
+    <button class="nav-item active" onclick="showAllTools()" title="查看全部">
       <div class="nav-item-icon">🤖</div>
       <div>全部</div>
     </button>
-    <button class="nav-item" onclick="showHotTools()">
+    <button class="nav-item" onclick="showHotTools()" title="查看热门">
       <div class="nav-item-icon">🔥</div>
       <div>热门</div>
     </button>
-    <button class="nav-item" onclick="shareApp()">
+    <button class="nav-item" onclick="shareApp()" title="分享页面">
       <div class="nav-item-icon">📤</div>
       <div>分享</div>
     </button>
@@ -863,17 +863,12 @@
       showToast(`正在显示: ${category}`);
     }
 
-    // 工具点击处理
-    function handleToolClick(toolName) {
-      console.log(`正在打开: ${toolName}`);
-    }
-
     // 显示全部工具
     function showAllTools() {
       document.querySelectorAll('.nav-item').forEach(item => {
         item.classList.remove('active');
       });
-      event.target.closest('.nav-item').classList.add('active');
+      document.querySelectorAll('.nav-item')[1].classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -882,8 +877,13 @@
       document.querySelectorAll('.nav-item').forEach(item => {
         item.classList.remove('active');
       });
-      event.target.closest('.nav-item').classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.querySelectorAll('.nav-item')[2].classList.add('active');
+      
+      // 滚动到第一个热门工具卡片
+      const cards = document.querySelectorAll('.card');
+      if (cards.length > 0) {
+        cards[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
 
     // 收藏功能
@@ -896,7 +896,20 @@
       }
     }
 
-    // 分享功能
+    // 分享弹窗函数（用于header按钮）
+    function toggleShare() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'OpenAA · AI工具导航',
+          text: '精选全球热门AI工具导航，一键直达。',
+          url: window.location.href
+        }).catch(err => console.log('分享取消或失败'));
+      } else {
+        showToast('请使用浏览器菜单分享');
+      }
+    }
+
+    // 分享功能（用于底部导航）
     function shareApp() {
       if (navigator.share) {
         navigator.share({
