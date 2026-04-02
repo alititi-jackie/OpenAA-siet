@@ -479,25 +479,25 @@
           <span>AI工具</span>
         </div>
         <div class="header-actions">
-          <button class="btn-icon" onclick="toggleBookmark()" title="收藏">⭐</button>
-          <button class="btn-icon" onclick="toggleShare()" title="分享">📤</button>
+          <button class="btn-icon" type="button" onclick="toggleBookmark();" title="收藏">⭐</button>
+          <button class="btn-icon" type="button" onclick="toggleShare();" title="分享">📤</button>
         </div>
       </div>
       <p class="header-subtitle">ChatGPT · Claude · Midjourney · 精选全球热门AI工具</p>
 
       <div class="search-box">
         <input type="text" id="searchInput" placeholder="搜索AI工具..." />
-        <button onclick="handleSearch()">🔍</button>
+        <button type="button" onclick="handleSearch();">🔍</button>
       </div>
 
       <!-- 分类标签 -->
       <div class="category-tabs">
-        <button class="category-tab active" onclick="filterByCategory(this)">全部</button>
-        <button class="category-tab" onclick="filterByCategory(this)">对话</button>
-        <button class="category-tab" onclick="filterByCategory(this)">绘画</button>
-        <button class="category-tab" onclick="filterByCategory(this)">写作</button>
-        <button class="category-tab" onclick="filterByCategory(this)">编程</button>
-        <button class="category-tab" onclick="filterByCategory(this)">翻译</button>
+        <button type="button" class="category-tab active" onclick="filterByCategory(this);">全部</button>
+        <button type="button" class="category-tab" onclick="filterByCategory(this);">对话</button>
+        <button type="button" class="category-tab" onclick="filterByCategory(this);">绘画</button>
+        <button type="button" class="category-tab" onclick="filterByCategory(this);">写作</button>
+        <button type="button" class="category-tab" onclick="filterByCategory(this);">编程</button>
+        <button type="button" class="category-tab" onclick="filterByCategory(this);">翻译</button>
       </div>
     </div>
   </header>
@@ -750,22 +750,22 @@
 
   <!-- 底部导航栏 -->
   <nav class="bottom-nav">
-    <a href="javascript:void(0);" class="nav-item active" data-nav="0" onclick="setNavActive(0); showAllTools();">
+    <a href="https://openaa.com/" class="nav-item active" onclick="setNavActive(0); return true;">
       <div class="nav-item-icon">🏠</div>
       <div>首页</div>
     </a>
-    <a href="javascript:void(0);" class="nav-item" data-nav="1" onclick="setNavActive(1); showAllTools();">
+    <button type="button" class="nav-item" onclick="setNavActive(1); showAllTools();">
       <div class="nav-item-icon">🤖</div>
       <div>全部</div>
-    </a>
-    <a href="javascript:void(0);" class="nav-item" data-nav="2" onclick="setNavActive(2); showHotTools();">
+    </button>
+    <button type="button" class="nav-item" onclick="setNavActive(2); showHotTools();">
       <div class="nav-item-icon">🔥</div>
       <div>热门</div>
-    </a>
-    <a href="javascript:void(0);" class="nav-item" data-nav="3" onclick="setNavActive(3); shareApp();">
+    </button>
+    <button type="button" class="nav-item" onclick="setNavActive(3); shareApp();">
       <div class="nav-item-icon">📤</div>
       <div>分享</div>
-    </a>
+    </button>
   </nav>
 
   <!-- 吐司提示 -->
@@ -780,9 +780,11 @@
   <script>
     // 设置导航栏激活状态
     function setNavActive(index) {
-      const navItems = document.querySelectorAll('.nav-item');
+      const navItems = document.querySelectorAll('.bottom-nav .nav-item');
       navItems.forEach(item => item.classList.remove('active'));
-      navItems[index].classList.add('active');
+      if (navItems[index]) {
+        navItems[index].classList.add('active');
+      }
     }
 
     // 搜索功能
