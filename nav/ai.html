@@ -811,19 +811,19 @@
 
   <!-- 底部导航栏 -->
   <nav class="bottom-nav">
-    <a href="https://openaa.com/" class="nav-item" title="返回首页">
+    <a href="https://openaa.com/" class="nav-item" title="返回首页" data-nav="home">
       <div class="nav-item-icon">🏠</div>
       <div>首页</div>
     </a>
-    <button class="nav-item active" onclick="showAllTools()" title="查看全部">
+    <button class="nav-item active" onclick="showAllTools()" title="查看全部" data-nav="all">
       <div class="nav-item-icon">🤖</div>
       <div>全部</div>
     </button>
-    <button class="nav-item" onclick="showHotTools()" title="查看热门">
+    <button class="nav-item" onclick="showHotTools()" title="查看热门" data-nav="hot">
       <div class="nav-item-icon">🔥</div>
       <div>热门</div>
     </button>
-    <button class="nav-item" onclick="shareApp()" title="分享页面">
+    <button class="nav-item" onclick="shareApp()" title="分享页面" data-nav="share">
       <div class="nav-item-icon">📤</div>
       <div>分享</div>
     </button>
@@ -839,6 +839,18 @@
   </footer>
 
   <script>
+    // 更新导航栏激活状态
+    function updateNavItemStatus(navName) {
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      const activeItem = document.querySelector(`[data-nav="${navName}"]`);
+      if (activeItem) {
+        activeItem.classList.add('active');
+      }
+    }
+
     // 搜索功能
     function handleSearch() {
       const query = document.getElementById('searchInput').value;
@@ -860,24 +872,28 @@
         btn.classList.remove('active');
       });
       event.target.classList.add('active');
-      showToast(`正在显示: ${category}`);
+      
+      const categoryNames = {
+        'all': '全部',
+        'chat': '对话',
+        'image': '绘画',
+        'write': '写作',
+        'code': '编程',
+        'translate': '翻译'
+      };
+      
+      showToast(`正在显示: ${categoryNames[category]}`);
     }
 
     // 显示全部工具
     function showAllTools() {
-      document.querySelectorAll('.nav-item').forEach(item => {
-        item.classList.remove('active');
-      });
-      document.querySelectorAll('.nav-item')[1].classList.add('active');
+      updateNavItemStatus('all');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // 显示热门工具
     function showHotTools() {
-      document.querySelectorAll('.nav-item').forEach(item => {
-        item.classList.remove('active');
-      });
-      document.querySelectorAll('.nav-item')[2].classList.add('active');
+      updateNavItemStatus('hot');
       
       // 滚动到第一个热门工具卡片
       const cards = document.querySelectorAll('.card');
@@ -911,14 +927,22 @@
 
     // 分享功能（用于底部导航）
     function shareApp() {
+      updateNavItemStatus('share');
+      
       if (navigator.share) {
         navigator.share({
           title: 'OpenAA · AI工具导航',
           text: '精选全球热门AI工具导航，一键直达。',
           url: window.location.href
-        }).catch(err => console.log('分享取消或失败'));
+        }).catch(err => {
+          console.log('分享取消或失败');
+          // 如果分享失败，取消激活状态
+          updateNavItemStatus('all');
+        });
       } else {
         showToast('请使用浏览器菜单分享');
+        // 如果不支持分享，取消激活状态
+        updateNavItemStatus('all');
       }
     }
 
