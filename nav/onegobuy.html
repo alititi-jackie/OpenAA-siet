@@ -1,126 +1,463 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 <meta charset="UTF-8">
-<title>OneGoBuy - One Stop Shopping Platform | 一站式购物导航</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OneGoBuy - 一站式购物导航 | 美国中国电商平台</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#22c55e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="OneGoBuy">
 <meta name="description" content="OneGoBuy 一站式购物导航平台，美国中国电商、服装、美妆、数码、家居全覆盖，支持AI智能推荐。">
-<meta name="keywords" content="OneGoBuy, 购物, 美国电商, 中国电商, AI推荐, 亚马逊, 淘宝, 京东, Shein, Nike, Sephora">
+<meta name="keywords" content="OneGoBuy, 购物, 美国电商, 中国电商, AI推荐, 亚马逊, 淘宝, 京东, Shein">
 <meta name="robots" content="index, follow">
-<meta name="author" content="OneGoBuy Team">
 
-<!-- Open Graph / 社交分享 -->
-<meta property="og:title" content="OneGoBuy - One Stop Shopping Platform | 一站式购物导航" />
+<!-- Open Graph -->
+<meta property="og:title" content="OneGoBuy - 一站式购物导航" />
 <meta property="og:description" content="跨境购物导航，美国中国电商全覆盖，AI智能推荐。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://OneGoBuy.com" />
-<meta property="og:image" content="/favicon/apple-touch-icon.png" />
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="OneGoBuy - One Stop Shopping Platform" />
-<meta name="twitter:description" content="跨境购物导航，美国中国电商全覆盖，AI智能推荐。" />
+<meta property="og:url" content="https://onegobuy.com" />
 
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/site.webmanifest">
-<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<meta name="msapplication-TileColor" content="#2b5797">
 
-<!-- Canonical URL for SEO -->
-<link rel="canonical" href="https://OneGoBuy.com" />
+<!-- Canonical URL -->
+<link rel="canonical" href="https://onegobuy.com" />
 
-<!-- Structured Data / Schema.org -->
+<!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "OneGoBuy",
-  "description": "One Stop Shopping Platform - 一站式购物导航",
-  "url": "https://OneGoBuy.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://OneGoBuy.com?search={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  }
+  "description": "一站式购物导航平台",
+  "url": "https://onegobuy.com"
 }
 </script>
 
 <style>
-* { box-sizing: border-box; }
-body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: linear-gradient(135deg,#0f172a,#020617); color:white; scroll-behavior: smooth;}
-html { scroll-behavior: smooth; }
-nav { padding: 20px 40px; font-size:22px; color:#22c55e; font-weight:bold; display:flex; justify-content:space-between; align-items:center; position: sticky; top: 0; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.3);}
-nav a { cursor: pointer; }
-nav .logo { cursor: pointer; transition: all 0.3s ease; }
-nav .logo:hover { color: #16a34a; text-shadow: 0 0 10px rgba(34, 197, 94, 0.5); }
-.nav-links { display: flex; gap: 15px; }
-.hero { text-align:center; padding:60px 20px; animation: fadeIn 0.6s ease-in; }
-.hero h1 { font-size: 2.5em; margin-bottom: 10px; }
-.hero p { font-size: 1.1em; color: #cbd5e1; margin-bottom: 20px; }
-input { padding:12px 16px; width:60%; max-width: 600px; border-radius:10px; border:none; font-size: 16px; transition: all 0.3s ease; }
-input:focus { outline: none; box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3); transform: scale(1.02); }
-button { padding:12px 30px; border:none; background:#22c55e; color:white; border-radius:10px; cursor:pointer; font-weight: bold; font-size: 16px; transition: all 0.3s ease; }
-button:hover { background:#16a34a; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(34, 197, 94, 0.4); }
-button:active { transform: translateY(0); }
-.section { padding:40px; }
-.section h2 { margin-top: 0; margin-bottom:20px; font-size: 1.8em; }
-.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:20px; }
-.card { padding:20px; background: rgba(255,255,255,0.05); border-radius:12px; text-align:center; transition: all 0.3s ease; border: 1px solid rgba(34, 197, 94, 0.2); }
-.card:hover { background: rgba(34, 197, 94, 0.1); transform: translateY(-5px); border-color: #22c55e; box-shadow: 0 10px 25px rgba(34, 197, 94, 0.2); }
-.card a { color:white; text-decoration:none; font-weight: 500; display: block; }
-.card a:hover { color: #22c55e; }
-.result { margin-top:20px; color:#22c55e; font-size: 1.1em; animation: slideDown 0.4s ease-in; }
-.result a { color: #4ade80; text-decoration: none; font-weight: bold; transition: all 0.3s ease; }
-.result a:hover { color: #22c55e; text-decoration: underline; }
-.return-home { padding:8px 15px; border-radius:8px; background:#64748b; color:white; text-decoration:none; font-size:14px; transition: all 0.3s ease; }
-.return-home:hover { background:#475569; transform: translateX(2px); }
-.footer { background: rgba(255,255,255,0.05); text-align:center; padding:30px 20px; font-size:14px; color:#cbd5e1; border-top: 1px solid rgba(34, 197, 94, 0.1); }
-.footer p { margin: 8px 0; }
+:root {
+  --primary: #22c55e;
+  --primary-dark: #16a34a;
+  --secondary: #0f172a;
+  --bg: #020617;
+  --card: #1e293b;
+  --text-light: #e2e8f0;
+  --text-muted: #cbd5e1;
+  --border: #334155;
+  --shadow: 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-lg: 0 8px 20px rgba(0,0,0,0.5);
+  --radius: 12px;
+}
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+/* 顶部导航 */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 12px 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+.header-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.header-logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header-logo:active {
+  color: var(--primary-dark);
+  transform: scale(0.95);
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-icon {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: var(--primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-icon:active {
+  background: rgba(34, 197, 94, 0.2);
+  transform: scale(0.95);
+}
+
+.header-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* 搜索框 */
+.search-section {
+  padding: 16px;
+  margin-top: 12px;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 20px;
+  font-size: 14px;
+  background: rgba(30, 41, 59, 0.8);
+  color: var(--text-light);
+  outline: none;
+  transition: all 0.2s;
+}
+
+.search-box input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-box input:focus {
+  background: rgba(30, 41, 59, 1);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.search-box button {
+  background: var(--primary);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box button:active {
+  background: var(--primary-dark);
+  transform: scale(0.95);
+}
+
+/* 快速分类 */
+.category-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 0 16px 12px 16px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.category-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.category-tab {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: var(--primary);
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.category-tab.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.category-tab:active {
+  transform: scale(0.95);
+}
+
+/* 主要内容区 */
+main {
+  padding: 8px;
+  padding-bottom: 100px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 推荐结果 */
+.recommendation-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin: 8px 0;
+  text-align: center;
+  animation: slideDown 0.3s ease-out;
+}
+
+.recommendation-card p {
+  margin: 0 0 12px 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.recommendation-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.rec-link {
+  display: inline-block;
+  padding: 8px 14px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.rec-link:active {
+  background: var(--primary);
+  color: white;
 }
 
 @keyframes slideDown {
-  from { 
+  from {
     opacity: 0;
     transform: translateY(-10px);
   }
-  to { 
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@media (max-width: 768px) {
-  nav { padding: 15px 20px; flex-wrap: wrap; }
-  nav .logo { font-size: 18px; }
-  .nav-links { flex-wrap: wrap; gap: 8px; width: 100%; }
-  .hero h1 { font-size: 1.8em; }
-  input { width: 90%; padding: 10px 14px; }
-  .section { padding: 30px 15px; }
-  .grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
-  .card { padding: 15px; font-size: 14px; }
-  button { padding: 10px 20px; font-size: 14px; }
+/* 分类卡片 */
+.shopping-section {
+  background: rgba(30, 41, 59, 0.4);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 8px 0;
+  overflow: hidden;
+}
+
+.section-header {
+  padding: 14px 16px;
+  background: rgba(34, 197, 94, 0.1);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.3);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-icon {
+  font-size: 20px;
+}
+
+.shopping-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+  padding: 12px;
+}
+
+.shopping-item {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 100px;
+  justify-content: center;
+}
+
+.shopping-item:active {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: var(--primary);
+  transform: scale(0.95);
+}
+
+.shopping-item-en {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.shopping-item-zh {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* 底部导航 */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  z-index: 200;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.3);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 11px;
+  transition: color 0.2s;
+  cursor: pointer;
+  border: none;
+  background: none;
+  gap: 4px;
+}
+
+.nav-item.active {
+  color: var(--primary);
+}
+
+.nav-item-icon {
+  font-size: 24px;
+}
+
+/* 页脚 */
+footer {
+  background: rgba(30, 41, 59, 0.4);
+  text-align: center;
+  padding: 20px 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+}
+
+footer p {
+  margin: 6px 0;
+}
+
+footer strong {
+  color: var(--primary);
+}
+
+/* 吐司提示 */
+.toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  z-index: 400;
+  animation: slideInUp 0.3s;
+  display: none;
+}
+
+.toast.show {
+  display: block;
+}
+
+@keyframes slideInUp {
+  from { transform: translateX(-50%) translateY(20px); opacity: 0; }
+  to { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+/* 响应式 */
+@media (min-width: 600px) {
+  .shopping-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
-  nav { padding: 12px 15px; }
-  .hero { padding: 30px 15px; }
-  .hero h1 { font-size: 1.5em; }
-  .hero p { font-size: 0.95em; }
-  input { width: 100%; }
-  button { width: 100%; }
-  .section { padding: 20px 10px; }
-  .grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+  .shopping-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .shopping-item {
+    min-height: 90px;
+    font-size: 13px;
+  }
 }
 </style>
 </head>
@@ -128,159 +465,371 @@ button:active { transform: translateY(0); }
 <body>
 
 <!-- 顶部导航 -->
-<nav>
-  <div class="logo" onclick="goToHome()" title="Go to OneGoBuy home">OneGoBuy.com</div>
-  <div class="nav-links">
-    <a class="return-home" href="https://OpenAA.com" target="_blank">返回 OpenAA 首页</a>
-    <a class="return-home" href="https://jozl.com" target="_blank">Jozl</a>
+<header>
+  <div class="header-content">
+    <div class="header-top">
+      <div class="header-logo" onclick="goHome()" title="返回首页">🛍️ OneGoBuy</div>
+      <div class="header-actions">
+        <button class="btn-icon" id="backBtn" title="返回">←</button>
+        <button class="btn-icon" id="shareBtn" title="分享">📤</button>
+      </div>
+    </div>
+    <p class="header-subtitle">美国 · 中国 · 跨境购物一站式导航</p>
   </div>
+</header>
+
+<!-- 搜索和分类 -->
+<div class="search-section">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="搜索：iPhone / 鞋 / 化妆品..." />
+    <button id="searchBtn">🔍</button>
+  </div>
+
+  <div class="category-tabs">
+    <button class="category-tab active" data-category="all">全部</button>
+    <button class="category-tab" data-category="us">美国电商</button>
+    <button class="category-tab" data-category="cn">中国电商</button>
+    <button class="category-tab" data-category="fashion">服装</button>
+    <button class="category-tab" data-category="beauty">美妆</button>
+    <button class="category-tab" data-category="electronics">数码</button>
+  </div>
+</div>
+
+<!-- 主要内容 -->
+<main id="mainContent">
+
+  <!-- 推荐结果 -->
+  <div id="recommendationResult"></div>
+
+  <!-- 美国电商 -->
+  <div class="shopping-section">
+    <div class="section-header">
+      <span class="section-icon">🛒</span>
+      <span>美国电商</span>
+    </div>
+    <div class="shopping-grid">
+      <a href="https://www.amazon.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Amazon</div>
+        <div class="shopping-item-zh">亚马逊</div>
+      </a>
+      <a href="https://www.walmart.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Walmart</div>
+        <div class="shopping-item-zh">沃尔玛</div>
+      </a>
+      <a href="https://www.target.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Target</div>
+        <div class="shopping-item-zh">塔吉特</div>
+      </a>
+      <a href="https://www.costco.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Costco</div>
+        <div class="shopping-item-zh">好市多</div>
+      </a>
+      <a href="https://www.samsclub.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Sam's Club</div>
+        <div class="shopping-item-zh">山姆会员店</div>
+      </a>
+      <a href="https://www.sayweee.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Weee</div>
+        <div class="shopping-item-zh">华人买菜</div>
+      </a>
+      <a href="https://www.ebay.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">eBay</div>
+        <div class="shopping-item-zh">易趣</div>
+      </a>
+      <a href="https://www.bestbuy.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Best Buy</div>
+        <div class="shopping-item-zh">百思买</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 中国电商 -->
+  <div class="shopping-section">
+    <div class="section-header">
+      <span class="section-icon">🇨🇳</span>
+      <span>中国电商</span>
+    </div>
+    <div class="shopping-grid">
+      <a href="https://www.taobao.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Taobao</div>
+        <div class="shopping-item-zh">淘宝</div>
+      </a>
+      <a href="https://www.tmall.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Tmall</div>
+        <div class="shopping-item-zh">天猫</div>
+      </a>
+      <a href="https://www.jd.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">JD</div>
+        <div class="shopping-item-zh">京东</div>
+      </a>
+      <a href="https://www.pinduoduo.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Pinduoduo</div>
+        <div class="shopping-item-zh">拼多多</div>
+      </a>
+      <a href="https://www.1688.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">1688</div>
+        <div class="shopping-item-zh">批发平台</div>
+      </a>
+      <a href="https://www.suning.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Suning</div>
+        <div class="shopping-item-zh">苏宁</div>
+      </a>
+      <a href="https://www.vip.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Vipshop</div>
+        <div class="shopping-item-zh">唯品会</div>
+      </a>
+      <a href="https://www.xiaohongshu.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Xiaohongshu</div>
+        <div class="shopping-item-zh">小红书</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 服装 -->
+  <div class="shopping-section">
+    <div class="section-header">
+      <span class="section-icon">👕</span>
+      <span>服装时尚</span>
+    </div>
+    <div class="shopping-grid">
+      <a href="https://us.shein.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Shein</div>
+        <div class="shopping-item-zh">快时尚</div>
+      </a>
+      <a href="https://www.nike.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Nike</div>
+        <div class="shopping-item-zh">运动品牌</div>
+      </a>
+      <a href="https://www.zara.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Zara</div>
+        <div class="shopping-item-zh">时尚服饰</div>
+      </a>
+      <a href="https://www.hm.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">H&M</div>
+        <div class="shopping-item-zh">服装品牌</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 美妆 -->
+  <div class="shopping-section">
+    <div class="section-header">
+      <span class="section-icon">💄</span>
+      <span>美妆护肤</span>
+    </div>
+    <div class="shopping-grid">
+      <a href="https://www.sephora.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Sephora</div>
+        <div class="shopping-item-zh">丝芙兰</div>
+      </a>
+      <a href="https://www.ulta.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Ulta</div>
+        <div class="shopping-item-zh">美妆超市</div>
+      </a>
+      <a href="https://www.xiaohongshu.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Xiaohongshu</div>
+        <div class="shopping-item-zh">小红书</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 数码电器 -->
+  <div class="shopping-section">
+    <div class="section-header">
+      <span class="section-icon">📱</span>
+      <span>数码电器</span>
+    </div>
+    <div class="shopping-grid">
+      <a href="https://www.apple.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Apple</div>
+        <div class="shopping-item-zh">苹果</div>
+      </a>
+      <a href="https://www.bestbuy.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Best Buy</div>
+        <div class="shopping-item-zh">百思买</div>
+      </a>
+      <a href="https://www.newegg.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Newegg</div>
+        <div class="shopping-item-zh">新蛋</div>
+      </a>
+      <a href="https://www.samsung.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Samsung</div>
+        <div class="shopping-item-zh">三星</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 家居生活 -->
+  <div class="shopping-section">
+    <div class="section-header">
+      <span class="section-icon">🏠</span>
+      <span>家居生活</span>
+    </div>
+    <div class="shopping-grid">
+      <a href="https://www.overstock.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Overstock</div>
+        <div class="shopping-item-zh">家居折扣</div>
+      </a>
+      <a href="https://www.ikea.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">IKEA</div>
+        <div class="shopping-item-zh">宜家</div>
+      </a>
+      <a href="https://www.wayfair.com" target="_blank" rel="noopener" class="shopping-item">
+        <div class="shopping-item-en">Wayfair</div>
+        <div class="shopping-item-zh">家具平台</div>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- 底部导航 -->
+<nav class="bottom-nav">
+  <a href="https://openaa.com/" class="nav-item" title="返回OpenAA首页">
+    <div class="nav-item-icon">🏠</div>
+    <div>首页</div>
+  </a>
+  <button type="button" class="nav-item active" id="allNavBtn" title="全部分类">
+    <div class="nav-item-icon">🛍️</div>
+    <div>全部</div>
+  </button>
+  <button type="button" class="nav-item" id="hotNavBtn" title="热门商城">
+    <div class="nav-item-icon">🔥</div>
+    <div>热门</div>
+  </button>
+  <button type="button" class="nav-item" id="shareNavBtn" title="分享页面">
+    <div class="nav-item-icon">📤</div>
+    <div>分享</div>
+  </button>
 </nav>
 
-<!-- Hero / AI推荐 -->
-<section class="hero">
-  <h1>🛍️ AI Shopping Assistant</h1>
-  <p>输入你想买的东西 / What do you want to buy?</p>
+<div class="toast" id="toast"></div>
 
-  <input id="searchInput" placeholder="e.g. iPhone / shoes / 化妆品" aria-label="Search for products">
-  <button onclick="recommend()" aria-label="Get AI recommendations">Recommend</button>
-
-  <div class="result" id="result"></div>
-</section>
-
-<!-- 美国电商 -->
-<section class="section">
-  <h2>🛒 US Shopping / 美国电商</h2>
-  <div class="grid">
-    <div class="card"><a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer">Amazon / 亚马逊</a></div>
-    <div class="card"><a href="https://www.walmart.com" target="_blank" rel="noopener noreferrer">Walmart / 沃尔玛</a></div>
-    <div class="card"><a href="https://www.target.com" target="_blank" rel="noopener noreferrer">Target / 塔吉特</a></div>
-    <div class="card"><a href="https://www.costco.com" target="_blank" rel="noopener noreferrer">Costco / 好市多</a></div>
-    <div class="card"><a href="https://www.samsclub.com" target="_blank" rel="noopener noreferrer">Sam's Club / 山姆会员店</a></div>
-    <div class="card"><a href="https://www.sayweee.com" target="_blank" rel="noopener noreferrer">Weee / 华人买菜</a></div>
-    <div class="card"><a href="https://www.ebay.com" target="_blank" rel="noopener noreferrer">eBay / 易趣</a></div>
-    <div class="card"><a href="https://www.aliexpress.com" target="_blank" rel="noopener noreferrer">AliExpress / 全球速卖通</a></div>
-    <div class="card"><a href="https://www.bestbuy.com" target="_blank" rel="noopener noreferrer">Best Buy / 百思买</a></div>
-    <div class="card"><a href="https://www.overstock.com" target="_blank" rel="noopener noreferrer">Overstock / 家居折扣</a></div>
-    <div class="card"><a href="https://www.newegg.com" target="_blank" rel="noopener noreferrer">Newegg / 新蛋</a></div>
-  </div>
-</section>
-
-<!-- 中国电商 -->
-<section class="section">
-  <h2>🇨🇳 China Shopping / 中国电商</h2>
-  <div class="grid">
-    <div class="card"><a href="https://www.taobao.com" target="_blank" rel="noopener noreferrer">Taobao / 淘宝</a></div>
-    <div class="card"><a href="https://www.tmall.com" target="_blank" rel="noopener noreferrer">Tmall / 天猫</a></div>
-    <div class="card"><a href="https://www.jd.com" target="_blank" rel="noopener noreferrer">JD / 京东</a></div>
-    <div class="card"><a href="https://www.pinduoduo.com" target="_blank" rel="noopener noreferrer">Pinduoduo / 拼多多</a></div>
-    <div class="card"><a href="https://www.1688.com" target="_blank" rel="noopener noreferrer">1688 / 批发平台</a></div>
-    <div class="card"><a href="https://www.suning.com" target="_blank" rel="noopener noreferrer">Suning / 苏宁</a></div>
-    <div class="card"><a href="https://www.vip.com" target="_blank" rel="noopener noreferrer">Vipshop / 唯品会</a></div>
-    <div class="card"><a href="https://www.xiaohongshu.com" target="_blank" rel="noopener noreferrer">Xiaohongshu / 小红书</a></div>
-  </div>
-</section>
-
-<!-- 服装 -->
-<section class="section">
-  <h2>👕 Fashion / 服装</h2>
-  <div class="grid">
-    <div class="card"><a href="https://us.shein.com" target="_blank" rel="noopener noreferrer">Shein / 快时尚</a></div>
-    <div class="card"><a href="https://www.nike.com" target="_blank" rel="noopener noreferrer">Nike / 运动</a></div>
-    <div class="card"><a href="https://www.zara.com" target="_blank" rel="noopener noreferrer">Zara / 时尚</a></div>
-    <div class="card"><a href="https://www.hm.com" target="_blank" rel="noopener noreferrer">H&M / 服饰</a></div>
-  </div>
-</section>
-
-<!-- 美妆 -->
-<section class="section">
-  <h2>💄 Beauty / 美妆</h2>
-  <div class="grid">
-    <div class="card"><a href="https://www.sephora.com" target="_blank" rel="noopener noreferrer">Sephora / 丝芙兰</a></div>
-    <div class="card"><a href="https://www.ulta.com" target="_blank" rel="noopener noreferrer">Ulta / 美妆</a></div>
-    <div class="card"><a href="https://www.xiaohongshu.com" target="_blank" rel="noopener noreferrer">Xiaohongshu / 小红书</a></div>
-  </div>
-</section>
-
-<!-- 数码 -->
-<section class="section">
-  <h2>📱 Electronics / 数码电器</h2>
-  <div class="grid">
-    <div class="card"><a href="https://www.apple.com" target="_blank" rel="noopener noreferrer">Apple / 苹果</a></div>
-    <div class="card"><a href="https://www.bestbuy.com" target="_blank" rel="noopener noreferrer">Best Buy / 百思买</a></div>
-    <div class="card"><a href="https://www.newegg.com" target="_blank" rel="noopener noreferrer">Newegg / 新蛋</a></div>
-    <div class="card"><a href="https://www.samsung.com" target="_blank" rel="noopener noreferrer">Samsung / 三星</a></div>
-  </div>
-</section>
-
-<!-- 家居 -->
-<section class="section">
-  <h2>🏠 Home & Living / 家居生活</h2>
-  <div class="grid">
-    <div class="card"><a href="https://www.overstock.com" target="_blank" rel="noopener noreferrer">Overstock / 家居折扣</a></div>
-    <div class="card"><a href="https://www.ikea.com" target="_blank" rel="noopener noreferrer">IKEA / 宜家</a></div>
-    <div class="card"><a href="https://www.wayfair.com" target="_blank" rel="noopener noreferrer">Wayfair / 家具</a></div>
-  </div>
-</section>
-
-<!-- 底部介绍 -->
-<footer class="footer">
-  <p><strong>OneGoBuy - Your one-stop shopping platform / 一站式购物导航平台</strong></p>
-  <p>US & China Shopping, Fashion, Beauty, Electronics, Home & Living / 美国中国电商、服装、美妆、数码、家居全覆盖</p>
-  <p>AI Smart Recommendation / AI智能推荐 · Easy & Fast · Cross-border shopping / 简单快速 · 跨境购物入口</p>
-  <p>Find deals, brands & popular stores / 精选优惠、品牌店铺、热门购物平台</p>
-  <p>&copy; 2026 OneGoBuy. All rights reserved. / 版权所有</p>
+<!-- 页脚 -->
+<footer>
+  <p><strong>OneGoBuy - 一站式购物导航平台</strong></p>
+  <p>美国电商 · 中国电商 · 跨境购物</p>
+  <p>服装 · 美妆 · 数码 · 家居全覆盖</p>
+  <p>© 2026 OneGoBuy. All rights reserved.</p>
 </footer>
 
 <script>
-// 跳转到 OneGoBuy 首页
-function goToHome(){
-  window.location.href = 'https://OneGoBuy.com';
+// 显示吐司
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2000);
 }
 
-// 按 Enter 键提交搜索
-document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById("searchInput");
-  if(searchInput) {
-    searchInput.addEventListener('keypress', function(event) {
-      if(event.key === 'Enter') {
-        recommend();
-      }
-    });
+// 返回首页
+function goHome() {
+  window.location.href = 'https://onegobuy.com/';
+}
+
+// 返回上一页
+document.getElementById('backBtn').addEventListener('click', function() {
+  window.history.back();
+});
+
+// 分享
+document.getElementById('shareBtn').addEventListener('click', function() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'OneGoBuy - 一站式购物导航',
+      text: '美国中国电商全覆盖，AI智能推荐购物平台',
+      url: window.location.href
+    }).catch(err => console.log('分享取消'));
+  } else {
+    showToast('请使用浏览器菜单分享');
   }
 });
 
-// AI 推荐功能
-function recommend(){
+// 搜索和AI推荐
+function recommend() {
   let input = document.getElementById("searchInput").value.toLowerCase().trim();
-  let result = document.getElementById("result");
+  let result = document.getElementById("recommendationResult");
 
-  if(!input) {
-    result.innerHTML = "👉 Please enter a search term / 请输入搜索词";
+  if (!input) {
+    result.innerHTML = '';
     return;
   }
 
-  if(input.includes("iphone") || input.includes("手机") || input.includes("phone")){
-    result.innerHTML = "👉 推荐 / Recommended：<a href='https://www.apple.com' target='_blank' rel='noopener noreferrer'>Apple</a> / <a href='https://www.jd.com' target='_blank' rel='noopener noreferrer'>京东</a> / <a href='https://www.amazon.com' target='_blank' rel='noopener noreferrer'>Amazon</a>";
+  let recommendation = '';
+
+  if (input.includes("iphone") || input.includes("手机") || input.includes("phone")) {
+    recommendation = '<div class="recommendation-card"><p>👉 推荐购物平台：</p><div class="recommendation-links"><a href="https://www.apple.com" target="_blank" class="rec-link">Apple官网</a><a href="https://www.amazon.com" target="_blank" class="rec-link">Amazon</a><a href="https://www.jd.com" target="_blank" class="rec-link">京东</a></div></div>';
+  } else if (input.includes("鞋") || input.includes("shoe") || input.includes("sneaker")) {
+    recommendation = '<div class="recommendation-card"><p>👉 推荐购物平台：</p><div class="recommendation-links"><a href="https://www.nike.com" target="_blank" class="rec-link">Nike</a><a href="https://us.shein.com" target="_blank" class="rec-link">Shein</a><a href="https://www.amazon.com" target="_blank" class="rec-link">Amazon</a></div></div>';
+  } else if (input.includes("化妆") || input.includes("makeup") || input.includes("beauty")) {
+    recommendation = '<div class="recommendation-card"><p>👉 推荐购物平台：</p><div class="recommendation-links"><a href="https://www.sephora.com" target="_blank" class="rec-link">Sephora</a><a href="https://www.ulta.com" target="_blank" class="rec-link">Ulta</a><a href="https://www.xiaohongshu.com" target="_blank" class="rec-link">小红书</a></div></div>';
+  } else if (input.includes("家居") || input.includes("furniture") || input.includes("home")) {
+    recommendation = '<div class="recommendation-card"><p>👉 推荐购物平台：</p><div class="recommendation-links"><a href="https://www.ikea.com" target="_blank" class="rec-link">IKEA</a><a href="https://www.overstock.com" target="_blank" class="rec-link">Overstock</a><a href="https://www.wayfair.com" target="_blank" class="rec-link">Wayfair</a></div></div>';
+  } else if (input.includes("衣服") || input.includes("clothing") || input.includes("fashion")) {
+    recommendation = '<div class="recommendation-card"><p>👉 推荐购物平台：</p><div class="recommendation-links"><a href="https://us.shein.com" target="_blank" class="rec-link">Shein</a><a href="https://www.zara.com" target="_blank" class="rec-link">Zara</a><a href="https://www.nike.com" target="_blank" class="rec-link">Nike</a></div></div>';
+  } else if (input.includes("食品") || input.includes("food") || input.includes("菜")) {
+    recommendation = '<div class="recommendation-card"><p>👉 推荐购物平台：</p><div class="recommendation-links"><a href="https://www.sayweee.com" target="_blank" class="rec-link">Weee</a><a href="https://www.amazon.com" target="_blank" class="rec-link">Amazon Fresh</a><a href="https://www.taobao.com" target="_blank" class="rec-link">淘宝</a></div></div>';
+  } else {
+    recommendation = '<div class="recommendation-card"><p>👉 推荐购物平台：</p><div class="recommendation-links"><a href="https://www.amazon.com" target="_blank" class="rec-link">Amazon</a><a href="https://www.taobao.com" target="_blank" class="rec-link">淘宝</a><a href="https://www.jd.com" target="_blank" class="rec-link">京东</a></div></div>';
   }
-  else if(input.includes("鞋") || input.includes("shoe") || input.includes("sneaker")){
-    result.innerHTML = "👉 推荐 / Recommended：<a href='https://www.nike.com' target='_blank' rel='noopener noreferrer'>Nike</a> / <a href='https://us.shein.com' target='_blank' rel='noopener noreferrer'>Shein</a> / <a href='https://www.amazon.com' target='_blank' rel='noopener noreferrer'>Amazon</a>";
-  }
-  else if(input.includes("化妆") || input.includes("makeup") || input.includes("beauty")){
-    result.innerHTML = "👉 推荐 / Recommended：<a href='https://www.sephora.com' target='_blank' rel='noopener noreferrer'>Sephora</a> / <a href='https://www.xiaohongshu.com' target='_blank' rel='noopener noreferrer'>小红书</a> / <a href='https://www.ulta.com' target='_blank' rel='noopener noreferrer'>Ulta</a>";
-  }
-  else if(input.includes("家居") || input.includes("furniture") || input.includes("home")){
-    result.innerHTML = "👉 推荐 / Recommended：<a href='https://www.ikea.com' target='_blank' rel='noopener noreferrer'>IKEA</a> / <a href='https://www.overstock.com' target='_blank' rel='noopener noreferrer'>Overstock</a> / <a href='https://www.wayfair.com' target='_blank' rel='noopener noreferrer'>Wayfair</a>";
-  }
-  else if(input.includes("衣服") || input.includes("clothing") || input.includes("fashion")){
-    result.innerHTML = "👉 推荐 / Recommended：<a href='https://us.shein.com' target='_blank' rel='noopener noreferrer'>Shein</a> / <a href='https://www.zara.com' target='_blank' rel='noopener noreferrer'>Zara</a> / <a href='https://www.nike.com' target='_blank' rel='noopener noreferrer'>Nike</a>";
-  }
-  else if(input.includes("食品") || input.includes("food") || input.includes("菜")){
-    result.innerHTML = "👉 推荐 / Recommended：<a href='https://www.sayweee.com' target='_blank' rel='noopener noreferrer'>Weee</a> / <a href='https://www.amazon.com' target='_blank' rel='noopener noreferrer'>Amazon Fresh</a> / <a href='https://www.taobao.com' target='_blank' rel='noopener noreferrer'>淘宝</a>";
-  }
-  else{
-    result.innerHTML = "👉 推荐 / Recommended：<a href='https://www.amazon.com' target='_blank' rel='noopener noreferrer'>Amazon</a> / <a href='https://www.taobao.com' target='_blank' rel='noopener noreferrer'>淘宝</a> / <a href='https://www.jd.com' target='_blank' rel='noopener noreferrer'>京东</a>";
-  }
+
+  result.innerHTML = recommendation;
 }
+
+// 搜索按钮
+document.getElementById('searchBtn').addEventListener('click', recommend);
+
+// 回车搜索
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    recommend();
+  }
+});
+
+// 分类标签
+document.querySelectorAll('.category-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+    const category = this.getAttribute('data-category');
+    showToast('正在显示: ' + category);
+  });
+});
+
+// 底部导航 - 全部
+document.getElementById('allNavBtn').addEventListener('click', function() {
+  document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+  this.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  showToast('显示全部分类');
+});
+
+// 底部导航 - 热门
+document.getElementById('hotNavBtn').addEventListener('click', function() {
+  document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+  this.classList.add('active');
+  showToast('显示热门商城');
+  // 滚动到美国电商部分
+  const usSection = document.querySelector('.shopping-section');
+  if (usSection) {
+    usSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+});
+
+// 底部导航 - 分享
+document.getElementById('shareNavBtn').addEventListener('click', function() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'OneGoBuy - 一站式购物导航',
+      text: '美国中国电商全覆盖，AI智能推荐购物平台',
+      url: window.location.href
+    }).catch(err => console.log('分享取消'));
+  } else {
+    showToast('请使用浏览器菜单分享');
+  }
+});
 </script>
 
 </body>
