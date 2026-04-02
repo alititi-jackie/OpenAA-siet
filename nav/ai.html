@@ -433,67 +433,6 @@
       to { transform: translateX(-50%) translateY(0); opacity: 1; }
     }
 
-    /* 模态框 */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 300;
-      animation: fadeIn 0.2s;
-    }
-
-    .modal.active {
-      display: flex;
-      align-items: flex-end;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .modal-content {
-      background: var(--card);
-      width: 100%;
-      border-radius: var(--radius) var(--radius) 0 0;
-      padding: 16px;
-      max-height: 80vh;
-      overflow-y: auto;
-      animation: slideUp 0.3s ease-out;
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(100%); }
-      to { transform: translateY(0); }
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .modal-header h2 {
-      margin: 0;
-      font-size: 18px;
-      color: var(--primary);
-    }
-
-    .close-btn {
-      background: none;
-      border: none;
-      font-size: 24px;
-      cursor: pointer;
-      color: var(--text-light);
-    }
-
     /* 响应式 */
     @media (min-width: 600px) {
       .ai-grid {
@@ -553,12 +492,12 @@
 
       <!-- 分类标签 -->
       <div class="category-tabs">
-        <button class="category-tab active" onclick="filterByCategory('all')">全部</button>
-        <button class="category-tab" onclick="filterByCategory('chat')">对话</button>
-        <button class="category-tab" onclick="filterByCategory('image')">绘画</button>
-        <button class="category-tab" onclick="filterByCategory('write')">写作</button>
-        <button class="category-tab" onclick="filterByCategory('code')">编程</button>
-        <button class="category-tab" onclick="filterByCategory('translate')">翻译</button>
+        <button class="category-tab active" onclick="filterByCategory(this)">全部</button>
+        <button class="category-tab" onclick="filterByCategory(this)">对话</button>
+        <button class="category-tab" onclick="filterByCategory(this)">绘画</button>
+        <button class="category-tab" onclick="filterByCategory(this)">写作</button>
+        <button class="category-tab" onclick="filterByCategory(this)">编程</button>
+        <button class="category-tab" onclick="filterByCategory(this)">翻译</button>
       </div>
     </div>
   </header>
@@ -724,7 +663,7 @@
       </div>
     </div>
 
-    <!--   容创作工具 -->
+    <!-- 内容创作工具 -->
     <div class="category-card">
       <div class="category-header">
         <div class="category-header-icon">✍️</div>
@@ -811,22 +750,22 @@
 
   <!-- 底部导航栏 -->
   <nav class="bottom-nav">
-    <a href="https://openaa.com/" class="nav-item" title="返回首页" data-nav="home">
+    <a href="javascript:void(0);" class="nav-item active" onclick="showAllTools(event)">
       <div class="nav-item-icon">🏠</div>
       <div>首页</div>
     </a>
-    <button class="nav-item active" onclick="showAllTools()" title="查看全部" data-nav="all">
+    <a href="javascript:void(0);" class="nav-item" onclick="showAllTools(event)">
       <div class="nav-item-icon">🤖</div>
       <div>全部</div>
-    </button>
-    <button class="nav-item" onclick="showHotTools()" title="查看热门" data-nav="hot">
+    </a>
+    <a href="javascript:void(0);" class="nav-item" onclick="showHotTools(event)">
       <div class="nav-item-icon">🔥</div>
       <div>热门</div>
-    </button>
-    <button class="nav-item" onclick="shareApp()" title="分享页面" data-nav="share">
+    </a>
+    <a href="javascript:void(0);" class="nav-item" onclick="shareApp(event)">
       <div class="nav-item-icon">📤</div>
       <div>分享</div>
-    </button>
+    </a>
   </nav>
 
   <!-- 吐司提示 -->
@@ -839,18 +778,6 @@
   </footer>
 
   <script>
-    // 更新导航栏激活状态
-    function updateNavItemStatus(navName) {
-      document.querySelectorAll('.nav-item').forEach(item => {
-        item.classList.remove('active');
-      });
-      
-      const activeItem = document.querySelector(`[data-nav="${navName}"]`);
-      if (activeItem) {
-        activeItem.classList.add('active');
-      }
-    }
-
     // 搜索功能
     function handleSearch() {
       const query = document.getElementById('searchInput').value;
@@ -867,33 +794,38 @@
     });
 
     // 分类筛选
-    function filterByCategory(category) {
-      document.querySelectorAll('.category-tab').forEach(btn => {
-        btn.classList.remove('active');
+    function filterByCategory(btn) {
+      document.querySelectorAll('.category-tab').forEach(el => {
+        el.classList.remove('active');
       });
-      event.target.classList.add('active');
+      btn.classList.add('active');
       
-      const categoryNames = {
-        'all': '全部',
-        'chat': '对话',
-        'image': '绘画',
-        'write': '写作',
-        'code': '编程',
-        'translate': '翻译'
-      };
-      
-      showToast(`正在显示: ${categoryNames[category]}`);
+      const categoryText = btn.textContent.trim();
+      showToast(`正在显示: ${categoryText}`);
     }
 
     // 显示全部工具
-    function showAllTools() {
-      updateNavItemStatus('all');
+    function showAllTools(event) {
+      event.preventDefault();
+      
+      // 更新导航栏
+      document.querySelectorAll('.nav-item').forEach(el => {
+        el.classList.remove('active');
+      });
+      event.target.closest('.nav-item').classList.add('active');
+      
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // 显示热门工具
-    function showHotTools() {
-      updateNavItemStatus('hot');
+    function showHotTools(event) {
+      event.preventDefault();
+      
+      // 更新导航栏
+      document.querySelectorAll('.nav-item').forEach(el => {
+        el.classList.remove('active');
+      });
+      event.target.closest('.nav-item').classList.add('active');
       
       // 滚动到第一个热门工具卡片
       const cards = document.querySelectorAll('.card');
@@ -926,8 +858,14 @@
     }
 
     // 分享功能（用于底部导航）
-    function shareApp() {
-      updateNavItemStatus('share');
+    function shareApp(event) {
+      event.preventDefault();
+      
+      // 更新导航栏
+      document.querySelectorAll('.nav-item').forEach(el => {
+        el.classList.remove('active');
+      });
+      event.target.closest('.nav-item').classList.add('active');
       
       if (navigator.share) {
         navigator.share({
@@ -936,13 +874,9 @@
           url: window.location.href
         }).catch(err => {
           console.log('分享取消或失败');
-          // 如果分享失败，取消激活状态
-          updateNavItemStatus('all');
         });
       } else {
         showToast('请使用浏览器菜单分享');
-        // 如果不支持分享，取消激活状态
-        updateNavItemStatus('all');
       }
     }
 
