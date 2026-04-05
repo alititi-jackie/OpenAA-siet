@@ -1095,7 +1095,7 @@
     function handleSearch() {
       const query = document.getElementById('searchInput').value;
       if (query.trim()) {
-        window.open(`https://www.google.com/search?q=site:openaa.com+${encodeURIComponent(query)}`, '_blank');
+        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
       }
     }
 
