@@ -161,43 +161,6 @@
       background: rgba(255,255,255,0.3);
     }
 
-    /* 快速分类标签 */
-    .category-tabs {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 8px 0;
-      margin-top: 12px;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-    }
-
-    .category-tabs::-webkit-scrollbar {
-      display: none;
-    }
-
-    .category-tab {
-      flex-shrink: 0;
-      padding: 6px 14px;
-      background: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.3);
-      color: white;
-      border-radius: 20px;
-      font-size: 13px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .category-tab.active {
-      background: white;
-      color: var(--primary);
-      border-color: white;
-    }
-
-    .category-tab:active {
-      transform: scale(0.95);
-    }
-
     /* 主要内容区 */
     main {
       padding: 8px;
@@ -488,16 +451,6 @@
       <div class="search-box">
         <input type="text" id="searchInput" placeholder="搜索AI工具..." />
         <button type="button" onclick="handleSearch();">🔍</button>
-      </div>
-
-      <!-- 分类标签 -->
-      <div class="category-tabs">
-        <button type="button" class="category-tab active" onclick="filterByCategory(this);">全部</button>
-        <button type="button" class="category-tab" onclick="filterByCategory(this);">对话</button>
-        <button type="button" class="category-tab" onclick="filterByCategory(this);">绘画</button>
-        <button type="button" class="category-tab" onclick="filterByCategory(this);">写作</button>
-        <button type="button" class="category-tab" onclick="filterByCategory(this);">编程</button>
-        <button type="button" class="category-tab" onclick="filterByCategory(this);">翻译</button>
       </div>
     </div>
   </header>
@@ -801,17 +754,6 @@
         handleSearch();
       }
     });
-
-    // 分类筛选
-    function filterByCategory(btn) {
-      document.querySelectorAll('.category-tab').forEach(el => {
-        el.classList.remove('active');
-      });
-      btn.classList.add('active');
-      
-      const categoryText = btn.textContent.trim();
-      showToast(`正在显示: ${categoryText}`);
-    }
 
     // 显示全部工具
     function showAllTools() {
