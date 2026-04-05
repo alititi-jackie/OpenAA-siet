@@ -744,7 +744,7 @@
     function handleSearch() {
       const query = document.getElementById('searchInput').value;
       if (query.trim()) {
-        showToast(`搜索: ${query}`);
+        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
       }
     }
 
