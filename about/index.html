@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>关于 OpenAA · 美国华人生活入口</title>
-  <meta name="description" content="OpenAA 是面向在美华人的一站式生活导航平台，整合官方与社区资源，覆盖办证（DMV、移民、社安号）、租房、二手车、银行、招聘与本地服务，帮助华人在美更便捷地生活。" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://openaa.com/About.html" />
-  <link rel="alternate" hreflang="zh-CN" href="https://openaa.com/About.html" />
-  <link rel="alternate" hreflang="en-US" href="https://openaa.com/en/About.html" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#0078d4">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="OpenAA">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:locale" content="zh-CN" />
+  <!-- Title & Meta - 优化SEO -->
+  <title>关于 OpenAA · 美国华人生活入口 | 一站式导航、办证、租房、招聘、二手</title>
+  <meta name="description" content="OpenAA 是面向在美华人的一站式生活导航平台。整合官方与社区资源，覆盖DMV办证、移民服务、租房、二手车、银行、招聘与本地生活服务。帮助华人在美国高效完成日常事务。">
+  <meta name="keywords" content="OpenAA,美国华人,华人导航,生活入口,DMV,办证,移民,租房,二手车,银行,招聘,求职,本地服务,华人生活,美国生活,在美生活">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="OpenAA">
+
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href="https://openaa.com/about.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://openaa.com/about.html">
+  <link rel="alternate" hreflang="en-US" href="https://openaa.com/en/about.html">
+
+  <!-- Open Graph & Twitter -->
+  <meta property="og:locale" content="zh_CN" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="关于 OpenAA · 美国华人生活入口" />
-  <meta property="og:description" content="OpenAA 为在美华人提供实用的一站式导航与服务入口：办证、租房、买车、银行、招聘与本地服务，快速直达官方与社区资源。" />
-  <meta property="og:url" content="https://openaa.com/About.html" />
+  <meta property="og:description" content="OpenAA 为在美华人提供实用的一站式导航与服务入口：DMV、办证、移民、租房、二手车、银行、招聘与本地服务。快速直达官方与社区资源。" />
+  <meta property="og:url" content="https://openaa.com/about.html" />
   <meta property="og:image" content="https://openaa.com/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="关于 OpenAA · 美国华人生活入口" />
-  <meta name="twitter:description" content="OpenAA 为在美华人提供实用的一站式导航与服务入口，包含 DMV、移民、租房、二手、银行与招聘等信息。" />
+  <meta name="twitter:description" content="OpenAA 为在美华人提供一站式生活导航：办证、租房、买车、银行、招聘与本地服务，快速直达官方与社区资源。" />
   <meta name="twitter:image" content="https://openaa.com/logo.png" />
 
-  <!-- Favicons (按你给定的目录结构) -->
+  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <meta name="msapplication-TileColor" content="#2b5797">
 
-  <!-- 结构化数据（Organization + AboutPage） -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,238 +49,703 @@
         "name": "OpenAA",
         "url": "https://openaa.com/",
         "logo": "https://openaa.com/logo.png",
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "email": "mailto:323748@gmail.com",
-            "contactType": "customer support",
-            "availableLanguage": ["Chinese","English"]
-          }
+        "description": "美国华人生活入口 - 一站式导航、办证、租房、招聘、二手、银行服务聚合平台",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "323748@gmail.com",
+          "contactType": "customer support",
+          "availableLanguage": ["Chinese","English"]
+        },
+        "sameAs": [
+          "https://jozl.com/",
+          "https://foxtoday.com/"
         ]
       },
       {
         "@type": "AboutPage",
-        "@id": "https://openaa.com/About.html#about",
-        "url": "https://openaa.com/About.html",
+        "@id": "https://openaa.com/about.html#webpage",
+        "url": "https://openaa.com/about.html",
         "name": "关于 OpenAA · 美国华人生活入口",
-        "isPartOf": { "@id": "https://openaa.com/#organization" },
-        "inLanguage": "zh-CN",
-        "description": "OpenAA 为在美华人提供一站式生活导航与服务入口，聚合官方与社区资源，帮助用户高效完成办证、租房、购车、银行开户、找工作等日常事务。"
+        "description": "了解 OpenAA 的使命、服务与愿景。OpenAA 为在美华人提供一站式生活导航与服务入口。",
+        "isPartOf": { "@id": "https://openaa.com/#website" }
       }
     ]
   }
   </script>
 
   <style>
-    /* 精简样式：保持与 OpenAA 站点视觉一致，删除不必要规则 */
-    :root{
-      --brand-1:#0b3c5d;
-      --brand-2:#1e6fa3;
-      --bg:#f5f5f5;
-      --card:#ffffff;
-      --text:#222;
-      --muted:#6b7280;
-      --max-width:1100px;
-      --radius:10px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
+    * { 
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
+    :root {
+      --primary: #0078d4;
+      --primary-dark: #005fa3;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* Header 固定顶部 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(135deg, var(--primary) 0%, #1084d8 100%);
+      color: white;
+      padding: 12px 16px 16px;
+      box-shadow: 0 2px 12px rgba(0,120,212,0.15);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .header-logo {
+      height: 40px;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      text-decoration: none;
+    }
+
+    .header-logo img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-icon {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .btn-icon:active {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .header-subtitle {
+      font-size: 13px;
+      opacity: 0.95;
+      margin: 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* 面包屑 */
+    .breadcrumb {
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--text-light);
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* 主要内容区 */
+    main {
+      padding: 8px;
+      padding-bottom: 100px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* 卡片 */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0;
+      padding: 20px;
       overflow: hidden;
     }
-    .skip-link:focus {
-      left: 12px;
-      top: 12px;
-      width: auto;
-      height: auto;
-      padding:8px 12px;
-      background:#111;
-      color:#fff;
-      z-index:1000;
-      border-radius:4px;
+
+    /* 标题 */
+    h1 {
+      font-size: 24px;
+      margin: 16px 0 8px 0;
+      color: var(--text-dark);
     }
 
-    header {
-      background: linear-gradient(135deg,var(--brand-1),var(--brand-2));
-      color:#fff;
-      padding:18px 12px;
-    }
-    .header-inner {
-      max-width:var(--max-width);
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      gap:16px;
-    }
-    .logo { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
-    .logo img { width:84px; height:auto; border-radius:8px; background:#fff; padding:6px; }
-    .site-title { font-size:18px; font-weight:700; margin:0; color:#fff; }
-    .site-sub { font-size:13px; margin:0; color:rgba(255,255,255,0.92); }
-
-    main.container {
-      max-width:var(--max-width);
-      margin:22px auto;
-      padding:28px 18px;
-      background:var(--card);
-      border-radius:8px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.04);
-    }
-    h1 { color:var(--brand-1); margin-top:0; }
-    h2 { color:var(--brand-1); margin-bottom:6px; }
-    p, li { font-size:15px; color:#333; margin:12px 0; }
-    ul { padding-left:20px; }
-    a { color:var(--brand-1); text-decoration:none; }
-    a:hover { text-decoration:underline; }
-
-    /* 返回首页按钮（优化样式与可访问性） */
-    .back-home {
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      background:linear-gradient(180deg,var(--brand-2),var(--brand-1));
-      color:#fff;
-      text-decoration:none;
-      padding:10px 14px;
-      border-radius:8px;
-      font-weight:600;
-      box-shadow:0 6px 14px rgba(14, 78, 128, 0.12);
-      border:0;
-      transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
-      -webkit-tap-highlight-color: rgba(0,0,0,0);
-      /* ensure minimum hit area */
-      min-height:44px;
-      line-height:1;
-    }
-    .back-home svg { width:18px; height:18px; flex:0 0 18px; fill:currentColor; }
-    .back-home:hover { transform:translateY(-2px); box-shadow:0 10px 20px rgba(14,78,128,0.14); }
-    .back-home:active { transform:translateY(0); opacity:0.95; }
-    .back-home:focus {
-      outline:3px solid rgba(30,111,163,0.18);
-      outline-offset:3px;
-      box-shadow:0 0 0 4px rgba(30,111,163,0.08);
+    h2 {
+      font-size: 18px;
+      margin: 20px 0 12px 0;
+      color: var(--primary);
+      font-weight: 600;
     }
 
-    /* small-screen friendly placement */
-    .top-controls {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      margin-bottom:18px;
+    h3 {
+      font-size: 16px;
+      margin: 16px 0 8px 0;
+      color: var(--text-dark);
+      font-weight: 600;
     }
 
-    .back-home--ghost {
-      background:transparent;
-      color:var(--brand-1);
-      box-shadow:none;
-      padding:8px 10px;
-      border-radius:6px;
-      font-weight:600;
-      border:1px solid rgba(11,60,93,0.06);
+    /* 段落和列表 */
+    p {
+      margin: 12px 0;
+      line-height: 1.7;
+      font-size: 15px;
+      color: var(--text-dark);
     }
 
-    footer.site-footer {
-      text-align:center;
-      padding:20px;
-      color:var(--muted);
-      margin-top:22px;
+    ul, ol {
+      margin: 12px 0;
+      padding-left: 24px;
     }
 
-    @media (max-width:720px){
-      .header-inner { padding:0 6px; }
-      .logo img { width:64px; }
-      main.container { margin:14px 12px; padding:18px; }
-      .back-home { padding:12px 14px; font-size:15px; min-height:48px; }
-      .top-controls { flex-direction:column; align-items:flex-start; gap:10px; }
+    li {
+      margin: 8px 0;
+      line-height: 1.6;
+      font-size: 15px;
+      color: var(--text-dark);
+    }
+
+    strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    /* 链接 */
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    a:active {
+      opacity: 0.7;
+    }
+
+    /* 特殊卡片 */
+    .feature-card {
+      background: linear-gradient(135deg, rgba(0,120,212,0.08) 0%, rgba(16,132,216,0.05) 100%);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      margin: 12px 0;
+      border-radius: 8px;
+    }
+
+    .feature-card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    .feature-card p {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    /* 底部导航栏 */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--card-bg);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      z-index: 200;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 11px;
+      transition: color 0.2s;
+      cursor: pointer;
+      border: none;
+      background: none;
+      gap: 4px;
+    }
+
+    .nav-item.active {
+      color: var(--primary);
+    }
+
+    .nav-item-icon {
+      font-size: 24px;
+    }
+
+    /* 页脚 */
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 16px;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* 吐司提示 */
+    .toast {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      z-index: 400;
+      animation: slideInUp 0.3s;
+      display: none;
+    }
+
+    .toast.show {
+      display: block;
+    }
+
+    @keyframes slideInUp {
+      from { transform: translateX(-50%) translateY(20px); opacity: 0; }
+      to { transform: translateX(-50%) translateY(0); opacity: 1; }
+    }
+
+    /* 响应式 */
+    @media (min-width: 600px) {
+      main {
+        max-width: 700px;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+
+    /* 暗黑模式 */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1f1f1f;
+        --card-bg: #2d2d2d;
+        --text-dark: #f5f5f5;
+        --text-light: #a0a0a0;
+        --border: #3d3d3d;
+      }
+
+      .header-logo {
+        background: white;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      }
+
+      .feature-card {
+        background: linear-gradient(135deg, rgba(0,120,212,0.12) 0%, rgba(16,132,216,0.08) 100%);
+      }
     }
   </style>
 </head>
-<body>
-  <a class="skip-link" href="#main" aria-label="跳到主要内容">跳到主要内容</a>
 
+<body>
+  <!-- Header -->
   <header>
-    <div class="header-inner">
-      <a class="logo" href="https://openaa.com/" aria-label="OpenAA 首页">
-        <img src="https://openaa.com/logo.png" alt="OpenAA logo" loading="lazy" />
-        <div>
-          <div class="site-title">OpenAA · 美国华人生活入口</div>
-          <div class="site-sub">华人导航 · 地方资讯 · 服务聚合</div>
-        </div>
+    <div class="header-content">
+      <a href="https://openaa.com/" class="header-logo">
+        <img src="https://openaa.com/logo.png" alt="OpenAA" />
       </a>
+      <div class="header-actions">
+        <button class="btn-icon" onclick="toggleBookmark()" title="收藏本站">⭐</button>
+        <button class="btn-icon" onclick="shareApp()" title="分享">📤</button>
+      </div>
     </div>
+    <p class="header-subtitle">💡 了解 OpenAA · 美国华人生活入口</p>
   </header>
 
-  <main id="main" class="container" role="main" aria-labelledby="about-title">
-    <!-- top controls: 优化后的返回首页按钮位于主要内容顶部 -->
-    <div class="top-controls" role="region" aria-label="页面操作">
-      <!-- 主按钮（醒目）-->
-      <a class="back-home" href="https://openaa.com/" aria-label="返回 OpenAA 首页">
-        <!-- 内联 SVG 图标（Home）-->
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-        </svg>
-        <span>返回 OpenAA 首页</span>
-      </a>
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <a href="https://openaa.com/">首页</a> > 关于我们
+  </div>
 
-      <!-- 辅助/轻量风格按钮（可选：用于放置在右侧或用于次级操作）-->
-      <a class="back-home back-home--ghost" href="/news/index.html" aria-label="返回资讯列表">返回资讯列表</a>
+  <!-- 主要内容 -->
+  <main role="main">
+    <div class="card">
+      <h1>📖 关于 OpenAA</h1>
+
+      <p><strong>OpenAA · 美国华人生活入口</strong> 是一个专为在美华人打造的一站式生活导航与服务聚合平台。我们整合官方渠道与优质社区资源，覆盖办证（DMV、移民、社安号）、租房、二手车、银行开户、求职招聘与本地生活服务，帮助华人在美国高效完成日常事务。</p>
+
+      <h2>🎯 我们的使命</h2>
+      <p>让在美华人能够快速、便捷地找到所需的生活服务与信息。无论是新手还是资深人士，OpenAA 都致力于成为您在美生活的可信赖伙伴。</p>
+
+      <h2>🌟 核心服务</h2>
+
+      <div class="feature-card">
+        <h3>📋 办证与政务</h3>
+        <p>汇总DMV、移民局、税务局、社保局等官方入口与办事指南，帮助快速完成驾驶证、工作签证、税号申请等重要事务。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🏠 房产与租房</h3>
+        <p>提供本地房源、搬家服务、租赁流程指引与房东/租客资源，助力轻松找房。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🚗 二手车与用车</h3>
+        <p>涵盖车辆选购、过户、保险、维修等全链路资源，帮助购车与用车更顺畅。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🏦 银行与金融</h3>
+        <p>汇集美国主流银行开户、汇款、信用卡、贷款与投资理财服务入口。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>💼 招聘与求职</h3>
+        <p>整合社区招聘渠道、大型求职网站与行业专门平台，拓宽就业机会。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🛍️ 购物与二手</h3>
+        <p>提供美国与跨境电商平台、二手市场、代购工具，满足购物与交易需求。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🤖 AI工具与资讯</h3>
+        <p>推荐热门AI工具与资讯平台，帮助获取信息与提升工作效率。</p>
+      </div>
+
+      <h2>✅ 为什么选择 OpenAA</h2>
+      <ul>
+        <li><strong>节省时间：</strong> 把常用官方入口与社区服务集中到一个平台，无需四处搜索</li>
+        <li><strong>可靠性：</strong> 优先推荐官方与长期可用的链接，定期校验与更新</li>
+        <li><strong>易用性：</strong> 中文界面与一键直达设计，适配手机与桌面</li>
+        <li><strong>社区支持：</strong> 欢迎用户贡献、推荐本地资源与改进建议</li>
+        <li><strong>完全免费：</strong> 所有服务与资源导航永久免费，无隐藏费用</li>
+      </ul>
+
+      <h2>❓ 常见问题</h2>
+
+      <h3>Q：谁适合使用 OpenAA？</h3>
+      <p>在美国学习、工作或生活的华人，以及需要中文指引的用户，特别是新移民、留学生与企业员工，都能从 OpenAA 获得实用帮助。</p>
+
+      <h3>Q：信息来源可靠吗？</h3>
+      <p>我们优先链接官方与权威资源（如政府网站、大型招聘网站），并结合社区平台与业务合作方入口。所有链接定期校验，确保有效与准确。</p>
+
+      <h3>Q：是否支持其他城市或州？</h3>
+      <p>目前 OpenAA 覆盖全美范围，特别聚焦纽约、加州、德州等华人聚集区。我们持续拓展内容，欢迎用户提名或推荐本地资源。</p>
+
+      <h3>Q：如何联系我们或提供建议？</h3>
+      <p>请发邮件至：<a href="mailto:323748@gmail.com">323748@gmail.com</a>，说明您的问题或建议。如需商业合作、资源置顶或广告投放，也欢迎在邮件中说明，我们会尽快回复。</p>
+
+      <h3>Q：OpenAA 收费吗？</h3>
+      <p>OpenAA 的所有导航与基础服务完全免费。未来可能推出增值服务（如专业咨询、广告服务等），但主要功能将永久免费。</p>
+
+      <h2>🚀 我们的愿景</h2>
+      <p>成为在美华人最信赖的生活入口平台，通过持续创新与优化，帮助更多华人轻松适应并融入美国生活。我们不仅提供链接，更致力于打造一个包容、活跃的华人社区资源生态。</p>
+
+      <h2>📞 联系方式</h2>
+      <p style="margin: 12px 0;">
+        <strong>邮箱：</strong> <a href="mailto:323748@gmail.com">323748@gmail.com</a><br>
+        <strong>微信：</strong> hola24<br>
+        <strong>电话：</strong> <a href="tel:+19178426666">+1 (917) 842-6666</a>
+      </p>
+
+      <p style="font-size: 14px; color: var(--text-light); margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border);">
+        © 2025 OpenAA · 美国华人生活入口<br>
+        感谢您的信任与支持！
+      </p>
     </div>
-
-    <h1 id="about-title">关于 OpenAA</h1>
-
-    <p><strong>OpenAA · 美国华人生活入口</strong> 是专为在美华人打造的一站式生活导航平台。我们整合官方渠道与优质社区资源，覆盖办证（DMV、移民、社安号）、租房、二手车、银行开户、求职招聘与本地生活服务，帮助华人在美国高效完成日常事务。</p>
-
-    <h2>我们提供的服务</h2>
-    <ul>
-      <li>美国办事指南：DMV、移民、社安号、税务  官方入口与流程说明</li>
-      <li>房产与租房：本地房源、搬家与租赁流程指引</li>
-      <li>二手车与用车：选车、过户、保险与维修资源</li>
-      <li>银行与金融服务：开户、汇款、信用卡与贷款指南</li>
-      <li>找工作与招聘：社区招聘渠道与求职资源</li>
-      <li>本地生活服务：家政、餐饮、培训、社区活动与商家导航</li>
-    </ul>
-
-    <h2>理念与目标</h2>
-    <p>我们的目标是成为在美华人的首选生活入口：简单、实用、持续可用。OpenAA 注重信息来源可靠性与用户体验，定期更新链接与说明，力求在用户需要时提供稳定、可信的入口。</p>
-
-    <h2>常见问题（FAQ）</h2>
-    <h3>谁适合使用 OpenAA？</h3>
-    <p>在美国学习、工作或生活的华人，以及需要中文指引的用户，尤其适合使用 OpenAA 获取办事流程与本地服务信息。</p>
-
-    <h3>信息来源可靠吗？</h3>
-    <p>我们优先链接官方与权威资源，并结合社区平台与业务方入口，定期校验。若发现错误或失效链接，请通过邮箱反馈。</p>
-
-    <h3>如何联系我们或提供建议？</h3>
-    <p>请发邮件至：<a href="mailto:323748@gmail.com">323748@gmail.com</a>。如需商业合作或资源置顶，请在邮件中说明需求，我们会尽快联系。</p>
-
-    <h2>为什么选择 OpenAA</h2>
-    <ul>
-      <li>节省时间：把常用官方入口与社区服务集中到一个平台</li>
-      <li>可靠性：优先推荐官方与长期可用的链接</li>
-      <li>易用性：中文界面与一键直达设计</li>
-      <li>社区支持：欢迎用户贡献与推荐本地资源</li>
-    </ul>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="site-footer-inner">
-      <p><strong>OpenAA · 美国华人生活入口</strong></p>
-      <p>© 2025 <a href="https://jozl.com/">jozl.com</a></p>
+  <!-- 底部导航栏 -->
+  <nav class="bottom-nav">
+    <a href="https://openaa.com/" class="nav-item">
+      <div class="nav-item-icon">🏠</div>
+      <div>首页</div>
+    </a>
+    <button class="nav-item active" onclick="scrollToTop()">
+      <div class="nav-item-icon">ℹ️</div>
+      <div>关于</div>
+    </button>
+    <button class="nav-item" onclick="shareApp()">
+      <div class="nav-item-icon">📤</div>
+      <div>分享</div>
+    </button>
+    <button class="nav-item" onclick="toggleBookmark()">
+      <div class="nav-item-icon">⭐</div>
+      <div>收藏</div>
+    </button>
+    <button class="nav-item" onclick="showContactModal()">
+      <div class="nav-item-icon">📞</div>
+      <div>联系</div>
+    </button>
+  </nav>
+
+  <!-- 联系模态框 -->
+  <div class="modal" id="contactModal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>📞 联系 OpenAA</h2>
+        <button class="close-btn" onclick="closeModal()">✕</button>
+      </div>
+      
+      <div style="padding: 16px;">
+        <div style="background: rgba(0,120,212,0.08); padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+          <div style="margin: 10px 0; font-size: 14px;">
+            <strong style="color: var(--primary);">📧 邮箱：</strong>
+            <a href="mailto:323748@gmail.com" style="color: var(--primary); text-decoration: none;">323748@gmail.com</a>
+          </div>
+          <div style="margin: 10px 0; font-size: 14px;">
+            <strong style="color: var(--primary);">💬 微信：</strong>
+            <button onclick="copyWeChat()" style="background: none; border: none; color: var(--primary); cursor: pointer; text-decoration: underline;">hola24 (点击复制)</button>
+          </div>
+          <div style="margin: 10px 0; font-size: 14px;">
+            <strong style="color: var(--primary);">📞 电话：</strong>
+            <a href="tel:+19178426666" style="color: var(--primary); text-decoration: none;">+1 (917) 842-6666</a>
+          </div>
+        </div>
+
+        <p style="font-size: 13px; color: var(--text-light); margin: 12px 0;">
+          <strong>我们很乐意听到您的想法：</strong>
+        </p>
+        <ul style="font-size: 13px; color: var(--text-light); margin: 8px 0; padding-left: 20px;">
+          <li>建议改进与优化</li>
+          <li>资源推荐与补充</li>
+          <li>错误链接反馈</li>
+          <li>商业合作咨询</li>
+          <li>广告投放咨询</li>
+        </ul>
+
+        <p style="font-size: 12px; color: var(--text-light); margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border);">
+          我们会在24小时内回复您的邮件。感谢您的支持与建议！
+        </p>
+      </div>
     </div>
+  </div>
+
+  <!-- 吐司提示 -->
+  <div class="toast" id="toast"></div>
+
+  <!-- 页脚 -->
+  <footer>
+    <strong>OpenAA · 美国华人生活入口</strong><br />
+    © 2025 OpenAA.com · 联系：<a href="mailto:323748@gmail.com">323748@gmail.com</a>
   </footer>
+
+  <style>
+    /* 模态框样式 */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 300;
+      animation: fadeIn 0.2s;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background: var(--card-bg);
+      width: 100%;
+      border-radius: var(--radius) var(--radius) 0 0;
+      padding: 16px;
+      max-height: 80vh;
+      overflow-y: auto;
+      animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-size: 18px;
+      color: var(--primary);
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-light);
+    }
+  </style>
+
+  <script>
+    // 显示吐司
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2000);
+    }
+
+    // 复制微信号
+    function copyWeChat() {
+      const wechatId = 'hola24';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(wechatId).then(() => {
+          showToast('微信号已复制: ' + wechatId);
+        }).catch(() => {
+          fallbackCopy(wechatId);
+        });
+      } else {
+        fallbackCopy(wechatId);
+      }
+    }
+
+    // 备用复制方法
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast('已复制: ' + text);
+      } catch (err) {
+        showToast('复制失败，请手动复制');
+      }
+      document.body.removeChild(ta);
+    }
+
+    // 显示联系模态框
+    function showContactModal() {
+      document.getElementById('contactModal').classList.add('active');
+    }
+
+    // 关闭模态框
+    function closeModal(event) {
+      if (event && event.target !== event.currentTarget) return;
+      document.getElementById('contactModal').classList.remove('active');
+    }
+
+    // 按Esc关闭模态框
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // 收藏功能
+    function toggleBookmark() {
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf('mac') > -1) {
+        showToast('请使用 Cmd+D 收藏本页面');
+      } else {
+        showToast('请使用 Ctrl+D 收藏本页面');
+      }
+    }
+
+    // 分享功能
+    function shareApp() {
+      if (navigator.share) {
+        navigator.share({
+          title: '关于 OpenAA · 美国华人生活入口',
+          text: 'OpenAA 为在美华人提供一站式生活导航：办证、租房、招聘、银行与本地服务。快速直达官方与社区资源。',
+          url: window.location.href
+        }).catch(err => console.log('分享取消或失败'));
+      } else {
+        showToast('请使用浏览器菜单分享');
+      }
+    }
+
+    // 滚动到顶部
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
