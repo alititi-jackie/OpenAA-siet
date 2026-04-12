@@ -1,316 +1,721 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jozl · Zealous Life</title>
-<meta name="description" content="Jozl - Build, Explore, Connect.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#0078d4">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Jozl">
 
-<!-- Favicons (按你给定的目录结构) -->
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/site.webmanifest">
-<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<meta name="msapplication-TileColor" content="#2b5797">
+  <!-- Title & Meta - 优化SEO -->
+  <title>Jozl.com · 个人互联网生态 | 域名投资、导航、工具、内容整合平台</title>
+  <meta name="description" content="Jozl.com - 个人互联网生态入口。汇聚域名投资、导航网站、工具平台与内容资源。包含OpenAA华人导航、手机靓号交易、购物平台、英语学习等优质项目。热爱分享，持续创新。">
+  <meta name="keywords" content="Jozl,域名投资,个人网站,互联网生态,导航网站,工具平台,OpenAA,手机靓号,购物平台,英语学习,内容整合,数字资产">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Jozl">
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
-}
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href="https://jozl.com/">
+  <link rel="alternate" hreflang="zh-CN" href="https://jozl.com/">
+  <link rel="alternate" hreflang="en-US" href="https://jozl.com/en/">
 
-body {
-  background: radial-gradient(circle at top, #1e293b, #020617);
-  color: #fff;
-}
+  <!-- Open Graph & Twitter -->
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jozl.com · 个人互联网生态" />
+  <meta property="og:description" content="Jozl - 个人互联网生态入口。汇聚优质项目与资源，包含OpenAA华人导航、手机靓号、购物平台、英语学习等。热爱分享，持续创新。" />
+  <meta property="og:url" content="https://jozl.com/" />
+  <meta property="og:image" content="https://jozl.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jozl.com · 个人互联网生态" />
+  <meta name="twitter:description" content="Jozl - 域名投资、导航、工具、内容整合平台。构建属于自己的互联网生态系统。" />
+  <meta name="twitter:image" content="https://jozl.com/logo.png" />
 
-/* NAV */
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.3);
-  z-index: 100;
-}
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <meta name="msapplication-TileColor" content="#2b5797">
 
-.nav h1 {
-  font-size: 20px;
-}
-
-.nav div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.nav a {
-  color: #ccc;
-  text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: 0.2s;
-}
-
-.nav a:hover {
-  background: #0ea5e9;
-  color: #fff;
-}
-
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 80px 20px 40px;
-}
-
-.hero h1 {
-  font-size: 60px;
-  background: linear-gradient(90deg,#38bdf8,#6366f1);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.hero h2 {
-  margin-top: 10px;
-  font-size: 22px;
-}
-
-.hero p {
-  margin-top: 10px;
-  opacity: 0.8;
-}
-
-.hero-btn {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.hero-btn a {
-  display: inline-block;
-  padding: 10px 18px;
-  background: #0ea5e9;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.hero-btn a:hover {
-  background: #0284c7;
-}
-
-/* SECTION */
-.section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-.section h3 {
-  font-size: 28px;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-}
-
-/* CARD */
-.card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 20px;
-  transition: 0.3s;
-  border: 1px solid rgba(255,255,255,0.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 120px;
-}
-
-.card:hover {
-  transform: translateY(-5px) scale(1.02);
-  border-color: #38bdf8;
-}
-
-.card h4 {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.card p {
-  font-size: 13px;
-  opacity: 0.8;
-  flex-grow: 1;
-}
-
-.card a {
-  display: inline-block;
-  padding: 6px 12px;
-  background: #0ea5e9;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 13px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-/* ABOUT */
-.about {
-  background: rgba(255,255,255,0.04);
-  padding: 25px;
-  border-radius: 16px;
-  line-height: 1.6;
-  border: 1px solid rgba(255,255,255,0.08);
-  font-size: 14px;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 30px 20px;
-  opacity: 0.7;
-  font-size: 13px;
-}
-
-/* MOBILE */
-@media (max-width:768px) {
-  .hero h1 {
-    font-size: 40px;
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://jozl.com/#organization",
+        "name": "Jozl",
+        "url": "https://jozl.com/",
+        "logo": "https://jozl.com/logo.png",
+        "description": "个人互联网生态平台 - 域名投资、导航网站、工具平台与内容整合",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "323748@gmail.com",
+          "contactType": "general inquiries",
+          "availableLanguage": ["Chinese","English"]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://jozl.com/#website",
+        "url": "https://jozl.com/",
+        "name": "Jozl.com · 个人互联网生态",
+        "description": "个人互联网生态入口，汇聚优质项目与资源"
+      }
+    ]
   }
-  .hero h2 {
-    font-size: 18px;
-  }
-  .card {
-    min-height: 100px;
-    padding: 16px;
-  }
-}
-</style>
+  </script>
+
+  <style>
+    * { 
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --primary: #0078d4;
+      --primary-dark: #005fa3;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* Header 固定顶部 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(135deg, var(--primary) 0%, #1084d8 100%);
+      color: white;
+      padding: 12px 16px 16px;
+      box-shadow: 0 2px 12px rgba(0,120,212,0.15);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .header-logo {
+      height: 40px;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      text-decoration: none;
+    }
+
+    .header-logo img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .header-logo-text {
+      display: none;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-icon {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .btn-icon:active {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .header-subtitle {
+      font-size: 13px;
+      opacity: 0.95;
+      margin: 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* 主要内容区 */
+    main {
+      padding: 8px;
+      padding-bottom: 100px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* 卡片 */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
+      border-bottom: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-header-icon {
+      font-size: 22px;
+    }
+
+    .card-header-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .card-content {
+      padding: 12px 0;
+    }
+
+    /* 项目网格 */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+
+    .project-item {
+      padding: 14px 16px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.15s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-item:nth-child(2n) {
+      border-right: none;
+    }
+
+    .project-item:nth-last-child(1),
+    .project-item:nth-last-child(2) {
+      border-bottom: none;
+    }
+
+    .project-item:active {
+      background: #f0f7ff;
+    }
+
+    .project-icon {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .project-name {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    .project-desc {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    /* 关于卡片 */
+    .about-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0;
+      padding: 16px;
+    }
+
+    .about-card h2 {
+      font-size: 16px;
+      color: var(--primary);
+      margin: 0 0 12px 0;
+      font-weight: 600;
+    }
+
+    .about-card p {
+      margin: 0 0 12px 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-dark);
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-card ul {
+      margin: 8px 0;
+      padding-left: 20px;
+    }
+
+    .about-card li {
+      font-size: 13px;
+      color: var(--text-dark);
+      margin: 6px 0;
+      line-height: 1.5;
+    }
+
+    /* 联系卡片 */
+    .contact-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0;
+      padding: 16px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .contact-card h2 {
+      font-size: 16px;
+      color: var(--primary);
+      margin: 0 0 12px 0;
+      font-weight: 600;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-icon {
+      font-size: 18px;
+      min-width: 24px;
+    }
+
+    .contact-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* 标题 */
+    h1 {
+      font-size: 24px;
+      margin: 16px 0 8px 0;
+      color: var(--text-dark);
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 20px 0 12px 0;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* 底部导航栏 */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--card-bg);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      z-index: 200;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 11px;
+      transition: color 0.2s;
+      cursor: pointer;
+      border: none;
+      background: none;
+      gap: 4px;
+    }
+
+    .nav-item.active {
+      color: var(--primary);
+    }
+
+    .nav-item-icon {
+      font-size: 24px;
+    }
+
+    /* 页脚 */
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 16px;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* 吐司提示 */
+    .toast {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      z-index: 400;
+      animation: slideInUp 0.3s;
+      display: none;
+    }
+
+    .toast.show {
+      display: block;
+    }
+
+    @keyframes slideInUp {
+      from { transform: translateX(-50%) translateY(20px); opacity: 0; }
+      to { transform: translateX(-50%) translateY(0); opacity: 1; }
+    }
+
+    /* 响应式 */
+    @media (min-width: 600px) {
+      main {
+        max-width: 700px;
+      }
+
+      .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* 暗黑模式 */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1f1f1f;
+        --card-bg: #2d2d2d;
+        --text-dark: #f5f5f5;
+        --text-light: #a0a0a0;
+        --border: #3d3d3d;
+      }
+
+      .header-logo {
+        background: white;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      }
+
+      .card-header {
+        background: #3d3d3d;
+      }
+
+      .project-item:active {
+        background: #3d3d3d;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <a href="https://jozl.com/" class="header-logo">
+        <img src="https://jozl.com/logo.png" alt="Jozl" />
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" onclick="toggleBookmark()" title="收藏本站">⭐</button>
+        <button class="btn-icon" onclick="shareApp()" title="分享">📤</button>
+      </div>
+    </div>
+    <p class="header-subtitle">🚀 个人互联网生态 · 热爱分享 · 持续创新</p>
+  </header>
 
-<!-- NAV -->
-<div class="nav">
-  <h1>Jozl.com</h1>
-  <div>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="https://openaa.com" target="_blank">OpenAA 首页</a>
-  </div>
-</div>
+  <!-- 主要内容 -->
+  <main role="main">
+    <h1>💡 Jozl.com</h1>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Jozl.com</h1>
-  <h2>加入我们的热情人生（Join Our Zealous Life）</h2>
-  <p>热爱域名、建站、分享实用工具与生活。欢迎探索我的小生态。</p>
-
-  <div class="hero-btn">
-    <a href="#projects">查看项目</a>
-    <a href="mailto:323748@gmail.com">联系我</a>
-    <a href="https://openaa.com" target="_blank">返回 OpenAA 首页</a>
-  </div>
-</div>
-
-<!-- PROJECTS -->
-<div class="section" id="projects">
-  <h3>项目生态</h3>
-  <div class="grid">
-
+    <!-- 项目生态 -->
     <div class="card">
-      <h4>OpenAA.com</h4>
-      <p>美国华人综合导航门户</p>
-      <a href="https://openaa.com" target="_blank">访问站点</a>
+      <div class="card-header">
+        <div class="card-header-icon">🌐</div>
+        <h2 class="card-header-title">项目生态</h2>
+      </div>
+      <div class="card-content">
+        <div class="project-grid">
+          <a href="https://openaa.com/" target="_blank" rel="noopener" class="project-item">
+            <div class="project-icon">🏠</div>
+            <div class="project-name">OpenAA</div>
+            <div class="project-desc">华人生活导航入口</div>
+          </a>
+
+          <a href="https://openaa.com/market/number/" target="_blank" rel="noopener" class="project-item">
+            <div class="project-icon">💎</div>
+            <div class="project-name">靓号交易</div>
+            <div class="project-desc">美国手机靓号</div>
+          </a>
+
+          <a href="https://onegobuy.com/" target="_blank" rel="noopener" class="project-item">
+            <div class="project-icon">🛍️</div>
+            <div class="project-name">OneGoBuy</div>
+            <div class="project-desc">一站式购物导航</div>
+          </a>
+
+          <a href="https://amani.love/" target="_blank" rel="noopener" class="project-item">
+            <div class="project-icon">🎵</div>
+            <div class="project-name">Amani</div>
+            <div class="project-desc">和平之歌</div>
+          </a>
+
+          <a href="https://joeabc.com/" target="_blank" rel="noopener" class="project-item">
+            <div class="project-icon">📚</div>
+            <div class="project-name">joeABC</div>
+            <div class="project-desc">英语学习平台</div>
+          </a>
+
+          <a href="https://69nav.com/" target="_blank" rel="noopener" class="project-item">
+            <div class="project-icon">🔗</div>
+            <div class="project-name">69nav</div>
+            <div class="project-desc">成人资源导航</div>
+          </a>
+        </div>
+      </div>
     </div>
 
+    <!-- 关于我 -->
+    <div class="about-card">
+      <h2>📖 关于我</h2>
+      <p>我专注于构建属于自己的互联网生态系统。从域名投资，到导航网站，再到工具平台，每一个项目都是一次尝试与积累。</p>
+      
+      <p>我相信，小而精的项目，通过连接与整合，可以形成更大的价值与影响力。</p>
 
+      <p><strong>我正在做的事情：</strong></p>
+      <ul>
+        <li>🎯 域名布局与品牌构建</li>
+        <li>📡 导航站与流量入口打造</li>
+        <li>🛠️ 工具与内容整合</li>
+        <li>💼 持续构建个人互联网资产</li>
+      </ul>
 
+      <p style="margin-top: 14px; color: var(--text-light); font-style: italic;">
+        Jozl 不只是一个网站，而是一个不断扩展的数字网络。
+      </p>
+    </div>
+
+    <!-- 项目特色 -->
     <div class="card">
-      <h4>LuckyNumberUSA.com</h4>
-      <p>美国手机靓号交易</p>
-      <a href="https://luckynumberusa.com" target="_blank">访问站点</a>
+      <div class="card-header">
+        <div class="card-header-icon">✨</div>
+        <h2 class="card-header-title">项目特色</h2>
+      </div>
+      <div class="card-content">
+        <div style="padding: 12px 16px;">
+          <p style="margin: 0 0 12px 0; font-size: 14px;">
+            <strong>🎨 设计理念：</strong> 每个项目都经过精心设计，追求极致的用户体验与视觉效果。
+          </p>
+          <p style="margin: 0 0 12px 0; font-size: 14px;">
+            <strong>🔗 生态连接：</strong> 不同项目之间相互联系，形成完整的服务闭环。
+          </p>
+          <p style="margin: 0 0 12px 0; font-size: 14px;">
+            <strong>📱 多端适配：</strong> 所有项目都完美支持手机、平板与桌面设备。
+          </p>
+          <p style="margin: 0; font-size: 14px;">
+            <strong>🚀 持续更新：</strong> 定期优化与扩展，保持项目活力与竞争力。
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="card">
-      <h4>OneGoBuy.com</h4>
-      <p>一站式购物平台</p>
-      <a href="https://onegobuy.com" target="_blank">访问站点</a>
+    <!-- 联系方式 -->
+    <div class="contact-card">
+      <h2>📞 联系我</h2>
+      <div class="contact-item">
+        <span class="contact-icon">📧</span>
+        <a href="mailto:323748@gmail.com" class="contact-link">323748@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">💬</span>
+        <span style="color: var(--text-dark);">微信：hola24</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">🌐</span>
+        <span style="color: var(--text-dark);">网站：jozl.com</span>
+      </div>
     </div>
 
-         <div class="card">
-      <h4>Amani.love</h4>
-      <p>Beyond《Amani》 | 和平之歌</p>
-      <a href="https://amani.love" target="_blank">访问站点</a>
+    <!-- 合作与建议 -->
+    <div class="about-card">
+      <h2>🤝 合作与建议</h2>
+      <p>欢迎以下合作方式：</p>
+      <ul>
+        <li>💼 商业合作与联合运营</li>
+        <li>🔗 项目互链与资源对接</li>
+        <li>📢 内容合作与推荐置顶</li>
+        <li>💡 产品建议与优化反馈</li>
+        <li>🎯 媒体采访与品牌合作</li>
+      </ul>
+      <p style="font-size: 13px; color: var(--text-light); margin-top: 12px;">
+        如有任何想法或建议，请通过邮件或微信与我联系。我很乐意听到您的想法！
+      </p>
     </div>
+  </main>
 
-            <div class="card">
-      <h4>joeABC.com</h4>
-      <p>英语学习 · 跟 Joe 学 ABC</p>
-      <a href="https://joeabc.com" target="_blank">访问站点</a>
-    </div>
+  <!-- 底部导航栏 -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="scrollToTop()">
+      <div class="nav-item-icon">🏠</div>
+      <div>首页</div>
+    </button>
+    <button class="nav-item" onclick="showAbout()">
+      <div class="nav-item-icon">📖</div>
+      <div>关于</div>
+    </button>
+    <button class="nav-item" onclick="showProjects()">
+      <div class="nav-item-icon">🌐</div>
+      <div>项目</div>
+    </button>
+    <button class="nav-item" onclick="shareApp()">
+      <div class="nav-item-icon">📤</div>
+      <div>分享</div>
+    </button>
+    <button class="nav-item" onclick="toggleBookmark()">
+      <div class="nav-item-icon">⭐</div>
+      <div>收藏</div>
+    </button>
+  </nav>
 
+  <!-- 吐司提示 -->
+  <div class="toast" id="toast"></div>
 
-    <div class="card">
-      <h4>69nav.com</h4>
-      <p>成人资源导航</p>
-      <a href="https://69nav.com" target="_blank">访问站点</a>
-    </div>
+  <!-- 页脚 -->
+  <footer>
+    <strong>Jozl.com · 个人互联网生态</strong><br />
+    © 2026 Jozl · Zealous Life · <a href="https://openaa.com/">OpenAA 首页</a>
+  </footer>
 
-  </div>
-</div>
+  <script>
+    // 显示吐司
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2000);
+    }
 
-<!-- ABOUT -->
-<div class="section" id="about">
-  <h3>关于我</h3>
-  <div class="about">
-    我专注于构建属于自己的互联网生态系统。<br><br>
-    从域名投资，到导航网站，再到工具平台，每一个项目都是一次尝试与积累。<br>
-    我相信，小而精的项目，通过连接，可以形成更大的价值。<br><br>
-    我正在做的事情：<br>
-    • 域名布局与品牌构建<br>
-    • 导航站与流量入口<br>
-    • 工具与内容整合<br>
-    • 持续打造个人互联网资产<br><br>
-    Jozl 不只是一个网站，而是一个不断扩展的数字网络。
-  </div>
-</div>
+    // 滚动到顶部
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-<!-- CONTACT -->
-<div class="section" id="contact">
-  <h3>联系我</h3>
-  <div class="about">
-    Email：323748@gmail.com <br><br>
-    欢迎合作 / 交流 / 资源对接
-  </div>
-</div>
+    // 显示关于
+    function showAbout() {
+      const aboutCard = document.querySelector('.about-card');
+      if (aboutCard) {
+        aboutCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
 
-<!-- FOOTER -->
-<div class="footer">
-  © 2026 Jozl.com · Zealous Life
-</div>
+    // 显示项目
+    function showProjects() {
+      const projectsCard = document.querySelector('.card');
+      if (projectsCard) {
+        projectsCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
 
-</body>
-</html>
+    // 收藏功能
+    function toggleBookmark() {
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf('mac') > -1) {
+        showToast('请使用 Cmd+D 收藏本页面');
+      } else {
+        showToast('请使用 Ctrl+D 收藏本页面');
+      }
+    }
 
+    // 分享功能
+    function shareApp() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Jozl.com · 个人互联网生态',
+          text: 'Jozl - 构建属于自己的互联网生态系统。汇聚OpenAA、手机靓号、购物导航、英语学习等优质项目。',
+          url: window.location.href
+        }).catch(err => console.log('分享取消或失败'));
+      } else {
+        showToast('请使用浏览器菜单分享');
+      }
+    }
+
+    // 页面加载完成后的初始化
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Jozl.com 已加载');
+    });
+  </script>
 </body>
 </html>
