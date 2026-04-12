@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#0078d4">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="OpenAA">
+
+  <!-- Title & Meta -->
+  <title>美国银行导航 | OpenAA · 美国华人生活入口</title>
+  <meta name="description" content="OpenAA 美国银行导航：全面对比主流银行、信用卡、投资理财、数字银行等金融服务，为在美华人提供便捷的银行选择指南。">
+  <meta name="keywords" content="美国银行,信用卡,投资理财,数字银行,摩根大通,美国银行,富国银行">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical / Alternate -->
+  <link rel="canonical" href="https://openaa.com/nav/bank/">
+  <link rel="alternate" hreflang="zh-CN" href="https://openaa.com/nav/bank/">
+
+  <!-- Open Graph & Twitter -->
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="美国银行导航 | OpenAA" />
+  <meta property="og:description" content="全面的美国银行导航指南，帮助在美华人快速找到合适的银行和金融服务。" />
+  <meta property="og:image" content="https://openaa.com/logo.png" />
+  <meta property="og:url" content="https://openaa.com/nav/bank/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+
+  <style>
+    * { 
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --primary: #0078d4;
+      --primary-dark: #005fa3;
+      --secondary: #50E3C2;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* Header 固定顶部 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(135deg, var(--primary) 0%, #1084d8 100%);
+      color: white;
+      padding: 12px 16px 16px;
+      box-shadow: 0 2px 12px rgba(0,120,212,0.15);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .header-logo {
+      height: 40px;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      text-decoration: none;
+    }
+
+    .header-logo img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-icon {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .btn-icon:active {
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* 搜索框 */
+    .search-box {
+      display: flex;
+      gap: 8px;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      background: rgba(255,255,255,0.95);
+      color: var(--text-dark);
+      outline: none;
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-light);
+    }
+
+    .search-box button {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+
+    .search-box button:active {
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* 面包屑 */
+    .breadcrumb {
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--text-light);
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* 主要内容区 */
+    main {
+      padding: 8px;
+      padding-bottom: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* 标题区域 */
+    .page-header {
+      padding: 16px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0;
+    }
+
+    .page-header h1 {
+      margin: 0 0 8px 0;
+      font-size: 24px;
+      color: var(--text-dark);
+    }
+
+    .page-header p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* 卡片组件 */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0;
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-header-icon {
+      font-size: 20px;
+    }
+
+    .card-header-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .card-content {
+      padding: 12px 0;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+
+    .link-item {
+      padding: 12px 16px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s;
+    }
+
+    .link-item:last-child,
+    .link-item:nth-last-child(2) {
+      border-bottom: none;
+    }
+
+    .link-item:nth-child(2n) {
+      border-right: none;
+    }
+
+    .link-item:active {
+      background: #f0f7ff;
+    }
+
+    .link-icon {
+      font-size: 16px;
+      min-width: 16px;
+    }
+
+    /* 银行卡片 */
+    .bank-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0;
+      overflow: hidden;
+      border-left: 4px solid var(--primary);
+    }
+
+    .bank-card-header {
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .bank-icon {
+      font-size: 32px;
+    }
+
+    .bank-name {
+      flex: 1;
+    }
+
+    .bank-name h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .bank-name p {
+      margin: 4px 0 0 0;
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    .bank-card-body {
+      padding: 12px 16px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-dark);
+    }
+
+    .bank-card-body p {
+      margin: 0 0 8px 0;
+    }
+
+    .bank-card-body p:last-child {
+      margin: 0;
+    }
+
+    .bank-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .feature-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: #f0f7ff;
+      color: var(--primary);
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .bank-card-footer {
+      padding: 12px 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 10px 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:active {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: #f0f7ff;
+      color: var(--primary);
+    }
+
+    .btn-secondary:active {
+      background: #e0eeff;
+    }
+
+    /* 快速链接 */
+    .quick-links {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0;
+      padding: 0;
+    }
+
+    .quick-link {
+      display: block;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+
+    .quick-link:last-child {
+      border-bottom: none;
+    }
+
+    .quick-link:active {
+      background: #f0f7ff;
+    }
+
+    /* 返回按钮 */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      margin: 8px 0;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .back-btn:active {
+      background: #f0f7ff;
+    }
+
+    /* 页脚 */
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 16px;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* 响应式调整 */
+    @media (min-width: 600px) {
+      .link-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* 暗黑模式支持 */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1f1f1f;
+        --card-bg: #2d2d2d;
+        --text-dark: #f5f5f5;
+        --text-light: #a0a0a0;
+        --border: #3d3d3d;
+      }
+      
+      .card-header {
+        background: #3d3d3d;
+      }
+      
+      .link-item:active,
+      .quick-link:active {
+        background: #3d3d3d;
+      }
+
+      .header-logo {
+        background: white;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      }
+
+      .feature-tag {
+        background: rgba(0, 120, 212, 0.2);
+      }
+
+      .btn-secondary {
+        background: rgba(0, 120, 212, 0.2);
+      }
+
+      .btn-secondary:active {
+        background: rgba(0, 120, 212, 0.3);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 顶部导航栏 -->
+  <header>
+    <div class="header-content">
+      <a href="https://openaa.com/" class="header-logo">
+        <img src="https://openaa.com/logo.png" alt="OpenAA" />
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" onclick="toggleBookmark()" title="收藏本站">📌</button>
+        <button class="btn-icon" onclick="goHome()" title="返回首页">🏠</button>
+      </div>
+    </div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="搜索银行..." />
+      <button onclick="handleSearch()">🔍</button>
+    </div>
+  </header>
+
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <a href="https://openaa.com/">首页</a> > <a href="https://openaa.com/">导航</a> > 美国银行导航
+  </div>
+
+  <!-- 主要内容 -->
+  <main>
+    <!-- 页面标题 -->
+    <div class="page-header">
+      <h1>🏦 美国银行导航</h1>
+      <p>全面对比主流银行、信用卡、投资理财、数字银行等金融服务，为在美华人提供便捷的银行选择指南。</p>
+    </div>
+
+    <!-- 快速对比 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">⭐</div>
+        <h3 class="card-header-title">热门对比</h3>
+      </div>
+      <div class="quick-links">
+        <a href="#major-banks" class="quick-link">Big 4 主流银行对比</a>
+        <a href="#credit-cards" class="quick-link">信用卡选择指南</a>
+        <a href="#digital-banks" class="quick-link">数字银行对比</a>
+        <a href="#investment" class="quick-link">投资理财平台</a>
+        <a href="#online-banks" class="quick-link">在线银行</a>
+      </div>
+    </div>
+
+    <!-- Big 4 主流银行 -->
+    <h2 style="font-size: 18px; color: var(--text-dark); margin: 16px 0 8px 0;">Big 4 主流银行</h2>
+
+    <!-- Chase -->
+    <div class="bank-card">
+      <div class="bank-card-header">
+        <div class="bank-icon">🏦</div>
+        <div class="bank-name">
+          <h3>摩根大通 (JPMorgan Chase)</h3>
+          <p>美国最大银行集团</p>
+        </div>
+      </div>
+      <div class="bank-card-body">
+        <p><strong>特点：</strong>分支众多、服务全面、投资产品丰富</p>
+        <p><strong>主要产品：</strong>活期存款、储蓄账户、信用卡、抵押贷款、投资服务</p>
+        <p><strong>优势：</strong>ATM最多、移动应用强大、Chase Sapphire 等高端信用卡</p>
+        <div class="bank-features">
+          <span class="feature-tag">ATM众多</span>
+          <span class="feature-tag">应用强大</span>
+          <span class="feature-tag">积分丰富</span>
+        </div>
+      </div>
+      <div class="bank-card-footer">
+        <a href="https://www.chase.com/" class="btn btn-primary" target="_blank">官方网站</a>
+        <a href="https://www.chase.com/personal/checking/find-a-branch" class="btn btn-secondary" target="_blank">找支行</a>
+      </div>
+    </div>
+
+    <!-- Bank of America -->
+    <div class="bank-card">
+      <div class="bank-card-header">
+        <div class="bank-icon">🏦</div>
+        <div class="bank-name">
+          <h3>美国银行 (Bank of America)</h3>
+          <p>美国第二大银行</p>
+        </div>
+      </div>
+      <div class="bank-card-body">
+        <p><strong>特点：</strong>全球覆盖、财富管理强、客户服务优</p>
+        <p><strong>主要产品：</strong>支票账户、储蓄账户、信用卡、贷款、理财服务</p>
+        <p><strong>优势：</strong>Preferred Rewards 忠诚度计划、BankAmericard 现金返利卡</p>
+        <div class="bank-features">
+          <span class="feature-tag">全球服务</span>
+          <span class="feature-tag">财富管理</span>
+          <span class="feature-tag">现金返利</span>
+        </div>
+      </div>
+      <div class="bank-card-footer">
+        <a href="https://www.bankofamerica.com/" class="btn btn-primary" target="_blank">官方网站</a>
+        <a href="https://www.bankofamerica.com/locator/" class="btn btn-secondary" target="_blank">找支行</a>
+      </div>
+    </div>
+
+    <!-- Wells Fargo -->
+    <div class="bank-card">
+      <div class="bank-card-header">
+        <div class="bank-icon">🏦</div>
+        <div class="bank-name">
+          <h3>富国银行 (Wells Fargo)</h3>
+          <p>美国第三大银行</p>
+        </div>
+      </div>
+      <div class="bank-card-body">
+        <p><strong>特点：</strong>跨州分支多、农村覆盖率高、汽车贷款优势</p>
+        <p><strong>主要产品：</strong>支票账户、储蓄账户、信用卡、房贷、车贷</p>
+        <p><strong>优势：</strong>Wells Fargo Active Cash 无限现金返利卡</p>
+        <div class="bank-features">
+          <span class="feature-tag">分支众多</span>
+          <span class="feature-tag">汽车贷款</span>
+          <span class="feature-tag">现金返利</span>
+        </div>
+      </div>
+      <div class="bank-card-footer">
+        <a href="https://www.wellsfargo.com/" class="btn btn-primary" target="_blank">官方网站</a>
+        <a href="https://www.wellsfargo.com/branches/" class="btn btn-secondary" target="_blank">找支行</a>
+      </div>
+    </div>
+
+    <!-- Citibank -->
+    <div class="bank-card">
+      <div class="bank-card-header">
+        <div class="bank-icon">🏦</div>
+        <div class="bank-name">
+          <h3>花旗银行 (Citibank)</h3>
+          <p>美国第四大银行</p>
+        </div>
+      </div>
+      <div class="bank-card-body">
+        <p><strong>特点：</strong>国际客户多、外汇优势、高端服务</p>
+        <p><strong>主要产品：</strong>支票账户、储蓄账户、信用卡、投资服务</p>
+        <p><strong>优势：</strong>Citi Prestige 高端信用卡、全球ATM网络</p>
+        <div class="bank-features">
+          <span class="feature-tag">国际服务</span>
+          <span class="feature-tag">高端卡种</span>
+          <span class="feature-tag">外汇优势</span>
+        </div>
+      </div>
+      <div class="bank-card-footer">
+        <a href="https://www.citi.com/" class="btn btn-primary" target="_blank">官方网站</a>
+        <a href="https://www.citi.com/locator/" class="btn btn-secondary" target="_blank">找支行</a>
+      </div>
+    </div>
+
+    <!-- 信用卡服务 -->
+    <h2 style="font-size: 18px; color: var(--text-dark); margin: 16px 0 8px 0;" id="credit-cards">💳 信用卡服务</h2>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">💳</div>
+        <h3 class="card-header-title">主流信用卡公司</h3>
+      </div>
+      <div class="card-content">
+        <div class="link-grid">
+          <a href="https://www.americanexpress.com/" class="link-item" target="_blank"><span class="link-icon">💳</span>美运通(Amex)</a>
+          <a href="https://www.discover.com/" class="link-item" target="_blank"><span class="link-icon">💳</span>Discover卡</a>
+          <a href="https://www.mastercard.us/" class="link-item" target="_blank"><span class="link-icon">💳</span>万事达卡</a>
+          <a href="https://www.visa.com/" class="link-item" target="_blank"><span class="link-icon">💳</span>VISA卡</a>
+          <a href="https://www.capitalone.com/" class="link-item" target="_blank"><span class="link-icon">💳</span>Capital One</a>
+          <a href="https://www.synchrony.com/" class="link-item" target="_blank"><span class="link-icon">💳</span>Synchrony</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">🎯</div>
+        <h3 class="card-header-title">热门信用卡对比网站</h3>
+      </div>
+      <div class="quick-links">
+        <a href="https://www.creditkarma.com/" class="quick-link" target="_blank">Credit Karma - 信用评分和卡片对比</a>
+        <a href="https://www.nerdwallet.com/article/credit-cards/" class="quick-link" target="_blank">NerdWallet - 信用卡评测</a>
+        <a href="https://www.thepoints.com/" class="quick-link" target="_blank">The Points Guy - 积分和里程指南</a>
+        <a href="https://www.creditcards.com/" class="quick-link" target="_blank">CreditCards.com - 卡片对比</a>
+        <a href="https://thepointsguy.cn/" class="quick-link" target="_blank">飞行积分指南</a>
+      </div>
+    </div>
+
+    <!-- 数字银行 -->
+    <h2 style="font-size: 18px; color: var(--text-dark); margin: 16px 0 8px 0;" id="digital-banks">📱 数字银行</h2>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">📱</div>
+        <h3 class="card-header-title">在线银行</h3>
+      </div>
+      <div class="card-content">
+        <div class="link-grid">
+          <a href="https://www.ally.com/" class="link-item" target="_blank"><span class="link-icon">📱</span>Ally</a>
+          <a href="https://www.capitalone.com/bank/online-bank/" class="link-item" target="_blank"><span class="link-icon">📱</span>Capital One 360</a>
+          <a href="https://www.schwab.com/brokerage" class="link-item" target="_blank"><span class="link-icon">📱</span>Charles Schwab</a>
+          <a href="https://www.chime.com/" class="link-item" target="_blank"><span class="link-icon">📱</span>Chime</a>
+          <a href="https://www.marcus.com/" class="link-item" target="_blank"><span class="link-icon">📱</span>Marcus</a>
+          <a href="https://www.sofi.com/" class="link-item" target="_blank"><span class="link-icon">📱</span>SoFi</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bank-card">
+      <div class="bank-card-header">
+        <div class="bank-icon">📱</div>
+        <div class="bank-name">
+          <h3>Chime 银行</h3>
+          <p>移动优先的金融服务</p>
+        </div>
+      </div>
+      <div class="bank-card-body">
+        <p><strong>特点：</strong>无月费、提前发工资、移动应用友好</p>
+        <p><strong>优势：</strong>完全免费、支持提前2天获得工资、Visa 借记卡</p>
+        <div class="bank-features">
+          <span class="feature-tag">无月费</span>
+          <span class="feature-tag">提前发工资</span>
+          <span class="feature-tag">手机应用</span>
+        </div>
+      </div>
+      <div class="bank-card-footer">
+        <a href="https://www.chime.com/" class="btn btn-primary" target="_blank">了解更  </a>
+      </div>
+    </div>
+
+    <!-- 投资理财平台 -->
+    <h2 style="font-size: 18px; color: var(--text-dark); margin: 16px 0 8px 0;" id="investment">📈 投资理财平台</h2>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">📈</div>
+        <h3 class="card-header-title">主流理财平台</h3>
+      </div>
+      <div class="card-content">
+        <div class="link-grid">
+          <a href="https://www.fidelity.com/" class="link-item" target="_blank"><span class="link-icon">📈</span>富达(Fidelity)</a>
+          <a href="https://www.schwab.com/" class="link-item" target="_blank"><span class="link-icon">📈</span>嘉信(Schwab)</a>
+          <a href="https://www.tdameritrade.com/" class="link-item" target="_blank"><span class="link-icon">📈</span>TD Ameritrade</a>
+          <a href="https://www.interactive-brokers.com/" class="link-item" target="_blank"><span class="link-icon">📈</span>盈透(IB)</a>
+          <a href="https://www.vanguard.com/" class="link-item" target="_blank"><span class="link-icon">📈</span>先锋(Vanguard)</a>
+          <a href="https://www.merrilledge.com/" class="link-item" target="_blank"><span class="link-icon">📈</span>美银美林</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 在线银行对比 -->
+    <h2 style="font-size: 18px; color: var(--text-dark); margin: 16px 0 8px 0;" id="online-banks">🌐 在线银行对比</h2>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">⭐</div>
+        <h3 class="card-header-title">高利率储蓄账户</h3>
+      </div>
+      <div class="quick-links">
+        <a href="https://www.ally.com/bank/online-savings-account/" class="quick-link" target="_blank">Ally Bank - 年利率最高</a>
+        <a href="https://www.marcus.com/savings" class="quick-link" target="_blank">Marcus by Goldman Sachs - 高息储蓄</a>
+        <a href="https://www.capitalone.com/bank/money-market-account/" class="quick-link" target="_blank">Capital One 360 - Money Market 账户</a>
+        <a href="https://www.wealthfront.com/" class="quick-link" target="_blank">Wealthfront - 智能理财</a>
+        <a href="https://www.betterment.com/" class="quick-link" target="_blank">Betterment - 自动投资</a>
+      </div>
+    </div>
+
+    <!-- 汽车贷款 -->
+    <h2 style="font-size: 18px; color: var(--text-dark); margin: 16px 0 8px 0;">🚗 汽车贷款</h2>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">🚗</div>
+        <h3 class="card-header-title">汽车贷款平台</h3>
+      </div>
+      <div class="card-content">
+        <div class="link-grid">
+          <a href="https://www.autotrader.com/financing/" class="link-item" target="_blank"><span class="link-icon">🚗</span>AutoTrader</a>
+          <a href="https://www.lendingtree.com/auto-loans/" class="link-item" target="_blank"><span class="link-icon">🚗</span>LendingTree</a>
+          <a href="https://www.lightstream.com/auto-loans" class="link-item" target="_blank"><span class="link-icon">🚗</span>LightStream</a>
+          <a href="https://www.penfed.org/loans/auto-loans" class="link-item" target="_blank"><span class="link-icon">🚗</span>Pentagon FCU</a>
+          <a href="https://www.bankofamerica.com/auto/" class="link-item" target="_blank"><span class="link-icon">🚗</span>美银车贷</a>
+          <a href="https://www.wellsfargo.com/auto-loans/" class="link-item" target="_blank"><span class="link-icon">🚗</span>富国车贷</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 房屋贷款 -->
+    <h2 style="font-size: 18px; color: var(--text-dark); margin: 16px 0 8px 0;">🏠 房屋贷款</h2>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">🏠</div>
+        <h3 class="card-header-title">房屋贷款平台</h3>
+      </div>
+      <div class="card-content">
+        <div class="link-grid">
+          <a href="https://www.better.com/" class="link-item" target="_blank"><span class="link-icon">🏠</span>Better.com</a>
+          <a href="https://www.loandepot.com/" class="link-item" target="_blank"><span class="link-icon">🏠</span>loanDepot</a>
+          <a href="https://www.rocketmortgage.com/" class="link-item" target="_blank"><span class="link-icon">🏠</span>Rocket Mortgage</a>
+          <a href="https://www.truerate.com/" class="link-item" target="_blank"><span class="link-icon">🏠</span>Truerate</a>
+          <a href="https://www.chase.com/personal/mortgage" class="link-item" target="_blank"><span class="link-icon">🏠</span>Chase Mortgage</a>
+          <a href="https://homeloan.bankofamerica.com/" class="link-item" target="_blank"><span class="link-icon">🏠</span>美银房贷</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 金融工具 -->
+    <h2 style="font-size: 18px; color: var(--text-dark); margin: 16px 0 8px 0;">🛠️ 金融工具</h2>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">🛠️</div>
+        <h3 class="card-header-title">金融工具和服务</h3>
+      </div>
+      <div class="quick-links">
+        <a href="https://www.experian.com/" class="quick-link" target="_blank">Experian - 信用报告</a>
+        <a href="https://www.equifax.com/" class="quick-link" target="_blank">Equifax - 信用局</a>
+        <a href="https://www.transunion.com/" class="quick-link" target="_blank">TransUnion - 信用评分</a>
+        <a href="https://www.annualcreditreport.com/" class="quick-link" target="_blank">Annual Credit Report - 免费信用报告</a>
+        <a href="https://www.irs.gov/" class="quick-link" target="_blank">IRS - 美国税务局</a>
+        <a href="https://www.ssa.gov/" class="quick-link" target="_blank">SSA - 社会安全号</a>
+      </div>
+    </div>
+
+    <!-- 华人常用银行指南 -->
+    <h2 style="font-size: 18px; color: var(--text-dark); margin: 16px 0 8px 0;">🌏 华人常用指南</h2>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">📚</div>
+        <h3 class="card-header-title">华人金融指南</h3>
+      </div>
+      <div class="quick-links">
+        <a href="https://www.xianjinyu.com/" class="quick-link" target="_blank">现金鱼 - 金融知识</a>
+        <a href="https://www.xueqiu.com/" class="quick-link" target="_blank">雪球 - 投资社区</a>
+        <a href="https://www.bogleheads.org/" class="quick-link" target="_blank">Bogleheads - 指数投资论坛</a>
+        <a href="https://www.reddit.com/r/personalfinance/" class="quick-link" target="_blank">Reddit - 个人理财版块</a>
+      </div>
+    </div>
+
+    <!-- 提示信息 -->
+    <div style="background: #f0f7ff; border-left: 4px solid var(--primary); padding: 12px 16px; border-radius: 6px; margin: 16px 0; font-size: 13px; color: var(--text-dark); line-height: 1.6;">
+      <p style="margin: 0 0 8px 0;"><strong>💡 小贴士：</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>开户前比较不同银行的手续费和利率</li>
+        <li>使用免费的 annual credit report 查看信用报告</li>
+        <li>选择有防欺诈保护的银行</li>
+        <li>保护好社会安全号(SSN)，避免身份盗窃</li>
+        <li>及时还清信用卡，建立良好信用记录</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- 吐司提示 -->
+  <div class="toast" id="toast"></div>
+
+  <!-- 页脚 -->
+  <footer>
+    <p>© 2025 OpenAA.com 保留所有权利 | <a href="https://openaa.com/">返回首页</a></p>
+  </footer>
+
+  <script>
+    // 搜索功能
+    function handleSearch() {
+      const query = document.getElementById('searchInput').value;
+      if (query.trim()) {
+        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+      }
+    }
+
+    // 回车搜索
+    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        handleSearch();
+      }
+    });
+
+    // 收藏功能
+    function toggleBookmark() {
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf('mac') > -1) {
+        alert('请使用 Cmd+D 收藏本站');
+      } else {
+        alert('请使用 Ctrl+D 收藏本站，或在浏览器菜单中选择"添加书签"');
+      }
+    }
+
+    // 返回首页
+    function goHome() {
+      window.location.href = 'https://openaa.com/';
+    }
+
+    // 显示吐司
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
