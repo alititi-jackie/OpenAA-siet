@@ -25,12 +25,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Jozl.com · 个人互联网生态" />
   <meta property="og:description" content="Jozl - 个人互联网生态入口。汇聚优质项目与资源，包含OpenAA华人导航、手机靓号、购物平台、英语学习等。热爱分享，持续创新。" />
-  <meta property="og:url" content="https://openaa.com/jozl/" />
-  <meta property="og:image" content="https://openaa.com/jozl/jozl.png" />
+  <meta property="og:url" content="https://jozl.com/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Jozl.com · 个人互联网生态" />
   <meta name="twitter:description" content="Jozl - 域名投资、导航、工具、内容整合平台。构建属于自己的互联网生态系统。" />
-  <meta name="twitter:image" content="https://openaa.com/jozl/jozl.png" />
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -50,8 +48,7 @@
         "@type": "Organization",
         "@id": "https://jozl.com/#organization",
         "name": "Jozl",
-        "url": "https://openaa.com/jozl/",
-        "logo": "https://openaa.com/jozl/jozl.png",
+        "url": "https://jozl.com/",
         "description": "个人互联网生态平台 - 域名投资、导航网站、工具平台与内容整合",
         "contactPoint": {
           "@type": "ContactPoint",
@@ -125,25 +122,12 @@
       margin-right: auto;
     }
 
-    .header-logo {
-      height: 40px;
-      padding: 6px 12px;
-      display: flex;
-      align-items: center;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      text-decoration: none;
-    }
-
-    .header-logo img {
-      height: 100%;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .header-logo-text {
-      display: none;
+    .header-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+      color: white;
+      letter-spacing: 0.5px;
     }
 
     .header-actions {
@@ -464,11 +448,6 @@
         --border: #3d3d3d;
       }
 
-      .header-logo {
-        background: white;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      }
-
       .card-header {
         background: #3d3d3d;
       }
@@ -484,15 +463,13 @@
   <!-- Header -->
   <header>
     <div class="header-content">
-      <a href="https://jozl.com/" class="header-logo">
-        <img src="https://jozl.com/logo.png" alt="Jozl" />
-      </a>
+      <h1 class="header-title">🚀 Jozl.com</h1>
       <div class="header-actions">
         <button class="btn-icon" onclick="toggleBookmark()" title="收藏本站">⭐</button>
         <button class="btn-icon" onclick="shareApp()" title="分享">📤</button>
       </div>
     </div>
-    <p class="header-subtitle">🚀 个人互联网生态 · 热爱分享 · 持续创新</p>
+    <p class="header-subtitle">个人互联网生态 · 热爱分享 · 持续创新</p>
   </header>
 
   <!-- 主要内容 -->
