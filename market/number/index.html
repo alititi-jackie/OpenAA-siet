@@ -10,7 +10,7 @@
 
   <!-- SEO优化 - 标题和描述 -->
   <title>美国手机靓号出售 | 生日号/豹子号/连号/顺号 | 微信Zelle支付 | OpenAA</title>
-  <meta name="description" content="OpenAA提供全美手机靓号出售：纽约靓号、三连号、四连号、生日号、豹子号、顺号等精品号码。支持微信(WeChat)、Zelle付款。在   华人精选美国手机号码平台。">
+  <meta name="description" content="OpenAA提供全美手机靓号出售：纽约靓号、三连号、四连号、生日号、豹子号、顺号等精品号码。支持微信(WeChat)、Zelle付款。在美华人精选美国手机号码平台。">
   <meta name="keywords" content="美国手机靓号,手机靓号出售,生日号,豹子号,三连号,四连号,顺号,纽约靓号,美国手机号,微信支付,Zelle,靓号买卖,美国电话号,华人靓号,手机号码,在线购号,美国号码,电话号码,靓号平台,美国通讯">
   <meta name="robots" content="index, follow">
 
@@ -36,7 +36,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 
-  <!-- Structured Data - 增强SEO -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -62,7 +62,7 @@
         "@type": "LocalBusiness",
         "@id": "https://openaa.com/market/number/#business",
         "name": "OpenAA美国手机靓号",
-        "description": "专业美国手机靓号交易平台，提供生日号、豹子号、连号等",
+        "description": "专业美国手机靓号交易平台",
         "telephone": "+1-917-842-6666",
         "email": "323748@gmail.com",
         "url": "https://openaa.com/market/number/"
@@ -71,34 +71,7 @@
         "@type": "WebPage",
         "@id": "https://openaa.com/market/number/#webpage",
         "url": "https://openaa.com/market/number/",
-        "name": "美国手机靓号出售",
-        "description": "全美手机靓号交易平台"
-      },
-      {
-        "@type": "ItemList",
-        "name": "靓号分类",
-        "itemListElement": [
-          {
-            "@type": "Thing",
-            "name": "纽约三连号"
-          },
-          {
-            "@type": "Thing",
-            "name": "纽约四连号"
-          },
-          {
-            "@type": "Thing",
-            "name": "生日号"
-          },
-          {
-            "@type": "Thing",
-            "name": "豹子号"
-          },
-          {
-            "@type": "Thing",
-            "name": "顺号"
-          }
-        ]
+        "name": "美国手机靓号出售"
       }
     ]
   }
@@ -373,58 +346,37 @@
     /* 号码网格 */
     .number-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 8px;
+      padding: 12px;
     }
 
     .number-item {
+      position: relative;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
       padding: 12px 8px;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      text-decoration: none;
-      color: var(--text-dark);
       text-align: center;
       cursor: pointer;
-      transition: background 0.15s;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      min-height: 110px;
-      justify-content: space-between;
-      position: relative;
-    }
-
-    .number-item:nth-child(3n) {
-      border-right: none;
-    }
-
-    .number-item:nth-last-child(-n+3) {
-      border-bottom: none;
+      transition: all 0.2s ease;
+      overflow: hidden;
     }
 
     .number-item:active {
-      background: #f0f7ff;
-    }
-
-    .number-badges {
-      position: absolute;
-      top: 4px;
-      right: 4px;
-      display: flex;
-      gap: 4px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      max-width: 70px;
+      transform: scale(0.95);
+      background: #e8f4fd;
     }
 
     .number-badge {
-      font-size: 10px;
-      padding: 2px 5px;
-      border-radius: 3px;
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      font-size: 11px;
+      padding: 3px 6px;
+      border-radius: 4px;
       color: white;
       font-weight: 600;
-      white-space: nowrap;
     }
 
     .badge-hot {
@@ -435,23 +387,19 @@
       background: var(--text-light);
     }
 
-    .badge-price {
-      background: var(--primary);
-    }
-
-    .badge-consult {
-      background: #ff9800;
-    }
-
-    .number-icon {
-      font-size: 16px;
-    }
-
     .number-value {
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 700;
       color: var(--primary);
+      margin: 8px 0 6px 0;
+      word-break: break-word;
       line-height: 1.3;
+    }
+
+    .number-price {
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: 600;
     }
 
     .number-item.sold {
@@ -727,230 +675,140 @@
       </div>
       <div class="card-content">
         <div class="number-grid">
-          <a href="#" onclick="handleNumberClick('(917) 516-9111'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-hot">热卖</span>
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+          <div class="number-item" onclick="handleNumberClick('(917) 516-9111')">
+            <span class="number-badge badge-hot">热卖</span>
             <div class="number-value">(917)<br>516-9111</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(347) 640-8111'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(347) 640-8111')">
             <div class="number-value">(347)<br>640-8111</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(347) 506-1222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(347) 506-1222')">
             <div class="number-value">(347)<br>506-1222</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(347) 926-1555'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(347) 926-1555')">
             <div class="number-value">(347)<br>926-1555</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(347) 937-2666'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(347) 937-2666')">
             <div class="number-value">(347)<br>937-2666</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(347) 830-3222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(347) 830-3222')">
             <div class="number-value">(347)<br>830-3222</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(917) 970-8222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(917) 970-8222')">
             <div class="number-value">(917)<br>970-8222</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(646) 693-5111'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(646) 693-5111')">
             <div class="number-value">(646)<br>693-5111</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(917) 765-5222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(917) 765-5222')">
             <div class="number-value">(917)<br>765-5222</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(347) 868-5222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(347) 868-5222')">
             <div class="number-value">(347)<br>868-5222</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(347) 868-5333'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(347) 868-5333')">
             <div class="number-value">(347)<br>868-5333</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(646) 859-5333'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(646) 859-5333')">
             <div class="number-value">(646)<br>859-5333</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(347) 384-5888'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(347) 384-5888')">
             <div class="number-value">(347)<br>384-5888</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(347) 566-7222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(347) 566-7222')">
             <div class="number-value">(347)<br>566-7222</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(917) 382-3111'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(917) 382-3111')">
             <div class="number-value">(917)<br>382-3111</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(917) 985-6222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(917) 985-6222')">
             <div class="number-value">(917)<br>985-6222</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(646) 956-3111'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(646) 956-3111')">
             <div class="number-value">(646)<br>956-3111</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(347) 868-3111'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(347) 868-3111')">
             <div class="number-value">(347)<br>868-3111</div>
-          </a>
+            <div class="number-price">$40</div>
+          </div>
           <div class="number-item sold" onclick="showToast('此号已售出')">
-            <div class="number-badges">
-              <span class="number-badge badge-sold">已售</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <span class="number-badge badge-sold">已售</span>
             <div class="number-value">(917)<br>970-3222</div>
+            <div class="number-price">已售出</div>
           </div>
-          <a href="#" onclick="handleNumberClick('(347) 971-3666'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+          <div class="number-item" onclick="handleNumberClick('(347) 971-3666')">
             <div class="number-value">(347)<br>971-3666</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(929) 258-4777'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(929) 258-4777')">
             <div class="number-value">(929)<br>258-4777</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(929) 496-8555'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(929) 496-8555')">
             <div class="number-value">(929)<br>496-8555</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(929) 348-9111'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(929) 348-9111')">
             <div class="number-value">(929)<br>348-9111</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(917) 725-3111'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(917) 725-3111')">
             <div class="number-value">(917)<br>725-3111</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(917) 970-8111'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(917) 970-8111')">
             <div class="number-value">(917)<br>970-8111</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(917) 970-3111'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(917) 970-3111')">
             <div class="number-value">(917)<br>970-3111</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(917) 970-3555'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$40</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$40</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(917) 970-3555')">
             <div class="number-value">(917)<br>970-3555</div>
-          </a>
+            <div class="number-price">$40</div>
+          </div>
           <div class="number-item sold" onclick="showToast('此号已售出')">
-            <div class="number-badges">
-              <span class="number-badge badge-sold">已售</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <span class="number-badge badge-sold">已售</span>
             <div class="number-value">(917)<br>703-3222</div>
+            <div class="number-price">已售出</div>
           </div>
           <div class="number-item sold" onclick="showToast('此号已售出')">
-            <div class="number-badges">
-              <span class="number-badge badge-sold">已售</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <span class="number-badge badge-sold">已售</span>
             <div class="number-value">(917)<br>985-8222</div>
+            <div class="number-price">已售出</div>
           </div>
           <div class="number-item sold" onclick="showToast('此号已售出')">
-            <div class="number-badges">
-              <span class="number-badge badge-sold">已售</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <span class="number-badge badge-sold">已售</span>
             <div class="number-value">(917)<br>809-8555</div>
+            <div class="number-price">已售出</div>
           </div>
           <div class="number-item sold" onclick="showToast('此号已售出')">
-            <div class="number-badges">
-              <span class="number-badge badge-sold">已售</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <span class="number-badge badge-sold">已售</span>
             <div class="number-value">(917)<br>920-2555</div>
+            <div class="number-price">已售出</div>
           </div>
           <div class="number-item sold" onclick="showToast('此号已售出')">
-            <div class="number-badges">
-              <span class="number-badge badge-sold">已售</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <span class="number-badge badge-sold">已售</span>
             <div class="number-value">(917)<br>781-3222</div>
+            <div class="number-price">已售出</div>
           </div>
         </div>
       </div>
@@ -965,56 +823,35 @@
       </div>
       <div class="card-content">
         <div class="number-grid">
-          <a href="#" onclick="handleNumberClick('(929) 371-2222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-hot">热卖</span>
-              <span class="number-badge badge-price">$280</span>
-            </div>
-            <span class="number-icon">📱</span>
+          <div class="number-item" onclick="handleNumberClick('(929) 371-2222')">
+            <span class="number-badge badge-hot">热卖</span>
             <div class="number-value">(929)<br>371-2222</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(917) 329-2222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$280</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$280</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(917) 329-2222')">
             <div class="number-value">(917)<br>329-2222</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(347) 309-2222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$280</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$280</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(347) 309-2222')">
             <div class="number-value">(347)<br>309-2222</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(929) 583-2222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$280</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$280</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(929) 583-2222')">
             <div class="number-value">(929)<br>583-2222</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(929) 561-2222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$280</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$280</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(929) 561-2222')">
             <div class="number-value">(929)<br>561-2222</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(929) 216-2222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$280</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$280</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(929) 216-2222')">
             <div class="number-value">(929)<br>216-2222</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(646) 986-2222'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-price">$280</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">$280</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(646) 986-2222')">
             <div class="number-value">(646)<br>986-2222</div>
-          </a>
+            <div class="number-price">$280</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1028,97 +865,58 @@
       </div>
       <div class="card-content">
         <div class="number-grid">
-          <a href="#" onclick="handleNumberClick('(570) 371-6666'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-consult">咨询</span>
-            </div>
-            <span class="number-icon">📱</span>
+          <div class="number-item" onclick="handleNumberClick('(570) 371-6666')">
             <div class="number-value">(570)<br>371-6666</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(570) 987-7777'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-consult">咨询</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">咨询</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(570) 987-7777')">
             <div class="number-value">(570)<br>987-7777</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(978) 916-8888'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-consult">咨询</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">咨询</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(978) 916-8888')">
             <div class="number-value">(978)<br>916-8888</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(570) 665-8888'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-consult">咨询</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">咨询</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(570) 665-8888')">
             <div class="number-value">(570)<br>665-8888</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(570) 217-8888'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-consult">咨询</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">咨询</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(570) 217-8888')">
             <div class="number-value">(570)<br>217-8888</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(570) 277-8888'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-consult">咨询</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">咨询</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(570) 277-8888')">
             <div class="number-value">(570)<br>277-8888</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(570) 739-8888'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-consult">咨询</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">咨询</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(570) 739-8888')">
             <div class="number-value">(570)<br>739-8888</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(570) 917-8888'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-consult">咨询</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">咨询</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(570) 917-8888')">
             <div class="number-value">(570)<br>917-8888</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(570) 355-8888'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-consult">咨询</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">咨询</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(570) 355-8888')">
             <div class="number-value">(570)<br>355-8888</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(703) 952-1888'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-consult">咨询</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">咨询</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(703) 952-1888')">
             <div class="number-value">(703)<br>952-1888</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(703) 570-1888'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-consult">咨询</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">咨询</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(703) 570-1888')">
             <div class="number-value">(703)<br>570-1888</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(703) 936-9888'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-consult">咨询</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">咨询</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(703) 936-9888')">
             <div class="number-value">(703)<br>936-9888</div>
-          </a>
-          <a href="#" onclick="handleNumberClick('(703) 659-6888'); return false;" class="number-item">
-            <div class="number-badges">
-              <span class="number-badge badge-consult">咨询</span>
-            </div>
-            <span class="number-icon">📱</span>
+            <div class="number-price">咨询</div>
+          </div>
+          <div class="number-item" onclick="handleNumberClick('(703) 659-6888')">
             <div class="number-value">(703)<br>659-6888</div>
-          </a>
+            <div class="number-price">咨询</div>
+          </div>
         </div>
       </div>
     </div>
