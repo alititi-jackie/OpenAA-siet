@@ -21,7 +21,7 @@
 
   <!-- Open Graph & Twitter -->
   <meta property="og:locale" content="zh_CN" />
-  <meta property="og:title" content="OpenAA · 美国华人生活入口" />
+  <meta property="og:title" content="OpenAA · 美国华人生  入口" />
   <meta property="og:description" content="OpenAA 为在美华人提供一站式中文导航与实用服务：DMV、移民、找工作、二手、银行与地区资讯，覆盖纽约、洛杉矶等城市。" />
   <meta property="og:image" content="https://openaa.com/logo.png" />
   <meta property="og:url" content="https://openaa.com/" />
@@ -118,10 +118,16 @@
       margin-bottom: 12px;
     }
 
-    .header-title {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+    .header-logo {
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-logo img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
     }
 
     .header-actions {
@@ -523,7 +529,9 @@
   <!-- 顶部导航栏 -->
   <header>
     <div class="header-content">
-      <div class="header-title">OpenAA.com</div>
+      <div class="header-logo">
+        <img src="https://openaa.com/logo.png" alt="OpenAA" />
+      </div>
       <div class="header-actions">
         <button class="btn-icon" onclick="toggleBookmark()" title="收藏本站">📌</button>
         <button class="btn-icon" onclick="toggleMenu()" title="更多">⋯</button>
