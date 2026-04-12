@@ -1,47 +1,92 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#007bff">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#0078d4">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="AI工具">
 
-  <meta name="description" content="OpenAA · AI工具导航 - 收录最热门的AI工具平台：ChatGPT、Deepseek、Claude、Midjourney等，支持对话、写作、绘画、编程，一键直达，无需注册。">
-  <meta name="keywords" content="AI工具, ChatGPT, Midjourney, Claude, AI导航, 免费AI工具, 人工智能, AI   作, AI绘画, AI编程">
-  <meta property="og:title" content="OpenAA · AI工具导航">
-  <meta property="og:description" content="一站式AI工具导航 - 精选全球最热门的AI工具，无广告，永久免费。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://openaa.com/nav/ai">
-  <meta property="og:image" content="https://openaa.com/logo.png">
+  <!-- Title & Meta -->
+  <title>AI工具导航 | ChatGPT、Claude、Midjourney大全 | OpenAA</title>
+  <meta name="description" content="OpenAA AI工具导航：全球最热门AI工具大全，包括ChatGPT、DeepSeek、Claude、Gemini、Midjourney等，支持对话、写作、绘画、编程、翻译、视频等功能。">
+  <meta name="keywords" content="AI工具,AI导航,ChatGPT官网,Claude,Midjourney,DeepSeek,AI对话,AI绘画,AI编程,AI工具大全">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://openaa.com/nav/ai/">
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="AI工具导航 | OpenAA" />
+  <meta property="og:description" content="全球最热门AI工具导航大全，一站式访问ChatGPT、Claude、Midjourney等AI应用。" />
+  <meta property="og:image" content="https://openaa.com/logo.png" />
+  <meta property="og:url" content="https://openaa.com/nav/ai/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AI工具导航",
+    "description": "全球最热门AI工具导航大全",
+    "url": "https://openaa.com/nav/ai/",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ChatGPT",
+          "url": "https://chat.openai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Claude",
+          "url": "https://claude.ai/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Midjourney",
+          "url": "https://www.midjourney.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "DeepSeek",
+          "url": "https://chat.deepseek.com/"
+        }
+      ]
+    }
+  }
+  </script>
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
 
-  <title>OpenAA - AI工具导航</title>
-  
   <style>
+    * { 
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     :root {
-      --primary: #007bff;
-      --primary-dark: #0056b3;
-      --secondary: #ff9800;
+      --primary: #0078d4;
+      --primary-dark: #005fa3;
+      --secondary: #50E3C2;
       --bg: #f8f9fa;
-      --card: #ffffff;
+      --card-bg: #ffffff;
       --text-dark: #1f2937;
       --text-light: #6b7280;
       --border: #e5e7eb;
       --shadow: 0 2px 8px rgba(0,0,0,0.08);
-      --shadow-lg: 0 8px 20px rgba(0,0,0,0.12);
       --radius: 12px;
-    }
-
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
     }
 
     html, body {
@@ -53,44 +98,46 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
       background-color: var(--bg);
       color: var(--text-dark);
       line-height: 1.6;
       font-size: 16px;
-      -webkit-font-smoothing: antialiased;
     }
 
-    /* 顶部导航栏 */
+    /* Header 固定顶部 */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
       background: linear-gradient(135deg, var(--primary) 0%, #1084d8 100%);
       color: white;
-      padding: 14px 16px 16px;
-      box-shadow: var(--shadow-lg);
+      padding: 12px 16px 16px;
+      box-shadow: 0 2px 12px rgba(0,120,212,0.15);
     }
 
     .header-content {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .header-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 12px;
     }
 
-    .header-title {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+    .header-logo {
+      height: 40px;
+      padding: 6px 12px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      text-decoration: none;
+    }
+
+    .header-logo img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
     }
 
     .header-actions {
@@ -117,22 +164,15 @@
       background: rgba(255,255,255,0.3);
     }
 
-    .header-subtitle {
-      font-size: 13px;
-      opacity: 0.95;
-      margin: 0;
-    }
-
     /* 搜索框 */
     .search-box {
       display: flex;
       gap: 8px;
-      margin-top: 12px;
     }
 
     .search-box input {
       flex: 1;
-      padding: 10px 14px;
+      padding: 8px 12px;
       border: none;
       border-radius: 20px;
       font-size: 14px;
@@ -161,80 +201,114 @@
       background: rgba(255,255,255,0.3);
     }
 
+    /* 面包屑 */
+    .breadcrumb {
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--text-light);
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
     /* 主要内容区 */
     main {
       padding: 8px;
-      padding-bottom: 100px;
+      padding-bottom: 90px;
       max-width: 600px;
       margin: 0 auto;
     }
 
-    /* AI工具卡片 */
+    /* 标题 */
+    h1 {
+      font-size: 24px;
+      margin: 16px 0 8px 0;
+      color: var(--text-dark);
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 20px 0 12px 0;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .page-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    /* 卡片 */
     .card {
-      background: var(--card);
+      background: var(--card-bg);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       margin: 8px 0;
-      padding: 0;
       overflow: hidden;
-      transition: all 0.2s ease;
     }
 
     .card-header {
       padding: 12px 16px;
       background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
-      border-bottom: 2px solid var(--primary);
+      border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
     .card-header-icon {
-      font-size: 22px;
+      font-size: 20px;
     }
 
     .card-header-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
       color: var(--primary);
       margin: 0;
     }
 
-    .card-header-count {
-      margin-left: auto;
-      font-size: 12px;
-      background: var(--primary);
-      color: white;
-      padding: 4px 8px;
-      border-radius: 12px;
+    .card-content {
+      padding: 0;
     }
 
-    /* AI工具网格 */
     .ai-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 8px;
-      padding: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
     }
 
     .ai-item {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 8px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
+      padding: 14px 8px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       text-decoration: none;
       color: var(--text-dark);
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 6px;
+      transition: background 0.15s;
+      text-align: center;
+      min-height: 100px;
+      justify-content: center;
+    }
+
+    .ai-item:nth-child(3n) {
+      border-right: none;
+    }
+
+    .ai-item:nth-last-child(-n+3) {
+      border-bottom: none;
     }
 
     .ai-item:active {
-      transform: scale(0.95);
-      background: #e8f4fd;
+      background: #f0f7ff;
     }
 
     .ai-icon {
@@ -242,80 +316,46 @@
     }
 
     .ai-name {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      color: var(--primary);
+      line-height: 1.3;
     }
 
-    .ai-type {
-      font-size: 11px;
-      color: var(--text-light);
-    }
-
-    /* 工具分类卡片 */
-    .category-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin: 8px 0;
-      overflow: hidden;
-    }
-
-    .category-header {
-      padding: 14px 16px;
-      background: linear-gradient(135deg, #fff8f0 0%, #fff5ea 100%);
-      border-left: 4px solid var(--secondary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .category-header-icon {
-      font-size: 22px;
-    }
-
-    .category-header-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--secondary);
-      margin: 0;
-    }
-
-    .tool-list {
+    /* 链接网格 */
+    .link-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 0;
     }
 
-    .tool-item {
+    .link-item {
       padding: 12px 16px;
       border-right: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       text-decoration: none;
       color: var(--text-dark);
-      font-size: 13px;
-      transition: background 0.15s;
+      font-size: 14px;
       display: flex;
       align-items: center;
       gap: 8px;
+      transition: background 0.15s;
     }
 
-    .tool-item:nth-child(2n) {
+    .link-item:nth-child(2n) {
       border-right: none;
     }
 
-    .tool-item:nth-last-child(1),
-    .tool-item:nth-last-child(2) {
+    .link-item:nth-last-child(-n+2) {
       border-bottom: none;
     }
 
-    .tool-item:active {
+    .link-item:active {
       background: #f0f7ff;
     }
 
-    .tool-icon {
-      font-size: 16px;
-      min-width: 16px;
+    .link-icon {
+      font-size: 18px;
+      min-width: 18px;
     }
 
     /* 底部导航栏 */
@@ -324,10 +364,10 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: var(--card);
+      background: var(--card-bg);
       border-top: 1px solid var(--border);
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 0;
       z-index: 200;
       box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
@@ -346,7 +386,6 @@
       cursor: pointer;
       border: none;
       background: none;
-      gap: 4px;
     }
 
     .nav-item.active {
@@ -354,15 +393,16 @@
     }
 
     .nav-item-icon {
-      font-size: 24px;
+      font-size: 22px;
+      margin-bottom: 4px;
     }
 
     /* 页脚 */
     footer {
       text-align: center;
       padding: 16px;
-      color: var(--text-light);
       font-size: 12px;
+      color: var(--text-light);
       margin-top: 16px;
     }
 
@@ -371,7 +411,7 @@
       text-decoration: none;
     }
 
-    /* 吐司 */
+    /* 吐司提示 */
     .toast {
       position: fixed;
       bottom: 100px;
@@ -402,7 +442,7 @@
         grid-template-columns: repeat(4, 1fr);
       }
       
-      .tool-list {
+      .link-grid {
         grid-template-columns: repeat(3, 1fr);
       }
     }
@@ -411,314 +451,261 @@
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #1f1f1f;
-        --card: #2d2d2d;
+        --card-bg: #2d2d2d;
         --text-dark: #f5f5f5;
         --text-light: #a0a0a0;
         --border: #3d3d3d;
       }
-
+      
       .card-header {
         background: #3d3d3d;
       }
-
-      .ai-item {
+      
+      .ai-item:active,
+      .link-item:active {
         background: #3d3d3d;
       }
 
-      .category-header {
-        background: #3d3d3d;
+      .header-logo {
+        background: white;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
       }
     }
   </style>
 </head>
-
 <body>
-  <!-- 顶部导航 -->
+  <!-- 顶部导航栏 -->
   <header>
     <div class="header-content">
-      <div class="header-top">
-        <div class="header-title">
-          <span>🤖</span>
-          <span>AI工具</span>
-        </div>
-        <div class="header-actions">
-          <button class="btn-icon" type="button" onclick="toggleBookmark();" title="收藏">⭐</button>
-          <button class="btn-icon" type="button" onclick="toggleShare();" title="分享">📤</button>
-        </div>
+      <a href="https://openaa.com/" class="header-logo">
+        <img src="https://openaa.com/logo.png" alt="OpenAA" />
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" onclick="toggleBookmark()" title="收藏本站">📌</button>
+        <button class="btn-icon" onclick="goHome()" title="返回首页">🏠</button>
       </div>
-      <p class="header-subtitle">ChatGPT · Claude · Midjourney · 精选全球热门AI工具</p>
-
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="搜索AI工具..." />
-        <button type="button" onclick="handleSearch();">🔍</button>
-      </div>
+    </div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="搜索AI工具..." />
+      <button onclick="handleSearch()">🔍</button>
     </div>
   </header>
 
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <a href="https://openaa.com/">首页</a> > <a href="https://openaa.com/">导航</a> > AI工具
+  </div>
+
   <!-- 主要内容 -->
-  <main role="main">
+  <main>
+    <h1>🤖 AI工具导航</h1>
+    <p class="page-desc">全球最热门AI工具导航大全，包括ChatGPT、Claude、DeepSeek、Midjourney等热门AI应用，支持对话、写作、绘画、编程、翻译等功能，一站式访问所有AI工具官网。</p>
+
     <!-- 热门AI工具 -->
+    <h2>热门AI工具</h2>
     <div class="card">
       <div class="card-header">
         <div class="card-header-icon">🔥</div>
-        <h2 class="card-header-title">热门AI工具</h2>
-        <div class="card-header-count">6</div>
+        <h3 class="card-header-title">全球最受欢迎</h3>
       </div>
-      <div class="ai-grid">
-        <a href="https://chat.openai.com" target="_blank" rel="noopener" class="ai-item">
-          <div class="ai-icon">🤖</div>
-          <div class="ai-name">ChatGPT</div>
-          <div class="ai-type">对话AI</div>
-        </a>
-        <a href="https://chat.deepseek.com" target="_blank" rel="noopener" class="ai-item">
-          <div class="ai-icon">🧠</div>
-          <div class="ai-name">DeepSeek</div>
-          <div class="ai-type">国产AI</div>
-        </a>
-        <a href="https://claude.ai" target="_blank" rel="noopener" class="ai-item">
-          <div class="ai-icon">💬</div>
-          <div class="ai-name">Claude</div>
-          <div class="ai-type">高能AI</div>
-        </a>
-        <a href="https://gemini.google.com" target="_blank" rel="noopener" class="ai-item">
-          <div class="ai-icon">🌟</div>
-          <div class="ai-name">Gemini</div>
-          <div class="ai-type">Google AI</div>
-        </a>
-        <a href="https://www.midjourney.com" target="_blank" rel="noopener" class="ai-item">
-          <div class="ai-icon">🎨</div>
-          <div class="ai-name">Midjourney</div>
-          <div class="ai-type">AI绘画</div>
-        </a>
-        <a href="https://deepl.com" target="_blank" rel="noopener" class="ai-item">
-          <div class="ai-icon">🌐</div>
-          <div class="ai-name">DeepL</div>
-          <div class="ai-type">AI翻译</div>
-        </a>
-      </div>
-    </div>
-
-    <!-- 对话AI工具 -->
-    <div class="category-card">
-      <div class="category-header">
-        <div class="category-header-icon">💬</div>
-        <h2 class="category-header-title">对话与写作</h2>
-      </div>
-      <div class="tool-list">
-        <a href="https://chat.openai.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🤖</span> ChatGPT
-        </a>
-        <a href="https://chat.deepseek.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🧠</span> DeepSeek
-        </a>
-        <a href="https://claude.ai" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">💬</span> Claude
-        </a>
-        <a href="https://gemini.google.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🌟</span> Gemini
-        </a>
-        <a href="https://www.perplexity.ai" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🔎</span> Perplexity
-        </a>
-        <a href="https://poe.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🦜</span> Poe
-        </a>
-        <a href="https://copilot.microsoft.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🪄</span> Copilot
-        </a>
-        <a href="https://quillbot.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">✍️</span> QuillBot
-        </a>
+      <div class="card-content">
+        <div class="ai-grid">
+          <a href="https://chat.openai.com/" class="ai-item" target="_blank" rel="noopener">
+            <div class="ai-icon">🤖</div>
+            <div class="ai-name">ChatGPT</div>
+          </a>
+          <a href="https://chat.deepseek.com/" class="ai-item" target="_blank" rel="noopener">
+            <div class="ai-icon">🧠</div>
+            <div class="ai-name">DeepSeek</div>
+          </a>
+          <a href="https://claude.ai/" class="ai-item" target="_blank" rel="noopener">
+            <div class="ai-icon">💬</div>
+            <div class="ai-name">Claude</div>
+          </a>
+          <a href="https://gemini.google.com/" class="ai-item" target="_blank" rel="noopener">
+            <div class="ai-icon">🌟</div>
+            <div class="ai-name">Gemini</div>
+          </a>
+          <a href="https://www.midjourney.com/" class="ai-item" target="_blank" rel="noopener">
+            <div class="ai-icon">🎨</div>
+            <div class="ai-name">Midjourney</div>
+          </a>
+          <a href="https://www.perplexity.ai/" class="ai-item" target="_blank" rel="noopener">
+            <div class="ai-icon">🔎</div>
+            <div class="ai-name">Perplexity</div>
+          </a>
+          <a href="https://deepl.com/" class="ai-item" target="_blank" rel="noopener">
+            <div class="ai-icon">🌐</div>
+            <div class="ai-name">DeepL</div>
+          </a>
+          <a href="https://copilot.microsoft.com/" class="ai-item" target="_blank" rel="noopener">
+            <div class="ai-icon">💫</div>
+            <div class="ai-name">Copilot</div>
+          </a>
+          <a href="https://poe.com/" class="ai-item" target="_blank" rel="noopener">
+            <div class="ai-icon">🦜</div>
+            <div class="ai-name">Poe</div>
+          </a>
+        </div>
       </div>
     </div>
 
-    <!-- 图像生成工具 -->
-    <div class="category-card">
-      <div class="category-header">
-        <div class="category-header-icon">🎨</div>
-        <h2 class="category-header-title">AI绘画与设计</h2>
+    <!-- 对话与写作 -->
+    <h2>对话与写作</h2>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">💬</div>
+        <h3 class="card-header-title">AI对话和内容创作</h3>
       </div>
-      <div class="tool-list">
-        <a href="https://www.midjourney.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🎨</span> Midjourney
-        </a>
-        <a href="https://stablediffusionweb.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🌌</span> Stable Diffusion
-        </a>
-        <a href="https://www.bing.com/images/create" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🖼️</span> Bing Image
-        </a>
-        <a href="https://www.adobe.com/products/firefly.html" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">✨</span> Adobe Firefly
-        </a>
-        <a href="https://ideogram.ai" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">📝</span> Ideogram
-        </a>
-        <a href="https://www.canva.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🎭</span> Canva
-        </a>
+      <div class="card-content">
+        <div class="link-grid">
+          <a href="https://chat.openai.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🤖</span>ChatGPT</a>
+          <a href="https://chat.deepseek.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🧠</span>DeepSeek</a>
+          <a href="https://claude.ai/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💬</span>Claude</a>
+          <a href="https://gemini.google.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🌟</span>Gemini</a>
+          <a href="https://www.perplexity.ai/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🔎</span>Perplexity</a>
+          <a href="https://poe.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🦜</span>Poe</a>
+          <a href="https://copilot.microsoft.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💫</span>Copilot</a>
+          <a href="https://www.copy.ai/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">✍️</span>Copy.ai</a>
+          <a href="https://www.jasper.ai/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💎</span>Jasper</a>
+        </div>
       </div>
     </div>
 
-    <!-- 编程辅助工具 -->
-    <div class="category-card">
-      <div class="category-header">
-        <div class="category-header-icon">💻</div>
-        <h2 class="category-header-title">编程与开发</h2>
+    <!-- AI绘画与设计 -->
+    <h2>AI绘画与设计</h2>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">🎨</div>
+        <h3 class="card-header-title">图像生成和设计工具</h3>
       </div>
-      <div class="tool-list">
-        <a href="https://github.com/copilot" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">💻</span> Github Copilot
-        </a>
-        <a href="https://www.cursor.sh" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">📝</span> Cursor
-        </a>
-        <a href="https://www.phind.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🐦</span> Phind
-        </a>
-        <a href="https://codeium.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">⚡</span> Codeium
-        </a>
-        <a href="https://huggingface.co" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🤗</span> Hugging Face
-        </a>
-        <a href="https://www.tabnine.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">📌</span> Tabnine
-        </a>
+      <div class="card-content">
+        <div class="link-grid">
+          <a href="https://www.midjourney.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🎨</span>Midjourney</a>
+          <a href="https://stablediffusionweb.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🌌</span>Stable Diffusion</a>
+          <a href="https://www.bing.com/images/create/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🖼️</span>Bing Image</a>
+          <a href="https://www.adobe.com/products/firefly.html/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">✨</span>Adobe Firefly</a>
+          <a href="https://ideogram.ai/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📝</span>Ideogram</a>
+          <a href="https://www.canva.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🎭</span>Canva</a>
+          <a href="https://runway.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🛫</span>Runway</a>
+          <a href="https://www.remove.bg/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🎬</span>Remove.bg</a>
+          <a href="https://www.topazlabs.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🌟</span>Topaz</a>
+        </div>
       </div>
     </div>
 
-    <!-- 翻译与语言工具 -->
-    <div class="category-card">
-      <div class="category-header">
-        <div class="category-header-icon">🌐</div>
-        <h2 class="category-header-title">翻译与语言</h2>
+    <!-- 编程辅助 -->
+    <h2>编程与开发</h2>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">💻</div>
+        <h3 class="card-header-title">代码辅助和开发工具</h3>
       </div>
-      <div class="tool-list">
-        <a href="https://deepl.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🌐</span> DeepL
-        </a>
-        <a href="https://translate.google.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🔤</span> Google翻译
-        </a>
-        <a href="https://www.bing.com/translator" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🔤</span> Bing翻译
-        </a>
-        <a href="https://www.reverso.net" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">↔️</span> Reverso
-        </a>
-        <a href="https://www.deepgram.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🎙️</span> Deepgram
-        </a>
-        <a href="https://assemblyai.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🗣️</span> AssemblyAI
-        </a>
+      <div class="card-content">
+        <div class="link-grid">
+          <a href="https://github.com/copilot/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💻</span>GitHub Copilot</a>
+          <a href="https://www.cursor.sh/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📝</span>Cursor</a>
+          <a href="https://www.phind.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🐦</span>Phind</a>
+          <a href="https://codeium.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">⚡</span>Codeium</a>
+          <a href="https://huggingface.co/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🤗</span>Hugging Face</a>
+          <a href="https://www.tabnine.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📌</span>Tabnine</a>
+          <a href="https://www.replit.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">⚙️</span>Replit</a>
+          <a href="https://www.codepilot.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">  </span>CodePilot</a>
+          <a href="https://www.github.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🐙</span>GitHub</a>
+        </div>
       </div>
     </div>
 
-    <!-- 内容创作工具 -->
-    <div class="category-card">
-      <div class="category-header">
-        <div class="category-header-icon">✍️</div>
-        <h2 class="category-header-title">内容创作</h2>
+    <!-- 翻译与语言 -->
+    <h2>翻译与语言</h2>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">🌐</div>
+        <h3 class="card-header-title">翻译和语言处理</h3>
       </div>
-      <div class="tool-list">
-        <a href="https://www.copy.ai" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">✍️</span> Copy.ai
-        </a>
-        <a href="https://www.jasper.ai" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">💎</span> Jasper
-        </a>
-        <a href="https://www.writesonic.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">📄</span> Writesonic
-        </a>
-        <a href="https://www.surfer.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🏄</span> Surfer
-        </a>
-        <a href="https://www.grammarly.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">✓</span> Grammarly
-        </a>
-        <a href="https://www.hemingwayapp.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">📖</span> Hemingway
-        </a>
+      <div class="card-content">
+        <div class="link-grid">
+          <a href="https://deepl.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🌐</span>DeepL翻译</a>
+          <a href="https://translate.google.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🔤</span>Google翻译</a>
+          <a href="https://www.bing.com/translator/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🔤</span>Bing翻译</a>
+          <a href="https://www.reverso.net/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">↔️</span>Reverso</a>
+          <a href="https://www.deepgram.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🎙️</span>Deepgram</a>
+          <a href="https://assemblyai.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🗣️</span>AssemblyAI</a>
+          <a href="https://www.speechtotext.ai/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🎧</span>Speech to Text</a>
+          <a href="https://www.google.com/intl/zh-CN/chrome/canary/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">⚙️</span>Chrome浏览器</a>
+          <a href="https://www.grammarly.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">✓</span>Grammarly</a>
+        </div>
       </div>
     </div>
 
-    <!-- 音视频工具 -->
-    <div class="category-card">
-      <div class="category-header">
-        <div class="category-header-icon">🎬</div>
-        <h2 class="category-header-title">音视频处理</h2>
+    <!-- 音视频处理 -->
+    <h2>音视频处理</h2>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">🎬</div>
+        <h3 class="card-header-title">音乐、视频和语音生成</h3>
       </div>
-      <div class="tool-list">
-        <a href="https://www.suno.ai" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🎵</span> Suno AI
-        </a>
-        <a href="https://www.descript.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">📝</span> Descript
-        </a>
-        <a href="https://www.synthesia.io" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🎬</span> Synthesia
-        </a>
-        <a href="https://www.topazlabs.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🎨</span> Topaz
-        </a>
-        <a href="https://runway.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🛫</span> Runway
-        </a>
-        <a href="https://www.elevenlabs.io" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🎙️</span> ElevenLabs
-        </a>
+      <div class="card-content">
+        <div class="link-grid">
+          <a href="https://www.suno.ai/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🎵</span>Suno AI</a>
+          <a href="https://www.descript.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📝</span>Descript</a>
+          <a href="https://www.synthesia.io/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🎬</span>Synthesia</a>
+          <a href="https://www.elevenlabs.io/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🎙️</span>ElevenLabs</a>
+          <a href="https://www.udio.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🎼</span>Udio</a>
+          <a href="https://musicfy.lol/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🎶</span>Musicfy</a>
+          <a href="https://www.adobe.com/products/podcast.html/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🎧</span>Adobe Podcast</a>
+          <a href="https://www.soundraw.io/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🔊</span>SoundRaw</a>
+          <a href="https://jingles.ai/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🎺</span>Jingles</a>
+        </div>
       </div>
     </div>
 
     <!-- 其他实用工具 -->
-    <div class="category-card">
-      <div class="category-header">
-        <div class="category-header-icon">⚙️</div>
-        <h2 class="category-header-title">其他工具</h2>
+    <h2>其他实用工具</h2>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">⚙️</div>
+        <h3 class="card-header-title">文档、设计和生产力</h3>
       </div>
-      <div class="tool-list">
-        <a href="https://www.chatpdf.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">📄</span> ChatPDF
-        </a>
-        <a href="https://www.memento.ai" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">💾</span> Memento
-        </a>
-        <a href="https://www.scenesfromahat.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🎭</span> Scenes
-        </a>
-        <a href="https://www.tome.app" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">📊</span> Tome
-        </a>
-        <a href="https://www.figma.com" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">🎨</span> Figma
-        </a>
-        <a href="https://www.notion.so" target="_blank" rel="noopener" class="tool-item">
-          <span class="tool-icon">📝</span> Notion AI
-        </a>
+      <div class="card-content">
+        <div class="link-grid">
+          <a href="https://www.chatpdf.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📄</span>ChatPDF</a>
+          <a href="https://www.notion.so/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📝</span>Notion AI</a>
+          <a href="https://www.figma.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🎨</span>Figma</a>
+          <a href="https://www.tome.app/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📊</span>Tome</a>
+          <a href="https://www.writesonic.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📄</span>Writesonic</a>
+          <a href="https://www.surfer.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏄</span>Surfer</a>
+          <a href="https://www.memento.ai/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💾</span>Memento</a>
+          <a href="https://www.quillbot.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">✍️</span>QuillBot</a>
+          <a href="https://www.hemingwayapp.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📖</span>Hemingway</a>
+        </div>
       </div>
     </div>
+
   </main>
 
   <!-- 底部导航栏 -->
   <nav class="bottom-nav">
-    <a href="https://openaa.com/" class="nav-item active" onclick="setNavActive(0); return true;">
+    <a href="https://openaa.com/" class="nav-item">
       <div class="nav-item-icon">🏠</div>
       <div>首页</div>
     </a>
-    <button type="button" class="nav-item" onclick="setNavActive(1); showAllTools();">
+    <button class="nav-item active" onclick="scrollToTop()">
       <div class="nav-item-icon">🤖</div>
-      <div>全部</div>
+      <div>AI工具</div>
     </button>
-    <button type="button" class="nav-item" onclick="setNavActive(2); showHotTools();">
-      <div class="nav-item-icon">🔥</div>
-      <div>热门</div>
-    </button>
-    <button type="button" class="nav-item" onclick="setNavActive(3); shareApp();">
-      <div class="nav-item-icon">📤</div>
-      <div>分享</div>
-    </button>
+    <a href="https://openaa.com/" class="nav-item">
+      <div class="nav-item-icon">🔍</div>
+      <div>发现</div>
+    </a>
+    <a href="https://openaa.com/" class="nav-item">
+      <div class="nav-item-icon">📂</div>
+      <div>分类</div>
+    </a>
+    <a href="https://openaa.com/" class="nav-item">
+      <div class="nav-item-icon">👤</div>
+      <div>我的</div>
+    </a>
   </nav>
 
   <!-- 吐司提示 -->
@@ -726,20 +713,10 @@
 
   <!-- 页脚 -->
   <footer>
-    <strong>OpenAA · AI工具导航</strong><br />
-    © 2025 OpenAA.com · 联系：<a href="mailto:323748@gmail.com">323748@gmail.com</a>
+    <p>© 2025 OpenAA.com | <a href="https://openaa.com/">返回首页</a></p>
   </footer>
 
   <script>
-    // 设置导航栏激活状态
-    function setNavActive(index) {
-      const navItems = document.querySelectorAll('.bottom-nav .nav-item');
-      navItems.forEach(item => item.classList.remove('active'));
-      if (navItems[index]) {
-        navItems[index].classList.add('active');
-      }
-    }
-
     // 搜索功能
     function handleSearch() {
       const query = document.getElementById('searchInput').value;
@@ -755,55 +732,24 @@
       }
     });
 
-    // 显示全部工具
-    function showAllTools() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // 显示热门工具
-    function showHotTools() {
-      const cards = document.querySelectorAll('.card');
-      if (cards.length > 0) {
-        cards[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-
     // 收藏功能
     function toggleBookmark() {
       const ua = navigator.userAgent.toLowerCase();
       if (ua.indexOf('mac') > -1) {
-        showToast('请使用 Cmd+D 收藏本站');
+        alert('请使用 Cmd+D 收藏本站');
       } else {
-        showToast('请使用 Ctrl+D 收藏本站');
+        alert('请使用 Ctrl+D 收藏本站');
       }
     }
 
-    // 分享弹窗函数（用于header按钮）
-    function toggleShare() {
-      if (navigator.share) {
-        navigator.share({
-          title: 'OpenAA · AI工具导航',
-          text: '精选全球热门AI工具导航，一键直达。',
-          url: window.location.href
-        }).catch(err => console.log('分享取消或失败'));
-      } else {
-        showToast('请使用浏览器菜单分享');
-      }
+    // 返回首页
+    function goHome() {
+      window.location.href = 'https://openaa.com/';
     }
 
-    // 分享功能（用于底部导航）
-    function shareApp() {
-      if (navigator.share) {
-        navigator.share({
-          title: 'OpenAA · AI工具导航',
-          text: '精选全球热门AI工具导航，一键直达。',
-          url: window.location.href
-        }).catch(err => {
-          console.log('分享取消或失败');
-        });
-      } else {
-        showToast('请使用浏览器菜单分享');
-      }
+    // 滚到顶部
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // 显示吐司
@@ -813,7 +759,7 @@
       toast.classList.add('show');
       setTimeout(() => {
         toast.classList.remove('show');
-      }, 2000);
+      }, 1500);
     }
   </script>
 </body>
