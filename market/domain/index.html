@@ -522,6 +522,67 @@
         font-size: 12px;
       }
     }
+
+    /* 模态框样式 */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 300;
+      animation: fadeIn 0.2s;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background: var(--card-bg);
+      width: 100%;
+      border-radius: var(--radius) var(--radius) 0 0;
+      padding: 16px;
+      max-height: 80vh;
+      overflow-y: auto;
+      animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-size: 18px;
+      color: var(--primary);
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-light);
+    }
   </style>
 </head>
 
@@ -577,22 +638,97 @@
         </div>
       </a>
 
-      <!-- 2. Elale.com -->
-      <a href="https://openaa.com/market/domain/elale.html" class="domain-card">
-        <div class="domain-name">Elale.com</div>
-        <div class="domain-desc">5字母简短国际域名，优雅易记。适合时尚、科技、生活品牌及电商平台。</div>
+      <!-- 2. OpenAA.com -->
+      <a href="https://openaa.com/market/domain/openaa.html" class="domain-card">
+        <div class="domain-name">OpenAA.com</div>
+        <div class="domain-desc">品牌旗舰域名，高度识别度。适合综合平台、导航站、社区服务类项目。</div>
         <div class="domain-tags">
-          <span class="domain-tag">5字母</span>
           <span class="domain-tag">品牌型</span>
-          <span class="domain-tag">时尚</span>
+          <span class="domain-tag">平台</span>
+          <span class="domain-tag">导航</span>
         </div>
         <div class="domain-actions">
           <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
-          <button class="domain-action-btn secondary" onclick="copyDomain('Elale.com', event)">复制</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('OpenAA.com', event)">复制</button>
         </div>
       </a>
 
-      <!-- 3. Foxtoday.com -->
+      <!-- 3. OpenDtv.com -->
+      <a href="https://openaa.com/market/domain/opendtv.html" class="domain-card">
+        <div class="domain-name">OpenDtv.com</div>
+        <div class="domain-desc">数字电视/媒体专用域名。品牌感强，适合直播、视频、媒体平台。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">媒体</span>
+          <span class="domain-tag">视频</span>
+          <span class="domain-tag">直播</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('OpenDtv.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 4. OpenGoUp.com -->
+      <a href="https://openaa.com/market/domain/opengoup.html" class="domain-card">
+        <div class="domain-name">OpenGoUp.com</div>
+        <div class="domain-desc">积极向上品牌理念。适合创业加速器、教育、励志、职业发展类平台。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">创业</span>
+          <span class="domain-tag">教育</span>
+          <span class="domain-tag">成长</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('OpenGoUp.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 5. HelloAS.com -->
+      <a href="https://openaa.com/market/domain/helloas.html" class="domain-card">
+        <div class="domain-name">HelloAS.com</div>
+        <div class="domain-desc">亲切友好的品牌人设。适合社交、问候、客服、社区等互动平台。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">社交</span>
+          <span class="domain-tag">社区</span>
+          <span class="domain-tag">客服</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('HelloAS.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 6. Helloku.com -->
+      <a href="https://openaa.com/market/domain/helloku.html" class="domain-card">
+        <div class="domain-name">Helloku.com</div>
+        <div class="domain-desc">温暖亲切，品牌感好。适合社交应用、在线教育、互动娱乐平台。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">社交</span>
+          <span class="domain-tag">教育</span>
+          <span class="domain-tag">互动</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Helloku.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 7. meihuaren.com -->
+      <a href="https://openaa.com/market/domain/meihuaren.html" class="domain-card">
+        <div class="domain-name">meihuaren.com</div>
+        <div class="domain-desc">拼音域名"美华人"，文化与情感属性强。易建立信任感，适合华人社区或文化平台。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">拼音</span>
+          <span class="domain-tag">华人</span>
+          <span class="domain-tag">社区</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('meihuaren.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 8. Foxtoday.com -->
       <a href="https://foxtoday.com" target="_blank" rel="noopener" class="domain-card">
         <div class="domain-name">Foxtoday.com</div>
         <div class="domain-desc">清晰易记，意义明确。适合资讯、媒体、新闻类品牌或内容平台。</div>
@@ -607,67 +743,7 @@
         </div>
       </a>
 
-      <!-- 4. Joabc.com -->
-      <a href="https://openaa.com/market/domain/joabc.html" class="domain-card">
-        <div class="domain-name">Joabc.com</div>
-        <div class="domain-desc">简短品牌域名，易于输入。适合公司、品牌站点或创业项目快速建站。</div>
-        <div class="domain-tags">
-          <span class="domain-tag">品牌型</span>
-          <span class="domain-tag">公司</span>
-          <span class="domain-tag">创业</span>
-        </div>
-        <div class="domain-actions">
-          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
-          <button class="domain-action-btn secondary" onclick="copyDomain('Joabc.com', event)">复制</button>
-        </div>
-      </a>
-
-      <!-- 5. Jmtea.com -->
-      <a href="https://openaa.com/market/domain/jmtea.html" class="domain-card">
-        <div class="domain-name">Jmtea.com</div>
-        <div class="domain-desc">奶茶/饮品行业专用域名。短小易记，品牌感强。适合连锁品牌或加盟项目。</div>
-        <div class="domain-tags">
-          <span class="domain-tag">奶茶</span>
-          <span class="domain-tag">饮品</span>
-          <span class="domain-tag">行业专用</span>
-        </div>
-        <div class="domain-actions">
-          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
-          <button class="domain-action-btn secondary" onclick="copyDomain('Jmtea.com', event)">复制</button>
-        </div>
-      </a>
-
-      <!-- 6. Bobaup.com -->
-      <a href="https://openaa.com/market/domain/bobaup.html" class="domain-card">
-        <div class="domain-name">Bobaup.com</div>
-        <div class="domain-desc">奶茶饮品直指域名。生动易记，品牌辨识度高。适合新式奶茶品牌。</div>
-        <div class="domain-tags">
-          <span class="domain-tag">奶茶</span>
-          <span class="domain-tag">饮品</span>
-          <span class="domain-tag">直指</span>
-        </div>
-        <div class="domain-actions">
-          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
-          <button class="domain-action-btn secondary" onclick="copyDomain('Bobaup.com', event)">复制</button>
-        </div>
-      </a>
-
-      <!-- 7. Alititi.com -->
-      <a href="https://openaa.com/market/domain/alititi.html" class="domain-card">
-        <div class="domain-name">Alititi.com</div>
-        <div class="domain-desc">简短独特品牌域名。适合个人品牌、内容平台、创意工作室建立专业形象。</div>
-        <div class="domain-tags">
-          <span class="domain-tag">品牌型</span>
-          <span class="domain-tag">个人品牌</span>
-          <span class="domain-tag">内容</span>
-        </div>
-        <div class="domain-actions">
-          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
-          <button class="domain-action-btn secondary" onclick="copyDomain('Alititi.com', event)">复制</button>
-        </div>
-      </a>
-
-      <!-- 8. Seekroam.com -->
+      <!-- 9. Seekroam.com -->
       <a href="https://seekroam.com" target="_blank" rel="noopener" class="domain-card">
         <div class="domain-name">Seekroam.com</div>
         <div class="domain-desc">可塑性强的英文域名。适合旅游、探索、跨境电商或科技创新项目。</div>
@@ -682,7 +758,232 @@
         </div>
       </a>
 
-      <!-- 9. 123638.com -->
+      <!-- 10. Joyhush.com -->
+      <a href="https://openaa.com/market/domain/joyhush.html" class="domain-card">
+        <div class="domain-name">Joyhush.com</div>
+        <div class="domain-desc">欢乐惊喜品牌理念。适合娱乐、游戏、生活方式或社交媒体平台。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">娱乐</span>
+          <span class="domain-tag">游戏</span>
+          <span class="domain-tag">生活</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Joyhush.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 11. Elale.com -->
+      <a href="https://openaa.com/market/domain/elale.html" class="domain-card">
+        <div class="domain-name">Elale.com</div>
+        <div class="domain-desc">5字母简短国际域名，优雅易记。适合时尚、科技、生活品牌及电商平台。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">5字母</span>
+          <span class="domain-tag">品牌型</span>
+          <span class="domain-tag">时尚</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Elale.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 12. SuperGobuy.com -->
+      <a href="https://openaa.com/market/domain/supergobuy.html" class="domain-card">
+        <div class="domain-name">SuperGobuy.com</div>
+        <div class="domain-desc">超级购物品牌域名。适合跨境电商、直购平台、购物指南。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">电商</span>
+          <span class="domain-tag">跨境</span>
+          <span class="domain-tag">购物</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('SuperGobuy.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 13. Luckynumberusa.com -->
+      <a href="https://openaa.com/market/domain/luckynumberusa.html" class="domain-card">
+        <div class="domain-name">Luckynumberusa.com</div>
+        <div class="domain-desc">幸运号码美国专属。适合号码交易、数字产品、投资收藏平台。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">号码</span>
+          <span class="domain-tag">投资</span>
+          <span class="domain-tag">美国</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Luckynumberusa.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 14. Numbermobi.com -->
+      <a href="https://openaa.com/market/domain/numbermobi.html" class="domain-card">
+        <div class="domain-name">Numbermobi.com</div>
+        <div class="domain-desc">号码移动端专用。适合移动号码、通讯服务、虚拟号码平台。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">号码</span>
+          <span class="domain-tag">移动</span>
+          <span class="domain-tag">通讯</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Numbermobi.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 15. Numbermobile.com -->
+      <a href="https://openaa.com/market/domain/numbermobile.html" class="domain-card">
+        <div class="domain-name">Numbermobile.com</div>
+        <div class="domain-desc">手机号码交易平台。适合号码买卖、虚拟号码服务、通讯工具应用。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">号码</span>
+          <span class="domain-tag">手机</span>
+          <span class="domain-tag">交易</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Numbermobile.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 16. Fengshizupu.com -->
+      <a href="https://openaa.com/market/domain/fengshizupu.html" class="domain-card">
+        <div class="domain-name">Fengshizupu.com</div>
+        <div class="domain-desc">风水族谱拼音域名。适合文化传承、家谱平台、风水命理服务。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">拼音</span>
+          <span class="domain-tag">文化</span>
+          <span class="domain-tag">风水</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Fengshizupu.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 17. Joabc.com -->
+      <a href="https://openaa.com/market/domain/joabc.html" class="domain-card">
+        <div class="domain-name">Joabc.com</div>
+        <div class="domain-desc">简短品牌域名，易于输入。适合公司、品牌站点或创业项目快速建站。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">品牌型</span>
+          <span class="domain-tag">公司</span>
+          <span class="domain-tag">创业</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Joabc.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 18. Joeabc.com -->
+      <a href="https://openaa.com/market/domain/joeabc.html" class="domain-card">
+        <div class="domain-name">Joeabc.com</div>
+        <div class="domain-desc">个人品牌或初创企业域名。易记好用，适合建站搭建。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">品牌型</span>
+          <span class="domain-tag">个人</span>
+          <span class="domain-tag">创业</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Joeabc.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 19. Jmtea.com -->
+      <a href="https://openaa.com/market/domain/jmtea.html" class="domain-card">
+        <div class="domain-name">Jmtea.com</div>
+        <div class="domain-desc">奶茶/饮品行业专用域名。短小易记，品牌感强。适合连锁品牌或加盟项目。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">奶茶</span>
+          <span class="domain-tag">饮品</span>
+          <span class="domain-tag">行业专用</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Jmtea.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 20. Bobaup.com -->
+      <a href="https://openaa.com/market/domain/bobaup.html" class="domain-card">
+        <div class="domain-name">Bobaup.com</div>
+        <div class="domain-desc">奶茶饮品直指域名。生动易记，品牌辨识度高。适合新式奶茶品牌。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">奶茶</span>
+          <span class="domain-tag">饮品</span>
+          <span class="domain-tag">直指</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Bobaup.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 21. ChenaBSR.com -->
+      <a href="https://openaa.com/market/domain/chenabsr.html" class="domain-card">
+        <div class="domain-name">ChenaBSR.com</div>
+        <div class="domain-desc">品牌专用组合域名。适合企业、公司或专业服务平台。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">品牌型</span>
+          <span class="domain-tag">企业</span>
+          <span class="domain-tag">专业</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('ChenaBSR.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 22. CNBSR.com -->
+      <a href="https://openaa.com/market/domain/cnbsr.html" class="domain-card">
+        <div class="domain-name">CNBSR.com</div>
+        <div class="domain-desc">中国商务品牌域名。适合国际贸易、跨境商务、企业建站。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">商务</span>
+          <span class="domain-tag">中国</span>
+          <span class="domain-tag">国际</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('CNBSR.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 23. Alititi.com -->
+      <a href="https://openaa.com/market/domain/alititi.html" class="domain-card">
+        <div class="domain-name">Alititi.com</div>
+        <div class="domain-desc">简短独特品牌域名。适合个人品牌、内容平台、创意工作室建立专业形象。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">品牌型</span>
+          <span class="domain-tag">个人品牌</span>
+          <span class="domain-tag">内容</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Alititi.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 24. 69nav.com -->
+      <a href="https://openaa.com/market/domain/69nav.html" class="domain-card">
+        <div class="domain-name">69nav.com</div>
+        <div class="domain-desc">幸运数字导航域名。适合导航站、网址导航、服务聚合平台。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">导航</span>
+          <span class="domain-tag">幸运</span>
+          <span class="domain-tag">数字</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('69nav.com', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 25. 123638.com -->
       <a href="https://openaa.com/market/domain/123638.html" class="domain-card">
         <div class="domain-name">123638.com</div>
         <div class="domain-desc">数字域名，易记易输入。适合金融、科技或投资项目。具有收藏与增值潜力。</div>
@@ -697,7 +998,7 @@
         </div>
       </a>
 
-      <!-- 10. Asa.vip -->
+      <!-- 26. Asa.vip -->
       <a href="https://openaa.com/market/domain/asa.html" class="domain-card">
         <div class="domain-name">Asa.vip</div>
         <div class="domain-desc">VIP后缀域名，短小精悍，高端大气。适合高端品牌、会员制服务或独家项目。</div>
@@ -712,7 +1013,67 @@
         </div>
       </a>
 
-      <!-- 11. Tap.bi -->
+      <!-- 27. Gelga.cn -->
+      <a href="https://openaa.com/market/domain/gelga.html" class="domain-card">
+        <div class="domain-name">Gelga.cn</div>
+        <div class="domain-desc">.cn中文国内域名，品牌可塑性强。适合本土企业、品牌建站。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">.cn</span>
+          <span class="domain-tag">国内</span>
+          <span class="domain-tag">品牌型</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Gelga.cn', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 28. Bobaup.cn -->
+      <a href="https://openaa.com/market/domain/bobaup-cn.html" class="domain-card">
+        <div class="domain-name">Bobaup.cn</div>
+        <div class="domain-desc">奶茶饮品.cn国内版本。适合国内奶茶品牌、饮品连锁建站。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">.cn</span>
+          <span class="domain-tag">奶茶</span>
+          <span class="domain-tag">国内</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Bobaup.cn', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 29. Alititi.cn -->
+      <a href="https://openaa.com/market/domain/alititi-cn.html" class="domain-card">
+        <div class="domain-name">Alititi.cn</div>
+        <div class="domain-desc">个人品牌.cn版本。适合国内个人博客、工作室、品牌站点。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">.cn</span>
+          <span class="domain-tag">个人品牌</span>
+          <span class="domain-tag">国内</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Alititi.cn', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 30. Tapbi.cn -->
+      <a href="https://openaa.com/market/domain/tapbi-cn.html" class="domain-card">
+        <div class="domain-name">Tapbi.cn</div>
+        <div class="domain-desc">简短创新.cn域名。适合科技初创、工具应用、创意平台。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">.cn</span>
+          <span class="domain-tag">科技</span>
+          <span class="domain-tag">创新</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Tapbi.cn', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 31. Tap.bi -->
       <a href="https://tap.bi" target="_blank" rel="noopener" class="domain-card">
         <div class="domain-name">Tap.bi</div>
         <div class="domain-desc">简短、国际化、功能型域名。适合科技、工具或移动应用品牌。</div>
@@ -727,7 +1088,52 @@
         </div>
       </a>
 
-      <!-- 12. MeiHuaren.com -->
+      <!-- 32. 18hot.vip -->
+      <a href="https://openaa.com/market/domain/18hot.html" class="domain-card">
+        <div class="domain-name">18hot.vip</div>
+        <div class="domain-desc">热门VIP域名，数字开头好记。适合娱乐、平台、高端社区。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">VIP</span>
+          <span class="domain-tag">数字</span>
+          <span class="domain-tag">热门</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('18hot.vip', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 33. 18hub.vip -->
+      <a href="https://openaa.com/market/domain/18hub.html" class="domain-card">
+        <div class="domain-name">18hub.vip</div>
+        <div class="domain-desc">中心枢纽VIP域名。适合平台、社区、服务聚合中心。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">VIP</span>
+          <span class="domain-tag">平台</span>
+          <span class="domain-tag">中心</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('18hub.vip', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 34. Helphub.vip -->
+      <a href="https://openaa.com/market/domain/helphub.html" class="domain-card">
+        <div class="domain-name">Helphub.vip</div>
+        <div class="domain-desc">帮助中心VIP域名。适合客服、支持、社区服务平台。</div>
+        <div class="domain-tags">
+          <span class="domain-tag">VIP</span>
+          <span class="domain-tag">客服</span>
+          <span class="domain-tag">服务</span>
+        </div>
+        <div class="domain-actions">
+          <button class="domain-action-btn primary" onclick="showContactModal(event)">联系购买</button>
+          <button class="domain-action-btn secondary" onclick="copyDomain('Helphub.vip', event)">复制</button>
+        </div>
+      </a>
+
+      <!-- 35. MeiHuaren.com -->
       <a href="https://openaa.com/market/domain/meihuaren.html" class="domain-card">
         <div class="domain-name">MeiHuaren.com</div>
         <div class="domain-desc">拼音域名"美华人"，文化与情感属性强。易建立信任感，适合华人社区或文化平台。</div>
@@ -741,6 +1147,7 @@
           <button class="domain-action-btn secondary" onclick="copyDomain('MeiHuaren.com', event)">复制</button>
         </div>
       </a>
+
     </div>
 
     <!-- 提示框 -->
@@ -819,69 +1226,6 @@
     <strong>OpenAA · 精品域名出售</strong><br />
     © 2025 OpenAA.com · 美国华人生活入口
   </footer>
-
-  <style>
-    /* 模态框样式 */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 300;
-      animation: fadeIn 0.2s;
-    }
-
-    .modal.active {
-      display: flex;
-      align-items: flex-end;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .modal-content {
-      background: var(--card-bg);
-      width: 100%;
-      border-radius: var(--radius) var(--radius) 0 0;
-      padding: 16px;
-      max-height: 80vh;
-      overflow-y: auto;
-      animation: slideUp 0.3s ease-out;
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(100%); }
-      to { transform: translateY(0); }
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .modal-header h2 {
-      margin: 0;
-      font-size: 18px;
-      color: var(--primary);
-    }
-
-    .close-btn {
-      background: none;
-      border: none;
-      font-size: 24px;
-      cursor: pointer;
-      color: var(--text-light);
-    }
-  </style>
 
   <script>
     // 显示吐司
