@@ -1,0 +1,524 @@
+// 1. Jozl.com
+const CONFIG = {
+  domain: "Jozl.com",
+  titleCN: "简短易记，品牌可塑性强。适合科技、生活方式或内容平台。国际化品牌首选。",
+  titleEN: "Short and memorable with strong brand adaptability. Ideal for tech, lifestyle, or content platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=jozl.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=jozl.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 简短易记，输入成本低",
+    "✔ 品牌可塑性强，国际化首选",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 2. OpenAA.com
+const CONFIG = {
+  domain: "OpenAA.com",
+  titleCN: "品牌旗舰域名，高度识别度。适合综合平台、导航站、社区服务类项目。",
+  titleEN: "Flagship brand domain with high recognition. Perfect for comprehensive platforms, navigation sites, and community services.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=openaa.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=openaa.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 品牌旗舰，高度识别度",
+    "✔ 适合综合平台和导航站",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 3. OpenDtv.com
+const CONFIG = {
+  domain: "OpenDtv.com",
+  titleCN: "数字电视/媒体专用域名。品牌感强，适合直播、视频、媒体平台。",
+  titleEN: "Digital TV and media-specific domain. Strong branding for live streaming, video, and media platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=opendtv.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=opendtv.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 媒体专用，品牌感强",
+    "✔ 适合直播、视频平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 4. OpenGoUp.com
+const CONFIG = {
+  domain: "OpenGoUp.com",
+  titleCN: "积极向上品牌理念。适合创业加速器、教育、励志、职业发展类平台。",
+  titleEN: "Positive brand spirit. Ideal for startup accelerators, education, motivation, and career development platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=opengoup.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=opengoup.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 积极向上，品牌理念好",
+    "✔ 适合教育和创业平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 5. HelloAS.com
+const CONFIG = {
+  domain: "HelloAS.com",
+  titleCN: "亲切友好的品牌人设。适合社交、问候、客服、社区等互动平台。",
+  titleEN: "Friendly and approachable brand personality. Perfect for social networking, greeting services, customer support, and community platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=helloas.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=helloas.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 亲切友好，品牌人设好",
+    "✔ 适合社交和客服平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 6. Helloku.com
+const CONFIG = {
+  domain: "Helloku.com",
+  titleCN: "温暖亲切，品牌感好。适合社交应用、在线教育、互动娱乐平台。",
+  titleEN: "Warm and approachable with strong branding. Great for social apps, online education, and interactive entertainment platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=helloku.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=helloku.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 温暖亲切，品牌感强",
+    "✔ 适合社交和教育平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 7. meihuaren.com
+const CONFIG = {
+  domain: "meihuaren.com",
+  titleCN: "拼音域名'美华人'，文化与情感属性强。易建立信任感，适合华人社区或文化平台。",
+  titleEN: "Chinese pinyin domain 'beautiful Chinese people'. Strong cultural appeal. Perfect for Chinese communities and cultural platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=meihuaren.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=meihuaren.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 拼音域名，文化属性强",
+    "✔ 易建立信任感",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 8. Foxtoday.com
+const CONFIG = {
+  domain: "Foxtoday.com",
+  titleCN: "清晰易记，意义明确。适合资讯、媒体、新闻类品牌或内容平台。",
+  titleEN: "Clear and memorable with obvious meaning. Ideal for news, media, and content platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=foxtoday.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=foxtoday.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 清晰易记，意义明确",
+    "✔ 适合资讯和媒体平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 9. Seekroam.com
+const CONFIG = {
+  domain: "Seekroam.com",
+  titleCN: "可塑性强的英文域名。适合旅游、探索、跨境电商或科技创新项目。",
+  titleEN: "Highly versatile English domain. Perfect for travel, exploration, cross-border e-commerce, and tech innovation.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=seekroam.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=seekroam.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 可塑性强，多行业适用",
+    "✔ 适合旅游和电商平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 10. Joyhush.com
+const CONFIG = {
+  domain: "Joyhush.com",
+  titleCN: "欢乐惊喜品牌理念。适合娱乐、游戏、生活方式或社交媒体平台。",
+  titleEN: "Joyful and exciting brand concept. Great for entertainment, gaming, lifestyle, and social media platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=joyhush.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=joyhush.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 欢乐惊喜，品牌理念好",
+    "✔ 适合娱乐和游戏平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 11. Elale.com
+const CONFIG = {
+  domain: "Elale.com",
+  titleCN: "5字母简短国际域名，优雅易记。适合时尚、科技、生活品牌及电商平台。",
+  titleEN: "Short 5-letter international domain, elegant and memorable. Perfect for fashion, tech, lifestyle brands, and e-commerce.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=elale.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=elale.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 5字母，简短优雅",
+    "✔ 适合时尚和电商平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 12. SuperGobuy.com
+const CONFIG = {
+  domain: "SuperGobuy.com",
+  titleCN: "超级购物品牌域名。适合跨境电商、直购平台、购物指南。",
+  titleEN: "Super shopping brand domain. Perfect for cross-border e-commerce, direct purchase platforms, and shopping guides.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=supergobuy.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=supergobuy.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 购物品牌，行业专用",
+    "✔ 适合电商和购物平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 13. Luckynumberusa.com
+const CONFIG = {
+  domain: "Luckynumberusa.com",
+  titleCN: "幸运号码美国专属。适合号码交易、数字产品、投资收藏平台。",
+  titleEN: "Lucky numbers USA exclusive. Ideal for number trading, digital products, and investment collection platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=luckynumberusa.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=luckynumberusa.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 幸运号码，美国专属",
+    "✔ 适合号码交易平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 14. Numbermobi.com
+const CONFIG = {
+  domain: "Numbermobi.com",
+  titleCN: "号码移动端专用。适合移动号码、通讯服务、虚拟号码平台。",
+  titleEN: "Mobile-focused number domain. Suitable for mobile numbers, communication services, and virtual number platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=numbermobi.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=numbermobi.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 号码移动专用",
+    "✔ 适合通讯服务平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 15. Numbermobile.com
+const CONFIG = {
+  domain: "Numbermobile.com",
+  titleCN: "手机号码交易平台。适合号码买卖、虚拟号码服务、通讯工具应用。",
+  titleEN: "Mobile phone number trading platform. Perfect for number trading, virtual number services, and telecom applications.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=numbermobile.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=numbermobile.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 号码交易，专业平台",
+    "✔ 适合虚拟号码服务",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 16. Fengshizupu.com
+const CONFIG = {
+  domain: "Fengshizupu.com",
+  titleCN: "冯氏族谱拼音域名。适合文化传承、家谱平台、风水命理服务。",
+  titleEN: "Feng shui genealogy pinyin domain. Perfect for cultural heritage, genealogy platforms, and feng shui services.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=fengshizupu.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=fengshizupu.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 拼音域名，文化专用",
+    "✔ 适合文化传承平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 17. Joabc.com
+const CONFIG = {
+  domain: "Joabc.com",
+  titleCN: "简短品牌域名，易于输入。适合公司、品牌站点或创业项目快速建站。",
+  titleEN: "Short brand domain, easy to type. Perfect for companies, brand websites, and quick startup launches.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=joabc.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=joabc.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 简短易记，输入成本低",
+    "✔ 适合公司和品牌建站",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 18. Joeabc.com
+const CONFIG = {
+  domain: "Joeabc.com",
+  titleCN: "个人品牌或初创企业域名。易记好用，适合建站搭建。",
+  titleEN: "Personal brand or startup domain. Easy to remember, perfect for website building and branding.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=joeabc.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=joeabc.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 个人品牌，易记好用",
+    "✔ 适合初创企业建站",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 19. Jmtea.com
+const CONFIG = {
+  domain: "Jmtea.com",
+  titleCN: "奶茶/饮品行业专用域名。短小易记，品牌感强。适合连锁品牌或加盟项目。",
+  titleEN: "Bubble tea and beverage industry domain. Short, memorable, strong branding. Ideal for chains and franchise projects.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=jmtea.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=jmtea.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 奶茶专用，行业认知高",
+    "✔ 品牌感强，易记好用",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 20. Bobaup.com
+const CONFIG = {
+  domain: "Bobaup.com",
+  titleCN: "奶茶饮品直指域名。生动易记，品牌辨识度高。适合新式奶茶品牌。",
+  titleEN: "Direct bubble tea and beverage domain. Vivid and memorable, high brand recognition. Great for modern tea brands.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=bobaup.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=bobaup.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 奶茶直指，生动易记",
+    "✔ 品牌辨识度高",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 21. ChenaBSR.com
+const CONFIG = {
+  domain: "ChenaBSR.com",
+  titleCN: "品牌专用组合域名。适合企业、公司或专业服务平台。",
+  titleEN: "Brand-specific combination domain. Perfect for enterprises, companies, and professional service platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=chenabsr.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=chenabsr.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 品牌组合，专业感强",
+    "✔ 适合企业和公司建站",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 22. CNBSR.com
+const CONFIG = {
+  domain: "CNBSR.com",
+  titleCN: "中国商务品牌域名。适合国际贸易、跨境商务、企业建站。",
+  titleEN: "China business brand domain. Suitable for international trade, cross-border commerce, and enterprise websites.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=cnbsr.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=cnbsr.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 商务品牌，国际贸易",
+    "✔ 适合跨境商务平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 23. Alititi.com
+const CONFIG = {
+  domain: "Alititi.com",
+  titleCN: "简短独特品牌域名。适合个人品牌、内容平台、创意工作室建立专业形象。",
+  titleEN: "Short and unique brand domain. Perfect for personal branding, content platforms, and creative studios.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=alititi.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=alititi.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 简短独特，品牌感强",
+    "✔ 适合个人和工作室",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 24. 69nav.com
+const CONFIG = {
+  domain: "69nav.com",
+  titleCN: "幸运数字导航域名。适合导航站、网址导航、服务聚合平台。",
+  titleEN: "Lucky number navigation domain. Perfect for navigation sites, URL directories, and service aggregation platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=69nav.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=69nav.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 幸运数字，易记好用",
+    "✔ 适合导航和聚合平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 25. 123638.com
+const CONFIG = {
+  domain: "123638.com",
+  titleCN: "数字域名，易记易输入。适合金融、科技或投资项目。具有收藏与增值潜力。",
+  titleEN: "Numeric domain, easy to remember and type. Suitable for finance, tech, or investment projects with collection value.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=123638.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=123638.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 数字域名，易记易输入",
+    "✔ 适合金融和投资平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 26. Asa.vip
+const CONFIG = {
+  domain: "Asa.vip",
+  titleCN: "VIP后缀域名，短小精悍，高端大气。适合高端品牌、会员制服务或独家项目。",
+  titleEN: "VIP extension domain, short and premium. Perfect for luxury brands, membership services, and exclusive projects.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=asa.vip&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=asa.vip",
+  countdownTime: 12,
+  highlights: [
+    "✔ VIP后缀，高端大气",
+    "✔ 适合高端品牌建站",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 27. Gelga.cn
+const CONFIG = {
+  domain: "Gelga.cn",
+  titleCN: ".cn中文国内域名，品牌可塑性强。适合本土企业、品牌建站。",
+  titleEN: ".cn Chinese domestic domain with strong brand potential. Ideal for local businesses and brand websites.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=gelga.cn&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=gelga.cn",
+  countdownTime: 12,
+  highlights: [
+    "✔ .cn国内域名，本土优势",
+    "✔ 品牌可塑性强",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 28. Bobaup.cn
+const CONFIG = {
+  domain: "Bobaup.cn",
+  titleCN: "奶茶饮品.cn国内版本。适合国内奶茶品牌、饮品连锁建站。",
+  titleEN: ".cn Chinese version for bubble tea brands. Perfect for domestic tea chains and beverage networks.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=bobaup.cn&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=bobaup.cn",
+  countdownTime: 12,
+  highlights: [
+    "✔ .cn奶茶专用",
+    "✔ 适合国内连锁品牌",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 29. Alititi.cn
+const CONFIG = {
+  domain: "Alititi.cn",
+  titleCN: "个人品牌.cn版本。适合国内个人博客、工作室、品牌站点。",
+  titleEN: ".cn version for personal brands. Great for domestic blogs, studios, and personal brand websites.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=alititi.cn&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=alititi.cn",
+  countdownTime: 12,
+  highlights: [
+    "✔ .cn个人品牌版本",
+    "✔ 适合国内个人建站",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 30. Tapbi.cn
+const CONFIG = {
+  domain: "Tapbi.cn",
+  titleCN: "简短创新.cn域名。适合科技初创、工具应用、创意平台。",
+  titleEN: "Short innovative .cn domain. Perfect for tech startups, tool applications, and creative platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=tapbi.cn&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=tapbi.cn",
+  countdownTime: 12,
+  highlights: [
+    "✔ .cn创新域名",
+    "✔ 适合科技初创平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 31. Tap.bi
+const CONFIG = {
+  domain: "Tap.bi",
+  titleCN: "简短、国际化、功能型域名。适合科技、工具或移动应用品牌。",
+  titleEN: "Short, international, functional domain. Perfect for tech, tools, and mobile app brands.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=tap.bi&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=tap.bi",
+  countdownTime: 12,
+  highlights: [
+    "✔ 国际化域名，功能型",
+    "✔ 适合科技和应用平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 32. 18hot.vip
+const CONFIG = {
+  domain: "18hot.vip",
+  titleCN: "热门VIP域名，数字开头好记。适合娱乐、平台、高端社区。",
+  titleEN: "Popular VIP domain with numeric prefix. Great for entertainment, platforms, and premium communities.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=18hot.vip&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=18hot.vip",
+  countdownTime: 12,
+  highlights: [
+    "✔ VIP热门域名",
+    "✔ 数字开头易记",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 33. 18hub.vip
+const CONFIG = {
+  domain: "18hub.vip",
+  titleCN: "中心枢纽VIP域名。适合平台、社区、服务聚合中心。",
+  titleEN: "Central hub VIP domain. Perfect for platforms, communities, and service aggregation centers.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=18hub.vip&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=18hub.vip",
+  countdownTime: 12,
+  highlights: [
+    "✔ VIP枢纽域名",
+    "✔ 适合平台和社区",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 34. Helphub.vip
+const CONFIG = {
+  domain: "Helphub.vip",
+  titleCN: "帮助中心VIP域名。适合客服、支持、社区服务平台。",
+  titleEN: "Help center VIP domain. Ideal for customer service, support, and community service platforms.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=helphub.vip&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=helphub.vip",
+  countdownTime: 12,
+  highlights: [
+    "✔ VIP帮助中心",
+    "✔ 适合客服平台",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
+
+// 35. MeiHuaren.com
+const CONFIG = {
+  domain: "MeiHuaren.com",
+  titleCN: "拼音域名'美华人'，文化与情感属性强。易建立信任感，适合华人社区或文化平台。",
+  titleEN: "Chinese pinyin domain 'beautiful Chinese people'. Strong cultural appeal and trust. Perfect for Chinese communities.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=meihuaren.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=meihuaren.com",
+  countdownTime: 12,
+  highlights: [
+    "✔ 拼音域名，文化专属",
+    "✔ 易建立信任感",
+    "✔ 可立即过户，支持多种购买方式"
+  ]
+};
