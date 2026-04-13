@@ -2,198 +2,749 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0078d4" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#0078d4">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="OpenAA">
 
-  <!-- Template variables (only change values in this block) -->
+  <!-- ======【配置区】改这里即可 ====== -->
   <script>
-    const DOMAIN_NAME = "ELALE.COM";
-    const DOMAIN_DESC_CN = "ELALE.COM —— 简短、国际化、极具品牌感的 5 字母 .com 域名";
-    const DOMAIN_DESC_EN = "ELALE.COM is a short, elegant, and highly brandable 5-letter .com domain.";
-    const ALIYUN_LINK = "https://mi.aliyun.com/domain-detail?domain=elale.com&scm=true";
-    const GODADDY_LINK = "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=ELALE.COM";
-    const RETURN_URL = "https://openaa.com";
-    const COUNTDOWN_SECONDS = 10;
+    const CONFIG = {
+  domain: "Elale.com",
+  titleCN: "5字母简短国际域名，优雅易记。适合时尚、科技、生活品牌及电商平台。",
+  titleEN: "Short 5-letter international domain, elegant and memorable. Perfect for fashion, tech, lifestyle brands, and e-commerce.",
+  aliyunUrl: "https://mi.aliyun.com/domain-detail?domain=elale.com&scm=true",
+  godaddyUrl: "https://www.godaddy.com/zh-sg/domainsearch/find?domainToCheck=elale.com",
+  countdownTime: 18,
+  highlights: [
+    "✔ 5字母，简短优雅",
+    "✔ 适合时尚和电商平台",
+    "✔ 可立即过户，支持多种购买方式"
+      ]
+    };
   </script>
+  <!-- ======【配置区结束】====== -->
 
-  <title>ELALE.COM｜精品品牌域名出售</title>
-  <meta name="description" content="ELALE.COM —— 简短、国际化、极具品牌感的 5 字母 .com 域名。由 OpenAA 推荐，适合时尚、消费与科技品牌。" />
-  <meta name="keywords" content="ELALE, 域名, 品牌域名, 5字母, 域名出售, OpenAA" />
-  <meta name="robots" content="index, follow" />
+  <title id="page-title">OpenAA.COM｜精品品牌域名 - OpenAA</title>
+  <meta name="description" id="page-desc" content="OpenAA.COM：品牌旗舰域名，高度识别度。由 OpenAA 精选推荐，欢迎洽谈购买。" />
+  <meta name="keywords" content="OpenAA, 品牌域名, 域名出售, 精品域名, 在美华人, OpenAA" />
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="OpenAA">
 
-  <!-- Canonical / Alternate -->
-  <link rel="canonical" href="https://openaa.com/market/domain/elale.html" />
-  <link rel="alternate" hreflang="zh-CN" href="https://openaa.com/market/domain/elale.html" />
-  <link rel="alternate" hreflang="en-US" href="https://openaa.com/en/market/domain/elale.html" />
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href="https://openaa.com/market/domain/openaa.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://openaa.com/market/domain/openaa.html">
+  <link rel="alternate" hreflang="en-US" href="https://openaa.com/en/market/domain/openaa.html">
 
   <!-- Open Graph -->
   <meta property="og:locale" content="zh_CN" />
-  <meta property="og:title" content="ELALE.COM｜精品品牌域名出售" />
-  <meta property="og:description" content="ELALE.COM —— 简短、国际化、极具品牌感的 5 字母 .com 域名。由 OpenAA 推荐。" />
+  <meta property="og:title" id="og-title" content="OpenAA.COM｜精品品牌域名" />
+  <meta property="og:description" id="og-desc" content="OpenAA.COM：品牌旗舰域名。由 OpenAA 推荐，欢迎联系购买。" />
   <meta property="og:image" content="https://openaa.com/logo.png" />
-  <meta property="og:url" content="https://openaa.com/market/domain/elale.html" />
+  <meta property="og:url" id="og-url" content="https://openaa.com/market/domain/openaa.html" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ELALE.COM｜精品品牌域名出售" />
-  <meta name="twitter:description" content="ELALE.COM —— 简短、国际化、极具品牌感的 5 字母 .com 域名。由 OpenAA 推荐。" />
-  <meta name="twitter:image" content="https://openaa.com/logo.png" />
-
-  <!-- Favicons (统一指向 /favicon/) -->
+  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="/favicon/favicon.ico">
-  <meta name="msapplication-TileColor" content="#2b5797">
 
-  <!-- Structured data -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "ELALE.COM",
-    "description": "ELALE.COM — 简短、国际化、极具品牌感的 5 字母 .com 域名",
+    "name": "OpenAA.COM",
+    "description": "品牌旗舰域名，高度识别度。由 OpenAA 推荐。",
+    "url": "https://openaa.com/market/domain/openaa.html",
     "brand": {
       "@type": "Organization",
       "name": "OpenAA",
-      "url": "https://openaa.com"
+      "url": "https://openaa.com",
+      "logo": "https://openaa.com/logo.png"
     },
     "offers": {
       "@type": "Offer",
-      "url": "https://openaa.com/market/domain/elale.html",
+      "url": "https://openaa.com/market/domain/openaa.html",
       "availability": "https://schema.org/InStock"
     }
   }
   </script>
 
   <style>
-    :root{
-      --brand:#0b3c5d;
-      --accent:#0078d4;
-      --bg:#f7f9fc;
-      --card:#fff;
-      --muted:#666;
-      --radius:12px;
-      --max-width:920px;
+    * { 
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif;
-      background:var(--bg);
-      color:#222;
-      -webkit-font-smoothing:antialiased;
-      line-height:1.6;
+
+    :root {
+      --primary: #0078d4;
+      --primary-dark: #005fa3;
+      --primary-light: #1084d8;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --radius: 12px;
     }
-    header{
-      background:linear-gradient(135deg,var(--brand),var(--accent));
-      color:#fff;
-      padding:20px;
-      text-align:center;
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
     }
-    header h1{margin:0;font-size:20px}
-    header p{margin:6px 0 0;font-size:13px;opacity:0.95}
-    main{max-width:var(--max-width);margin:26px auto;padding:18px}
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:24px;
-      box-shadow:0 10px 30px rgba(17,40,79,0.06);
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      font-size: 16px;
     }
-    .back{display:inline-block;color:var(--brand);text-decoration:none;margin-bottom:10px;font-size:14px}
-    .title{font-size:26px;color:var(--brand);margin:8px 0}
-    .subtitle{color:var(--muted);margin:6px 0 12px;font-size:15px}
-    .subtitle-en{color:#666;margin-bottom:14px;font-size:14px}
-    .highlight{
-      background:#f1f6fb;border-left:4px solid var(--brand);padding:12px;border-radius:8px;margin-bottom:18px;
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(135deg, var(--primary) 0%, #1084d8 100%);
+      color: white;
+      padding: 12px 16px 16px;
+      box-shadow: 0 2px 12px rgba(0,120,212,0.15);
     }
-    .highlight p{margin:6px 0}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}
-    .btn{display:inline-block;padding:12px 18px;border-radius:8px;text-decoration:none;color:#fff;background:var(--brand);font-weight:600}
-    .btn.secondary{background:#6c8aa3}
-    .contact{margin-top:16px;color:var(--muted)}
-    .countdown{margin-top:12px;color:#666;font-size:13px}
-    footer{padding:18px;text-align:center;color:#777;margin-top:18px}
-    @media(max-width:700px){
-      .card{padding:16px}
-      .title{font-size:20px}
-      .actions .btn{padding:10px 14px}
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .header-logo {
+      height: 40px;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      text-decoration: none;
+    }
+
+    .header-logo img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-icon {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .btn-icon:active {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .header-subtitle {
+      font-size: 13px;
+      opacity: 0.95;
+      margin: 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--text-light);
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      opacity: 0.7;
+    }
+
+    /* Main Content */
+    main {
+      padding: 16px 8px;
+      padding-bottom: 120px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .domain-hero {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--primary);
+    }
+
+    .domain-name {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 8px 0;
+      word-break: break-word;
+      line-height: 1.2;
+    }
+
+    .domain-desc-cn {
+      font-size: 15px;
+      color: var(--text-dark);
+      margin: 0 0 6px 0;
+      font-weight: 500;
+    }
+
+    .domain-desc-en {
+      font-size: 13px;
+      color: var(--text-light);
+      margin: 0;
+      font-style: italic;
+    }
+
+    /* Highlights Box */
+    .highlights-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin: 16px 0;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--primary);
+    }
+
+    .highlights-box p {
+      margin: 8px 0;
+      font-size: 14px;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .highlights-box p:first-child {
+      margin-top: 0;
+    }
+
+    .highlights-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Action Buttons */
+    .domain-actions {
+      display: flex;
+      gap: 10px;
+      margin: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    .action-btn {
+      flex: 1;
+      min-width: 140px;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .action-btn.primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .action-btn.primary:active {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .action-btn.secondary {
+      background: rgba(0,120,212,0.1);
+      color: var(--primary);
+      border: 1px solid rgba(0,120,212,0.2);
+    }
+
+    .action-btn.secondary:active {
+      background: rgba(0,120,212,0.15);
+    }
+
+    /* Contact Box */
+    .contact-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin: 16px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0 0 12px 0;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 10px 0;
+      font-size: 13px;
+      color: var(--text-dark);
+    }
+
+    .contact-item a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-item a:hover {
+      opacity: 0.7;
+    }
+
+    /* Tips Box */
+    .tip-box {
+      background: #fffaed;
+      border-left: 4px solid #ffc440;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: var(--text-light);
+      margin: 12px 0;
+      line-height: 1.6;
+    }
+
+    .tip-box strong {
+      color: var(--text-dark);
+    }
+
+    /* Countdown Box */
+    .countdown-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 14px;
+      margin: 16px 0;
+      box-shadow: var(--shadow);
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .countdown-number {
+      display: inline-block;
+      background: rgba(0,120,212,0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      color: var(--primary);
+      min-width: 28px;
+    }
+
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--card-bg);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      z-index: 200;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 11px;
+      transition: color 0.2s;
+      cursor: pointer;
+      border: none;
+      background: none;
+      gap: 4px;
+    }
+
+    .nav-item.active {
+      color: var(--primary);
+    }
+
+    .nav-item-icon {
+      font-size: 24px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 16px;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Dark Mode */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1f1f1f;
+        --card-bg: #2d2d2d;
+        --text-dark: #f5f5f5;
+        --text-light: #a0a0a0;
+        --border: #3d3d3d;
+      }
+
+      .header-logo {
+        background: white;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      }
+
+      .tip-box {
+        background: rgba(255,196,64,0.1);
+        border-left-color: #ffc440;
+      }
+    }
+
+    /* Responsive */
+    @media (min-width: 600px) {
+      main {
+        max-width: 700px;
+      }
+
+      .domain-actions {
+        gap: 12px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      main {
+        max-width: 800px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .domain-name {
+        font-size: 24px;
+      }
+
+      .action-btn {
+        min-width: 100px;
+        padding: 10px 12px;
+        font-size: 13px;
+      }
+
+      .breadcrumb {
+        font-size: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @keyframes slideInUp {
+      from { transform: translateX(-50%) translateY(20px); opacity: 0; }
+      to { transform: translateX(-50%) translateY(0); opacity: 1; }
     }
   </style>
 </head>
+
 <body>
-  <header role="banner" aria-label="OpenAA 域名">
-    <h1>ELALE.COM — 精品域名</h1>
-    <p>简短 · 国际化 · 极具品牌感</p>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <a href="https://openaa.com/" class="header-logo">
+        <img src="https://openaa.com/logo.png" alt="OpenAA" />
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon" onclick="toggleBookmark()" title="收藏本站">⭐</button>
+        <button class="btn-icon" onclick="shareApp()" title="分享">📤</button>
+      </div>
+    </div>
+    <p class="header-subtitle">💎 精品域名详情 · 品牌 / 创业 / 投资</p>
   </header>
 
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="https://openaa.com/">首页</a> > <a href="https://openaa.com/market/domain/">域名</a> > <span id="breadcrumb-text">OpenAA.com</span>
+  </div>
+
+  <!-- Main Content -->
   <main role="main">
-    <article class="card" role="article" aria-labelledby="title-elale">
-      <a class="back" href="https://openaa.com/market/domain/" aria-label="返回域名列表">← 返回 OpenAA 域名列表</a>
+    <!-- Domain Hero -->
+    <div class="domain-hero">
+      <div class="domain-name" id="domain-display">OpenAA.com</div>
+      <div class="domain-desc-cn" id="title-cn">品牌旗舰域名，高度识别度。适合综合平台、导航站、社区服务类项目。</div>
+      <div class="domain-desc-en" id="title-en">Flagship brand domain with high recognition. Perfect for comprehensive platforms, navigation sites, and community services.</div>
+    </div>
 
-      <h2 id="title-elale" class="title">ELALE.COM</h2>
-      <p id="desc-cn" class="subtitle">ELALE.COM —— 简短、国际化、极具品牌感的 5 字母 .com 域名</p>
-      <p id="desc-en" class="subtitle-en">ELALE.COM is a short, elegant, and highly brandable 5-letter .com domain.</p>
+    <!-- Highlights -->
+    <div class="highlights-box" id="highlights-container">
+      <!-- 自动生成 -->
+    </div>
 
-      <div class="highlight" role="note" aria-label="域名亮点">
-        <p>✔ 5 字母短域名：稀缺且易于品牌记忆</p>
-        <p>✔ 方便全球推广，适合时尚、消费或科技品牌</p>
-        <p>✔ 可用于品牌官网、产品线或社媒矩阵</p>
+    <!-- Action Buttons -->
+    <div class="domain-actions">
+      <a id="aliyun-btn" class="action-btn primary" target="_blank" rel="noopener noreferrer">
+        🛒 阿里云购买
+      </a>
+      <a id="godaddy-btn" class="action-btn secondary" target="_blank" rel="noopener noreferrer">
+        🔍 GoDaddy 查看
+      </a>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact-box">
+      <div class="contact-title">📞 联系我们</div>
+      <div class="contact-item">
+        📧 邮箱：<a href="mailto:323748@gmail.com">323748@gmail.com</a>
       </div>
-
-      <div class="actions" role="group" aria-label="购买与查询">
-        <a id="aliyun" class="btn" href="#" target="_blank" rel="noopener">阿里云查询 / 购买</a>
-        <a id="godaddy" class="btn secondary" href="#" target="_blank" rel="noopener">GoDaddy 查看</a>
-        <a class="btn" href="mailto:323748@gmail.com" aria-label="联系购买">联系购买</a>
+      <div class="contact-item">
+        💬 微信：<a href="javascript:void(0)" onclick="copyWeChat()" style="cursor: pointer;">hola24 (点击复制)</a>
       </div>
+      <div class="contact-item">
+        📞 电话：<a href="tel:+19178426666">+1 (917) 842-6666</a>
+      </div>
+    </div>
 
-      <p class="contact">联系邮箱：<a href="mailto:323748@gmail.com">323748@gmail.com</a></p>
+    <!-- Tips -->
+    <div class="tip-box">
+      <strong>💡 提示：</strong>支持阿里云、GoDaddy 等多种渠道购买。欢迎直接邮件洽谈价格。
+    </div>
 
-      <p class="countdown" aria-live="polite">
-        <span id="count-cn">10</span> 秒后将自动返回 OpenAA 首页 · Redirecting in <span id="count-en">10</span> seconds
-      </p>
-    </article>
+    <!-- Countdown -->
+    <div class="countdown-box">
+      <span class="countdown-number" id="countdown-text">12</span> 秒后将自动返回域名列表<br />
+      <span style="font-size: 11px;">Redirecting in <span class="countdown-number" id="countdown-en-text">12</span> seconds</span>
+    </div>
   </main>
 
-  <footer role="contentinfo">
-    © 2025 <a href="https://openaa.com" rel="noopener noreferrer">OpenAA.com</a> · 美国华人生活入口
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a href="https://openaa.com/" class="nav-item">
+      <div class="nav-item-icon">🏠</div>
+      <div>首页</div>
+    </a>
+    <a href="https://openaa.com/market/number/" class="nav-item">
+      <div class="nav-item-icon">📱</div>
+      <div>靓号</div>
+    </a>
+    <button class="nav-item active" onclick="scrollToTop()">
+      <div class="nav-item-icon">💎</div>
+      <div>域名</div>
+    </button>
+    <button class="nav-item" onclick="shareApp()">
+      <div class="nav-item-icon">📤</div>
+      <div>分享</div>
+    </button>
+    <button class="nav-item" onclick="toggleBookmark()">
+      <div class="nav-item-icon">⭐</div>
+      <div>收藏</div>
+    </button>
+  </nav>
+
+  <!-- Footer -->
+  <footer>
+    <strong>OpenAA · 精品域名出售</strong><br />
+    © 2025 OpenAA.com · 美国华人生活入口
   </footer>
 
+  <!-- Scripts -->
   <script>
-    // inject template values and links, plus non-blocking countdown
-    (function(){
-      try {
-        // Texts and links
-        var titleEl = document.getElementById('title-elale');
-        var dcn = document.getElementById('desc-cn');
-        var den = document.getElementById('desc-en');
-        if (titleEl && typeof DOMAIN_NAME !== 'undefined') titleEl.textContent = DOMAIN_NAME;
-        if (dcn && typeof DOMAIN_DESC_CN !== 'undefined') dcn.textContent = DOMAIN_DESC_CN;
-        if (den && typeof DOMAIN_DESC_EN !== 'undefined') den.textContent = DOMAIN_DESC_EN;
-        var aAli = document.getElementById('aliyun'), aGod = document.getElementById('godaddy');
-        if (aAli && typeof ALIYUN_LINK !== 'undefined') aAli.href = ALIYUN_LINK;
-        if (aGod && typeof GODADDY_LINK !== 'undefined') aGod.href = GODADDY_LINK;
+    let countdownTimer;
 
-        // Countdown
-        var seconds = (typeof COUNTDOWN_SECONDS === 'number') ? COUNTDOWN_SECONDS : 10;
-        var elCn = document.getElementById('count-cn');
-        var elEn = document.getElementById('count-en');
-        function tick(){
-          if (elCn) elCn.textContent = seconds;
-          if (elEn) elEn.textContent = seconds;
-          if (seconds <= 0) window.location.href = RETURN_URL;
-          seconds--;
+    // 初始化页面
+    function initPage() {
+      const { domain, titleCN, titleEN, aliyunUrl, godaddyUrl, countdownTime, highlights } = CONFIG;
+
+      // 更新域名显示
+      document.getElementById("domain-display").textContent = domain;
+      document.getElementById("breadcrumb-text").textContent = domain;
+      
+      // 更新描述
+      document.getElementById("title-cn").textContent = titleCN;
+      document.getElementById("title-en").textContent = titleEN;
+      
+      // 更新按钮链接
+      document.getElementById("aliyun-btn").href = aliyunUrl;
+      document.getElementById("godaddy-btn").href = godaddyUrl;
+      
+      // 更新亮点
+      const highlightsHTML = highlights.map(h => `<p>${h}</p>`).join("");
+      document.getElementById("highlights-container").innerHTML = highlightsHTML;
+      
+      // 更新页面标题和Meta
+      const pageTitle = `${domain}｜精品品牌域名 - OpenAA`;
+      document.getElementById("page-title").textContent = pageTitle;
+      document.getElementById("page-desc").textContent = `${domain}：${titleCN}由 OpenAA 精选推荐，欢迎洽谈购买。`;
+      document.getElementById("og-title").setAttribute("content", pageTitle);
+      document.getElementById("og-desc").setAttribute("content", `${domain}：${titleCN}`);
+      
+      // 启动倒计时
+      startCountdown(countdownTime);
+    }
+
+    // 倒计时
+    function startCountdown(seconds) {
+      let remaining = seconds;
+      document.getElementById("countdown-text").textContent = remaining;
+      document.getElementById("countdown-en-text").textContent = remaining;
+      
+      countdownTimer = setInterval(() => {
+        remaining--;
+        document.getElementById("countdown-text").textContent = remaining;
+        document.getElementById("countdown-en-text").textContent = remaining;
+        
+        if (remaining <= 0) {
+          clearInterval(countdownTimer);
+          window.location.href = "https://openaa.com/market/domain/";
         }
-        tick();
-        setInterval(tick, 1000);
-      } catch (e) {
-        console.error('Template injection failed', e);
+      }, 1000);
+    }
+
+    // 复   微信
+    function copyWeChat() {
+      const wechatId = 'hola24';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(wechatId).then(() => {
+          showToast('微信号已复制: ' + wechatId);
+        }).catch(() => {
+          fallbackCopy(wechatId);
+        });
+      } else {
+        fallbackCopy(wechatId);
       }
-    })();
+    }
+
+    // 备用复制
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast('已复制: ' + text);
+      } catch (err) {
+        showToast('复制失败，请手动复制');
+      }
+      document.body.removeChild(ta);
+    }
+
+    // 显示提示
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.textContent = message;
+      toast.style.cssText = `
+        position: fixed;
+        bottom: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        z-index: 999;
+        animation: slideInUp 0.3s;
+      `;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 2000);
+    }
+
+    // 收藏
+    function toggleBookmark() {
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf('mac') > -1) {
+        showToast('请使用 Cmd+D 收藏本页面');
+      } else {
+        showToast('请使用 Ctrl+D 收藏本页面');
+      }
+    }
+
+    // 分享
+    function shareApp() {
+      const { domain, titleCN } = CONFIG;
+      if (navigator.share) {
+        navigator.share({
+          title: 'OpenAA 精品域名',
+          text: `${domain} - ${titleCN}`,
+          url: window.location.href
+        }).catch(err => console.log('分享取消'));
+      } else {
+        showToast('请使用浏览器菜单分享');
+      }
+    }
+
+    // 滚到顶部
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 页面加载完成后初始化
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPage);
+    } else {
+      initPage();
+    }
   </script>
 </body>
 </html>
