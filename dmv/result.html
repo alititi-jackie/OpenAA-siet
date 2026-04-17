@@ -1,12 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width。
+
+下面我直接给你两份“可整文件替换粘贴”的中文版本：`dmv/quiz.html` 和 `dmv/result.html`。
+
+> 操作方式：GitHub 网页端打开对应文件 → ✏️ Edit → 全选替换为下面内容 → Commit。
+
+---
+
+## 1) 替换：`dmv/quiz.html`（中文）
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset=", initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0046a0" />
-  <title>Results — NY DMV Permit Practice | OpenAA</title>
+  <title>成绩 — 纽约 DMV 笔试模拟 | OpenAA</title>
   <link rel="icon" type="image/png" href="../favicon/favicon-32x32.png" />
   <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0046a0" />
+  <title>答题 — 纽约 DMV 笔试模拟 | OpenAA</title>
+  <link rel="icon" type="image/png" href="../favicon/favicon-32x32.png" />
+  <link rel="stylesheet" href="assets/styles.cssheader-inner">
+    <div class="header-top">
+      <a class="logo-link" href="../index.html" title="OpenAA 首页">
+        <img class="logo-img" src="../logo.png" alt="OpenAA Logo" />
+      </a>
+      <div class="header-subtitle">纽约 DMV 笔试模拟 — 成绩</div>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap" style="padding-top:20px;" />
 </head>
 <body>
 
@@ -14,26 +47,31 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="header-top">
-      <a class="logo-link" href="../index.html" title="OpenAA Home">
+      <a class="logo-link" href="../index.html" title="返回 OpenAA 首页">
         <img class="logo-img" src="../logo.png" alt="OpenAA Logo" />
       </a>
-      <div class="header-subtitle">NY DMV Permit Practice — Results</div>
-    </div>
-  </div>
-</header>
+      <div class="header-subtitle">纽约 DMV 笔试模拟</div>
 
-<!-- ===== MAIN ===== -->
-<main class="page-wrap" style="padding-top:20px;">
+      <!-- Timer badge">
 
-  <!-- Score Card -->
   <div class="card">
     <div class="score-ring-wrap">
-      <!-- SVG ring -->
       <div class="score-ring">
         <svg viewBox="0 0 120 120">
           <circle class="ring-bg"   cx="60" cy="60" r="50" />
           <circle class="ring-fill" cx="60" cy="60" r="50" id="ringFill"
-                  stroke-dasharray="314.16" stroke-dashoffset="314.16" />
+                  stroke-dasharray="314.16" stroke-dashoffset=" -->
+      <div class="timer-badge hidden" id="timerBadge">
+        ⏱ <span id="timerDisplay">30:00</span>
+      </div>
+    </div>
+
+    <!-- Progress bar in header -->
+    <div>
+      <div class="progress-bar-wrap" style="margin-bottom:4px;">
+        <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+      </div>
+      <div class="314.16" />
         </svg>
         <div class="score-center">
           <div class="score-pct"  id="scorePct">—</div>
@@ -43,49 +81,76 @@
       <div class="score-verdict" id="scoreVerdict"></div>
     </div>
 
-    <!-- Stats row -->
     <div class="score-stats">
-      <div class="stat-item">
+      <div class="statprogress-label" id="progressLabel">
+        <span>第 1 / 20 题</span><span>0%</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main class="page-wrap" style="padding-top:16px;">
+
+  <div class="card">
+    <!-- Question number -->
+    <div class="question-number" id="questionNum">第 1 题</div>
+    <!---item">
         <div class="stat-val stat-correct" id="statCorrect">—</div>
-        <div class="stat-lbl">✅ Correct</div>
+        <div class="stat-lbl">✅ 正确</div>
       </div>
       <div class="stat-item">
         <div class="stat-val stat-wrong" id="statWrong">—</div>
-        <div class="stat-lbl">❌ Wrong</div>
+        <div class="stat-lbl">❌ 错误</div>
       </div>
       <div class="stat-item">
-        <div class="stat-val stat-skip" id="statSkipped">—</div>
-        <div class="stat-lbl">⏭ Skipped</div>
+        <div class Question text -->
+    <p class="question-text" id="questionText">正在加载题目…</p>
+    <hr class="divider" style="margin-bottom:16px;" />
+    <!-- Options -->
+    <ul class="options-list" id="optionsList" role="radiogroup" aria-label="选项"></ul>
+  </div>
+
+  <!-- Navigation -->
+  <div class="quiz-nav">
+    <button class="btn btn-ghost" id="="stat-val stat-skip" id="statSkipped">—</div>
+        <div class="stat-lbl">⏭ 未作答</div>
       </div>
     </div>
   </div>
 
-  <!-- Action buttons -->
   <div class="result-actions">
-    <button class="btn btn-danger"   id="redoWrongBtn">🔁 Redo Wrong Questions</button>
-    <button class="btn btn-primary"  id="againBtn">🔄 Try Again</button>
-    <button class="btn btn-outline"  id="shareBtn">📤 Share</button>
+    <button class="btn btn-danger"   id="redoWrongBtn">🔁 重做错题</button>
+    <button class="btn btn-primary"  id="againBtn">🔄 再来一套</button>
+   prevBtn" disabled>← 上一题</button>
+    <button class="btn btn-outline" id="nextBtn">下一题 →</button>
+    <button class="btn btn-success hidden" id="submitBtn">提交 ✓</button>
   </div>
 
-  <!-- Wrong answers list -->
+  <!-- Exit link -->
+  <div class="text-center mt-12">
+    <button class="btn btn-ghost btn-sm" id="exitBtn">✕ 退出</button>
+  </div>
+
+  <button class="btn btn-outline"  id="shareBtn">📤 分享</button>
+  </div>
+
   <div class="card" style="margin-top:16px;">
     <button class="collapsible-btn" id="collapseWrong" aria-expanded="false">
       <span class="caret">▶</span>
-      <span>Wrong Answers &amp; Explanations</span>
+      <span>错题与解析</span>
     </button>
     <div class="collapsible-content" id="wrongContent">
-      <ul class="wrong-list" id="wrongList">
-        <li class="text-muted" style="padding:12px 0;font-size:.9rem;">Loading…</li>
-      </ul>
-    </div>
-  </div>
+      <ul <!-- Keyboard hint -->
+  <p class="text-muted text-center" style="font-size:.72rem;margin-top:12px;">
+    小提示：可用 ← → 键切换题目，用数字键 1–4 选择选项
+  </p>
 
 </main>
 
 <!-- ===== FOOTER ===== -->
 <footer class="site-footer">
-  <p>⚠️ <strong>Disclaimer:</strong> Non-official practice test based on the NY DMV Driver's Manual (MV-21). For study use only. Always refer to the <a href="https://dmv.ny.gov" target="_blank" rel="noopener">official NY DMV website</a>.</p>
-  <p style="margin-top:6px;">Content last reviewed: 2026-04-17 &nbsp;|&nbsp; <a href="index.html">← Back to Practice</a> &nbsp;|&nbsp; <a href="../index.html">OpenAA Home</a></p>
+  <p>非官方练习题，基于 NY DMV Driver’s Manual 要点整理，仅供学习使用。</p>
 </footer>
 
 <script src="assets/app.js"></script>
