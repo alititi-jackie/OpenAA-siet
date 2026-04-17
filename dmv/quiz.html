@@ -40,7 +40,7 @@
     <div class="question-number" id="questionNum">第 1 题</div>
     <p class="question-text" id="questionText">题目加载中…</p>
     <hr class="divider" style="margin-bottom:16px;" />
-    <ul class="options-list可以，把 `/dmv` 全部改成中文我帮你对齐检查好了：**现在 `quiz" id="optionsList" role="radiogroup" aria-label="选项"></ul>
+    <ul class="options-list" id="optionsList" role="radiogroup" aria-label="选项"></ul>
   </div>
 
   <div class="quiz-nav">
@@ -49,7 +49,7 @@
     <button class="btn btn-success hidden" id="submitBtn">提交 ✓</button>
   </div>
 
- .html` 和 `result.html` 还是英文**；另外 **index.html 之前还有合并冲突**（你必须确保已按我给的“英文版 index.html”覆盖干净，否则页面会坏）。你既然现在明确要中文，我建议我们走“统一中文 UI”的方案：**把 index/quiz/result 的文案全部中文化，但不动 DOM 的 id/class**，这样 `assets/app.js` 不用改，功能不会被你改坏 <div class="text-center mt-12">
+  <div class="text-center mt-12">
     <button class="btn btn-ghost btn-sm" id="exitBtn">✕ 退出</button>
   </div>
 
