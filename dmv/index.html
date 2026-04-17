@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0046a0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>NY DMV Permit Practice — OpenAA</title>
+  <meta name="description" content="Free New York State DMV Learner Permit practice tests. Study traffic signs, rules, and road laws based on the official NY Driver's Manual." />
+  <link rel="icon" type="image/png" href="../favicon/favicon-32x32.png" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-top">
+      <a class="logo-link" href="../index.html" title="OpenAA Home">
+        <img class="logo-img" src="../logo.png" alt="OpenAA Logo" />
+      </a>
+      <div class="header-subtitle">
+        NY DMV Permit Practice<br />
+        <span style="font-size:.7rem;opacity:.8">New York Driver's License Study Guide</span>
+      </div>
+    </div>
+    <div class="header-search">
+      <span class="search-icon">🔍</span>
+      <input id="searchInput" type="search" placeholder="Search topics (e.g. speed, signs, DWI…)" autocomplete="off" />
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main class="page-wrap">
+
+  <!-- Hero -->
+  <div class="card" style="background:linear-gradient(135deg,#0046a0 0%,#1a88e8 100%);color:#fff;text-align:center;padding:28px 20px;">
+    <div style="font-size:2.4rem;margin-bottom:8px;">🚗</div>
+    <h1 style="font-size:1.3rem;font-weight:800;margin-bottom:6px;">NY Learner Permit Practice Test</h1>
+    <p style="font-size:.88rem;opacity:.88;line-height:1.55;">Based on the official New York State Driver's Manual. <br>80 questions covering signs, rules &amp; road safety.</p>
+  </div>
+
+  <!-- Mode Selection -->
+  <p class="section-label">📋 Choose Mode</p>
+  <div class="card mb-0">
+    <div class="mode-grid">
+      <div class="mode-card active" data-mode="practice" role="button" tabindex="0" aria-pressed="true">
+        <div class="mode-icon">📖</div>
+        <div class="mode-name">Practice</div>
+        <div class="mode-desc">Review at your own pace</div>
+      </div>
+      <div class="mode-card" data-mode="exam" role="button" tabindex="0" aria-pressed="false">
+        <div class="mode-icon">📝</div>
+        <div class="mode-name">Exam Simulation</div>
+        <div class="mode-desc">Timed, scored like the real test</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings -->
+  <p class="section-label">⚙️ Settings</p>
+  <div class="card">
+
+    <!-- Number of questions -->
+    <div class="form-row">
+      <label class="form-label" for="countSelect">
+        Number of questions
+        <span class="sub">How many questions per session</span>
+      </label>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <select class="form-select" id="countSelect">
+          <option value="10">10</option>
+          <option value="20" selected>20</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+          <option value="all">All (80)</option>
+          <option value="custom">Custom…</option>
+        </select>
+        <input class="form-input hidden" id="customCount" type="number" min="1" max="80" value="25" placeholder="25" aria-label="Custom question count" />
+      </div>
+    </div>
+
+    <!-- Question order -->
+    <div class="form-row">
+      <label class="form-label" for="orderSelect">
+        Question order
+        <span class="sub">Shuffle or sequential</span>
+      </label>
+      <select class="form-select" id="orderSelect">
+        <option value="random" selected>🔀 Random</option>
+        <option value="sequential">🔢 Sequential</option>
+      </select>
+    </div>
+
+    <!-- Timer toggle -->
+    <div class="form-row">
+      <label class="form-label" for="timerToggle">
+        Countdown timer
+        <span class="sub">Simulate real exam time pressure</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="timerToggle" />
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <!-- Timer duration (hidden unless enabled) -->
+    <div class="form-row hidden" id="timerRow">
+      <label class="form-label" for="timerMins">
+        Time limit (minutes)
+        <span class="sub">NY exam is typically 30 min</span>
+      </label>
+      <input class="form-input" id="timerMins" type="number" min="1" max="120" value="30" />
+    </div>
+
+  </div>
+
+  <!-- Start button -->
+  <button class="btn btn-success btn-block btn-lg mt-8" id="startBtn" style="margin-top:6px;">
+    🚀 Start Quiz
+  </button>
+
+  <!-- Quick stats -->
+  <p class="section-label" style="margin-top:22px;">📚 What's covered</p>
+  <div class="card" style="padding:14px 20px;">
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🚦</span><span>Traffic signs &amp; signals (warning, regulatory, informational)</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🛑</span><span>Right-of-way, intersections, yielding rules</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🏎️</span><span>Speed limits — school zones, residential, highways</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🍺</span><span>DWI / DUI laws &amp; penalties (BAC limits, implied consent)</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🚌</span><span>School bus, emergency vehicles, Move Over Law</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🔄</span><span>Lane use, passing, turning, parking, backing up</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🚶</span><span>Pedestrians, cyclists &amp; motorcycle awareness</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🌧️</span><span>Adverse weather driving — fog, rain, ice, skids</span></li>
+    </ul>
+  </div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <p>⚠️ <strong>Disclaimer:</strong> This practice test is based on the NY DMV Driver's Manual (MV-21) knowledge points. It is <strong>non-official</strong> and for study use only. Always refer to the <a href="https://dmv.ny.gov" target="_blank" rel="noopener">official NY DMV website</a> for authoritative information.</p>
+  <p style="margin-top:6px;">Content last reviewed: 2026-04-17 &nbsp;|&nbsp; <a href="README.md">About / README</a> &nbsp;|&nbsp; <a href="../index.html">OpenAA Home</a></p>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
