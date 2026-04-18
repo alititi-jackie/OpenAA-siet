@@ -9,7 +9,22 @@
   <link rel="stylesheet" href="assets/styles.css" />
   <style>
     .qa-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
-    .qa-q { font-weight: 800; margin-bottom: 10px; }
+
+    /* 题干行 + 右侧图标按钮 */
+    .qa-q { font-weight: 800; margin-bottom: 10px; display:flex; align-items:center; gap:8px; }
+    .qa-img-btn{
+      margin-left: auto;
+      border: 2px solid var(--blue);
+      background: #fff;
+      color: var(--blue);
+      border-radius: 999px;
+      padding: 4px 10px;
+      cursor: pointer;
+      font-size: .85rem;
+      line-height: 1;
+    }
+    .qa-img-btn:hover { background: rgba(0,102,204,.07); }
+
     .qa-opts { margin: 0; padding-left: 18px; }
     .qa-opts li { margin: 6px 0; }
     .qa-ans { margin-top: 10px; font-weight: 800; color: var(--correct); }
@@ -46,6 +61,7 @@
     <div id="qaList">加载中…</div>
   </div>
 </main>
+
 <!-- ✅ Image viewer modal -->
 <div class="img-modal hidden" id="imgModal" role="dialog" aria-modal="true" aria-label="图片查看">
   <div class="img-modal-bar">
@@ -56,6 +72,7 @@
     <img id="imgModalImg" alt="题目图示" />
   </div>
 </div>
+
 <footer class="site-footer">
   <p>非官方练习，仅供学习使用（基于 NY DMV Driver’s Manual 常见要点编写）。</p>
 </footer>
