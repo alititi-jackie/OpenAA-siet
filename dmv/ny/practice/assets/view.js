@@ -11,12 +11,12 @@ async function loadQuestions() {
 
 function esc(s) {
   return String(s).replace(/[&<>"']/g, m => ({
-    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   }[m]));
 }
 
 function renderList(container, questions, keyword, showAnswers) {
-  const letters = ['A','B','C','D','E'];
+  const letters = ['A', 'B', 'C', 'D', 'E'];
   const kw = (keyword || '').trim();
 
   const filtered = !kw ? questions : questions.filter(q => {
@@ -41,9 +41,22 @@ function renderList(container, questions, keyword, showAnswers) {
       return `<li${style}>${letters[i]}. ${esc(opt)}</li>`;
     }).join('');
 
+    // ✅ 检测题干里的 “图<数字>”
+    const m = /图\s*[<〈《]\s*(\d+)\s*[>〉》]/.exec(q.question || '');
+    const imgNum = m ? parseInt(m[1], 10) : null;
+
+    // ✅ 图标按钮（事件委托在下面绑定）
+    const imgBtn = imgNum
+      ? `<button class="qa-img-btn" type="button" data-imgnum="${imgNum}" title="查看图 ${imgNum}">🖼</button>`
+      : '';
+
     return `
       <div class="qa-item" data-qid="${q.id ?? (idx + 1)}">
-        <div class="qa-q">${q.id ?? (idx + 1)}. ${esc(q.question)}</div>
+        <div class="qa-q">
+          ${q.id ?? (idx + 1)}. ${esc(q.question)}
+          ${imgBtn}
+        </div>
+
         <ol class="qa-opts" type="A">${opts}</ol>
 
         <div class="qa-ans-wrap" style="${showAnswers ? '' : 'display:none;'}">
@@ -78,6 +91,48 @@ document.addEventListener('DOMContentLoaded', async () => {
     syncToggleBtn();
   }
 
+  function openImageModal(num) {
+    const modal = document.getElementById('imgModal');
+    const img = document.getElementById('imgModalImg');
+    const title = document.getElementById('imgModalTitle');
+    const back = document.getElementById('imgBackBtn');
+
+    if (!modal || !img || !back) return;
+
+    // 单张图：assets/signs/1.png ... 16.png
+    img.onerror = null;
+    img.src = `assets/signs/${num}.png`;
+    img.onerror = () => {
+      alert(`图片不存在：图 ${num}。请确认 assets/signs/ 里有对应图片文件。`);
+    };
+
+    if (title) title.textContent = `图示（图 ${num}）`;
+
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+
+    const onKey = (ev) => {
+      if (ev.key === 'Escape') closeImageModal();
+    };
+    modal._esc = onKey;
+    document.addEventListener('keydown', onKey);
+
+    back.onclick = closeImageModal;
+  }
+
+  function closeImageModal() {
+    const modal = document.getElementById('imgModal');
+    if (!modal) return;
+
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+
+    if (modal._esc) {
+      document.removeEventListener('keydown', modal._esc);
+      modal._esc = null;
+    }
+  }
+
   try {
     const data = await loadQuestions();
     questions = data.questions || [];
@@ -95,16 +150,25 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     }
 
-    // 单题显示/隐藏（事件委托）
+    // 事件委托：点击按钮
     qaList.addEventListener('click', (e) => {
-      const btn = e.target.closest('.qa-toggle-one');
-      if (!btn) return;
+      // 1) 单题答案显示/隐藏
+      const toggleBtn = e.target.closest('.qa-toggle-one');
+      if (toggleBtn) {
+        const item = toggleBtn.closest('.qa-item');
+        const wrap = item.querySelector('.qa-ans-wrap');
+        const isHidden = getComputedStyle(wrap).display === 'none';
+        wrap.style.display = isHidden ? '' : 'none';
+        toggleBtn.textContent = isHidden ? '隐藏本题答案' : '显示本题答案';
+        return;
+      }
 
-      const item = btn.closest('.qa-item');
-      const wrap = item.querySelector('.qa-ans-wrap');
-      const isHidden = getComputedStyle(wrap).display === 'none';
-      wrap.style.display = isHidden ? '' : 'none';
-      btn.textContent = isHidden ? '隐藏本题答案' : '显示本题答案';
+      // 2) 查看图
+      const imgBtn = e.target.closest('.qa-img-btn');
+      if (imgBtn) {
+        const num = parseInt(imgBtn.dataset.imgnum, 10);
+        if (Number.isFinite(num)) openImageModal(num);
+      }
     });
 
   } catch (e) {
