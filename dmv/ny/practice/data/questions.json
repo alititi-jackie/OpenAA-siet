@@ -1,1040 +1,1572 @@
 {
-  "_meta": {
-    "source": "Based on the New York State Driver's Manual (MV-21), common knowledge points. Last reviewed: 2026-04-17.",
-    "disclaimer": "Non-official. For study use only. Always refer to the official NY DMV Driver's Manual for authoritative content.",
-    "version": "1.0.0",
-    "totalQuestions": 80
+  "source": {
+    "file_name": "纽约州驾照笔试模拟题在线答案（2024版中文驾照笔试题库） - 好客纽约.html",
+    "original_url": "https://www.hookny.com/travel-in-new-york/newyork-driver-test.html",
+    "extracted_from": "chat-pasted-html-fragment",
+    "notes": [
+      "当前粘贴内容包含题库区的第 1-129 题",
+      "题干里包含“图<...>”的题目，图片本体未在 JSON 中保存（可后续补图链接/本地路径）"
+    ]
   },
   "questions": [
     {
       "id": 1,
-      "question": "What is the standard speed limit in a school zone in New York State when children are present?",
-      "options": ["15 mph", "20 mph", "25 mph", "30 mph"],
-      "answerIndex": 1,
-      "explanation": "In New York, school speed zones are posted at 15–20 mph. The most commonly posted limit when children are present is 20 mph. Always obey posted signs.",
-      "tags": ["speed", "school zone"],
-      "source": "NY DMV Manual – Speed Limits"
+      "type": "single_choice",
+      "question": "图<4>表示什么?",
+      "options": {
+        "A": "合并道路",
+        "B": "靠右行车",
+        "C": "停车标志",
+        "D": "学校平交道"
+      },
+      "answer": "C"
     },
     {
       "id": 2,
-      "question": "What does a solid yellow center line on your side of the road mean?",
-      "options": [
-        "You may pass when traffic is clear",
-        "Passing is prohibited on your side",
-        "The road is one-way",
-        "You must slow down"
-      ],
-      "answerIndex": 1,
-      "explanation": "A solid yellow line on your side means you must not cross it to pass. A broken yellow line means passing is permitted when safe.",
-      "tags": ["road markings", "passing"],
-      "source": "NY DMV Manual – Pavement Markings"
+      "type": "single_choice",
+      "question": "图<14>表示什么?",
+      "options": {
+        "A": "前面有山坡",
+        "B": "靠右行车",
+        "C": "学校平交道",
+        "D": "单行路出口"
+      },
+      "answer": "A"
     },
     {
       "id": 3,
-      "question": "When must you use your headlights in New York State?",
-      "options": [
-        "Only at night",
-        "From sunset to sunrise and any time visibility is less than 1,000 feet",
-        "Only in rain or fog",
-        "Only when the sun has fully set"
-      ],
-      "answerIndex": 1,
-      "explanation": "NY law requires headlights from 30 minutes after sunset to 30 minutes before sunrise, and whenever visibility is less than 1,000 feet due to weather or other conditions.",
-      "tags": ["headlights", "visibility"],
-      "source": "NY DMV Manual – Headlights"
+      "type": "single_choice",
+      "question": "图<12>表示什么?",
+      "options": {
+        "A": "合并道路",
+        "B": "靠右平行",
+        "C": "火车平交道",
+        "D": "错入单程路出口"
+      },
+      "answer": "D"
     },
     {
       "id": 4,
-      "question": "At an intersection with no signs or signals, who has the right-of-way?",
-      "options": [
-        "The driver who arrived first",
-        "The driver on the left",
-        "The driver on the right",
-        "The larger vehicle"
-      ],
-      "answerIndex": 0,
-      "explanation": "When two vehicles reach an uncontrolled intersection at the same time, the driver on the left must yield to the driver on the right. But the vehicle that arrived first generally has the right-of-way.",
-      "tags": ["right-of-way", "intersection"],
-      "source": "NY DMV Manual – Right-of-Way"
+      "type": "single_choice",
+      "question": "图<8>表示什么?",
+      "options": {
+        "A": "停车标志",
+        "B": "靠右行车",
+        "C": "前路收窄",
+        "D": "学校平交道"
+      },
+      "answer": "B"
     },
     {
       "id": 5,
-      "question": "Two vehicles arrive at an uncontrolled intersection at exactly the same time. Which vehicle must yield?",
-      "options": [
-        "The vehicle going straight",
-        "The vehicle turning left",
-        "The vehicle on the right",
-        "The vehicle on the left"
-      ],
-      "answerIndex": 3,
-      "explanation": "When two vehicles arrive at an uncontrolled intersection simultaneously, the driver on the left must yield to the driver on the right.",
-      "tags": ["right-of-way", "intersection"],
-      "source": "NY DMV Manual – Right-of-Way"
+      "type": "single_choice",
+      "question": "图<7>表示什么?",
+      "options": {
+        "A": "让路标志",
+        "B": "靠右行车",
+        "C": "火车平交道",
+        "D": "学校平交道"
+      },
+      "answer": "D"
     },
     {
       "id": 6,
-      "question": "What does a flashing red traffic light mean?",
-      "options": [
-        "Slow down and proceed with caution",
-        "Stop, then proceed when safe",
-        "The signal is about to turn green",
-        "Yield to oncoming traffic"
-      ],
-      "answerIndex": 1,
-      "explanation": "A flashing red light is treated the same as a stop sign: come to a complete stop, yield to traffic and pedestrians, then proceed when safe.",
-      "tags": ["traffic signals", "flashing"],
-      "source": "NY DMV Manual – Traffic Signals"
+      "type": "single_choice",
+      "question": "图<3>表示什么?",
+      "options": {
+        "A": "合并道路",
+        "B": "停车标志",
+        "C": "前面有山坡",
+        "D": "前面路窄"
+      },
+      "answer": "A"
     },
     {
       "id": 7,
-      "question": "What does a flashing yellow traffic light mean?",
-      "options": [
-        "Stop immediately",
-        "Proceed at normal speed",
-        "Slow down and proceed with caution",
-        "Yield to oncoming traffic only"
-      ],
-      "answerIndex": 2,
-      "explanation": "A flashing yellow light is a warning signal. You should slow down, be alert, and proceed carefully.",
-      "tags": ["traffic signals", "flashing"],
-      "source": "NY DMV Manual – Traffic Signals"
+      "type": "single_choice",
+      "question": "图<5>表示什么?",
+      "options": {
+        "A": "合并道路",
+        "B": "火车平交道",
+        "C": "单行路出口",
+        "D": "靠右行车"
+      },
+      "answer": "B"
     },
     {
       "id": 8,
-      "question": "What is the minimum safe following distance (in seconds) under normal conditions?",
-      "options": ["1 second", "2 seconds", "3 seconds", "4 seconds"],
-      "answerIndex": 2,
-      "explanation": "The NY DMV recommends at least a 3-second following distance under normal conditions. Increase the gap in bad weather, heavy traffic, or at night.",
-      "tags": ["following distance", "safety"],
-      "source": "NY DMV Manual – Safe Following Distance"
+      "type": "single_choice",
+      "question": "图<1>表示什么?",
+      "options": {
+        "A": "靠右平行",
+        "B": "前面有山坡",
+        "C": "单行道出口",
+        "D": "前面弯路及窄路"
+      },
+      "answer": "D"
     },
     {
       "id": 9,
-      "question": "When approaching a school bus with flashing red lights and a stop arm extended, you must:",
-      "options": [
-        "Slow to 15 mph and pass carefully",
-        "Stop and remain stopped until the lights stop flashing and the arm is withdrawn",
-        "Stop only if children are visible",
-        "Yield and pass if on the opposite side of a divided highway"
-      ],
-      "answerIndex": 1,
-      "explanation": "You must stop for a school bus with flashing red lights and extended stop arm on any undivided road. On a divided highway (with a physical barrier), vehicles on the opposite side may proceed, but all others must stop.",
-      "tags": ["school bus", "stopping"],
-      "source": "NY DMV Manual – School Buses"
+      "type": "single_choice",
+      "question": "图<2>表示什么?",
+      "options": {
+        "A": "合并道路",
+        "B": "停车标志",
+        "C": "让路标志",
+        "D": "学校平交道"
+      },
+      "answer": "C"
     },
     {
       "id": 10,
-      "question": "What is the blood alcohol concentration (BAC) limit for drivers 21 and older in New York State?",
-      "options": ["0.05%", "0.08%", "0.10%", "0.12%"],
-      "answerIndex": 1,
-      "explanation": "In New York, a BAC of 0.08% or higher is considered legally intoxicated (DWI) for drivers 21 and older. For drivers under 21, the limit is 0.02%.",
-      "tags": ["DWI", "alcohol", "BAC"],
-      "source": "NY DMV Manual – Alcohol & Drugs"
+      "type": "single_choice",
+      "question": "汽车和单车(自行车)有什么不同?",
+      "options": {
+        "A": "汽车要加汽油",
+        "B": "自行车只有两个车轮",
+        "C": "汽车必须有保险",
+        "D": "汽车行左,自行车行右"
+      },
+      "answer": "C"
     },
     {
       "id": 11,
-      "question": "What is the BAC limit for drivers under 21 in New York State?",
-      "options": ["0.00%", "0.02%", "0.05%", "0.08%"],
-      "answerIndex": 1,
-      "explanation": "New York has a Zero Tolerance law. Drivers under 21 with a BAC of 0.02% or higher can face license suspension.",
-      "tags": ["DWI", "alcohol", "underage"],
-      "source": "NY DMV Manual – Alcohol & Drugs"
+      "type": "single_choice",
+      "question": "若驾驶时突然爆驮,应该如何?",
+      "options": {
+        "A": "立即停车看",
+        "B": "立即稳定驮盘",
+        "C": "按喇叭",
+        "D": "打上指挥灯"
+      },
+      "answer": "B"
     },
     {
       "id": 12,
-      "question": "What does a yellow diamond-shaped sign indicate?",
-      "options": [
-        "A regulatory requirement (you must obey)",
-        "A warning about road conditions or hazards ahead",
-        "Information about services nearby",
-        "A construction zone speed limit"
-      ],
-      "answerIndex": 1,
-      "explanation": "Diamond-shaped yellow signs are warning signs. They alert you to potential hazards, changes in road conditions, or other situations requiring caution.",
-      "tags": ["signs", "warning"],
-      "source": "NY DMV Manual – Road Signs"
+      "type": "single_choice",
+      "question": "让路标志表示什么意思?",
+      "options": {
+        "A": "依照正常速度前进,但要察看两旁道路情况",
+        "B": "完全停止车子",
+        "C": "减低速度,必要时准备停止车子",
+        "D": "只对负有紧急任务的车辆让路"
+      },
+      "answer": "C"
     },
     {
       "id": 13,
-      "question": "An octagonal (8-sided) red sign always means:",
-      "options": ["Yield", "Stop", "No entry", "Do not pass"],
-      "answerIndex": 1,
-      "explanation": "The red octagonal shape is used exclusively for STOP signs. When you see one, you must come to a complete stop.",
-      "tags": ["signs", "stop"],
-      "source": "NY DMV Manual – Road Signs"
+      "type": "single_choice",
+      "question": "停止标志表示什么?",
+      "options": {
+        "A": "只在交叉路口(Intersection)有车辆时方停止",
+        "B": "车子完全停止(Full stop)至少要等候一分钟",
+        "C": "对方有车来时方停止",
+        "D": "完全停止,如果没有危险时再行前进"
+      },
+      "answer": "D"
     },
     {
       "id": 14,
-      "question": "A triangular red and white sign means:",
-      "options": ["Stop", "No passing", "Yield", "Slow down"],
-      "answerIndex": 2,
-      "explanation": "The downward-pointing red triangle is a YIELD sign. You must slow down and give the right-of-way to traffic already in the intersection or about to enter.",
-      "tags": ["signs", "yield"],
-      "source": "NY DMV Manual – Road Signs"
+      "type": "single_choice",
+      "question": "当高速公路入口线很短时进入交通行列最安全的方法是:",
+      "options": {
+        "A": "逐渐加速,以使其他来车看见你",
+        "B": "利用公路左线,以达车行速度",
+        "C": "等候较长的交通间隔,再立刻加速进入",
+        "D": "尽量利用入口加速道以达公路速度"
+      },
+      "answer": "C"
     },
     {
       "id": 15,
-      "question": "What does a white rectangular sign with black lettering typically indicate?",
-      "options": [
-        "A warning",
-        "A regulation that must be obeyed",
-        "A guide to services",
-        "A construction zone"
-      ],
-      "answerIndex": 1,
-      "explanation": "White rectangular signs with black (or red) text are regulatory signs. They display laws or regulations you must follow, such as speed limits or turn restrictions.",
-      "tags": ["signs", "regulatory"],
-      "source": "NY DMV Manual – Road Signs"
+      "type": "single_choice",
+      "question": "那种车祸,你必须向公路局报告?",
+      "options": {
+        "A": "有人受伤",
+        "B": "有人受伤或者死亡",
+        "C": "有人死亡",
+        "D": "有财物损失,不论它的价值是多少"
+      },
+      "answer": "B"
     },
     {
       "id": 16,
-      "question": "When you hear the siren of an emergency vehicle approaching, you must:",
-      "options": [
-        "Speed up to get out of the way quickly",
-        "Pull to the right edge of the road and stop",
-        "Slow down and continue at reduced speed",
-        "Pull to the left and stop"
-      ],
-      "answerIndex": 1,
-      "explanation": "New York law requires you to pull to the right side of the road, clear of any intersection, and stop until the emergency vehicle has passed.",
-      "tags": ["emergency vehicles", "yielding"],
-      "source": "NY DMV Manual – Emergency Vehicles"
+      "type": "single_choice",
+      "question": "在纽约如有一辆校车停在路边上下学童车的红灯闪烁发亮,这是表示什么?",
+      "options": {
+        "A": "你不行从任何方向超车",
+        "B": "如果路上没有学童,可以超车",
+        "C": "如果你和校车同在一条车路上面,可以超车",
+        "D": "如果中间隔有一条安全小岛可以超车"
+      },
+      "answer": "A"
     },
     {
       "id": 17,
-      "question": "The 'Move Over' law in New York requires drivers to:",
-      "options": [
-        "Speed up past stopped emergency vehicles",
-        "Change to a non-adjacent lane or slow down when passing stopped emergency or hazard vehicles with lights flashing",
-        "Stop completely behind any vehicle with flashing lights",
-        "Only yield to police vehicles"
-      ],
-      "answerIndex": 1,
-      "explanation": "NY's Move Over Law requires drivers to move over one lane (if safe) or slow down significantly when passing stopped emergency, law enforcement, tow trucks, or highway maintenance vehicles displaying flashing lights.",
-      "tags": ["Move Over law", "emergency vehicles"],
-      "source": "NY DMV Manual – Move Over Law"
+      "type": "single_choice",
+      "question": "当驾驶时,听见救护车警报声音,应?",
+      "options": {
+        "A": "减低车速,但在你看见救护车之前不用停车",
+        "B": "一直开车,直到你看救护车为止",
+        "C": "加速并在下一交叉路口转弯",
+        "D": "将车开到路边,直到确定救护车,不在你的所行街道上为止"
+      },
+      "answer": "D"
     },
     {
       "id": 18,
-      "question": "When turning left at a green light, you must yield to:",
-      "options": [
-        "No one — green means go",
-        "Oncoming traffic and pedestrians in the crosswalk",
-        "Only pedestrians",
-        "Only oncoming vehicles going straight"
-      ],
-      "answerIndex": 1,
-      "explanation": "When making a left turn on a green light, you must yield to all oncoming traffic proceeding through the intersection and to pedestrians in the crosswalk.",
-      "tags": ["turning", "right-of-way", "pedestrians"],
-      "source": "NY DMV Manual – Turning"
+      "type": "single_choice",
+      "question": "“慢行车辆”标志如何?",
+      "options": {
+        "A": "四方红色",
+        "B": "圆形绿色",
+        "C": "三角形橙色",
+        "D": "菱形黄色"
+      },
+      "answer": "C"
     },
     {
       "id": 19,
-      "question": "When may you pass on the right?",
-      "options": [
-        "Never — passing on the right is always illegal",
-        "Only when the vehicle ahead is turning left and there is a clear lane to the right",
-        "Whenever traffic is slow",
-        "On any two-lane road when the left lane is occupied"
-      ],
-      "answerIndex": 1,
-      "explanation": "You may pass on the right only when the vehicle ahead is turning left and there is a proper lane or sufficient paved road to the right to do so safely.",
-      "tags": ["passing", "right side"],
-      "source": "NY DMV Manual – Passing"
+      "type": "single_choice",
+      "question": "公路中央有条白色断线,表示什么?",
+      "options": {
+        "A": "只有你的车子转入交叉路口时方可超过此线",
+        "B": "只有你超过他人车子时方可超过此线",
+        "C": "如果不妨害交通,你可超过此线",
+        "D": "只有你的车子转入车场出入道口(Drive way)或小巷时方可超过此线"
+      },
+      "answer": "C"
     },
     {
       "id": 20,
-      "question": "On a highway, the minimum speed limit is often posted. Driving significantly below the flow of traffic is:",
-      "options": [
-        "Always encouraged for safety",
-        "A violation that can be as dangerous as speeding",
-        "Legal as long as hazard lights are on",
-        "Only a problem in the left lane"
-      ],
-      "answerIndex": 1,
-      "explanation": "Driving too slowly can be as dangerous as speeding. It can cause rear-end collisions and impede the flow of traffic. Obey minimum speed limits and match the reasonable flow of traffic.",
-      "tags": ["speed", "minimum speed"],
-      "source": "NY DMV Manual – Speed"
+      "type": "single_choice",
+      "question": "长方形的标志是表示?",
+      "options": {
+        "A": "停车标志",
+        "B": "火车平交通标志",
+        "C": "速度限制或不准泊车标志",
+        "D": "学校平交通标志"
+      },
+      "answer": "C"
     },
     {
       "id": 21,
-      "question": "What is the speed limit in a residential area in New York when no speed limit is posted?",
-      "options": ["20 mph", "25 mph", "30 mph", "35 mph"],
-      "answerIndex": 2,
-      "explanation": "In New York State, the default speed limit in a city, town, or village (residential area) when no limit is posted is 30 mph.",
-      "tags": ["speed", "residential"],
-      "source": "NY DMV Manual – Speed Limits"
+      "type": "single_choice",
+      "question": "有一辆校车停在路旁,司机挥手让你前进,你该如何?",
+      "options": {
+        "A": "暂停,等校车开走后再行前进",
+        "B": "如果校车尾灯停止闪烁,再行前进",
+        "C": "警察指挥你走时,再行前进",
+        "D": "小心驾驶前进"
+      },
+      "answer": "D"
     },
     {
       "id": 22,
-      "question": "You are driving on an undivided highway and a school bus ahead is loading children. What must you do?",
-      "options": [
-        "Slow to 20 mph and pass carefully",
-        "Stop at least 20 feet away from the bus",
-        "Honk to alert the children",
-        "Pass on the left side only"
-      ],
-      "answerIndex": 1,
-      "explanation": "On an undivided road, all traffic in both directions must stop at least 20 feet from a school bus that has its red lights flashing and stop arm extended.",
-      "tags": ["school bus", "stopping distance"],
-      "source": "NY DMV Manual – School Buses"
+      "type": "single_choice",
+      "question": "如果你要在一条狭窄街道调头,第一步应该如何?",
+      "options": {
+        "A": "先打右转讯号,车子再开到马路右边",
+        "B": "用方向灯打一左转讯号",
+        "C": "车子紧靠马路右边,用手打一停止讯号再行停止",
+        "D": "看下镜子,然后左转开向对面路边"
+      },
+      "answer": "C"
     },
     {
       "id": 23,
-      "question": "What does a green arrow traffic signal mean?",
-      "options": [
-        "Proceed with caution in all directions",
-        "You may proceed in the direction of the arrow; opposing traffic is stopped",
-        "Yield to all pedestrians, then proceed",
-        "Only buses may proceed"
-      ],
-      "answerIndex": 1,
-      "explanation": "A green arrow is a protected signal. Traffic in the direction of the arrow may proceed; conflicting traffic is controlled by a red light.",
-      "tags": ["traffic signals", "green arrow"],
-      "source": "NY DMV Manual – Traffic Signals"
+      "type": "single_choice",
+      "question": "你将车子靠右停在一条没有边石,向下倾斜的道路上,在离开以前,应该如何?",
+      "options": {
+        "A": "将前轮转向右边,再用煞车刹住",
+        "B": "将前轮转向左边,再用煞车刹住",
+        "C": "前轮和路肩平行,用低排挡",
+        "D": "右轮压在路肩上,再行煞车刹住"
+      },
+      "answer": "A"
     },
     {
       "id": 24,
-      "question": "A yellow traffic light means:",
-      "options": [
-        "Speed up before the light turns red",
-        "Stop if it is safe to do so",
-        "Proceed with caution",
-        "Yield to pedestrians only"
-      ],
-      "answerIndex": 1,
-      "explanation": "A steady yellow (amber) light warns that the signal is about to change to red. You should stop if you can do so safely. If you cannot stop safely, proceed with caution.",
-      "tags": ["traffic signals", "yellow light"],
-      "source": "NY DMV Manual – Traffic Signals"
+      "type": "single_choice",
+      "question": "“目的地”标志是什么颜色?",
+      "options": {
+        "A": "黄黑色",
+        "B": "红白色",
+        "C": "绿白色",
+        "D": "黑白色"
+      },
+      "answer": "C"
     },
     {
       "id": 25,
-      "question": "What should you do when you see a pedestrian with a white cane or guide dog at a crosswalk?",
-      "options": [
-        "Honk to let them know you are there",
-        "Slow down but do not stop unless they step off the curb",
-        "Stop and yield the right-of-way",
-        "Proceed if the light is green"
-      ],
-      "answerIndex": 2,
-      "explanation": "Pedestrians who are blind or visually impaired have the absolute right-of-way. You must stop and yield regardless of traffic signal status.",
-      "tags": ["pedestrians", "right-of-way", "accessibility"],
-      "source": "NY DMV Manual – Pedestrians"
+      "type": "single_choice",
+      "question": "高速公路和普通公路主要不同之处何在?",
+      "options": {
+        "A": "摩托车只能在高速公路最右端行驶",
+        "B": "高速公路上汽车  行的速度较高",
+        "C": "货车不能在高速公路上行驶",
+        "D": "高速公路上的车辆较多"
+      },
+      "answer": "B"
     },
     {
       "id": 26,
-      "question": "At a crosswalk with no traffic signal, you must yield to a pedestrian when:",
-      "options": [
-        "Only if the pedestrian is in your lane",
-        "When the pedestrian is in or entering the crosswalk in your lane or adjacent lane",
-        "Only if a 'Yield to Pedestrians' sign is posted",
-        "Only at night"
-      ],
-      "answerIndex": 1,
-      "explanation": "NY law requires drivers to yield to pedestrians in or about to enter a crosswalk. This includes the lane you're in and the adjacent lane.",
-      "tags": ["pedestrians", "crosswalk", "right-of-way"],
-      "source": "NY DMV Manual – Pedestrians"
+      "type": "single_choice",
+      "question": "下述四种标志或人员,你最应该服从的是谁?",
+      "options": {
+        "A": "闪烁的红灯",
+        "B": "停止标志",
+        "C": "交通警察",
+        "D": "固定的红灯"
+      },
+      "answer": "C"
     },
     {
       "id": 27,
-      "question": "When can you make a right turn on a red light in New York State?",
-      "options": [
-        "Never — it's always prohibited",
-        "After coming to a complete stop and yielding to traffic and pedestrians, unless a sign prohibits it",
-        "Without stopping if no traffic is present",
-        "Only in daytime hours"
-      ],
-      "answerIndex": 1,
-      "explanation": "Right turns on red are permitted after a complete stop and after yielding to all traffic and pedestrians, unless a 'No Turn on Red' sign is posted. In New York City, right-on-red is prohibited unless a sign specifically permits it.",
-      "tags": ["turning", "red light", "right turn"],
-      "source": "NY DMV Manual – Turning"
+      "type": "single_choice",
+      "question": "当你开车到交叉路口“横断步道”(Crosswalk)前面,那里竖有“停止”标志,你该如何?",
+      "options": {
+        "A": "停在横断步道前面",
+        "B": "只在横断步道上面有行人时方才停止",
+        "C": "停在横断步道上面",
+        "D": "停在横断步道后面"
+      },
+      "answer": "A"
     },
     {
       "id": 28,
-      "question": "When parallel parking, your vehicle's wheels must be within how many inches of the curb?",
-      "options": ["6 inches", "12 inches", "18 inches", "24 inches"],
-      "answerIndex": 1,
-      "explanation": "When parallel parking in New York, you must park within 12 inches (one foot) of the curb.",
-      "tags": ["parking", "parallel parking"],
-      "source": "NY DMV Manual – Parking"
+      "type": "single_choice",
+      "question": "即使是暂时停止,也在禁止之列的?",
+      "options": {
+        "A": "在公路桥梁上面",
+        "B": "在车辆进出路口",
+        "C": "火车平交道五十尺以内",
+        "D": "消防栓前面"
+      },
+      "answer": "A"
     },
     {
       "id": 29,
-      "question": "You may NOT park within how many feet of a fire hydrant?",
-      "options": ["5 feet", "10 feet", "15 feet", "20 feet"],
-      "answerIndex": 2,
-      "explanation": "New York law prohibits parking within 15 feet of a fire hydrant at any time.",
-      "tags": ["parking", "fire hydrant"],
-      "source": "NY DMV Manual – Parking"
+      "type": "single_choice",
+      "question": "什么时候你才有“路权”?",
+      "options": {
+        "A": "你从一条私人车路倒车出来",
+        "B": "你从停车场开车出来",
+        "C": "你已经在交通网道中",
+        "D": "你正要开进交叉路口"
+      },
+      "answer": "C"
     },
     {
       "id": 30,
-      "question": "You are approaching a railroad crossing with flashing lights and/or a lowered gate. You must:",
-      "options": [
-        "Slow to 15 mph and proceed carefully",
-        "Stop and wait until the lights stop flashing and the gate fully rises",
-        "Stop and go as soon as the train passes, even if the gate is still down",
-        "Only stop if the train is visible"
-      ],
-      "answerIndex": 1,
-      "explanation": "At a railroad crossing with activated signals or lowered gates, you must stop and not proceed until the lights stop flashing and the gate is fully raised.",
-      "tags": ["railroad crossing"],
-      "source": "NY DMV Manual – Railroad Crossings"
+      "type": "single_choice",
+      "question": "当你的汽车右轮开上路边软地时,如何开回公路来?",
+      "options": {
+        "A": "停止加油,并且将方向盘轻轻的向左转",
+        "B": "将方向盘尽量向左转,然后轻向右转",
+        "C": "踩稳刹车,将车停住",
+        "D": "踩稳刹车,并将方向盘稍稍向左转"
+      },
+      "answer": "B"
     },
     {
       "id": 31,
-      "question": "What is the penalty for a first-time DWI conviction in New York?",
-      "options": [
-        "Fine only, no license action",
-        "Up to 1 year in jail and/or a fine of $500–$1,000, plus license revocation for at least 6 months",
-        "License suspension for 30 days only",
-        "Community service only"
-      ],
-      "answerIndex": 1,
-      "explanation": "A first DWI (BAC ≥ 0.08%) in NY carries up to 1 year in jail and/or a fine of $500–$1,000, plus at least a 6-month license revocation.",
-      "tags": ["DWI", "penalties"],
-      "source": "NY DMV Manual – Alcohol & Drugs"
+      "type": "single_choice",
+      "question": "你平行倒车进入两车之间,以后应该如何?",
+      "options": {
+        "A": "尽可能将车向前移动",
+        "B": "前轮摆直,前后两车之间留些空地",
+        "C": "倒车差不多碰到后面的车子",
+        "D": "将前轮转向道路"
+      },
+      "answer": "B"
     },
     {
       "id": 32,
-      "question": "What does New York's 'Implied Consent' law mean?",
-      "options": [
-        "You automatically consent to a search of your vehicle",
-        "By driving in NY, you consent to a chemical test for alcohol or drugs if lawfully requested by a police officer",
-        "You consent to roadside sobriety tests only",
-        "You consent to breathalyzer only if you've been drinking"
-      ],
-      "answerIndex": 1,
-      "explanation": "Under NY's Implied Consent law, any person who operates a motor vehicle in NY is deemed to have given consent to a chemical test (blood, breath, urine, or saliva) to determine BAC or drug content if arrested.",
-      "tags": ["DWI", "implied consent"],
-      "source": "NY DMV Manual – Alcohol & Drugs"
+      "type": "single_choice",
+      "question": "你在超车前,必须算准时间和速度,如果你要回到原来的车路,你必须离开这辆车子多远?",
+      "options": {
+        "A": "150",
+        "B": "100",
+        "C": "50",
+        "D": "200"
+      },
+      "answer": "D"
     },
     {
       "id": 33,
-      "question": "Refusing a chemical test (breathalyzer) in New York will result in:",
-      "options": [
-        "No additional penalties beyond the DWI charge",
-        "Immediate license revocation for at least 1 year and a civil penalty",
-        "A fine of $50",
-        "Automatic acquittal of the DWI charge"
-      ],
-      "answerIndex": 1,
-      "explanation": "Refusing a chemical test in NY results in immediate license revocation for at least 1 year (longer for repeat offenses) and a civil penalty, regardless of whether you are guilty of DWI.",
-      "tags": ["DWI", "refusal", "implied consent"],
-      "source": "NY DMV Manual – Alcohol & Drugs"
+      "type": "single_choice",
+      "question": "车前灯大概可以照亮道路多少呎?",
+      "options": {
+        "A": "450",
+        "B": "750",
+        "C": "350",
+        "D": "250"
+      },
+      "answer": "C"
     },
     {
       "id": 34,
-      "question": "When must you signal before changing lanes or turning?",
-      "options": [
-        "Only on highways",
-        "At least 100 feet (about 30 m) before the turn or lane change",
-        "At least 200 feet before on highways and 100 feet on city streets",
-        "Only when other vehicles are present"
-      ],
-      "answerIndex": 2,
-      "explanation": "NY law requires you to signal at least 100 feet before turning in a city, town, or village, and at least 200 feet on highways or roads where the speed limit exceeds 45 mph.",
-      "tags": ["signaling", "turning", "lane change"],
-      "source": "NY DMV Manual – Turning & Signaling"
+      "type": "single_choice",
+      "question": "在公路上,指示驾驶人员进入适当路线转弯,是那种设备?",
+      "options": {
+        "A": "闪烁红灯",
+        "B": "路旁白色边线",
+        "C": "闪烁黄灯",
+        "D": "路上油漆白色箭头"
+      },
+      "answer": "D"
     },
     {
       "id": 35,
-      "question": "What does a 'Do Not Enter' sign look like and mean?",
-      "options": [
-        "A diamond with an X — road closed ahead",
-        "A red circle with a white horizontal bar — do not enter this road or lane",
-        "A red octagon — stop and then enter",
-        "A white square with a red border — no parking"
-      ],
-      "answerIndex": 1,
-      "explanation": "A 'Do Not Enter' sign is a red circle with a white horizontal bar. It means you must not enter the road or lane, usually because traffic flows the other way.",
-      "tags": ["signs", "do not enter"],
-      "source": "NY DMV Manual – Road Signs"
+      "type": "single_choice",
+      "question": "为什么要公告“最低速度限制”?",
+      "options": {
+        "A": "显示道路状况",
+        "B": "车辆行能顺利进行",
+        "C": "测验交通标志",
+        "D": "增进行人安全"
+      },
+      "answer": "B"
     },
     {
       "id": 36,
-      "question": "What does a 'Wrong Way' sign indicate?",
-      "options": [
-        "You have entered a one-way street against traffic — leave the road immediately",
-        "A dead end ahead",
-        "The lane is closed for construction",
-        "You are about to enter a toll road"
-      ],
-      "answerIndex": 0,
-      "explanation": "A red and white 'Wrong Way' sign means you have entered a roadway going in the wrong direction. You should back up or turn around safely immediately.",
-      "tags": ["signs", "wrong way"],
-      "source": "NY DMV Manual – Road Signs"
+      "type": "single_choice",
+      "question": "当你刹车时,车子向一边倾斜,原因是什么?",
+      "options": {
+        "A": "轮轴弯曲",
+        "B": "驾驶操纵机件陈旧",
+        "C": "轮胎花纹磨光",
+        "D": "刹车需要修理"
+      },
+      "answer": "D"
     },
+
     {
       "id": 37,
-      "question": "In a work/construction zone, traffic fines are generally:",
-      "options": [
-        "Reduced because workers are causing delays",
-        "The same as in normal zones",
-        "Doubled",
-        "Tripled"
-      ],
-      "answerIndex": 2,
-      "explanation": "In New York, fines for moving violations committed in designated work zones are doubled.",
-      "tags": ["construction zone", "fines"],
-      "source": "NY DMV Manual – Work Zones"
+      "type": "single_choice",
+      "question": "从高速公路转入普通公路,你该如何?",
+      "options": {
+        "A": "减低速度,以达到限定的速度",
+        "B": "看下速度表,调整到较慢的速度",
+        "C": "在加油站停车,检查你的汽油,机油和轮胎",
+        "D": "你的车和他车之间保持普通两倍的距离"
+      },
+      "answer": "B"
     },
     {
       "id": 38,
-      "question": "What is the proper hand signal for a left turn?",
-      "options": [
-        "Left arm extended straight out horizontally",
-        "Left arm extended upward at 90°",
-        "Left arm extended downward at 45°",
-        "Right arm extended straight out"
-      ],
-      "answerIndex": 0,
-      "explanation": "For a left turn, extend your left arm straight out horizontally through the window.",
-      "tags": ["hand signals", "turning"],
-      "source": "NY DMV Manual – Hand Signals"
+      "type": "single_choice",
+      "question": "你在消防栓旁边停车,规定最少距离是多少?",
+      "options": {
+        "A": "15呎",
+        "B": "9呎",
+        "C": "12呎",
+        "D": "6呎"
+      },
+      "answer": "A"
     },
     {
       "id": 39,
-      "question": "What is the proper hand signal for a right turn?",
-      "options": [
-        "Left arm extended straight out horizontally",
-        "Left arm bent upward at 90° (pointing up)",
-        "Left arm bent downward at 45° (pointing down)",
-        "Right arm extended straight out"
-      ],
-      "answerIndex": 1,
-      "explanation": "For a right turn, extend your left arm and bend it upward at a 90° angle (hand pointing up).",
-      "tags": ["hand signals", "turning"],
-      "source": "NY DMV Manual – Hand Signals"
+      "type": "single_choice",
+      "question": "在交叉路口有一红灯一绿色箭头的交通灯号,此表示什么?",
+      "options": {
+        "A": "等见绿灯,再向任何方向前进",
+        "B": "完全停止,然后向箭头所指方向前进",
+        "C": "向箭头所指方向小心前进",
+        "D": "等见绿灯,再向箭头所指方向前进"
+      },
+      "answer": "C"
     },
     {
       "id": 40,
-      "question": "What is the proper hand signal for slowing down or stopping?",
-      "options": [
-        "Left arm extended straight out horizontally",
-        "Left arm bent upward at 90°",
-        "Left arm extended downward at 45° (pointing down and back)",
-        "Both hands raised"
-      ],
-      "answerIndex": 2,
-      "explanation": "For stopping or slowing, extend your left arm downward at 45° with your palm facing backward.",
-      "tags": ["hand signals", "stopping"],
-      "source": "NY DMV Manual – Hand Signals"
+      "type": "single_choice",
+      "question": "高速公路的“加速小道”有什么作用?",
+      "options": {
+        "A": "供货车开入高速公路前试验刹车之用",
+        "B": "供驾驶人员进入高速公路前加快速度之用",
+        "C": "供驾驶人员超过慢速车辆之用",
+        "D": "供过路客人搭乘便车之用"
+      },
+      "answer": "B"
     },
+
     {
       "id": 41,
-      "question": "When are you required to use your windshield wipers in New York?",
-      "options": [
-        "Only in heavy rain",
-        "Whenever precipitation makes it difficult to see clearly, and whenever you use your defroster in precipitation",
-        "Only when it's raining hard enough to need them",
-        "Only at night in rain"
-      ],
-      "answerIndex": 1,
-      "explanation": "NY requires wipers whenever rain, snow, or other precipitation makes it necessary to clear the windshield. NY also requires headlights when wipers are in use.",
-      "tags": ["wipers", "weather", "headlights"],
-      "source": "NY DMV Manual – Driving in Bad Weather"
+      "type": "single_choice",
+      "question": "何处禁止停车?",
+      "options": {
+        "A": "房屋入口场所",
+        "B": "单行街道",
+        "C": "横断步道",
+        "D": "学校附近100呎"
+      },
+      "answer": "C"
     },
     {
       "id": 42,
-      "question": "You must turn on your headlights when using your windshield wipers due to rain, snow, or fog in New York. This rule is:",
-      "options": [
-        "Optional — just a recommendation",
-        "Required by law",
-        "Only required at night",
-        "Only required on highways"
-      ],
-      "answerIndex": 1,
-      "explanation": "NY law requires headlights to be on whenever windshield wipers are in use due to precipitation, reducing visibility, or adverse weather conditions.",
-      "tags": ["headlights", "wipers", "law"],
-      "source": "NY DMV Manual – Headlights"
+      "type": "single_choice",
+      "question": "交叉路口有一红灯闪烁,你该如何?",
+      "options": {
+        "A": "只在交叉路口有车辆时方才停车",
+        "B": "只在交叉路口有车辆进来时方才停止",
+        "C": "完全停止,等交叉路口车辆走完时再行前进",
+        "D": "减速,小心前进通过交叉路口"
+      },
+      "answer": "C"
     },
     {
       "id": 43,
-      "question": "If your vehicle begins to skid on a slippery road, you should:",
-      "options": [
-        "Brake hard and steer straight",
-        "Ease off the gas, do not brake hard, and steer in the direction you want to go",
-        "Accelerate out of the skid",
-        "Turn sharply in the opposite direction of the skid"
-      ],
-      "answerIndex": 1,
-      "explanation": "During a skid: ease off the accelerator, avoid hard braking (unless ABS), and steer gently in the direction you want the front of the vehicle to go (steer into the skid) to regain control.",
-      "tags": ["skidding", "winter driving", "control"],
-      "source": "NY DMV Manual – Skids"
+      "type": "single_choice",
+      "question": "盲人在何种情况之下有“路权”?",
+      "options": {
+        "A": "穿着浅色衣服",
+        "B": "由旁人扶着",
+        "C": "使用白色拐杖,或牵着引路的狗",
+        "D": "戴着全黑眼镜"
+      },
+      "answer": "C"
     },
     {
       "id": 44,
-      "question": "A solid white line between lanes of traffic going in the same direction means:",
-      "options": [
-        "You must stay in your lane — crossing is prohibited",
-        "You may change lanes but should do so with care",
-        "The left lane is for passing only",
-        "It marks the edge of the road"
-      ],
-      "answerIndex": 1,
-      "explanation": "A solid white line discourages lane changes; it means you should stay in your lane but are not absolutely prohibited from changing. A broken white line means lane changes are more freely permitted.",
-      "tags": ["lane markings", "white lines"],
-      "source": "NY DMV Manual – Pavement Markings"
+      "type": "single_choice",
+      "question": "你的车在高速公路上忽然停止不动,你最好怎么办?",
+      "options": {
+        "A": "设法将车子推出道路",
+        "B": "让车子停在路中,叫一辆拖车来",
+        "C": "离开你的车子,走到安全场所",
+        "D": "等警察来帮你推车"
+      },
+      "answer": "A"
     },
     {
       "id": 45,
-      "question": "What does a 'No Passing Zone' sign (pennant shape) indicate?",
-      "options": [
-        "A no parking zone",
-        "The beginning of a no-passing zone — passing is prohibited ahead",
-        "A school zone",
-        "A merge zone"
-      ],
-      "answerIndex": 1,
-      "explanation": "The yellow pennant (horizontal triangle) shaped sign marks the beginning of a no-passing zone, typically placed on the left side of the road.",
-      "tags": ["signs", "no passing", "passing"],
-      "source": "NY DMV Manual – Road Signs"
+      "type": "single_choice",
+      "question": "你有“行路优先权”此意为何?",
+      "options": {
+        "A": "你可一直前进,但不得转弯",
+        "B": "如果没有危险,你有权先走",
+        "C": "你可一直前进,或随意转弯",
+        "D": "你没有小心留意的义务"
+      },
+      "answer": "B"
     },
+
     {
       "id": 46,
-      "question": "When driving on a multi-lane road, slower traffic should:",
-      "options": [
-        "Drive in any lane they choose",
-        "Stay in the left (passing) lane",
-        "Keep to the right and use the left lane only for passing",
-        "Drive in the center lane"
-      ],
-      "answerIndex": 2,
-      "explanation": "Slower traffic should keep to the right. Left lanes are intended for passing and faster traffic. Staying in the left lane when not passing can impede traffic flow.",
-      "tags": ["lane use", "passing"],
-      "source": "NY DMV Manual – Lane Use"
+      "type": "single_choice",
+      "question": "下面那一条是“防卫驾驶”的原则?",
+      "options": {
+        "A": "两眼直视前面的道路",
+        "B": "四周察看,周围有无事故发生",
+        "C": "保持自信,在任何情况之下,你都能够避免危险发生",
+        "D": "希望其他驾驶人员原谅你造成的错误"
+      },
+      "answer": "B"
     },
     {
       "id": 47,
-      "question": "If you miss your exit on a highway, you should:",
-      "options": [
-        "Back up on the shoulder to reach your exit",
-        "Make a U-turn on the highway",
-        "Continue to the next exit and turn around",
-        "Stop and wait for a break in traffic"
-      ],
-      "answerIndex": 2,
-      "explanation": "Never back up or make a U-turn on a highway. Continue to the next exit, leave the highway, and find a safe route back.",
-      "tags": ["highway", "exits"],
-      "source": "NY DMV Manual – Expressways"
+      "type": "single_choice",
+      "question": "行人何时享有“路权”?",
+      "options": {
+        "A": "附近没有交通标志而通过横断步道时",
+        "B": "附近没有交通标志而通过道路任何部分时",
+        "C": "当红灯亮而通过横断步道时",
+        "D": "交通标志可以通行,但能过道路任何部份时"
+      },
+      "answer": "A"
     },
     {
       "id": 48,
-      "question": "What should you do if a tire blows out while driving?",
-      "options": [
-        "Brake hard and steer to the side immediately",
-        "Hold the steering wheel firmly, ease off the gas gradually, and steer to the right to slow down safely",
-        "Accelerate briefly to stabilize the vehicle",
-        "Immediately turn off the ignition"
-      ],
-      "answerIndex": 1,
-      "explanation": "In a blowout: grip the steering wheel firmly, ease off the gas (do NOT brake suddenly), and let the vehicle slow gradually. Then steer gently to the right shoulder.",
-      "tags": ["tire blowout", "emergency"],
-      "source": "NY DMV Manual – Vehicle Emergencies"
+      "type": "single_choice",
+      "question": "有他车超越你的车子,这时你该如何?",
+      "options": {
+        "A": "保持正常的速度",
+        "B": "加速前进",
+        "C": "和他车相同速度前进",
+        "D": "速度稍慢"
+      },
+      "answer": "D"
     },
     {
       "id": 49,
-      "question": "You are involved in a collision that causes injury or property damage over $1,000. What must you do?",
-      "options": [
-        "Report it only if someone is injured",
-        "File a written report (MV-104) with the DMV within 10 days",
-        "Report it to police within 48 hours only",
-        "No report is needed if you exchange information at the scene"
-      ],
-      "answerIndex": 1,
-      "explanation": "If a collision results in injury, death, or property damage exceeding $1,000, you must file an MV-104 report with the DMV within 10 days.",
-      "tags": ["accidents", "reporting", "MV-104"],
-      "source": "NY DMV Manual – Collisions"
+      "type": "single_choice",
+      "question": "你的车子已经开始在冰冻的道路上滑动时,你该如何?",
+      "options": {
+        "A": "朝车尾滑动的方向转动方向盘驾驶,不要刹车",
+        "B": "轻轻用脚在刹车板上踏几下",
+        "C": "用劲握牢方向盘,立刻刹车",
+        "D": "轻轻驶离冰冻路面,不要刹   "
+      },
+      "answer": "A"
     },
     {
       "id": 50,
-      "question": "When a vehicle breaks down on the highway, the driver should:",
-      "options": [
-        "Stay in the travel lane and turn on hazard lights",
-        "Pull off to the right shoulder, turn on hazard lights, and exit away from traffic",
-        "Stay in the vehicle with no lights on",
-        "Stand in the roadway to flag down help"
-      ],
-      "answerIndex": 1,
-      "explanation": "Move to the right shoulder safely, turn on hazard/emergency flashers, and exit on the right (passenger) side away from traffic. Place warning triangles or flares if available.",
-      "tags": ["breakdown", "safety", "highway"],
-      "source": "NY DMV Manual – Vehicle Emergencies"
+      "type": "single_choice",
+      "question": "在一条街道或公路上面,前后有车来往,如果你向左转弯,则该如何?",
+      "options": {
+        "A": "在道路中线上前进",
+        "B": "车子左轮紧靠道路中线",
+        "C": "尽量靠向道路右边",
+        "D": "车子右轮紧靠道路中线"
+      },
+      "answer": "B"
     },
+
     {
       "id": 51,
-      "question": "Which of the following is a correct statement about motorcycle blind spots?",
-      "options": [
-        "Motorcycles don't have blind spots",
-        "A motorcycle's small size can make it invisible in a car's blind spot; always check mirrors and turn your head",
-        "Motorcycles always use the center of the lane",
-        "Motorcycles have larger blind spots than cars"
-      ],
-      "answerIndex": 1,
-      "explanation": "Motorcycles are smaller and can be easily hidden in a car's blind spot. Always check mirrors AND turn your head to scan before changing lanes or turning.",
-      "tags": ["motorcycles", "blind spots", "sharing the road"],
-      "source": "NY DMV Manual – Motorcycles"
+      "type": "single_choice",
+      "question": "道路右边有条白线向左前方斜伸,表示什么?",
+      "options": {
+        "A": "你快驶近交叉路口",
+        "B": "道路逐渐宽广",
+        "C": "前面正在筑路",
+        "D": "道路逐渐狭窄"
+      },
+      "answer": "D"
     },
     {
       "id": 52,
-      "question": "When sharing the road with a large truck, you should avoid:",
-      "options": [
-        "Following more than 3 seconds behind",
-        "Driving in a truck's blind spots (No-Zones) — directly behind, beside, and in front too close",
-        "Signaling before passing",
-        "Using the right lane"
-      ],
-      "answerIndex": 1,
-      "explanation": "Large trucks have large 'No-Zone' blind spots to the rear, sides, and very close in front. Avoid lingering in these areas; if you can't see the truck driver in their mirror, they can't see you.",
-      "tags": ["trucks", "blind spots", "No-Zone"],
-      "source": "NY DMV Manual – Trucks"
+      "type": "single_choice",
+      "question": "你想将车倒出车道,如果附近有小孩玩耍,应该如何?",
+      "options": {
+        "A": "按喇叭以警告小孩",
+        "B": "走到车后察看,车道上面确无小孩",
+        "C": "告诉小孩走开",
+        "D": "加速开动机器,警告小孩"
+      },
+      "answer": "B"
     },
     {
       "id": 53,
-      "question": "Bicyclists on the road have:",
-      "options": [
-        "No legal rights — cyclists must always yield to cars",
-        "The same rights and responsibilities as motor vehicle drivers",
-        "The right-of-way only on dedicated bike lanes",
-        "The right-of-way only on sidewalks"
-      ],
-      "answerIndex": 1,
-      "explanation": "Bicyclists have the same rights and responsibilities as motor vehicle operators. Drivers must share the road and give cyclists a safe passing distance (at least 3 feet in NY).",
-      "tags": ["bicycles", "sharing the road"],
-      "source": "NY DMV Manual – Bicyclists"
+      "type": "single_choice",
+      "question": "你如何准备右转弯?",
+      "options": {
+        "A": "尽量从道路左边开始转弯",
+        "B": "通过交叉路口以后开始转弯",
+        "C": "从道路中线开始转弯",
+        "D": "尽量从道路右边开始转弯"
+      },
+      "answer": "D"
     },
     {
       "id": 54,
-      "question": "What is the minimum passing distance you must give a bicyclist when overtaking them?",
-      "options": ["1 foot", "2 feet", "3 feet", "5 feet"],
-      "answerIndex": 2,
-      "explanation": "New York law requires motor vehicle operators to give cyclists at least 3 feet of clearance when passing.",
-      "tags": ["bicycles", "passing distance"],
-      "source": "NY DMV Manual – Bicyclists"
+      "type": "single_choice",
+      "question": "你在什么时候绝对不行超车?",
+      "options": {
+        "A": "在他车右转弯时",
+        "B": "在他车停在横断步道前面让行人先走时",
+        "C": "在他车开进私人车道时",
+        "D": "在他车左转弯时"
+      },
+      "answer": "B"
     },
     {
       "id": 55,
-      "question": "When approaching a yield sign, you should:",
-      "options": [
-        "Stop completely every time",
-        "Slow down, check for cross traffic, and stop only if necessary to yield the right-of-way",
-        "Proceed normally; yield signs are advisory only",
-        "Speed up to merge quickly"
-      ],
-      "answerIndex": 1,
-      "explanation": "At a yield sign, slow down and be prepared to stop to give the right-of-way to traffic already in the intersection or road. Stop only if necessary.",
-      "tags": ["yield", "right-of-way"],
-      "source": "NY DMV Manual – Road Signs"
+      "type": "single_choice",
+      "question": "你将车停在右边道路。这条道路有边石(curb)，而且向上倾斜,  在离开车子以前应该如何?",
+      "options": {
+        "A": "前轮和边石并行,再加刹车",
+        "B": "前轮和边石并行",
+        "C": "前轮向右再加刹车",
+        "D": "前轮向左再加停车刹车"
+      },
+      "answer": "D"
     },
+
     {
       "id": 56,
-      "question": "Distracted driving includes which of the following?",
-      "options": [
-        "Eating, texting, and adjusting the radio while driving",
-        "Only texting",
-        "Only talking on the phone",
-        "Only reading maps"
-      ],
-      "answerIndex": 0,
-      "explanation": "Distracted driving includes any activity that takes your attention from driving: texting, eating, drinking, using a phone, adjusting radio or GPS, talking with passengers, grooming, etc.",
-      "tags": ["distracted driving", "safety"],
-      "source": "NY DMV Manual – Distracted Driving"
+      "type": "single_choice",
+      "question": "你在经过失事现场时,应该如何?",
+      "options": {
+        "A": "加快行驶,到附近电话亭打电话报告车祸",
+        "B": "慢行,因而可以看清楚全部失事情形",
+        "C": "如果已有他人在场协助,照常行驶",
+        "D": "在现场停车前往协助"
+      },
+      "answer": "C"
     },
     {
       "id": 57,
-      "question": "In New York, using a handheld mobile phone while driving is:",
-      "options": [
-        "Legal if you're stopped at a red light",
-        "Illegal; you must use a hands-free device",
-        "Only illegal for teens",
-        "Legal as long as you use speaker mode"
-      ],
-      "answerIndex": 1,
-      "explanation": "NY law prohibits handheld mobile phone use while driving. You must use a hands-free device. This applies even while stopped at a red light.",
-      "tags": ["cell phone", "distracted driving", "law"],
-      "source": "NY DMV Manual – Distracted Driving"
+      "type": "single_choice",
+      "question": "黄色闪烁灯表示什么?",
+      "options": {
+        "A": "小心前进",
+        "B": "完全停止",
+        "C": "行人通过",
+        "D": "合并车道"
+      },
+      "answer": "A"
     },
     {
       "id": 58,
-      "question": "Texting while driving in New York carries a fine and how many points on your license?",
-      "options": ["2 points", "3 points", "5 points", "11 points"],
-      "answerIndex": 2,
-      "explanation": "Using a handheld electronic device (including texting) while driving results in a fine and 5 points added to your driving record in New York.",
-      "tags": ["texting", "points", "penalties"],
-      "source": "NY DMV Manual – Distracted Driving"
+      "type": "single_choice",
+      "question": "你在私人车道开进大道时,应该如何?",
+      "options": {
+        "A": "让大道上所有车子先走",
+        "B": "车子部分停在大路上面,引起其他车辆的注意",
+        "C": "加快速度在大路上面,配合其他车辆的速度",
+        "D": "不问大路上有无车辆,完全停止"
+      },
+      "answer": "A"
     },
     {
       "id": 59,
-      "question": "What should you do when you see a 'Slow Moving Vehicle' emblem (orange triangle) on the road ahead?",
-      "options": [
-        "Speed up to pass quickly",
-        "Slow down and prepare to pass safely when it is legal to do so",
-        "Turn on your hazard lights",
-        "Honk to signal the vehicle to move over"
-      ],
-      "answerIndex": 1,
-      "explanation": "An orange reflective triangle on the back of a vehicle (e.g., farm equipment) indicates it moves at 25 mph or less. Slow down and pass when it is safe and legal to do so.",
-      "tags": ["slow moving vehicle", "signs"],
-      "source": "NY DMV Manual – Road Signs"
+      "type": "single_choice",
+      "question": "你在浓雾中行驶,应该如何?",
+      "options": {
+        "A": "打开车前高射灯光",
+        "B": "只用停车灯灯光",
+        "C": "打开车前低灯灯光",
+        "D": "紧靠中央路线行走"
+      },
+      "answer": "C"
     },
     {
       "id": 60,
-      "question": "What color are warning signs related to construction and work zones?",
-      "options": ["Yellow", "Orange", "Red", "White"],
-      "answerIndex": 1,
-      "explanation": "Work zone/construction warning signs in the United States are orange with black lettering or symbols.",
-      "tags": ["construction zone", "signs"],
-      "source": "NY DMV Manual – Road Signs"
+      "type": "single_choice",
+      "question": "你以每小时40里的速度行驶,和前车应该保持多少车身的距离?",
+      "options": {
+        "A": "至少五个车身的距离",
+        "B": "至少三个车身的距离",
+        "C": "至少四个车身的距离",
+        "D": "至少六个车身的距离"
+      },
+      "answer": "C"
     },
+
     {
       "id": 61,
-      "question": "When entering a highway from an on-ramp, you should:",
-      "options": [
-        "Stop at the end of the ramp and wait for a gap",
-        "Use the acceleration lane to match the speed of highway traffic, then merge smoothly",
-        "Yield to all highway traffic by slowing on the ramp",
-        "Merge immediately at the bottom of the ramp regardless of speed"
-      ],
-      "answerIndex": 1,
-      "explanation": "Use the acceleration (on-ramp) lane to reach highway speed, then merge when there is a safe gap. Yield to traffic already on the highway.",
-      "tags": ["highway", "merging", "on-ramp"],
-      "source": "NY DMV Manual – Expressways"
+      "type": "single_choice",
+      "question": "车子停在路边,规定离开边石最多不得超过多少英尺?",
+      "options": {
+        "A": "18呎",
+        "B": "12呎",
+        "C": "15呎",
+        "D": "6呎"
+      },
+      "answer": "B"
     },
     {
       "id": 62,
-      "question": "What does a double solid yellow center line mean?",
-      "options": [
-        "Passing is permitted in both directions",
-        "Passing is prohibited in both directions",
-        "Only left turns are allowed",
-        "The road narrows ahead"
-      ],
-      "answerIndex": 1,
-      "explanation": "A double solid yellow center line means no passing is allowed in either direction. Vehicles on both sides must stay in their lane.",
-      "tags": ["road markings", "passing"],
-      "source": "NY DMV Manual – Pavement Markings"
+      "type": "single_choice",
+      "question": "你在何时能超过双重黄色直线?",
+      "options": {
+        "A": "出入私人车道或小巷时",
+        "B": "超过一辆慢速度的农场用车",
+        "C": "超过一辆慢速度的货车",
+        "D": "如果情况许可,可以超过任何车辆"
+      },
+      "answer": "A"
     },
     {
       "id": 63,
-      "question": "When driving in fog, you should use:",
-      "options": [
-        "High-beam headlights for maximum visibility",
-        "Low-beam headlights or fog lights",
-        "Hazard lights only",
-        "No lights — they reduce visibility further"
-      ],
-      "answerIndex": 1,
-      "explanation": "In fog, use low-beam headlights or fog lights. High beams reflect off the fog and reduce visibility. Also reduce your speed significantly.",
-      "tags": ["fog", "headlights", "weather"],
-      "source": "NY DMV Manual – Driving in Bad Weather"
+      "type": "single_choice",
+      "question": "你在转弯前,应该如何?",
+      "options": {
+        "A": "在转弯前两个车身距离时使用讯号灯",
+        "B": "周围看看,如果没有危险再行转弯",
+        "C": "按喇叭,到交叉路口没车辆时再行转弯",
+        "D": "保持正常速度前进"
+      },
+      "answer": "B"
     },
     {
       "id": 64,
-      "question": "Hydroplaning occurs when:",
-      "options": [
-        "Your wipers fail in heavy rain",
-        "A layer of water builds between your tires and the road, causing loss of traction",
-        "Your engine overheats from driving through standing water",
-        "Your vehicle is pushed by crosswinds"
-      ],
-      "answerIndex": 1,
-      "explanation": "Hydroplaning happens when water builds up under the tires faster than it can be displaced, causing the tires to ride on a film of water and losing contact with the road surface.",
-      "tags": ["hydroplaning", "rain", "traction"],
-      "source": "NY DMV Manual – Driving in Bad Weather"
+      "type": "single_choice",
+      "question": "慢车车辆(如农场拖车)的司机规定如何驾驶?",
+      "options": {
+        "A": "如果无危险,挥手示意其他车辆先行",
+        "B": "悬挂一块橘红色的牌子,上写“慢行车辆”",
+        "C": "尽可能在路肩上行驶",
+        "D": "遵守一切交通规则"
+      },
+      "answer": "D"
     },
     {
       "id": 65,
-      "question": "To avoid hydroplaning, you should:",
-      "options": [
-        "Keep tire pressure very low",
-        "Drive faster to skim over water",
-        "Reduce speed in wet conditions and keep tires properly inflated",
-        "Use cruise control in rain"
-      ],
-      "answerIndex": 2,
-      "explanation": "Reduce speed in wet conditions, keep tires properly inflated and with adequate tread depth. Avoid cruise control in rain and avoid large puddles when possible.",
-      "tags": ["hydroplaning", "prevention", "rain"],
-      "source": "NY DMV Manual – Driving in Bad Weather"
+      "type": "single_choice",
+      "question": "“停止”标志是什么颜色?",
+      "options": {
+        "A": "黑色黄字",
+        "B": "红底白字",
+        "C": "黄底黑字",
+        "D": "绿底白字"
+      },
+      "answer": "B"
     },
     {
       "id": 66,
-      "question": "What is the maximum number of points you can accumulate on your NY license in 18 months before your license is suspended?",
-      "options": ["8 points", "10 points", "11 points", "15 points"],
-      "answerIndex": 2,
-      "explanation": "Accumulating 11 or more points within any 18-month period will result in a license suspension in New York.",
-      "tags": ["points", "license suspension"],
-      "source": "NY DMV Manual – Driver Violations"
+      "type": "single_choice",
+      "question": "负有紧急的车辆因公务在路上行驶时,那几种车辆必须让路?",
+      "options": {
+        "A": "只限客车一种",
+        "B": "所有车辆,但校车除外",
+        "C": "只限客车和货车两种",
+        "D": "所有车辆"
+      },
+      "answer": "D"
     },
     {
       "id": 67,
-      "question": "How many points does speeding 1–10 mph over the limit add to a NY driver's license?",
-      "options": ["2 points", "3 points", "4 points", "6 points"],
-      "answerIndex": 1,
-      "explanation": "Speeding 1–10 mph over the posted limit adds 3 points to your NY driving record. Speeding 11–20 mph over adds 4 points, and higher violations add more.",
-      "tags": ["speeding", "points"],
-      "source": "NY DMV Manual – Driver Violations"
+      "type": "single_choice",
+      "question": "如果道路上面并未设置“行人道”,则行人应该如何行走?",
+      "options": {
+        "A": "在车辆较少的一边行走",
+        "B": "在和车辆同方向的一边行走",
+        "C": "在和车辆相反方向的一边行走",
+        "D": "在道路的右边行走"
+      },
+      "answer": "C"
     },
     {
       "id": 68,
-      "question": "You must stop and yield to pedestrians at a crosswalk even if it is NOT marked, in New York.",
-      "options": [
-        "False — only marked crosswalks require stopping",
-        "True — both marked and unmarked crosswalks at intersections require yielding to pedestrians",
-        "True — but only at night",
-        "False — pedestrians must wait for the walk signal"
-      ],
-      "answerIndex": 1,
-      "explanation": "In NY, crosswalks exist at every intersection, whether painted or not. You must yield to pedestrians at all crosswalks.",
-      "tags": ["pedestrians", "crosswalk", "right-of-way"],
-      "source": "NY DMV Manual – Pedestrians"
+      "type": "single_choice",
+      "question": "你在何时该让对面来的车辆先走?",
+      "options": {
+        "A": "左转弯时",
+        "B": "右转弯时",
+        "C": "已经在交叉路口内",
+        "D": "已经在车辆行列中间"
+      },
+      "answer": "A"
     },
     {
       "id": 69,
-      "question": "When you are about to be passed by another vehicle, you should:",
-      "options": [
-        "Speed up to maintain your gap",
-        "Keep your speed and stay in your lane — do not accelerate",
-        "Move to the right lane immediately",
-        "Slow down and let them pass by pulling over"
-      ],
-      "answerIndex": 1,
-      "explanation": "When being passed, maintain your speed and position. Do not accelerate. You may move slightly to the right within your lane to give extra space.",
-      "tags": ["passing", "being passed"],
-      "source": "NY DMV Manual – Passing"
+      "type": "single_choice",
+      "question": "“不准停车”(no stopping)的标志,意义为何?",
+      "options": {
+        "A": "你只能上客或下客",
+        "B": "除非是警察人员的命令,你不得停止",
+        "C": "你只能上货或下货",
+        "D": "不问任何理由,你都不得停止"
+      },
+      "answer": "B"
     },
     {
       "id": 70,
-      "question": "In New York, all front-seat passengers must wear a seat belt. Rear-seat passengers are:",
-      "options": [
-        "Not required to wear seat belts if over 16",
-        "Required to wear seat belts at all ages",
-        "Only required to belt up on highways",
-        "Only required to belt up if under 18"
-      ],
-      "answerIndex": 1,
-      "explanation": "All occupants of a motor vehicle in New York — front and rear — are required to wear seat belts at all times, regardless of age.",
-      "tags": ["seat belts", "safety", "law"],
-      "source": "NY DMV Manual – Seat Belts"
+      "type": "single_choice",
+      "question": "如果道路中间有条黄色直线和一条黄色断线。这条黄色断线划在你的一边,这时你该如何?",
+      "options": {
+        "A": "如果情况许可,可以超线",
+        "B": "不问情况如何,不得超过此线",
+        "C": "如果是在高速公路上可以超过此线",
+        "D": "只在你行驶近交叉路口时方能超过此线"
+      },
+      "answer": "A"
     },
+
     {
       "id": 71,
-      "question": "Children under what age must be secured in an appropriate child safety seat in New York?",
-      "options": ["4 years old", "8 years old", "16 years old", "There is no child seat law"],
-      "answerIndex": 1,
-      "explanation": "In NY, children under 8 years old must be secured in an appropriate child restraint system (car seat or booster seat). Children under 4 must be in a federally approved child safety seat.",
-      "tags": ["child safety seat", "law"],
-      "source": "NY DMV Manual – Seat Belts"
+      "type": "single_choice",
+      "question": "有一条重要驾驶规则,可以适用到所有的紧急情况,这条规则是?",
+      "options": {
+        "A": "慢慢放低速度",
+        "B": "不要紧张",
+        "C": "第一个反应是最好的反应",
+        "D": "立刻刹车"
+      },
+      "answer": "B"
     },
     {
       "id": 72,
-      "question": "What does 'right-of-way' mean?",
-      "options": [
-        "The legal right to always proceed without stopping",
-        "The privilege of immediate use of the roadway, which must be yielded when required by law",
-        "The right to park on any road",
-        "The right to drive in any lane"
-      ],
-      "answerIndex": 1,
-      "explanation": "Right-of-way is the privilege of having immediate use of a portion of a roadway. No driver is ever granted an absolute right-of-way — it must be yielded in certain situations.",
-      "tags": ["right-of-way", "basics"],
-      "source": "NY DMV Manual – Right-of-Way"
+      "type": "single_choice",
+      "question": "如果不用安全皮带,受伤的危险程度如何?",
+      "options": {
+        "A": "占9成以上",
+        "B": "占三成以上",
+        "C": "和中等程度下受伤的程度一样",
+        "D": "占五成以上"
+      },
+      "answer": "D"
     },
     {
       "id": 73,
-      "question": "When should you use your horn?",
-      "options": [
-        "To express frustration at other drivers",
-        "To greet friends",
-        "Only when necessary to avoid a collision or warn others of danger",
-        "Whenever someone cuts you off"
-      ],
-      "answerIndex": 2,
-      "explanation": "The horn should be used only to warn others and avoid danger, not to express anger or greet friends. Unnecessary horn use can be illegal in some areas and contributes to road rage.",
-      "tags": ["horn use", "safety"],
-      "source": "NY DMV Manual – Sharing the Road"
+      "type": "single_choice",
+      "question": "如何使晚间驾车和白天一样安全?",
+      "options": {
+        "A": "在车头灯照程内驾车",
+        "B": "在交叉路口注意其他车辆",
+        "C": "一直用你的高灯",
+        "D": "随时准备立即刹车"
+      },
+      "answer": "A"
     },
     {
       "id": 74,
-      "question": "You are driving at night. An approaching vehicle has its high beams on. You should:",
-      "options": [
-        "Flash your high beams repeatedly to signal the other driver",
-        "Turn on your own high beams",
-        "Look toward the right edge of the road ahead and avoid staring at the lights",
-        "Stop until the vehicle passes"
-      ],
-      "answerIndex": 2,
-      "explanation": "Do not stare at oncoming headlights. Look toward the right edge of the road to help avoid being blinded. Do not flash your own high beams.",
-      "tags": ["night driving", "high beams", "glare"],
-      "source": "NY DMV Manual – Night Driving"
+      "type": "single_choice",
+      "question": "一般说来,如果交叉路没有交通控制设备,那一辆车有权先行?",
+      "options": {
+        "A": "正在右转弯的车子",
+        "B": "相反方向来的车子",
+        "C": "在你右边的车子",
+        "D": "在你左边的车子"
+      },
+      "answer": "C"
     },
     {
       "id": 75,
-      "question": "High-beam headlights must be dimmed within how many feet of an oncoming vehicle?",
-      "options": ["200 feet", "300 feet", "500 feet", "1,000 feet"],
-      "answerIndex": 2,
-      "explanation": "In New York, you must dim your high beams when you are within 500 feet of an oncoming vehicle, and within 200 feet when following another vehicle.",
-      "tags": ["headlights", "high beams", "night driving"],
-      "source": "NY DMV Manual – Headlights"
+      "type": "single_choice",
+      "question": "如果你牵涉在一件车祸内,你必须在几天之内向公路局提出书面报告?",
+      "options": {
+        "A": "48小时以内",
+        "B": "24小时以内",
+        "C": "五天以内",
+        "D": "十天以内"
+      },
+      "answer": "D"
     },
+
     {
       "id": 76,
-      "question": "When following another vehicle at night, you must switch to low beams within how many feet?",
-      "options": ["100 feet", "200 feet", "300 feet", "500 feet"],
-      "answerIndex": 1,
-      "explanation": "When following another vehicle, switch to low beams within 200 feet to avoid blinding the driver ahead through their mirrors.",
-      "tags": ["headlights", "high beams", "following"],
-      "source": "NY DMV Manual – Headlights"
+      "type": "single_choice",
+      "question": "在大雪期间“雪季危险街道”标志的意义何在?",
+      "options": {
+        "A": "只有负有紧急任务的车辆才能在此街道行驶",
+        "B": "一切车辆需要装置链条或防雪轮胎才能行驶的街道",
+        "C": "只有警车可行驶的街道",
+        "D": "在雪铲清以前一切车辆不准在此街道行驶"
+      },
+      "answer": "B"
     },
     {
       "id": 77,
-      "question": "A pennant-shaped sign is always placed:",
-      "options": ["On the right side of the road", "On the left side of the road", "Above the road on a gantry", "At intersections only"],
-      "answerIndex": 1,
-      "explanation": "The no-passing zone pennant sign is always placed on the LEFT side of the road facing the driver to warn that passing is prohibited ahead.",
-      "tags": ["signs", "no passing", "placement"],
-      "source": "NY DMV Manual – Road Signs"
+      "type": "single_choice",
+      "question": "在纽约除较高较低的速度别有告示外,最高速度限制为多少?",
+      "options": {
+        "A": "每小时60里",
+        "B": "每小时45里",
+        "C": "每小时55里",
+        "D": "每小时65里"
+      },
+      "answer": "C"
     },
     {
       "id": 78,
-      "question": "What should you do before backing up your vehicle?",
-      "options": [
-        "Honk and immediately reverse",
-        "Turn on hazard lights and proceed",
-        "Turn your body and look over your right shoulder; also check all mirrors for obstacles",
-        "Check only the rearview mirror"
-      ],
-      "answerIndex": 2,
-      "explanation": "Before backing up, turn your body and look over your right shoulder out the rear window. Also check all mirrors and be aware of pedestrians, cyclists, and small objects behind you.",
-      "tags": ["backing up", "safety"],
-      "source": "NY DMV Manual – Backing Up"
+      "type": "single_choice",
+      "question": "当你驶近交叉路口,交通灯由绿色转成黄色,你该如何?",
+      "options": {
+        "A": "红灯快亮了,准备停车",
+        "B": "在红灯亮前,加快速度通过交叉路口",
+        "C": "立刻停止",
+        "D": "停在交叉路口中间等候绿灯"
+      },
+      "answer": "A"
     },
     {
       "id": 79,
-      "question": "Orange-colored road signs are used to indicate:",
-      "options": [
-        "School zones",
-        "Work zones and construction areas",
-        "Tourist attractions",
-        "Recreational areas"
-      ],
-      "answerIndex": 1,
-      "explanation": "Orange signs are used exclusively for construction and work zones. They indicate temporary conditions and changed traffic patterns.",
-      "tags": ["signs", "construction zone", "colors"],
-      "source": "NY DMV Manual – Road Signs"
+      "type": "single_choice",
+      "question": "在你转弯前,离开多少呎就应该打讯号灯?",
+      "options": {
+        "A": "最少二百呎",
+        "B": "最少一百呎",
+        "C": "最少三百呎",
+        "D": "最少五百呎"
+      },
+      "answer": "B"
     },
     {
       "id": 80,
-      "question": "Blue road signs indicate:",
-      "options": [
-        "Regulatory information you must obey",
-        "Warning of upcoming hazards",
-        "Services such as gas, food, lodging, and hospitals",
-        "Recreational and scenic areas"
-      ],
-      "answerIndex": 2,
-      "explanation": "Blue signs provide information about motorist services, such as gas stations, food, lodging, hospitals, and tourist information centers.",
-      "tags": ["signs", "colors", "services"],
-      "source": "NY DMV Manual – Road Signs"
+      "type": "single_choice",
+      "question": "公路中央有条白色单线,意义如何?",
+      "options": {
+        "A": "只有在你超车时才能超过此线",
+        "B": "如果交通情况许可,你可超越此线",
+        "C": "只有你转进私人车路,方可超线",
+        "D": "在任何时间你都不得超线"
+      },
+      "answer": "B"
+    },
+
+    {
+      "id": 81,
+      "type": "single_choice",
+      "question": "当你在交叉路口内,这时绿灯亮着,对面来的车辆很多,如果你想左转弯,则要如何?",
+      "options": {
+        "A": "一直行驶,到另一个街口转弯",
+        "B": "行驶路权",
+        "C": "停在横断步道上面,等到车辆走完时再转弯",
+        "D": "在交叉路口中央等待,到车辆走完时再转弯"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 82,
+      "type": "single_choice",
+      "question": "轮胎的花纹深度最少是多少?",
+      "options": {
+        "A": "最少3/32寸",
+        "B": "最少3/10寸",
+        "C": "最少2/32寸",
+        "D": "最少1/32寸"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 83,
+      "type": "single_choice",
+      "question": "在晚上,你如何减少对面车辆车灯射来的光度?",
+      "options": {
+        "A": "看方向盘的下缘",
+        "B": "两眼转看你的车路近处右边沿缘",
+        "C": "戴蓝色的眼镜",
+        "D": "打开你车前灯的高灯,来反射对方的灯光"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 84,
+      "type": "single_choice",
+      "question": "合并车道意义为何?",
+      "options": {
+        "A": "在交叉路口,有另一车路横切你的车路",
+        "B": "一条车道的路和两条车道的路合并",
+        "C": "两条车道的路合并成一条车道的路",
+        "D": "在交叉路口所有的车辆必须向右转弯"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 85,
+      "type": "single_choice",
+      "question": "一个钻石图形的标记表示什么意思?",
+      "options": {
+        "A": "你正行驶近铁路平交道",
+        "B": "在横断步道前完全停止",
+        "C": "让出路权",
+        "D": "道路常有危险"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 86,
+      "type": "single_choice",
+      "question": "行驶中,刹车板突然下沉,如何应变?",
+      "options": {
+        "A": "断续踩压刹车,让它恢复弹性",
+        "B": "停止驾驶",
+        "C": "转至空档,熄灭引擎",
+        "D": "用脚尖把刹车板挑起"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 87,
+      "type": "single_choice",
+      "question": "摩托车在夜间行驶应?",
+      "options": {
+        "A": "前后装红色灯",
+        "B": "前后装反光片",
+        "C": "开车头灯",
+        "D": "不必要开灯"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 88,
+      "type": "single_choice",
+      "question": "路滑时应如何停车?",
+      "options": {
+        "A": "不用刹车转用空波",
+        "B": "不用刹车转用低波",
+        "C": "持续紧踏刹车",
+        "D": "断续轻踏刹车,以便顺利停车"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 89,
+      "type": "single_choice",
+      "question": "在滑溜路面,应如何驾驶?",
+      "options": {
+        "A": "用低波行车,轻踏油门",
+        "B": "用前进波,轻轻加油",
+        "C": "紧握方向盘",
+        "D": "用前进波,加油比平时要多"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 90,
+      "type": "single_choice",
+      "question": "当你行驶抵一交通被阻的交叉路口应当?",
+      "options": {
+        "A": "慢慢行驶直到前面交通逐渐向前移动",
+        "B": "停在交叉路口外,直到你可以通过",
+        "C": "尽量靠近其他车辆",
+        "D": "按喇叭,使前面的车向前开动"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 91,
+      "type": "single_choice",
+      "question": "如果驾驶执照更改地址,应十日之内通知?",
+      "options": {
+        "A": "警察局",
+        "B": "交通局",
+        "C": "保险公司",
+        "D": "选举部"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 92,
+      "type": "single_choice",
+      "question": "在汽车检查法律下每辆车必需?",
+      "options": {
+        "A": "每二年检查一次",
+        "B": "每月检查一次",
+        "C": "每一年检查一次",
+        "D": "每季检查一次"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 93,
+      "type": "single_choice",
+      "question": "何时须要戴安全带?",
+      "options": {
+        "A": "当开长途车时",
+        "B": "在任何情况下,驾车者和乘客",
+        "C": "当在高速公路上开车时",
+        "D": "当有危险时"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 94,
+      "type": "single_choice",
+      "question": "你错过高速公路出口,应当?",
+      "options": {
+        "A": "开至下一个出口离开此公路",
+        "B": "在下一个服务站,做U型转弯",
+        "C": "在最近的紧急转弯区,做U型转弯",
+        "D": "将车开至路边,再倒退至公路出口"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 95,
+      "type": "single_choice",
+      "question": "当你想超车时,应当?",
+      "options": {
+        "A": "先打灯号,当安全时再通过",
+        "B": "尽量靠近前车,以减少超车时间",
+        "C": "等待其他驾驶者的信号",
+        "D": "尽快换一车道,以使其他驾驶者看见你"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 96,
+      "type": "single_choice",
+      "question": "驾车安全速度是?",
+      "options": {
+        "A": "视当时的天气以及路面的情况而定",
+        "B": "视驾驶者的技术而定",
+        "C": "标示的限制车速",
+        "D": "低于标示的限制车速"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 97,
+      "type": "single_choice",
+      "question": "当超车后,何时可以转回右线?",
+      "options": {
+        "A": "当打开转弯灯后",
+        "B": "看到其他来车的头灯",
+        "C": "打开车头灯后",
+        "D": "当从倒后镜中,看见后面汽车的保险杠时"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 98,
+      "type": "single_choice",
+      "question": "当你等在交叉路口中想左转时,应当?",
+      "options": {
+        "A": "若有车子挡住,则绕其车后而过",
+        "B": "打灯号,并将车轮打直",
+        "C": "闪你的车头灯,以便来车让你先过",
+        "D": "打灯号,将车轮转左"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 99,
+      "type": "single_choice",
+      "question": "当你已经由双向道左转至单向道,你的车应该?",
+      "options": {
+        "A": "根据交通情况而决定在右线车道或左线车道",
+        "B": "在街道的右线车道",
+        "C": "在街道的左线车道",
+        "D": "在两线车道之间的街道中心"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 100,
+      "type": "single_choice",
+      "question": "在长途驾车时,以何种方法防止困倦?",
+      "options": {
+        "A": "开车时,眼睛不时移动向路边张望",
+        "B": "将车速减低,可反应较好",
+        "C": "将车的收音机打开",
+        "D": "定时停车休息"
+      },
+      "answer": "D"
+    },
+
+    {
+      "id": 101,
+      "type": "single_choice",
+      "question": "下面那一项有关血液含量的解说是  的?",
+      "options": {
+        "A": "含酒量0.05%或以上表示你的驾驶能力受到伤害",
+        "B": "血液含酒量即是你的血液中所含酒精的比率",
+        "C": "血液含酒量为0.10%,即是所谓“醉”",
+        "D": "所有的三条解说都是正确"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 102,
+      "type": "single_choice",
+      "question": "如饮一杯12 OZ.的啤酒,血液含酒量是0.02%,需要多长时间才能由你的体内排除?",
+      "options": {
+        "A": "五小时",
+        "B": "一小时",
+        "C": "五分钟",
+        "D": "一天"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 103,
+      "type": "single_choice",
+      "question": "酒精对你的驾驶能力有多大的影响?",
+      "options": {
+        "A": "减低控制力,但不妨害判断力",
+        "B": "饮酒太多,妨害视力",
+        "C": "反应太快,因而妨害判断力",
+        "D": "反应迟钝,妨害视力及判断力"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 104,
+      "type": "single_choice",
+      "question": "酒醉驾车,该受何种处罚?",
+      "options": {
+        "A": "驾驶执照停止使用六十天",
+        "B": "驾驶执照停止使用三十天",
+        "C": "驾驶执照停止使用,重新参加考试并得合格",
+        "D": "驾驶执照吊销"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 105,
+      "type": "single_choice",
+      "question": "身体内负责氧化(排除)酒精的器官是?",
+      "options": {
+        "A": "脑部",
+        "B": "胰脏",
+        "C": "肾脏",
+        "D": "肝脏"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 106,
+      "type": "single_choice",
+      "question": "减低血液含酒量或使酒醉的人清醒,最有效的方法?",
+      "options": {
+        "A": "冲冷水浴",
+        "B": "喝热茶或咖啡",
+        "C": "睡觉及长时间休息",
+        "D": "出外运动呼吸新鲜的空气"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 107,
+      "type": "single_choice",
+      "question": "“呼吸分析器”是用来?",
+      "options": {
+        "A": "测量人体内血液中的含酒量的工具",
+        "B": "使醉昏的人复醒的“人工呼吸器”",
+        "C": "一种吸食大麻的违法器具",
+        "D": "上述各点皆不是"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 108,
+      "type": "single_choice",
+      "question": "因醉酒引起的交通意外死亡率占?",
+      "options": {
+        "A": "50%",
+        "B": "20%",
+        "C": "90%",
+        "D": "30%"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 109,
+      "type": "single_choice",
+      "question": "如何可以减慢人体吸收酒精的速率?",
+      "options": {
+        "A": "先饮酒,后进食",
+        "B": "先进食,后饮酒",
+        "C": "运用“两秒钟规则”",
+        "D": "上述各点都不是"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 110,
+      "type": "single_choice",
+      "question": "驾驶能力受“损伤”和“醉”的法律规定,是根据人体的?",
+      "options": {
+        "A": "对酒精的忍受力",
+        "B": "血液中酒精含量的比率",
+        "C": "血液中对酒精的容忍量",
+        "D": "上述各点都不是"
+      },
+      "answer": "B"
+    },
+
+    {
+      "id": 111,
+      "type": "single_choice",
+      "question": "赴宴喝酒后,如何保证行车安全?",
+      "options": {
+        "A": "开车前半小时不喝酒",
+        "B": "开车前先喝咖啡",
+        "C": "开车前先冲个冷水浴",
+        "D": "坐没饮酒的朋友车回家"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 112,
+      "type": "single_choice",
+      "question": "一位司机因病服药应?",
+      "options": {
+        "A": "在驾车前读药物的说明",
+        "B": "只在白天驾驶",
+        "C": "改为喝酒",
+        "D": "断续驾驶"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 113,
+      "type": "single_choice",
+      "question": "下面那一样在喝酒后不会发生?",
+      "options": {
+        "A": "你对速度和距离的判断力不正确",
+        "B": "你的反应迟钝下来",
+        "C": "你会镇静而集中注意力",
+        "D": "你比较不机警敏捷"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 114,
+      "type": "single_choice",
+      "question": "如果你拒绝接受化学测验(呼吸或血液)?",
+      "options": {
+        "A": "你不会因酒醉驾驶而逮捕",
+        "B": "则无法找到你醉酒驾驶有罪的证据",
+        "C": "你的驾照将被取消",
+        "D": "三种说法都不正确"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 115,
+      "type": "single_choice",
+      "question": "酒精对你的驾驶技术及判断力有何影响?",
+      "options": {
+        "A": "对两者皆无影响",
+        "B": "对两者有坏的影响",
+        "C": "对判断力没有影响,但影响驾驶技术",
+        "D": "对驾驶技术帮助,但影响判断力"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 116,
+      "type": "single_choice",
+      "question": "酒精的效力受下列何种因素的影响?",
+      "options": {
+        "A": "每个人的体重",
+        "B": "喝每杯酒之间,休息时间的多少",
+        "C": "胃中存留食物的多少",
+        "D": "以上三种皆有"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 117,
+      "type": "single_choice",
+      "question": "血液含酒精量多数取决于你的饮酒量及?",
+      "options": {
+        "A": "喝酒后你的运动量",
+        "B": "你的年纪",
+        "C": "你的体重",
+        "D": "饮酒前进食的多少"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 118,
+      "type": "single_choice",
+      "question": "酒精以及药物同时在你血液中会产生何种后果?",
+      "options": {
+        "A": "减轻酒精的反应",
+        "B": "对驾驶能力不生影响",
+        "C": "减轻药物的反应",
+        "D": "增强二者的反应"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 119,
+      "type": "single_choice",
+      "question": "一杯12 OZ的啤酒,1 OZ的80纯度的烈酒,4 OZ 24纯度的香槟酒,那一种含酒精量高?",
+      "options": {
+        "A": "烈酒含酒精量最多",
+        "B": "三者一样多",
+        "C": "香槟酒含酒精量最少",
+        "D": "啤酒含酒精量最少"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 120,
+      "type": "single_choice",
+      "question": "烈酒对什么有影响?",
+      "options": {
+        "A": "所有以下三种情况",
+        "B": "反应的时间",
+        "C": "对距离的判断",
+        "D": "对车头灯照射后的视力恢复"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 121,
+      "type": "single_choice",
+      "question": "醉酒或吃药后驾驶会有何种后果?",
+      "options": {
+        "A": "罚款",
+        "B": "坐监",
+        "C": "三者皆会",
+        "D": "吊销驾照"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 122,
+      "type": "single_choice",
+      "question": "所谓化学测试是用来测量?",
+      "options": {
+        "A": "血液中的含酒量",
+        "B": "驾驶能力",
+        "C": "视力",
+        "D": "反应时间"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 123,
+      "type": "single_choice",
+      "question": "饮醉酒驾车的人是?",
+      "options": {
+        "A": "每一个驾驶者的麻烦",
+        "B": "在纽约州无此问题",
+        "C": "只属警察强制性的问题",
+        "D": "只属于那些喝了酒的人的麻烦"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 124,
+      "type": "single_choice",
+      "question": "那一项对血液含酒量的解说是不正确的?",
+      "options": {
+        "A": "判定一个人醉酒并不一定需要做BAC的化学测验",
+        "B": "一个人的血液含酒量并不会因体能运动而减低",
+        "C": "喝酒后,呼吸新鲜空气,喝咖啡或进食会减低血液中的含酒量",
+        "D": "“呼吸分析器”是用来测验一个人的血液含酒量"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 125,
+      "type": "single_choice",
+      "question": "饮酒后喝咖啡?",
+      "options": {
+        "A": "增加血液含酒量",
+        "B": "对血液含酒量无影响",
+        "C": "减少血液含酒量",
+        "D": "解除酒精的影响力"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 126,
+      "type": "single_choice",
+      "question": "在纽约州,血液含酒量多少视为“醉”?",
+      "options": {
+        "A": "0.05%",
+        "B": "0.08%",
+        "C": "0.30%",
+        "D": "0.20%"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 127,
+      "type": "single_choice",
+      "question": "饮酒开车是?",
+      "options": {
+        "A": "如果只饮少许的酒仍安全",
+        "B": "交通安全的小问题",
+        "C": "交通安全的最大问题",
+        "D": "只是对饮酒驾车者有危险"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 128,
+      "type": "single_choice",
+      "question": "除酒精外,还有什么药物会影响你的驾驶能力?",
+      "options": {
+        "A": "过敏药",
+        "B": "大麻(烟叶)",
+        "C": "伤风药(凉药)",
+        "D": "以上三个皆会"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 129,
+      "type": "single_choice",
+      "question": "喝酒的同时,又吃医生开方的药会有什么反应?",
+      "options": {
+        "A": "酒精会帮助药力治疗伤风",
+        "B": "二者化合会加强酒精的反应",
+        "C": "没有反应,因二者不同性质",
+        "D": "药物会减低酒精的反应"
+      },
+      "answer": "B"
     }
   ]
 }
