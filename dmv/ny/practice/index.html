@@ -15,10 +15,22 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <div class="header-top">
+    <div class="header-top" style="position:relative;">
       <a class="logo-link" href="/index.html" title="返回 OpenAA 首页">
         <img class="logo-img" src="/logo.png" alt="OpenAA Logo" />
       </a>
+
+      <!-- ✅ 右上角：返回首页按钮 -->
+      <a href="/index.html"
+         title="返回首页"
+         aria-label="返回首页"
+         style="position:absolute;right:0;top:0;display:inline-flex;align-items:center;gap:6px;
+                padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.35);
+                background:rgba(0,0,0,.12);color:#fff;text-decoration:none;font-size:.85rem;
+                line-height:1;backdrop-filter:saturate(160%) blur(8px);">
+        ⬅️ 首页
+      </a>
+
       <div class="header-subtitle">
         纽约 DMV 笔试练习<br />
         <span style="font-size:.7rem;opacity:.8">New York 驾照学习指南（非官方）</span>
