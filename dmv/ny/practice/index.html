@@ -115,10 +115,23 @@
     🚀 开始答题
   </button>
 
-  <!-- ✅ 新增：查看模式入口 -->
-  <a class="btn btn-outline btn-block mt-8" href="view.html" style="margin-top:10px;">
-    📚 查看题库（含答案）
-  </a>
+  <!-- ✅ 入口按钮区 -->
+  <div style="margin-top:10px;display:grid;gap:10px;">
+    <!-- 查看模式 -->
+    <a class="btn btn-outline btn-block" href="view.html">
+      📚 查看题库（含答案）
+    </a>
+
+    <!-- 分享 -->
+    <button class="btn btn-outline btn-block" id="shareBtn" type="button">
+      📤 分享本页面
+    </button>
+
+    <!-- 进入仓库根 nav/dmv.html -->
+    <a class="btn btn-ghost btn-block" href="../../nav/dmv.html">
+      🧭 DMV 导航
+    </a>
+  </div>
 
   <p class="section-label" style="margin-top:22px;">📚 覆盖内容</p>
   <div class="card" style="padding:14px 20px;">
@@ -142,5 +155,37 @@
 </footer>
 
 <script src="assets/app.js"></script>
+
+<!-- ✅ 分享逻辑：优先系统分享；否则复制链接 -->
+<script>
+  (function () {
+    const btn = document.getElementById('shareBtn');
+    if (!btn) return;
+
+    btn.addEventListener('click', async () => {
+      const url = window.location.href;
+      const text = `OpenAA 纽约 DMV 笔试模拟（练习/考试/题库查看）：${url}`;
+
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: document.title, text, url });
+          return;
+        } catch (e) {
+          // 用户取消分享也会抛异常，忽略即可
+        }
+      }
+
+      try {
+        await navigator.clipboard.writeText(url);
+        const old = btn.textContent;
+        btn.textContent = '✅ 已复制链接';
+        setTimeout(() => btn.textContent = old, 1500);
+      } catch (e) {
+        alert('复制失败，请手动复制：\n' + url);
+      }
+    });
+  })();
+</script>
+
 </body>
 </html>
