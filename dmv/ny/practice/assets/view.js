@@ -36,7 +36,6 @@ function renderList(container, questions, keyword, showAnswers) {
 
     const opts = (q.options || []).map((opt, i) => {
       const isCorrect = i === ansIdx;
-      // 如果 showAnswers=false，就不高亮正确项
       const style = (showAnswers && isCorrect) ? ' style="font-weight:800;color:var(--correct)"' : '';
       return `<li${style}>${letters[i]}. ${esc(opt)}</li>`;
     }).join('');
@@ -45,15 +44,20 @@ function renderList(container, questions, keyword, showAnswers) {
     const m = /图\s*[<〈《]\s*(\d+)\s*[>〉》]/.exec(q.question || '');
     const imgNum = m ? parseInt(m[1], 10) : null;
 
-    // ✅ 图标按钮（事件委托在下面绑定）
+    // ✅ 看图按钮（卡片式）
     const imgBtn = imgNum
-      ? `<button class="qa-img-btn" type="button" data-imgnum="${imgNum}" title="查看图 ${imgNum}">🖼</button>`
+      ? `
+        <button class="qa-img-card" type="button" data-imgnum="${imgNum}" title="查看图 ${imgNum}">
+          <span class="qa-img-card-icon">🖼</span>
+          <span class="qa-img-card-text">查看图 ${imgNum}</span>
+        </button>
+      `
       : '';
 
     return `
       <div class="qa-item" data-qid="${q.id ?? (idx + 1)}">
         <div class="qa-q">
-          ${q.id ?? (idx + 1)}. ${esc(q.question)}
+          <span class="qa-q-text">${q.id ?? (idx + 1)}. ${esc(q.question)}</span>
           ${imgBtn}
         </div>
 
@@ -99,21 +103,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (!modal || !img || !back) return;
 
-    // 单张图：assets/signs/1.png ... 16.png
     img.onerror = null;
     img.src = `assets/signs/${num}.png`;
-    img.onerror = () => {
-      alert(`图片不存在：图 ${num}。请确认 assets/signs/ 里有对应图片文件。`);
-    };
+    img.onerror = () => alert(`图片不存在：图 ${num}。请确认 assets/signs/ 里有对应图片文件。`);
 
     if (title) title.textContent = `图示（图 ${num}）`;
 
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 
-    const onKey = (ev) => {
-      if (ev.key === 'Escape') closeImageModal();
-    };
+    const onKey = (ev) => { if (ev.key === 'Escape') closeImageModal(); };
     modal._esc = onKey;
     document.addEventListener('keydown', onKey);
 
@@ -139,10 +138,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     metaLine.textContent = `共 ${questions.length} 题（版本：${data._meta?.version || '—'}）`;
 
     doRender();
-
     filterInput.addEventListener('input', () => doRender());
 
-    // 全局显示/隐藏
     if (toggleAnswersBtn) {
       toggleAnswersBtn.addEventListener('click', () => {
         showAnswers = !showAnswers;
@@ -150,7 +147,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     }
 
-    // 事件委托：点击按钮
     qaList.addEventListener('click', (e) => {
       // 1) 单题答案显示/隐藏
       const toggleBtn = e.target.closest('.qa-toggle-one');
@@ -163,8 +159,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
       }
 
-      // 2) 查看图
-      const imgBtn = e.target.closest('.qa-img-btn');
+      // 2) 查看图（卡片按钮）
+      const imgBtn = e.target.closest('.qa-img-card');
       if (imgBtn) {
         const num = parseInt(imgBtn.dataset.imgnum, 10);
         if (Number.isFinite(num)) openImageModal(num);
