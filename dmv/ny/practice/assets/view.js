@@ -40,11 +40,9 @@ function renderList(container, questions, keyword, showAnswers) {
       return `<li${style}>${letters[i]}. ${esc(opt)}</li>`;
     }).join('');
 
-    // ✅ 检测题干里的 “图<数字>”
     const m = /图\s*[<〈《]\s*(\d+)\s*[>〉》]/.exec(q.question || '');
     const imgNum = m ? parseInt(m[1], 10) : null;
 
-    // ✅ 看图按钮（卡片式）
     const imgBtn = imgNum
       ? `
         <button class="qa-img-card" type="button" data-imgnum="${imgNum}" title="查看图 ${imgNum}">
@@ -148,7 +146,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     qaList.addEventListener('click', (e) => {
-      // 1) 单题答案显示/隐藏
       const toggleBtn = e.target.closest('.qa-toggle-one');
       if (toggleBtn) {
         const item = toggleBtn.closest('.qa-item');
@@ -159,7 +156,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
       }
 
-      // 2) 查看图（卡片按钮）
       const imgBtn = e.target.closest('.qa-img-card');
       if (imgBtn) {
         const num = parseInt(imgBtn.dataset.imgnum, 10);
