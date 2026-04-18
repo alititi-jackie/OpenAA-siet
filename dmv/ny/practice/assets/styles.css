@@ -757,3 +757,37 @@ img { display: block; max-width: 100%; }
     padding: 10px 18px;
   }
 }
+/* ---------- Index page (desktop) tuning ---------- */
+@media (min-width: 768px) {
+  /* 首页顶部大蓝卡：缩小高度与字体（覆盖 index.html 内联 style） */
+  body > main.page-wrap > .card:first-child {
+    padding: 18px 18px !important;
+  }
+  body > main.page-wrap > .card:first-child > div:first-child {
+    font-size: 1.6rem !important;   /* 🚗 图标 */
+    margin-bottom: 6px !important;
+  }
+  body > main.page-wrap > .card:first-child h1 {
+    font-size: 1.1rem !important;
+    margin-bottom: 4px !important;
+  }
+  body > main.page-wrap > .card:first-child p {
+    font-size: .85rem !important;
+    line-height: 1.45 !important;
+  }
+
+  /* 模式选择卡片更紧凑 */
+  .mode-card {
+    padding: 14px 12px;
+  }
+  .mode-card .mode-icon {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+  }
+
+  /* 让内容区在电脑端稍微更宽一点 */
+  .page-wrap,
+  .header-inner {
+    max-width: 920px;
+  }
+}
