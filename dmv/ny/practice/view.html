@@ -10,27 +10,112 @@
   <style>
     .qa-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
 
-    /* 题干行 + 右侧图标按钮 */
-    .qa-q { font-weight: 800; margin-bottom: 10px; display:flex; align-items:center; gap:8px; }
-    .qa-img-btn{
-      margin-left: auto;
-      border: 2px solid var(--blue);
-      background: #fff;
-      color: var(--blue);
+    /* ===== 顶部工具条：让按钮在蓝色背景上“非常清楚” ===== */
+    .toolbar { display:flex; gap:10px; flex-wrap: wrap; align-items:center; }
+    .toolbar .form-input { flex: 1; min-width: 240px; }
+
+    /* 让工具条按钮统一更大、更清晰 */
+    .toolbar .toolbar-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      padding: 10px 16px;
       border-radius: 999px;
-      padding: 4px 10px;
+
+      font-size: .92rem;
+      font-weight: 900;
+
       cursor: pointer;
-      font-size: .85rem;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+
+      border: 2px solid rgba(255,255,255,.95);
+      background: #ffffff;          /* 白底：对比度最高 */
+      color: #0b2b5a;               /* 深蓝字 */
+      box-shadow: 0 6px 18px rgba(0,0,0,.20);
+      text-decoration: none;
+
+      transition: transform .1s, opacity .15s, box-shadow .15s;
+      white-space: nowrap;
+    }
+    .toolbar .toolbar-btn:hover{
+      opacity: .98;
+      box-shadow: 0 8px 24px rgba(0,0,0,.24);
+    }
+    .toolbar .toolbar-btn:active{ transform: scale(.98); }
+
+    /* “显示答案”做成更像主操作按钮（蓝色实心） */
+    .toolbar .toolbar-btn-primary{
+      background: rgba(255,255,255,.18);
+      color: #fff;
+      border-color: rgba(255,255,255,.95);
+      backdrop-filter: blur(6px);
+    }
+    .toolbar .toolbar-btn-primary:hover{
+      background: rgba(255,255,255,.24);
+    }
+
+    /* 小屏：按钮变成两列，方便点 */
+    @media (max-width: 520px){
+      .toolbar .form-input{ min-width: 100%; }
+      .toolbar .toolbar-btn{ flex: 1; }
+    }
+
+    /* ===== 题干行 + 右侧看图卡片按钮 ===== */
+    .qa-q{
+      font-weight: 800;
+      margin-bottom: 10px;
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+    }
+    .qa-q-text{ flex: 1; min-width: 0; }
+
+    .qa-img-card{
+      margin-left: auto;
+      flex: 0 0 auto;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 10px 14px;
+      border-radius: 14px;
+
+      border: 2px solid var(--border);
+      background: #fff;
+      color: var(--text);
+
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+
+      transition: border-color .15s, box-shadow .15s, background .15s, transform .1s;
+    }
+    .qa-img-card:hover{
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(0,102,204,.12);
+      background: rgba(0,102,204,.04);
+    }
+    .qa-img-card:active{ transform: scale(.98); }
+
+    .qa-img-card-icon{
+      font-size: 1.1rem;
       line-height: 1;
     }
-    .qa-img-btn:hover { background: rgba(0,102,204,.07); }
+    .qa-img-card-text{
+      font-size: .88rem;
+      font-weight: 900;
+      white-space: nowrap;
+      color: var(--blue);
+    }
 
     .qa-opts { margin: 0; padding-left: 18px; }
     .qa-opts li { margin: 6px 0; }
     .qa-ans { margin-top: 10px; font-weight: 800; color: var(--correct); }
     .qa-muted { color: var(--text-sub); font-size: .85rem; margin-top: 6px; }
-    .toolbar { display:flex; gap:10px; flex-wrap: wrap; align-items:center; }
-    .toolbar .form-input { flex: 1; min-width: 180px; }
   </style>
 </head>
 <body>
@@ -41,13 +126,15 @@
       <a class="logo-link" href="../index.html" title="OpenAA 首页">
         <img class="logo-img" src="../logo.png" alt="OpenAA Logo" />
       </a>
-      <div class="header-subtitle">查看题库（含答案）</div>
+      <div class="header-subtitle">查看题库��含答案）</div>
     </div>
 
     <div class="toolbar">
       <input class="form-input" id="filterInput" type="search" placeholder="筛选关键词（可选）" autocomplete="off" />
-      <button class="btn btn-outline btn-sm" id="toggleAnswersBtn" type="button">👁 显示答案</button>
-      <a class="btn btn-ghost btn-sm" href="index.html">← 返回</a>
+
+      <!-- ✅ 更清楚的按钮样式（不再依赖 btn-outline/btn-ghost） -->
+      <button class="toolbar-btn toolbar-btn-primary" id="toggleAnswersBtn" type="button">👁 显示答案</button>
+      <a class="toolbar-btn" href="index.html">← 返回</a>
     </div>
   </div>
 </header>
