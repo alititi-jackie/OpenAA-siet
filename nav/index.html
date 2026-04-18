@@ -5,7 +5,7 @@
   <title>OpenAA 精品域名展示</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="OpenAA 精品域名展示页，适合品牌、创业、跨境电商、导航站与投资收藏。" />
-  <meta name="keywords" content="OpenAA, 域名, 精品域名, 品牌域名, 域名出售, 域名展示">
+  <meta name="keywords" content="OpenAA, 域名, 精品域名, 品牌域名, 域名   售, 域名展示">
 
   <!-- Canonical / Alternate -->
   <link rel="canonical" href="https://openaa.com/nav/">
@@ -26,7 +26,7 @@
   <meta name="twitter:description" content="OpenAA 精选精品域名：适合品牌、创业、跨境电商与投资收藏。" />
   <meta name="twitter:image" content="https://openaa.com/logo.png" />
 
-  <!-- Favicons (按你给定的目录结构) -->
+  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
@@ -36,396 +36,601 @@
   <meta name="msapplication-TileColor" content="#2b5797">
 
   <style>
-    :root {
-      --brand-blue-dark: #0b3c5d;
-      --brand-blue: #0f4c75;
-      --brand-blue-light: #1b6ca8;
+    :root{
+      --bg0:#060B14;
+      --bg1:#0A1430;
+      --card: rgba(255,255,255,.78);
+      --card2: rgba(255,255,255,.92);
 
-      --bg-main: #f6f8fb;
-      --card-bg: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --muted2:#64748b;
 
-      --text-main: #1f2937;
-      --text-sub: #6b7280;
+      --brand:#0f4c75;
+      --brand2:#1b6ca8;
+      --accent:#38bdf8;
+
+      --border: rgba(15,76,117,.12);
+      --shadow: 0 12px 35px rgba(2,6,23,.16);
+      --shadow2: 0 18px 50px rgba(2,6,23,.20);
+
+      --radius: 16px;
     }
 
-    /* 基础 */
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial;
-      background: var(--bg-main);
-      color: var(--text-main);
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      line-height: 1.5;
+      background:
+        radial-gradient(900px 500px at 18% 12%, rgba(56,189,248,.28), transparent 55%),
+        radial-gradient(900px 500px at 85% 20%, rgba(27,108,168,.22), transparent 55%),
+        radial-gradient(700px 420px at 60% 92%, rgba(15,76,117,.20), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
     }
 
-    /* 顶部 */
-    .header {
-      background: linear-gradient(135deg, var(--brand-blue-dark), var(--brand-blue));
-      color: #fff;
-      padding: 32px 20px;
-    }
-    .header-inner {
+    a{ color:inherit; }
+
+    /* Layout */
+    .wrap{
       max-width: 1200px;
-      margin: auto;
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      margin: 0 auto;
+      padding: 20px 18px 56px;
     }
-    .header h1 {
-      margin: 0;
-      font-size: 26px;
+
+    /* Top Nav (OpenAA-like) */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.10);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .topbar-inner{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 18px;
+      display:flex;
+      align-items:center;
+      gap: 14px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .brand-mark{
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background:
+        radial-gradient(16px 16px at 30% 30%, rgba(255,255,255,.75), transparent 60%),
+        linear-gradient(135deg, rgba(56,189,248,.9), rgba(27,108,168,.9));
+      box-shadow: 0 10px 25px rgba(56,189,248,.18);
+      border: 1px solid rgba(255,255,255,.25);
+    }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
       line-height: 1.1;
     }
-    .header p {
-      margin: 0;
-      opacity: 0.93;
+    .brand-text strong{
+      color: rgba(255,255,255,.92);
       font-size: 14px;
+      letter-spacing:.2px;
+    }
+    .brand-text span{
+      color: rgba(255,255,255,.70);
+      font-size: 12px;
     }
 
-    /* 返回首页按钮 */
-    .back-home {
-      margin-left: auto;
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 14px;
-      display: inline-block;
-    }
-    .back-home:hover {
-      background: rgba(255,255,255,0.12);
+    .navlinks{
+      margin-left:auto;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    /* 主体 */
-    .container {
-      max-width: 1200px;
-      margin: 28px auto;
-      padding: 0 20px 56px;
-    }
-
-    .section {
-      margin-bottom: 40px;
-    }
-    .section h2 {
-      margin-bottom: 16px;
-      font-size: 20px;
-      color: var(--brand-blue-dark);
-    }
-
-    /* 卡片布局 */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 18px;
-    }
-
-    .domain-card {
-      background: var(--card-bg);
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 12px;
       border-radius: 12px;
-      padding: 18px;
-      box-shadow: 0 8px 20px rgba(15, 76, 117, 0.06);
-      transition: transform .18s ease, box-shadow .18s ease;
-      display: flex;
+      text-decoration:none;
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.10);
+      color: rgba(255,255,255,.92);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      white-space: nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.26);
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(56,189,248,.95), rgba(27,108,168,.92));
+      border-color: rgba(255,255,255,.22);
+      color: #07101e;
+      font-weight: 650;
+    }
+    .btn.primary:hover{
+      background: linear-gradient(135deg, rgba(56,189,248,1), rgba(27,108,168,1));
+    }
+
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 22px 20px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 22px 60px rgba(2,6,23,.25);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(550px 220px at 10% 20%, rgba(56,189,248,.22), transparent 60%);
+      pointer-events:none;
+    }
+    .hero h1{
+      margin:0 0 6px 0;
+      font-size: 24px;
+      color: rgba(255,255,255,.94);
+      letter-spacing: .2px;
+      position: relative;
+    }
+    .hero p{
+      margin:0;
+      color: rgba(255,255,255,.74);
+      font-size: 14px;
+      position: relative;
+    }
+
+    /* Tools row */
+    .tools{
+      margin-top: 14px;
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .search{
+      flex: 1 1 320px;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+    .search input{
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: rgba(255,255,255,.92);
+      font-size: 14px;
+    }
+    .search input::placeholder{
+      color: rgba(255,255,255,.55);
+    }
+    .pill{
+      flex: 0 0 auto;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.16);
+      color: rgba(255,255,255,.84);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    /* Sections */
+    .section{
+      margin-top: 22px;
+    }
+    .section h2{
+      margin: 0 0 12px;
+      color: rgba(255,255,255,.92);
+      font-size: 18px;
+      letter-spacing:.2px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .domain-card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      display:flex;
       flex-direction: column;
       gap: 10px;
-      min-height: 110px;
+      transition: transform .18s ease, box-shadow .18s ease;
+      min-height: 120px;
+      position: relative;
+      overflow: hidden;
     }
-    .domain-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 36px rgba(15, 76, 117, 0.10);
+    .domain-card::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background: radial-gradient(220px 120px at 20% 0%, rgba(56,189,248,.20), transparent 60%);
+      pointer-events:none;
+    }
+    .domain-card:hover{
+      transform: translateY(-4px);
+      box-shadow: var(--shadow2);
     }
 
-    .domain-card h3 {
-      margin: 0;
-      color: var(--brand-blue-dark);
-      font-size: 18px;
+    .domain-card h3{
+      margin:0;
+      font-size: 16px;
+      color: #0b2b44;
+      position: relative;
       word-break: break-word;
     }
-    .domain-card h3 a {
-      color: inherit;
-      text-decoration: none;
+    .domain-card h3 a{
+      text-decoration:none;
     }
-    .domain-card h3 a:focus, .domain-card h3 a:hover {
+    .domain-card h3 a:hover,
+    .domain-card h3 a:focus{
       text-decoration: underline;
     }
 
-    .domain-card p {
-      margin: 0;
-      color: var(--text-sub);
+    .domain-card p{
+      margin:0;
+      color: var(--muted);
       font-size: 13.5px;
+      position: relative;
     }
 
-    .tags {
-      margin-top: auto;
+    .tags{
+      margin-top:auto;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      position: relative;
     }
-    .tags span {
-      display: inline-block;
-      background: #e8f1fb;
-      color: var(--brand-blue);
-      padding: 5px 10px;
-      border-radius: 18px;
+    .tags span{
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
       font-size: 12px;
-      margin-right: 6px;
-      margin-bottom: 6px;
+      color: #0b3c5d;
+      background: rgba(56,189,248,.18);
+      border: 1px solid rgba(56,189,248,.22);
     }
 
-    /* 底部 */
-    .footer {
-      text-align: center;
-      padding: 28px 20px;
-      font-size: 14px;
-      color: var(--text-sub);
-      background: transparent;
+    .footer{
+      text-align:center;
+      margin-top: 28px;
+      padding: 22px 0 0;
+      color: rgba(255,255,255,.66);
+      font-size: 13px;
     }
-    .footer strong { color: var(--brand-blue-dark); }
+    .footer a{ color: rgba(255,255,255,.80); }
 
-    @media (max-width: 900px) {
-      .header-inner { padding: 0 10px; }
-      .grid { gap: 14px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-      .domain-card { padding: 14px; }
+    /* Mobile */
+    @media (max-width: 720px){
+      .topbar-inner{ gap: 10px; }
+      .btn{ padding: 9px 10px; font-size: 13px; border-radius: 11px; }
+      .hero{ padding: 18px 16px; }
+      .hero h1{ font-size: 20px; }
+      .grid{ grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
     }
   </style>
 </head>
 
 <body>
-  <!-- 顶部 -->
-  <header class="header" role="banner">
-    <div class="header-inner">
-      <div>
-        <h1>OpenAA 精品域名展示</h1>
-        <p>OpenAA 精选 · 适合品牌 / 创业 / 跨境电商 / 投资收藏</p>
-      </div>
+  <!-- 顶部导航 -->
+  <header class="topbar" role="banner">
+    <div class="topbar-inner">
+      <a class="brand" href="https://openaa.com/" aria-label="OpenAA 首页">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <strong>OpenAA</strong>
+          <span>Premium Assets</span>
+        </span>
+      </a>
 
-      <a class="back-home" href="https://openaa.com/" aria-label="返回 OpenAA 首页">返回 OpenAA 首页</a>
-       <a class="back-home" href="https://openaa.com/market/number/" aria-label="openaa.com">手机靓号</a>
-         <a class="back-home" href="https://openaa.com/market/domain/" aria-label="openaa.com">精品域名</a>
-           <a class="back-home" href="https://jozl.com/" aria-label="OneGobuy">Jozl</a>
+      <nav class="navlinks" aria-label="站点导航">
+        <a class="btn primary" href="https://openaa.com/" aria-label="返回 OpenAA 首页">返回首页</a>
+        <a class="btn" href="https://openaa.com/market/number/" aria-label="手机靓号">手机靓号</a>
+        <a class="btn" href="https://openaa.com/market/domain/" aria-label="精品域名">精品域名</a>
+        <a class="btn" href="https://jozl.com/" aria-label="Jozl">Jozl</a>
+      </nav>
     </div>
   </header>
 
-  <!-- 内容 -->
-  <main class="container" role="main">
+  <main class="wrap" role="main">
+    <section class="hero" aria-label="页面介绍">
+      <h1>OpenAA 精品域名展示</h1>
+      <p>OpenAA 精选 · 适合品牌 / 创业 / 跨境电商 / 投资收藏</p>
+
+      <div class="tools" role="search">
+        <div class="search" aria-label="搜索域名">
+          <input id="q" type="search" placeholder="搜索域名 / 标签 / 描述，例如：华人、导航、4字母…" autocomplete="off" />
+        </div>
+        <div class="pill" id="counter" aria-live="polite">加载中…</div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="section-com">
       <h2 id="section-com">.COM 品牌域名</h2>
-      <div class="grid" role="list">
-        <article class="domain-card" role="listitem">
+
+      <div class="grid" role="list" id="grid-com">
+        <!-- 下面的卡片保留你的原始内容（只做样式升级） -->
+        <article class="domain-card" role="listitem" data-keywords="meihuaren 华人 品牌">
           <h3><a href="https://meihuaren.com" target="_blank" rel="noopener noreferrer">meihuaren.com</a></h3>
           <p>直观清晰，天然适合美国华人相关品牌或平台。</p>
           <div class="tags" aria-hidden="true"><span>华人</span><span>品牌</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="foxtoday 资讯 媒体 新闻">
           <h3><a href="https://foxtoday.com" target="_blank" rel="noopener noreferrer">Foxtoday.com</a></h3>
           <p>简短易记，适合资讯、媒体或新闻类项目。</p>
           <div class="tags" aria-hidden="true"><span>资讯</span><span>媒体</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="seekroam 旅行 探索 户外">
           <h3><a href="https://seekroam.com" target="_blank" rel="noopener noreferrer">Seekroam.com</a></h3>
           <p>探索感强，适合旅行、户外或内容平台。</p>
           <div class="tags" aria-hidden="true"><span>旅行</span><span>探索</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="joyhush 内容 社区 生活方式 品牌">
           <h3><a href="https://joyhush.com" target="_blank" rel="noopener noreferrer">Joyhush.com</a></h3>
           <p>情绪价值品牌名，适合内容、社区或生活方式。</p>
           <div class="tags" aria-hidden="true"><span>内容</span><span>品牌</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="elale 短域名 国际化 5字母">
           <h3><a href="https://elale.com" target="_blank" rel="noopener noreferrer">Elale.com</a></h3>
           <p>5 字母国际域名，简洁有记忆点。</p>
           <div class="tags" aria-hidden="true"><span>短域名</span><span>国际化</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="jozl 4字母 品牌">
           <h3><a href="https://jozl.com" target="_blank" rel="noopener noreferrer">Jozl.com</a></h3>
           <p>4 字母品牌域名，稀缺性高。</p>
           <div class="tags" aria-hidden="true"><span>4字母</span><span>品牌</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="joabc 品牌 平台 工具">
           <h3><a href="https://joabc.com" target="_blank" rel="noopener noreferrer">Joabc.com</a></h3>
           <p>字母组合型品牌域名，适合工具或平台。</p>
           <div class="tags" aria-hidden="true"><span>品牌</span><span>平台</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="joeabc 个人品牌 自媒体">
           <h3><a href="https://joeabc.com" target="_blank" rel="noopener noreferrer">Joeabc.com</a></h3>
           <p>个人品牌或自媒体友好域名。</p>
           <div class="tags" aria-hidden="true"><span>个人品牌</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="jmtea 茶 电商 消费品牌">
           <h3><a href="https://jmtea.com" target="_blank" rel="noopener noreferrer">Jmtea.com</a></h3>
           <p>天然适合茶叶、电商或消费品牌。</p>
           <div class="tags" aria-hidden="true"><span>茶</span><span>电商</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="bobaup 消费品牌 饮品 年轻化">
           <h3><a href="https://bobaup.com" target="_blank" rel="noopener noreferrer">Bobaup.com</a></h3>
           <p>年轻化品牌名，适合饮品或消费品。</p>
           <div class="tags" aria-hidden="true"><span>消费品牌</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="alititi IP 品牌 玩具">
           <h3><a href="https://alititi.com" target="_blank" rel="noopener noreferrer">Alititi.com</a></h3>
           <p>可塑性强，适合 IP、玩具或品牌孵化。</p>
           <div class="tags" aria-hidden="true"><span>IP</span><span>品牌</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="69nav 导航 流量">
           <h3><a href="https://69nav.com" target="_blank" rel="noopener noreferrer">69nav.com</a></h3>
           <p>导航 / 流量型域名，记忆度高。</p>
           <div class="tags" aria-hidden="true"><span>导航</span><span>流量</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="123638 数字 投资 收藏">
           <h3><a href="https://123638.com" target="_blank" rel="noopener noreferrer">123638.com</a></h3>
           <p>数字域名，输入成本低，适合收藏或流量。</p>
           <div class="tags" aria-hidden="true"><span>数字</span><span>投资</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="supergobuy 代购 电商 平台 跨境">
           <h3><a href="https://supergobuy.com" target="_blank" rel="noopener noreferrer">Supergobuy.com</a></h3>
           <p>跨境代购、电商平台型域名，含义直观。</p>
           <div class="tags" aria-hidden="true"><span>代购</span><span>电商</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="onegobuy 购物 平台 代购">
           <h3><a href="https://onegobuy.com" target="_blank" rel="noopener noreferrer">Onegobuy.com</a></h3>
           <p>一站式购物品牌，适合代购或整合平台。</p>
           <div class="tags" aria-hidden="true"><span>购物</span><span>平台</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="usa168hub 华人 导航 平台">
           <h3><a href="https://usa168hub.com" target="_blank" rel="noopener noreferrer">Usa168hub.com</a></h3>
           <p>美国华人综合入口平台。</p>
           <div class="tags" aria-hidden="true"><span>华人</span><span>导航</span></div>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="usa168hot 华人 流量 资讯">
           <h3><a href="https://usa168hot.com" target="_blank" rel="noopener noreferrer">Usa168hot.com</a></h3>
           <p>华人热门资讯或流量站。</p>
           <div class="tags" aria-hidden="true"><span>华人</span><span>流量</span></div>
         </article>
 
-               <article class="domain-card" role="listitem">
-  <h3><a href="https://luckynumberusa.com" target="_blank" rel="noopener noreferrer">LuckyNumberUSA.com</a></h3>
-  <p>美国靓号销售与展示平台。</p>
-  <div class="tags" aria-hidden="true"><span>号码</span><span>购物</span></div>
-</article>
+        <article class="domain-card" role="listitem" data-keywords="luckynumberusa 号码 购物 美国 靓号">
+          <h3><a href="https://luckynumberusa.com" target="_blank" rel="noopener noreferrer">LuckyNumberUSA.com</a></h3>
+          <p>美国靓号销售与展示平台。</p>
+          <div class="tags" aria-hidden="true"><span>号码</span><span>购物</span></div>
+        </article>
 
-<article class="domain-card" role="listitem">
-  <h3><a href="https://numbermobi.com" target="_blank" rel="noopener noreferrer">NumberMobi.com</a></h3>
-  <p>全球手机号码展示与购买平台。</p>
-  <div class="tags" aria-hidden="true"><span>手机</span><span>号码</span></div>
-</article>
+        <article class="domain-card" role="listitem" data-keywords="numbermobi 手机 号码 平台 购买">
+          <h3><a href="https://numbermobi.com" target="_blank" rel="noopener noreferrer">NumberMobi.com</a></h3>
+          <p>全球手机号码展示与购买平台。</p>
+          <div class="tags" aria-hidden="true"><span>手机</span><span>号码</span></div>
+        </article>
 
-<article class="domain-card" role="listitem">
-  <h3><a href="https://numbermobile.com" target="_blank" rel="noopener noreferrer">NumberMobile.com</a></h3>
-  <p>手机号码交易与信息平台。</p>
-  <div class="tags" aria-hidden="true"><span>号码</span><span>交易</span></div>
-</article>
+        <article class="domain-card" role="listitem" data-keywords="numbermobile 号码 交易 平台">
+          <h3><a href="https://numbermobile.com" target="_blank" rel="noopener noreferrer">NumberMobile.com</a></h3>
+          <p>手机号码交易与信息平台。</p>
+          <div class="tags" aria-hidden="true"><span>号码</span><span>交易</span></div>
+        </article>
 
-<article class="domain-card" role="listitem">
-  <h3><a href="https://fengshizupu.com" target="_blank" rel="noopener noreferrer">FengShizuPu.com</a></h3>
-  <p>家族风水与家谱信息门户。</p>
-  <div class="tags" aria-hidden="true"><span>风水</span><span>家谱</span></div>
-</article>
+        <article class="domain-card" role="listitem" data-keywords="fengshizupu 风水 家谱 门户">
+          <h3><a href="https://fengshizupu.com" target="_blank" rel="noopener noreferrer">FengShizuPu.com</a></h3>
+          <p>家族风水与家谱信息门户。</p>
+          <div class="tags" aria-hidden="true"><span>风水</span><span>家谱</span></div>
+        </article>
 
-<article class="domain-card" role="listitem">
-  <h3><a href="https://fengshizupu.cn" target="_blank" rel="noopener noreferrer">FengShizuPu.cn</a></h3>
-  <p>中国家族风水与族谱查询平台。</p>
-  <div class="tags" aria-hidden="true"><span>风水</span><span>族谱</span></div>
-</article>      
-
+        <article class="domain-card" role="listitem" data-keywords="fengshizupu 风水 族谱 中国">
+          <h3><a href="https://fengshizupu.cn" target="_blank" rel="noopener noreferrer">FengShizuPu.cn</a></h3>
+          <p>中国家族风水与族谱查询平台。</p>
+          <div class="tags" aria-hidden="true"><span>风水</span><span>族谱</span></div>
+        </article>
       </div>
     </section>
 
     <section class="section" aria-labelledby="section-other">
       <h2 id="section-other">.CN / .VIP / 其他</h2>
-      <div class="grid" role="list">
-        <article class="domain-card" role="listitem">
+
+      <div class="grid" role="list" id="grid-other">
+        <article class="domain-card" role="listitem" data-keywords="gelga cn 国内 品牌 短拼音">
           <h3><a href="https://gelga.cn" target="_blank" rel="noopener noreferrer">Gelga.cn</a></h3>
           <p>短拼音，适合国内品牌。</p>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="bobaup cn 品牌保护">
           <h3><a href="https://bobaup.cn" target="_blank" rel="noopener noreferrer">Bobaup.cn</a></h3>
           <p>品牌保护域名。</p>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="alititi cn 中文 品牌">
           <h3><a href="https://alititi.cn" target="_blank" rel="noopener noreferrer">Alititi.cn</a></h3>
           <p>中文品牌配套。</p>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="tapbi cn 工具 导航">
           <h3><a href="https://tapbi.cn" target="_blank" rel="noopener noreferrer">Tapbi.cn</a></h3>
           <p>工具或导航项目。</p>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="asa vip 极短 稀缺">
           <h3><a href="https://asa.vip" target="_blank" rel="noopener noreferrer">Asa.vip</a></h3>
           <p>极短稀缺 VIP 域名。</p>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="helphub vip 服务 平台">
           <h3><a href="https://helphub.vip" target="_blank" rel="noopener noreferrer">Helphub.vip</a></h3>
           <p>服务型平台域名。</p>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="18hot vip 成人 流量">
           <h3><a href="https://18hot.vip" target="_blank" rel="noopener noreferrer">18hot.vip</a></h3>
           <p>成人流量域名（请遵守平台政策）。</p>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="18hub vip 成人 导航">
           <h3><a href="https://18hub.vip" target="_blank" rel="noopener noreferrer">18hub.vip</a></h3>
           <p>成人导航域名（请遵守平台政策）。</p>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="tap bi 短链 入口">
           <h3><a href="https://tap.bi" target="_blank" rel="noopener noreferrer">Tap.bi</a></h3>
           <p>短链 / 入口型域名。</p>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="forall help 公益 帮助 工具">
           <h3><a href="https://forall.help" target="_blank" rel="noopener noreferrer">Forall.help</a></h3>
           <p>公益、帮助、工具类项目域名。</p>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="all edu kg 教育 资源">
           <h3><a href="https://all.edu.kg" target="_blank" rel="noopener noreferrer">All.edu.kg</a></h3>
           <p>教育资源或机构平台域名。</p>
         </article>
 
-        <article class="domain-card" role="listitem">
+        <article class="domain-card" role="listitem" data-keywords="jo edu kg 教育 极短 稀缺">
           <h3><a href="https://jo.edu.kg" target="_blank" rel="noopener noreferrer">Jo.edu.kg</a></h3>
           <p>极短教育类域名，稀缺性高。</p>
         </article>
-            <article class="domain-card" role="listitem">
-  <h3><a href="https://amani.love" target="_blank" rel="noopener noreferrer">Amani.Love</a></h3>
-  <p>情感与恋爱分享社区平台。</p>
-  <div class="tags" aria-hidden="true"><span>爱情</span><span>社区</span></div>
-</article>
-        
+
+        <article class="domain-card" role="listitem" data-keywords="amani love 爱情 社区 情感">
+          <h3><a href="https://amani.love" target="_blank" rel="noopener noreferrer">Amani.Love</a></h3>
+          <p>情感与恋爱分享社区平台。</p>
+          <div class="tags" aria-hidden="true"><span>爱情</span><span>社区</span></div>
+        </article>
       </div>
     </section>
+
+    <footer class="footer" role="contentinfo">
+      © OpenAA.com · 精品域名展示<br>
+      联系邮箱：<a href="mailto:323748@gmail.com">323748@gmail.com</a>
+    </footer>
   </main>
 
-  <!-- 底部 -->
-  <footer class="footer" role="contentinfo">
-    © OpenAA.com · 精品域名展示<br>
-    联系邮箱：<strong><a href="mailto:323748@gmail.com">323748@gmail.com</a></strong>
-  </footer>
+  <script>
+    // 简单本地搜索：按域名标题/描述/标签（data-keywords）过滤
+    (function () {
+      const input = document.getElementById('q');
+      const counter = document.getElementById('counter');
+      const cards = Array.from(document.querySelectorAll('.domain-card'));
+
+      function textOfCard(card){
+        const title = card.querySelector('h3')?.innerText || '';
+        const desc = card.querySelector('p')?.innerText || '';
+        const tags = card.getAttribute('data-keywords') || '';
+        return (title + ' ' + desc + ' ' + tags).toLowerCase();
+      }
+
+      const index = cards.map(c => ({ el: c, text: textOfCard(c) }));
+
+      function update(){
+        const q = (input.value || '').trim().toLowerCase();
+        let shown = 0;
+
+        for (const item of index){
+          const ok = !q || item.text.includes(q);
+          item.el.style.display = ok ? '' : 'none';
+          if (ok) shown++;
+        }
+
+        counter.textContent = `显示 ${shown} / ${cards.length}`;
+      }
+
+      input.addEventListener('input', update);
+      update();
+    })();
+  </script>
 </body>
 </html>
-
