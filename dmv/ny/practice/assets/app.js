@@ -232,6 +232,41 @@ function initQuizPage() {
   let timerSec   = null;
   let timerInt   = null;
 
+  function openImageModal(num) {
+    const modal = document.getElementById('imgModal');
+    const img = document.getElementById('imgModalImg');
+    const title = document.getElementById('imgModalTitle');
+    const back = document.getElementById('imgBackBtn');
+
+    if (!modal || !img || !back) return;
+
+    // ✅ 合集图（1-16）
+    img.src = 'assets/signs_1_16.png';
+    title.textContent = `图示（图 ${num}）`;
+
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+
+    // ESC 关闭
+    modal._esc = (e) => { if (e.key === 'Escape') closeImageModal(); };
+    document.addEventListener('keydown', modal._esc);
+
+    back.onclick = closeImageModal;
+  }
+
+  function closeImageModal() {
+    const modal = document.getElementById('imgModal');
+    if (!modal) return;
+
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+
+    if (modal._esc) {
+      document.removeEventListener('keydown', modal._esc);
+      modal._esc = null;
+    }
+  }
+
   /* Timer setup */
   if (state.timer && timerBadge && timerDisplay) {
     timerBadge.classList.remove('hidden');
@@ -262,7 +297,31 @@ function initQuizPage() {
     progressFill.style.width  = pct + '%';
     progressLabel.innerHTML   = `<span>Question ${current + 1} / ${total}</span><span>${Math.round(pct)}%</span>`;
     questionNum.textContent   = `Question ${current + 1}`;
+
+    // Question text
     questionText.textContent  = q.question;
+
+    // ✅ 如果题干含 "图<数字>"，显示一个查看按钮
+    const m = /图<\s*(\d+)\s*>/.exec(q.question);
+    let viewBtn = document.getElementById('viewImgBtn');
+
+    if (m) {
+      const num = parseInt(m[1], 10);
+
+      if (!viewBtn) {
+        viewBtn = document.createElement('button');
+        viewBtn.id = 'viewImgBtn';
+        viewBtn.type = 'button';
+        viewBtn.className = 'view-img-btn';
+        questionText.parentNode.insertBefore(viewBtn, questionText.nextSibling);
+      }
+
+      viewBtn.textContent = `🖼 查看图 ${num}`;
+      viewBtn.onclick = () => openImageModal(num);
+      viewBtn.style.display = '';
+    } else {
+      if (viewBtn) viewBtn.style.display = 'none';
+    }
 
     optionsList.innerHTML = '';
     const letters = ['A', 'B', 'C', 'D', 'E'];
