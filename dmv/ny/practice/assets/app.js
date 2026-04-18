@@ -241,7 +241,13 @@ function initQuizPage() {
     if (!modal || !img || !back) return;
 
     // ✅ 合集图（1-16）
-    img.src = 'assets/signs_1_16.png';
+    img.src = `assets/signs/${num}.png`;
+    img.onerror = null;
+img.src = `assets/signs/${num}.png`;
+img.onerror = () => {
+  alert(`图片不存在：图 ${num}。请确认 assets/signs/ 里有对应图片文件。`);
+};
+
     title.textContent = `图示（图 ${num}）`;
 
     modal.classList.remove('hidden');
