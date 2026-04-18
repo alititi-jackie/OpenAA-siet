@@ -60,26 +60,35 @@
       .toolbar .toolbar-btn{ flex: 1; }
     }
 
-    /* ===== 题干行 + 右侧看图卡片按钮 ===== */
+    /* ===== ✅ 题目 + 图片按钮：按钮紧贴在题目右边 ===== */
     .qa-q{
       font-weight: 800;
       margin-bottom: 10px;
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-    }
-    .qa-q-text{ flex: 1; min-width: 0; }
 
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      /* 关键：允许换行，长题目时按钮会掉到下一行靠左 */
+      flex-wrap: wrap;
+    }
+
+    /* 题目文字：不要强行占满整行（否则按钮就只能被挤走） */
+    .qa-q-text{
+      flex: 0 1 auto;
+      min-width: 0;
+    }
+
+    /* ✅ 看图按钮：取消 margin-left:auto（否则会跑最右） */
     .qa-img-card{
-      margin-left: auto;
       flex: 0 0 auto;
 
       display: inline-flex;
       align-items: center;
       gap: 8px;
 
-      padding: 10px 14px;
-      border-radius: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
 
       border: 2px solid var(--border);
       background: #fff;
@@ -99,7 +108,7 @@
     .qa-img-card:active{ transform: scale(.98); }
 
     .qa-img-card-icon{
-      font-size: 1.1rem;
+      font-size: 1rem;
       line-height: 1;
     }
     .qa-img-card-text{
@@ -114,7 +123,7 @@
     .qa-ans { margin-top: 10px; font-weight: 800; color: var(--correct); }
     .qa-muted { color: var(--text-sub); font-size: .85rem; margin-top: 6px; }
 
-    /* ===== ✅ Modal 里的“← 返回”按钮：高对比度（关键修复） ===== */
+    /* ===== Modal 里的“← 返回”按钮：高对比度 ===== */
     .img-modal-bar{
       background: rgba(0,0,0,.55) !important;
       backdrop-filter: blur(6px);
@@ -128,9 +137,7 @@
       padding: 8px 14px !important;
       box-shadow: 0 10px 28px rgba(0,0,0,.35);
     }
-    #imgBackBtn:hover{
-      background: rgba(255,255,255,.92) !important;
-    }
+    #imgBackBtn:hover{ background: rgba(255,255,255,.92) !important; }
 
     #imgModalTitle{
       font-weight: 900;
