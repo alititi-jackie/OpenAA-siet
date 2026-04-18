@@ -1,1 +1,9 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Practice</title>\n    <style>\n        .header-top { position: relative; }\n        .header-home-btn { position: absolute; right: 0; top: 0; padding: 8px 12px; font-size: .85rem; line-height: 1; }\n        @media (max-width: 480px){ .header-home-btn{ padding: 7px 10px; font-size:.8rem; } }\n    </style>\n</head>\n<body>\n    <div class="header-top">\n        <a href="/index.html" class="btn btn-ghost header-home-btn">🏠 返回首页</a>\n        <!-- Existing logo-link block here -->\n    </div>\n    <!-- Rest of the content here -->\n</body>\n</html>
+<style>
+.header-home-btn {
+    position: fixed;
+    top: max(12px, env(safe-area-inset-top));
+    right: 12px;
+    z-index: 9999;
+}
+</style>
+<a href="/index.html" class="btn btn-ghost header-home-btn">🏠 返回首页</a>
