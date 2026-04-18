@@ -666,3 +666,51 @@ img { display: block; max-width: 100%; }
   .result-actions { flex-direction: row; }
   .result-actions .btn { flex: 1; }
 }
+/* ---------- Image modal ---------- */
+.img-modal.hidden { display: none; }
+.img-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.82);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+.img-modal-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(0,0,0,.35);
+  color: #fff;
+}
+.img-modal-title {
+  font-weight: 800;
+  font-size: .95rem;
+  opacity: .95;
+}
+.img-modal-body {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+}
+.img-modal-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.view-img-btn {
+  margin-left: 10px;
+  padding: 6px 10px;
+  font-size: .78rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.55);
+  background: rgba(255,255,255,.18);
+  color: #fff;
+  cursor: pointer;
+}
+.view-img-btn:hover { background: rgba(255,255,255,.28); }
