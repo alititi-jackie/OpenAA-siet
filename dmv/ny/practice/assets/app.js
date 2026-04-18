@@ -302,7 +302,8 @@ function initQuizPage() {
     questionText.textContent  = q.question;
 
     // ✅ 如果题干含 "图<数字>"，显示一个查看按钮
-    const m = /图<\s*(\d+)\s*>/.exec(q.question);
+    const m = /图\s*[<〈《]\s*(\d+)\s*[>〉》]/.exec(q.question);
+
     let viewBtn = document.getElementById('viewImgBtn');
 
     if (m) {
