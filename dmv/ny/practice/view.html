@@ -10,11 +10,10 @@
   <style>
     .qa-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
 
-    /* ===== 顶部工具条：让按钮在蓝色背景上“非常清楚” ===== */
+    /* ===== 顶部工具条：按钮高对比度 ===== */
     .toolbar { display:flex; gap:10px; flex-wrap: wrap; align-items:center; }
     .toolbar .form-input { flex: 1; min-width: 240px; }
 
-    /* 让工具条按钮统一更大、更清晰 */
     .toolbar .toolbar-btn{
       display: inline-flex;
       align-items: center;
@@ -32,8 +31,8 @@
       -webkit-tap-highlight-color: transparent;
 
       border: 2px solid rgba(255,255,255,.95);
-      background: #ffffff;          /* 白底：对比度最高 */
-      color: #0b2b5a;               /* 深蓝字 */
+      background: #ffffff;
+      color: #0b2b5a;
       box-shadow: 0 6px 18px rgba(0,0,0,.20);
       text-decoration: none;
 
@@ -46,7 +45,6 @@
     }
     .toolbar .toolbar-btn:active{ transform: scale(.98); }
 
-    /* “显示答案”做成更像主操作按钮（蓝色实心） */
     .toolbar .toolbar-btn-primary{
       background: rgba(255,255,255,.18);
       color: #fff;
@@ -57,7 +55,6 @@
       background: rgba(255,255,255,.24);
     }
 
-    /* 小屏：按钮变成两列，方便点 */
     @media (max-width: 520px){
       .toolbar .form-input{ min-width: 100%; }
       .toolbar .toolbar-btn{ flex: 1; }
@@ -116,6 +113,30 @@
     .qa-opts li { margin: 6px 0; }
     .qa-ans { margin-top: 10px; font-weight: 800; color: var(--correct); }
     .qa-muted { color: var(--text-sub); font-size: .85rem; margin-top: 6px; }
+
+    /* ===== ✅ Modal 里的“← 返回”按钮：高对比度（关键修复） ===== */
+    .img-modal-bar{
+      background: rgba(0,0,0,.55) !important;
+      backdrop-filter: blur(6px);
+    }
+
+    #imgBackBtn{
+      background: #fff !important;
+      color: #0b2b5a !important;
+      border: 2px solid rgba(255,255,255,.95) !important;
+      font-weight: 900 !important;
+      padding: 8px 14px !important;
+      box-shadow: 0 10px 28px rgba(0,0,0,.35);
+    }
+    #imgBackBtn:hover{
+      background: rgba(255,255,255,.92) !important;
+    }
+
+    #imgModalTitle{
+      font-weight: 900;
+      letter-spacing: .02em;
+      text-shadow: 0 2px 10px rgba(0,0,0,.4);
+    }
   </style>
 </head>
 <body>
@@ -126,13 +147,11 @@
       <a class="logo-link" href="../index.html" title="OpenAA 首页">
         <img class="logo-img" src="../logo.png" alt="OpenAA Logo" />
       </a>
-      <div class="header-subtitle">查看题库��含答案）</div>
+      <div class="header-subtitle">查看题库（含答案）</div>
     </div>
 
     <div class="toolbar">
       <input class="form-input" id="filterInput" type="search" placeholder="筛选关键词（可选）" autocomplete="off" />
-
-      <!-- ✅ 更清楚的按钮样式（不再依赖 btn-outline/btn-ghost） -->
       <button class="toolbar-btn toolbar-btn-primary" id="toggleAnswersBtn" type="button">👁 显示答案</button>
       <a class="toolbar-btn" href="index.html">← 返回</a>
     </div>
