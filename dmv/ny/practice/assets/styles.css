@@ -703,14 +703,22 @@ img { display: block; max-width: 100%; }
   background: #fff;
 }
 
+/* view image button (on white card) */
 .view-img-btn {
-  margin-left: 10px;
-  padding: 6px 10px;
-  font-size: .78rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin: 10px 0 0;          /* 题干下面留点空 */
+  padding: 8px 12px;
+  font-size: .82rem;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.55);
-  background: rgba(255,255,255,.18);
-  color: #fff;
+
+  border: 2px solid var(--blue);
+  background: #fff;
+  color: var(--blue);
+
   cursor: pointer;
 }
-.view-img-btn:hover { background: rgba(255,255,255,.28); }
+
+.view-img-btn:hover { background: rgba(0,102,204,.07); }
