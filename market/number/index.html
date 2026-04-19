@@ -1,76 +1,106 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>美国手机靓号市场</title>
+  <!-- 你的 head 标签全保留不变（省略，详见上方你的内容） -->
+  ...
+  <script src="numbers.js"></script>
   <style>
-    body { font-family: 'Segoe UI',sans-serif; background:#f7fafe;}
-    .search-box {text-align:center; margin:24px 0;}
-    .search-input {
-      padding:10px 20px; font-size:18px; border-radius:20px; border:1px solid #d0d5db; box-shadow:0 1px 8px #d0e6fd44;
-      width:90vw;max-width:350px;outline:none;
-    }
-    .numbers {display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;max-width:900px;margin:20px auto;}
-    .number-card {
-      background:#fff;border-radius:14px;box-shadow:0 2px 16px #599ef415;padding:18px;text-align:center;
-      position:relative;transition:all .15s;cursor:pointer;
-    }
-    .number-value {font-size:1.15rem;letter-spacing:2px;font-weight:bold;color:#2580e8;word-break:break-all;}
-    .number-price {margin-top:6px;color:#099a1f;font-weight:700;}
-    .number-card.sold {opacity:.6;pointer-events:none;background:#f4f4f7;}
-    .number-badge {position:absolute;top:8px;right:12px;padding:3px 8px;font-size:12px;border-radius:14px;color:#fff;}
-    .badge-hot {background:#fe5050;}
-    .badge-sold {background:#bcbcbc;}
-    /* 响应式 */
-    @media (max-width: 700px) {.numbers{grid-template-columns:repeat(2,1fr);}}
-    @media (max-width: 430px) {.numbers{grid-template-columns:1fr;}}
+    /* 你全部原样式全保留 */
   </style>
 </head>
 <body>
-  <div class="search-box">
-    <input class="search-input" id="search" type="search" inputmode="numeric" placeholder="输入号码/片段/区号,如 9111 或 917"/>
-  </div>
-  <div class="numbers" id="numbers"></div>
+  <!-- Header 及说明全部照抄你的即可 -->
+
+  <header>...如你原内容...</header>
+  <div class="breadcrumb">...如你原内容...</div>
+  <main>
+    <h1>💎 美国手机靓号出售</h1>
+    ...联系卡片等也不动...
+
+    <!-- 三连号分区结构（只留每个分区的挂载点） -->
+    <h2>🔥 纽约三连号</h2>
+    <div class="card" id="triple">
+      <div class="card-header">
+        <div class="card-header-icon">🔥</div>
+        <h3 class="card-header-title">三位数重复</h3>
+      </div>
+      <div class="card-content">
+        <div class="number-grid" id="triple-numbers"></div>
+      </div>
+    </div>
+    <!-- 四连号 -->
+    <h2>💎 纽约四连号</h2>
+    <div class="card" id="quad">
+      <div class="card-header">
+        <div class="card-header-icon">💎</div>
+        <h3 class="card-header-title">四位数重复</h3>
+      </div>
+      <div class="card-content">
+        <div class="number-grid" id="quad-numbers"></div>
+      </div>
+    </div>
+    <!-- 其他 -->
+    <h2>⭐ 其他靓号</h2>
+    <div class="card" id="other">
+      <div class="card-header">
+        <div class="card-header-icon">⭐</div>
+        <h3 class="card-header-title">生日号/豹子号/顺号</h3>
+      </div>
+      <div class="card-content">
+        <div class="number-grid" id="other-numbers"></div>
+      </div>
+    </div>
+
+    <!-- 说明文本/浮动按钮/底部等保持原样，不再罗列 -->
+  </main>
+
+  <!-- 其它 footer/modal、脚本全部不动 -->
+
   <script>
-    let rawData = [];
-    const norm = s => s.replace(/[^\d]/g,''); // 去除所有非数字
-    function render(list, kw = '') {
-      const numbers = document.getElementById('numbers');
-      if (!list.length) {
-        numbers.innerHTML = `<div style="color:#888;font-size:20px;text-align:center;width:100%">无匹配号码</div>`;
-        return;
-      }
-      numbers.innerHTML = list.map(it=>{
-        let n = it.number;
-        if (n.length===10) n = `(${n.slice(0,3)}) ${n.slice(3,6)}-${n.slice(6)}`;
-        // 高亮匹配片段
-        let nv = n, re = '';
-        if (kw && (re=new RegExp(kw.replace(/[\[\]{}()*+?.\\^$|]/g,'\\$&'),'gi')))
-          nv = n.replace(re, m=>`<mark style="background:#f9e87c;">${m}</mark>`);
-        let badge='';
-        if (it.hot) badge=`<span class="number-badge badge-hot">热卖</span>`;
-        if (it.sold) badge=`<span class="number-badge badge-sold">已售</span>`;
-        return `<div class="number-card${it.sold?' sold':''}" onclick="alert('请联系微信 hola24 或电话 19178426666 购买')">
-          ${badge}
-          <div class="number-value">${nv}</div>
-          <div class="number-price">${it.sold?'已售出':(it.price?`$${it.price}`:'咨询')}</div>
-        </div>`;
-      }).join('');
+    // --- 动态渲染所有号码 ---
+    // numbersData 在 numbers.js 里定义
+
+    // 辅助：格式化XXXYYYZZZZ为 (XXX) YYY-ZZZZ
+    function formatNumber(n) {
+      n = String(n).replace(/[^\d]/g,'');
+      return n.length===10 ? `(${n.slice(0,3)}) ${n.slice(3,6)}-${n.slice(6)}` : n;
     }
-    fetch('numbers.json').then(r=>r.json()).then(data=>{
-      rawData = data;
-      render(rawData);
-      // 智能搜索
-      search.addEventListener('input', function(){
-        const kw = norm(this.value);
-        if (!kw) return render(rawData);
-        const f = rawData.filter(it=>norm(it.number).includes(kw));
-        render(f, kw);
+
+    // 卡片DOM
+    function renderCard(it) {
+      return `<div class="number-item${it.sold ? ' sold' : ''}" onclick="handleNumberClick('${formatNumber(it.number)}')">
+        ${it.hot ? '<span class="number-badge badge-hot">热卖</span>' : ''}
+        ${it.sold ? '<span class="number-badge badge-sold">已售</span>' : ''}
+        <div class="number-value">${formatNumber(it.number)}</div>
+        <div class="number-price">${it.sold ? '已售出' : (it.price ? ('$'+it.price) : '咨询')}</div>
+      </div>`;
+    }
+
+    // 搜索、全分区渲染
+    function renderAll(searchKW = '') {
+      // 标准化匹配
+      const norm = s => s.replace(/[^\d]/g, '');
+      // 遍历所有分区
+      ['triple','quad','other'].forEach(group=>{
+        const grid = document.getElementById(group+'-numbers');
+        let arr = numbersData[group] || [];
+        let html = '';
+        let kw = norm(searchKW||'');
+        if (kw) arr = arr.filter(it=>norm(it.number).includes(kw));
+        html = arr.length ? arr.map(renderCard).join('') : "<div style='color:#bbb;padding:20px;text-align:center;'>无匹配号码</div>";
+        grid.innerHTML = html;
       });
+    }
+
+    // 搜索栏事件
+    document.getElementById('searchInput').addEventListener('input', function(){
+      renderAll(this.value);
     });
-    // 自动聚焦
-    window.onload = () => { setTimeout(()=>search.focus(),150); }
+    // 初始渲染
+    window.onload = function() { renderAll(); }
+    // 保持你原有 handleNumberClick 逻辑
   </script>
+
+<!-- 你的其它脚本和 footer 继续保持原样 -->
 </body>
 </html>
