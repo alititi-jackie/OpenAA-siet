@@ -343,7 +343,7 @@
       </a>
       <div class="header-actions">
         <button class="btn-icon" onclick="toggleBookmark()" title="收藏本站">📌</button>
-        <button class="btn-icon" onclick="goHome()" title="返回首页">🏠</button>
+        <button class="btn-icon" onclick="doShare()" title="分享本页">🔗</button>
       </div>
     </div>
     <div class="search-box">
@@ -508,11 +508,6 @@
   </footer>
 
   <script>
-    // ============================================================
-    // 号码数据 —— 以后只改这里，增删号码无需动其他任何地方
-    // price: 数字=售价, 不写或null=显示"咨询"
-    // hot: true=热卖红标, sold: true=已售灰显
-    // ============================================================
     const numbersData = {
       triple: [
         { number: "9175169111", price: 40, hot: true },
@@ -574,10 +569,8 @@
       ]
     };
 
-    // ============================================================
-    // 工具函数
-    // ============================================================
-    const norm = s => String(s || "").replace(/[^\d]/g, "");
+    const norm = s => String(s || "").replace(/[^
+\d]/g, "");
 
     function formatUS(n) {
       const d = norm(n);
@@ -589,12 +582,10 @@
       const sold = !!it.sold;
       const hot  = !!it.hot && !sold;
       const display = formatUS(it.number);
-      // 格式化为两行：(917)<br>516-9111
-      const parts = display.match(/^(\(\d{3}\)) (\d{3}-\d{4})$/);
+      const parts = display.match(/^\(\d{3}\)\s\d{3}-\d{4}$/);
       const lineDisplay = parts ? `${parts[1]}<br>${parts[2]}` : display;
       const priceText = sold ? "已售出" : (typeof it.price === "number" ? `$${it.price}` : "咨询");
       const clickFn = sold ? `showToast('此号已售出')` : `handleNumberClick('${display}')`;
-
       return `<div class="number-item${sold ? " sold" : ""}" onclick="${clickFn}">
         ${hot  ? `<span class="number-badge badge-hot">热卖</span>` : ""}
         ${sold ? `<span class="number-badge badge-sold">已售</span>` : ""}
@@ -620,9 +611,6 @@
       renderGroup("other-numbers",  numbersData.other,  kw);
     }
 
-    // ============================================================
-    // 页面交互（全部保持你原来的逻辑）
-    // ============================================================
     function scrollToSection(id) {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -675,24 +663,31 @@
       alert(/mac/i.test(navigator.userAgent) ? "请使用 Cmd+D 收藏本站" : "请使用 Ctrl+D 收藏本站");
     }
 
-    function goHome() {
-      window.location.href = "https://openaa.com/";
+    function doShare() {
+      const url = window.location.href;
+      const title = "美国手机靓号出售 | OpenAA";
+      const text = "精品美国手机靓号：三连号、四连号、生日号、豹子号，微信/Zelle付款，联系 hola24";
+      if (navigator.share) {
+        navigator.share({ title, text, url }).catch(() => {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(url)
+          .then(() => showToast("网址已复制，可粘贴到微信分享"))
+          .catch(() => prompt("请复制网址分享：", url));
+      } else {
+        prompt("请复制网址分享：", url);
+      }
     }
 
-    // ESC 关闭
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") closeModal();
     });
 
-    // 阻止模态框内部点击冒泡
     document.querySelector(".modal-content").addEventListener("click", e => e.stopPropagation());
 
-    // 搜索输入即过滤
     document.getElementById("searchInput").addEventListener("input", function () {
       renderAll(this.value);
     });
 
-    // 初始化渲染
     document.addEventListener("DOMContentLoaded", () => renderAll(""));
   </script>
 </body>
