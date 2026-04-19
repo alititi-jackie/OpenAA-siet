@@ -1,106 +1,229 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <!-- 你的 head 标签全保留不变（省略，详见上方你的内容） -->
-  ...
-  <script src="numbers.js"></script>
-  <style>
-    /* 你全部原样式全保留 */
-  </style>
-</head>
-<body>
-  <!-- Header 及说明全部照抄你的即可 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0078d4">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="靓号">
+  <title>美国手机靓号出售 | 生日号/豹子号/连号/顺号 | 微信Zelle支付 | OpenAA</title>
+  <meta name="description" content="OpenAA提供全美手机靓号出售：纽约靓号、三连号、四连号、生日号、豹子号、顺号等精品号码。支持微信(WeChat)、Zelle付款。在美华人精选美国手机号码平台。">
+  <meta name="keywords" content="美国手机靓号,手机靓号出售,生日号,豹子号,三连号,四连号,顺号,纽约靓号,美国手机号,微信支付,Zelle,靓号买卖,美国电话号,华人靓号,手机号码,在线购号,美国号码,电话号码,靓号平台,美国通讯">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://openaa.com/market/number/">
+  <link rel="alternate" hreflang="zh-CN" href="https://openaa.com/market/number/">
+  <link rel="alternate" hreflang="en-US" href="https://openaa.com/en/market/number/">
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="美国手机靓号出售 | OpenAA" />
+  <meta property="og:description" content="全美精品手机靓号平台：三连号、四连号、生日号、豹子号、顺号等，支持微信Zelle付款，联系+1(917)842-6666或微信hola24" />
+  <meta property="og:image" content="https://openaa.com/logo.png" />
+  <meta property="og:url" content="https://openaa.com/market/number/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="美国手机靓号出售 | OpenAA" />
+  <meta name="twitter:description" content="精品美国手机号码平台：靓号、生日号、豹子号、连号。微信Zelle支付。+1(917)842-6666" />
+  <meta name="twitter:image" content="https://openaa.com/logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 
-  <header>...如你原内容...</header>
-  <div class="breadcrumb">...如你原内容...</div>
-  <main>
-    <h1>💎 美国手机靓号出售</h1>
-    ...联系卡片等也不动...
-
-    <!-- 三连号分区结构（只留每个分区的挂载点） -->
-    <h2>🔥 纽约三连号</h2>
-    <div class="card" id="triple">
-      <div class="card-header">
-        <div class="card-header-icon">🔥</div>
-        <h3 class="card-header-title">三位数重复</h3>
-      </div>
-      <div class="card-content">
-        <div class="number-grid" id="triple-numbers"></div>
-      </div>
-    </div>
-    <!-- 四连号 -->
-    <h2>💎 纽约四连号</h2>
-    <div class="card" id="quad">
-      <div class="card-header">
-        <div class="card-header-icon">💎</div>
-        <h3 class="card-header-title">四位数重复</h3>
-      </div>
-      <div class="card-content">
-        <div class="number-grid" id="quad-numbers"></div>
-      </div>
-    </div>
-    <!-- 其他 -->
-    <h2>⭐ 其他靓号</h2>
-    <div class="card" id="other">
-      <div class="card-header">
-        <div class="card-header-icon">⭐</div>
-        <h3 class="card-header-title">生日号/豹子号/顺号</h3>
-      </div>
-      <div class="card-content">
-        <div class="number-grid" id="other-numbers"></div>
-      </div>
-    </div>
-
-    <!-- 说明文本/浮动按钮/底部等保持原样，不再罗列 -->
-  </main>
-
-  <!-- 其它 footer/modal、脚本全部不动 -->
-
-  <script>
-    // --- 动态渲染所有号码 ---
-    // numbersData 在 numbers.js 里定义
-
-    // 辅助：格式化XXXYYYZZZZ为 (XXX) YYY-ZZZZ
-    function formatNumber(n) {
-      n = String(n).replace(/[^\d]/g,'');
-      return n.length===10 ? `(${n.slice(0,3)}) ${n.slice(3,6)}-${n.slice(6)}` : n;
-    }
-
-    // 卡片DOM
-    function renderCard(it) {
-      return `<div class="number-item${it.sold ? ' sold' : ''}" onclick="handleNumberClick('${formatNumber(it.number)}')">
-        ${it.hot ? '<span class="number-badge badge-hot">热卖</span>' : ''}
-        ${it.sold ? '<span class="number-badge badge-sold">已售</span>' : ''}
-        <div class="number-value">${formatNumber(it.number)}</div>
-        <div class="number-price">${it.sold ? '已售出' : (it.price ? ('$'+it.price) : '咨询')}</div>
-      </div>`;
-    }
-
-    // 搜索、全分区渲染
-    function renderAll(searchKW = '') {
-      // 标准化匹配
-      const norm = s => s.replace(/[^\d]/g, '');
-      // 遍历所有分区
-      ['triple','quad','other'].forEach(group=>{
-        const grid = document.getElementById(group+'-numbers');
-        let arr = numbersData[group] || [];
-        let html = '';
-        let kw = norm(searchKW||'');
-        if (kw) arr = arr.filter(it=>norm(it.number).includes(kw));
-        html = arr.length ? arr.map(renderCard).join('') : "<div style='color:#bbb;padding:20px;text-align:center;'>无匹配号码</div>";
-        grid.innerHTML = html;
-      });
-    }
-
-    // 搜索栏事件
-    document.getElementById('searchInput').addEventListener('input', function(){
-      renderAll(this.value);
-    });
-    // 初始渲染
-    window.onload = function() { renderAll(); }
-    // 保持你原有 handleNumberClick 逻辑
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://openaa.com/#organization",
+        "name": "OpenAA",
+        "url": "https://openaa.com/",
+        "logo": "https://openaa.com/logo.png",
+        "description": "美国手机靓号出售平台",
+        "contactPoint": [{"@type":"ContactPoint","telephone":"+1-917-842-6666","email":"323748@gmail.com","contactType":"sales","availableLanguage":["Chinese","English"]}]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://openaa.com/market/number/#business",
+        "name": "OpenAA美国手机靓号",
+        "description": "专业美国手机靓号交易平台",
+        "telephone": "+1-917-842-6666",
+        "email": "323748@gmail.com",
+        "url": "https://openaa.com/market/number/"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://openaa.com/market/number/#webpage",
+        "url": "https://openaa.com/market/number/",
+        "name": "美国手机靓号出售"
+      }
+    ]
+  }
   </script>
 
-<!-- 你的其它脚本和 footer 继续保持原样 -->
-</body>
-</html>
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    :root {
+      --primary: #0078d4;
+      --primary-dark: #005fa3;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+    html, body {
+      margin: 0; padding: 0; width: 100%; height: 100%; overflow-x: hidden;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(135deg, var(--primary) 0%, #1084d8 100%);
+      color: white;
+      padding: 12px 16px 16px;
+      box-shadow: 0 2px 12px rgba(0,120,212,0.15);
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .header-logo {
+      height: 40px;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      text-decoration: none;
+    }
+    .header-logo img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+    .header-actions { display: flex; gap: 8px; }
+    .btn-icon {
+      background: rgba(255,255,255,0.2);
+      border: none; color: white;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      cursor: pointer; font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .btn-icon:active { background: rgba(255,255,255,0.3); }
+    .search-box { display: flex; gap: 8px; margin-top: 12px; }
+    .search-box input {
+      flex: 1; padding: 8px 12px;
+      border: none; border-radius: 20px;
+      font-size: 14px;
+      background: rgba(255,255,255,0.95);
+      color: var(--text-dark); outline: none;
+    }
+    .search-box input::placeholder { color: var(--text-light); }
+    .search-box button {
+      background: rgba(255,255,255,0.2);
+      border: none; color: white;
+      width: 36px; height: 36px;
+      border-radius: 50%; cursor: pointer;
+      font-size: 16px; transition: background 0.2s;
+    }
+    .search-box button:active { background: rgba(255,255,255,0.3); }
+    .breadcrumb {
+      padding: 12px 16px; font-size: 13px;
+      color: var(--text-light);
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    main {
+      padding: 8px;
+      padding-bottom: 90px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 24px; margin: 16px 0 8px 0; color: var(--text-dark); }
+    h2 { font-size: 18px; margin: 20px 0 12px 0; color: var(--text-dark); font-weight: 600; }
+    .page-desc { font-size: 14px; color: var(--text-light); margin-bottom: 16px; line-height: 1.6; }
+    .contact-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0; padding: 16px;
+      border-left: 4px solid var(--primary);
+    }
+    .contact-card h3 {
+      margin: 0 0 12px 0; font-size: 15px;
+      color: var(--primary);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .contact-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-icon { font-size: 18px; min-width: 24px; text-align: center; }
+    .contact-value { flex: 1; word-break: break-all; }
+    .contact-link { color: var(--primary); text-decoration: none; font-weight: 500; }
+    .contact-link:active { opacity: 0.7; }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0; overflow: hidden;
+    }
+    .card-header {
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .card-header-icon { font-size: 20px; }
+    .card-header-title { font-size: 15px; font-weight: 600; color: var(--primary); margin: 0; }
+    .card-content { padding: 0; }
+    .number-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 8px; padding: 12px;
+    }
+    .number-item {
+      position: relative;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      overflow: hidden;
+    }
+    .number-item:active { transform: scale(0.95); background: #e8f4fd; }
+    .number-badge {
+      position: absolute; top: 4px; right: 4px;
+      font-size: 11px; padding: 3px 6px;
+      border-radius: 4px; color: white; font-weight: 600;
+    }
+    .badge-hot { background: #ff4444; }
+    .badge-sold { background: var(--text-light); }
+    .number-value {
+      font-size: 17px; font-weight: 700;
+      color: var(--primary);
+      margin: 8px 0 6*
+
