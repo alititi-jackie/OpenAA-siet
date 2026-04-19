@@ -8,18 +8,15 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="靓号">
 
-  <!-- SEO优化 - 标题和描述 -->
   <title>美国手机靓号出售 | 生日号/豹子号/连号/顺号 | 微信Zelle支付 | OpenAA</title>
   <meta name="description" content="OpenAA提供全美手机靓号出售：纽约靓号、三连号、四连号、生日号、豹子号、顺号等精品号码。支持微信(WeChat)、Zelle付款。在美华人精选美国手机号码平台。">
   <meta name="keywords" content="美国手机靓号,手机靓号出售,生日号,豹子号,三连号,四连号,顺号,纽约靓号,美国手机号,微信支付,Zelle,靓号买卖,美国电话号,华人靓号,手机号码,在线购号,美国号码,电话号码,靓号平台,美国通讯">
   <meta name="robots" content="index, follow">
 
-  <!-- Canonical & hreflang -->
   <link rel="canonical" href="https://openaa.com/market/number/">
   <link rel="alternate" hreflang="zh-CN" href="https://openaa.com/market/number/">
   <link rel="alternate" hreflang="en-US" href="https://openaa.com/en/market/number/">
 
-  <!-- Open Graph -->
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:title" content="美国手机靓号出售 | OpenAA" />
   <meta property="og:description" content="全美精品手机靓号平台：三连号、四连号、生日号、豹子号、顺号等，支持微信Zelle付款，联系+1(917)842-6666或微信hola24" />
@@ -31,57 +28,12 @@
   <meta name="twitter:description" content="精品美国手机号码平台：靓号、生日号、豹子号、连号。微信Zelle支付。+1(917)842-6666" />
   <meta name="twitter:image" content="https://openaa.com/logo.png" />
 
-  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://openaa.com/#organization",
-        "name": "OpenAA",
-        "url": "https://openaa.com/",
-        "logo": "https://openaa.com/logo.png",
-        "description": "美国手机靓号出售平台",
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+1-917-842-6666",
-            "email": "323748@gmail.com",
-            "contactType": "sales",
-            "availableLanguage": ["Chinese","English"]
-          }
-        ]
-      },
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://openaa.com/market/number/#business",
-        "name": "OpenAA美国手机靓号",
-        "description": "专业美国手机靓号交易平台",
-        "telephone": "+1-917-842-6666",
-        "email": "323748@gmail.com",
-        "url": "https://openaa.com/market/number/"
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://openaa.com/market/number/#webpage",
-        "url": "https://openaa.com/market/number/",
-        "name": "美国手机靓号出售"
-      }
-    ]
-  }
-  </script>
-
   <style>
-    * { 
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
     :root {
       --primary: #0078d4;
@@ -111,7 +63,6 @@
       font-size: 16px;
     }
 
-    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -170,13 +121,6 @@
       background: rgba(255,255,255,0.3);
     }
 
-    .header-subtitle {
-      font-size: 13px;
-      opacity: 0.95;
-      margin: 0;
-    }
-
-    /* 搜索框 */
     .search-box {
       display: flex;
       gap: 8px;
@@ -214,7 +158,6 @@
       background: rgba(255,255,255,0.3);
     }
 
-    /* 面包屑 */
     .breadcrumb {
       padding: 12px 16px;
       font-size: 13px;
@@ -228,7 +171,6 @@
       text-decoration: none;
     }
 
-    /* 主要内容 */
     main {
       padding: 8px;
       padding-bottom: 90px;
@@ -236,7 +178,6 @@
       margin: 0 auto;
     }
 
-    /* 标题 */
     h1 {
       font-size: 24px;
       margin: 16px 0 8px 0;
@@ -257,7 +198,6 @@
       line-height: 1.6;
     }
 
-    /* 联系卡片 */
     .contact-card {
       background: var(--card-bg);
       border-radius: var(--radius);
@@ -310,7 +250,6 @@
       opacity: 0.7;
     }
 
-    /* 卡片 */
     .card {
       background: var(--card-bg);
       border-radius: var(--radius);
@@ -343,7 +282,6 @@
       padding: 0;
     }
 
-    /* 号码网格 */
     .number-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -366,6 +304,11 @@
     .number-item:active {
       transform: scale(0.95);
       background: #e8f4fd;
+    }
+
+    .number-item.highlight {
+      outline: 2px solid #ffb400;
+      box-shadow: 0 0 0 3px rgba(255,180,0,0.18);
     }
 
     .number-badge {
@@ -407,6 +350,13 @@
       pointer-events: none;
     }
 
+    .search-mark {
+      background: #ffef99;
+      color: inherit;
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+
     .no-result {
       grid-column: 1 / -1;
       text-align: center;
@@ -415,7 +365,6 @@
       font-size: 14px;
     }
 
-    /* 说明文本 */
     .note-box {
       background: #fffaed;
       border-left: 4px solid #ffc440;
@@ -427,7 +376,6 @@
       line-height: 1.6;
     }
 
-    /* 底部导航栏 */
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -437,7 +385,6 @@
       border-top: 1px solid var(--border);
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 0;
       z-index: 200;
       box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
     }
@@ -466,7 +413,6 @@
       margin-bottom: 4px;
     }
 
-    /* 浮动按钮 */
     .float-btn {
       position: fixed;
       right: 16px;
@@ -491,7 +437,6 @@
       transform: scale(0.9);
     }
 
-    /* 模态框 */
     .modal {
       display: none;
       position: fixed;
@@ -552,7 +497,6 @@
       color: var(--text-light);
     }
 
-    /* 吐司 */
     .toast {
       position: fixed;
       bottom: 100px;
@@ -577,7 +521,6 @@
       to { transform: translateX(-50%) translateY(0); opacity: 1; }
     }
 
-    /* 页脚 */
     footer {
       text-align: center;
       padding: 16px;
@@ -591,14 +534,12 @@
       text-decoration: none;
     }
 
-    /* 响应式 */
     @media (min-width: 600px) {
       .number-grid {
         grid-template-columns: repeat(4, 1fr);
       }
     }
 
-    /* 暗黑模式 */
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #1f1f1f;
@@ -607,15 +548,12 @@
         --text-light: #a0a0a0;
         --border: #3d3d3d;
       }
-      
       .card-header {
         background: #3d3d3d;
       }
-      
       .number-item:active {
         background: #3d3d3d;
       }
-
       .header-logo {
         background: white;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
@@ -624,7 +562,6 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="header-content">
       <a href="https://openaa.com/" class="header-logo">
@@ -641,17 +578,14 @@
     </div>
   </header>
 
-  <!-- 面包屑 -->
   <div class="breadcrumb">
     <a href="https://openaa.com/">首页</a> &gt; <a href="https://openaa.com/">市场</a> &gt; 手机靓号
   </div>
 
-  <!-- 主要内容 -->
   <main>
     <h1>💎 美国手机靓号出售</h1>
     <p class="page-desc">OpenAA精选美国手机靓号交易平台：提供纽约靓号、三连号、四连号、生日号、豹子号、顺号等精品号码。支持微信(WeChat)与Zelle付款，为在美华人提供优质服务。</p>
 
-    <!-- 快速联系卡片 -->
     <div class="contact-card">
       <h3>⚡ 快速联系</h3>
       <div class="contact-item">
@@ -674,7 +608,6 @@
       </div>
     </div>
 
-    <!-- 纽约三连号 -->
     <h2>🔥 纽约三连号</h2>
     <div class="card" id="triple">
       <div class="card-header">
@@ -682,147 +615,10 @@
         <h3 class="card-header-title">三位数重复</h3>
       </div>
       <div class="card-content">
-        <div class="number-grid">
-          <div class="number-item" onclick="handleNumberClick('(917) 516-9111')">
-            <span class="number-badge badge-hot">热卖</span>
-            <div class="number-value">(917)<br>516-9111</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(347) 640-8111')">
-            <div class="number-value">(347)<br>640-8111</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(347) 506-1222')">
-            <div class="number-value">(347)<br>506-1222</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(347) 926-1555')">
-            <div class="number-value">(347)<br>926-1555</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(347) 937-2666')">
-            <div class="number-value">(347)<br>937-2666</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(347) 830-3222')">
-            <div class="number-value">(347)<br>830-3222</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(917) 970-8222')">
-            <div class="number-value">(917)<br>970-8222</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(646) 693-5111')">
-            <div class="number-value">(646)<br>693-5111</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(917) 765-5222')">
-            <div class="number-value">(917)<br>765-5222</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(347) 868-5222')">
-            <div class="number-value">(347)<br>868-5222</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(347) 868-5333')">
-            <div class="number-value">(347)<br>868-5333</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(646) 859-5333')">
-            <div class="number-value">(646)<br>859-5333</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(347) 384-5888')">
-            <div class="number-value">(347)<br>384-5888</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(347) 566-7222')">
-            <div class="number-value">(347)<br>566-7222</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(917) 382-3111')">
-            <div class="number-value">(917)<br>382-3111</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(917) 985-6222')">
-            <div class="number-value">(917)<br>985-6222</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(646) 956-3111')">
-            <div class="number-value">(646)<br>956-3111</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(347) 868-3111')">
-            <div class="number-value">(347)<br>868-3111</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item sold" onclick="showToast('此号已售出')">
-            <span class="number-badge badge-sold">已售</span>
-            <div class="number-value">(917)<br>970-3222</div>
-            <div class="number-price">已售出</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(347) 971-3666')">
-            <div class="number-value">(347)<br>971-3666</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(929) 258-4777')">
-            <div class="number-value">(929)<br>258-4777</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(929) 496-8555')">
-            <div class="number-value">(929)<br>496-8555</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(929) 348-9111')">
-            <div class="number-value">(929)<br>348-9111</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(917) 725-3111')">
-            <div class="number-value">(917)<br>725-3111</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(917) 970-8111')">
-            <div class="number-value">(917)<br>970-8111</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(917) 970-3111')">
-            <div class="number-value">(917)<br>970-3111</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(917) 970-3555')">
-            <div class="number-value">(917)<br>970-3555</div>
-            <div class="number-price">$40</div>
-          </div>
-          <div class="number-item sold" onclick="showToast('此号已售出')">
-            <span class="number-badge badge-sold">已售</span>
-            <div class="number-value">(917)<br>703-3222</div>
-            <div class="number-price">已售出</div>
-          </div>
-          <div class="number-item sold" onclick="showToast('此号已售出')">
-            <span class="number-badge badge-sold">已售</span>
-            <div class="number-value">(917)<br>985-8222</div>
-            <div class="number-price">已售出</div>
-          </div>
-          <div class="number-item sold" onclick="showToast('此号已售出')">
-            <span class="number-badge badge-sold">已售</span>
-            <div class="number-value">(917)<br>809-8555</div>
-            <div class="number-price">已售出</div>
-          </div>
-          <div class="number-item sold" onclick="showToast('此号已售出')">
-            <span class="number-badge badge-sold">已售</span>
-            <div class="number-value">(917)<br>920-2555</div>
-            <div class="number-price">已售出</div>
-          </div>
-          <div class="number-item sold" onclick="showToast('此号已售出')">
-            <span class="number-badge badge-sold">已售</span>
-            <div class="number-value">(917)<br>781-3222</div>
-            <div class="number-price">已售出</div>
-          </div>
-        </div>
+        <div class="number-grid" id="triple-grid"></div>
       </div>
     </div>
 
-    <!-- 纽约四连号 -->
     <h2>💎 纽约四连号</h2>
     <div class="card" id="quad">
       <div class="card-header">
@@ -830,41 +626,10 @@
         <h3 class="card-header-title">四位数重复</h3>
       </div>
       <div class="card-content">
-        <div class="number-grid">
-          <div class="number-item" onclick="handleNumberClick('(929) 371-2222')">
-            <span class="number-badge badge-hot">热卖</span>
-            <div class="number-value">(929)<br>371-2222</div>
-            <div class="number-price">$280</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(917) 329-2222')">
-            <div class="number-value">(917)<br>329-2222</div>
-            <div class="number-price">$280</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(347) 309-2222')">
-            <div class="number-value">(347)<br>309-2222</div>
-            <div class="number-price">$280</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(929) 583-2222')">
-            <div class="number-value">(929)<br>583-2222</div>
-            <div class="number-price">$280</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(929) 561-2222')">
-            <div class="number-value">(929)<br>561-2222</div>
-            <div class="number-price">$280</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(929) 216-2222')">
-            <div class="number-value">(929)<br>216-2222</div>
-            <div class="number-price">$280</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(646) 986-2222')">
-            <div class="number-value">(646)<br>986-2222</div>
-            <div class="number-price">$280</div>
-          </div>
-        </div>
+        <div class="number-grid" id="quad-grid"></div>
       </div>
     </div>
 
-    <!-- 其他靓号 -->
     <h2>⭐ 其他靓号</h2>
     <div class="card" id="other">
       <div class="card-header">
@@ -872,64 +637,10 @@
         <h3 class="card-header-title">生日号/豹子号/顺号</h3>
       </div>
       <div class="card-content">
-        <div class="number-grid">
-          <div class="number-item" onclick="handleNumberClick('(570) 371-6666')">
-            <div class="number-value">(570)<br>371-6666</div>
-            <div class="number-price">咨询</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(570) 987-7777')">
-            <div class="number-value">(570)<br>987-7777</div>
-            <div class="number-price">咨询</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(978) 916-8888')">
-            <div class="number-value">(978)<br>916-8888</div>
-            <div class="number-price">咨询</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(570) 665-8888')">
-            <div class="number-value">(570)<br>665-8888</div>
-            <div class="number-price">咨询</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(570) 217-8888')">
-            <div class="number-value">(570)<br>217-8888</div>
-            <div class="number-price">咨询</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(570) 277-8888')">
-            <div class="number-value">(570)<br>277-8888</div>
-            <div class="number-price">咨询</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(570) 739-8888')">
-            <div class="number-value">(570)<br>739-8888</div>
-            <div class="number-price">咨询</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(570) 917-8888')">
-            <div class="number-value">(570)<br>917-8888</div>
-            <div class="number-price">咨询</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(570) 355-8888')">
-            <div class="number-value">(570)<br>355-8888</div>
-            <div class="number-price">咨询</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(703) 952-1888')">
-            <div class="number-value">(703)<br>952-1888</div>
-            <div class="number-price">咨询</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(703) 570-1888')">
-            <div class="number-value">(703)<br>570-1888</div>
-            <div class="number-price">咨询</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(703) 936-9888')">
-            <div class="number-value">(703)<br>936-9888</div>
-            <div class="number-price">咨询</div>
-          </div>
-          <div class="number-item" onclick="handleNumberClick('(703) 659-6888')">
-            <div class="number-value">(703)<br>659-6888</div>
-            <div class="number-price">咨询</div>
-          </div>
-        </div>
+        <div class="number-grid" id="other-grid"></div>
       </div>
     </div>
 
-    <!-- 说明文本 -->
     <div class="note-box">
       <strong>📌 温馨提醒</strong><br>
       页面仅展示部分号码样例。若有具体偏好（生日号、连号、特殊区号等），请通过电话、微信或邮箱联系我们获取实时库存。
@@ -939,13 +650,10 @@
       <strong>⏰ 托管费用说明</strong><br>
       号码购买后请尽量在 20 天内转出。超过 20 天未转出将按每月 $3 收取托管费用。
     </div>
-
   </main>
 
-  <!-- 浮动按钮 -->
   <button class="float-btn" onclick="showContactModal()" title="立即咨询">💬</button>
 
-  <!-- 底部导航栏 -->
   <nav class="bottom-nav">
     <a href="https://openaa.com/" class="nav-item">
       <div class="nav-item-icon">🏠</div>
@@ -969,14 +677,13 @@
     </button>
   </nav>
 
-  <!-- 联系模态框 -->
   <div class="modal" id="contactModal" onclick="closeModal(event)">
     <div class="modal-content">
       <div class="modal-header">
         <h2>📞 联系我们</h2>
         <button class="close-btn" onclick="closeModal()">✕</button>
       </div>
-      
+
       <div class="contact-card">
         <h3>快速联系方式</h3>
         <div class="contact-item">
@@ -1012,79 +719,105 @@
     </div>
   </div>
 
-  <!-- 吐司提示 -->
   <div class="toast" id="toast"></div>
 
-  <!-- 页脚 -->
   <footer>
     <strong>OpenAA · 美国手机靓号平台</strong><br />
     © 2025 OpenAA.com · 靓号出售 | 联系：+1 (917) 842-6666
   </footer>
 
   <script>
+    let numbersData = null;
+    const normalizeNumber = text => String(text || '').replace(/[^\d]/g, '');
+
     function scrollToSection(sectionId) {
       const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-
-    function handleNumberClick(number) {
-      showToast(`号码: ${number} - 联系我们了解详情`);
-    }
-
-    function normalizeNumber(text) {
-      return String(text || '').replace(/[^\d]/g, '');
-    }
-
-    function handleSearch() {
-      const query = normalizeNumber(document.getElementById('searchInput').value);
-      const allItems = document.querySelectorAll('.number-item');
-      let matched = 0;
-
-      allItems.forEach(item => {
-        const itemNumber = normalizeNumber(item.innerText);
-        const hit = !query || itemNumber.includes(query);
-        item.style.display = hit ? '' : 'none';
-        if (hit) matched++;
-      });
-
-      let noResult = document.getElementById('noResult');
-
-      if (!query) {
-        if (noResult) noResult.remove();
-        return;
-      }
-
-      if (matched === 0) {
-        if (!noResult) {
-          noResult = document.createElement('div');
-          noResult.id = 'noResult';
-          noResult.className = 'note-box';
-          noResult.style.marginTop = '12px';
-          noResult.textContent = '没有找到匹配号码';
-          document.querySelector('main').appendChild(noResult);
-        }
-      } else if (noResult) {
-        noResult.remove();
-      }
-    }
-
-    document.getElementById('searchInput')?.addEventListener('input', handleSearch);
-    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        handleSearch();
-      }
-    });
 
     function showToast(message) {
       const toast = document.getElementById('toast');
       toast.textContent = message;
       toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 2000);
+      setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function highlightText(text, query) {
+      const safe = escapeHtml(text);
+      const q = normalizeNumber(query);
+      if (!q) return safe;
+      const plain = normalizeNumber(text);
+      const idx = plain.indexOf(q);
+      if (idx === -1) return safe;
+      return safe.replace(q, `<mark class="search-mark">${q}</mark>`);
+    }
+
+    function formatUS(n) {
+      const d = normalizeNumber(n);
+      if (d.length !== 10) return n;
+      return `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`;
+    }
+
+    function cardHTML(it, query = '') {
+      const sold = !!it.sold;
+      const hot = !!it.hot && !sold;
+      const display = formatUS(it.number);
+      const priceText = sold ? '已售出' : (typeof it.price === 'number' ? `$${it.price}` : '咨询');
+      const clickFn = sold ? `showToast('此号已售出')` : `handleNumberClick('${display}')`;
+      const q = normalizeNumber(query);
+      const numberHtml = q ? highlightText(display, q).replace(/\n/g, '<br>') : display;
+      const isHighlighted = q && normalizeNumber(it.number).includes(q);
+
+      return `<div class="number-item${sold ? ' sold' : ''}${isHighlighted ? ' highlight' : ''}" onclick="${clickFn}">
+        ${hot ? '<span class="number-badge badge-hot">热卖</span>' : ''}
+        ${sold ? '<span class="number-badge badge-sold">已售</span>' : ''}
+        <div class="number-value">${numberHtml}</div>
+        <div class="number-price">${priceText}</div>
+      </div>`;
+    }
+
+    async function loadNumbers() {
+      try {
+        const res = await fetch('./numbers.json', { cache: 'no-store' });
+        numbersData = await res.json();
+        renderAll();
+      } catch (e) {
+        console.error('Failed to load numbers.json', e);
+        showToast('号码数据加载失败');
+      }
+    }
+
+    function renderGrid(gridId, list, query) {
+      const grid = document.getElementById(gridId);
+      if (!grid) return;
+
+      const q = normalizeNumber(query);
+      const filtered = q ? list.filter(it => normalizeNumber(it.number).includes(q)) : list;
+
+      grid.innerHTML = filtered.length
+        ? filtered.map(it => cardHTML(it, q)).join('')
+        : '<div class="no-result">无匹配号码</div>';
+    }
+
+    function renderAll() {
+      if (!numbersData) return;
+      const q = document.getElementById('searchInput')?.value || '';
+      renderGrid('triple-grid', numbersData.triple || [], q);
+      renderGrid('quad-grid', numbersData.quad || [], q);
+      renderGrid('other-grid', numbersData.other || [], q);
+    }
+
+    function handleSearch() {
+      renderAll();
     }
 
     function copyWeChat() {
@@ -1092,9 +825,7 @@
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(wechatId).then(() => {
           showToast('微信号已复制: ' + wechatId);
-        }).catch(() => {
-          fallbackCopy(wechatId);
-        });
+        }).catch(() => fallbackCopy(wechatId));
       } else {
         fallbackCopy(wechatId);
       }
@@ -1125,23 +856,9 @@
       document.getElementById('contactModal').classList.remove('active');
     }
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-    });
-
-    document.querySelector('.modal-content')?.addEventListener('click', (e) => {
-      e.stopPropagation();
-    });
-
     function toggleBookmark() {
       const ua = navigator.userAgent.toLowerCase();
-      if (ua.indexOf('mac') > -1) {
-        alert('请使用 Cmd+D 收藏本站');
-      } else {
-        alert('请使用 Ctrl+D 收藏本站');
-      }
+      alert(ua.indexOf('mac') > -1 ? '请使用 Cmd+D 收藏本站' : '请使用 Ctrl+D 收藏本站');
     }
 
     function doShare() {
@@ -1162,13 +879,20 @@
       }
     }
 
-    function goHome() {
-      window.location.href = 'https://openaa.com/';
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      handleSearch();
+    document.getElementById('searchInput')?.addEventListener('input', handleSearch);
+    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        handleSearch();
+      }
     });
-  </script>
-</body>
-</html>
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    document.querySelector('.modal-content')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    window*
