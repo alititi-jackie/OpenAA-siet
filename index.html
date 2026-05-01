@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>OpenAA 华人导航 - 美国华人常用网站、政府、银行、购物、DMV入口</title>
+  <meta name="description" content="OpenAA 华人导航为美国华人整理常用网站入口，包括政府服务、银行金融、购物海淘、DMV、地图、翻译、邮政、报税和生活工具等。" />
+  <meta name="keywords" content="OpenAA, 华人导航, 美国华人导航, 美国华人常用网站, 纽约华人导航, DMV, 美国银行, 美国购物, IRS, USCIS, USPS, Chase, Amazon" />
+  <link rel="canonical" href="https://openaa.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="OpenAA 华人导航 - 美国华人常用网站、政府、银行、购物、DMV入口" />
+  <meta property="og:description" content="OpenAA 华人导航为美国华人整理常用网站入口，包括政府服务、银行金融、购物海淘、DMV、地图、翻译、邮政、报税和生活工具等。" />
+  <meta property="og:url" content="https://openaa.com" />
+  <meta property="og:image" content="https://openaa.com/assets/logo.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 1. 顶部栏 -->
+  <header class="app-header" id="appHeader">
+    <div class="header-inner">
+      <!-- Left: location -->
+      <button class="header-location" type="button" aria-label="城市选择">
+        <svg class="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span>纽约</span>
+        <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+
+      <!-- Center: logo -->
+      <a href="https://openaa.com" class="header-logo" aria-label="OpenAA 首页">
+        <img src="assets/logo.png" alt="OpenAA" class="header-logo-img" onerror="this.style.display='none'" />
+        <span class="header-logo-text">
+          <span class="logo-blue">Open</span><span class="logo-dark">AA</span>
+        </span>
+      </a>
+
+      <!-- Right: share -->
+      <button class="header-share" type="button" aria-label="分享" onclick="shareOpenAA()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="5" r="3"/>
+          <circle cx="6" cy="12" r="3"/>
+          <circle cx="18" cy="19" r="3"/>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Header spacer -->
+  <div class="header-spacer"></div>
+
+  <!-- Main content -->
+  <main class="main-content">
+
+    <!-- 2. 主 Banner 广告轮播 -->
+    <section class="banner-section">
+      <div class="banner-wrapper">
+        <div class="banner-track" id="bannerTrack"></div>
+        <div class="banner-dots" id="bannerDots"></div>
+      </div>
+    </section>
+
+    <!-- 3. 搜索框 (Google Search) -->
+    <section class="search-section">
+      <form class="search-wrapper" action="https://www.google.com/search" method="GET" target="_self" rel="noopener" onsubmit="return handleGoogleSearchSubmit(event)">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="search"
+          id="searchInput"
+          name="q"
+          class="search-input"
+          placeholder="华人OpenAA 搜索你感兴趣的内容..."
+          autocomplete="off"
+        />
+        <button class="search-clear" id="searchClear" type="button" onclick="clearGoogleSearch()" aria-label="清除搜索">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+        <button class="search-submit" type="submit" aria-label="搜索">搜索</button>
+      </form>
+    </section>
+
+    <!-- 4. 8 宫格入口 -->
+    <section class="grid-menu-section">
+      <div class="grid-menu">
+        <a href="https://app.openaa.com/jobs" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+              <line x1="12" y1="12" x2="12" y2="16"/>
+              <line x1="10" y1="14" x2="14" y2="14"/>
+            </svg>
+          </div>
+          <span>招聘</span>
+        </a>
+        <a href="https://app.openaa.com/housing" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap emerald">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <span>房屋</span>
+        </a>
+        <a href="https://app.openaa.com/secondhand" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap violet">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </div>
+          <span>二手</span>
+        </a>
+        <a href="https://openaa.com/dmv/" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="2"/>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <span>DMV</span>
+        </a>
+        <a href="https://app.openaa.com/news" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap rose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
+              <path d="M18 14h-8"/>
+              <path d="M15 18h-5"/>
+              <path d="M10 6h8v4h-8V6z"/>
+            </svg>
+          </div>
+          <span>新闻</span>
+        </a>
+        <a href="https://openaa.com" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+            </svg>
+          </div>
+          <span>导航</span>
+        </a>
+        <a href="https://openaa.com/guide" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
+          <span>新手指南</span>
+        </a>
+        <a href="https://openaa.com/services" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <span>本地服务</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. 分类吸顶栏 -->
+    <div class="category-bar-wrap" id="categoryBarWrap">
+      <nav class="category-bar" id="categoryBar" role="tablist">
+        <button class="cat-tab active" data-cat="all" role="tab" aria-selected="true" onclick="switchCategory('all', this)">全部</button>
+        <button class="cat-tab" data-cat="gov" role="tab" aria-selected="false" onclick="switchCategory('gov', this)">政府</button>
+        <button class="cat-tab" data-cat="bank" role="tab" aria-selected="false" onclick="switchCategory('bank', this)">银行</button>
+        <button class="cat-tab" data-cat="shop" role="tab" aria-selected="false" onclick="switchCategory('shop', this)">购物</button>
+        <button class="cat-tab" data-cat="dmv" role="tab" aria-selected="false" onclick="switchCategory('dmv', this)">DMV</button>
+        <button class="cat-tab" data-cat="ai" role="tab" aria-selected="false" onclick="switchCategory('ai', this)">常用AI</button>
+      </nav>
+    </div>
+
+    <!-- 6. 导航内容模块 -->
+    <section class="nav-modules" id="navModules">
+
+      <!-- 推荐精选 -->
+      <div class="nav-module" data-module="featured" data-order="0">
+        <div class="module-header">
+          <span class="module-icon star">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </span>
+          <h2 class="module-title">推荐精选</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://www.google.com/maps" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><img src="https://www.google.com/favicon.ico" alt="" onerror="this.style.display='none'" /><span>🗺</span></div>
+            <span class="nav-card-name">Google Maps</span>
+          </a>
+          <a href="https://www.irs.gov" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>🏛</span></div>
+            <span class="nav-card-name">IRS</span>
+          </a>
+          <a href="https://www.amazon.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff8e1"><span>📦</span></div>
+            <span class="nav-card-name">Amazon</span>
+          </a>
+          <a href="https://dmv.ny.gov" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff9c4"><span>🚗</span></div>
+            <span class="nav-card-name">纽约 DMV</span>
+          </a>
+          <a href="https://www.google.com/search?q=usd+to+cny" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>💱</span></div>
+            <span class="nav-card-name">汇率查询</span>
+          </a>
+          <a href="https://openaa.com/dmv/tickets" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>🎫</span></div>
+            <span class="nav-card-name">罚单查询</span>
+          </a>
+          <a href="https://translate.google.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🌐</span></div>
+            <span class="nav-card-name">翻译工具</span>
+          </a>
+          <a href="https://www.usps.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8eaf6"><span>📮</span></div>
+            <span class="nav-card-name">USPS</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 政府服务 -->
+      <div class="nav-module" data-module="gov" data-order="1">
+        <div class="module-header">
+          <span class="module-icon gov">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="22" x2="21" y2="22"/>
+              <line x1="6" y1="18" x2="6" y2="11"/>
+              <line x1="10" y1="18" x2="10" y2="11"/>
+              <line x1="14" y1="18" x2="14" y2="11"/>
+              <line x1="18" y1="18" x2="18" y2="11"/>
+              <polygon points="12 2 20 7 4 7"/>
+            </svg>
+          </span>
+          <h2 class="module-title">政府服务</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://www.irs.gov" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>🏛</span></div>
+            <span class="nav-card-name">IRS 报税</span>
+          </a>
+          <a href="https://www.uscis.gov" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🗽</span></div>
+            <span class="nav-card-name">USCIS 移民</span>
+          </a>
+          <a href="https://www.usps.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8eaf6"><span>📮</span></div>
+            <span class="nav-card-name">USPS 邮政</span>
+          </a>
+          <a href="https://www.ssa.gov" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>🛡</span></div>
+            <span class="nav-card-name">SSA 社保</span>
+          </a>
+          <a href="https://www.ny.gov" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🏙</span></div>
+            <span class="nav-card-name">NY.gov</span>
+          </a>
+          <a href="https://new.mta.info" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e0f2f1"><span>🚇</span></div>
+            <span class="nav-card-name">MTA</span>
+          </a>
+          <a href="https://portal.311.nyc.gov" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff9c4"><span>📞</span></div>
+            <span class="nav-card-name">311</span>
+          </a>
+          <a href="https://www.nyc.gov" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#f3e5f5"><span>🏢</span></div>
+            <span class="nav-card-name">市政府服务</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 银行金融 -->
+      <div class="nav-module" data-module="bank" data-order="2">
+        <div class="module-header">
+          <span class="module-icon bank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+              <line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+          </span>
+          <h2 class="module-title">银行金融</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://www.chase.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🏦</span></div>
+            <span class="nav-card-name">Chase</span>
+          </a>
+          <a href="https://www.bankofamerica.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>🏦</span></div>
+            <span class="nav-card-name">Bank of America</span>
+          </a>
+          <a href="https://www.wellsfargo.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>🏦</span></div>
+            <span class="nav-card-name">Wells Fargo</span>
+          </a>
+          <a href="https://www.citi.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🏦</span></div>
+            <span class="nav-card-name">Citi</span>
+          </a>
+          <a href="https://www.td.com/us/en/personal-banking" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e0f2f1"><span>🏦</span></div>
+            <span class="nav-card-name">TD Bank</span>
+          </a>
+          <a href="https://www.americanexpress.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8eaf6"><span>💳</span></div>
+            <span class="nav-card-name">American Express</span>
+          </a>
+          <a href="https://www.paypal.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>💸</span></div>
+            <span class="nav-card-name">PayPal</span>
+          </a>
+          <a href="https://www.zellepay.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#f3e5f5"><span>⚡</span></div>
+            <span class="nav-card-name">Zelle</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 购物海淘 -->
+      <div class="nav-module" data-module="shop" data-order="3">
+        <div class="module-header">
+          <span class="module-icon shop">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"/>
+              <circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+          </span>
+          <h2 class="module-title">购物海淘</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://www.amazon.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff8e1"><span>📦</span></div>
+            <span class="nav-card-name">Amazon</span>
+          </a>
+          <a href="https://www.walmart.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>🛒</span></div>
+            <span class="nav-card-name">Walmart</span>
+          </a>
+          <a href="https://www.costco.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>🏪</span></div>
+            <span class="nav-card-name">Costco</span>
+          </a>
+          <a href="https://www.target.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#ffebee"><span>🎯</span></div>
+            <span class="nav-card-name">Target</span>
+          </a>
+          <a href="https://www.ebay.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🏷</span></div>
+            <span class="nav-card-name">eBay</span>
+          </a>
+          <a href="https://www.temu.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#f3e5f5"><span>🛍</span></div>
+            <span class="nav-card-name">Temu</span>
+          </a>
+          <a href="https://www.bestbuy.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>💻</span></div>
+            <span class="nav-card-name">Best Buy</span>
+          </a>
+          <a href="https://openaa.com/nav/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e0f7fa"><span>🔗</span></div>
+            <span class="nav-card-name">更多购物</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- DMV 常用 -->
+      <div class="nav-module" data-module="dmv" data-order="4">
+        <div class="module-header">
+          <span class="module-icon dmv">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="2"/>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </span>
+          <h2 class="module-title">DMV 常用</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://dmv.ny.gov" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff9c4"><span>🚗</span></div>
+            <span class="nav-card-name">DMV 官网</span>
+          </a>
+          <a href="https://app.openaa.com/dmv/ny/practice" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>📝</span></div>
+            <span class="nav-card-name">笔试题库</span>
+          </a>
+          <a href="https://dmv.ny.gov/schedule-road-test" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>📅</span></div>
+            <span class="nav-card-name">路考预约</span>
+          </a>
+          <a href="https://openaa.com/dmv/tickets" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>🎫</span></div>
+            <span class="nav-card-name">罚单查询</span>
+          </a>
+          <a href="https://dmv.ny.gov/driver-license" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>🪪</span></div>
+            <span class="nav-card-name">换驾照</span>
+          </a>
+          <a href="https://www.nicb.org/vincheck" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8eaf6"><span>🔍</span></div>
+            <span class="nav-card-name">VIN 查询</span>
+          </a>
+          <a href="https://dmv.ny.gov/driver-license/renew-license" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e0f2f1"><span>🔄</span></div>
+            <span class="nav-card-name">驾照续期</span>
+          </a>
+          <a href="https://dmv.ny.gov/offices" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#f3e5f5"><span>📍</span></div>
+            <span class="nav-card-name">DMV 地址</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 实用工具 -->
+      <div class="nav-module" data-module="tools" data-order="5">
+        <div class="module-header">
+          <span class="module-icon tools">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </span>
+          <h2 class="module-title">实用工具</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://www.google.com/search?q=usd+to+cny" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>💱</span></div>
+            <span class="nav-card-name">汇率换算</span>
+          </a>
+          <a href="https://translate.google.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🌐</span></div>
+            <span class="nav-card-name">翻译工具</span>
+          </a>
+          <a href="https://www.google.com/maps" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🗺</span></div>
+            <span class="nav-card-name">地图导航</span>
+          </a>
+          <a href="https://tools.usps.com/go/TrackConfirmAction_input" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8eaf6"><span>📦</span></div>
+            <span class="nav-card-name">快递查询</span>
+          </a>
+          <a href="https://www.irs.gov" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>📋</span></div>
+            <span class="nav-card-name">报税入口</span>
+          </a>
+          <a href="https://weather.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🌤</span></div>
+            <span class="nav-card-name">天气查询</span>
+          </a>
+          <a href="https://www.google.com/search?q=us+area+code+lookup" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#f3e5f5"><span>📱</span></div>
+            <span class="nav-card-name">电话区号</span>
+          </a>
+          <a href="https://openaa.com/nav/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e0f7fa"><span>🔗</span></div>
+            <span class="nav-card-name">常用网址</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- AI -->
+      <div class="nav-module" data-module="ai" data-order="6">
+        <div class="module-header">
+          <span class="module-icon ai">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-0.99-1-1.73a2 2 0 0 1 2-2Z"/>
+              <circle cx="9" cy="14" r="1" fill="currentColor"/>
+              <circle cx="15" cy="14" r="1" fill="currentColor"/>
+            </svg>
+          </span>
+          <h2 class="module-title">AI 助手</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://chat.openai.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🤖</span></div>
+            <span class="nav-card-name">ChatGPT</span>
+          </a>
+          <a href="https://claude.ai" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>🧠</span></div>
+            <span class="nav-card-name">Claude</span>
+          </a>
+          <a href="https://gemini.google.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>✨</span></div>
+            <span class="nav-card-name">Gemini</span>
+          </a>
+          <a href="https://www.perplexity.ai" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8eaf6"><span>🔮</span></div>
+            <span class="nav-card-name">Perplexity</span>
+          </a>
+          <a href="https://copilot.microsoft.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e0f2f1"><span>💡</span></div>
+            <span class="nav-card-name">Copilot</span>
+          </a>
+          <a href="https://www.meta.ai" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8eaf6"><span>🌀</span></div>
+            <span class="nav-card-name">Meta AI</span>
+          </a>
+          <a href="https://grok.x.ai" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>⚡</span></div>
+            <span class="nav-card-name">Grok</span>
+          </a>
+          <a href="https://www.deepseek.com" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🔭</span></div>
+            <span class="nav-card-name">DeepSeek</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 搜索无结果提示 -->
+      <div class="no-results" id="noResults" style="display:none">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <p>未找到相关结果</p>
+        <small>请尝试其他关键词</small>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- 7. 底部固定导航栏 -->
+  <nav class="bottom-nav" role="navigation" aria-label="底部导航">
+    <a href="https://app.openaa.com" class="bottom-nav-item" target="_self" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span>首页</span>
+    </a>
+    <a href="https://app.openaa.com/jobs" class="bottom-nav-item" target="_self" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2"/>
+        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+      </svg>
+      <span>招聘</span>
+    </a>
+    <a href="https://app.openaa.com/housing" class="bottom-nav-item" target="_self" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span>房屋</span>
+    </a>
+    <a href="https://openaa.com" class="bottom-nav-item active" aria-current="page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+      </svg>
+      <span>导航</span>
+    </a>
+    <a href="https://app.openaa.com/profile" class="bottom-nav-item" target="_self" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+      <span>我的</span>
+    </a>
+  </nav>
+
+  <script src="script.js"></script>
+
+  <!-- 最终分类 Tab 定位滚动逻辑：必须放在 script.js 后面，避免被旧 switchCategory 覆盖 -->
+  <script>
+    (function () {
+      var CATEGORY_TARGETS = {
+        all: 'featured',
+        gov: 'gov',
+        bank: 'bank',
+        shop: 'shop',
+        dmv: 'dmv',
+        ai: 'ai'
+      };
+
+      function forceShowAllModules() {
+        document.querySelectorAll('.nav-module').forEach(function (module) {
+          module.classList.remove('hidden', 'search-empty');
+          module.style.display = '';
+        });
+        document.querySelectorAll('.nav-card').forEach(function (card) {
+          card.classList.remove('search-hidden');
+          card.style.display = '';
+        });
+        var noResults = document.getElementById('noResults');
+        if (noResults) noResults.style.display = 'none';
+      }
+
+      function setActiveCategoryTab(button) {
+        document.querySelectorAll('.cat-tab').forEach(function (tab) {
+          tab.classList.remove('active');
+          tab.setAttribute('aria-selected', 'false');
+        });
+        if (button) {
+          button.classList.add('active');
+          button.setAttribute('aria-selected', 'true');
+          button.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      }
+
+      function getTargetElement(category) {
+        var moduleName = CATEGORY_TARGETS[category] || 'featured';
+        return document.querySelector('.nav-module[data-module="' + moduleName + '"]') || document.getElementById('navModules');
+      }
+
+      function scrollToCategory(category) {
+        var target = getTargetElement(category);
+        if (!target) return;
+
+        var appHeader = document.getElementById('appHeader');
+        var categoryBar = document.getElementById('categoryBarWrap');
+        var headerHeight = appHeader ? appHeader.offsetHeight : 56;
+        var categoryHeight = categoryBar ? categoryBar.offsetHeight : 44;
+
+        /* 留出一点空白，避免模块标题贴住或被吸顶分类栏遮住 */
+        var visualGap = 12;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - categoryHeight - visualGap;
+        window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+      }
+
+      window.switchCategory = function (category, button) {
+        forceShowAllModules();
+        setActiveCategoryTab(button);
+        scrollToCategory(category);
+        return false;
+      };
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var categoryBar = document.getElementById('categoryBar');
+        if (!categoryBar) return;
+
+        categoryBar.addEventListener('click', function (event) {
+          var button = event.target.closest('.cat-tab');
+          if (!button) return;
+
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+
+          var category = button.getAttribute('data-cat') || 'all';
+          window.switchCategory(category, button);
+        }, true);
+      });
+    })();
+  </script>
+</body>
+</html>
