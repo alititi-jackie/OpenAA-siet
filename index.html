@@ -185,11 +185,20 @@
     <div class="category-bar-wrap" id="categoryBarWrap">
       <nav class="category-bar" id="categoryBar" role="tablist">
         <button class="cat-tab active" data-cat="all" role="tab" aria-selected="true" onclick="switchCategory('all', this)">全部</button>
+        <button class="cat-tab" data-cat="featured" role="tab" aria-selected="false" onclick="switchCategory('featured', this)">推荐</button>
         <button class="cat-tab" data-cat="gov" role="tab" aria-selected="false" onclick="switchCategory('gov', this)">政府</button>
         <button class="cat-tab" data-cat="bank" role="tab" aria-selected="false" onclick="switchCategory('bank', this)">银行</button>
         <button class="cat-tab" data-cat="shop" role="tab" aria-selected="false" onclick="switchCategory('shop', this)">购物</button>
         <button class="cat-tab" data-cat="dmv" role="tab" aria-selected="false" onclick="switchCategory('dmv', this)">DMV</button>
+        <button class="cat-tab" data-cat="tools" role="tab" aria-selected="false" onclick="switchCategory('tools', this)">工具</button>
         <button class="cat-tab" data-cat="ai" role="tab" aria-selected="false" onclick="switchCategory('ai', this)">常用AI</button>
+        <button class="cat-tab" data-cat="map" role="tab" aria-selected="false" onclick="switchCategory('map', this)">地图</button>
+        <button class="cat-tab" data-cat="post" role="tab" aria-selected="false" onclick="switchCategory('post', this)">邮政</button>
+        <button class="cat-tab" data-cat="tax" role="tab" aria-selected="false" onclick="switchCategory('tax', this)">报税</button>
+        <button class="cat-tab" data-cat="translate" role="tab" aria-selected="false" onclick="switchCategory('translate', this)">翻译</button>
+        <button class="cat-tab" data-cat="traffic" role="tab" aria-selected="false" onclick="switchCategory('traffic', this)">交通</button>
+        <button class="cat-tab" data-cat="news" role="tab" aria-selected="false" onclick="switchCategory('news', this)">新闻</button>
+        <button class="cat-tab" data-cat="services" role="tab" aria-selected="false" onclick="switchCategory('services', this)">本地服务</button>
       </nav>
     </div>
 
@@ -602,11 +611,20 @@
     (function () {
       var CATEGORY_TARGETS = {
         all: 'featured',
+        featured: 'featured',
         gov: 'gov',
         bank: 'bank',
         shop: 'shop',
         dmv: 'dmv',
-        ai: 'ai'
+        tools: 'tools',
+        ai: 'ai',
+        map: 'tools',
+        post: 'tools',
+        tax: 'tools',
+        translate: 'tools',
+        traffic: 'tools',
+        news: 'featured',
+        services: 'tools'
       };
 
       function forceShowAllModules() {
