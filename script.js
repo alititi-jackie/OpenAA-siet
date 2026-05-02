@@ -8,27 +8,27 @@
 // ===================================================
 const ADS = [
   {
-    image: 'assets/ads/ad-1.png',
+    image: '/assets/ads/ad-1.png',
     link: 'https://app.openaa.com/jobs',
     alt: '招聘广告'
   },
   {
-    image: 'assets/ads/ad-2.png',
+    image: '/assets/ads/ad-2.png',
     link: 'https://app.openaa.com/housing',
     alt: '房屋广告'
   },
   {
-    image: 'assets/ads/ad-3.png',
+    image: '/assets/ads/ad-3.png',
     link: 'https://app.openaa.com/dmv/ny/practice',
     alt: 'DMV 广告'
   },
   {
-    image: 'assets/ads/ad-4.png',
+    image: '/assets/ads/ad-4.png',
     link: 'https://openaa.com/nav/',
     alt: '导航广告'
   },
   {
-    image: 'assets/ads/ad-5.png',
+    image: '/assets/ads/ad-5.png',
     link: 'https://openaa.com',
     alt: 'OpenAA 广告'
   }
