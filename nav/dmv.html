@@ -70,155 +70,21 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 
+  <!-- 共用站点样式 -->
+  <link rel="stylesheet" href="../style.css" />
+
   <style>
-    * { 
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+    /* DMV 页面内容专属样式（结构/布局/颜色由 style.css 提供） */
 
     :root {
       --primary: #0078d4;
       --primary-dark: #005fa3;
-      --bg: #f8f9fa;
       --card-bg: #ffffff;
       --text-dark: #1f2937;
       --text-light: #6b7280;
       --border: #e5e7eb;
       --shadow: 0 2px 8px rgba(0,0,0,0.08);
       --radius: 12px;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow-x: hidden;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-      background-color: var(--bg);
-      color: var(--text-dark);
-      line-height: 1.6;
-      font-size: 16px;
-    }
-
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: linear-gradient(135deg, var(--primary) 0%, #1084d8 100%);
-      color: white;
-      padding: 12px 16px 16px;
-      box-shadow: 0 2px 12px rgba(0,120,212,0.15);
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .header-logo {
-      height: 40px;
-      padding: 6px 12px;
-      display: flex;
-      align-items: center;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      text-decoration: none;
-    }
-
-    .header-logo img {
-      height: 100%;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .header-actions {
-      display: flex;
-      gap: 8px;
-    }
-
-    .btn-icon {
-      background: rgba(255,255,255,0.2);
-      border: none;
-      color: white;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-
-    .btn-icon:active {
-      background: rgba(255,255,255,0.3);
-    }
-
-    .search-box {
-      display: flex;
-      gap: 8px;
-    }
-
-    .search-box input {
-      flex: 1;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 20px;
-      font-size: 14px;
-      background: rgba(255,255,255,0.95);
-      color: var(--text-dark);
-      outline: none;
-    }
-
-    .search-box input::placeholder {
-      color: var(--text-light);
-    }
-
-    .search-box button {
-      background: rgba(255,255,255,0.2);
-      border: none;
-      color: white;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background 0.2s;
-    }
-
-    .search-box button:active {
-      background: rgba(255,255,255,0.3);
-    }
-
-    /* 面包屑 */
-    .breadcrumb {
-      padding: 12px 16px;
-      font-size: 13px;
-      color: var(--text-light);
-      background: var(--card-bg);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .breadcrumb a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    /* 主要内容 */
-    main {
-      padding: 8px;
-      padding-bottom: 90px;
-      max-width: 600px;
-      margin: 0 auto;
     }
 
     /* 标题 */
@@ -347,61 +213,13 @@
       background: #f0f7ff;
     }
 
-    /* 底部导航栏 */
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: var(--card-bg);
-      border-top: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0;
-      z-index: 200;
-      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
-    }
-
-    .nav-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 0;
-      text-decoration: none;
-      color: var(--text-light);
-      font-size: 11px;
-      transition: color 0.2s;
-      cursor: pointer;
-      border: none;
-      background: none;
-    }
-
-    .nav-item.active {
-      color: var(--primary);
-    }
-
-    .nav-item-icon {
-      font-size: 22px;
-      margin-bottom: 4px;
-    }
-
-    /* 页脚 */
-    footer {
-      text-align: center;
-      padding: 16px;
-      font-size: 12px;
-      color: var(--text-light);
-      margin-top: 16px;
-    }
-
-    footer a {
-      color: var(--primary);
-      text-decoration: none;
+    /* DMV 主体内容区域留白 */
+    .dmv-body {
+      padding: 8px;
     }
 
     /* 响应式 */
-    @media (min-width: 600px) {
+    @media (min-width: 560px) {
       .dmv-grid {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -410,55 +228,35 @@
     /* 暗黑模式 */
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #1f1f1f;
         --card-bg: #2d2d2d;
         --text-dark: #f5f5f5;
         --text-light: #a0a0a0;
         --border: #3d3d3d;
       }
-      
+
       .card-header {
         background: #3d3d3d;
       }
-      
+
       .dmv-item:active,
       .hot-state-item:active {
         background: #3d3d3d;
-      }
-
-      .header-logo {
-        background: white;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
       }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="header-content">
-      <a href="https://openaa.com/" class="header-logo">
-        <img src="https://openaa.com/logo.png" alt="OpenAA" />
-      </a>
-      <div class="header-actions">
-        <button class="btn-icon" onclick="toggleBookmark()" title="收藏本站">📌</button>
-        <button class="btn-icon" onclick="goHome()" title="返回首页">🏠</button>
-      </div>
-    </div>
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="搜索州名或DMV..." />
-      <button onclick="handleSearch()">🔍</button>
-    </div>
-  </header>
+  <!-- 顶部栏（由公共组件注入） -->
+  <div id="site-header-placeholder"></div>
 
-  <!-- 面包屑 -->
-  <div class="breadcrumb">
-    <a href="https://openaa.com/">首页</a> > <a href="https://openaa.com/">导航</a> > DMV导航
-  </div>
+  <!-- 主要内容：复用首页 .main-content 宽度/版心 -->
+  <main class="main-content">
+    <!-- 广告/搜索/导航/分类栏（由公共组件注入） -->
+    <div id="site-inner-top-placeholder"></div>
 
-  <!-- 主要内容 -->
-  <main>
-    <h1>🚗 美国各州DMV导航</h1>
+    <!-- DMV 主体内容 -->
+    <div class="dmv-body">
+      <h1>🚗 美国各州DMV导航</h1>
     <p class="page-desc">为在美华人提供美国50州车辆管理局（DMV）官方网站直链，快速办理驾驶证、车辆登记、路试预约等事务。</p>
 
     <!-- 快捷工具入口 -->
@@ -627,67 +425,13 @@
       </div>
     </div>
 
+    </div><!-- /.dmv-body -->
   </main>
 
-  <!-- 底部导航栏 -->
-  <nav class="bottom-nav">
-    <a href="https://openaa.com/" class="nav-item">
-      <div class="nav-item-icon">🏠</div>
-      <div>首页</div>
-    </a>
-    <button class="nav-item active" onclick="scrollToTop()">
-      <div class="nav-item-icon">🚗</div>
-      <div>DMV</div>
-    </button>
-    <a href="https://openaa.com/dmv/ny/practice/" class="nav-item">
-      <div class="nav-item-icon">📝</div>
-      <div>DMV笔试模拟</div>
-    </a>
-    <a href="https://openaa.com/dmv/tickets/" class="nav-item">
-      <div class="nav-item-icon">🔍</div>
-      <div>DMV罚单查询</div>
-    </a>
-    <a href="https://openaa.com/" class="nav-item">
-      <div class="nav-item-icon">👤</div>
-      <div>我的</div>
-    </a>
-  </nav>
+  <!-- 底部固定导航栏（由公共组件注入） -->
+  <div id="site-bottom-nav-placeholder"></div>
 
-  <!-- 页脚 -->
-  <footer>
-    <p>© 2025 OpenAA.com | <a href="https://openaa.com/">返回首页</a></p>
-  </footer>
-
-  <script>
-    function handleSearch() {
-      const query = document.getElementById('searchInput').value;
-      if (query.trim()) {
-        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
-      }
-    }
-
-    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        handleSearch();
-      }
-    });
-
-    function toggleBookmark() {
-      const ua = navigator.userAgent.toLowerCase();
-      if (ua.indexOf('mac') > -1) {
-        alert('请使用 Cmd+D 收藏本站');
-      } else {
-        alert('请使用 Ctrl+D 收藏本站');
-      }
-    }
-
-    function goHome() {
-      window.location.href = 'https://openaa.com/';
-    }
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
+  <!-- 公共组件注入脚本 -->
+  <script src="../components/include.js"></script>
 </body>
 </html>
