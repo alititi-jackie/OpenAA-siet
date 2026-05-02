@@ -183,23 +183,29 @@
 
     <!-- 5. 分类吸顶栏 -->
     <div class="category-bar-wrap" id="categoryBarWrap">
-      <nav class="category-bar" id="categoryBar" role="tablist">
-        <button class="cat-tab active" data-cat="all" role="tab" aria-selected="true" onclick="switchCategory('all', this)">全部</button>
-        <button class="cat-tab" data-cat="featured" role="tab" aria-selected="false" onclick="switchCategory('featured', this)">推荐</button>
-        <button class="cat-tab" data-cat="gov" role="tab" aria-selected="false" onclick="switchCategory('gov', this)">政府</button>
-        <button class="cat-tab" data-cat="bank" role="tab" aria-selected="false" onclick="switchCategory('bank', this)">银行</button>
-        <button class="cat-tab" data-cat="shop" role="tab" aria-selected="false" onclick="switchCategory('shop', this)">购物</button>
-        <button class="cat-tab" data-cat="dmv" role="tab" aria-selected="false" onclick="switchCategory('dmv', this)">DMV</button>
-        <button class="cat-tab" data-cat="tools" role="tab" aria-selected="false" onclick="switchCategory('tools', this)">工具</button>
-        <button class="cat-tab" data-cat="ai" role="tab" aria-selected="false" onclick="switchCategory('ai', this)">常用AI</button>
-        <button class="cat-tab" data-cat="map" role="tab" aria-selected="false" onclick="switchCategory('map', this)">地图</button>
-        <button class="cat-tab" data-cat="post" role="tab" aria-selected="false" onclick="switchCategory('post', this)">邮政</button>
-        <button class="cat-tab" data-cat="tax" role="tab" aria-selected="false" onclick="switchCategory('tax', this)">报税</button>
-        <button class="cat-tab" data-cat="translate" role="tab" aria-selected="false" onclick="switchCategory('translate', this)">翻译</button>
-        <button class="cat-tab" data-cat="traffic" role="tab" aria-selected="false" onclick="switchCategory('traffic', this)">交通</button>
-        <button class="cat-tab" data-cat="news" role="tab" aria-selected="false" onclick="switchCategory('news', this)">新闻</button>
-        <button class="cat-tab" data-cat="services" role="tab" aria-selected="false" onclick="switchCategory('services', this)">本地服务</button>
-      </nav>
+      <div class="category-bar-inner">
+        <!-- 固定在左侧的"全部"按钮 -->
+        <div class="cat-pin-area">
+          <button class="cat-tab active" id="catTabAll" data-cat="all" role="tab" aria-selected="true" onclick="switchCategory('all', this)">全部</button>
+        </div>
+        <!-- 右侧横向可滑动的分类 -->
+        <nav class="category-bar" id="categoryBar" role="tablist">
+          <button class="cat-tab" data-cat="featured" role="tab" aria-selected="false" onclick="switchCategory('featured', this)">推荐</button>
+          <button class="cat-tab" data-cat="gov" role="tab" aria-selected="false" onclick="switchCategory('gov', this)">政府</button>
+          <button class="cat-tab" data-cat="bank" role="tab" aria-selected="false" onclick="switchCategory('bank', this)">银行</button>
+          <button class="cat-tab" data-cat="shop" role="tab" aria-selected="false" onclick="switchCategory('shop', this)">购物</button>
+          <button class="cat-tab" data-cat="dmv" role="tab" aria-selected="false" onclick="switchCategory('dmv', this)">DMV</button>
+          <button class="cat-tab" data-cat="tools" role="tab" aria-selected="false" onclick="switchCategory('tools', this)">工具</button>
+          <button class="cat-tab" data-cat="ai" role="tab" aria-selected="false" onclick="switchCategory('ai', this)">常用AI</button>
+          <button class="cat-tab" data-cat="map" role="tab" aria-selected="false" onclick="switchCategory('map', this)">地图</button>
+          <button class="cat-tab" data-cat="post" role="tab" aria-selected="false" onclick="switchCategory('post', this)">邮政</button>
+          <button class="cat-tab" data-cat="tax" role="tab" aria-selected="false" onclick="switchCategory('tax', this)">报税</button>
+          <button class="cat-tab" data-cat="translate" role="tab" aria-selected="false" onclick="switchCategory('translate', this)">翻译</button>
+          <button class="cat-tab" data-cat="traffic" role="tab" aria-selected="false" onclick="switchCategory('traffic', this)">交通</button>
+          <button class="cat-tab" data-cat="news" role="tab" aria-selected="false" onclick="switchCategory('news', this)">新闻</button>
+          <button class="cat-tab" data-cat="services" role="tab" aria-selected="false" onclick="switchCategory('services', this)">本地服务</button>
+        </nav>
+      </div>
     </div>
 
     <!-- 6. 导航内容模块 -->
@@ -609,6 +615,13 @@
   <!-- 最终分类 Tab 定位滚动逻辑：必须放在 script.js 后面，避免被旧 switchCategory 覆盖 -->
   <script>
     (function () {
+      /* Cached DOM references */
+      var _categoryBar = null;
+      function getCategoryBar() {
+        if (!_categoryBar) _categoryBar = document.getElementById('categoryBar');
+        return _categoryBar;
+      }
+
       var CATEGORY_TARGETS = {
         all: 'featured',
         featured: 'featured',
@@ -648,7 +661,11 @@
         if (button) {
           button.classList.add('active');
           button.setAttribute('aria-selected', 'true');
-          button.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          /* Only auto-scroll into view for tabs inside the scrollable container */
+          var categoryBar = getCategoryBar();
+          if (categoryBar && categoryBar.contains(button)) {
+            button.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          }
         }
       }
 
@@ -680,10 +697,12 @@
       };
 
       document.addEventListener('DOMContentLoaded', function () {
-        var categoryBar = document.getElementById('categoryBar');
-        if (!categoryBar) return;
+        /* Listen on the whole wrapper so both the pinned "全部" and the
+           scrollable tabs are covered by a single capture handler. */
+        var categoryBarWrap = document.getElementById('categoryBarWrap');
+        if (!categoryBarWrap) return;
 
-        categoryBar.addEventListener('click', function (event) {
+        categoryBarWrap.addEventListener('click', function (event) {
           var button = event.target.closest('.cat-tab');
           if (!button) return;
 
