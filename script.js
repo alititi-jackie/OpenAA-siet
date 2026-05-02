@@ -266,21 +266,10 @@ const ADS = [
 })()
 
 // ===================================================
-// CATEGORY TAB SWITCHING
+// CATEGORY TAB CLICK -> JUMP LINKS
 // ===================================================
-// Module order in DOM: featured(0), gov(1), bank(2), shop(3), dmv(4), tools(5), ai(6)
-// Category "全部" shows all; others show from their start module down
-
-var categoryStartModule = {
-  all: null, // show all
-  gov: 'gov',
-  bank: 'bank',
-  shop: 'shop',
-  dmv: 'dmv'
-}
-
 function switchCategory(cat, btn) {
-  // Update tab buttons
+  // keep active highlight behavior (same as before)
   document.querySelectorAll('.cat-tab').forEach(function(t) {
     t.classList.remove('active')
     t.setAttribute('aria-selected', 'false')
@@ -290,28 +279,19 @@ function switchCategory(cat, btn) {
     btn.setAttribute('aria-selected', 'true')
   }
 
-  // Clear any active search when switching tabs
-  var searchVal = document.getElementById('searchInput').value.trim()
-
-  var modules = document.querySelectorAll('.nav-module')
-  var startModule = categoryStartModule[cat]
-
-  if (cat === 'all') {
-    modules.forEach(function(m) {
-      m.classList.remove('hidden')
-    })
-  } else {
-    // Hide all modules before the start module, show from start module onward
-    var showing = false
-    modules.forEach(function(m) {
-      if (m.dataset.module === startModule) showing = true
-      m.classList.toggle('hidden', !showing)
-    })
+  // IMPORTANT: GitHub Pages under repo usually needs /<repo>/ prefix.
+  // Use relative path so it works both on / and /OpenAA-siet/
+  var links = {
+    all: 'index.html',
+    dmv_practice: 'dmv/ny/practice/index.html',
+    tickets: 'dmv/tickets/index.html',
+    bank: 'nav/bank.html',
+    shop: 'nav/onegobuy.html'
   }
 
-  // If there's an active search, re-apply filtering on newly visible modules
-  if (searchVal) {
-    applySearch(searchVal)
+  var url = links[cat]
+  if (url) {
+    window.location.href = url
   }
 }
 
