@@ -409,12 +409,33 @@ body {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
 }
 
-.category-bar {
+/* Inner flex container — constrains to 560px then splits left-pin / right-scroll */
+.category-bar-inner {
   max-width: 560px;
   margin: 0 auto;
   display: flex;
+  align-items: stretch;
+}
+
+/* Left fixed area holding the "全部" button */
+.cat-pin-area {
+  flex: 0 0 auto;
+  display: flex;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 4px 0 12px;
+  background: #fff;
+  /* subtle right shadow to hint the right side is scrollable */
+  box-shadow: 6px 0 10px -4px rgba(0, 0, 0, 0.08);
+  z-index: 1;
+}
+
+/* Right scrollable nav container */
+.category-bar {
+  flex: 1 1 0%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -424,14 +445,14 @@ body {
 
 .cat-tab {
   flex: 0 0 auto;
-  height: 40px;
-  padding: 0 16px;
+  height: 48px;
+  padding: 0 14px;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
-  color: #71717a;
+  color: #3f3f46;
   border-radius: 999px;
   transition: color 0.2s, background 0.2s;
   white-space: nowrap;
@@ -441,19 +462,19 @@ body {
 .cat-tab::after {
   content: '';
   position: absolute;
-  bottom: 4px;
+  bottom: 6px;
   left: 50%;
   transform: translateX(-50%) scaleX(0);
   width: 20px;
   height: 2px;
-  background: #93c5fd;
+  background: #3b82f6;
   border-radius: 1px;
   transition: transform 0.2s;
 }
 .cat-tab.active {
-  color: #2563eb;
+  color: #1d4ed8;
   font-weight: 600;
-  background: #eff6ff;
+  background: #dbeafe;
 }
 .cat-tab.active::after { transform: translateX(-50%) scaleX(1); }
 
