@@ -114,20 +114,19 @@
   </div>
 </section>
 
-<!-- 5. 分类吸顶栏（跳转版） -->
+<!-- 5. 分类吸顶栏（外观保持原样：button + cat-tab；但点击会跳转） -->
 <div class="category-bar-wrap" id="categoryBarWrap">
   <div class="category-bar-inner">
-    <!-- 固定在左侧的"返回" -->
+    <!-- 固定在左侧的"返回"按钮 -->
     <div class="cat-pin-area">
-      <a class="cat-tab active" id="catTabAll" href="/" target="_self" rel="noopener">返回</a>
+      <button class="cat-tab active" id="catTabAll" data-cat="all" role="tab" aria-selected="true" onclick="switchCategory('all', this)">返回</button>
     </div>
-
-    <!-- 右侧横向可滑动的分类（点击直接跳转） -->
+    <!-- 右侧横向可滑动的分类（仅保留你需要的 4 个入口） -->
     <nav class="category-bar" id="categoryBar" role="tablist">
-      <a class="cat-tab" href="/dmv/ny/practice/index.html" target="_self" rel="noopener">DMV笔试模拟</a>
-      <a class="cat-tab" href="/dmv/tickets/index.html" target="_self" rel="noopener">罚单查询</a>
-      <a class="cat-tab" href="/nav/bank.html" target="_self" rel="noopener">银行</a>
-      <a class="cat-tab" href="/nav/onegobuy.html" target="_self" rel="noopener">购物</a>
+      <button class="cat-tab" data-cat="dmv_practice" role="tab" aria-selected="false" onclick="switchCategory('dmv_practice', this)">DMV笔试模拟</button>
+      <button class="cat-tab" data-cat="tickets" role="tab" aria-selected="false" onclick="switchCategory('tickets', this)">罚单查询</button>
+      <button class="cat-tab" data-cat="bank" role="tab" aria-selected="false" onclick="switchCategory('bank', this)">银行</button>
+      <button class="cat-tab" data-cat="shop" role="tab" aria-selected="false" onclick="switchCategory('shop', this)">购物</button>
     </nav>
   </div>
 </div>
