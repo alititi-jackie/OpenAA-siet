@@ -3,26 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#0078d4">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="DMV导航">
-
-  <!-- Title & Meta -->
   <title>美国各州DMV导航 | 车辆管理局官网大全 | OpenAA</title>
   <meta name="description" content="OpenAA 美国各州DMV导航：提供美国50州车辆管理局官方网站直链，包括纽约、加州、德州等热门州，帮助华人快速办理驾驶证、车辆登记、路试预约等DMV事务。">
   <meta name="keywords" content="DMV,车辆管理局,美国DMV,驾驶证,车辆登记,美国各州DMV,纽约DMV,加州DMV,德州DMV">
   <meta name="robots" content="index, follow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://openaa.com/nav/dmv/">
+  <link rel="canonical" href="https://openaa.com/dmv/">
 
   <!-- Open Graph -->
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:title" content="美国各州DMV导航 | OpenAA" />
   <meta property="og:description" content="美国50州车辆管理局（DMV）官方网站导航大全，一键直达各州DMV官网。" />
-  <meta property="og:image" content="https://openaa.com/logo.png" />
-  <meta property="og:url" content="https://openaa.com/nav/dmv/" />
+  <meta property="og:image" content="https://openaa.com/assets/logo.png" />
+  <meta property="og:url" content="https://openaa.com/dmv/" />
   <meta property="og:type" content="website" />
 
   <!-- Structured Data -->
@@ -32,662 +24,552 @@
     "@type": "CollectionPage",
     "name": "美国各州DMV导航",
     "description": "美国50州车辆管理局官方网站导航大全",
-    "url": "https://openaa.com/nav/dmv/",
+    "url": "https://openaa.com/dmv/",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "纽约州DMV",
-          "url": "https://dmv.ny.gov/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "加州DMV",
-          "url": "https://www.dmv.ca.gov/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "德州DMV",
-          "url": "https://www.txdmv.gov/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "佛州DMV",
-          "url": "https://www.flhsmv.gov/"
-        }
+        {"@type":"ListItem","position":1,"name":"纽约州DMV","url":"https://dmv.ny.gov/"},
+        {"@type":"ListItem","position":2,"name":"加州DMV","url":"https://www.dmv.ca.gov/"},
+        {"@type":"ListItem","position":3,"name":"德州DMV","url":"https://www.txdmv.gov/"},
+        {"@type":"ListItem","position":4,"name":"佛州DMV","url":"https://www.flhsmv.gov/"}
       ]
     }
   }
   </script>
 
   <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="icon" href="../assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
 
-  <style>
-    * { 
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    :root {
-      --primary: #0078d4;
-      --primary-dark: #005fa3;
-      --bg: #f8f9fa;
-      --card-bg: #ffffff;
-      --text-dark: #1f2937;
-      --text-light: #6b7280;
-      --border: #e5e7eb;
-      --shadow: 0 2px 8px rgba(0,0,0,0.08);
-      --radius: 12px;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow-x: hidden;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-      background-color: var(--bg);
-      color: var(--text-dark);
-      line-height: 1.6;
-      font-size: 16px;
-    }
-
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: linear-gradient(135deg, var(--primary) 0%, #1084d8 100%);
-      color: white;
-      padding: 12px 16px 16px;
-      box-shadow: 0 2px 12px rgba(0,120,212,0.15);
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .header-logo {
-      height: 40px;
-      padding: 6px 12px;
-      display: flex;
-      align-items: center;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      text-decoration: none;
-    }
-
-    .header-logo img {
-      height: 100%;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .header-actions {
-      display: flex;
-      gap: 8px;
-    }
-
-    .btn-icon {
-      background: rgba(255,255,255,0.2);
-      border: none;
-      color: white;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-
-    .btn-icon:active {
-      background: rgba(255,255,255,0.3);
-    }
-
-    .search-box {
-      display: flex;
-      gap: 8px;
-    }
-
-    .search-box input {
-      flex: 1;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 20px;
-      font-size: 14px;
-      background: rgba(255,255,255,0.95);
-      color: var(--text-dark);
-      outline: none;
-    }
-
-    .search-box input::placeholder {
-      color: var(--text-light);
-    }
-
-    .search-box button {
-      background: rgba(255,255,255,0.2);
-      border: none;
-      color: white;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background 0.2s;
-    }
-
-    .search-box button:active {
-      background: rgba(255,255,255,0.3);
-    }
-
-    /* 面包屑 */
-    .breadcrumb {
-      padding: 12px 16px;
-      font-size: 13px;
-      color: var(--text-light);
-      background: var(--card-bg);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .breadcrumb a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    /* 主要内容 */
-    main {
-      padding: 8px;
-      padding-bottom: 90px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* 标题 */
-    h1 {
-      font-size: 24px;
-      margin: 16px 0 8px 0;
-      color: var(--text-dark);
-    }
-
-    h2 {
-      font-size: 18px;
-      margin: 20px 0 12px 0;
-      color: var(--text-dark);
-      font-weight: 600;
-    }
-
-    .page-desc {
-      font-size: 14px;
-      color: var(--text-light);
-      margin-bottom: 16px;
-      line-height: 1.6;
-    }
-
-    /* 卡片 */
-    .card {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin: 8px 0;
-      overflow: hidden;
-    }
-
-    .card-header {
-      padding: 12px 16px;
-      background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .card-header-icon {
-      font-size: 20px;
-    }
-
-    .card-header-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--primary);
-      margin: 0;
-    }
-
-    .card-header-count {
-      margin-left: auto;
-      font-size: 12px;
-      background: var(--primary);
-      color: white;
-      padding: 4px 8px;
-      border-radius: 12px;
-    }
-
-    .card-content {
-      padding: 0;
-    }
-
-    .dmv-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0;
-    }
-
-    .dmv-item {
-      padding: 12px 16px;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      text-decoration: none;
-      color: var(--text-dark);
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: background 0.15s;
-    }
-
-    .dmv-item:nth-child(2n) {
-      border-right: none;
-    }
-
-    .dmv-item:nth-last-child(-n+2) {
-      border-bottom: none;
-    }
-
-    .dmv-item:active {
-      background: #f0f7ff;
-    }
-
-    .dmv-icon {
-      font-size: 18px;
-      min-width: 18px;
-    }
-
-    /* 热门州 */
-    .hot-states {
-      background: var(--card-bg);
-      padding: 0;
-    }
-
-    .hot-state-item {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-      text-decoration: none;
-      color: var(--primary);
-      font-size: 14px;
-      font-weight: 500;
-      transition: background 0.15s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .hot-state-item:last-child {
-      border-bottom: none;
-    }
-
-    .hot-state-item:active {
-      background: #f0f7ff;
-    }
-
-    /* 底部导航栏 */
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: var(--card-bg);
-      border-top: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0;
-      z-index: 200;
-      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
-    }
-
-    .nav-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 0;
-      text-decoration: none;
-      color: var(--text-light);
-      font-size: 11px;
-      transition: color 0.2s;
-      cursor: pointer;
-      border: none;
-      background: none;
-    }
-
-    .nav-item.active {
-      color: var(--primary);
-    }
-
-    .nav-item-icon {
-      font-size: 22px;
-      margin-bottom: 4px;
-    }
-
-    /* 页脚 */
-    footer {
-      text-align: center;
-      padding: 16px;
-      font-size: 12px;
-      color: var(--text-light);
-      margin-top: 16px;
-    }
-
-    footer a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    /* 响应式 */
-    @media (min-width: 600px) {
-      .dmv-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    /* 暗黑模式 */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #1f1f1f;
-        --card-bg: #2d2d2d;
-        --text-dark: #f5f5f5;
-        --text-light: #a0a0a0;
-        --border: #3d3d3d;
-      }
-      
-      .card-header {
-        background: #3d3d3d;
-      }
-      
-      .dmv-item:active,
-      .hot-state-item:active {
-        background: #3d3d3d;
-      }
-
-      .header-logo {
-        background: white;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="header-content">
-      <a href="https://openaa.com/" class="header-logo">
-        <img src="https://openaa.com/logo.png" alt="OpenAA" />
+
+  <!-- 顶部栏 -->
+  <header class="app-header" id="appHeader">
+    <div class="header-inner">
+      <button class="header-location" type="button" aria-label="城市选择">
+        <svg class="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span>纽约</span>
+        <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+
+      <a href="https://openaa.com" class="header-logo" aria-label="OpenAA 首页">
+        <img src="../assets/logo.png" alt="OpenAA" class="header-logo-img" onerror="this.style.display='none'" />
+        <span class="header-logo-text">
+          <span class="logo-blue">Open</span><span class="logo-dark">AA</span>
+        </span>
       </a>
-      <div class="header-actions">
-        <button class="btn-icon" onclick="toggleBookmark()" title="收藏本站">📌</button>
-        <button class="btn-icon" onclick="goHome()" title="返回首页">🏠</button>
-      </div>
-    </div>
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="搜索州名或DMV..." />
-      <button onclick="handleSearch()">🔍</button>
+
+      <button class="header-share" type="button" aria-label="分享" onclick="shareOpenAA()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="5" r="3"/>
+          <circle cx="6" cy="12" r="3"/>
+          <circle cx="18" cy="19" r="3"/>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+        </svg>
+      </button>
     </div>
   </header>
 
-  <!-- 面包屑 -->
-  <div class="breadcrumb">
-    <a href="https://openaa.com/">首页</a> > <a href="https://openaa.com/">导航</a> > DMV导航
-  </div>
+  <!-- Header spacer -->
+  <div class="header-spacer"></div>
 
-  <!-- 主要内容 -->
-  <main>
-    <h1>🚗 美国各州DMV导航</h1>
-    <p class="page-desc">为在美华人提供美国50州车辆管理局（DMV）官方网站直链，快速办理驾驶证、车辆登记、路试预约等事务。</p>
+  <!-- Main content -->
+  <main class="main-content">
 
-    <!-- 快捷工具入口 -->
-    <div class="card">
-      <div class="card-header">
-        <div class="card-header-icon">🔧</div>
-        <h3 class="card-header-title">DMV实用工具</h3>
-      </div>
-      <div class="card-content">
-        <div class="hot-states">
-          <a href="https://openaa.com/dmv/tickets/" class="hot-state-item">
-            <span>🚔</span> 停车/闯红灯/超速拍照罚单查询（全美国）
+    <!-- 分类吸顶栏 -->
+    <div class="category-bar-wrap" id="categoryBarWrap">
+      <nav class="category-bar" id="categoryBar" role="tablist">
+        <button class="cat-tab active" data-cat="all" role="tab" aria-selected="true" onclick="switchCategory('all', this)">全部</button>
+        <button class="cat-tab" data-cat="tools" role="tab" aria-selected="false" onclick="switchCategory('tools', this)">实用工具</button>
+        <button class="cat-tab" data-cat="hot" role="tab" aria-selected="false" onclick="switchCategory('hot', this)">热门州</button>
+        <button class="cat-tab" data-cat="west" role="tab" aria-selected="false" onclick="switchCategory('west', this)">西部</button>
+        <button class="cat-tab" data-cat="midwest" role="tab" aria-selected="false" onclick="switchCategory('midwest', this)">中西部</button>
+        <button class="cat-tab" data-cat="south" role="tab" aria-selected="false" onclick="switchCategory('south', this)">南部</button>
+        <button class="cat-tab" data-cat="northeast" role="tab" aria-selected="false" onclick="switchCategory('northeast', this)">东北部</button>
+        <button class="cat-tab" data-cat="other" role="tab" aria-selected="false" onclick="switchCategory('other', this)">其他州</button>
+      </nav>
+    </div>
+
+    <!-- 导航内容模块 -->
+    <section class="nav-modules" id="navModules">
+
+      <!-- DMV 实用工具 -->
+      <div class="nav-module" data-module="tools" data-order="0">
+        <div class="module-header">
+          <span class="module-icon tools">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </span>
+          <h2 class="module-title">DMV 实用工具</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://openaa.com/dmv/tickets/" class="nav-card" target="_self" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>🚔</span></div>
+            <span class="nav-card-name">罚单查询</span>
           </a>
-          <a href="https://openaa.com/dmv/ny/practice/" class="hot-state-item">
-            <span>📝</span> 纽约州 DMV 笔试练习
+          <a href="https://openaa.com/dmv/ny/practice/" class="nav-card" target="_self" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>📝</span></div>
+            <span class="nav-card-name">NY笔试练习</span>
+          </a>
+          <a href="https://dmv.ny.gov/schedule-road-test" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>📅</span></div>
+            <span class="nav-card-name">路考预约</span>
+          </a>
+          <a href="https://dmv.ny.gov/driver-license" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>🪪</span></div>
+            <span class="nav-card-name">换驾照</span>
+          </a>
+          <a href="https://dmv.ny.gov/driver-license/renew-license" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e0f2f1"><span>🔄</span></div>
+            <span class="nav-card-name">驾照续期</span>
+          </a>
+          <a href="https://www.nicb.org/vincheck" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8eaf6"><span>🔍</span></div>
+            <span class="nav-card-name">VIN 查询</span>
+          </a>
+          <a href="https://dmv.ny.gov/offices" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#f3e5f5"><span>📍</span></div>
+            <span class="nav-card-name">DMV 地址</span>
+          </a>
+          <a href="https://app.openaa.com/dmv/ny/practice" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff9c4"><span>🎯</span></div>
+            <span class="nav-card-name">APP题库</span>
           </a>
         </div>
       </div>
-    </div>
 
-    <!-- 热门州DMV -->
-    <h2>热门州DMV</h2>
-    <div class="card">
-      <div class="card-header">
-        <div class="card-header-icon">⭐</div>
-        <h3 class="card-header-title">华人聚集州</h3>
-        <div class="card-header-count">5</div>
-      </div>
-      <div class="card-content">
-        <div class="hot-states">
-          <a href="https://dmv.ny.gov/" target="_blank" rel="noopener" class="hot-state-item">
-            <span>🗽</span> 纽约州 New York DMV
+      <!-- 热门州 DMV -->
+      <div class="nav-module" data-module="hot" data-order="1">
+        <div class="module-header">
+          <span class="module-icon star">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </span>
+          <h2 class="module-title">热门州 DMV</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://dmv.ny.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🗽</span></div>
+            <span class="nav-card-name">纽约 NY</span>
           </a>
-          <a href="https://www.dmv.ca.gov/" target="_blank" rel="noopener" class="hot-state-item">
-            <span>☀️</span> 加利福尼亚州 California DMV
+          <a href="https://www.dmv.ca.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff9c4"><span>☀️</span></div>
+            <span class="nav-card-name">加州 CA</span>
           </a>
-          <a href="https://www.txdmv.gov/" target="_blank" rel="noopener" class="hot-state-item">
-            <span>⭐</span> 德克萨斯州 Texas DMV
+          <a href="https://www.txdmv.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>⭐</span></div>
+            <span class="nav-card-name">德克萨斯 TX</span>
           </a>
-          <a href="https://www.flhsmv.gov/" target="_blank" rel="noopener" class="hot-state-item">
-            <span>🌴</span> 佛罗里达州 Florida DMV
+          <a href="https://www.flhsmv.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🌴</span></div>
+            <span class="nav-card-name">佛罗里达 FL</span>
           </a>
-          <a href="https://dds.georgia.gov/" target="_blank" rel="noopener" class="hot-state-item">
-            <span>🍑</span> 佐治亚州 Georgia DMV
+          <a href="https://dds.georgia.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>🍑</span></div>
+            <span class="nav-card-name">佐治亚 GA</span>
           </a>
         </div>
       </div>
-    </div>
 
-    <!-- 西部州 -->
-    <h2>西部地区</h2>
-    <div class="card">
-      <div class="card-header">
-        <div class="card-header-icon">⛰️</div>
-        <h3 class="card-header-title">西部州DMV</h3>
-        <div class="card-header-count">11</div>
-      </div>
-      <div class="card-content">
-        <div class="dmv-grid">
-          <a href="https://www.dmv.ca.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌞</span>加州 CA</a>
-          <a href="https://azdot.gov/motor-vehicles" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🏜️</span>亚利桑那 AZ</a>
-          <a href="https://doa.alaska.gov/dmv/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">❄️</span>阿拉斯加 AK</a>
-          <a href="https://hidot.hawaii.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌺</span>夏威夷 HI</a>
-          <a href="https://dmv.colorado.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🏔️</span>科罗拉多 CO</a>
-          <a href="https://dmv.nevada.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🎰</span>内华达 NV</a>
-          <a href="https://dojmt.gov/driving/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🦌</span>蒙大拿 MT</a>
-          <a href="https://dmv.utah.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🏜️</span>犹他 UT</a>
-          <a href="https://www.oregon.gov/ODOT/DMV/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌲</span>俄勒冈 OR</a>
-          <a href="https://www.dol.wa.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌧️</span>华盛顿 WA</a>
-          <a href="https://www.mvd.newmexico.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌵</span>新墨西哥 NM</a>
+      <!-- 西部州 DMV -->
+      <div class="nav-module" data-module="west" data-order="2">
+        <div class="module-header">
+          <span class="module-icon dmv">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="3 7 12 3 21 7 21 17 12 21 3 17 3 7"/>
+            </svg>
+          </span>
+          <h2 class="module-title">西部州 DMV</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://www.dmv.ca.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff9c4"><span>🌞</span></div>
+            <span class="nav-card-name">加州 CA</span>
+          </a>
+          <a href="https://azdot.gov/motor-vehicles" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>🏜️</span></div>
+            <span class="nav-card-name">亚利桑那 AZ</span>
+          </a>
+          <a href="https://doa.alaska.gov/dmv/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>❄️</span></div>
+            <span class="nav-card-name">阿拉斯加 AK</span>
+          </a>
+          <a href="https://hidot.hawaii.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>🌺</span></div>
+            <span class="nav-card-name">夏威夷 HI</span>
+          </a>
+          <a href="https://dmv.colorado.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🏔️</span></div>
+            <span class="nav-card-name">科罗拉多 CO</span>
+          </a>
+          <a href="https://dmv.nevada.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#f3e5f5"><span>🎰</span></div>
+            <span class="nav-card-name">内华达 NV</span>
+          </a>
+          <a href="https://dojmt.gov/driving/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🦌</span></div>
+            <span class="nav-card-name">蒙大拿 MT</span>
+          </a>
+          <a href="https://dmv.utah.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>🏜️</span></div>
+            <span class="nav-card-name">犹他 UT</span>
+          </a>
+          <a href="https://www.oregon.gov/ODOT/DMV/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🌲</span></div>
+            <span class="nav-card-name">俄勒冈 OR</span>
+          </a>
+          <a href="https://www.dol.wa.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🌧️</span></div>
+            <span class="nav-card-name">华盛顿 WA</span>
+          </a>
+          <a href="https://www.mvd.newmexico.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🌵</span></div>
+            <span class="nav-card-name">新墨西哥 NM</span>
+          </a>
         </div>
       </div>
-    </div>
 
-    <!-- 中西部州 -->
-    <h2>中西部地区</h2>
-    <div class="card">
-      <div class="card-header">
-        <div class="card-header-icon">🌾</div>
-        <h3 class="card-header-title">中西部州DMV</h3>
-        <div class="card-header-count">12</div>
-      </div>
-      <div class="card-content">
-        <div class="dmv-grid">
-          <a href="https://dmv.nebraska.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌽</span>内布拉斯加 NE</a>
-          <a href="https://dps.sd.gov/driver-licensing" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🗻</span>南达科他 SD</a>
-          <a href="https://www.dot.nd.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">❄️</span>北达科他 ND</a>
-          <a href="https://www.ksrevenue.gov/dovindex.html" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌻</span>堪萨斯 KS</a>
-          <a href="https://dor.mo.gov/motor-vehicle/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌳</span>密苏里 MO</a>
-          <a href="https://iowadot.gov/mvd" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌽</span>爱荷华 IA</a>
-          <a href="https://dps.mn.gov/divisions/dvs/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🏞️</span>明尼苏达 MN</a>
-          <a href="https://wisconsindot.gov/Pages/online-srvcs/external/dmv.aspx" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🦫</span>威斯康星 WI</a>
-          <a href="https://www.michigan.gov/sos" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🏠</span>密歇根 MI</a>
-          <a href="https://www.in.gov/bmv/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🏀</span>印第安纳 IN</a>
-          <a href="https://www.ilsos.gov/departments/drivers/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌆</span>伊利诺伊 IL</a>
-          <a href="https://bmv.ohio.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌖</span>俄亥俄 OH</a>
+      <!-- 中西部州 DMV -->
+      <div class="nav-module" data-module="midwest" data-order="3">
+        <div class="module-header">
+          <span class="module-icon shop">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </span>
+          <h2 class="module-title">中西部州 DMV</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://dmv.nebraska.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🌽</span></div>
+            <span class="nav-card-name">内布拉斯加 NE</span>
+          </a>
+          <a href="https://dps.sd.gov/driver-licensing" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🗻</span></div>
+            <span class="nav-card-name">南达科他 SD</span>
+          </a>
+          <a href="https://www.dot.nd.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>❄️</span></div>
+            <span class="nav-card-name">北达科他 ND</span>
+          </a>
+          <a href="https://www.ksrevenue.gov/dovindex.html" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff9c4"><span>🌻</span></div>
+            <span class="nav-card-name">堪萨斯 KS</span>
+          </a>
+          <a href="https://dor.mo.gov/motor-vehicle/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🌳</span></div>
+            <span class="nav-card-name">密苏里 MO</span>
+          </a>
+          <a href="https://iowadot.gov/mvd" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🌽</span></div>
+            <span class="nav-card-name">爱荷华 IA</span>
+          </a>
+          <a href="https://dps.mn.gov/divisions/dvs/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🏞️</span></div>
+            <span class="nav-card-name">明尼苏达 MN</span>
+          </a>
+          <a href="https://wisconsindot.gov/Pages/online-srvcs/external/dmv.aspx" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🦫</span></div>
+            <span class="nav-card-name">威斯康星 WI</span>
+          </a>
+          <a href="https://www.michigan.gov/sos" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🏠</span></div>
+            <span class="nav-card-name">密歇根 MI</span>
+          </a>
+          <a href="https://www.in.gov/bmv/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>🏀</span></div>
+            <span class="nav-card-name">印第安纳 IN</span>
+          </a>
+          <a href="https://www.ilsos.gov/departments/drivers/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8eaf6"><span>🌆</span></div>
+            <span class="nav-card-name">伊利诺伊 IL</span>
+          </a>
+          <a href="https://bmv.ohio.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🌖</span></div>
+            <span class="nav-card-name">俄亥俄 OH</span>
+          </a>
         </div>
       </div>
-    </div>
 
-    <!-- 南部州 -->
-    <h2>南部地区</h2>
-    <div class="card">
-      <div class="card-header">
-        <div class="card-header-icon">🌞</div>
-        <h3 class="card-header-title">南部州DMV</h3>
-        <div class="card-header-count">12</div>
-      </div>
-      <div class="card-content">
-        <div class="dmv-grid">
-          <a href="https://www.flhsmv.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🏖️</span>佛罗里达 FL</a>
-          <a href="https://dds.georgia.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🍑</span>佐治亚 GA</a>
-          <a href="https://www.txdmv.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">⭐</span>德克萨斯 TX</a>
-          <a href="https://www.expresslane.org/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🪲</span>路易斯安那 LA</a>
-          <a href="https://www.ncdot.gov/dmv/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🏔️</span>北卡 NC</a>
-          <a href="https://www.scdmvonline.com/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌴</span>南卡 SC</a>
-          <a href="https://www.tn.gov/safety/driver-services.html" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🎸</span>田纳西 TN</a>
-          <a href="https://www.dor.ms.gov/drivers-license" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🪴</span>密西西比 MS</a>
-          <a href="https://dmv.alabama.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🍂</span>阿拉巴马 AL</a>
-          <a href="https://www.dfa.arkansas.gov/driver-services/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌲</span>阿肯色 AR</a>
-          <a href="https://drive.ky.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🐴</span>肯塔基 KY</a>
-          <a href="https://transportation.wv.gov/dmv/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">⛏️</span>西弗吉尼亚 WV</a>
+      <!-- 南部州 DMV -->
+      <div class="nav-module" data-module="south" data-order="4">
+        <div class="module-header">
+          <span class="module-icon bank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </span>
+          <h2 class="module-title">南部州 DMV</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://www.flhsmv.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🏖️</span></div>
+            <span class="nav-card-name">佛罗里达 FL</span>
+          </a>
+          <a href="https://dds.georgia.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>🍑</span></div>
+            <span class="nav-card-name">佐治亚 GA</span>
+          </a>
+          <a href="https://www.txdmv.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff9c4"><span>⭐</span></div>
+            <span class="nav-card-name">德克萨斯 TX</span>
+          </a>
+          <a href="https://www.expresslane.org/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🪲</span></div>
+            <span class="nav-card-name">路易斯安那 LA</span>
+          </a>
+          <a href="https://www.ncdot.gov/dmv/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🏔️</span></div>
+            <span class="nav-card-name">北卡 NC</span>
+          </a>
+          <a href="https://www.scdmvonline.com/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🌴</span></div>
+            <span class="nav-card-name">南卡 SC</span>
+          </a>
+          <a href="https://www.tn.gov/safety/driver-services.html" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>🎸</span></div>
+            <span class="nav-card-name">田纳西 TN</span>
+          </a>
+          <a href="https://www.dor.ms.gov/drivers-license" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🪴</span></div>
+            <span class="nav-card-name">密西西比 MS</span>
+          </a>
+          <a href="https://dmv.alabama.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>🍂</span></div>
+            <span class="nav-card-name">阿拉巴马 AL</span>
+          </a>
+          <a href="https://www.dfa.arkansas.gov/driver-services/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🌲</span></div>
+            <span class="nav-card-name">阿肯色 AR</span>
+          </a>
+          <a href="https://drive.ky.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>🐴</span></div>
+            <span class="nav-card-name">肯塔基 KY</span>
+          </a>
+          <a href="https://transportation.wv.gov/dmv/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8eaf6"><span>⛏️</span></div>
+            <span class="nav-card-name">西弗吉尼亚 WV</span>
+          </a>
         </div>
       </div>
-    </div>
 
-    <!-- 东北部州 -->
-    <h2>东北部地区</h2>
-    <div class="card">
-      <div class="card-header">
-        <div class="card-header-icon">🗽</div>
-        <h3 class="card-header-title">东北部州DMV</h3>
-        <div class="card-header-count">9</div>
-      </div>
-      <div class="card-content">
-        <div class="dmv-grid">
-          <a href="https://dmv.ny.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🗽</span>纽约 NY</a>
-          <a href="https://www.state.nj.us/mvc/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌊</span>新泽西 NJ</a>
-          <a href="https://www.dmv.pa.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🔔</span>宾州 PA</a>
-          <a href="https://www.mass.gov/orgs/massachusetts-registry-of-motor-vehicles" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🎓</span>马萨诸塞 MA</a>
-          <a href="https://portal.ct.gov/DMV" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌳</span>康州 CT</a>
-          <a href="https://www.maine.gov/sos/bmv/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🦞</span>缅因 ME</a>
-          <a href="https://www.nh.gov/safety/divisions/dmv/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🏔️</span>新罕布什尔 NH</a>
-          <a href="https://dmv.vermont.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🍁</span>佛蒙特 VT</a>
-          <a href="https://dmv.ri.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🚣</span>罗德岛 RI</a>
+      <!-- 东北部州 DMV -->
+      <div class="nav-module" data-module="northeast" data-order="5">
+        <div class="module-header">
+          <span class="module-icon gov">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="22" x2="21" y2="22"/>
+              <line x1="6" y1="18" x2="6" y2="11"/>
+              <line x1="10" y1="18" x2="10" y2="11"/>
+              <line x1="14" y1="18" x2="14" y2="11"/>
+              <line x1="18" y1="18" x2="18" y2="11"/>
+              <polygon points="12 2 20 7 4 7"/>
+            </svg>
+          </span>
+          <h2 class="module-title">东北部州 DMV</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://dmv.ny.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🗽</span></div>
+            <span class="nav-card-name">纽约 NY</span>
+          </a>
+          <a href="https://www.state.nj.us/mvc/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🌊</span></div>
+            <span class="nav-card-name">新泽西 NJ</span>
+          </a>
+          <a href="https://www.dmv.pa.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>🔔</span></div>
+            <span class="nav-card-name">宾州 PA</span>
+          </a>
+          <a href="https://www.mass.gov/orgs/massachusetts-registry-of-motor-vehicles" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8eaf6"><span>🎓</span></div>
+            <span class="nav-card-name">马萨诸塞 MA</span>
+          </a>
+          <a href="https://portal.ct.gov/DMV" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🌳</span></div>
+            <span class="nav-card-name">康州 CT</span>
+          </a>
+          <a href="https://www.maine.gov/sos/bmv/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>🦞</span></div>
+            <span class="nav-card-name">缅因 ME</span>
+          </a>
+          <a href="https://www.nh.gov/safety/divisions/dmv/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🏔️</span></div>
+            <span class="nav-card-name">新罕布什尔 NH</span>
+          </a>
+          <a href="https://dmv.vermont.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fce4ec"><span>🍁</span></div>
+            <span class="nav-card-name">佛蒙特 VT</span>
+          </a>
+          <a href="https://dmv.ri.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🚣</span></div>
+            <span class="nav-card-name">罗德岛 RI</span>
+          </a>
         </div>
       </div>
-    </div>
 
-    <!-- 其他州 -->
-    <h2>其他州地区</h2>
-    <div class="card">
-      <div class="card-header">
-        <div class="card-header-icon">📍</div>
-        <h3 class="card-header-title">其他州DMV</h3>
-        <div class="card-header-count">5</div>
-      </div>
-      <div class="card-content">
-        <div class="dmv-grid">
-          <a href="https://mva.maryland.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🐦</span>马里兰 MD</a>
-          <a href="https://www.dmv.virginia.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🦷</span>弗吉尼亚 VA</a>
-          <a href="https://www.dmv.de.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">💎</span>特拉华 DE</a>
-          <a href="https://oklahoma.gov/service/oklahoma-department-of-public-safety.html" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">⛽</span>俄克拉荷马 OK</a>
-          <a href="https://www.dot.state.wy.us/home.html" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🐎</span>怀俄明 WY</a>
+      <!-- 其他州 DMV -->
+      <div class="nav-module" data-module="other" data-order="6">
+        <div class="module-header">
+          <span class="module-icon ai">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </span>
+          <h2 class="module-title">其他州 DMV</h2>
+        </div>
+        <div class="module-grid">
+          <a href="https://mva.maryland.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e3f2fd"><span>🐦</span></div>
+            <span class="nav-card-name">马里兰 MD</span>
+          </a>
+          <a href="https://www.dmv.virginia.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🦷</span></div>
+            <span class="nav-card-name">弗吉尼亚 VA</span>
+          </a>
+          <a href="https://www.dmv.de.gov/" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8eaf6"><span>💎</span></div>
+            <span class="nav-card-name">特拉华 DE</span>
+          </a>
+          <a href="https://oklahoma.gov/service/oklahoma-department-of-public-safety.html" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#fff3e0"><span>⛽</span></div>
+            <span class="nav-card-name">俄克拉荷马 OK</span>
+          </a>
+          <a href="https://www.dot.state.wy.us/home.html" class="nav-card" target="_blank" rel="noopener">
+            <div class="nav-card-icon" style="background:#e8f5e9"><span>🐎</span></div>
+            <span class="nav-card-name">怀俄明 WY</span>
+          </a>
         </div>
       </div>
-    </div>
+
+    </section>
 
   </main>
 
-  <!-- 底部导航栏 -->
-  <nav class="bottom-nav">
-    <a href="https://openaa.com/" class="nav-item">
-      <div class="nav-item-icon">🏠</div>
-      <div>首页</div>
+  <!-- 底部固定导航栏 -->
+  <nav class="bottom-nav" role="navigation" aria-label="底部导航">
+    <a href="https://app.openaa.com" class="bottom-nav-item" target="_self" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span>首页</span>
     </a>
-    <button class="nav-item active" onclick="scrollToTop()">
-      <div class="nav-item-icon">🚗</div>
-      <div>DMV</div>
-    </button>
-    <a href="https://openaa.com/dmv/ny/practice/" class="nav-item">
-      <div class="nav-item-icon">📝</div>
-      <div>DMV笔试模拟</div>
+    <a href="https://app.openaa.com/jobs" class="bottom-nav-item" target="_self" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2"/>
+        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+      </svg>
+      <span>招聘</span>
     </a>
-    <a href="https://openaa.com/dmv/tickets/" class="nav-item">
-      <div class="nav-item-icon">🔍</div>
-      <div>DMV罚单查询</div>
+    <a href="https://app.openaa.com/housing" class="bottom-nav-item" target="_self" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span>房屋</span>
     </a>
-    <a href="https://openaa.com/" class="nav-item">
-      <div class="nav-item-icon">👤</div>
-      <div>我的</div>
+    <a href="https://openaa.com" class="bottom-nav-item active" aria-current="page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="1" y="3" width="15" height="13" rx="2"/>
+        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+        <circle cx="5.5" cy="18.5" r="2.5"/>
+        <circle cx="18.5" cy="18.5" r="2.5"/>
+      </svg>
+      <span>DMV</span>
+    </a>
+    <a href="https://app.openaa.com/profile" class="bottom-nav-item" target="_self" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+      <span>我的</span>
     </a>
   </nav>
 
-  <!-- 页脚 -->
-  <footer>
-    <p>© 2025 OpenAA.com | <a href="https://openaa.com/">返回首页</a></p>
-  </footer>
+  <script src="../script.js"></script>
 
+  <!-- DMV 页面分类 Tab 定位滚动逻辑 -->
   <script>
-    function handleSearch() {
-      const query = document.getElementById('searchInput').value;
-      if (query.trim()) {
-        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+    (function () {
+      var CATEGORY_TARGETS = {
+        all:       'tools',
+        tools:     'tools',
+        hot:       'hot',
+        west:      'west',
+        midwest:   'midwest',
+        south:     'south',
+        northeast: 'northeast',
+        other:     'other'
+      };
+
+      function setActiveCategoryTab(button) {
+        document.querySelectorAll('.cat-tab').forEach(function (tab) {
+          tab.classList.remove('active');
+          tab.setAttribute('aria-selected', 'false');
+        });
+        if (button) {
+          button.classList.add('active');
+          button.setAttribute('aria-selected', 'true');
+          button.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
       }
-    }
 
-    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        handleSearch();
+      function scrollToCategory(category) {
+        var moduleName = CATEGORY_TARGETS[category] || 'tools';
+        var target = document.querySelector('.nav-module[data-module="' + moduleName + '"]')
+                     || document.getElementById('navModules');
+        if (!target) return;
+
+        var appHeader   = document.getElementById('appHeader');
+        var categoryBar = document.getElementById('categoryBarWrap');
+        var headerHeight   = appHeader   ? appHeader.offsetHeight   : 56;
+        var categoryHeight = categoryBar ? categoryBar.offsetHeight : 44;
+        var visualGap = 12;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - categoryHeight - visualGap;
+        window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
       }
-    });
 
-    function toggleBookmark() {
-      const ua = navigator.userAgent.toLowerCase();
-      if (ua.indexOf('mac') > -1) {
-        alert('请使用 Cmd+D 收藏本站');
-      } else {
-        alert('请使用 Ctrl+D 收藏本站');
-      }
-    }
+      window.switchCategory = function (category, button) {
+        setActiveCategoryTab(button);
+        scrollToCategory(category);
+        return false;
+      };
 
-    function goHome() {
-      window.location.href = 'https://openaa.com/';
-    }
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+      document.addEventListener('DOMContentLoaded', function () {
+        var categoryBar = document.getElementById('categoryBar');
+        if (!categoryBar) return;
+        categoryBar.addEventListener('click', function (event) {
+          var button = event.target.closest('.cat-tab');
+          if (!button) return;
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          var category = button.getAttribute('data-cat') || 'all';
+          window.switchCategory(category, button);
+        }, true);
+      });
+    })();
   </script>
 </body>
 </html>
