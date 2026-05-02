@@ -283,7 +283,7 @@ function switchCategory(cat, btn) {
   // Use relative path so it works both on / and /OpenAA-siet/
   var links = {
     all: 'index.html',
-    dmv_practice: 'dmv/practice/index.html',
+    dmv_practice: 'dmv/ny/practice/index.html',
     tickets: 'dmv/tickets/index.html',
     bank: 'nav/bank.html',
     shop: 'nav/onegobuy.html'
