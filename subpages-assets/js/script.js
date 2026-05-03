@@ -285,8 +285,8 @@ function switchCategory(cat, btn) {
     all: 'index.html',
     dmv_practice: '../dmv/ny/practice/index.html',
     tickets: '../dmv/tickets/index.html',
-    bank: '../bank.html',
-    shop: '../onegobuy.html'
+    bank: '../nav/bank.html',
+    shop: '../nav/onegobuy.html'
   }
 
   var url = links[cat]
