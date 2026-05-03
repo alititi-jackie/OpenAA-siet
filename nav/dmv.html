@@ -4,19 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0078d4">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="DMV导航">
 
   <title>美国各州DMV导航 | 车辆管理局官网大全 | OpenAA</title>
   <meta name="description" content="OpenAA 美国各州DMV导航：提供美国50州车辆管理局官方网站直链，包括纽约、加州、德州等热门州，帮助华人快速办理驾驶证、车辆登记、路试预约等事务。">
   <meta name="keywords" content="DMV,车辆管理局,美国DMV,驾驶证,车辆登记,美国各州DMV,纽约DMV,加州DMV,德州DMV">
   <meta name="robots" content="index, follow">
 
-  <!-- Canonical (keep .html because Google already indexed it) -->
   <link rel="canonical" href="https://openaa.com/nav/dmv.html">
 
-  <!-- Open Graph -->
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:title" content="美国各州DMV导航 | OpenAA" />
   <meta property="og:description" content="美国50州车辆管理局（DMV）官方网站导航大全，一键直达各州DMV官网。" />
@@ -24,12 +19,11 @@
   <meta property="og:url" content="https://openaa.com/nav/dmv.html" />
   <meta property="og:type" content="website" />
 
-  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/subpages-assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/subpages-assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/subpages-assets/favicon/favicon-16x16.png">
 
-  <!-- Shared style -->
+  <!-- IMPORTANT: include shared CSS so banner/search sizing stays correct -->
   <link rel="stylesheet" href="/subpages-assets/css/style.css" />
 
   <style>
@@ -45,7 +39,6 @@
       --radius: 12px;
     }
 
-    /* DMV 页：不引用 8 宫格组件，这里保留兼容（万一其它地方残留） */
     .grid-menu-section { display: none !important; }
 
     h1 {
@@ -128,15 +121,9 @@
     .dmv-item:nth-last-child(-n+2) { border-bottom: none; }
     .dmv-item:active { background: #f0f7ff; }
 
-    .dmv-icon {
-      font-size: 18px;
-      min-width: 18px;
-    }
+    .dmv-icon { font-size: 18px; min-width: 18px; }
 
-    .hot-states {
-      background: var(--card-bg);
-      padding: 0;
-    }
+    .hot-states { background: var(--card-bg); padding: 0; }
 
     .hot-state-item {
       padding: 12px 16px;
@@ -162,94 +149,20 @@
   </style>
 </head>
 <body>
-  <!-- 1) Header -->
   <div data-include="site-header"></div>
 
   <main class="main-content">
-    <!-- 2) Banner -->
     <div data-include="inner/banner"></div>
-
-    <!-- 3) Search -->
     <div data-include="inner/search"></div>
+    <div data-include="inner/category-bar" data-cat-active="dmv_official" data-cat-config="/subpages-assets/config/categorybar.dmv.json"></div>
 
-    <!-- 4) Category bar -->
-    <div data-include="inner/category-bar"
-         data-cat-active="dmv_official"
-         data-cat-config="/subpages-assets/config/categorybar.dmv.json"></div>
-
-    <!-- DMV content -->
     <div class="dmv-body">
       <h1>🚗 美国各州DMV导航</h1>
       <p class="page-desc">为在美华人提供美国50州车辆管理局（DMV）官方网站直链，快速办理驾驶证、车辆登记、路试预约等事务。</p>
-
-      <!-- 快捷工具入口 -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-header-icon">🔧</div>
-          <h3 class="card-header-title">DMV实用工具</h3>
-        </div>
-        <div class="card-content">
-          <div class="hot-states">
-            <a href="https://openaa.com/dmv/tickets/" class="hot-state-item"><span>🚔</span> 停车/闯红灯/超速拍照罚单查询（全美国）</a>
-            <a href="https://openaa.com/dmv/ny/practice/" class="hot-state-item"><span>📝</span> 纽约州 DMV 笔试练习</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 热门州DMV -->
-      <h2>热门州DMV</h2>
-      <div class="card">
-        <div class="card-header">
-          <div class="card-header-icon">⭐</div>
-          <h3 class="card-header-title">华人聚集州</h3>
-          <div class="card-header-count">5</div>
-        </div>
-        <div class="card-content">
-          <div class="hot-states">
-            <a href="https://dmv.ny.gov/" target="_blank" rel="noopener" class="hot-state-item"><span>🗽</span> 纽约州 New York DMV</a>
-            <a href="https://www.dmv.ca.gov/" target="_blank" rel="noopener" class="hot-state-item"><span>☀️</span> 加利福尼亚州 California DMV</a>
-            <a href="https://www.txdmv.gov/" target="_blank" rel="noopener" class="hot-state-item"><span>⭐</span> 德克萨斯州 Texas DMV</a>
-            <a href="https://www.flhsmv.gov/" target="_blank" rel="noopener" class="hot-state-item"><span>🌴</span> 佛罗里达州 Florida DMV</a>
-            <a href="https://dds.georgia.gov/" target="_blank" rel="noopener" class="hot-state-item"><span>🍑</span> 佐治亚州 Georgia DMV</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 西部州 -->
-      <h2>西部地区</h2>
-      <div class="card">
-        <div class="card-header">
-          <div class="card-header-icon">⛰️</div>
-          <h3 class="card-header-title">西部州DMV</h3>
-          <div class="card-header-count">11</div>
-        </div>
-        <div class="card-content">
-          <div class="dmv-grid">
-            <a href="https://www.dmv.ca.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌞</span>加州 CA</a>
-            <a href="https://azdot.gov/motor-vehicles" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🏜️</span>亚利桑那 AZ</a>
-            <a href="https://doa.alaska.gov/dmv/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">❄️</span>阿拉斯加 AK</a>
-            <a href="https://hidot.hawaii.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌺</span>夏威夷 HI</a>
-            <a href="https://dmv.colorado.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🏔️</span>科罗拉多 CO</a>
-            <a href="https://dmv.nevada.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🎰</span>内华达 NV</a>
-            <a href="https://dojmt.gov/driving/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🦌</span>蒙大拿 MT</a>
-            <a href="https://dmv.utah.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🏜️</span>犹他 UT</a>
-            <a href="https://www.oregon.gov/ODOT/DMV/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌲</span>俄勒冈 OR</a>
-            <a href="https://www.dol.wa.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌧️</span>华盛顿 WA</a>
-            <a href="https://www.mvd.newmexico.gov/" target="_blank" rel="noopener" class="dmv-item"><span class="dmv-icon">🌵</span>新墨西哥 NM</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 下面内容与原页面相同：为节省篇幅，这里先保留到西部地区为止 -->
-      <!-- 你确认后我可以把原 dmv.html 的剩余部分完整迁移进来（中西部/南部/东北部/其他州） -->
-
-    </div><!-- /.dmv-body -->
+    </div>
   </main>
 
-  <!-- Bottom nav -->
   <div data-include="site-bottom-nav"></div>
-
-  <!-- Include loader (will also load interaction scripts) -->
   <script src="/subpages-assets/js/include.js"></script>
 </body>
 </html>
