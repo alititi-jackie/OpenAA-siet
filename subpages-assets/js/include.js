@@ -36,12 +36,15 @@
     while (tmp.firstChild) el.appendChild(tmp.firstChild);
   }
 
-  function loadScript(src, onload) {
-    var s = document.createElement('script');
-    s.src = src;
-    s.defer = true;
-    if (onload) s.onload = onload;
-    document.body.appendChild(s);
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var s = document.createElement('script');
+      s.src = src;
+      s.defer = true;
+      s.onload = function () { resolve(); };
+      s.onerror = function () { reject(new Error('Failed to load script ' + src)); };
+      document.body.appendChild(s);
+    });
   }
 
   function setActiveTab(activeId) {
@@ -60,20 +63,15 @@
   function renderCategoryBar(containerEl) {
     var cfgUrl = containerEl.getAttribute('data-cat-config');
     if (!cfgUrl) {
-      // still try to set default active from attribute
       setActiveTab(containerEl.getAttribute('data-cat-active'));
       return Promise.resolve();
     }
 
-    // allow relative URL (relative to current page)
-    var resolvedCfgUrl = cfgUrl;
-
-    return fetchJSON(resolvedCfgUrl).then(function (cfg) {
+    return fetchJSON(cfgUrl).then(function (cfg) {
       var pin = containerEl.querySelector('#catPinArea') || containerEl.querySelector('.cat-pin-area');
       var bar = containerEl.querySelector('#categoryBar') || containerEl.querySelector('.category-bar');
       if (!pin || !bar) return;
 
-      // left pinned button
       pin.innerHTML = '';
       if (cfg.left && cfg.left.text) {
         var leftBtn = document.createElement('button');
@@ -86,7 +84,6 @@
         pin.appendChild(leftBtn);
       }
 
-      // tabs
       bar.innerHTML = '';
       (cfg.tabs || []).forEach(function (t) {
         var btn = document.createElement('button');
@@ -102,7 +99,6 @@
         bar.appendChild(btn);
       });
 
-      // active tab
       setActiveTab(containerEl.getAttribute('data-cat-active'));
     });
   }
@@ -115,15 +111,11 @@
       var key = (el.getAttribute('data-include') || '').trim();
       if (!key) return Promise.resolve();
 
-      // Support legacy placeholders (id-based) still present
-      // If user sets data-include="site-header" -> site-header.html
       var url = COMPONENT_BASE + key.replace(/\.html$/i, '') + '.html';
 
       return fetchText(url)
         .then(function (html) {
           injectInto(el, html);
-
-          // category bar post processing
           if (key === 'inner/category-bar') {
             return renderCategoryBar(el);
           }
@@ -136,7 +128,6 @@
     return Promise.all(tasks);
   }
 
-  // Bind legacy category bar click handler only when switchCategory exists
   function bindCategoryBarDelegation() {
     var wrap = document.getElementById('categoryBarWrap');
     if (!wrap) return;
@@ -146,7 +137,7 @@
         var button = event.target.closest('.cat-tab');
         if (!button) return;
         var cat = button.getAttribute('data-cat');
-        if (!cat) return; // ignore pinned "返回"
+        if (!cat) return;
         if (typeof window.switchCategory === 'function') {
           window.switchCategory(cat, button);
         }
@@ -155,15 +146,34 @@
     );
   }
 
+  // IMPORTANT:
+  // - Include HTML fragments first
+  // - Then load search helpers (so inline handlers exist)
+  // - Then load main interaction script (banner/category/share)
   includeAll().then(function () {
-    // ensure switchCategory exists to avoid crashes on pages without script.js logic
-    if (typeof window.switchCategory !== 'function') {
-      window.switchCategory = function () {};
-    }
+    var chain = Promise.resolve();
 
-    // load shared interaction script after DOM injected
-    loadScript(JS_BASE + 'script.js', function () {
-      bindCategoryBarDelegation();
-    });
+    chain = chain
+      .then(function () { return loadScript(JS_BASE + 'search.js'); })
+      .catch(function () {
+        // search.js is optional on pages without search
+      })
+      .then(function () { return loadScript(JS_BASE + 'script.js'); })
+      .then(function () {
+        // ensure switchCategory exists to avoid crashes
+        if (typeof window.switchCategory !== 'function') {
+          window.switchCategory = function () {};
+        }
+        bindCategoryBarDelegation();
+
+        // Re-initialize banner after includes (for pages where script.js ran before DOM existed)
+        // If banner elements exist, the IIFE in script.js already ran on load; here we just force reload.
+        // NOTE: script.js banner init is an IIFE, so this won't rerun. Keeping for future refactor.
+      })
+      .catch(function (err) {
+        console.warn('[include.js] post-load script failed:', err);
+      });
+
+    return chain;
   });
 }());
