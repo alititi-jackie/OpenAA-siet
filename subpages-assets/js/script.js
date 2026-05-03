@@ -282,7 +282,7 @@ function switchCategory(cat, btn) {
   // IMPORTANT: GitHub Pages under repo usually needs /<repo>/ prefix.
   // Use relative path so it works both on / and /OpenAA-siet/
   var links = {
-    all: 'index.html',
+    all: '../index.html',
     dmv_practice: '../dmv/ny/practice/index.html',
     tickets: '../dmv/tickets/index.html',
     bank: '../nav/bank.html',
