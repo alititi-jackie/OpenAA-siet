@@ -119,11 +119,11 @@
   <div class="category-bar-inner">
     <!-- 固定在左侧的"返回"按钮 -->
     <div class="cat-pin-area">
-      <button class="cat-tab active" id="catTabAll" data-cat="all" role="tab" aria-selected="true" onclick="switchCategory('all', this)">返回</button>
+      <a class="cat-tab" id="catTabAll" href="../index.html" role="tab" aria-selected="false">返回</a>
     </div>
     <!-- 右侧横向可滑动的分类（仅保留你需要的入口） -->
     <nav class="category-bar" id="categoryBar" role="tablist">
-      <button class="cat-tab" data-cat="dmv_official" role="tab" aria-selected="false" onclick="switchCategory('dmv_official', this)">DMV官网</button>
+      <button class="cat-tab active" data-cat="dmv_official" role="tab" aria-selected="true" onclick="switchCategory('dmv_official', this)">DMV官网</button>
       <button class="cat-tab" data-cat="dmv_practice" role="tab" aria-selected="false" onclick="switchCategory('dmv_practice', this)">DMV笔试模拟</button>
       <button class="cat-tab" data-cat="tickets" role="tab" aria-selected="false" onclick="switchCategory('tickets', this)">罚单查询</button>
       <button class="cat-tab" data-cat="bank" role="tab" aria-selected="false" onclick="switchCategory('bank', this)">银行</button>
