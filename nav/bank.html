@@ -10,7 +10,7 @@
 
   <!-- Title & Meta -->
   <title>美国银行网址导航 | 美国主流银行网站大全 | OpenAA</title>
-  <meta name="description" content="OpenAA 美国银行网址导航：提供美国主流银行官方网站直链，包括摩根大通、美国银行、富国银行、花旗银行等，帮助华人快速找到银行官网入口。">
+  <meta name="description" content="OpenAA 美国银行网址导航：提供美国主流银行官方网站直链，包括摩根大通、美国银行、富国银行、花旗银行等，帮助华人快速访问美国银行网站。">
   <meta name="keywords" content="美国银行网址,美国银行官网,银行网站导航,摩根大通,美国银行,富国银行,花旗银行,信用卡,在线银行,投资理财">
   <meta name="robots" content="index, follow">
 
@@ -55,25 +55,13 @@
   <link rel="stylesheet" href="/subpages-assets/css/style.css" />
 
   <style>
-    /* Bank 页面不展示 Banner / Search / 8宫格入口 */
+    /* Keep original bank page look & content; only integrate shared header/category/bottom nav */
+
+    /* Hide unused injected sections */
     .banner-section,
     .search-section,
     .grid-menu-section {
       display: none !important;
-    }
-
-    /* 页面标题样式（跟 dmv 类似的留白） */
-    .bank-body { padding: 8px; }
-    h1 {
-      font-size: 24px;
-      margin: 16px 0 8px 0;
-      color: var(--text-dark);
-    }
-    .page-desc {
-      font-size: 14px;
-      color: var(--text-light);
-      margin-bottom: 16px;
-      line-height: 1.6;
     }
 
     /* ===== 分类栏：滚动到位置才吸顶（JS 切换 class） ===== */
@@ -96,14 +84,137 @@
     .oaa-catbar-spacer.oaa-on {
       display: block;
     }
+
+    /* ---------- Original bank page layout styles (ported from old nav/bank.html) ---------- */
+    :root {
+      --primary: #0078d4;
+      --primary-dark: #005fa3;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+
+    /* 主要内容区（跟旧版保持一致） */
+    .bank-main {
+      padding: 8px;
+      padding-bottom: 90px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 16px 0 8px 0;
+      color: var(--text-dark);
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 20px 0 12px 0;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .page-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0;
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-header-icon { font-size: 20px; }
+
+    .card-header-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .card-content { padding: 0; }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+
+    .link-item {
+      padding: 12px 16px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s;
+    }
+
+    .link-item:last-child,
+    .link-item:nth-last-child(2) {
+      border-bottom: none;
+    }
+
+    .link-item:nth-child(2n) {
+      border-right: none;
+    }
+
+    .link-item:active {
+      background: #f0f7ff;
+    }
+
+    .link-icon {
+      font-size: 18px;
+      min-width: 18px;
+    }
+
+    @media (min-width: 600px) {
+      .link-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1f1f1f;
+        --card-bg: #2d2d2d;
+        --text-dark: #f5f5f5;
+        --text-light: #a0a0a0;
+        --border: #3d3d3d;
+      }
+
+      .card-header { background: #3d3d3d; }
+      .link-item:active { background: #3d3d3d; }
+    }
   </style>
 </head>
 <body>
-  <!-- Header (data-include): 城市 / Logo / 分享 -->
+  <!-- Shared header (city / logo / share) -->
   <div data-include="site-header"></div>
 
   <main class="main-content">
-    <!-- 分类栏：要 -->
+    <!-- Category tabs -->
     <div data-include="inner/category-bar"
          data-cat-active="bank"
          data-cat-config="/subpages-assets/config/categorybar.json"></div>
@@ -111,77 +222,165 @@
     <!-- Spacer for fixed category bar (enabled by JS when stuck) -->
     <div class="oaa-catbar-spacer" aria-hidden="true"></div>
 
-    <!-- 银行内容模块列表：要 -->
-    <div class="bank-body">
+    <!-- Original page content (kept) -->
+    <div class="bank-main">
       <h1>🏦 美国银行网址导航</h1>
-      <p class="page-desc">美国主流银行官网直达入口：Chase、BofA、Wells Fargo、Citibank 等。点击即可打开银行官方网站（建议使用官方App/官网办理业务）。</p>
+      <p class="page-desc">为在美华人提供美国主流银行官方网站直链，包括支票账户、储蓄、信用卡、投资理财等金融服务，快速访问美国银行网站。</p>
 
-      <!-- 模块：主流银行 -->
-      <section class="nav-module" data-cat="bank">
-        <h2 class="module-title">主流银行</h2>
-        <div class="nav-cards">
-          <a class="nav-card" href="https://www.chase.com/" target="_blank" rel="noopener">
-            <div class="nav-card-name">Chase 摩根大通</div>
-            <div class="nav-card-desc">www.chase.com</div>
-          </a>
-          <a class="nav-card" href="https://www.bankofamerica.com/" target="_blank" rel="noopener">
-            <div class="nav-card-name">Bank of America 美国银行</div>
-            <div class="nav-card-desc">www.bankofamerica.com</div>
-          </a>
-          <a class="nav-card" href="https://www.wellsfargo.com/" target="_blank" rel="noopener">
-            <div class="nav-card-name">Wells Fargo 富国银行</div>
-            <div class="nav-card-desc">www.wellsfargo.com</div>
-          </a>
-          <a class="nav-card" href="https://www.citi.com/" target="_blank" rel="noopener">
-            <div class="nav-card-name">Citibank 花旗银行</div>
-            <div class="nav-card-desc">www.citi.com</div>
-          </a>
-          <a class="nav-card" href="https://www.capitalone.com/" target="_blank" rel="noopener">
-            <div class="nav-card-name">Capital One</div>
-            <div class="nav-card-desc">www.capitalone.com</div>
-          </a>
-          <a class="nav-card" href="https://www.usbank.com/" target="_blank" rel="noopener">
-            <div class="nav-card-name">U.S. Bank</div>
-            <div class="nav-card-desc">www.usbank.com</div>
-          </a>
-          <a class="nav-card" href="https://www.pnc.com/" target="_blank" rel="noopener">
-            <div class="nav-card-name">PNC Bank</div>
-            <div class="nav-card-desc">www.pnc.com</div>
-          </a>
-          <a class="nav-card" href="https://www.truist.com/" target="_blank" rel="noopener">
-            <div class="nav-card-name">Truist</div>
-            <div class="nav-card-desc">www.truist.com</div>
-          </a>
+      <!-- Big 4 主流银行 -->
+      <h2>Big 4 美国主流银行</h2>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🏦</div>
+          <h3 class="card-header-title">美国前四大商业银行</h3>
         </div>
-      </section>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.chase.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏦</span>摩根大通(Chase)</a>
+            <a href="https://www.bankofamerica.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏦</span>美国银行(BofA)</a>
+            <a href="https://www.wellsfargo.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏦</span>富国银行(Wells Fargo)</a>
+            <a href="https://www.citi.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏦</span>花旗银行(Citibank)</a>
+          </div>
+        </div>
+      </div>
 
-      <!-- 模块：投资/券商/数字银行（可继续补充） -->
-      <section class="nav-module" data-cat="bank">
-        <h2 class="module-title">投资 / 券商 / 数字银行</h2>
-        <div class="nav-cards">
-          <a class="nav-card" href="https://www.schwab.com/" target="_blank" rel="noopener">
-            <div class="nav-card-name">Charles Schwab 嘉信理财</div>
-            <div class="nav-card-desc">www.schwab.com</div>
-          </a>
-          <a class="nav-card" href="https://www.fidelity.com/" target="_blank" rel="noopener">
-            <div class="nav-card-name">Fidelity 富达</div>
-            <div class="nav-card-desc">www.fidelity.com</div>
-          </a>
-          <a class="nav-card" href="https://www.vanguard.com/" target="_blank" rel="noopener">
-            <div class="nav-card-name">Vanguard 先锋</div>
-            <div class="nav-card-desc">www.vanguard.com</div>
-          </a>
-          <a class="nav-card" href="https://www.ally.com/" target="_blank" rel="noopener">
-            <div class="nav-card-name">Ally Bank</div>
-            <div class="nav-card-desc">www.ally.com</div>
-          </a>
+      <!-- 其他主流银行 -->
+      <h2>其他主流商业银行</h2>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🏛️</div>
+          <h3 class="card-header-title">地区性及其他大型银行</h3>
         </div>
-      </section>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.usbank.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏦</span>美国银行(USB)</a>
+            <a href="https://www.pnc.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏦</span>PNC银行</a>
+            <a href="https://www.capitalone.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏦</span>Capital One</a>
+            <a href="https://www.tdbank.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏦</span>TD银行</a>
+            <a href="https://www.bbt.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏦</span>BB&T银行</a>
+            <a href="https://www.comerica.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏦</span>Comerica</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 信用卡公司 -->
+      <h2>信用卡公司</h2>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">💳</div>
+          <h3 class="card-header-title">主流信用卡发卡机构</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.americanexpress.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💳</span>美运通(Amex)</a>
+            <a href="https://www.discover.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💳</span>Discover卡</a>
+            <a href="https://www.synchrony.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💳</span>Synchrony</a>
+            <a href="https://www.barclaycard.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💳</span>Barclays</a>
+            <a href="https://www.usbank.com/credit-cards/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💳</span>美国银行信卡</a>
+            <a href="https://www.bofa.com/credit-cards/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💳</span>美银信用卡</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 数字/在线银行 -->
+      <h2>数字/在线银行</h2>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">📱</div>
+          <h3 class="card-header-title">线上银行及金融科技</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.ally.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📱</span>Ally Bank</a>
+            <a href="https://www.chime.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📱</span>Chime</a>
+            <a href="https://www.sofi.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📱</span>SoFi</a>
+            <a href="https://www.marcus.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📱</span>Marcus</a>
+            <a href="https://www.wealthfront.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📱</span>Wealthfront</a>
+            <a href="https://www.betterment.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📱</span>Betterment</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 证券交易及投资理财 -->
+      <h2>证券交易及投资理财</h2>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">📈</div>
+          <h3 class="card-header-title">股票交易与投资平台</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.fidelity.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📈</span>富达(Fidelity)</a>
+            <a href="https://www.schwab.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📈</span>嘉信(Schwab)</a>
+            <a href="https://www.tdameritrade.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📈</span>美联(TD)</a>
+            <a href="https://www.vanguard.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📈</span>先锋(Vanguard)</a>
+            <a href="https://www.interactive-brokers.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📈</span>盈透(IB)</a>
+            <a href="https://www.etoro.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📈</span>eToro</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 贷款及抵押服务 -->
+      <h2>贷款及抵押服务</h2>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🏠</div>
+          <h3 class="card-header-title">房贷、车贷及个人贷款</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.rocketmortgage.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏠</span>Rocket Mortgage</a>
+            <a href="https://www.better.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏠</span>Better.com</a>
+            <a href="https://www.loandepot.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏠</span>LoanDepot</a>
+            <a href="https://www.lendingtree.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💰</span>LendingTree</a>
+            <a href="https://www.lightstream.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💰</span>LightStream</a>
+            <a href="https://www.prosper.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💰</span>Prosper</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 金融工具及信用报告 -->
+      <h2>金融工具及信用报告</h2>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🛠️</div>
+          <h3 class="card-header-title">信用查询与财务管理</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.creditkarma.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📊</span>Credit Karma</a>
+            <a href="https://www.annualcreditreport.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📊</span>Annual Report</a>
+            <a href="https://www.experian.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📊</span>Experian</a>
+            <a href="https://www.equifax.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📊</span>Equifax</a>
+            <a href="https://www.transunion.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📊</span>TransUnion</a>
+            <a href="https://www.nerdwallet.com/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🧮</span>NerdWallet</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 美国政府金融机构 -->
+      <h2>美国政府金融机构</h2>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-header-icon">🏛️</div>
+          <h3 class="card-header-title">政府部门及监管机构</h3>
+        </div>
+        <div class="card-content">
+          <div class="link-grid">
+            <a href="https://www.irs.gov/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">📋</span>美国税务局(IRS)</a>
+            <a href="https://www.ssa.gov/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🆔</span>社会安全局(SSA)</a>
+            <a href="https://www.federalreserve.gov/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🏛️</span>美联储</a>
+            <a href="https://www.fdic.gov/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">🛡️</span>存款保险公司(FDIC)</a>
+            <a href="https://home.treasury.gov/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">💵</span>财政部</a>
+            <a href="https://www.consumerfinance.gov/" class="link-item" target="_blank" rel="noopener"><span class="link-icon">⚖️</span>消费者金融局(CFPB)</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </main>
 
-  <!-- Bottom nav：要 -->
-  <div data-include="site-bottom-nav"></div>
+    <!-- Bottom nav -->
+    <div data-include="site-bottom-nav"></div>
+  </main>
 
   <!-- Include engine -->
   <script src="/subpages-assets/js/include.js"></script>
