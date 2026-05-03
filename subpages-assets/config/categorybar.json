@@ -4,10 +4,10 @@
     "href": "https://openaa.com/"
   },
   "tabs": [
-    { "id": "dmv_official", "text": "DMV官网", "href": "/nav/dmv/" },
-    { "id": "dmv_practice", "text": "DMV笔试模拟", "href": "/dmv/ny/practice/" },
-    { "id": "tickets", "text": "罚单查询", "href": "/dmv/tickets/" },
-    { "id": "bank", "text": "银行", "href": "/nav/bank/" },
-    { "id": "shop", "text": "购物", "href": "/nav/onegobuy/" }
+    { "id": "dmv_official", "text": "DMV官网", "href": "../nav/dmv/" },
+    { "id": "dmv_practice", "text": "DMV笔试模拟", "href": "../dmv/ny/practice/" },
+    { "id": "tickets", "text": "罚单查询", "href": "../dmv/tickets/" },
+    { "id": "bank", "text": "银行", "href": "../nav/bank/" },
+    { "id": "shop", "text": "购物", "href": "../nav/onegobuy/" }
   ]
 }
