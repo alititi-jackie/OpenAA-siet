@@ -227,9 +227,13 @@
     <!-- Banner / Search / Category bar (data-include) -->
     <div data-include="inner/banner"></div>
     <div data-include="inner/search"></div>
-    <div data-include="inner/category-bar"
-         data-cat-active="dmv_official"
-         data-cat-config="/subpages-assets/config/categorybar.json"></div>
+
+    <!-- IMPORTANT: keep include inside wrapper with the expected id so sticky JS can find it -->
+    <div id="categoryBarWrap">
+      <div data-include="inner/category-bar"
+           data-cat-active="dmv_official"
+           data-cat-config="/subpages-assets/config/categorybar.json"></div>
+    </div>
 
     <!-- Spacer for fixed category bar (enabled by JS when stuck) -->
     <div class="oaa-catbar-spacer" aria-hidden="true"></div>
@@ -301,7 +305,7 @@
               <span class="dmv-icon">🦞</span> 马萨诸塞 MA
             </a>
             <a href="https://www.state.nj.us/mvc/" class="dmv-item" target="_blank" rel="noopener">
-              <span class="dmv-icon">🗽</span> 新���西 NJ
+              <span class="dmv-icon">🗽</span> 新泽西 NJ
             </a>
           </div>
         </div>
@@ -336,7 +340,7 @@
             <a href="https://mva.maryland.gov/" class="dmv-item" target="_blank" rel="noopener"><span class="dmv-icon">🦀</span> 马里兰 MD</a>
             <a href="https://www.mass.gov/orgs/massachusetts-registry-of-motor-vehicles" class="dmv-item" target="_blank" rel="noopener"><span class="dmv-icon">🦞</span> 马萨诸塞 MA</a>
             <a href="https://dps.mn.gov/divisions/dvs/" class="dmv-item" target="_blank" rel="noopener"><span class="dmv-icon">❄️</span> 明尼苏达 MN</a>
-            <a href="https://www.msc.uscourts.gov/" class="dmv-item" target="_blank" rel="noopener"><span class="dmv-icon">🌊</span> 密西西比 MS</a>
+            <a href="https://www.dps.ms.gov/" class="dmv-item" target="_blank" rel="noopener"><span class="dmv-icon">🌊</span> 密西西比 MS</a>
             <a href="https://www.mvd.newmexico.gov/" class="dmv-item" target="_blank" rel="noopener"><span class="dmv-icon">🌶️</span> 新墨西哥 NM</a>
             <a href="https://dmv.ny.gov/" class="dmv-item" target="_blank" rel="noopener"><span class="dmv-icon">🗽</span> 纽约 NY</a>
             <a href="https://www.ncdot.gov/dmv/" class="dmv-item" target="_blank" rel="noopener"><span class="dmv-icon">🏎️</span> 北卡 NC</a>
@@ -355,7 +359,7 @@
             <a href="https://www.dmv.virginia.gov/" class="dmv-item" target="_blank" rel="noopener"><span class="dmv-icon">🏛️</span> 弗吉尼亚 VA</a>
             <a href="https://www.dol.wa.gov/" class="dmv-item" target="_blank" rel="noopener"><span class="dmv-icon">🌲</span> 华盛顿 WA</a>
             <a href="https://wisconsindot.gov/pages/dmv.aspx" class="dmv-item" target="_blank" rel="noopener"><span class="dmv-icon">🧀</span> 威斯康星 WI</a>
-            <a href="https://www.wyomingdot.gov/" class="dmv-item" target="_blank" rel="noopener"><span class="dmv-icon">🐎</span> 怀俄明 WY</a>
+            <a href="https://www.dot.state.wy.us/" class="dmv-item" target="_blank" rel="noopener"><span class="dmv-icon">🐎</span> 怀俄明 WY</a>
           </div>
         </div>
       </div>
