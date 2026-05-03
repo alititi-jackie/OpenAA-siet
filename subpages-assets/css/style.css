@@ -23,7 +23,6 @@ body {
     linear-gradient(90deg, #d9dce3 0%, #eef0f4 28%, #eef0f4 72%, #d9dce3 100%);
   color: #1a1a2e;
   min-height: 100vh;
-  /* Bottom nav safe area */
   padding-bottom: calc(64px + env(safe-area-inset-bottom));
 }
 
@@ -152,7 +151,7 @@ body {
 }
 
 /* ===================================================
-   BANNER CAROUSEL (needed by inner/banner component)
+   BANNER CAROUSEL
    =================================================== */
 .banner-section {
   background: #fff;
@@ -239,7 +238,7 @@ body {
 }
 
 /* ===================================================
-   SEARCH BAR (needed by inner/search component)
+   SEARCH BAR
    =================================================== */
 .search-section {
   background: #fff;
@@ -326,7 +325,7 @@ body {
 .search-submit:active { opacity: 0.9; }
 
 /* ===================================================
-   CATEGORY BAR (already used by inner/category-bar)
+   CATEGORY BAR (sticky)
    =================================================== */
 .category-bar-wrap {
   position: sticky;
@@ -337,6 +336,9 @@ body {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
+
+/* Fix for sticky inside some iOS/Chrome contexts: avoid parent overflow clipping */
+.main-content { overflow: visible; }
 
 .category-bar-inner {
   display: flex;
