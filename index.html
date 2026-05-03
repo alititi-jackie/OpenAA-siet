@@ -23,14 +23,190 @@
 </head>
 <body>
 
-  <!-- 1. 顶部栏（由公共组件注入） -->
-  <div id="site-header-placeholder"></div>
+  <!-- 1. 顶部栏 -->
+  <header class="app-header" id="appHeader">
+    <div class="header-inner">
+      <!-- Left: location -->
+      <button class="header-location" type="button" aria-label="城市选择">
+        <svg class="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span>纽约</span>
+        <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+
+      <!-- Center: logo -->
+      <a href="https://openaa.com" class="header-logo" aria-label="OpenAA 首页">
+        <img src="assets/logo.png" alt="OpenAA" class="header-logo-img" onerror="this.style.display='none'" />
+        <span class="header-logo-text">
+          <span class="logo-blue">Open</span><span class="logo-dark">AA</span>
+        </span>
+      </a>
+
+      <!-- Right: share -->
+      <button class="header-share" type="button" aria-label="分享" onclick="shareOpenAA()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="5" r="3"/>
+          <circle cx="6" cy="12" r="3"/>
+          <circle cx="18" cy="19" r="3"/>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Header spacer -->
+  <div class="header-spacer"></div>
 
   <!-- Main content -->
   <main class="main-content">
 
-    <!-- 2-5. 广告/搜索/导航/分类栏（由公共组件注入） -->
-    <div id="site-inner-top-placeholder"></div>
+    <!-- 2. 主 Banner 广告轮播 -->
+    <section class="banner-section">
+      <div class="banner-wrapper">
+        <div class="banner-track" id="bannerTrack"></div>
+        <div class="banner-dots" id="bannerDots"></div>
+      </div>
+    </section>
+
+    <!-- 3. 搜索框 (Google Search) -->
+    <section class="search-section">
+      <form class="search-wrapper" action="https://www.google.com/search" method="GET" target="_self" rel="noopener" onsubmit="return handleGoogleSearchSubmit(event)">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="search"
+          id="searchInput"
+          name="q"
+          class="search-input"
+          placeholder="华人OpenAA 搜索你感兴趣的内容..."
+          autocomplete="off"
+        />
+        <button class="search-clear" id="searchClear" type="button" onclick="clearGoogleSearch()" aria-label="清除搜索">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+        <button class="search-submit" type="submit" aria-label="搜索">搜索</button>
+      </form>
+    </section>
+
+    <!-- 4. 8 宫格入口 -->
+    <section class="grid-menu-section">
+      <div class="grid-menu">
+        <a href="https://app.openaa.com/jobs" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+              <line x1="12" y1="12" x2="12" y2="16"/>
+              <line x1="10" y1="14" x2="14" y2="14"/>
+            </svg>
+          </div>
+          <span>招聘</span>
+        </a>
+        <a href="https://app.openaa.com/housing" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap emerald">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <span>房屋</span>
+        </a>
+        <a href="https://app.openaa.com/secondhand" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap violet">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </div>
+          <span>二手</span>
+        </a>
+        <a href="https://openaa.com/nav/dmv" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="2"/>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <span>DMV</span>
+        </a>
+        <a href="https://app.openaa.com/news" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap rose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
+              <path d="M18 14h-8"/>
+              <path d="M15 18h-5"/>
+              <path d="M10 6h8v4h-8V6z"/>
+            </svg>
+          </div>
+          <span>新闻</span>
+        </a>
+        <a href="https://openaa.com" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+            </svg>
+          </div>
+          <span>导航</span>
+        </a>
+        <a href="https://openaa.com/guide" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
+          <span>新手指南</span>
+        </a>
+        <a href="https://openaa.com/services" class="grid-item" target="_self" rel="noopener">
+          <div class="grid-icon-wrap teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <span>本地服务</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. 分类吸顶栏 -->
+    <div class="category-bar-wrap" id="categoryBarWrap">
+      <div class="category-bar-inner">
+        <!-- 固定在左侧的"全部"按钮 -->
+        <div class="cat-pin-area">
+          <button class="cat-tab active" id="catTabAll" data-cat="all" role="tab" aria-selected="true" onclick="switchCategory('all', this)">返回</button>
+        </div>
+        <!-- 右侧横向可滑动的分类 -->
+        <nav class="category-bar" id="categoryBar" role="tablist">
+          <button class="cat-tab" data-cat="featured" role="tab" aria-selected="false" onclick="switchCategory('featured', this)">推荐</button>
+          <button class="cat-tab" data-cat="gov" role="tab" aria-selected="false" onclick="switchCategory('gov', this)">政府</button>
+          <button class="cat-tab" data-cat="bank" role="tab" aria-selected="false" onclick="switchCategory('bank', this)">银行</button>
+          <button class="cat-tab" data-cat="shop" role="tab" aria-selected="false" onclick="switchCategory('shop', this)">购物</button>
+          <button class="cat-tab" data-cat="dmv" role="tab" aria-selected="false" onclick="switchCategory('dmv', this)">DMV</button>
+          <button class="cat-tab" data-cat="tools" role="tab" aria-selected="false" onclick="switchCategory('tools', this)">工具</button>
+          <button class="cat-tab" data-cat="ai" role="tab" aria-selected="false" onclick="switchCategory('ai', this)">常用AI</button>
+          <button class="cat-tab" data-cat="map" role="tab" aria-selected="false" onclick="switchCategory('map', this)">地图</button>
+          <button class="cat-tab" data-cat="post" role="tab" aria-selected="false" onclick="switchCategory('post', this)">邮政</button>
+          <button class="cat-tab" data-cat="tax" role="tab" aria-selected="false" onclick="switchCategory('tax', this)">报税</button>
+          <button class="cat-tab" data-cat="translate" role="tab" aria-selected="false" onclick="switchCategory('translate', this)">翻译</button>
+          <button class="cat-tab" data-cat="traffic" role="tab" aria-selected="false" onclick="switchCategory('traffic', this)">交通</button>
+          <button class="cat-tab" data-cat="news" role="tab" aria-selected="false" onclick="switchCategory('news', this)">新闻</button>
+          <button class="cat-tab" data-cat="services" role="tab" aria-selected="false" onclick="switchCategory('services', this)">本地服务</button>
+        </nav>
+      </div>
+    </div>
 
     <!-- 6. 导航内容模块 -->
     <section class="nav-modules" id="navModules">
@@ -396,13 +572,47 @@
 
   </main>
 
-  <!-- 7. 底部固定导航栏（由公共组件注入） -->
-  <div id="site-bottom-nav-placeholder"></div>
+  <!-- 7. 底部固定导航栏 -->
+  <nav class="bottom-nav" role="navigation" aria-label="底部导航">
+    <a href="https://app.openaa.com" class="bottom-nav-item" target="_self" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span>首页</span>
+    </a>
+    <a href="https://app.openaa.com/jobs" class="bottom-nav-item" target="_self" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2"/>
+        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+      </svg>
+      <span>招聘</span>
+    </a>
+    <a href="https://app.openaa.com/housing" class="bottom-nav-item" target="_self" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span>房屋</span>
+    </a>
+    <a href="https://openaa.com" class="bottom-nav-item active" aria-current="page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+      </svg>
+      <span>导航</span>
+    </a>
+    <a href="https://app.openaa.com/profile" class="bottom-nav-item" target="_self" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+      <span>我的</span>
+    </a>
+  </nav>
 
-  <!-- 公共组件注入脚本（含 script.js 动态加载） -->
-  <script src="components/include.js"></script>
+  <script src="script.js"></script>
 
-  <!-- 最终分类 Tab 定位滚动逻辑 -->
+  <!-- 最终分类 Tab 定位滚动逻辑：必须放在 script.js 后面，避免被旧 switchCategory 覆盖 -->
   <script>
     (function () {
       /* Cached DOM references */
@@ -485,7 +695,25 @@
         scrollToCategory(category);
         return false;
       };
-      /* 注：分类栏的 click 监听由 include.js 在组件注入后绑定，无需在此处添加 */
+
+      document.addEventListener('DOMContentLoaded', function () {
+        /* Listen on the whole wrapper so both the pinned "全部" and the
+           scrollable tabs are covered by a single capture handler. */
+        var categoryBarWrap = document.getElementById('categoryBarWrap');
+        if (!categoryBarWrap) return;
+
+        categoryBarWrap.addEventListener('click', function (event) {
+          var button = event.target.closest('.cat-tab');
+          if (!button) return;
+
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+
+          var category = button.getAttribute('data-cat') || 'all';
+          window.switchCategory(category, button);
+        }, true);
+      });
     })();
   </script>
 </body>
