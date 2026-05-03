@@ -283,10 +283,10 @@ function switchCategory(cat, btn) {
   // Use relative path so it works both on / and /OpenAA-siet/
   var links = {
     all: 'index.html',
-    dmv_practice: 'dmv/ny/practice/index.html',
-    tickets: 'dmv/tickets/index.html',
-    bank: 'nav/bank.html',
-    shop: 'nav/onegobuy.html'
+    dmv_practice: '../dmv/ny/practice/index.html',
+    tickets: '../dmv/tickets/index.html',
+    bank: '/bank.html',
+    shop: '/onegobuy.html'
   }
 
   var url = links[cat]
@@ -364,7 +364,7 @@ function applySearch(query) {
 // ===================================================
 function shareOpenAA() {
   var shareData = {
-    title: 'OpenAA 华人导航',
+    title: 'OpenAA 华人生活入口',
     text: '美国华人必备导航，政府、银行、DMV、购物一站搞定',
     url: 'https://openaa.com'
   }
