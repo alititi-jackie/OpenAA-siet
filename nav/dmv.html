@@ -195,6 +195,28 @@
       .dmv-item:active,
       .hot-state-item:active { background: #3d3d3d; }
     }
+
+    /* ===== 分类栏：滚动到位置才吸顶（JS 切换 class） ===== */
+    #categoryBarWrap.oaa-stuck {
+      position: fixed;
+      top: 56px; /* header height */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 560px;
+      z-index: 95;
+    }
+
+    .oaa-catbar-spacer {
+      display: none;
+      height: 44px; /* cat tab height */
+      background: transparent;
+    }
+
+    /* 当分类栏吸顶时，开启占位，避免页面跳动 */
+    .oaa-catbar-spacer.oaa-on {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -208,6 +230,9 @@
     <div data-include="inner/category-bar"
          data-cat-active="dmv_official"
          data-cat-config="/subpages-assets/config/categorybar.dmv.json"></div>
+
+    <!-- Spacer for fixed category bar (enabled by JS when stuck) -->
+    <div class="oaa-catbar-spacer" aria-hidden="true"></div>
 
     <!-- DMV content -->
     <div class="dmv-body">
@@ -378,5 +403,57 @@
 
   <!-- Include loader -->
   <script src="/subpages-assets/js/include.js"></script>
+
+  <!-- Sticky category bar shim (only stick after reaching its original position) -->
+  <script>
+    (function () {
+      function init() {
+        var bar = document.getElementById('categoryBarWrap');
+        if (!bar) return;
+        var spacer = document.querySelector('.oaa-catbar-spacer');
+
+        function computeStartY() {
+          // If currently stuck, temporarily unstick to measure original flow position
+          var wasStuck = bar.classList.contains('oaa-stuck');
+          if (wasStuck) {
+            bar.classList.remove('oaa-stuck');
+            if (spacer) spacer.classList.remove('oaa-on');
+          }
+          var y = bar.getBoundingClientRect().top + window.scrollY;
+          if (wasStuck) {
+            // restore
+            bar.classList.add('oaa-stuck');
+            if (spacer) spacer.classList.add('oaa-on');
+          }
+          return y;
+        }
+
+        var startY = computeStartY();
+
+        function onScroll() {
+          var shouldStick = window.scrollY >= (startY - 56);
+          if (shouldStick) {
+            bar.classList.add('oaa-stuck');
+            if (spacer) spacer.classList.add('oaa-on');
+          } else {
+            bar.classList.remove('oaa-stuck');
+            if (spacer) spacer.classList.remove('oaa-on');
+          }
+        }
+
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', function () {
+          startY = computeStartY();
+          onScroll();
+        });
+      }
+
+      // include.js injects asynchronously; wait a tick after load
+      window.addEventListener('load', function () {
+        setTimeout(init, 120);
+      });
+    })();
+  </script>
 </body>
 </html>
