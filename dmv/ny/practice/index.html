@@ -200,7 +200,9 @@
           const btn = document.getElementById('shareBtn');
           if (!btn) return;
 
-          btn.addEventListener('click', async () => {
+          // Override global header share button on THIS PAGE ONLY
+          // so it shares the current page URL instead of the homepage.
+          window.shareOpenAA = async function () {
             const url = window.location.href;
             const text = `OpenAA 纽约 DMV 笔试模拟（练习/考试/题库查看）：${url}`;
 
@@ -209,18 +211,24 @@
                 await navigator.share({ title: document.title, text, url });
                 return;
               } catch (e) {
-                // 用户取消分享也会抛异常，忽略即可
+                // ignore (including user cancel)
               }
             }
 
             try {
               await navigator.clipboard.writeText(url);
+              // toast on this page uses button text feedback
               const old = btn.textContent;
               btn.textContent = '✅ 已复制链接';
               setTimeout(() => btn.textContent = old, 1500);
             } catch (e) {
               alert('复制失败，请手动复制：\n' + url);
             }
+          };
+
+          btn.addEventListener('click', async () => {
+            // keep existing behavior
+            window.shareOpenAA();
           });
         })();
       </script>
