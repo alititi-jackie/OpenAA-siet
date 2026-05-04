@@ -5,8 +5,8 @@
   },
   "tabs": [
     { "id": "dmv_official", "text": "DMV官网", "href": "../nav/dmv.html" },
-    { "id": "dmv_practice", "text": "DMV笔试模拟", "href": "../dmv/ny/practice/index." },
-    { "id": "tickets", "text": "罚单查询", "href": "../dmv/tickets/index." },
+    { "id": "dmv_practice", "text": "DMV笔试模拟", "href": "../dmv/ny/practice/index.html" },
+    { "id": "tickets", "text": "罚单查询", "href": "../dmv/tickets/index.html" },
     { "id": "bank", "text": "银行", "href": "../nav/bank.html" },
     { "id": "shop", "text": "购物", "href": "../nav/onegobuy.html" },
     { "id": "ai", "text": "AI助手", "href": "../nav/ai.html" }
