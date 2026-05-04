@@ -99,6 +99,7 @@
       -webkit-tap-highlight-color: transparent;
 
       transition: border-color .15s, box-shadow .15s, background .15s, transform .1s;
+      white-space: nowrap;
     }
     .qa-img-card:hover{
       border-color: var(--blue);
@@ -122,11 +123,12 @@
     .qa-top-link{
       display:flex;
       align-items:center;
-      justify-content: space-between;
+      justify-content: flex-start; /* ✅ 让按钮靠近标题，不要跑到最右 */
       gap: 12px;
       padding: 10px 0 14px;
       border-bottom: 1px solid var(--border);
       margin-bottom: 12px;
+      flex-wrap: wrap; /* ✅ 小屏时可换行，但默认仍紧贴标题 */
     }
     .qa-top-link-title{
       font-weight: 900;
