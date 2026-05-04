@@ -101,6 +101,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (!modal || !img || !back) return;
 
+    modal.classList.toggle('modal-fullwidth', typeof numOrSrc !== 'number');
+
     const src = typeof numOrSrc === 'number'
       ? `assets/signs/${numOrSrc}.png`
       : numOrSrc;
@@ -126,6 +128,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!modal) return;
 
     modal.classList.add('hidden');
+    modal.classList.remove('modal-fullwidth');
     document.body.style.overflow = '';
 
     if (modal._esc) {
@@ -171,6 +174,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       const imgBtn = e.target.closest('.qa-img-card');
       if (imgBtn) {
+        if (imgBtn.hasAttribute('data-staticimg')) return;
         const num = parseInt(imgBtn.dataset.imgnum, 10);
         if (Number.isFinite(num)) openImageModal(num);
       }
