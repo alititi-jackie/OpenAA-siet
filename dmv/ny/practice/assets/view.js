@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     syncToggleBtn();
   }
 
-  function openImageModal(num) {
+  function openImageModal(numOrSrc, titleText) {
     const modal = document.getElementById('imgModal');
     const img = document.getElementById('imgModalImg');
     const title = document.getElementById('imgModalTitle');
@@ -101,11 +101,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (!modal || !img || !back) return;
 
-    img.onerror = null;
-    img.src = `assets/signs/${num}.png`;
-    img.onerror = () => alert(`图片不存在：图 ${num}。请确认 assets/signs/ 里有对应图片文件。`);
+    const src = typeof numOrSrc === 'number'
+      ? `assets/signs/${numOrSrc}.png`
+      : numOrSrc;
 
-    if (title) title.textContent = `图示（图 ${num}）`;
+    img.onerror = null;
+    img.src = src;
+    img.onerror = () => alert(`图片不存在：${src}。请确认对应图片文件存在。`);
+
+    if (title) title.textContent = titleText || (typeof numOrSrc === 'number' ? `图示（图 ${numOrSrc}）` : '图示');
 
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
@@ -128,6 +132,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       document.removeEventListener('keydown', modal._esc);
       modal._esc = null;
     }
+  }
+
+  // Handle static image button (e.g. 查看所有交通标志与信号) — it lives outside #qaList
+  const signsTopBtn = document.querySelector('[data-staticimg]');
+  if (signsTopBtn) {
+    signsTopBtn.addEventListener('click', () => {
+      const key = signsTopBtn.dataset.staticimg;
+      openImageModal(`assets/${key}.png`, '交通标志与信号（图 1-16）');
+    });
   }
 
   try {
