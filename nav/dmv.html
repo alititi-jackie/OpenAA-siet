@@ -69,6 +69,12 @@
     /* DMV 页面不展示 8 宫格入口 */
     .grid-menu-section { display: none !important; }
 
+    /* DMV 页面不展示广告框及搜索栏（仅隐藏，不删除内容） */
+    [data-include="inner/banner"],
+    [data-include="inner/search"] {
+      display: none !important;
+    }
+
     h1 {
       font-size: 24px;
       margin: 16px 0 8px 0;
