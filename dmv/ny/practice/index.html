@@ -200,9 +200,7 @@
           const btn = document.getElementById('shareBtn');
           if (!btn) return;
 
-          // Override global header share button on THIS PAGE ONLY
-          // so it shares the current page URL instead of the homepage.
-          window.shareOpenAA = async function () {
+          async function shareThisPage() {
             const url = window.location.href;
             const text = `OpenAA 纽约 DMV 笔试模拟（练习/考试/题库查看）：${url}`;
 
@@ -217,19 +215,43 @@
 
             try {
               await navigator.clipboard.writeText(url);
-              // toast on this page uses button text feedback
               const old = btn.textContent;
               btn.textContent = '✅ 已复制链接';
               setTimeout(() => btn.textContent = old, 1500);
             } catch (e) {
               alert('复制失败，请手动复制：\n' + url);
             }
-          };
+          }
 
-          btn.addEventListener('click', async () => {
-            // keep existing behavior
-            window.shareOpenAA();
+          // 1) Page button shares this page
+          btn.addEventListener('click', shareThisPage);
+
+          // 2) Header share button is inside included component and uses onclick="shareOpenAA()".
+          // include.js loads /subpages-assets/js/script.js AFTER this inline script, which would overwrite
+          // our override if we set window.shareOpenAA immediately.
+          // So we re-override it again AFTER include.js finished loading script.js.
+          function reOverrideHeaderShare() {
+            window.shareOpenAA = shareThisPage;
+          }
+
+          // Re-override when include.js finishes (it loads script.js with defer)
+          window.addEventListener('load', function () {
+            // Delay one tick to run after deferred scripts
+            setTimeout(reOverrideHeaderShare, 0);
           });
+
+          // Also re-override when header element appears (in case load ordering differs)
+          let tries = 0;
+          const timer = setInterval(function () {
+            tries++;
+            const headerShareBtn = document.querySelector('.header-share');
+            if (headerShareBtn) {
+              reOverrideHeaderShare();
+              clearInterval(timer);
+            } else if (tries >= 30) {
+              clearInterval(timer);
+            }
+          }, 100);
         })();
       </script>
 
