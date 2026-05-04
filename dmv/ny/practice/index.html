@@ -45,6 +45,11 @@
     .oaa-catbar-spacer.oaa-on {
       display: block;
     }
+
+    /* 选择模式：本页需要三列（新增“查看题库”放第一列），不影响其它页面 */
+    .mode-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   </style>
 </head>
 <body>
@@ -78,6 +83,13 @@
         <p class="section-label">📋 选择模式</p>
         <div class="card mb-0">
           <div class="mode-grid">
+            <!-- NEW: 查看题库（含答案） - 与其它两列同样的卡片样式，并在本页打开 -->
+            <a class="mode-card" href="/dmv/ny/practice/view.html" role="button" aria-pressed="false">
+              <div class="mode-icon">📚</div>
+              <div class="mode-name">查看题库</div>
+              <div class="mode-desc">（含答案）</div>
+            </a>
+
             <div class="mode-card active" data-mode="practice" role="button" tabindex="0" aria-pressed="true">
               <div class="mode-icon">📖</div>
               <div class="mode-name">练习模式</div>
