@@ -9,44 +9,18 @@
   <title>纽约 DMV 笔试模拟题 — OpenAA</title>
   <meta name="description" content="纽约州（New York）DMV Learner Permit 笔试模拟题：练习/模拟考试、随机/顺序、可计时、自动判分与解析（非官方）。" />
   <link rel="icon" type="image/png" href="../favicon/favicon-32x32.png" />
+  <link rel="stylesheet" href="/subpages-assets/css/style.css" />
   <link rel="stylesheet" href="assets/styles.css" />
 
-  <!-- Only for this page: make mode cards 3 columns -->
+  <!-- Only for this page: make mode cards 3 columns; add bottom padding for fixed bottom nav -->
   <style>
     .mode-grid { grid-template-columns: 1fr 1fr 1fr; }
+    body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
   </style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <div class="header-top" style="position:relative;">
-      <a class="logo-link" href="/index.html" title="返回 OpenAA 首页">
-        <img class="logo-img" src="/logo.png" alt="OpenAA Logo" />
-      </a>
-
-      <!-- ✅ 右上角：返回首页按钮 -->
-      <a href="/index.html"
-         title="返回首页"
-         aria-label="返回首页"
-         style="position:absolute;right:0;top:0;display:inline-flex;align-items:center;gap:6px;
-                padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.35);
-                background:rgba(0,0,0,.12);color:#fff;text-decoration:none;font-size:.85rem;
-                line-height:1;backdrop-filter:saturate(160%) blur(8px);">
-        ⬅️ 首页
-      </a>
-
-      <div class="header-subtitle">
-        纽约 DMV 笔试练习<br />
-        <span style="font-size:.7rem;opacity:.8">New York 驾照学习指南（非官方）</span>
-      </div>
-    </div>
-    <div class="header-search">
-      <span class="search-icon">🔍</span>
-      <input id="searchInput" type="search" placeholder="搜索关键词（例如：限速、标志、酒驾…）" autocomplete="off" />
-    </div>
-  </div>
-</header>
+<div data-include="site-header"></div>
 
 <main class="page-wrap">
 
@@ -176,14 +150,16 @@
     </ul>
   </div>
 
+  <footer class="site-footer">
+    <p>⚠️ <strong>免责声明：</strong>本练习题依据 NY DMV Driver's Manual 常见要点编写，<strong>非官方</strong>，仅供学习使用。</p>
+    <p style="margin-top:6px;">最后整理：2026-04-17 &nbsp;|&nbsp; <a href="README.md">说明 / README</a> &nbsp;|&nbsp; <a href="/index.html">OpenAA 首页</a></p>
+  </footer>
+
+  <div data-include="site-bottom-nav"></div>
 </main>
 
-<footer class="site-footer">
-  <p>⚠️ <strong>免责声明：</strong>本练习题依据 NY DMV Driver’s Manual 常见要点编写，<strong>非官方</strong>，仅供学习使用。</p>
-  <p style="margin-top:6px;">最后整理：2026-04-17 &nbsp;|&nbsp; <a href="README.md">说明 / README</a> &nbsp;|&nbsp; <a href="/index.html">OpenAA 首页</a></p>
-</footer>
-
 <script src="assets/app.js"></script>
+<script src="/subpages-assets/js/include.js"></script>
 
 <!-- ✅ 分享逻辑：优先系统分享；否则复制链接 -->
 <script>
