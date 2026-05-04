@@ -8,329 +8,201 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>纽约 DMV 笔试模拟题 — OpenAA</title>
   <meta name="description" content="纽约州（New York）DMV Learner Permit 笔试模拟题：练习/模拟考试、随机/顺序、可计时、自动判分与解析（非官方）。" />
-
-  <!-- Favicons (from subpages-assets) -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/subpages-assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/subpages-assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/subpages-assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/subpages-assets/favicon/site.webmanifest">
-
-  <!-- Shared style (from subpages-assets) -->
-  <link rel="stylesheet" href="/subpages-assets/css/style.css" />
-
-  <!-- Page style (keep existing) -->
+  <link rel="icon" type="image/png" href="../favicon/favicon-32x32.png" />
   <link rel="stylesheet" href="assets/styles.css" />
-
-  <style>
-    /* Practice page: keep original look, just add spacing similar to other DMV pages */
-    .practice-body { padding: 12px 12px 100px 12px; }
-
-    /* ===== 分类栏：滚动到位置才吸顶（JS 切换 class） ===== */
-    #categoryBarWrap.oaa-stuck {
-      position: fixed;
-      top: 56px; /* header height */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 560px;
-      z-index: 95;
-    }
-
-    .oaa-catbar-spacer {
-      display: none;
-      height: 44px; /* cat tab height */
-      background: transparent;
-    }
-
-    .oaa-catbar-spacer.oaa-on {
-      display: block;
-    }
-
-    /* 选择模式：本页需要三列（新增“查看题库”放第一列），不影响其它页面 */
-    .mode-grid {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Header (data-include) -->
-  <div data-include="site-header"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-top" style="position:relative;">
+      <a class="logo-link" href="/index.html" title="返回 OpenAA 首页">
+        <img class="logo-img" src="/logo.png" alt="OpenAA Logo" />
+      </a>
 
-  <main class="main-content">
-    <!-- Category bar (data-include) -->
-    <div data-include="inner/category-bar"
-         data-cat-active="dmv_practice"
-         data-cat-config="/subpages-assets/config/categorybar.json"></div>
+      <!-- ✅ 右上角：返回首页按钮 -->
+      <a href="/index.html"
+         title="返回首页"
+         aria-label="返回首页"
+         style="position:absolute;right:0;top:0;display:inline-flex;align-items:center;gap:6px;
+                padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.35);
+                background:rgba(0,0,0,.12);color:#fff;text-decoration:none;font-size:.85rem;
+                line-height:1;backdrop-filter:saturate(160%) blur(8px);">
+        ⬅️ 首页
+      </a>
 
-    <!-- Spacer for fixed category bar (enabled by JS when stuck) -->
-    <div class="oaa-catbar-spacer" aria-hidden="true"></div>
+      <div class="header-subtitle">
+        纽约 DMV 笔试练习<br />
+        <span style="font-size:.7rem;opacity:.8">New York 驾照学习指南（非官方）</span>
+      </div>
+    </div>
+    <div class="header-search">
+      <span class="search-icon">🔍</span>
+      <input id="searchInput" type="search" placeholder="搜索关键词（例如：限速、标志、酒驾…）" autocomplete="off" />
+    </div>
+  </div>
+</header>
 
-    <!-- Keep ALL original page content below (wrapped only) -->
-    <div class="practice-body">
+<main class="page-wrap">
 
-      <main class="page-wrap">
+  <div class="card" style="background:linear-gradient(135deg,#0046a0 0%,#1a88e8 100%);color:#fff;text-align:center;padding:28px 20px;">
+    <div style="font-size:2.4rem;margin-bottom:8px;">🚗</div>
+    <h1 style="font-size:1.3rem;font-weight:800;margin-bottom:6px;">纽约 Learner Permit 笔试模拟</h1>
+    <p style="font-size:.88rem;opacity:.88;line-height:1.55;">
+      基于 NY DMV Driver’s Manual 常见要点编写。<br>
+      练习标志、规则与安全驾驶知识点。
+    </p>
+  </div>
 
-        <div class="card" style="background:linear-gradient(135deg,#0046a0 0%,#1a88e8 100%);color:#fff;text-align:center;padding:28px 20px;">
-          <div style="font-size:2.4rem;margin-bottom:8px;">🚗</div>
-          <h1 style="font-size:1.3rem;font-weight:800;margin-bottom:6px;">纽约 Learner Permit 笔试模拟</h1>
-          <p style="font-size:.88rem;opacity:.88;line-height:1.55;">
-            基于 NY DMV Driver’s Manual 常见要点编写。<br>
-            练习标志、规则与安全驾驶知识点。
-          </p>
-        </div>
+  <p class="section-label">📋 选择模式</p>
+  <div class="card mb-0">
+    <div class="mode-grid">
+      <div class="mode-card active" data-mode="practice" role="button" tabindex="0" aria-pressed="true">
+        <div class="mode-icon">📖</div>
+        <div class="mode-name">练习模式</div>
+        <div class="mode-desc">按自己的节奏刷题</div>
+      </div>
+      <div class="mode-card" data-mode="exam" role="button" tabindex="0" aria-pressed="false">
+        <div class="mode-icon">📝</div>
+        <div class="mode-name">模拟考试</div>
+        <div class="mode-desc">可计时 + 自动判分</div>
+      </div>
+    </div>
+  </div>
 
-        <p class="section-label">📋 选择模式</p>
-        <div class="card mb-0">
-          <div class="mode-grid">
-            <!-- NEW: 查看题库（含答案） - 与其它两列同样的卡片样式，并在本页打开 -->
-            <a class="mode-card" href="/dmv/ny/practice/view.html" role="button" aria-pressed="false">
-              <div class="mode-icon">📚</div>
-              <div class="mode-name">查看题库</div>
-              <div class="mode-desc">（含答案）</div>
-            </a>
+  <p class="section-label">⚙️ 设置</p>
+  <div class="card">
 
-            <div class="mode-card active" data-mode="practice" role="button" tabindex="0" aria-pressed="true">
-              <div class="mode-icon">📖</div>
-              <div class="mode-name">练习模式</div>
-              <div class="mode-desc">按自己的节奏刷题</div>
-            </div>
-            <div class="mode-card" data-mode="exam" role="button" tabindex="0" aria-pressed="false">
-              <div class="mode-icon">📝</div>
-              <div class="mode-name">模拟考试</div>
-              <div class="mode-desc">可计时 + 自动判分</div>
-            </div>
-          </div>
-        </div>
+    <div class="form-row">
+      <label class="form-label" for="countSelect">
+        题目数量
+        <span class="sub">本次练习/考试做多少题</span>
+      </label>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <select class="form-select" id="countSelect">
+          <option value="10">10</option>
+          <option value="20" selected>20</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+          <option value="all">全部</option>
+          <option value="custom">自定义…</option>
+        </select>
+        <input class="form-input hidden" id="customCount" type="number" min="1" max="300" value="25" placeholder="25" aria-label="自定义题数" />
+      </div>
+    </div>
 
-        <p class="section-label">⚙️ 设置</p>
-        <div class="card">
+    <div class="form-row">
+      <label class="form-label" for="orderSelect">
+        出题顺序
+        <span class="sub">随机 / 顺序</span>
+      </label>
+      <select class="form-select" id="orderSelect">
+        <option value="random" selected>🔀 随机</option>
+        <option value="sequential">🔢 顺序</option>
+      </select>
+    </div>
 
-          <div class="form-row">
-            <label class="form-label" for="countSelect">
-              题目数量
-              <span class="sub">本次练习/考试做多少题</span>
-            </label>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <select class="form-select" id="countSelect">
-                <option value="10">10</option>
-                <option value="20" selected>20</option>
-                <option value="30">30</option>
-                <option value="50">50</option>
-                <option value="all">全部</option>
-                <option value="custom">自定义…</option>
-              </select>
-              <input class="form-input hidden" id="customCount" type="number" min="1" max="300" value="25" placeholder="25" aria-label="自定义题数" />
-            </div>
-          </div>
+    <div class="form-row">
+      <label class="form-label" for="timerToggle">
+        倒计时
+        <span class="sub">模拟真实考试时间压力</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="timerToggle" />
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
 
-          <div class="form-row">
-            <label class="form-label" for="orderSelect">
-              出题顺序
-              <span class="sub">随机 / 顺序</span>
-            </label>
-            <select class="form-select" id="orderSelect">
-              <option value="random" selected>🔀 随机</option>
-              <option value="sequential">🔢 顺序</option>
-            </select>
-          </div>
+    <div class="form-row hidden" id="timerRow">
+      <label class="form-label" for="timerMins">
+        时长（分钟）
+        <span class="sub">开启倒计时后生效</span>
+      </label>
+      <input class="form-input" id="timerMins" type="number" min="1" max="120" value="30" />
+    </div>
 
-          <div class="form-row">
-            <label class="form-label" for="timerToggle">
-              倒计时
-              <span class="sub">模拟真实考试时间压力</span>
-            </label>
-            <label class="toggle">
-              <input type="checkbox" id="timerToggle" />
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
+  </div>
 
-          <div class="form-row hidden" id="timerRow">
-            <label class="form-label" for="timerMins">
-              时长（分钟）
-              <span class="sub">开启倒计时后生效</span>
-            </label>
-            <input class="form-input" id="timerMins" type="number" min="1" max="120" value="30" />
-          </div>
+  <button class="btn btn-success btn-block btn-lg mt-8" id="startBtn" style="margin-top:6px;">
+    🚀 开始答题
+  </button>
 
-        </div>
+  <!-- ✅ 入口按钮区 -->
+  <div style="margin-top:10px;display:grid;gap:10px;">
+    <!-- 查看模式 -->
+    <a class="btn btn-outline btn-block" href="view.html">
+      📚 查看题库（含答案）
+    </a>
 
-        <button class="btn btn-success btn-block btn-lg mt-8" id="startBtn" style="margin-top:6px;">
-          🚀 开始答题
-        </button>
+    <!-- 分享 -->
+    <button class="btn btn-outline btn-block" id="shareBtn" type="button">
+      📤 分享本页面
+    </button>
 
-        <!-- ✅ 入口按钮区 -->
-        <div style="margin-top:10px;display:grid;gap:10px;">
-          <!-- 查看模式 -->
+    <!-- 进入仓库根 nav/dmv.html -->
+    <a class="btn btn-ghost btn-block" href="/nav/dmv.html">
+      🚗 DMV全美官网
+    </a>
 
-          <!-- 分享 -->
-          <button class="btn btn-outline btn-block" id="shareBtn" type="button">
-            📤 分享本页面
-          </button>
+        <!-- 进入仓库根 nav/dmv.html -->
+    <a class="btn btn-ghost btn-block" href="https://openaa.com/dmv/tickets/" class="nav-item">
+      🔍 DMV罚单查询
+    </a>
+  </div>
 
-          <!-- 进入仓库根 nav/dmv.html -->
-          <a class="btn btn-ghost btn-block" href="/nav/dmv.html">
-            🚗 DMV全美官网
-          </a>
+  <p class="section-label" style="margin-top:22px;">📚 覆盖内容</p>
+  <div class="card" style="padding:14px 20px;">
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🚦</span><span>交通标志与信号</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🛑</span><span>路权、让行与路口规则</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🏎️</span><span>限速与安全车距</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🍺</span><span>酒驾/药驾基础与处罚常识</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🚌</span><span>校车、紧急车辆、变道避让</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🔄</span><span>车道使用、超车、转弯与停车</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🚶</span><span>行人、自行车与摩托车安全</span></li>
+      <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🌧️</span><span>恶劣天气与打滑处理</span></li>
+    </ul>
+  </div>
 
-          <!-- DMV罚单查询 -->
-          <a class="btn btn-ghost btn-block" href="https://openaa.com/dmv/tickets/" class="nav-item">
-            🔍 DMV罚单查询
-          </a>
-        </div>
+</main>
 
-        <p class="section-label" style="margin-top:22px;">📚 覆盖内容</p>
-        <div class="card" style="padding:14px 20px;">
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
-            <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🚦</span><span>交通标志与信号</span></li>
-            <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🛑</span><span>路权、让行与路口规则</span></li>
-            <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🏎️</span><span>限速与安全车距</span></li>
-            <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🍺</span><span>酒驾/药驾基础与处罚常识</span></li>
-            <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🚌</span><span>校车、紧急车辆、变道避让</span></li>
-            <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🔄</span><span>车道使用、超车、转弯与停车</span></li>
-            <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🚶</span><span>行人、自行车与摩托车安全</span></li>
-            <li style="font-size:.88rem;display:flex;gap:8px;align-items:baseline;"><span>🌧️</span><span>恶劣天气与打滑处理</span></li>
-          </ul>
-        </div>
+<footer class="site-footer">
+  <p>⚠️ <strong>免责声明：</strong>本练习题依据 NY DMV Driver’s Manual 常见要点编写，<strong>非官方</strong>，仅供学习使用。</p>
+  <p style="margin-top:6px;">最后整理：2026-04-17 &nbsp;|&nbsp; <a href="README.md">说明 / README</a> &nbsp;|&nbsp; <a href="/index.html">OpenAA 首页</a></p>
+</footer>
 
-      </main>
+<script src="assets/app.js"></script>
 
-      <footer class="site-footer">
-        <p>⚠️ <strong>免责声明：</strong>本练习题依据 NY DMV Driver’s Manual 常见要点编写，<strong>非官方</strong>，仅供学习使用。</p>
-        <p style="margin-top:6px;">最后整理：2026-04-17 &nbsp;|&nbsp; <a href="README.md">说明 / README</a> &nbsp;|&nbsp; <a href="/index.html">OpenAA 首页</a></p>
-      </footer>
+<!-- ✅ 分享逻辑：优先系统分享；否则复制链接 -->
+<script>
+  (function () {
+    const btn = document.getElementById('shareBtn');
+    if (!btn) return;
 
-      <script src="assets/app.js"></script>
+    btn.addEventListener('click', async () => {
+      const url = window.location.href;
+      const text = `OpenAA 纽约 DMV 笔试模拟（练习/考试/题库查看）：${url}`;
 
-      <!-- ✅ 分享逻辑：优先系统分享；否则复制链接 -->
-      <script>
-        (function () {
-          const btn = document.getElementById('shareBtn');
-          if (!btn) return;
-
-          async function shareThisPage() {
-            const url = window.location.href;
-            const text = `OpenAA 纽约 DMV 笔试模拟（练习/考试/题库查看）：${url}`;
-
-            if (navigator.share) {
-              try {
-                await navigator.share({ title: document.title, text, url });
-                return;
-              } catch (e) {
-                // ignore (including user cancel)
-              }
-            }
-
-            try {
-              await navigator.clipboard.writeText(url);
-              const old = btn.textContent;
-              btn.textContent = '✅ 已复制链接';
-              setTimeout(() => btn.textContent = old, 1500);
-            } catch (e) {
-              alert('复制失败，请手动复制：\n' + url);
-            }
-          }
-
-          // 1) Page button shares this page
-          btn.addEventListener('click', shareThisPage);
-
-          // 2) Header share button is inside included component and uses onclick="shareOpenAA()".
-          // include.js loads /subpages-assets/js/script.js AFTER this inline script, which would overwrite
-          // our override if we set window.shareOpenAA immediately.
-          // So we re-override it again AFTER include.js finished loading script.js.
-          function reOverrideHeaderShare() {
-            window.shareOpenAA = shareThisPage;
-          }
-
-          // Re-override when include.js finishes (it loads script.js with defer)
-          window.addEventListener('load', function () {
-            // Delay one tick to run after deferred scripts
-            setTimeout(reOverrideHeaderShare, 0);
-          });
-
-          // Also re-override when header element appears (in case load ordering differs)
-          let tries = 0;
-          const timer = setInterval(function () {
-            tries++;
-            const headerShareBtn = document.querySelector('.header-share');
-            if (headerShareBtn) {
-              reOverrideHeaderShare();
-              clearInterval(timer);
-            } else if (tries >= 30) {
-              clearInterval(timer);
-            }
-          }, 100);
-        })();
-      </script>
-
-    </div><!-- /.practice-body -->
-
-    <!-- Bottom nav (data-include) -->
-    <div data-include="site-bottom-nav"></div>
-  </main>
-
-  <!-- Include engine -->
-  <script src="/subpages-assets/js/include.js"></script>
-
-  <script>
-    // Sticky category bar: stick only after scrolling to bar (not always on top)
-    (function () {
-      var spacer = document.querySelector('.oaa-catbar-spacer');
-      if (!spacer) return;
-
-      var wrap = null;
-      var header = null;
-      var headerH = 56;
-      var wrapInitialTop = null;
-
-      function compute() {
-        wrap = document.getElementById('categoryBarWrap');
-        header = document.getElementById('appHeader');
-        headerH = header ? header.offsetHeight : 56;
-        if (!wrap) return false;
-        wrapInitialTop = window.scrollY + wrap.getBoundingClientRect().top;
-        return true;
-      }
-
-      function apply() {
-        if (!wrap || wrapInitialTop == null) return;
-        var shouldStick = window.scrollY >= (wrapInitialTop - headerH);
-
-        if (shouldStick) {
-          if (!wrap.classList.contains('oaa-stuck')) {
-            wrap.classList.add('oaa-stuck');
-            spacer.classList.add('oaa-on');
-          }
-        } else {
-          if (wrap.classList.contains('oaa-stuck')) {
-            wrap.classList.remove('oaa-stuck');
-            spacer.classList.remove('oaa-on');
-          }
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: document.title, text, url });
+          return;
+        } catch (e) {
+          // 用户取消分享也会抛异常，忽略即可
         }
       }
 
-      function init() {
-        var tries = 0;
-        var timer = setInterval(function () {
-          tries++;
-          if (compute()) {
-            clearInterval(timer);
-            apply();
-            window.addEventListener('scroll', apply, { passive: true });
-            window.addEventListener('resize', function () {
-              compute();
-              apply();
-            });
-          } else if (tries >= 20) {
-            clearInterval(timer);
-          }
-        }, 80);
+      try {
+        await navigator.clipboard.writeText(url);
+        const old = btn.textContent;
+        btn.textContent = '✅ 已复制链接';
+        setTimeout(() => btn.textContent = old, 1500);
+      } catch (e) {
+        alert('复制失败，请手动复制：\n' + url);
       }
-
-      init();
-    })();
-  </script>
+    });
+  })();
+</script>
 
 </body>
 </html>
