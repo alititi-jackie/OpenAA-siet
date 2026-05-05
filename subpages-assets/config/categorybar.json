@@ -10,6 +10,6 @@
     { "id": "bank", "text": "银行", "href": "/nav/bank.html" },
     { "id": "shop", "text": "购物", "href": "/nav/onegobuy.html" },
     { "id": "ai", "text": "AI助手", "href": "/nav/ai.html" },
-    { "id": "news", "text": "新闻", "href": "/nav/news.html" }
+    { "id": "news", "text": "新闻", "href": "/news/index.html" }
   ]
 }
