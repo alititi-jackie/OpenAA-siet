@@ -201,7 +201,7 @@
     }
 
     function apply() {
-      if (!wrap || wrapInitialTop == null) return;
+      if (!wrap || wrapInitialTop === null) return;
       var shouldStick = window.scrollY >= (wrapInitialTop - headerH);
       if (shouldStick) {
         if (!wrap.classList.contains('oaa-stuck')) {
