@@ -123,8 +123,8 @@
     [data-include="inner/banner"],
     [data-include="inner/search"] { display: none !important; }
 
-    /* Ensure the legacy bottom-nav from this page is hidden; we use shared site-bottom-nav include */
-    nav.bottom-nav { display: none !important; }
+    /* Hide ONLY the legacy bottom nav from this page (do not hide shared .bottom-nav) */
+    body > nav.bottom-nav { display: none !important; }
 
     /* Avoid double spacing: shared body already includes padding-bottom for bottom nav */
     main.news-main { padding-bottom: 16px; }
@@ -400,10 +400,11 @@
       © 2025 OpenAA.com · <a href="mailto:323748@gmail.com">联系我们</a>
     </footer>
 
-    <!-- Shared bottom nav -->
+    <!-- Shared bottom nav (same as nav/dmv.html) -->
     <div data-include="site-bottom-nav"></div>
   </main>
 
+  <!-- Include engine -->
   <script src="/subpages-assets/js/include.js"></script>
 
   <!-- Sticky category bar: fix to top once scrolled to it (same logic as nav/dmv.html) -->
@@ -460,12 +461,54 @@
       init();
     })();
 
-    // Keep legacy stubs to avoid errors if old handlers referenced
-    function toggleBookmark() {}
+    // Legacy functions kept (original page behavior) 
+    function showToast(message) {
+      var toast = document.getElementById('toast');
+      if (!toast) return;
+      toast.textContent = message;
+      toast.style.display = 'block';
+      toast.style.position = 'fixed';
+      toast.style.bottom = '100px';
+      toast.style.left = '50%';
+      toast.style.transform = 'translateX(-50%)';
+      toast.style.background = 'rgba(0,0,0,0.8)';
+      toast.style.color = 'white';
+      toast.style.padding = '10px 20px';
+      toast.style.borderRadius = '20px';
+      toast.style.fontSize = '14px';
+      toast.style.zIndex = '400';
+      setTimeout(function () { toast.style.display = 'none'; }, 2000);
+    }
+
+    function handleSearch() {
+      var el = document.getElementById('searchInput');
+      var query = el ? el.value : '';
+      if (query.trim()) {
+        window.open('https://www.google.com/search?q=' + encodeURIComponent(query), '_blank');
+      }
+    }
+
+    document.getElementById('searchInput')?.addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') handleSearch();
+    });
+
+    function toggleBookmark() {
+      var ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf('mac') > -1) showToast('请使用 Cmd+D 收藏本站');
+      else showToast('请使用 Ctrl+D 收藏本站');
+    }
+
     function goHome() { window.location.href = 'https://openaa.com/'; }
-    function handleSearch() {}
+
     function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-    function filterNews(type) { if (type === 'popular') window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+    function filterNews(type) {
+      if (type === 'popular') {
+        showToast('正在显示热门资讯');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
     function shareApp() {
       if (navigator.share) {
         navigator.share({
@@ -473,6 +516,8 @@
           text: '最新美国华人资讯、社区动态、生活指南 - OpenAA',
           url: window.location.href
         }).catch(function () {});
+      } else {
+        showToast('请使用浏览器菜单分享');
       }
     }
   </script>
