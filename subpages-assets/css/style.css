@@ -4,6 +4,11 @@
    NOTE: This file MUST include banner/search styles used by data-include components.
    =================================================== */
 
+/* ---- Layout width token ---- */
+:root {
+  --page-max-w: 560px; /* override per-page to unify header/catbar/content/footer widths */
+}
+
 /* ---- Reset & Base ---- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -28,7 +33,7 @@ body {
 
 /* ---- Layout container ---- */
 .main-content {
-  max-width: 560px;
+  max-width: var(--page-max-w);
   margin: 0 auto;
   background: #f4f4f7;
   min-height: 100vh;
@@ -48,7 +53,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 560px;
+  max-width: var(--page-max-w);
   z-index: 100;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
@@ -146,7 +151,7 @@ body {
 
 .header-spacer {
   height: 56px;
-  max-width: 560px;
+  max-width: var(--page-max-w);
   margin: 0 auto;
 }
 
@@ -421,7 +426,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 560px;
+  max-width: var(--page-max-w);
   z-index: 100;
   background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(12px);
