@@ -16,11 +16,30 @@
   <style>
     .mode-grid { grid-template-columns: 1fr 1fr 1fr; }
     body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+
+    /* ---- Category bar (follows nav/dmv.html pattern) ---- */
+    #categoryBarWrap.oaa-stuck {
+      position: fixed;
+      top: 56px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 720px;
+      z-index: 95;
+    }
+    .oaa-catbar-spacer { display: none; height: 44px; }
+    .oaa-catbar-spacer.oaa-on { display: block; }
   </style>
 </head>
 <body>
 
 <div data-include="site-header"></div>
+
+<!-- Category bar (same pattern as nav/dmv.html: references shared categorybar.json) -->
+<div data-include="inner/category-bar"
+     data-cat-active="dmv_practice"
+     data-cat-config="/subpages-assets/config/categorybar.json"></div>
+<div class="oaa-catbar-spacer" aria-hidden="true"></div>
 
 <main class="page-wrap">
 
@@ -160,6 +179,61 @@
 
 <script src="assets/app.js"></script>
 <script src="/subpages-assets/js/include.js"></script>
+
+<!-- Sticky category bar: fix to top once scrolled to it (same logic as nav/dmv.html) -->
+<script>
+  (function () {
+    var spacer = document.querySelector('.oaa-catbar-spacer');
+    if (!spacer) return;
+
+    var wrap = null;
+    var header = null;
+    var headerH = 56;
+    var wrapInitialTop = null;
+
+    function compute() {
+      wrap = document.getElementById('categoryBarWrap');
+      header = document.getElementById('appHeader');
+      headerH = header ? header.offsetHeight : 56;
+      if (!wrap) return false;
+      wrapInitialTop = window.scrollY + wrap.getBoundingClientRect().top;
+      return true;
+    }
+
+    function apply() {
+      if (!wrap || wrapInitialTop == null) return;
+      var shouldStick = window.scrollY >= (wrapInitialTop - headerH);
+      if (shouldStick) {
+        if (!wrap.classList.contains('oaa-stuck')) {
+          wrap.classList.add('oaa-stuck');
+          spacer.classList.add('oaa-on');
+        }
+      } else {
+        if (wrap.classList.contains('oaa-stuck')) {
+          wrap.classList.remove('oaa-stuck');
+          spacer.classList.remove('oaa-on');
+        }
+      }
+    }
+
+    function init() {
+      var tries = 0;
+      var timer = setInterval(function () {
+        tries++;
+        if (compute()) {
+          clearInterval(timer);
+          apply();
+          window.addEventListener('scroll', apply, { passive: true });
+          window.addEventListener('resize', function () { compute(); apply(); });
+        } else if (tries >= 20) {
+          clearInterval(timer);
+        }
+      }, 80);
+    }
+
+    init();
+  })();
+</script>
 
 <!-- ✅ 分享逻辑：优先系统分享；否则复制链接 -->
 <script>
