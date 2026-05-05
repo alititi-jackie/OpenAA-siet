@@ -10,8 +10,8 @@
 
   <!-- Title & Meta - 优化SEO -->
   <title>美国华人资讯 | OpenAA 新闻中心 | 在美华人新闻、地方资讯、社区动态</title>
-  <meta name="description" content="OpenAA新闻中心：提供美国华人资讯、在美华人新闻、地方生活资讯、社区动态、移民信息、工作机会、生活指南。覆盖纽约、洛杉矶、旧金山等主要城市华人社区。">
-  <meta name="keywords" content="美国华人资讯,华人新闻,在美华人新闻,美国新闻,地方资讯,社区动态,华人生活,美国生活指南,移民资讯,工作信息,社区公告,华人活动,纽约资讯,洛杉矶新闻,旧金山新闻,中文新闻,华人论坛">
+  <meta name="description" content="OpenAA新闻中心：提供美国华人资讯、在美华人新闻、地方生活资讯、社区动态、移民信息、工作机会、生活指南。覆盖纽约、洛杉矶、旧金山等主流华人社区。" />
+  <meta name="keywords" content="美国华人资讯,华人新闻,在美华人新闻,美国新闻,地方资讯,社区动态,华人生活,美国生活指南,移民资讯,工作信息,社区公告,纽约华人新闻,洛杉矶华人资讯,旧金山华人生活" />
   <meta name="robots" content="index, follow">
 
   <!-- Canonical / Alternate -->
@@ -36,6 +36,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
+
+  <!-- Shared style (unified header/catbar/bottom-nav/content width + 3D sides) -->
+  <link rel="stylesheet" href="/subpages-assets/css/style.css" />
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -100,11 +103,7 @@
   </script>
 
   <style>
-    * { 
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
+    /* Keep original page variables and card styles; unify width via shared --page-max-w */
     :root {
       --primary: #0078d4;
       --primary-dark: #005fa3;
@@ -116,134 +115,27 @@
       --border: #e5e7eb;
       --shadow: 0 2px 8px rgba(0,0,0,0.08);
       --radius: 12px;
+      /* News page width matches shared header/catbar/bottom-nav/content width */
+      --page-max-w: 560px;
     }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow-x: hidden;
-    }
+    /* News page: do not show banner/search modules from shared includes (only hide) */
+    [data-include="inner/banner"],
+    [data-include="inner/search"] { display: none !important; }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-      background-color: var(--bg);
-      color: var(--text-dark);
-      line-height: 1.6;
-      font-size: 16px;
-    }
+    /* Ensure the legacy bottom-nav from this page is hidden; we use shared site-bottom-nav include */
+    nav.bottom-nav { display: none !important; }
 
-    /* Header 固定顶部 */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: linear-gradient(135deg, var(--primary) 0%, #1084d8 100%);
-      color: white;
-      padding: 12px 16px 16px;
-      box-shadow: 0 2px 12px rgba(0,120,212,0.15);
-    }
+    /* Avoid double spacing: shared body already includes padding-bottom for bottom nav */
+    main.news-main { padding-bottom: 16px; }
 
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .header-logo {
-      height: 40px;
-      padding: 6px 12px;
-      display: flex;
-      align-items: center;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      text-decoration: none;
-    }
-
-    .header-logo img {
-      height: 100%;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .header-actions {
-      display: flex;
-      gap: 8px;
-    }
-
-    .btn-icon {
-      background: rgba(255,255,255,0.2);
-      border: none;
-      color: white;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-
-    .btn-icon:active {
-      background: rgba(255,255,255,0.3);
-    }
-
-    /* 搜索框 */
-    .search-box {
-      display: flex;
-      gap: 8px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .search-box input {
-      flex: 1;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 20px;
-      font-size: 14px;
-      background: rgba(255,255,255,0.95);
-      color: var(--text-dark);
-      outline: none;
-    }
-
-    .search-box input::placeholder {
-      color: var(--text-light);
-    }
-
-    .search-box button {
-      background: rgba(255,255,255,0.2);
-      border: none;
-      color: white;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background 0.2s;
-    }
-
-    .search-box button:active {
-      background: rgba(255,255,255,0.3);
-    }
-
-    /* 面包屑 */
+    /* Page-specific layout */
     .breadcrumb {
       padding: 12px 16px;
       font-size: 13px;
       color: var(--text-light);
       background: var(--card-bg);
       border-bottom: 1px solid var(--border);
-      max-width: 600px;
-      margin: 0 auto;
     }
 
     .breadcrumb a {
@@ -251,15 +143,6 @@
       text-decoration: none;
     }
 
-    /* 主要内容区 */
-    main {
-      padding: 8px;
-      padding-bottom: 90px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* 页面标题 */
     h1 {
       font-size: 24px;
       margin: 16px 0 8px 0;
@@ -273,7 +156,6 @@
       line-height: 1.6;
     }
 
-    /* 新闻网格 */
     .news-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -281,7 +163,6 @@
       margin-top: 12px;
     }
 
-    /* 新闻卡片 */
     .news-card {
       display: block;
       background: var(--card-bg);
@@ -336,7 +217,6 @@
       font-weight: 500;
     }
 
-    /* 提示文本 */
     .hint {
       margin-top: 22px;
       padding: 16px;
@@ -352,46 +232,6 @@
       color: var(--text-dark);
     }
 
-    /* 底部导航栏 */
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: var(--card-bg);
-      border-top: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0;
-      z-index: 200;
-      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
-    }
-
-    .nav-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 0;
-      text-decoration: none;
-      color: var(--text-light);
-      font-size: 11px;
-      transition: color 0.2s;
-      cursor: pointer;
-      border: none;
-      background: none;
-    }
-
-    .nav-item.active {
-      color: var(--primary);
-    }
-
-    .nav-item-icon {
-      font-size: 22px;
-      margin-bottom: 4px;
-    }
-
-    /* 页脚 */
     footer {
       text-align: center;
       padding: 16px;
@@ -405,14 +245,12 @@
       text-decoration: none;
     }
 
-    /* 响应式 */
     @media (min-width: 600px) {
       .news-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    /* 暗黑模式 */
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #1f1f1f;
@@ -422,246 +260,219 @@
         --border: #3d3d3d;
       }
 
-      .header-logo {
-        background: white;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      }
-
       .hint {
         background: #3d3d3d;
         border-left-color: #ffc440;
       }
     }
+
+    /* Sticky category bar (same pattern as nav/dmv.html) */
+    #categoryBarWrap.oaa-stuck {
+      position: fixed;
+      top: 56px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: var(--page-max-w);
+      z-index: 95;
+    }
+    .oaa-catbar-spacer { display: none; height: 44px; }
+    .oaa-catbar-spacer.oaa-on { display: block; }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="header-content">
-      <a href="https://openaa.com/" class="header-logo">
-        <img src="https://openaa.com/logo.png" alt="OpenAA" />
-      </a>
-      <div class="header-actions">
-        <button class="btn-icon" onclick="toggleBookmark()" title="收藏本站">📌</button>
-        <button class="btn-icon" onclick="goHome()" title="返回首页">🏠</button>
+  <!-- Shared header -->
+  <div data-include="site-header"></div>
+
+  <!-- Shared category bar -->
+  <div data-include="inner/category-bar"
+       data-cat-active="news"
+       data-cat-config="/subpages-assets/config/categorybar.json"></div>
+  <div class="oaa-catbar-spacer" aria-hidden="true"></div>
+
+  <!-- Main content (keep all original content inside, do not change) -->
+  <main class="main-content news-main">
+    <!-- 面包屑 -->
+    <div class="breadcrumb">
+      <a href="https://openaa.com/">首页</a> > 资讯中心
+    </div>
+
+    <div style="padding: 8px;">
+      <h1>📰 美国华人资讯中心</h1>
+      <p class="page-subtitle">OpenAA资讯中心为在美华人提供最新的社区动态、生活资讯、移民信息、工作机会等实用资讯。涵盖纽约、洛杉矶、旧金山等主流华人社区。</p>
+
+      <!-- 新闻网格 -->
+      <div class="news-grid">
+        <!-- 新闻1 -->
+        <a href="https://openaa.com/news/progress.html" class="news-card" target="_self">
+          <div class="news-meta" style="margin-bottom: 8px;">
+            <span class="news-category">📱 平台</span>
+            <time datetime="2026-01-08">2026-01-08</time>
+          </div>
+          <h2>OpenAA 平台建设进展说明</h2>
+          <p class="news-excerpt">介绍 OpenAA 平台的开发进度、功能规划、服务扩展与上线时间表。为在美华人用户提供最新的平台动态与功能更新。</p>
+        </a>
+
+        <!-- 新闻2 -->
+        <a href="https://openaa.com/news/blue-sky-rescue.html" class="news-card" target="_self">
+          <div class="news-meta" style="margin-bottom: 8px;">
+            <span class="news-category">🆘 社区</span>
+            <time datetime="2026-01-05">2026-01-05</time>
+          </div>
+          <h2>蓝天救援相关资讯整理</h2>
+          <p class="news-excerpt">整合蓝天救援的近期动态、志愿活动、紧   服务与联络方式。便于在美华人快速获取重要信息与社区服务。</p>
+        </a>
+
+        <!-- 新闻3 -->
+        <a href="https://openaa.com/news/ongoing-updates.html" class="news-card" target="_self">
+          <div class="news-meta" style="margin-bottom: 8px;">
+            <span class="news-category">📢 资讯</span>
+            <time datetime="2026-01-03">2026-01-03</time>
+          </div>
+          <h2>在美华人生活资讯更新</h2>
+          <p class="news-excerpt">定期发布地区新闻、社区公告、生活指南及平台相关更新。为在美华人提供实时、有用的生活信息。</p>
+        </a>
+
+        <!-- 新闻4 -->
+        <a href="https://openaa.com/news/immigration-updates.html" class="news-card" target="_self">
+          <div class="news-meta" style="margin-bottom: 8px;">
+            <span class="news-category">📋 移民</span>
+            <time datetime="2025-12-25">2025-12-25</time>
+          </div>
+          <h2>最新移民政策与签证更新</h2>
+          <p class="news-excerpt">及时更新美国移民政策、签证申请程序、绿卡相关信息。为华人移民提供权威可靠的政策咨询。</p>
+        </a>
+
+        <!-- 新闻5 -->
+        <a href="https://openaa.com/news/job-market.html" class="news-card" target="_self">
+          <div class="news-meta" style="margin-bottom: 8px;">
+            <span class="news-category">💼 工作</span>
+            <time datetime="2025-12-20">2025-12-20</time>
+          </div>
+          <h2>美国华人就业市场分析</h2>
+          <p class="news-excerpt">分析华人就业趋势、薪资行情、行业发展前景。为在美华人求职者提供有价值的职业指导。</p>
+        </a>
+
+        <!-- 新闻6 -->
+        <a href="https://openaa.com/news/community-events.html" class="news-card" target="_self">
+          <div class="news-meta" style="margin-bottom: 8px;">
+            <span class="news-category">🎉 活动</span>
+            <time datetime="2025-12-15">2025-12-15</time>
+          </div>
+          <h2>华人社区活动与节庆信息</h2>
+          <p class="news-excerpt">报道华人社区举办的文化活动、传统节庆、公益活动。帮助在美华人了解社区动态与参加活动。</p>
+        </a>
+
+        <!-- 新闻7 -->
+        <a href="https://openaa.com/news/education-guide.html" class="news-card" target="_self">
+          <div class="news-meta" style="margin-bottom: 8px;">
+            <span class="news-category">🎓 教育</span>
+            <time datetime="2025-12-10">2025-12-10</time>
+          </div>
+          <h2>美国华人教育资讯与升学指南</h2>
+          <p class="news-excerpt">提供美国教育资讯、升学指南、学校推荐。为华人学生与家长提供专业的教育建议。</p>
+        </a>
+
+        <!-- 新闻8 -->
+        <a href="https://openaa.com/news/real-estate.html" class="news-card" target="_self">
+          <div class="news-meta" style="margin-bottom: 8px;">
+            <span class="news-category">🏠 房产</span>
+            <time datetime="2025-12-05">2025-12-05</time>
+          </div>
+          <h2>美国房产市场与购房指南</h2>
+          <p class="news-excerpt">分析房产市场行情、购房流程、贷款政策。为在美华人购房者提供详细的房产咨询。</p>
+        </a>
+      </div>
+
+      <!-- 提示信息 -->
+      <div class="hint">
+        <strong>📌 提示：</strong>
+        OpenAA资讯中心定期更新美国华人相关的资讯、新闻与生活指南。如有建议或新闻线索，欢迎通过 <a href="mailto:323748@gmail.com">323748@gmail.com</a> 联系我们。
       </div>
     </div>
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="搜索资讯..." />
-      <button onclick="handleSearch()">🔍</button>
-    </div>
-  </header>
 
-  <!-- 面包屑 -->
-  <div class="breadcrumb">
-    <a href="https://openaa.com/">首页</a> > 资讯中心
-  </div>
+    <!-- 吐司提示 -->
+    <div class="toast" id="toast"></div>
 
-  <!-- 主要内容 -->
-  <main>
-    <h1>📰 美国华人资讯中心</h1>
-    <p class="page-subtitle">OpenAA资讯中心为在美华人提供最新的社区动态、生活资讯、移民信息、工作机会等实用资讯。涵盖纽约、洛杉矶、旧金山等主要城市的华人社区新闻。</p>
+    <!-- 页脚 -->
+    <footer>
+      <strong>OpenAA · 美国华人资讯中心</strong><br />
+      © 2025 OpenAA.com · <a href="mailto:323748@gmail.com">联系我们</a>
+    </footer>
 
-    <!-- 新闻网格 -->
-    <div class="news-grid">
-      <!-- 新闻1 -->
-      <a href="https://openaa.com/news/progress.html" class="news-card" target="_self">
-        <div class="news-meta" style="margin-bottom: 8px;">
-          <span class="news-category">📱 平台</span>
-          <time datetime="2026-01-08">2026-01-08</time>
-        </div>
-        <h2>OpenAA 平台建设进展说明</h2>
-        <p class="news-excerpt">介绍 OpenAA 平台的开发进度、功能规划、服务扩展与上线时间表。为在美华人用户提供最新的平台动态与功能更新。</p>
-      </a>
-
-      <!-- 新闻2 -->
-      <a href="https://openaa.com/news/blue-sky-rescue.html" class="news-card" target="_self">
-        <div class="news-meta" style="margin-bottom: 8px;">
-          <span class="news-category">🆘 社区</span>
-          <time datetime="2026-01-05">2026-01-05</time>
-        </div>
-        <h2>蓝天救援相关资讯整理</h2>
-        <p class="news-excerpt">整合蓝天救援的近期动态、志愿活动、紧   服务与联络方式。便于在美华人快速获取重要信息与社区服务。</p>
-      </a>
-
-      <!-- 新闻3 -->
-      <a href="https://openaa.com/news/ongoing-updates.html" class="news-card" target="_self">
-        <div class="news-meta" style="margin-bottom: 8px;">
-          <span class="news-category">📢 资讯</span>
-          <time datetime="2026-01-03">2026-01-03</time>
-        </div>
-        <h2>在美华人生活资讯更新</h2>
-        <p class="news-excerpt">定期发布地区新闻、社区公告、生活指南及平台相关更新。为在美华人提供实时、有用的生活信息。</p>
-      </a>
-
-      <!-- 新闻4 -->
-      <a href="https://openaa.com/news/immigration-updates.html" class="news-card" target="_self">
-        <div class="news-meta" style="margin-bottom: 8px;">
-          <span class="news-category">📋 移民</span>
-          <time datetime="2025-12-25">2025-12-25</time>
-        </div>
-        <h2>最新移民政策与签证更新</h2>
-        <p class="news-excerpt">及时更新美国移民政策、签证申请程序、绿卡相关信息。为华人移民提供权威可靠的政策咨询。</p>
-      </a>
-
-      <!-- 新闻5 -->
-      <a href="https://openaa.com/news/job-market.html" class="news-card" target="_self">
-        <div class="news-meta" style="margin-bottom: 8px;">
-          <span class="news-category">💼 工作</span>
-          <time datetime="2025-12-20">2025-12-20</time>
-        </div>
-        <h2>美国华人就业市场分析</h2>
-        <p class="news-excerpt">分析华人就业趋势、薪资行情、行业发展前景。为在美华人求职者提供有价值的职业指导。</p>
-      </a>
-
-      <!-- 新闻6 -->
-      <a href="https://openaa.com/news/community-events.html" class="news-card" target="_self">
-        <div class="news-meta" style="margin-bottom: 8px;">
-          <span class="news-category">🎉 活动</span>
-          <time datetime="2025-12-15">2025-12-15</time>
-        </div>
-        <h2>华人社区活动与节庆信息</h2>
-        <p class="news-excerpt">报道华人社区举办的文化活动、传统节庆、公益活动。帮助在美华人了解社区动态与参加活动。</p>
-      </a>
-
-      <!-- 新闻7 -->
-      <a href="https://openaa.com/news/education-guide.html" class="news-card" target="_self">
-        <div class="news-meta" style="margin-bottom: 8px;">
-          <span class="news-category">🎓 教育</span>
-          <time datetime="2025-12-10">2025-12-10</time>
-        </div>
-        <h2>美国华人教育资讯与升学指南</h2>
-        <p class="news-excerpt">提供美国教育资讯、升学指南、学校推荐。为华人学生与家长提供专业的教育建议。</p>
-      </a>
-
-      <!-- 新闻8 -->
-      <a href="https://openaa.com/news/real-estate.html" class="news-card" target="_self">
-        <div class="news-meta" style="margin-bottom: 8px;">
-          <span class="news-category">🏠 房产</span>
-          <time datetime="2025-12-05">2025-12-05</time>
-        </div>
-        <h2>美国房产市场与购房指南</h2>
-        <p class="news-excerpt">分析房产市场行情、购房流程、贷款政策。为在美华人购房者提供详细的房产咨询。</p>
-      </a>
-    </div>
-
-    <!-- 提示信息 -->
-    <div class="hint">
-      <strong>📌 提示：</strong>
-      OpenAA资讯中心定期更新美国华人相关的资讯、新闻与生活指南。如有建议或新闻线索，欢迎通过 <a href="mailto:323748@gmail.com">323748@gmail.com</a> 联系我们。
-    </div>
+    <!-- Shared bottom nav -->
+    <div data-include="site-bottom-nav"></div>
   </main>
 
-  <!-- 底部导航栏 -->
-  <nav class="bottom-nav">
-    <a href="https://openaa.com/" class="nav-item">
-      <div class="nav-item-icon">🏠</div>
-      <div>首页</div>
-    </a>
-    <button class="nav-item active" onclick="scrollToTop()">
-      <div class="nav-item-icon">📰</div>
-      <div>资讯</div>
-    </button>
-    <button class="nav-item" onclick="filterNews('popular')">
-      <div class="nav-item-icon">🔥</div>
-      <div>热门</div>
-    </button>
-    <button class="nav-item" onclick="shareApp()">
-      <div class="nav-item-icon">📤</div>
-      <div>分享</div>
-    </button>
-    <a href="https://openaa.com/" class="nav-item">
-      <div class="nav-item-icon">⋯</div>
-      <div>更多</div>
-    </a>
-  </nav>
+  <script src="/subpages-assets/js/include.js"></script>
 
-  <!-- 吐司提示 -->
-  <div class="toast" id="toast"></div>
-
-  <!-- 页脚 -->
-  <footer>
-    <strong>OpenAA · 美国华人资讯中心</strong><br />
-    © 2025 OpenAA.com · <a href="mailto:323748@gmail.com">联系我们</a>
-  </footer>
-
+  <!-- Sticky category bar: fix to top once scrolled to it (same logic as nav/dmv.html) -->
   <script>
-    // 显示吐司
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      if (!toast) return;
-      
-      toast.textContent = message;
-      toast.style.display = 'block';
-      toast.style.position = 'fixed';
-      toast.style.bottom = '100px';
-      toast.style.left = '50%';
-      toast.style.transform = 'translateX(-50%)';
-      toast.style.background = 'rgba(0,0,0,0.8)';
-      toast.style.color = 'white';
-      toast.style.padding = '10px 20px';
-      toast.style.borderRadius = '20px';
-      toast.style.fontSize = '14px';
-      toast.style.zIndex = '400';
-      
-      setTimeout(() => {
-        toast.style.display = 'none';
-      }, 2000);
-    }
+    (function () {
+      var spacer = document.querySelector('.oaa-catbar-spacer');
+      if (!spacer) return;
 
-    // 搜索功能
-    function handleSearch() {
-      const query = document.getElementById('searchInput').value;
-      if (query.trim()) {
-        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+      var wrap = null;
+      var header = null;
+      var headerH = 56;
+      var wrapInitialTop = null;
+
+      function compute() {
+        wrap = document.getElementById('categoryBarWrap');
+        header = document.getElementById('appHeader');
+        headerH = header ? header.offsetHeight : 56;
+        if (!wrap) return false;
+        wrapInitialTop = window.scrollY + wrap.getBoundingClientRect().top;
+        return true;
       }
-    }
 
-    // 回车搜索
-    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        handleSearch();
+      function apply() {
+        if (!wrap || wrapInitialTop === null) return;
+        var shouldStick = window.scrollY >= (wrapInitialTop - headerH);
+        if (shouldStick) {
+          if (!wrap.classList.contains('oaa-stuck')) {
+            wrap.classList.add('oaa-stuck');
+            spacer.classList.add('oaa-on');
+          }
+        } else {
+          if (wrap.classList.contains('oaa-stuck')) {
+            wrap.classList.remove('oaa-stuck');
+            spacer.classList.remove('oaa-on');
+          }
+        }
       }
-    });
 
-    // 收藏功能
-    function toggleBookmark() {
-      const ua = navigator.userAgent.toLowerCase();
-      if (ua.indexOf('mac') > -1) {
-        showToast('请使用 Cmd+D 收藏本站');
-      } else {
-        showToast('请使用 Ctrl+D 收藏本站');
+      function init() {
+        var tries = 0;
+        var timer = setInterval(function () {
+          tries++;
+          if (compute()) {
+            clearInterval(timer);
+            apply();
+            window.addEventListener('scroll', apply, { passive: true });
+            window.addEventListener('resize', function () { compute(); apply(); });
+          } else if (tries >= 20) {
+            clearInterval(timer);
+          }
+        }, 80);
       }
-    }
 
-    // 返回首页
-    function goHome() {
-      window.location.href = 'https://openaa.com/';
-    }
+      init();
+    })();
 
-    // 滚动到顶部
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // 筛选新闻
-    function filterNews(type) {
-      if (type === 'popular') {
-        showToast('正在显示热门资讯');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }
-
-    // 分享功能
+    // Keep legacy stubs to avoid errors if old handlers referenced
+    function toggleBookmark() {}
+    function goHome() { window.location.href = 'https://openaa.com/'; }
+    function handleSearch() {}
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    function filterNews(type) { if (type === 'popular') window.scrollTo({ top: 0, behavior: 'smooth' }); }
     function shareApp() {
       if (navigator.share) {
         navigator.share({
           title: 'OpenAA · 美国华人资讯中心',
           text: '最新美国华人资讯、社区动态、生活指南 - OpenAA',
           url: window.location.href
-        }).catch(err => console.log('分享取消或失败'));
-      } else {
-        showToast('请使用浏览器菜单分享');
+        }).catch(function () {});
       }
     }
   </script>
