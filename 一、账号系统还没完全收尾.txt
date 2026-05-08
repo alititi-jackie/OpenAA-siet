@@ -1,7 +1,7 @@
 https://app.openaa.com/admin/ads   广告管理
 https://app.openaa.com/admin/settings   每日发帖上限
+https://app.openaa.com/admin/news  新闻后台管理地址
 
-https://app.openaa.com/admin/ads   后台
 
 一、账号系统还没完全收尾
 1. 登录成功后跳转到“我的页面”
