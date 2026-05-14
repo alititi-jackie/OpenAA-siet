@@ -4,10 +4,73 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>OpenAA 动态静态页面模板</title>
-<meta content="OpenAA 美国华人生活入口静态页面模板，保留顶部、广告轮播、动态栏和底部导航，中间内容可自由替换。" name="description"/>
-<link href="https://img.openaa.com/favicon.ico" rel="icon"/>
-<link href="https://img.openaa.com/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta name="theme-color" content="#0078d4" />
+
+  <!-- Title & Meta (针对在美华人常搜关键词优化) -->
+  <title>OpenAA · 美国华人生活入口 | 华人导航、DMV、找工作、二手</title>
+  <meta name="description" content="OpenAA 为在美华人提供一站式中文导航与实用服务：DMV/移民/找工作/168招聘/二手市场/银行/生活资讯。覆盖纽约、洛杉矶、旧金山等城市，帮助在美华人快速获取本地服务与信息。" />
+  <meta name="keywords" content="美国华人, 美华人, meihuaren, 华人openAA, 美国华人168, 华人导航, DMV, 移民服务, 找工作, 168招聘, 二手市场, 华人资讯, 在美生活, 华人社区" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical / Alternate -->
+  <link rel="canonical" href="https://openaa.com/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://openaa.com/" />
+  <link rel="alternate" hreflang="en-US" href="https://openaa.com/en/" />
+
+  <!-- Open Graph & Twitter -->
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="OpenAA · 美国华人生活入口" />
+  <meta property="og:description" content="OpenAA 为在美华人提供一站式中文导航与实用服务：DMV、移民、找工作、二手、银行与地区资讯，覆盖纽约、洛杉矶等城市。" />
+  <meta property="og:image" content="https://img.openaa.com/logo.png" />
+  <meta property="og:url" content="https://openaa.com/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="OpenAA · 美国华人生活入口" />
+  <meta name="twitter:description" content="在美华人一站式中文导航：DMV、移民、找工作、二手、银行与生活服务。" />
+  <meta name="twitter:image" content="https://img.openaa.com/logo.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="https://img.openaa.com/favicon.ico" />
+  <link rel="shortcut icon" href="https://img.openaa.com/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="https://img.openaa.com/apple-touch-icon.png" />
+  <meta name="msapplication-TileColor" content="#2b5797" />
+
+  <!-- Structured Data: Organization + WebSite + SearchAction -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://openaa.com/#organization",
+        "name": "OpenAA",
+        "url": "https://openaa.com/",
+        "logo": "https://img.openaa.com/logo.png",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "email": "323748@gmail.com",
+            "contactType": "customer support",
+            "availableLanguage": ["Chinese", "English"]
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://openaa.com/#website",
+        "url": "https://openaa.com/",
+        "name": "OpenAA · 美国华人生活入口",
+        "inLanguage": "zh-CN",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.google.com/search?q=site:openaa.com+{search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+
 <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -619,10 +682,27 @@
 </div>
 </section>
 <!-- 中间内容开始：以后只让 AI 修改这里，不要改顶部、广告轮播、8宫格、实用工具、底部导航 -->
-
-
-
-
+<section class="content-wrap">
+<div class="section-title">页面内容</div>
+<article class="template-card">
+<h1>OpenAA 静态页面模板</h1>
+<p>这个单文件模板已经固定好顶部栏、Logo、广告轮播、左上角快捷导航、最新动态栏、底部导航和回到顶部按钮。</p>
+<p>以后做 DMV 教程、广告详情页、说明页、新闻专题页、本地服务介绍页时，只需要替换这个中间内容区域。</p>
+</article>
+<div class="template-card">
+<h2>使用说明</h2>
+<div class="notice-box">
+            发给 AI 时可以这样说：保留顶部、广告轮播、左上角纽约快捷导航、最新动态栏、底部导航和所有样式不变，只修改“中间内容开始”到“中间内容结束”之间的 HTML 内容。
+          </div>
+</div>
+<div class="template-card">
+<h2>示例内容模块</h2>
+<div class="mini-grid">
+<div class="mini-card"><strong>模块一</strong><span>这里可以放教程、介绍、公告或广告文案。</span></div>
+<div class="mini-card"><strong>模块二</strong><span>这里可以放按钮、链接、图片或说明内容。</span></div>
+</div>
+</div>
+</section>
 <!-- 中间内容结束 -->
 </main>
 </div>
