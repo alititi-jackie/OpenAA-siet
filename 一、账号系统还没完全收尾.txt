@@ -1,9 +1,16 @@
+https://app.openaa.com/admin     后台管理
 https://app.openaa.com/admin/ads   广告管理
 https://app.openaa.com/admin/settings   每日发帖上限
 https://app.openaa.com/admin/news  新闻后台管理地址
 https://app.openaa.com/search   搜索内站
 https://openaa.com/pubic/images/news/1.png
 
+返回顶部有公共“回到顶部”组件。  全站公共回到顶部：components/BackToTopButton.tsx
+返回有公共“返回”组件。    详情页公共返回按钮：components/DetailBackButton.tsx
+
+先搜索并确认项目里是否已有公共组件或统一实现。
+如果已有，必须直接复用，不要新建重复组件。
+只有确认没有合适公共组件时，才允许新建，并说明原因。
 
 1. 反馈与举报入口 /feedback
 2. 各详情页投诉 / 举报入口统一跳转 /feedback
