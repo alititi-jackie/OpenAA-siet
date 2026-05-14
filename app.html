@@ -1,77 +1,98 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<meta name="theme-color" content="#0078d4" />
-
-  <!-- Title & Meta (针对在美华人常搜关键词优化) -->
-  <title>OpenAA · 美国华人生活入口 | 华人导航、DMV、找工作、二手</title>
-  <meta name="description" content="OpenAA 为在美华人提供一站式中文导航与实用服务：DMV/移民/找工作/168招聘/二手市场/银行/生活资讯。覆盖纽约、洛杉矶、旧金山等城市，帮助在美华人快速获取本地服务与信息。" />
-  <meta name="keywords" content="美国华人, 美华人, meihuaren, 华人openAA, 美国华人168, 华人导航, DMV, 移民服务, 找工作, 168招聘, 二手市场, 华人资讯, 在美生活, 华人社区" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>OpenAA · 美国华人生活入口 | 华人导航、DMV、招聘、房屋、二手、本地服务</title>
+  <meta name="description" content="OpenAA 为在美华人提供一站式中文生活入口，覆盖华人导航、DMV、招聘求职、房屋租售、二手闲置、本地服务、新闻资讯和美国生活常用工具。" />
+  <meta name="keywords" content="OpenAA, 美国华人, 华人导航, 美国华人导航, DMV, 纽约华人, 华人招聘, 华人房屋, 二手市场, 本地服务, 华人资讯, 美国生活" />
   <meta name="robots" content="index, follow" />
-
-  <!-- Canonical / Alternate -->
   <link rel="canonical" href="https://openaa.com/" />
-  <link rel="alternate" hreflang="zh-CN" href="https://openaa.com/" />
-  <link rel="alternate" hreflang="en-US" href="https://openaa.com/en/" />
-
-  <!-- Open Graph & Twitter -->
   <meta property="og:locale" content="zh_CN" />
-  <meta property="og:title" content="OpenAA · 美国华人生活入口" />
-  <meta property="og:description" content="OpenAA 为在美华人提供一站式中文导航与实用服务：DMV、移民、找工作、二手、银行与地区资讯，覆盖纽约、洛杉矶等城市。" />
-  <meta property="og:image" content="https://img.openaa.com/logo.png" />
-  <meta property="og:url" content="https://openaa.com/" />
   <meta property="og:type" content="website" />
+  <meta property="og:title" content="OpenAA · 美国华人生活入口" />
+  <meta property="og:description" content="OpenAA 为在美华人提供一站式中文生活入口，覆盖 DMV、招聘、房屋、二手、本地服务、新闻资讯和常用导航。" />
+  <meta property="og:url" content="https://openaa.com/" />
+  <meta property="og:image" content="https://img.openaa.com/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="OpenAA · 美国华人生活入口" />
-  <meta name="twitter:description" content="在美华人一站式中文导航：DMV、移民、找工作、二手、银行与生活服务。" />
+  <meta name="twitter:description" content="美国华人一站式中文生活入口：DMV、招聘、房屋、二手、本地服务、新闻资讯和常用导航。" />
   <meta name="twitter:image" content="https://img.openaa.com/logo.png" />
-
-  <!-- Favicons -->
   <link rel="icon" href="https://img.openaa.com/favicon.ico" />
-  <link rel="shortcut icon" href="https://img.openaa.com/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="https://img.openaa.com/apple-touch-icon.png" />
-  <meta name="msapplication-TileColor" content="#2b5797" />
 
-  <!-- Structured Data: Organization + WebSite + SearchAction -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://openaa.com/#organization",
-        "name": "OpenAA",
-        "url": "https://openaa.com/",
-        "logo": "https://img.openaa.com/logo.png",
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "email": "323748@gmail.com",
-            "contactType": "customer support",
-            "availableLanguage": ["Chinese", "English"]
-          }
-        ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://openaa.com/#website",
-        "url": "https://openaa.com/",
-        "name": "OpenAA · 美国华人生活入口",
-        "inLanguage": "zh-CN",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.google.com/search?q=site:openaa.com+{search_term_string}",
-          "query-input": "required name=search_term_string"
+
+  <!-- =========================================================
+    OpenAA 通用静态页面说明
+
+    一、站长自己改的地方：只改下面 OPENAA_CONFIG
+    1. banners：广告图片地址 + 点击广告打开的链接。
+    2. modules：控制广告轮播、滚动动态、8宫格、实用工具显示或隐藏。
+       true  = 显示
+       false = 隐藏
+       隐藏后页面会自动收紧，不会留下大空白。
+    3. templateLinkMode：控制“模板固定区域”的链接打开方式。
+       "new"  = 新窗口打开（默认）
+       "same" = 当前页面打开
+       只控制：顶部 Logo、纽约快捷栏、广告图、滚动动态、8宫格、实用工具、底部导航。
+       不控制：中间正文内容里的链接。
+
+    二、发给 AI 写内容时，请告诉 AI：
+    1. 保留模板整体效果，不要重做设计。
+    2. 不要修改 OPENAA_CONFIG，广告、板块显示隐藏、链接打开方式由站长自己改。
+    3. AI 只修改 head 里的 SEO 和“页面内容开始/页面内容结束”之间的正文。
+    4. 正文直接写进本 HTML，不要做外部动态加载内容页。
+    5. 正文建议用 <article class="template-card"> 包住，保持卡片风格统一。
+    6. 正文里的链接按内容需要设置，不受 templateLinkMode 控制。
+    7. 正式页面的 title、description、keywords、canonical、OG、Twitter、结构化数据都要按当前内容改好，不要写“模板”。
+  ========================================================== -->
+  <script>
+    const OPENAA_CONFIG = {
+      // 1）广告轮播：图片地址 + 点击图片打开的链接
+      banners: [
+        {
+          image: "https://img.openaa.com/img/banners/6e374654-6816-4da8-9736-bd374ea70b04.png",
+          link: "https://app.openaa.com/jobs",
+          alt: "OpenAA 招聘求职"
+        },
+        {
+          image: "https://img.openaa.com/img/banners/71a8312c-c4b2-4bde-bc4e-c35032223fde.png",
+          link: "https://app.openaa.com/housing",
+          alt: "OpenAA 房屋租售"
+        },
+        {
+          image: "https://img.openaa.com/img/banners/1215d9b3-f38c-4173-ad87-aa0792690bd8.png",
+          link: "https://app.openaa.com/secondhand",
+          alt: "OpenAA 二手闲置"
+        },
+        {
+          image: "https://img.openaa.com/img/banners/17588ab5-0248-47ae-a9a2-b0e02e06ea5b.png",
+          link: "https://openaa.com/dmv/ny/practice/",
+          alt: "OpenAA DMV 笔试模拟"
+        },
+        {
+          image: "https://img.openaa.com/img/banners/b720c8f2-d90c-451b-87fc-bec4179d7d61.png",
+          link: "https://app.openaa.com/services",
+          alt: "OpenAA 本地服务"
         }
-      }
-    ]
-  }
-  </script>
+      ],
 
-<style>
+      // 2）常用板块显示 / 隐藏
+      modules: {
+        showBanner: true,   // 广告轮播：true显示，false隐藏
+        showTicker: true,   // 滚动动态：true显示，false隐藏
+        showGridMenu: true, // 8宫格：true显示，false隐藏
+        showTools: true     // 实用工具：true显示，false隐藏
+      },
+
+      // 3）模板固定区域链接打开方式
+      // "new"  = 新窗口打开
+      // "same" = 当前页面打开
+      // 只控制模板固定区域链接，不控制正文内容里的链接
+      templateLinkMode: "new"
+    };
+  </script>
+  <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     body {
@@ -83,6 +104,7 @@
     }
     a { color: inherit; text-decoration: none; }
     button { font: inherit; }
+    [hidden] { display: none !important; }
 
     .app-shell {
       max-width: 560px;
@@ -558,157 +580,212 @@
   </style>
 </head>
 <body>
-<div class="app-shell">
-<header class="app-header">
-<div class="header-inner">
-<button aria-expanded="false" aria-label="打开顶部快捷导航" class="header-location" id="topLinksToggle" type="button">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-<span>纽约</span>
-<svg class="chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
-</button>
-<a aria-label="OpenAA 首页" class="header-logo" href="https://app.openaa.com/" rel="noopener noreferrer" target="_blank">
-<img alt="OpenAA" src="https://img.openaa.com/logo.png"/>
-<span class="header-logo-text"><span class="logo-blue">Open</span><span class="logo-dark">AA</span></span>
-</a>
-<div class="header-actions">
-<a aria-label="搜索" class="round-btn" href="https://app.openaa.com/search" rel="noopener noreferrer" target="_blank">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
-</a>
-<button aria-label="分享" class="round-btn" onclick="shareOpenAA()" type="button">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="M8.59 13.51l6.83 3.98"></path><path d="M15.41 6.51 8.59 10.49"></path></svg>
-</button>
-</div>
-</div>
-</header>
-<div aria-label="顶部快捷导航" class="top-links-panel" id="topLinksPanel">
-<div class="top-links-scroller" id="topLinksScroller">
-<a class="top-link-chip" href="https://app.openaa.com/jobs" rel="noopener noreferrer" target="_blank">招聘</a>
-<a class="top-link-chip" href="https://app.openaa.com/housing" rel="noopener noreferrer" target="_blank">房屋</a>
-<a class="top-link-chip" href="https://app.openaa.com/secondhand" rel="noopener noreferrer" target="_blank">二手</a>
-<a class="top-link-chip" href="https://app.openaa.com/news" rel="noopener noreferrer" target="_blank">新闻</a>
-<a class="top-link-chip" href="https://app.openaa.com/services" rel="noopener noreferrer" target="_blank">本地服务</a>
-</div>
-</div>
-<div class="header-spacer"></div>
-<main>
-<section aria-label="OpenAA 广告轮播" class="banner-section">
-<div class="banner-wrapper" id="bannerWrapper">
-<div class="banner-track" id="bannerTrack"></div>
-<div class="banner-dots" id="bannerDots"></div>
-</div>
-<a class="quick-strip" href="https://app.openaa.com/news" id="latestStrip" rel="noopener noreferrer" target="_blank">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 11-14h-8l1-6Z"></path></svg>
-<span class="quick-strip-text" id="latestStripText">正在读取 OpenAA 最新动态...</span>
-<span class="quick-strip-arrow">›</span>
-</a>
-</section>
-<!-- OpenAA 首页 8 宫格入口 -->
-<section aria-label="OpenAA 快捷入口" class="home-grid-section">
-<div class="home-grid">
-<a class="home-grid-item" href="https://app.openaa.com/jobs" rel="noopener noreferrer" target="_blank">
-<div class="home-grid-icon blue">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="20" x="2" y="7"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path><path d="M12 12v4"></path><path d="M10 14h4"></path></svg>
-</div>
-<span>招聘</span>
-</a>
-<a class="home-grid-item" href="https://app.openaa.com/housing" rel="noopener noreferrer" target="_blank">
-<div class="home-grid-icon green">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10.5Z"></path></svg>
-</div>
-<span>房屋</span>
-</a>
-<a class="home-grid-item" href="https://app.openaa.com/secondhand" rel="noopener noreferrer" target="_blank">
-<div class="home-grid-icon purple">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h12l3 5v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7l3-5Z"></path><path d="M3 7h18"></path><path d="M16 11a4 4 0 0 1-8 0"></path></svg>
-</div>
-<span>二手</span>
-</a>
-<a class="home-grid-item" href="https://openaa.com/dmv/ny/practice/" rel="noopener noreferrer" target="_blank">
-<div class="home-grid-icon yellow">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 13h18l-2-5a3 3 0 0 0-3-2H8a3 3 0 0 0-3 2l-2 5Z"></path><path d="M5 13v5"></path><path d="M19 13v5"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>
-</div>
-<span>DMV</span>
-</a>
-<a class="home-grid-item" href="https://app.openaa.com/news" rel="noopener noreferrer" target="_blank">
-<div class="home-grid-icon red">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Z"></path><path d="M4 22a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8z"></path></svg>
-</div>
-<span>新闻</span>
-</a>
-<a class="home-grid-item" href="https://openaa.com/" rel="noopener noreferrer" target="_blank">
-<div class="home-grid-icon cyan">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M22 2 11 13"></path><path d="m22 2-7 20-4-9-9-4 20-7Z"></path></svg>
-</div>
-<span>导航</span>
-</a>
-<a class="home-grid-item" href="https://app.openaa.com/news?category=新手指南" rel="noopener noreferrer" target="_blank">
-<div class="home-grid-icon orange">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path></svg>
-</div>
-<span>新手指南</span>
-</a>
-<a class="home-grid-item" href="https://app.openaa.com/services" rel="noopener noreferrer" target="_blank">
-<div class="home-grid-icon teal">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.7-3.7a6 6 0 0 1-7.8 7.8l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.8-7.8l-3.7 3.7Z"></path></svg>
-</div>
-<span>本地服务</span>
-</a>
-</div>
-</section>
-<!-- OpenAA 首页实用工具 -->
-<section aria-label="实用工具" class="tools-section">
-<div class="tools-title">实用工具</div>
-<div class="tools-grid">
-<a class="tool-card blue" href="https://openaa.com/dmv/ny/practice/" rel="noopener noreferrer" target="_blank">
-<div class="tool-top">
-<div class="tool-icon">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 13h18l-2-5a3 3 0 0 0-3-2H8a3 3 0 0 0-3 2l-2 5Z"></path><path d="M5 13v5"></path><path d="M19 13v5"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>
-</div>
-<span class="tool-action">开始练习 ›</span>
-</div>
-<div class="tool-name">DMV 笔试模拟</div>
-<div class="tool-desc">纽约 Learner Permit 中文练习</div>
-</a>
-<a class="tool-card orange" href="https://openaa.com/dmv/tickets/" rel="noopener noreferrer" target="_blank">
-<div class="tool-top">
-<div class="tool-icon">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
-</div>
-<span class="tool-action">点击查询 ›</span>
-</div>
-<div class="tool-name">罚单查询</div>
-<div class="tool-desc">停车 / 闯红灯 / 超速拍照</div>
-</a>
-</div>
-</section>
-<!-- 中间内容开始：以后只让 AI 修改这里，不要改顶部、广告轮播、8宫格、实用工具、底部导航 -->
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="header-inner">
+        <button class="header-location" id="topLinksToggle" type="button" aria-label="打开顶部快捷导航" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>纽约</span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+
+        <a class="header-logo" href="https://app.openaa.com/" aria-label="OpenAA 首页">
+          <img src="https://img.openaa.com/logo.png" alt="OpenAA" />
+          <span class="header-logo-text"><span class="logo-blue">Open</span><span class="logo-dark">AA</span></span>
+        </a>
+
+        <div class="header-actions">
+          <a class="round-btn" href="https://app.openaa.com/search" aria-label="搜索">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </a>
+          <button class="round-btn" type="button" aria-label="分享" onclick="shareOpenAA()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98"/><path d="M15.41 6.51 8.59 10.49"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="top-links-panel" id="topLinksPanel" aria-label="顶部快捷导航">
+      <div class="top-links-scroller" id="topLinksScroller">
+        <a class="top-link-chip" href="https://app.openaa.com/jobs" target="_self">招聘</a>
+        <a class="top-link-chip" href="https://app.openaa.com/housing" target="_self">房屋</a>
+        <a class="top-link-chip" href="https://app.openaa.com/secondhand" target="_self">二手</a>
+        <a class="top-link-chip" href="https://app.openaa.com/news" target="_self">新闻</a>
+        <a class="top-link-chip" href="https://app.openaa.com/services" target="_self">本地服务</a>
+      </div>
+    </div>
+
+    <div class="header-spacer"></div>
+
+    <main>
+      <section class="banner-section" id="bannerSection" aria-label="OpenAA 广告轮播">
+        <div class="banner-wrapper" id="bannerWrapper" data-template-module="banner">
+          <div class="banner-track" id="bannerTrack"></div>
+          <div class="banner-dots" id="bannerDots"></div>
+        </div>
+        <a class="quick-strip" id="latestStrip" data-template-module="ticker" href="https://app.openaa.com/news" target="_self">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 11-14h-8l1-6Z"/></svg>
+          <span class="quick-strip-text" id="latestStripText">正在读取 OpenAA 最新动态...</span>
+          <span class="quick-strip-arrow">›</span>
+        </a>
+      </section>
+
+      <!-- OpenAA 首页 8 宫格入口 -->
+      <section class="home-grid-section" data-template-module="gridMenu" aria-label="OpenAA 快捷入口">
+        <div class="home-grid">
+          <a class="home-grid-item" href="https://app.openaa.com/jobs" target="_self">
+            <div class="home-grid-icon blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M12 12v4"/><path d="M10 14h4"/></svg>
+            </div>
+            <span>招聘</span>
+          </a>
+          <a class="home-grid-item" href="https://app.openaa.com/housing" target="_self">
+            <div class="home-grid-icon green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10.5Z"/></svg>
+            </div>
+            <span>房屋</span>
+          </a>
+          <a class="home-grid-item" href="https://app.openaa.com/secondhand" target="_self">
+            <div class="home-grid-icon purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12l3 5v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7l3-5Z"/><path d="M3 7h18"/><path d="M16 11a4 4 0 0 1-8 0"/></svg>
+            </div>
+            <span>二手</span>
+          </a>
+          <a class="home-grid-item" href="https://openaa.com/dmv/ny/practice/" target="_self">
+            <div class="home-grid-icon yellow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h18l-2-5a3 3 0 0 0-3-2H8a3 3 0 0 0-3 2l-2 5Z"/><path d="M5 13v5"/><path d="M19 13v5"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+            </div>
+            <span>DMV</span>
+          </a>
+          <a class="home-grid-item" href="https://app.openaa.com/news" target="_self">
+            <div class="home-grid-icon red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Z"/><path d="M4 22a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg>
+            </div>
+            <span>新闻</span>
+          </a>
+          <a class="home-grid-item" href="https://openaa.com/" target="_self">
+            <div class="home-grid-icon cyan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7Z"/></svg>
+            </div>
+            <span>导航</span>
+          </a>
+          <a class="home-grid-item" href="https://app.openaa.com/news?category=新手指南" target="_self">
+            <div class="home-grid-icon orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+            </div>
+            <span>新手指南</span>
+          </a>
+          <a class="home-grid-item" href="https://app.openaa.com/services" target="_self">
+            <div class="home-grid-icon teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.7-3.7a6 6 0 0 1-7.8 7.8l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.8-7.8l-3.7 3.7Z"/></svg>
+            </div>
+            <span>本地服务</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- OpenAA 首页实用工具 -->
+      <section class="tools-section" data-template-module="tools" aria-label="实用工具">
+        <div class="tools-title">实用工具</div>
+        <div class="tools-grid">
+          <a class="tool-card blue" href="https://openaa.com/dmv/ny/practice/" target="_self">
+            <div class="tool-top">
+              <div class="tool-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h18l-2-5a3 3 0 0 0-3-2H8a3 3 0 0 0-3 2l-2 5Z"/><path d="M5 13v5"/><path d="M19 13v5"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+              </div>
+              <span class="tool-action">开始练习 ›</span>
+            </div>
+            <div class="tool-name">DMV 笔试模拟</div>
+            <div class="tool-desc">纽约 Learner Permit 中文练习</div>
+          </a>
+          <a class="tool-card orange" href="https://openaa.com/dmv/tickets/" target="_self">
+            <div class="tool-top">
+              <div class="tool-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+              </div>
+              <span class="tool-action">点击查询 ›</span>
+            </div>
+            <div class="tool-name">罚单查询</div>
+            <div class="tool-desc">停车 / 闯红灯 / 超速拍照</div>
+          </a>
+        </div>
+      </section>
+
+
+      <!-- 中间内容开始：以后只让 AI 修改这里，不要改顶部、广告轮播、8宫格、实用工具、底部导航 -->
+  
 
 
 
-<!-- 中间内容结束 -->
-</main>
-</div>
-<nav aria-label="底部导航" class="bottom-nav" role="navigation">
-<a class="bottom-nav-item active" href="https://app.openaa.com/" rel="noopener noreferrer" target="_blank">
-<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M9 22V12h6v10"></path></svg><span>首页</span>
-</a>
-<a class="bottom-nav-item" href="https://app.openaa.com/jobs" rel="noopener noreferrer" target="_blank">
-<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="20" x="2" y="7"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg><span>招聘</span>
-</a>
-<a class="bottom-nav-item" href="https://app.openaa.com/housing" rel="noopener noreferrer" target="_blank">
-<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M9 22V12h6v10"></path></svg><span>房屋</span>
-</a>
-<a class="bottom-nav-item" href="https://app.openaa.com/news" rel="noopener noreferrer" target="_blank">
-<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Z"></path><path d="M4 22a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8z"></path></svg><span>新闻</span>
-</a>
-<a class="bottom-nav-item" href="https://app.openaa.com/profile" rel="noopener noreferrer" target="_blank">
-<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span>我的</span>
-</a>
-</nav>
-<button aria-label="回到顶部" class="back-top" id="backTop" type="button">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="m18 15-6-6-6 6"></path></svg>
-</button>
-<script>
+      
+      <!-- 中间内容结束 -->
+    </main>
+  </div>
+
+  <nav class="bottom-nav" role="navigation" aria-label="底部导航">
+    <a href="https://app.openaa.com/" class="bottom-nav-item active" target="_self">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg><span>首页</span>
+    </a>
+    <a href="https://app.openaa.com/jobs" class="bottom-nav-item" target="_self">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span>招聘</span>
+    </a>
+    <a href="https://app.openaa.com/housing" class="bottom-nav-item" target="_self">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg><span>房屋</span>
+    </a>
+    <a href="https://app.openaa.com/news" class="bottom-nav-item" target="_self">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Z"/><path d="M4 22a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg><span>新闻</span>
+    </a>
+    <a href="https://app.openaa.com/profile" class="bottom-nav-item" target="_self">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>我的</span>
+    </a>
+  </nav>
+
+  <button class="back-top" id="backTop" type="button" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+
+    function getTemplateTarget() {
+      return OPENAA_CONFIG.templateLinkMode === 'same' ? '_self' : '_blank';
+    }
+
+    function getTemplateRel() {
+      return getTemplateTarget() === '_blank' ? 'noopener noreferrer' : '';
+    }
+
+    function applyTemplateLinkMode() {
+      const target = getTemplateTarget();
+      const rel = getTemplateRel();
+      const selectors = [
+        '.app-header a',
+        '.top-links-panel a',
+        '.banner-section a',
+        '.home-grid-section a',
+        '.tools-section a',
+        '.bottom-nav a'
+      ];
+      document.querySelectorAll(selectors.join(',')).forEach(a => {
+        a.target = target;
+        if (rel) a.rel = rel;
+        else a.removeAttribute('rel');
+      });
+    }
+
+    function applyModuleVisibility() {
+      const modules = OPENAA_CONFIG.modules || {};
+      const banner = document.getElementById('bannerWrapper');
+      const ticker = document.getElementById('latestStrip');
+      const bannerSection = document.getElementById('bannerSection');
+      const grid = document.querySelector('[data-template-module="gridMenu"]');
+      const tools = document.querySelector('[data-template-module="tools"]');
+
+      if (banner) banner.hidden = modules.showBanner === false;
+      if (ticker) ticker.hidden = modules.showTicker === false;
+      if (grid) grid.hidden = modules.showGridMenu === false;
+      if (tools) tools.hidden = modules.showTools === false;
+      if (bannerSection) bannerSection.hidden = modules.showBanner === false && modules.showTicker === false;
+    }
 
     const APP_BASE_URL = 'https://app.openaa.com';
     const TOP_LINKS_API = APP_BASE_URL + '/api/top-links';
@@ -719,13 +796,7 @@
       APP_BASE_URL + '/api/latest'
     ];
 
-    const ADS = [
-      { image: 'https://img.openaa.com/img/banners/6e374654-6816-4da8-9736-bd374ea70b04.png', link: 'https://app.openaa.com/jobs', alt: 'OpenAA 招聘广告' },
-      { image: 'https://img.openaa.com/img/banners/71a8312c-c4b2-4bde-bc4e-c35032223fde.png', link: 'https://app.openaa.com/housing', alt: 'OpenAA 房屋广告' },
-      { image: 'https://img.openaa.com/img/banners/1215d9b3-f38c-4173-ad87-aa0792690bd8.png', link: 'https://app.openaa.com/secondhand', alt: 'OpenAA 二手广告' },
-      { image: 'https://img.openaa.com/img/banners/17588ab5-0248-47ae-a9a2-b0e02e06ea5b.png', link: 'https://openaa.com/dmv/ny/practice/', alt: 'OpenAA DMV 广告' },
-      { image: 'https://img.openaa.com/img/banners/b720c8f2-d90c-451b-87fc-bec4179d7d61.png', link: 'https://app.openaa.com/services', alt: 'OpenAA 本地服务广告' }
-    ];
+    const ADS = Array.isArray(OPENAA_CONFIG.banners) ? OPENAA_CONFIG.banners : [];
 
     (function initBanner() {
       const track = document.getElementById('bannerTrack');
@@ -747,8 +818,8 @@
         const a = document.createElement('a');
         a.className = 'banner-slide';
         a.href = ad.link || '#';
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
+        a.target = getTemplateTarget();
+        if (getTemplateRel()) a.rel = getTemplateRel();
         const img = document.createElement('img');
         img.src = ad.image;
         img.alt = ad.alt || 'OpenAA 广告';
@@ -832,6 +903,7 @@
       document.addEventListener('visibilitychange', () => document.hidden ? clearInterval(timer) : start());
 
       build();
+      applyTemplateLinkMode();
       start();
     })();
 
@@ -860,8 +932,8 @@
       const box = document.getElementById('topLinksScroller');
       if (!box || !links.length) return;
       box.innerHTML = links.map(link => {
-        const target = '_blank';
-        const rel = ' rel="noopener noreferrer"';
+        const target = getTemplateTarget();
+        const rel = target === '_blank' ? ' rel="noopener noreferrer"' : '';
         return '<a class="top-link-chip" href="' + escapeHtml(link.url) + '" target="' + target + '"' + rel + '>' + escapeHtml(link.name) + '</a>';
       }).join('');
     }
@@ -903,7 +975,7 @@
         if (!res.ok) throw new Error('top links api failed');
         const data = await res.json();
         const links = normalizeTopLinks(data);
-        if (links.length) renderTopLinks(links);
+        if (links.length) { renderTopLinks(links); applyTemplateLinkMode(); }
       } catch (e) {
         // 读取失败时保留模板里的固定备用快捷入口。
       }
@@ -932,8 +1004,9 @@
         const suffix = item.location ? ' · ' + item.location : '';
         text.textContent = prefix + item.title + suffix;
         strip.href = item.url;
-        strip.target = '_blank';
-        strip.rel = 'noopener noreferrer';
+        strip.target = getTemplateTarget();
+        if (getTemplateRel()) strip.rel = getTemplateRel();
+        else strip.removeAttribute('rel');
         i += 1;
       }
       show();
@@ -987,6 +1060,8 @@
       btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     })();
 
+    applyModuleVisibility();
+    applyTemplateLinkMode();
     initTopLinksFromApp();
     initLatestStripFromApp();
   </script>
