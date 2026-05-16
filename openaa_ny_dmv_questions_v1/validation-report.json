@@ -1,0 +1,19 @@
+{
+  "totalQuestions": 150,
+  "uniqueIds": 150,
+  "categories": {
+    "traffic-signs-control": 34,
+    "sharing-road": 6,
+    "special-conditions": 11,
+    "lanes-highway": 14,
+    "license-law-crash": 6,
+    "right-of-way-turns": 17,
+    "defensive-driving": 23,
+    "parking": 9,
+    "alcohol-drugs": 30
+  },
+  "imageQuestions": 9,
+  "allHaveFourOptions": true,
+  "allAnswerIndexValid": true,
+  "allHaveExplanation": true
+}
