@@ -9,13 +9,16 @@ https://ny.openaa.com/sitemap.xml
 
 1）纽约 DMV 笔试怎么准备？
 
-标题： 纽约 DMV 笔试怎么准备？
-slug： ny-dmv-permit-test-prepare
-摘要： 给纽约新手司机整理 DMV 笔试准备方法，包括看手册、刷题、交通标志、预约和考试注意事项。
-SEO 标题： 纽约 DMV 笔试怎么准备？新手考 Learner Permit 中文指南
-SEO 描述： 纽约 DMV 笔试准备中文指南，适合第一次申请 Learner Permit 的华人新手，整理学习重点、刷题方法和考试注意事项。
-正文：
+发布新闻顺序为：
 
+1. 选择类型 / 分类
+2. 标题
+3. slug
+4. 摘要
+5. SEO 标题
+6. SEO 描述
+7. 正文
+8. 上传封面图 / 封面图 URL
 
 
 返回顶部有公共“回到顶部”组件。  全站公共回到顶部：components/BackToTopButton.tsx
