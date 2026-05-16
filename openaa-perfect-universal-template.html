@@ -347,7 +347,7 @@
 
     /* ===================================================
        OpenAA 首页 8 宫格 + 实用工具
-       样式按 app.openaa.com 首页效果整理
+       样式按 ny.openaa.com 首页效果整理
        =================================================== */
     .home-grid-section {
       background: #f4f4f5;
@@ -806,9 +806,9 @@
       if (bannerSection) bannerSection.hidden = modules.showBanner === false && modules.showTicker === false;
     }
 
-    const APP_BASE_URL = 'https://app.openaa.com';
+    const APP_BASE_URL = 'https://ny.openaa.com';
     const TOP_LINKS_API = APP_BASE_URL + '/api/top-links';
-    // 如果 app.openaa.com 以后提供不同的最新动态 API，只需要改这里。
+    // 如果 ny.openaa.com 以后提供不同的最新动态 API，只需要改这里。
     const LATEST_API_CANDIDATES = [
       APP_BASE_URL + '/api/latest-posts',
       APP_BASE_URL + '/api/home-latest',
@@ -1007,7 +1007,7 @@
         .map(item => ({
           title: item.title || item.name,
           type: item.type || item.module || item.category || '最新',
-          url: item.url || item.href || item.link || item.path || 'https://app.openaa.com/news',
+          url: item.url || item.href || item.link || item.path || 'https://ny.openaa.com/news',
           location: item.location || item.region || ''
         }));
     }
