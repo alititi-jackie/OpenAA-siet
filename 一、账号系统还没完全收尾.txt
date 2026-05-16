@@ -5,6 +5,8 @@ https://app.openaa.com/admin/news  新闻后台管理地址
 https://app.openaa.com/search   搜索内站
 https://openaa.com/pubic/images/news/1.png
 
+https://ny.openaa.com/sitemap.xml
+
 返回顶部有公共“回到顶部”组件。  全站公共回到顶部：components/BackToTopButton.tsx
 返回有公共“返回”组件。    详情页公共返回按钮：components/DetailBackButton.tsx
 
