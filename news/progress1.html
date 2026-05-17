@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#0078d4">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="OpenAA">
+
+  <!-- Title & Meta - 优化SEO -->
+  <title>OpenAA 平台建设进展说明 | 美国华人导航平台 | 功能规划与发展路线图</title>
+  <meta name="description" content="OpenAA 平台建设进展说明：介绍美国华人生活入口平台的开发进度、功能规划、服务扩展与上线时间表。为在美华人提供最新的平台动态与功能更新。" />
+  <meta name="keywords" content="OpenAA,OpenAA平台,华人导航平台,美国华人,平台功能,发展规划,在美华人服务,导航平台,华人生活,美国生活,社区服务,信息聚合,发展路线图" />
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="OpenAA Team">
+
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href="https://openaa.com/news/progress.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://openaa.com/news/progress.html">
+  <link rel="alternate" hreflang="en-US" href="https://openaa.com/en/news/progress.html">
+
+  <!-- Open Graph & Twitter -->
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="OpenAA 平台建设进展说明" />
+  <meta property="og:description" content="详细了解 OpenAA 美国华人生活入口平台的开发进度、功能规划与服务发展。" />
+  <meta property="og:image" content="https://openaa.com/logo.png" />
+  <meta property="og:url" content="https://openaa.com/news/progress.html" />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-01-08T00:00:00Z" />
+  <meta property="article:author" content="OpenAA Team" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OpenAA 平台建设进展说明">
+  <meta name="twitter:description" content="美国华人生活入口平台最新进展：功能规划、服务更新、发展路线图。">
+  <meta name="twitter:image" content="https://openaa.com/logo.png">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+
+  <!-- Shared style -->
+  <link rel="stylesheet" href="/subpages-assets/css/style.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "NewsArticle",
+        "@id": "https://openaa.com/news/progress.html#article",
+        "headline": "OpenAA 平台建设进展说明",
+        "description": "介绍 OpenAA 美国华人生活入口平台的开发进度、功能规划、服务扩展与上线时间表",
+        "image": "https://openaa.com/logo.png",
+        "datePublished": "2026-01-08T00:00:00Z",
+        "dateModified": "2026-01-08T00:00:00Z",
+        "author": {
+          "@type": "Organization",
+          "name": "OpenAA Team",
+          "url": "https://openaa.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "OpenAA",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://openaa.com/logo.png"
+          }
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://openaa.com/#organization",
+        "name": "OpenAA",
+        "url": "https://openaa.com/",
+        "logo": "https://openaa.com/logo.png",
+        "description": "美国华人生活入口 - 导航、资讯、服务聚合平台",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "323748@gmail.com",
+          "contactType": "customer support",
+          "availableLanguage": ["Chinese","English"]
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --primary: #0078d4;
+      --primary-dark: #005fa3;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --radius: 12px;
+      /* Match unified content width */
+      --page-max-w: 560px;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* Hide shared banner/search (only hide, do not delete content) */
+    [data-include="inner/banner"],
+    [data-include="inner/search"] { display: none !important; }
+
+    /* Hide ONLY this page's legacy bottom nav so shared site-bottom-nav shows */
+    body > nav.bottom-nav { display: none !important; }
+
+    /* Breadcrumb / content styles preserved */
+    .breadcrumb {
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--text-light);
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    article {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      margin: 8px 0;
+    }
+
+    h1 {
+      margin: 0 0 12px 0;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.3;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-icon {
+      font-size: 16px;
+    }
+
+    .category-tag {
+      display: inline-block;
+      background: rgba(0,120,212,0.1);
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .content {
+      line-height: 1.8;
+      color: var(--text-dark);
+    }
+
+    .content p {
+      margin: 0 0 16px 0;
+      font-size: 15px;
+    }
+
+    .content h2 {
+      margin: 24px 0 12px 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .content h3 {
+      margin: 16px 0 8px 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .content ul, .content ol {
+      margin: 12px 0 16px 20px;
+      padding: 0;
+    }
+
+    .content li {
+      margin: 8px 0;
+      font-size: 15px;
+    }
+
+    .highlight-box {
+      background: #f0f7ff;
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 16px 0;
+    }
+
+    .highlight-box strong {
+      color: var(--primary);
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .feature-item {
+      background: #f8fbff;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border-left: 3px solid var(--primary);
+      font-size: 14px;
+    }
+
+    .feature-item strong {
+      color: var(--primary);
+    }
+
+    .timeline {
+      margin: 20px 0;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .timeline-item {
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-date {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: var(--primary);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .timeline-desc {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    .back-links {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .back-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 12px;
+      background: rgba(0,120,212,0.08);
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .back-links a:active {
+      background: rgba(0,120,212,0.15);
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 16px;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      z-index: 400;
+      animation: slideInUp 0.3s;
+      display: none;
+    }
+
+    .toast.show {
+      display: block;
+    }
+
+    @keyframes slideInUp {
+      from { transform: translateX(-50%) translateY(20px); opacity: 0; }
+      to { transform: translateX(-50%) translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 420px) {
+      article { padding: 16px; }
+      h1 { font-size: 18px; }
+      .content h2 { font-size: 16px; }
+      .article-meta { flex-wrap: wrap; gap: 8px; }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1f1f1f;
+        --card-bg: #2d2d2d;
+        --text-dark: #f5f5f5;
+        --text-light: #a0a0a0;
+        --border: #3d3d3d;
+      }
+
+      .highlight-box { background: rgba(0,120,212,0.1); }
+      .feature-item { background: rgba(0,120,212,0.08); }
+    }
+
+    /* Sticky category bar (same as nav/dmv.html) */
+    #categoryBarWrap.oaa-stuck {
+      position: fixed;
+      top: 56px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: var(--page-max-w);
+      z-index: 95;
+    }
+
+    .oaa-catbar-spacer { display: none; height: 44px; background: transparent; }
+    .oaa-catbar-spacer.oaa-on { display: block; }
+  </style>
+</head>
+<body>
+  <!-- Shared header -->
+  <div data-include="site-header"></div>
+
+  <main class="main-content">
+    <!-- Shared category bar -->
+    <div data-include="inner/category-bar"
+         data-cat-active="news"
+         data-cat-config="/subpages-assets/config/categorybar.json"></div>
+    <div class="oaa-catbar-spacer" aria-hidden="true"></div>
+
+    <!-- 主要内容（原内容不变） -->
+    <div style="padding: 8px;">
+      <div class="back-links">
+        <a href="https://openaa.com/news/">← 返回资讯列表</a>
+        <a href="https://openaa.com/">🏠 返回首页</a>
+      </div>
+
+      <article>
+        <h1>OpenAA 平台建设进展说明</h1>
+
+        <div class="article-meta">
+          <span class="meta-item">
+            <span class="meta-icon">📅</span>
+            <time datetime="2026-01-08">2026-01-08</time>
+          </span>
+          <span class="meta-item">
+            <span class="meta-icon">✍️</span>
+            OpenAA Team
+          </span>
+          <span class="category-tag">📱 平台</span>
+        </div>
+
+        <div class="content">
+          <p>感谢各位在美华人用户对 OpenAA 平台的关注与支持！作为一个致力于为美国华人提供一站式生活入口的平台，我们在不断完善功能、拓展服务，希望能够为大家提供更加便捷、实用的生活信息聚合服务。</p>
+
+          <div class="highlight-box">
+            <strong>🎯 我们的使命：</strong> 为在美华人提供最便捷、最实用的导航与信息服务平台，帮助华人快速找到所需的服务与资讯。
+          </div>
+
+          <h2>已完成的功能模块</h2>
+
+          <h3>✅ 核心导航模块</h3>
+          <div class="feature-list">
+            <div class="feature-item"><strong>DMV导航</strong> - 覆盖全美50州DMV官方网站，支持驾驶证、车辆登记等服务</div>
+            <div class="feature-item"><strong>银行金融服务</strong> - 汇总美国主流银行、信用卡、投资平台等金融服务</div>
+            <div class="feature-item"><strong>工作招聘平台</strong> - 整合华人招聘、专业职业网站与求职资源</div>
+            <div class="feature-item"><strong>二手市场</strong> - 连接OfferUp、Facebook Marketplace等二手交易平台</div>
+            <div class="feature-item"><strong>购物平台导航</strong> - 覆盖美国主流购物网站与中国代购平台</div>
+          </div>
+
+          <h3>✅ 资讯与社区服务</h3>
+          <div class="feature-list">
+            <div class="feature-item"><strong>新闻资讯中心</strong> - 发布美国华人资讯、社区动态与生活指南</div>
+            <div class="feature-item"><strong>手机靓号交易</strong> - 提供美国手机靓号出售服务（生日号、豹子号、连号等）</div>
+            <div class="feature-item"><strong>AI工具导航</strong> - 汇总全球热门AI工具与在线服务</div>
+            <div class="feature-item"><strong>生活服务聚合</strong> - 整合移民、教育、房产等生活服务资源</div>
+          </div>
+
+          <h2>正在开发的功能</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">Q1 2026</div>
+              <div class="timeline-title">🌟 社区互动功能</div>
+              <div class="timeline-desc">推出用户评论、点赞、分享功能，增强社区互动体验</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">Q2 2026</div>
+              <div class="timeline-title">🔍 高级搜索功能</div>
+              <div class="timeline-desc">优化搜索算法，支持多维度筛选与个性化推荐</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">Q3 2026</div>
+              <div class="timeline-title">📲 移动App版本</div>
+              <div class="timeline-desc">推出iOS和Android原生应用，提供更好的移动体验</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">Q4 2026</div>
+              <div class="timeline-title">🌍 多城市本地化</div>
+              <div class="timeline-desc">拓展纽约、洛杉矶、旧金山等主要城市的本地化服务</div>
+            </div>
+          </div>
+
+          <h2>计划中的新增功能</h2>
+
+          <h3>🎓 教育资源中心</h3>
+          <p>整合美国大学信息、升学指南、教育资源等，帮助学生与家长了解美国教育体系。</p>
+
+          <h3>🏠 房产与租赁指南</h3>
+          <p>提供房产市场分析、租赁指南、搬家服务等生活信息，助力华人置业与租住。</p>
+
+          <h3>💼 职业发展中心</h3>
+          <p>发布职场资讯、面试技巧、薪资行情等职业发展内容，帮助华人求职者成长。</p>
+
+          <h3>🏥 医疗健康服务</h3>
+          <p>汇总医疗保险、医院信息、健康咨询等医疗资源，保障华人健康生活。</p>
+
+          <h3>🍽️ 本地餐饮与生活服务</h3>
+          <p>推荐华人餐厅、中餐馆、生活服务商户等本地化信息。</p>
+
+          <h2>持续优化方向</h2>
+
+          <div class="feature-list">
+            <div class="feature-item"><strong>SEO优化</strong> - 提升平台在搜索引擎中的排名，让更多华人找到我们</div>
+            <div class="feature-item"><strong>用户体验</strong> - 不断改进页面设计、加载速度与易用性</div>
+            <div class="feature-item"><strong>内容丰富化</strong> - 持续更新资讯、添加新功能模块</div>
+            <div class="feature-item"><strong>多语言支持</strong> - 未来计划推出英文版本，服务更多用户</div>
+            <div class="feature-item"><strong>安全与隐私</strong> - 加强数据保护，确保用户信息安全</div>
+          </div>
+
+          <h2>我们的承诺</h2>
+
+          <p>OpenAA 致力于为在美华人提供最实用、最可靠的生活服务平台。我们会：</p>
+
+          <ul>
+            <li>定期发布平台进展与功能更新</li>
+            <li>积极听取用户反馈与建议</li>
+            <li>不断优化用户体验与服务质量</li>
+            <li>扩展服务范围与功能模块</li>
+            <li>保护用户隐私与数据安全</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>📞 欢迎反馈：</strong> 如有任何建议或问题，欢迎通过 <a href="mailto:323748@gmail.com" style="color: var(--primary); text-decoration: underline;">323748@gmail.com</a> 联系我们。
+          </div>
+
+          <p><strong>感谢您的支持与信任！</strong></p>
+
+          <p style="margin-top: 24px; font-size: 13px; color: var(--text-light);">
+            <em>最后更新时间：2026年1月8日</em>
+          </p>
+        </div>
+      </article>
+
+      <!-- 吐司提示 -->
+      <div class="toast" id="toast"></div>
+
+      <!-- 页脚 -->
+      <footer>
+        <strong>OpenAA · 美国华人生活入口</strong><br />
+        © 2025 OpenAA.com · <a href="mailto:323748@gmail.com">联系我们</a>
+      </footer>
+    </div>
+
+    <!-- Shared bottom nav -->
+    <div data-include="site-bottom-nav"></div>
+  </main>
+
+  <!-- Include engine -->
+  <script src="/subpages-assets/js/include.js"></script>
+
+  <script>
+    // Sticky category bar: same logic as nav/dmv.html
+    (function () {
+      var spacer = document.querySelector('.oaa-catbar-spacer');
+      if (!spacer) return;
+
+      var wrap = null;
+      var header = null;
+      var headerH = 56;
+      var wrapInitialTop = null;
+
+      function compute() {
+        wrap = document.getElementById('categoryBarWrap');
+        header = document.getElementById('appHeader');
+        headerH = header ? header.offsetHeight : 56;
+        if (!wrap) return false;
+        wrapInitialTop = window.scrollY + wrap.getBoundingClientRect().top;
+        return true;
+      }
+
+      function apply() {
+        if (!wrap || wrapInitialTop == null) return;
+        var shouldStick = window.scrollY >= (wrapInitialTop - headerH);
+
+        if (shouldStick) {
+          if (!wrap.classList.contains('oaa-stuck')) {
+            wrap.classList.add('oaa-stuck');
+            spacer.classList.add('oaa-on');
+          }
+        } else {
+          if (wrap.classList.contains('oaa-stuck')) {
+            wrap.classList.remove('oaa-stuck');
+            spacer.classList.remove('oaa-on');
+          }
+        }
+      }
+
+      function init() {
+        var tries = 0;
+        var timer = setInterval(function () {
+          tries++;
+          if (compute()) {
+            clearInterval(timer);
+            apply();
+            window.addEventListener('scroll', apply, { passive: true });
+            window.addEventListener('resize', function () { compute(); apply(); });
+          } else if (tries >= 20) {
+            clearInterval(timer);
+          }
+        }, 80);
+      }
+
+      init();
+    })();
+
+    // Original page functions preserved
+    function showToast(message) {
+      var toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(function () { toast.classList.remove('show'); }, 2000);
+    }
+
+    function toggleBookmark() {
+      var ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf('mac') > -1) showToast('请使用 Cmd+D 收藏本页面');
+      else showToast('请使用 Ctrl+D 收藏本页面');
+    }
+
+    function goHome() {
+      window.location.href = 'https://openaa.com/';
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function shareArticle() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'OpenAA 平台建设进展说明',
+          text: '了解美国华人生活入口平台 OpenAA 的最新进展与功能规划',
+          url: window.location.href
+        }).catch(function () {});
+      } else {
+        showToast('请使用浏览器菜单分享此文章');
+      }
+    }
+  </script>
+</body>
+</html>
