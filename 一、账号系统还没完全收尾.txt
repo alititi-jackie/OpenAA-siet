@@ -27,6 +27,75 @@ https://ny.openaa.com/robots.txt
 返回顶部有公共“回到顶部”组件。  全站公共回到顶部：components/BackToTopButton.tsx
 返回有公共“返回”组件。    详情页公共返回按钮：components/DetailBackButton.tsx
 
+
+openaa-ny布局
+components/
+├── 全局布局
+│   ├── Header.tsx            — 固定顶栏：logo、"纽约"快捷导航（/api/top-links动态加载）、搜索、分享
+│   ├── BottomNav.tsx         — 底部导航（首页/招聘/二手/导航/我的）
+│   ├── AppTopSection.tsx     — 横幅轮播 + SearchBar + 新闻页GridMenu
+│   └── BackToTopButton.tsx   — 返回顶部（所有主要页面）
+│
+├── 广告与横幅
+│   └── BannerCarousel.tsx    — Swiper轮播，拉取 /api/ads?position=xxx
+│
+├── 首页板块
+│   ├── GridMenu.tsx          — 8宫格快捷菜单（招聘/房屋/二手/DMV/新闻/导航/新手指南/本地服务）
+│   ├── LatestTickerBar.tsx   — 顶部实时滚动条（/api/latest-ticker）
+│   ├── LatestPostsSection.tsx — 首页最新发布（server component，DB驱动）
+│   └── InfoCardsSection.tsx  — DMV信息卡 + 汇率信息卡
+│
+├── 导航模块
+│   ├── Navigation.tsx        — 公共导航页内容（分类+链接列表）
+│   ├── NavigationPageClient.tsx — 公共导航客户端
+│   ├── MyNavigationClient.tsx   — 我的导航（私有链接 CRUD + 拖拽排序）
+│   └── NavigationMenuEntry.tsx  — GridMenu中导航入口（带我的导航检测）
+│
+├── 搜索
+│   ├── SearchBar.tsx         — 首页搜索框
+│   ├── GlobalSearchOverlay.tsx — 全站搜索遮罩（Header中触发）
+│   └── SearchContent.tsx     — 搜索结果渲染
+│
+├── 帖子相关
+│   ├── JobCard.tsx           — 招聘卡片
+│   ├── JobForm.tsx           — 招聘发布/编辑表单
+│   ├── SecondhandCard.tsx    — 二手卡片
+│   ├── ItemForm.tsx          — 二手/服务发布/编辑表单
+│   ├── ContactInfoCard.tsx   — 帖子联系信息卡片
+│   ├── PostSafetyNotice.tsx  — 帖子安全提示
+│   └── HorizontalCategoryTabs.tsx — 横向分类标签
+│
+├── 新闻
+│   ├── NewsCover.tsx         — 新闻封面图
+│   ├── NewsSection.tsx       — 新闻板块组件
+│   └── NewsTipCard.tsx       — 新闻线索提交卡
+│
+├── 认证
+│   ├── LoginForm.tsx         — 登录表单
+│   ├── SignupForm.tsx        — 注册表单
+│   └── GoogleLoginButton.tsx — Google OAuth 按钮
+│
+├── 用户
+│   └── ProfileHeader.tsx     — 用户头像+信息头部
+│
+├── 通用 UI
+│   ├── FilterDropdown.tsx    — 筛选下拉
+│   ├── RegionFilter.tsx      — 地区筛选
+│   ├── DetailBackButton.tsx  — 详情返回按钮
+│   └── A2HSButton.tsx        — 添加到主屏幕 (PWA)
+│
+├── 后台
+│   ├── AdminPageHeader.tsx   — 后台页面标题栏
+│   └── AdminReturnButton.tsx — 后台返回按钮
+│
+└── DMV 专属
+    ├── DmvLicenseProcessModal.tsx — 驾照申请流程弹窗
+    ├── DmvPracticeEntryCards.tsx  — 练习模式入口卡片
+    └── DmvShareButton.tsx         — DMV 分享按钮
+
+
+
+
 先搜索并确认项目里是否已有公共组件或统一实现。
 如果已有，必须直接复用，不要新建重复组件。
 只有确认没有合适公共组件时，才允许新建，并说明原因。
