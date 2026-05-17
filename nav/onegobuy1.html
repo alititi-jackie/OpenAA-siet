@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0078d4">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="购物导航">
+
+  <!-- Title & Meta -->
+  <title>购物导航 | 美国中国电商大全 | OpenAA</title>
+  <meta name="description" content="OpenAA 购物导航：美国电商、中国电商、服装、美妆、数码、家居一站式购物导航大全。">
+  <meta name="keywords" content="购物导航,美国电商,中国电商,亚马逊,淘宝,京东,服装,美妆,数码,家居">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://openaa.com/nav/onegobuy">
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="购物导航 | OpenAA" />
+  <meta property="og:description" content="美国中国电商全覆盖购物导航平台。" />
+  <meta property="og:image" content="https://openaa.com/logo.png" />
+  <meta property="og:url" content="https://openaa.com/nav/onegobuy" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/subpages-assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/subpages-assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/subpages-assets/favicon/favicon-16x16.png">
+
+  <!-- Shared style -->
+  <link rel="stylesheet" href="/subpages-assets/css/style.css" />
+
+  <style>
+    /* 购物页面内容专属样式（结构/布局/颜色由 style.css 提供） */
+    :root {
+      --primary: #0078d4;
+      --primary-dark: #005fa3;
+      --card-bg: #ffffff;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+
+    /* 隐藏 Banner / 搜索框 / 8宫格入口 */
+    .banner-section    { display: none !important; }
+    .search-section    { display: none !important; }
+    .grid-menu-section { display: none !important; }
+
+    h1 {
+      font-size: 24px;
+      margin: 16px 0 8px 0;
+      color: var(--text-dark);
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 20px 0 12px 0;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .page-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 8px 0;
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-header-icon { font-size: 20px; }
+
+    .card-header-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .card-content { padding: 0; }
+
+    .shopping-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .shopping-item {
+      padding: 12px 8px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s;
+      min-height: 90px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .shopping-item:nth-child(3n) { border-right: none; }
+    .shopping-item:active { background: #f0f7ff; }
+
+    .shopping-item-icon { font-size: 28px; }
+
+    .shopping-item-name {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .shopping-body { padding: 8px; }
+
+    @media (min-width: 560px) {
+      .shopping-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    /* 暗黑模式 */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --card-bg: #2d2d2d;
+        --text-dark: #f5f5f5;
+        --text-light: #a0a0a0;
+        --border: #3d3d3d;
+      }
+
+      .card-header { background: #3d3d3d; }
+      .shopping-item:active { background: #3d3d3d; }
+    }
+
+    /* ===== 分类栏：滚动到位置才吸顶（JS 切换 class） ===== */
+    #categoryBarWrap.oaa-stuck {
+      position: fixed;
+      top: 56px; /* header height */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 560px;
+      z-index: 95;
+    }
+
+    .oaa-catbar-spacer {
+      display: none;
+      height: 44px; /* cat tab height */
+      background: transparent;
+    }
+
+    /* 当分类栏吸顶时，开启占位，避免页面跳动 */
+    .oaa-catbar-spacer.oaa-on {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header (data-include) -->
+  <div data-include="site-header"></div>
+
+  <main class="main-content">
+    <!-- Banner / Search sections (hidden via CSS on this page) -->
+    <div data-include="inner/banner"></div>
+    <div data-include="inner/search"></div>
+
+    <!-- Category bar (data-include) -->
+    <div data-include="inner/category-bar"
+         data-cat-active="shop"
+         data-cat-config="/subpages-assets/config/categorybar.json"></div>
+
+    <!-- Spacer for fixed category bar (enabled by JS when stuck) -->
+    <div class="oaa-catbar-spacer" aria-hidden="true"></div>
+
+    <!-- Shopping content -->
+    <div class="shopping-body">
+      <h1>🛍️ 购物导航</h1>
+      <p class="page-desc">美国电商、中国电商、服装、美妆、数码、家居一站式购物导航大全，快速找到你需要的购物平台。</p>
+
+    <!-- 美国电商 -->
+    <h2>美国主流电商</h2>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">🛒</div>
+        <h3 class="card-header-title">美国购物平台</h3>
+      </div>
+      <div class="card-content">
+        <div class="shopping-grid">
+          <a href="https://www.amazon.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">📦</div>
+            <div class="shopping-item-name">Amazon<br/>亚马逊</div>
+          </a>
+          <a href="https://www.walmart.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🏬</div>
+            <div class="shopping-item-name">Walmart<br/>沃尔玛</div>
+          </a>
+          <a href="https://www.target.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🎯</div>
+            <div class="shopping-item-name">Target<br/>塔吉特</div>
+          </a>
+          <a href="https://www.costco.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🏪</div>
+            <div class="shopping-item-name">Costco<br/>好市多</div>
+          </a>
+          <a href="https://www.ebay.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🏷️</div>
+            <div class="shopping-item-name">eBay<br/>易趣</div>
+          </a>
+          <a href="https://www.bestbuy.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">💻</div>
+            <div class="shopping-item-name">Best Buy<br/>百思买</div>
+          </a>
+          <a href="https://www.sayweee.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🥬</div>
+            <div class="shopping-item-name">Weee!<br/>华人买菜</div>
+          </a>
+          <a href="https://www.samsclub.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🛵</div>
+            <div class="shopping-item-name">Sam's Club<br/>山姆会员店</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中国电商 -->
+    <h2>中国主流电商</h2>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">🇨🇳</div>
+        <h3 class="card-header-title">中国购物平台</h3>
+      </div>
+      <div class="card-content">
+        <div class="shopping-grid">
+          <a href="https://www.taobao.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🐶</div>
+            <div class="shopping-item-name">Taobao<br/>淘宝</div>
+          </a>
+          <a href="https://www.tmall.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🏢</div>
+            <div class="shopping-item-name">Tmall<br/>天猫</div>
+          </a>
+          <a href="https://www.jd.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">📦</div>
+            <div class="shopping-item-name">JD<br/>京东</div>
+          </a>
+          <a href="https://www.pinduoduo.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🍐</div>
+            <div class="shopping-item-name">PDD<br/>拼多多</div>
+          </a>
+          <a href="https://www.1688.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🏭</div>
+            <div class="shopping-item-name">1688<br/>批发平台</div>
+          </a>
+          <a href="https://www.vip.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">💎</div>
+            <div class="shopping-item-name">VIP<br/>唯品会</div>
+          </a>
+          <a href="https://www.suning.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🏬</div>
+            <div class="shopping-item-name">Suning<br/>苏宁</div>
+          </a>
+          <a href="https://www.xiaohongshu.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">❤️</div>
+            <div class="shopping-item-name">小红书<br/>社交购物</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 服装时尚 -->
+    <h2>服装时尚</h2>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">👕</div>
+        <h3 class="card-header-title">服装鞋帽</h3>
+      </div>
+      <div class="card-content">
+        <div class="shopping-grid">
+          <a href="https://us.shein.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">👗</div>
+            <div class="shopping-item-name">Shein<br/>快时尚</div>
+          </a>
+          <a href="https://www.nike.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">👟</div>
+            <div class="shopping-item-name">Nike<br/>运动品牌</div>
+          </a>
+          <a href="https://www.zara.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">👔</div>
+            <div class="shopping-item-name">Zara<br/>时装</div>
+          </a>
+          <a href="https://www.hm.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">👖</div>
+            <div class="shopping-item-name">H&M<br/>服装</div>
+          </a>
+          <a href="https://www.uniqlo.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">👕</div>
+            <div class="shopping-item-name">UNIQLO<br/>休闲服</div>
+          </a>
+          <a href="https://www.adidas.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">⚽</div>
+            <div class="shopping-item-name">Adidas<br/>运动</div>
+          </a>
+          <a href="https://www.forever21.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">💃</div>
+            <div class="shopping-item-name">Forever 21<br/>快时尚</div>
+          </a>
+          <a href="https://www.gapinc.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🎽</div>
+            <div class="shopping-item-name">Gap<br/>服饰</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 美妆护肤 -->
+    <h2>美妆护肤</h2>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">💄</div>
+        <h3 class="card-header-title">美妆护肤</h3>
+      </div>
+      <div class="card-content">
+        <div class="shopping-grid">
+          <a href="https://www.sephora.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">💅</div>
+            <div class="shopping-item-name">Sephora<br/>丝芙兰</div>
+          </a>
+          <a href="https://www.ulta.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">💄</div>
+            <div class="shopping-item-name">Ulta<br/>美妆超市</div>
+          </a>
+          <a href="https://www.amazon.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🧴</div>
+            <div class="shopping-item-name">Amazon<br/>美妆区</div>
+          </a>
+          <a href="https://www.xiaohongshu.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">💄</div>
+            <div class="shopping-item-name">小红书<br/>美妆推荐</div>
+          </a>
+          <a href="https://www.cultbeauty.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">✨</div>
+            <div class="shopping-item-name">Cult Beauty<br/>美妆</div>
+          </a>
+          <a href="https://www.spacenk.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🌟</div>
+            <div class="shopping-item-name">Space NK<br/>护肤</div>
+          </a>
+          <a href="https://www.yesstyle.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🎀</div>
+            <div class="shopping-item-name">YesStyle<br/>K美</div>
+          </a>
+          <a href="https://www.taobao.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">💇</div>
+            <div class="shopping-item-name">淘宝<br/>美妆</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 数码电器 -->
+    <h2>数码电器</h2>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">📱</div>
+        <h3 class="card-header-title">数码电器</h3>
+      </div>
+      <div class="card-content">
+        <div class="shopping-grid">
+          <a href="https://www.apple.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🍎</div>
+            <div class="shopping-item-name">Apple<br/>苹果</div>
+          </a>
+          <a href="https://www.bestbuy.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">💻</div>
+            <div class="shopping-item-name">Best Buy<br/>百思买</div>
+          </a>
+          <a href="https://www.newegg.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🖥️</div>
+            <div class="shopping-item-name">Newegg<br/>新蛋</div>
+          </a>
+          <a href="https://www.samsung.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">📺</div>
+            <div class="shopping-item-name">Samsung<br/>三星</div>
+          </a>
+          <a href="https://www.bhphotovideo.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">📷</div>
+            <div class="shopping-item-name">B&H Photo<br/>相机</div>
+          </a>
+          <a href="https://www.jd.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">⌚</div>
+            <div class="shopping-item-name">京东<br/>数码</div>
+          </a>
+          <a href="https://www.taobao.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🎧</div>
+            <div class="shopping-item-name">淘宝<br/>电器</div>
+          </a>
+          <a href="https://www.aliexpress.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🔌</div>
+            <div class="shopping-item-name">AliExpress<br/>速卖通</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 家居生活 -->
+    <h2>家居生活</h2>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">🏠</div>
+        <h3 class="card-header-title">家居生活</h3>
+      </div>
+      <div class="card-content">
+        <div class="shopping-grid">
+          <a href="https://www.ikea.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🛋️</div>
+            <div class="shopping-item-name">IKEA<br/>宜家</div>
+          </a>
+          <a href="https://www.wayfair.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🛏️</div>
+            <div class="shopping-item-name">Wayfair<br/>家具</div>
+          </a>
+          <a href="https://www.overstock.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🪑</div>
+            <div class="shopping-item-name">Overstock<br/>家居</div>
+          </a>
+          <a href="https://www.amazon.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🪟</div>
+            <div class="shopping-item-name">Amazon<br/>家居</div>
+          </a>
+          <a href="https://www.rugs-usa.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🧶</div>
+            <div class="shopping-item-name">Rugs USA<br/>地毯</div>
+          </a>
+          <a href="https://www.williams-sonoma.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🍽️</div>
+            <div class="shopping-item-name">W-S<br/>餐具</div>
+          </a>
+          <a href="https://www.jd.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">🪴</div>
+            <div class="shopping-item-name">京东<br/>家居</div>
+          </a>
+          <a href="https://www.taobao.com/" class="shopping-item" target="_blank" rel="noopener">
+            <div class="shopping-item-icon">💡</div>
+            <div class="shopping-item-name">淘宝<br/>家装</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    </div><!-- /.shopping-body -->
+
+    <!-- Bottom nav -->
+    <div data-include="site-bottom-nav"></div>
+  </main>
+
+  <!-- Include engine -->
+  <script src="/subpages-assets/js/include.js"></script>
+
+  <script>
+    // Sticky category bar: stick only after scrolling to bar (not always on top)
+    (function () {
+      var spacer = document.querySelector('.oaa-catbar-spacer');
+      if (!spacer) return;
+
+      var wrap = null;
+      var header = null;
+      var headerH = 56;
+      var wrapInitialTop = null; // document Y where wrap starts
+
+      function compute() {
+        wrap = document.getElementById('categoryBarWrap');
+        header = document.getElementById('appHeader');
+        headerH = header ? header.offsetHeight : 56;
+        if (!wrap) return false;
+        wrapInitialTop = window.scrollY + wrap.getBoundingClientRect().top;
+        return true;
+      }
+
+      function apply() {
+        if (!wrap || wrapInitialTop == null) return;
+        var shouldStick = window.scrollY >= (wrapInitialTop - headerH);
+
+        if (shouldStick) {
+          if (!wrap.classList.contains('oaa-stuck')) {
+            wrap.classList.add('oaa-stuck');
+            spacer.classList.add('oaa-on');
+          }
+        } else {
+          if (wrap.classList.contains('oaa-stuck')) {
+            wrap.classList.remove('oaa-stuck');
+            spacer.classList.remove('oaa-on');
+          }
+        }
+      }
+
+      function init() {
+        // include.js injects the category bar asynchronously; retry a few times.
+        var tries = 0;
+        var timer = setInterval(function () {
+          tries++;
+          if (compute()) {
+            clearInterval(timer);
+            apply();
+            window.addEventListener('scroll', apply, { passive: true });
+            window.addEventListener('resize', function () {
+              compute();
+              apply();
+            });
+          } else if (tries >= 20) {
+            clearInterval(timer);
+          }
+        }, 80);
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>
