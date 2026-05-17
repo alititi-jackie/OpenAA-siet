@@ -1,135 +1,291 @@
-# OpenAA 华人导航
+# OpenAA.com · 美国华人生活入口
 
-这是 [openaa.com](https://openaa.com) 静态导航页，专为美国华人整理常用网站入口，包括政府服务、银行金融、购物海淘、DMV、地图、翻译、邮政、报税和生活工具等。
+OpenAA.com 是 OpenAA 品牌主入口，面向美国华人的生活信息、DMV 学习、网址导航与实用工具平台。
 
-部署在 GitHub Pages，最终通过 **https://openaa.com** 访问。
+当前主要作用：
 
----
-
-## 文件结构
-
-```
-123638-site/
-├── index.html              # 入口文件，页面主结构与 SEO
-├── style.css               # 全部样式（移动端优先）
-├── script.js               # 交互逻辑（轮播、分类切换、搜索过滤）
-├── README.md               # 本文件
-└── assets/
-    ├── logo.png            # OpenAA logo（36×36，圆角）
-    ├── favicon.ico         # 浏览器标签页图标
-    ├── apple-touch-icon.png # iPhone 添加到主屏幕图标（180×180）
-    └── ads/
-        ├── ad-1.png        # 广告轮播图 1
-        ├── ad-2.png        # 广告轮播图 2
-        ├── ad-3.png        # 广告轮播图 3
-        ├── ad-4.png        # 广告轮播图 4
-        └── ad-5.png        # 广告轮播图 5
-```
+- OpenAA 品牌主入口
+- 华人生活导航
+- DMV 中文学习与工具入口
+- 新闻资讯与实用页面
+- 华人常用网站导航
+- OpenAA 图片与分享入口
+- Google SEO 与品牌曝光
+- 跳转与连接 OpenAA 主业务平台 `https://ny.openaa.com`
 
 ---
 
-## 本地预览
+# 网站定位
 
-无需服务器，直接用浏览器打开：
+OpenAA.com 是 OpenAA 的品牌主域名与流量入口。
 
-```bash
-open index.html
-# 或双击 index.html 在浏览器中打开
-```
+主要提供：
 
-如需完整体验（包括图片懒加载），可用本地 HTTP 服务器：
+- 华人生活导航
+- DMV 中文学习入口
+- 华人新闻资讯
+- 实用工具与专题页面
+- Google SEO 长尾内容
+- OpenAA 品牌展示与搜索入口
 
-```bash
-# Python 3
-python3 -m http.server 8080
-# 然后访问 http://localhost:8080
-```
+动态业务系统主要运行于：
 
----
+# https://ny.openaa.com
 
-## 如何替换广告图
+包括：
 
-1. 将新广告图片（推荐尺寸 **1500×500px**，PNG 或 JPG）命名为 `ad-1.png`~`ad-5.png`，放入 `assets/ads/` 目录，替换同名旧文件。
-2. 如需修改广告跳转链接，打开 `script.js`，找到顶部的 `ADS` 数组，修改对应项的 `link` 字段：
-
-```js
-const ADS = [
-  {
-    image: 'assets/ads/ad-1.png',
-    link: 'https://your-link-here.com',   // ← 修改这里
-    alt: '广告描述'
-  },
-  // ...
-]
-```
-
-> **注意**：链接必须使用完整绝对 URL（如 `https://app.openaa.com/jobs`），不要写 `/jobs` 这类相对路径。
+- 招聘
+- 房屋
+- 二手
+- 本地服务
+- 新闻资讯
+- 用户系统
+- 后台管理
+- DMV 中文学习平台
 
 ---
 
-## 如何修改导航网站
+# 当前主要站点结构
 
-导航内容直接写在 `index.html` 的 `.nav-module` 区块中，每个 `.nav-card` 是一个链接单元：
-
-```html
-<a href="https://www.example.com" class="nav-card" target="_blank" rel="noopener">
-  <div class="nav-card-icon" style="background:#e3f2fd"><span>🌐</span></div>
-  <span class="nav-card-name">网站名称</span>
-</a>
-```
-
-修改步骤：
-- 修改 `href` 更换链接（必须用完整 URL）
-- 修改 `<span>` 内的 Emoji 更换图标
-- 修改 `nav-card-name` 内的文字更换名称
+| 站点 | 作用 |
+|---|---|
+| `https://openaa.com` | OpenAA 品牌主域名与生活入口 |
+| `https://ny.openaa.com` | OpenAA 主业务平台 |
+| `https://img.openaa.com` | OpenAA 图片与分享资源 |
 
 ---
 
-## 绝对 URL 规则
+# OpenAA.com 当前功能
 
-页面内所有跳出本静态导航页的链接，**必须使用完整绝对 URL**：
+## 首页跳转
 
-| ✅ 正确 | ❌ 错误 |
-|---------|---------|
-| `https://app.openaa.com/jobs` | `/jobs` |
-| `https://openaa.com/nav/` | `nav/` |
-| `https://www.amazon.com` | `amazon.com` |
+当前：
 
----
+- `openaa.com`
+- `www.openaa.com`
+- `openaa.cn`
+- `www.openaa.cn`
 
-## 占位图说明
+会 301 跳转至：
 
-以下图片为占位文件，可替换为真实图片：
+# https://ny.openaa.com
 
-- `assets/logo.png` — OpenAA logo，替换后页面顶部 logo 自动更新
-- `assets/favicon.ico` — 浏览器标签页图标（16×16 或 32×32）
-- `assets/apple-touch-icon.png` — iOS 主屏幕图标（180×180）
-- `assets/ads/ad-1.png` ~ `ad-5.png` — 广告轮播图（推荐 1500×500）
+用于统一品牌入口与 SEO 权重。
 
 ---
 
-## 分类 Tab 说明
+# 页面系统
 
-| Tab | 显示模块 |
-|-----|----------|
-| 全部 | 回到推荐精选，显示所有模块 |
-| 政府 | 定位到政府服务，所有模块仍可上下滑动查看 |
-| 银行 | 定位到银行金融，所有模块仍可上下滑动查看 |
-| 购物 | 定位到购物海淘，所有模块仍可上下滑动查看 |
-| DMV | 定位到 DMV 常用，所有模块仍可上下滑动查看 |
-| 常用AI | 定位到 AI 助手，所有模块仍可上下滑动查看 |
+OpenAA.com 保留多个实用内容页面。
+
+包括：
+
+- DMV 页面
+- AI 工具页面
+- 华人导航页面
+- 银行页面
+- 新闻专题页
+- 关于页面
+- 工具页面
+- 分享页面
+
+这些页面主要用于：
+
+- SEO
+- Google 收录
+- 长尾关键词
+- 品牌曝光
+- 外部分享
 
 ---
 
-## AI 模块说明
+# 华人导航系统
 
-AI 模块默认收录日常最常用的 AI 工具：ChatGPT、Claude、Gemini、Perplexity、Copilot、Meta AI、Grok、DeepSeek。
+OpenAA.com 提供大量华人常用网站导航。
 
-如需添加或替换，修改 `index.html` 中 `data-module="ai"` 的 `.nav-module` 区块内的 `.nav-card` 链接即可。
+分类包括：
+
+- 招聘
+- 房屋
+- 二手
+- DMV
+- 银行
+- 保险
+- 视频
+- AI 工具
+- 新闻
+- 社交媒体
+- 购物平台
+- 通讯运营商
+- 邮箱服务
+- 政府服务
+
+导航页面支持：
+
+- 分类展示
+- 手机端横向滚动分类栏
+- SEO 内容页面
+- 外链跳转
 
 ---
 
-## 访问入口
+# DMV 页面
 
-- **正式地址**：https://openaa.com
-- **GitHub Pages**：https://alititi-jackie.github.io/123638-site/（部署后可访问）
+OpenAA.com 当前包含 DMV 相关页面。
+
+包括：
+
+- DMV 中文教程
+- DMV 工具入口
+- DMV 罚单查询
+- DMV SEO 页面
+- DMV 分享海报
+
+未来 DMV 学习系统将主要由：
+
+# https://ny.openaa.com/dmv
+
+提供。
+
+---
+
+# 图片与分享系统
+
+OpenAA 使用：
+
+# https://img.openaa.com
+
+作为图片与分享资源域名。
+
+包括：
+
+- DMV 分享海报
+- 广告图片
+- 新闻封面图
+- 默认图片
+- Logo
+- 图标
+- 本地服务图片
+
+图片系统支持：
+
+- 图片浏览
+- 原图查看
+- 复制链接
+- 图片下载
+- Google 图片收录
+
+---
+
+# SEO 策略
+
+OpenAA.com 当前主要承担：
+
+- SEO 长尾页面
+- Google 收录
+- 品牌入口
+- OpenAA 品牌曝光
+- 华人生活相关搜索入口
+
+当前 SEO 重点：
+
+- DMV 中文关键词
+- 华人生活关键词
+- 华人导航关键词
+- OpenAA 品牌关键词
+- 新闻长尾内容
+
+网站包含：
+
+- sitemap.xml
+- robots.txt
+- canonical
+- structured data
+- FAQ schema
+- NewsArticle schema
+
+---
+
+# 技术结构
+
+## 前端
+
+- HTML
+- Tailwind CSS
+- JavaScript
+- 响应式移动端布局
+
+## 主业务平台
+
+动态平台：
+
+# https://ny.openaa.com
+
+技术栈：
+
+- Next.js 15
+- React
+- TypeScript
+- Supabase
+- Tailwind CSS
+- Vercel
+
+---
+
+# 项目目标
+
+OpenAA 的目标：
+
+# 打造美国华人生活入口平台
+
+长期方向包括：
+
+- 华人导航
+- DMV 中文学习平台
+- 华人新闻资讯
+- 招聘与房屋
+- 本地服务
+- AI 工具导航
+- 华人生活工具生态
+
+---
+
+# 当前状态
+
+当前已完成：
+
+- OpenAA 主品牌
+- ny.openaa.com 主站
+- DMV 中文学习系统
+- 新闻资讯系统
+- 华人导航系统
+- 本地服务系统
+- 用户系统
+- 后台管理系统
+- 图片系统
+- SEO 基础结构
+
+未来方向：
+
+- 多州 DMV
+- DMV 云同步学习
+- AI 搜索
+- 华人生活 AI 助手
+- 更多城市入口
+- 更完整的 SEO 生态
+
+---
+
+# 相关站点
+
+| 站点 | 说明 |
+|---|---|
+| https://openaa.com | OpenAA 品牌主域名 |
+| https://ny.openaa.com | OpenAA 主业务平台 |
+| https://img.openaa.com | OpenAA 图片与分享资源 |
+
+---
+
+# License
+
+Private Project — OpenAA
