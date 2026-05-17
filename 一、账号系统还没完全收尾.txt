@@ -7,6 +7,9 @@ https://openaa.com/pubic/images/news/1.png
 
 https://ny.openaa.com/sitemap.xml
 
+https://ny.openaa.com/sitemap.xml
+https://ny.openaa.com/robots.txt
+
 1）纽约 DMV 笔试怎么准备？
 
 发布新闻顺序为：
