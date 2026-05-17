@@ -404,6 +404,38 @@
       color: #64748b;
     }
 
+    .share-poster-actions {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .share-poster-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .share-poster-btn:active {
+      transform: scale(.98);
+      background: #dbeafe;
+    }
+    .share-poster-btn.secondary {
+      border-color: #e5e7eb;
+      background: #f8fafc;
+      color: #334155;
+    }
+
 
 
 
@@ -844,7 +876,21 @@
               height="960"
             />
           </div>
-          <p class="share-poster-caption">OpenAA · 纽约华人生活入口，让纽约生活更简单。</p>
+          <div class="share-poster-actions" aria-label="分享海报操作">
+            <a
+              class="share-poster-btn"
+              href="https://img.openaa.com/img/share/openaa-ny-chinese-life-poster-01.webp"
+              download="openaa-ny-chinese-life-poster-01.webp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >下载海报</a>
+            <button
+              class="share-poster-btn secondary"
+              type="button"
+              onclick="copyPosterLink()"
+            >复制海报链接</button>
+          </div>
+          <p class="share-poster-caption">长按图片可保存，或点击下载海报后发到朋友圈。<br />OpenAA · 纽约华人生活入口，让纽约生活更简单。</p>
         </article>
 
         <article class="template-card">
@@ -1169,6 +1215,33 @@
         { type: 'OpenAA', title: '美国华人生活入口 · 招聘 房屋 二手 新闻 本地服务', url: 'https://ny.openaa.com/' },
         { type: '导航', title: '常用网站、DMV、生活工具一站整理', url: 'https://openaa.com/' }
       ]);
+    }
+
+
+    function copyPosterLink() {
+      const posterUrl = 'https://img.openaa.com/img/share/openaa-ny-chinese-life-poster-01.webp';
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(posterUrl).then(() => showToast('海报链接已复制 📋')).catch(() => fallbackCopyPosterLink(posterUrl));
+      } else {
+        fallbackCopyPosterLink(posterUrl);
+      }
+    }
+
+    function fallbackCopyPosterLink(text) {
+      const input = document.createElement('textarea');
+      input.value = text;
+      input.setAttribute('readonly', '');
+      input.style.position = 'fixed';
+      input.style.left = '-9999px';
+      document.body.appendChild(input);
+      input.select();
+      try {
+        document.execCommand('copy');
+        showToast('海报链接已复制 📋');
+      } catch (e) {
+        showToast('复制失败，请长按图片保存');
+      }
+      document.body.removeChild(input);
     }
 
     function shareOpenAA() {
