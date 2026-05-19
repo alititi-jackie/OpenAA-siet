@@ -783,6 +783,67 @@
       <section class="content-wrap">
         <div class="section-title">DMV 文件检查器</div>
 
+        <style>
+          /* OpenAA DMV 工具分类导航栏 */
+          .dmv-tool-nav-card {
+            background: #fff;
+            border: 1px solid #eceef3;
+            border-radius: 16px;
+            padding: 10px;
+            margin: 0 0 12px;
+            box-shadow: 0 1px 4px rgba(0,0,0,.05);
+          }
+          .dmv-tool-nav {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding: 2px 1px 4px;
+          }
+          .dmv-tool-nav::-webkit-scrollbar { display: none; }
+          .dmv-tool-link {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 36px;
+            padding: 8px 13px;
+            border-radius: 999px;
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            color: #334155;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1;
+            white-space: nowrap;
+            box-shadow: 0 1px 3px rgba(15,23,42,.04);
+            -webkit-tap-highlight-color: transparent;
+          }
+          .dmv-tool-link:active { transform: scale(.96); }
+          .dmv-tool-link.active {
+            background: #2563eb;
+            border-color: #2563eb;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(37,99,235,.22);
+          }
+          @media (max-width: 360px) {
+            .dmv-tool-link { padding-left: 12px; padding-right: 12px; font-size: 13px; }
+          }
+        </style>
+
+        <!-- DMV 工具分类导航栏 -->
+        <div class="dmv-tool-nav-card">
+          <nav class="dmv-tool-nav" aria-label="DMV 工具分类导航">
+            <a href="https://ny.openaa.com/dmv" class="dmv-tool-link">返回 DMV 首页</a>
+            <a href="/tool/dmv/document-checker.html" class="dmv-tool-link active">文件检查</a>
+            <a href="/tool/dmv/6-points-calculator.html" class="dmv-tool-link">6 Points</a>
+            <a href="/tool/dmv/real-id-checker.html" class="dmv-tool-link">REAL ID</a>
+            <a href="/tool/dmv/real-id-vs-standard-vs-enhanced.html" class="dmv-tool-link">证件对比</a>
+          </nav>
+        </div>
+
+
         <article class="template-card dmv-hero-card">
           <h1>纽约 DMV 文件检查器</h1>
           <p>申请 Learner Permit、Driver License、Non-Driver ID、REAL ID 或 Enhanced ID 前，先用中文检查你大概要带哪些文件、几份纽约地址证明，以及 6 points 是否可能够。</p>
