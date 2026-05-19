@@ -234,5 +234,28 @@
     <loc>https://openaa.com/nav/</loc>
     <lastmod>2026-05-17</lastmod>
     <priority>0.80</priority>
+      <url>
+    <loc>https://openaa.com/tool/dmv/document-checker.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://openaa.com/tool/dmv/6-points-calculator.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://openaa.com/tool/dmv/real-id-checker.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://openaa.com/tool/dmv/real-id-vs-standard-vs-enhanced.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <priority>0.80</priority>
+  </url>
   </url>
 </urlset>
