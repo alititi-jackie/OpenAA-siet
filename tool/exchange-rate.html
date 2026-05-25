@@ -911,14 +911,14 @@
           <h2>汇率计算器</h2>
           <div class="converter-panel">
             <div class="rate-row">
-              <input class="rate-input" id="fromAmount" type="number" inputmode="decimal" value="1" min="0" step="0.01" aria-label="输入金额" />
+              <input class="rate-input" id="fromAmount" type="text" inputmode="decimal" value="1" aria-label="输入金额" />
               <select class="currency-select" id="fromCurrency" aria-label="选择原始货币"></select>
             </div>
 
             <button class="swap-btn" type="button" id="swapCurrencyBtn" aria-label="互换货币">⇅</button>
 
             <div class="rate-row">
-              <input class="rate-input" id="toAmount" type="number" inputmode="decimal" value="" min="0" step="0.01" aria-label="换算结果" />
+              <input class="rate-input" id="toAmount" type="text" inputmode="decimal" value="" aria-label="换算结果" />
               <select class="currency-select" id="toCurrency" aria-label="选择目标货币"></select>
             </div>
           </div>
@@ -1346,10 +1346,25 @@
       to.value = 'CNY';
     }
 
+    function parseAmountValue(value) {
+      const clean = String(value || '').replace(/,/g, '').trim();
+      const num = parseFloat(clean);
+      return Number.isFinite(num) ? num : 0;
+    }
+
     function formatRate(num, maxDigits) {
       if (!Number.isFinite(num)) return '--';
       return Number(num).toLocaleString('zh-CN', {
         maximumFractionDigits: maxDigits ?? (num >= 100 ? 2 : 4),
+        minimumFractionDigits: 0
+      });
+    }
+
+    function formatInputAmount(num, maxDigits) {
+      if (!Number.isFinite(num)) return '';
+      return Number(num).toLocaleString('zh-CN', {
+        useGrouping: false,
+        maximumFractionDigits: maxDigits ?? 2,
         minimumFractionDigits: 0
       });
     }
@@ -1367,9 +1382,9 @@
       const from = document.getElementById('fromCurrency')?.value || 'USD';
       const to = document.getElementById('toCurrency')?.value || 'CNY';
       if (!amountEl || !resultEl) return;
-      const amount = parseFloat(amountEl.value || '0');
+      const amount = parseAmountValue(amountEl.value);
       const rate = getCrossRate(from, to);
-      resultEl.value = rate ? formatRate(amount * rate, 2) : '';
+      resultEl.value = rate ? formatInputAmount(amount * rate, 2) : '';
       updateStatusText(from, to, rate);
     }
 
@@ -1379,9 +1394,9 @@
       const from = document.getElementById('fromCurrency')?.value || 'USD';
       const to = document.getElementById('toCurrency')?.value || 'CNY';
       if (!amountEl || !resultEl) return;
-      const amount = parseFloat(resultEl.value || '0');
+      const amount = parseAmountValue(resultEl.value);
       const rate = getCrossRate(to, from);
-      amountEl.value = rate ? formatRate(amount * rate, 2) : '';
+      amountEl.value = rate ? formatInputAmount(amount * rate, 2) : '';
       updateStatusText(from, to, getCrossRate(from, to));
     }
 
