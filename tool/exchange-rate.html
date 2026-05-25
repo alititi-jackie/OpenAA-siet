@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>美元人民币汇率换算器｜今日实时汇率参考 - OpenAA</title>
-  <meta name="description" content="OpenAA 美元人民币汇率换算器，提供 USD、CNY、HKD、CAD、EUR、GBP、JPY、KRW、TWD 等常用货币实时参考汇率与快速换算，适合美国华人日常查汇率。" />
+  <meta name="description" content="OpenAA 美元人民币汇率换算器，支持美元 USD 与人民币 CNY 快速换算，可手动设置参考汇率，适合美国华人日常估算。" />
   <meta name="keywords" content="美元汇率, 人民币汇率, 美元兑人民币, USD CNY, 美元人民币换算, 今日汇率, OpenAA 汇率, 美国华人汇率工具" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://openaa.com/tool/exchange-rate.html" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="美元人民币汇率换算器｜OpenAA" />
-  <meta property="og:description" content="OpenAA 汇率换算工具，支持美元、人民币、港币、加币、欧元、英镑、日元等常用货币实时参考汇率。" />
+  <meta property="og:description" content="OpenAA 美元人民币汇率换算工具，支持手动设置参考汇率，快速计算 USD 与 CNY。" />
   <meta property="og:url" content="https://openaa.com/tool/exchange-rate.html" />
   <meta property="og:image" content="https://img.openaa.com/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="美元人民币汇率换算器｜OpenAA" />
-  <meta name="twitter:description" content="美国华人常用汇率换算工具，支持美元人民币和多种常用货币参考汇率。" />
+  <meta name="twitter:description" content="美国华人常用美元人民币汇率换算工具，支持自定义参考汇率。" />
   <meta name="twitter:image" content="https://img.openaa.com/logo.png" />
   <link rel="icon" href="https://img.openaa.com/favicon.ico" />
   <link rel="apple-touch-icon" href="https://img.openaa.com/apple-touch-icon.png" />
@@ -735,6 +735,78 @@
       color: #fff;
       border-color: #2563eb;
     }
+
+    .fixed-currency-label {
+      width: 100%;
+      border-radius: 12px;
+      padding: 10px 8px;
+      font-size: 15px;
+      font-weight: 800;
+      color: #334155;
+      background: #fff;
+      box-shadow: inset 0 0 0 1px #e5e7eb;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .custom-rate-box {
+      margin-top: 12px;
+      display: grid;
+      gap: 8px;
+      padding: 12px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+    }
+    .custom-rate-label {
+      font-size: 14px;
+      font-weight: 800;
+      color: #334155;
+    }
+    .custom-rate-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+    .custom-rate-input {
+      width: 100%;
+      border: 1px solid #dbeafe;
+      border-radius: 12px;
+      background: #fff;
+      padding: 11px 12px;
+      font-size: 20px;
+      font-weight: 800;
+      color: #111827;
+      outline: none;
+    }
+    .custom-rate-row span {
+      font-size: 13px;
+      color: #64748b;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .direction-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .direction-tabs button {
+      border: 1px solid #dbeafe;
+      background: #eff6ff;
+      color: #2563eb;
+      border-radius: 999px;
+      padding: 9px 8px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .direction-tabs button.active {
+      background: #2563eb;
+      color: #fff;
+      border-color: #2563eb;
+    }
+
     @media (max-width: 380px) {
       .rate-row { grid-template-columns: 1fr 104px; }
       .rate-input { font-size: 24px; }
@@ -886,44 +958,57 @@
 
       <!-- 中间内容开始：以后只让 AI 修改这里，不要改顶部、广告轮播、8宫格、实用工具、底部导航 -->
       <section class="content-wrap">
-        <div class="section-title">汇率换算</div>
+        <div class="section-title">美元人民币换算</div>
 
         <article class="template-card rate-hero">
           <h1>美元人民币汇率换算器</h1>
-          <p>适合美国华人日常查看美元、人民币、港币、加币、欧元、英镑、日元等常用货币参考汇率。</p>
-          <div class="rate-status"><span class="status-dot"></span><span id="rateStatus">正在读取实时参考汇率...</span></div>
+          <p>只保留美国华人最常用的 USD 美元与 CNY 人民币换算，支持手动设置参考汇率。</p>
+          <div class="rate-status"><span class="status-dot"></span><span id="rateStatus">当前使用参考汇率，可手动修改</span></div>
         </article>
 
         <article class="template-card">
           <div class="rate-main-value">
-            <div class="label">今日参考汇率</div>
+            <div class="label">当前参考汇率</div>
             <div class="value" id="mainUsdCnyRate">--</div>
             <div class="sub">1 美元 USD ≈ <span id="mainUsdCnyText">--</span> 人民币 CNY</div>
           </div>
 
+          <div class="custom-rate-box">
+            <div class="custom-rate-label">手动设置汇率</div>
+            <div class="custom-rate-row">
+              <input class="custom-rate-input" id="customRateInput" type="text" inputmode="decimal" value="7.20" aria-label="设置美元人民币汇率" />
+              <span>1 USD = ? CNY</span>
+            </div>
+          </div>
+
           <div class="rate-actions">
-            <button class="rate-action-btn primary" type="button" id="refreshRatesBtn">刷新汇率</button>
+            <button class="rate-action-btn primary" type="button" id="applyRateBtn">应用汇率</button>
             <button class="rate-action-btn" type="button" onclick="shareOpenAA()">分享给朋友</button>
           </div>
         </article>
 
         <article class="template-card">
           <h2>汇率计算器</h2>
+          <div class="direction-tabs" aria-label="换算方向">
+            <button type="button" id="usdToCnyBtn" class="active">美元 → 人民币</button>
+            <button type="button" id="cnyToUsdBtn">人民币 → 美元</button>
+          </div>
+
           <div class="converter-panel">
             <div class="rate-row">
               <input class="rate-input" id="fromAmount" type="text" inputmode="decimal" value="1" aria-label="输入金额" />
-              <select class="currency-select" id="fromCurrency" aria-label="选择原始货币"></select>
+              <div class="fixed-currency-label" id="fromCurrencyLabel">USD 美元</div>
             </div>
 
             <button class="swap-btn" type="button" id="swapCurrencyBtn" aria-label="互换货币">⇅</button>
 
             <div class="rate-row">
               <input class="rate-input" id="toAmount" type="text" inputmode="decimal" value="" aria-label="换算结果" />
-              <select class="currency-select" id="toCurrency" aria-label="选择目标货币"></select>
+              <div class="fixed-currency-label" id="toCurrencyLabel">CNY 人民币</div>
             </div>
           </div>
 
-          <div class="quick-amounts" aria-label="常用金额">
+          <div class="quick-amounts" aria-label="常用美元金额">
             <button type="button" data-amount="100">$100</button>
             <button type="button" data-amount="500">$500</button>
             <button type="button" data-amount="1000">$1000</button>
@@ -933,11 +1018,9 @@
         </article>
 
         <article class="template-card">
-          <h2>常用汇率</h2>
+          <h2>常用参考</h2>
           <div class="popular-grid" id="popularRates">
             <div class="popular-rate"><strong>USD → CNY</strong><span>--</span><small>美元兑人民币</small></div>
-            <div class="popular-rate"><strong>USD → HKD</strong><span>--</span><small>美元兑港币</small></div>
-            <div class="popular-rate"><strong>USD → CAD</strong><span>--</span><small>美元兑加币</small></div>
             <div class="popular-rate"><strong>CNY → USD</strong><span>--</span><small>人民币兑美元</small></div>
           </div>
         </article>
@@ -945,14 +1028,14 @@
         <article class="template-card">
           <h2>使用提醒</h2>
           <div class="rate-note">
-            本页面显示的是国际市场参考汇率，适合日常估算和快速换算。实际换汇、银行入账、微信支付、支付宝、银联、Wise、Chase 或其它平台的最终汇率，可能会因为手续费、更新时间和平台规则不同而有差异。
+            本页面用于美元和人民币之间的日常估算。你可以按 Google、银行、Wise、微信、支付宝或其它平台看到的汇率，手动填入“1 USD = ? CNY”，再进行换算。实际到账金额可能因手续费、到账时间和平台规则不同而有差异。
           </div>
         </article>
 
         <article class="template-card">
-          <h2>美国华人常用汇率工具</h2>
-          <p>在美国生活，经常会遇到美元和人民币之间的换算，例如给国内家人转账、查看国内商品价格、计算旅行预算、比较留学费用、估算房租和工资收入等。OpenAA 汇率换算器把常见货币放在一个手机友好的页面里，方便纽约和美国华人快速查看参考汇率。</p>
-          <p>你可以直接输入金额，也可以点击常用金额按钮，快速查看 100 美元、500 美元、1000 美元、5000 美元和 10000 美元大约等于多少人民币。页面也支持港币、加币、欧元、英镑、日元、韩元和台币等常见货币。</p>
+          <h2>美国华人常用美元人民币换算</h2>
+          <p>在美国生活，经常会遇到美元和人民币之间的换算，例如给国内家人转账、查看国内商品价格、计算旅行预算、比较学费、房租和工资收入等。这个页面只保留 USD 和 CNY 两种货币，操作更简单。</p>
+          <p>如果你觉得当前参考汇率不准，可以直接在上方手动改成你看到的汇率，例如 7.18、7.20 或银行给出的实际汇率，然后页面会马上按你设置的数字计算。</p>
         </article>
       </section>
       <!-- 中间内容结束 -->
@@ -1302,49 +1385,11 @@
     initTopLinksFromApp();
     initLatestStripFromApp();
 
-    /* OpenAA 汇率换算工具：静态网页前端直接调用免费汇率 API */
-    const RATE_CURRENCIES = [
-      ['USD', '美元'],
-      ['CNY', '人民币'],
-      ['HKD', '港币'],
-      ['CAD', '加币'],
-      ['EUR', '欧元'],
-      ['GBP', '英镑'],
-      ['JPY', '日元'],
-      ['KRW', '韩元'],
-      ['TWD', '台币']
-    ];
-
-    const FALLBACK_USD_RATES = {
-      USD: 1,
-      CNY: 7.2,
-      HKD: 7.8,
-      CAD: 1.37,
-      EUR: 0.92,
-      GBP: 0.79,
-      JPY: 155,
-      KRW: 1360,
-      TWD: 32.3
-    };
-
-    let usdRates = { ...FALLBACK_USD_RATES };
+    /* OpenAA 美元人民币换算工具：只保留 USD / CNY，并支持手动设置汇率 */
+    const DEFAULT_USD_CNY_RATE = 7.20;
+    let usdCnyRate = DEFAULT_USD_CNY_RATE;
+    let direction = 'USD_TO_CNY';
     let lastEdited = 'from';
-
-    function currencyName(code) {
-      const item = RATE_CURRENCIES.find(c => c[0] === code);
-      return item ? item[1] : code;
-    }
-
-    function fillCurrencySelects() {
-      const from = document.getElementById('fromCurrency');
-      const to = document.getElementById('toCurrency');
-      if (!from || !to) return;
-      const options = RATE_CURRENCIES.map(([code, name]) => '<option value="' + code + '">' + code + ' · ' + name + '</option>').join('');
-      from.innerHTML = options;
-      to.innerHTML = options;
-      from.value = 'USD';
-      to.value = 'CNY';
-    }
 
     function parseAmountValue(value) {
       const clean = String(value || '').replace(/,/g, '').trim();
@@ -1355,7 +1400,7 @@
     function formatRate(num, maxDigits) {
       if (!Number.isFinite(num)) return '--';
       return Number(num).toLocaleString('zh-CN', {
-        maximumFractionDigits: maxDigits ?? (num >= 100 ? 2 : 4),
+        maximumFractionDigits: maxDigits ?? 4,
         minimumFractionDigits: 0
       });
     }
@@ -1369,126 +1414,126 @@
       });
     }
 
-    function getCrossRate(from, to) {
-      const fromRate = usdRates[from];
-      const toRate = usdRates[to];
-      if (!fromRate || !toRate) return null;
-      return toRate / fromRate;
+    function getCurrentRate() {
+      return direction === 'USD_TO_CNY' ? usdCnyRate : (1 / usdCnyRate);
+    }
+
+    function updateCurrencyLabels() {
+      const fromLabel = document.getElementById('fromCurrencyLabel');
+      const toLabel = document.getElementById('toCurrencyLabel');
+      const usdBtn = document.getElementById('usdToCnyBtn');
+      const cnyBtn = document.getElementById('cnyToUsdBtn');
+      if (direction === 'USD_TO_CNY') {
+        if (fromLabel) fromLabel.textContent = 'USD 美元';
+        if (toLabel) toLabel.textContent = 'CNY 人民币';
+        if (usdBtn) usdBtn.classList.add('active');
+        if (cnyBtn) cnyBtn.classList.remove('active');
+      } else {
+        if (fromLabel) fromLabel.textContent = 'CNY 人民币';
+        if (toLabel) toLabel.textContent = 'USD 美元';
+        if (usdBtn) usdBtn.classList.remove('active');
+        if (cnyBtn) cnyBtn.classList.add('active');
+      }
+    }
+
+    function renderRateInfo() {
+      const main = document.getElementById('mainUsdCnyRate');
+      const mainText = document.getElementById('mainUsdCnyText');
+      const rateInput = document.getElementById('customRateInput');
+      const status = document.getElementById('rateStatus');
+      if (main) main.textContent = formatRate(usdCnyRate, 4);
+      if (mainText) mainText.textContent = formatRate(usdCnyRate, 4);
+      if (rateInput && document.activeElement !== rateInput) rateInput.value = formatInputAmount(usdCnyRate, 4);
+      if (status) status.textContent = '当前汇率：1 USD ≈ ' + formatRate(usdCnyRate, 4) + ' CNY，可手动修改';
+
+      const box = document.getElementById('popularRates');
+      if (box) {
+        box.innerHTML = [
+          '<div class="popular-rate"><strong>USD → CNY</strong><span>' + formatRate(usdCnyRate, 4) + '</span><small>美元兑人民币</small></div>',
+          '<div class="popular-rate"><strong>CNY → USD</strong><span>' + formatRate(1 / usdCnyRate, 4) + '</span><small>人民币兑美元</small></div>'
+        ].join('');
+      }
+    }
+
+    function applyCustomRate(showMessage) {
+      const input = document.getElementById('customRateInput');
+      const nextRate = parseAmountValue(input ? input.value : '');
+      if (!nextRate || nextRate <= 0) {
+        showToast('请输入正确汇率');
+        return;
+      }
+      usdCnyRate = nextRate;
+      renderRateInfo();
+      if (lastEdited === 'to') convertFromTarget();
+      else convertFromSource();
+      if (showMessage) showToast('汇率已应用');
     }
 
     function convertFromSource() {
       const amountEl = document.getElementById('fromAmount');
       const resultEl = document.getElementById('toAmount');
-      const from = document.getElementById('fromCurrency')?.value || 'USD';
-      const to = document.getElementById('toCurrency')?.value || 'CNY';
       if (!amountEl || !resultEl) return;
       const amount = parseAmountValue(amountEl.value);
-      const rate = getCrossRate(from, to);
-      resultEl.value = rate ? formatInputAmount(amount * rate, 2) : '';
-      updateStatusText(from, to, rate);
+      resultEl.value = formatInputAmount(amount * getCurrentRate(), 2);
     }
 
     function convertFromTarget() {
       const amountEl = document.getElementById('fromAmount');
       const resultEl = document.getElementById('toAmount');
-      const from = document.getElementById('fromCurrency')?.value || 'USD';
-      const to = document.getElementById('toCurrency')?.value || 'CNY';
       if (!amountEl || !resultEl) return;
       const amount = parseAmountValue(resultEl.value);
-      const rate = getCrossRate(to, from);
-      amountEl.value = rate ? formatInputAmount(amount * rate, 2) : '';
-      updateStatusText(from, to, getCrossRate(from, to));
+      const rate = getCurrentRate();
+      amountEl.value = rate ? formatInputAmount(amount / rate, 2) : '';
     }
 
-    function updateStatusText(from, to, rate) {
-      const status = document.getElementById('rateStatus');
-      if (!status || !rate) return;
-      status.textContent = '1 ' + from + ' ≈ ' + formatRate(rate, 4) + ' ' + to + '，仅供参考';
-    }
-
-    function renderPopularRates() {
-      const usdCny = usdRates.CNY;
-      const main = document.getElementById('mainUsdCnyRate');
-      const mainText = document.getElementById('mainUsdCnyText');
-      if (main) main.textContent = formatRate(usdCny, 4);
-      if (mainText) mainText.textContent = formatRate(usdCny, 4);
-
-      const box = document.getElementById('popularRates');
-      if (!box) return;
-      const rows = [
-        ['USD', 'CNY', '美元兑人民币'],
-        ['USD', 'HKD', '美元兑港币'],
-        ['USD', 'CAD', '美元兑加币'],
-        ['CNY', 'USD', '人民币兑美元']
-      ];
-      box.innerHTML = rows.map(([from, to, desc]) => {
-        const rate = getCrossRate(from, to);
-        return '<div class="popular-rate"><strong>' + from + ' → ' + to + '</strong><span>' + formatRate(rate, 4) + '</span><small>' + desc + '</small></div>';
-      }).join('');
-    }
-
-    async function fetchRates() {
-      const status = document.getElementById('rateStatus');
-      if (status) status.textContent = '正在读取实时参考汇率...';
-      try {
-        const quotes = RATE_CURRENCIES.map(c => c[0]).filter(c => c !== 'USD').join(',');
-        const url = 'https://api.frankfurter.dev/v2/rates?base=USD&quotes=' + encodeURIComponent(quotes);
-        const res = await fetch(url, { cache: 'no-store' });
-        if (!res.ok) throw new Error('rate api failed');
-        const data = await res.json();
-        const rates = data && data.rates ? data.rates : {};
-        usdRates = { USD: 1, ...FALLBACK_USD_RATES, ...rates };
-        if (status) {
-          const dateText = data.date ? '已更新：' + data.date : '实时参考汇率已更新';
-          status.textContent = dateText + '，仅供参考';
-        }
-      } catch (e) {
-        usdRates = { ...FALLBACK_USD_RATES };
-        if (status) status.textContent = '实时汇率读取失败，当前显示备用参考值';
-      }
-      renderPopularRates();
-      if (lastEdited === 'to') convertFromTarget();
-      else convertFromSource();
+    function setDirection(nextDirection) {
+      if (direction === nextDirection) return;
+      direction = nextDirection;
+      updateCurrencyLabels();
+      lastEdited = 'from';
+      convertFromSource();
     }
 
     function initRateTool() {
-      fillCurrencySelects();
       const fromAmount = document.getElementById('fromAmount');
       const toAmount = document.getElementById('toAmount');
-      const fromCurrency = document.getElementById('fromCurrency');
-      const toCurrency = document.getElementById('toCurrency');
       const swapBtn = document.getElementById('swapCurrencyBtn');
-      const refreshBtn = document.getElementById('refreshRatesBtn');
+      const applyBtn = document.getElementById('applyRateBtn');
+      const rateInput = document.getElementById('customRateInput');
+      const usdBtn = document.getElementById('usdToCnyBtn');
+      const cnyBtn = document.getElementById('cnyToUsdBtn');
 
-      if (!fromAmount || !toAmount || !fromCurrency || !toCurrency) return;
+      if (!fromAmount || !toAmount) return;
 
       fromAmount.addEventListener('input', () => { lastEdited = 'from'; convertFromSource(); });
       toAmount.addEventListener('input', () => { lastEdited = 'to'; convertFromTarget(); });
-      fromCurrency.addEventListener('change', () => lastEdited === 'to' ? convertFromTarget() : convertFromSource());
-      toCurrency.addEventListener('change', () => lastEdited === 'to' ? convertFromTarget() : convertFromSource());
+      if (rateInput) {
+        rateInput.addEventListener('input', () => applyCustomRate(false));
+        rateInput.addEventListener('change', () => applyCustomRate(true));
+      }
+      if (applyBtn) applyBtn.addEventListener('click', () => applyCustomRate(true));
+      if (usdBtn) usdBtn.addEventListener('click', () => setDirection('USD_TO_CNY'));
+      if (cnyBtn) cnyBtn.addEventListener('click', () => setDirection('CNY_TO_USD'));
 
       if (swapBtn) {
         swapBtn.addEventListener('click', () => {
-          const oldFrom = fromCurrency.value;
-          fromCurrency.value = toCurrency.value;
-          toCurrency.value = oldFrom;
-          lastEdited = 'from';
-          convertFromSource();
+          setDirection(direction === 'USD_TO_CNY' ? 'CNY_TO_USD' : 'USD_TO_CNY');
         });
       }
 
       document.querySelectorAll('.quick-amounts button[data-amount]').forEach(btn => {
         btn.addEventListener('click', () => {
-          fromCurrency.value = 'USD';
-          toCurrency.value = 'CNY';
+          direction = 'USD_TO_CNY';
+          updateCurrencyLabels();
           fromAmount.value = btn.getAttribute('data-amount') || '1';
           lastEdited = 'from';
           convertFromSource();
         });
       });
 
-      if (refreshBtn) refreshBtn.addEventListener('click', fetchRates);
-      fetchRates();
+      updateCurrencyLabels();
+      renderRateInfo();
+      convertFromSource();
     }
 
     initRateTool();
