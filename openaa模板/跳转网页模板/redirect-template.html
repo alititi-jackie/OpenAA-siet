@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>页面跳转中...</title>
+  <meta name="robots" content="noindex,nofollow" />
+
+  <!-- ===== 可修改配置区域 ===== -->
+  <script>
+    // 这里改成你要跳转的网址
+    const TARGET_URL = "https://ny.openaa.com/";
+
+    // 延迟跳转时间，单位：毫秒。0 = 立即跳转
+    const REDIRECT_DELAY = 0;
+  </script>
+
+  <meta http-equiv="refresh" content="0;url=https://ny.openaa.com/" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #f5f7fb;
+      color: #111827;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 480px;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 40px 28px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .logo {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #6b7280;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 20px;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="logo">🔄</div>
+    <h1>页面跳转中...</h1>
+    <p>如果没有自动跳转，请点击下方按钮继续。</p>
+    <a id="jumpBtn" class="btn" href="https://ny.openaa.com/">立即进入</a>
+  </div>
+
+  <script>
+    document.getElementById("jumpBtn").href = TARGET_URL;
+    document
+      .querySelector('meta[http-equiv="refresh"]')
+      .setAttribute("content", `0;url=${TARGET_URL}`);
+
+    setTimeout(() => {
+      window.location.href = TARGET_URL;
+    }, REDIRECT_DELAY);
+  </script>
+
+</body>
+</html>
