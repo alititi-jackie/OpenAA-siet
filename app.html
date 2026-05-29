@@ -3,406 +3,229 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>OpenAA App 下载｜添加 OpenAA 到手机桌面</title>
-  <meta name="description" content="将 OpenAA 添加到手机或电脑桌面，像 App 一样使用纽约华人招聘、房屋、二手、DMV、新闻、导航和本地服务。" />
-  <meta name="theme-color" content="#2563eb" />
-  <meta name="robots" content="index,follow" />
 
-  <!-- PWA / iPhone -->
+  <title>添加 OpenAA 到桌面</title>
+  <meta name="description" content="添加 OpenAA 到手机或电脑桌面，像 App 一样快速打开。" />
+  <meta name="theme-color" content="#2563eb" />
+
+  <!-- 必须放在 openaa.com 根目录：/manifest.json -->
   <link rel="manifest" href="/manifest.json" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- iPhone 添加到主屏幕 -->
+  <link rel="apple-touch-icon" href="https://img.openaa.com/logo.png" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="OpenAA" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
   <style>
-    :root {
-      --blue: #2563eb;
-      --blue-dark: #1d4ed8;
-      --bg: #f4f7fb;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --green: #16a34a;
-      --orange: #f97316;
-      --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
-      --radius: 22px;
-    }
-
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
+      min-height: 100vh;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC",
         "Microsoft YaHei", Arial, sans-serif;
-      color: var(--text);
+      color: #111827;
       background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.13), transparent 34%),
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.15), transparent 32%),
         radial-gradient(circle at top right, rgba(22, 163, 74, 0.12), transparent 30%),
-        var(--bg);
-      line-height: 1.6;
+        #f4f7fb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
     }
 
-    a { color: inherit; text-decoration: none; }
-
-    .page {
-      width: min(100%, 980px);
-      margin: 0 auto;
-      padding: 22px 16px 48px;
-    }
-
-    .hero {
+    .card {
+      width: min(100%, 720px);
       background: linear-gradient(135deg, #ffffff 0%, #eef5ff 100%);
-      border: 1px solid rgba(37, 99, 235, 0.12);
+      border: 1px solid rgba(37, 99, 235, 0.14);
       border-radius: 30px;
-      padding: 28px 20px;
-      box-shadow: var(--shadow);
+      padding: 34px 18px;
       text-align: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: -80px;
-      top: -80px;
-      width: 190px;
-      height: 190px;
-      border-radius: 999px;
-      background: rgba(37, 99, 235, 0.12);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
     }
 
     .logo {
-      width: 92px;
-      height: 92px;
-      margin: 0 auto 14px;
-      border-radius: 24px;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 16px;
+      border-radius: 26px;
       background: #fff;
       object-fit: contain;
       padding: 10px;
       box-shadow: 0 12px 26px rgba(37, 99, 235, 0.18);
-      position: relative;
-      z-index: 1;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(28px, 6vw, 44px);
+      font-size: clamp(30px, 7vw, 46px);
       line-height: 1.15;
       letter-spacing: -0.04em;
     }
 
-    .subtitle {
+    .desc {
       margin: 12px auto 0;
-      max-width: 680px;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .badges {
-      margin: 18px auto 0;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .badge {
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: #fff;
-      border: 1px solid var(--line);
-      color: #374151;
-      font-size: 13px;
-      white-space: nowrap;
+      max-width: 560px;
+      color: #5b6472;
+      font-size: 16px;
+      line-height: 1.7;
     }
 
     .actions {
-      margin: 26px auto 6px;
+      margin: 28px auto 0;
+      max-width: 460px;
       display: grid;
       gap: 12px;
-      max-width: 520px;
     }
 
-    .btn {
+    button, a {
       width: 100%;
-      border: 0;
-      cursor: pointer;
       border-radius: 18px;
       padding: 15px 18px;
       font-size: 17px;
       font-weight: 750;
+      text-decoration: none;
+      border: 0;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     }
 
-    .btn:active { transform: translateY(1px) scale(0.99); }
-
-    .btn-primary {
-      background: var(--blue);
+    .install {
+      background: #2563eb;
       color: white;
       box-shadow: 0 12px 26px rgba(37, 99, 235, 0.25);
     }
 
-    .btn-primary:hover { background: var(--blue-dark); }
-
-    .btn-secondary {
+    .enter {
       background: white;
-      color: var(--blue);
+      color: #2563eb;
       border: 1px solid rgba(37, 99, 235, 0.22);
     }
 
-    .btn-light {
-      background: #f8fafc;
-      color: #334155;
-      border: 1px solid var(--line);
-    }
-
-    .notice {
-      margin: 16px auto 0;
-      max-width: 720px;
-      padding: 12px 14px;
-      border-radius: 16px;
+    .tips {
+      display: none;
+      margin: 18px auto 0;
+      max-width: 560px;
+      text-align: left;
       background: #fff7ed;
       color: #9a3412;
-      font-size: 14px;
       border: 1px solid #fed7aa;
-      display: none;
-    }
-
-    .notice.show { display: block; }
-
-    .grid {
-      margin-top: 20px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
-    }
-
-    .card h2 {
-      margin: 0 0 10px;
-      font-size: 20px;
-      letter-spacing: -0.02em;
-    }
-
-    .steps {
-      margin: 0;
-      padding-left: 20px;
-      color: #374151;
-      font-size: 15px;
-    }
-
-    .steps li { margin: 7px 0; }
-
-    .tip {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .feature-list {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
-
-    .feature {
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 14px 10px;
-      text-align: center;
-      font-size: 14px;
-      color: #374151;
-    }
-
-    .seo {
-      margin-top: 20px;
-      color: #374151;
+      padding: 14px 16px;
       font-size: 15px;
+      line-height: 1.7;
     }
 
-    .footer {
-      margin: 26px 0 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
+    .tips.show { display: block; }
+
+    .tips strong { color: #7c2d12; }
+
+    .success {
+      display: none;
+      margin: 18px auto 0;
+      max-width: 560px;
+      background: #ecfdf5;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+      border-radius: 18px;
+      padding: 14px 16px;
+      font-size: 15px;
+      line-height: 1.7;
     }
 
-    .small-link {
-      color: var(--blue);
-      font-weight: 650;
-    }
+    .success.show { display: block; }
 
-    @media (max-width: 780px) {
-      .page { padding: 14px 12px 34px; }
-      .hero { padding: 24px 16px; border-radius: 26px; }
-      .grid { grid-template-columns: 1fr; }
-      .feature-list { grid-template-columns: repeat(2, 1fr); }
-      .btn { font-size: 16px; }
+    @media (max-width: 520px) {
+      body { align-items: flex-start; padding-top: 36px; }
+      .card { border-radius: 26px; padding: 28px 14px; }
+      button, a { font-size: 16px; }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
-    <section class="hero">
-      <img class="logo" src="https://img.openaa.com/logo.png" alt="OpenAA Logo" />
-      <h1>把 OpenAA.app添加到手机桌面</h1>
-      <p class="subtitle">
-        打开 OpenAA，快速使用纽约华人招聘、房屋、二手、DMV、新闻、导航和本地服务。
-      </p>
+  <main class="card">
+    <img class="logo" src="https://img.openaa.com/logo.png" alt="OpenAA Logo" />
 
-      <div class="badges" aria-label="OpenAA 功能">
-        <span class="badge">纽约华人生活入口</span>
-        <span class="badge">手机桌面快捷打开</span>
-        <span class="badge">无需先去应用商店</span>
-      </div>
+    <h1>添加 OpenAA 到桌面</h1>
+    <p class="desc">
+      点击下方按钮，把 OpenAA 添加到手机或电脑桌面。安装后桌面图标打开的是 <strong>openaa.com</strong>。
+    </p>
 
-      <div class="actions">
-        <button id="installBtn" class="btn btn-primary" type="button">📱 添加 OpenAA 到桌面</button>
-        <a class="btn btn-secondary" href="https://ny.openaa.com/">🌐 进入 OpenAA 纽约站</a>
-        <button id="copyBtn" class="btn btn-light" type="button">🔗 复制网址</button>
-      </div>
+    <div class="actions">
+      <button id="installBtn" class="install" type="button">📱 添加 OpenAA 到桌面</button>
+      <a class="enter" href="https://ny.openaa.com/">🌐 进入 OpenAA 纽约站</a>
+    </div>
 
-      <div id="installNotice" class="notice">
-        当前浏览器暂时不能直接弹出安装窗口。请按下方 iPhone / Android / 电脑教程添加到桌面。
-      </div>
-    </section>
+    <div id="success" class="success">
+      ✅ OpenAA 已经以桌面 App 方式打开，说明你已经添加过了。
+    </div>
 
-    <section class="feature-list" aria-label="OpenAA 主要频道">
-      <div class="feature">💼 招聘</div>
-      <div class="feature">🏠 房屋</div>
-      <div class="feature">🛍️ 二手</div>
-      <div class="feature">🚗 DMV</div>
-      <div class="feature">📰 新闻</div>
-      <div class="feature">🧭 导航</div>
-      <div class="feature">🧰 本地服务</div>
-      <div class="feature">📌 新手指南</div>
-    </section>
-
-    <section class="grid">
-      <article class="card">
-        <h2>iPhone 安装方法</h2>
-        <ol class="steps">
-          <li>用 Safari 打开本页面。</li>
-          <li>点击底部或顶部的“分享”按钮。</li>
-          <li>选择“添加到主屏幕”。</li>
-          <li>点击“添加”，桌面就会出现 OpenAA 图标。</li>
-        </ol>
-        <p class="tip">注意：iPhone 通常不能通过网页按钮直接安装，需要手动点分享菜单。</p>
-      </article>
-
-      <article class="card">
-        <h2>Android 安装方法</h2>
-        <ol class="steps">
-          <li>用 Chrome 打开本页面。</li>
-          <li>点击“添加 OpenAA 到桌面”。</li>
-          <li>如果没有弹窗，点击右上角菜单。</li>
-          <li>选择“安装应用”或“添加到主屏幕”。</li>
-        </ol>
-        <p class="tip">Android Chrome 支持时会自动弹出安装窗口。</p>
-      </article>
-
-      <article class="card">
-        <h2>电脑安装方法</h2>
-        <ol class="steps">
-          <li>用 Chrome 或 Edge 打开本页面。</li>
-          <li>查看地址栏右侧是否有安装图标。</li>
-          <li>点击安装，即可从桌面或开始菜单打开。</li>
-          <li>也可以收藏 ny.openaa.com 快速访问。</li>
-        </ol>
-        <p class="tip">电脑端安装后，打开体验也会接近独立应用窗口。</p>
-      </article>
-    </section>
-
-    <section class="card seo">
-      <h2>OpenAA 是什么？</h2>
-      <p>
-        OpenAA 是面向纽约华人用户的生活入口网站，提供招聘信息、租房找房、二手交易、纽约 DMV 中文学习、
-        本地新闻、常用导航和本地服务等功能。把 OpenAA 添加到手机桌面后，可以像打开 App 一样快速进入，
-        适合经常查看纽约华人生活信息、发布内容或查询 DMV 学习资料的用户。
-      </p>
-      <p>
-        当前安装入口会添加 <strong>openaa.com/</strong> 到桌面；打开后可继续进入
-        <a class="small-link" href="https://ny.openaa.com/">openaa.app</a> 使用完整功能。
-      </p>
-    </section>
-
-    <footer class="footer">
-      © <span id="year"></span> OpenAA · 纽约华人生活入口
-    </footer>
+    <div id="tips" class="tips">
+      <strong>当前浏览器不能直接弹出安装窗口，请按下面方法添加：</strong><br><br>
+      iPhone：用 Safari 打开本页 → 点分享按钮 → 添加到主屏幕。<br>
+      Android：用 Chrome 打开本页 → 点右上角菜单 → 安装应用 / 添加到主屏幕。<br>
+      电脑：用 Chrome 或 Edge 打开本页 → 点地址栏右侧安装图标。
+    </div>
   </main>
 
   <script>
-    // 修改这里即可：OpenAA 纽约站地址
-    const OPENAA_TARGET_URL = "https://ny.openaa.com/";
-    const COPY_URL = "https://openaa.com/";
-
     let deferredPrompt = null;
     const installBtn = document.getElementById("installBtn");
-    const notice = document.getElementById("installNotice");
-    const copyBtn = document.getElementById("copyBtn");
+    const tips = document.getElementById("tips");
+    const success = document.getElementById("success");
+
+    const isStandalone =
+      window.matchMedia("(display-mode: standalone)").matches ||
+      window.navigator.standalone === true;
+
+    if (isStandalone) {
+      installBtn.textContent = "✅ 已经添加 OpenAA";
+      installBtn.disabled = true;
+      success.classList.add("show");
+    }
 
     window.addEventListener("beforeinstallprompt", (event) => {
       event.preventDefault();
       deferredPrompt = event;
-      notice.classList.remove("show");
+      tips.classList.remove("show");
+    });
+
+    window.addEventListener("appinstalled", () => {
+      installBtn.textContent = "✅ 已经添加 OpenAA";
+      installBtn.disabled = true;
+      tips.classList.remove("show");
+      success.classList.add("show");
     });
 
     installBtn.addEventListener("click", async () => {
+      if (isStandalone) {
+        success.classList.add("show");
+        return;
+      }
+
       if (deferredPrompt) {
         deferredPrompt.prompt();
         const choice = await deferredPrompt.userChoice;
         deferredPrompt = null;
+
         if (choice && choice.outcome === "accepted") {
-          installBtn.textContent = "✅ 已开始安装 OpenAA";
+          installBtn.textContent = "✅ 已经添加 OpenAA";
+          installBtn.disabled = true;
+          success.classList.add("show");
+          tips.classList.remove("show");
+        } else {
+          tips.classList.add("show");
         }
         return;
       }
 
-      notice.classList.add("show");
-
-      const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-      if (!isIOS) {
-        setTimeout(() => {
-          window.location.href = OPENAA_TARGET_URL;
-        }, 1800);
-      }
+      tips.classList.add("show");
     });
-
-    copyBtn.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(COPY_URL);
-        copyBtn.textContent = "✅ 已复制网址";
-        setTimeout(() => copyBtn.textContent = "🔗 复制网址", 1800);
-      } catch (e) {
-        notice.textContent = "复制失败，请手动复制网址：https://openaa.com/";
-        notice.classList.add("show");
-      }
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // 如果用户已经从桌面图标打开，可自动进入纽约站。
-    // 如暂时不想自动跳转，把下面 3 行注释掉即可。
-    if (window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone) {
-      window.location.href = OPENAA_TARGET_URL;
-    }
   </script>
 </body>
 </html>
