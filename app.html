@@ -156,6 +156,68 @@
 
     .success.show { display: block; }
 
+    .modal-mask {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(15, 23, 42, 0.42);
+      backdrop-filter: blur(4px);
+      padding: 18px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-mask.show { display: flex; }
+
+    .modal {
+      width: min(100%, 420px);
+      background: #ffffff;
+      border-radius: 26px;
+      padding: 24px 18px 18px;
+      text-align: center;
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.25);
+      border: 1px solid rgba(229, 231, 235, 0.9);
+    }
+
+    .modal-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 12px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #ecfdf5;
+      color: #16a34a;
+      font-size: 34px;
+      font-weight: 800;
+    }
+
+    .modal h2 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    .modal p {
+      margin: 10px auto 0;
+      color: #5b6472;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .modal-actions {
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .modal-close {
+      background: #f8fafc;
+      color: #334155;
+      border: 1px solid #e5e7eb;
+    }
+
     @media (max-width: 520px) {
       body { align-items: flex-start; padding-top: 36px; }
       .card { border-radius: 26px; padding: 28px 14px; }
@@ -190,7 +252,7 @@
 
     <h1>OpenAA App 下载</h1>
     <p class="desc">
-      访问 <strong>openaa.app</strong> 把 OpenAA 添加到手机或电脑桌面。
+      访问 <strong>openaa.app</strong> 或 <strong>openaa.com/app</strong>，把 OpenAA 添加到手机或电脑桌面。
       安装后桌面图标打开的是 <strong>openaa.com</strong>，可快速进入纽约华人生活入口。
     </p>
 
@@ -215,11 +277,27 @@
     </div>
   </main>
 
+  <div id="successModal" class="modal-mask" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="modal">
+      <div class="modal-icon">✓</div>
+      <h2 id="successTitle">OpenAA 已添加到桌面</h2>
+      <p>
+        以后可以从手机或电脑桌面直接打开 OpenAA。也可以现在进入 OpenAA 纽约站继续使用。
+      </p>
+      <div class="modal-actions">
+        <a class="install" href="https://ny.openaa.com/">🌐 打开 OpenAA 纽约站</a>
+        <button id="closeModalBtn" class="modal-close" type="button">我知道了</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     let deferredPrompt = null;
     const installBtn = document.getElementById("installBtn");
     const tips = document.getElementById("tips");
     const success = document.getElementById("success");
+    const successModal = document.getElementById("successModal");
+    const closeModalBtn = document.getElementById("closeModalBtn");
 
     const isStandalone =
       window.matchMedia("(display-mode: standalone)").matches ||
@@ -230,6 +308,19 @@
       installBtn.disabled = true;
       success.classList.add("show");
     }
+
+    function showSuccessModal() {
+      successModal.classList.add("show");
+    }
+
+    function hideSuccessModal() {
+      successModal.classList.remove("show");
+    }
+
+    closeModalBtn.addEventListener("click", hideSuccessModal);
+    successModal.addEventListener("click", (event) => {
+      if (event.target === successModal) hideSuccessModal();
+    });
 
     window.addEventListener("beforeinstallprompt", (event) => {
       event.preventDefault();
@@ -242,6 +333,7 @@
       installBtn.disabled = true;
       tips.classList.remove("show");
       success.classList.add("show");
+      showSuccessModal();
     });
 
     installBtn.addEventListener("click", async () => {
@@ -260,6 +352,7 @@
           installBtn.disabled = true;
           success.classList.add("show");
           tips.classList.remove("show");
+          showSuccessModal();
         } else {
           tips.classList.add("show");
         }
