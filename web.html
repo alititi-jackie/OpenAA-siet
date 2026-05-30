@@ -167,7 +167,7 @@
     }
     .search form {
       width: 100%;
-      max-width: 600px;
+      max-width: 760px;
       display: flex;
     }
     .search input[type="text"] {
@@ -279,16 +279,31 @@
       --shadow-float: 0 10px 25px rgba(15, 23, 42, 0.18);
       --radius-lg: 16px;
       --radius-pill: 999px;
+      --content-width: min(1080px, calc(100vw - 48px));
+      --side-bg: #e4e7eb;
+      --center-bg: #f7f8fa;
     }
 
     body {
       color: var(--text);
       -webkit-text-size-adjust: 100%;
+      background: linear-gradient(
+        90deg,
+        var(--side-bg) 0,
+        var(--side-bg) calc((100vw - var(--content-width)) / 2 - 18px),
+        var(--center-bg) calc((100vw - var(--content-width)) / 2 - 18px),
+        var(--center-bg) calc((100vw + var(--content-width)) / 2 + 18px),
+        var(--side-bg) calc((100vw + var(--content-width)) / 2 + 18px),
+        var(--side-bg) 100%
+      );
+      background-attachment: fixed;
     }
 
     header {
       padding: 22px 14px 18px;
       overflow: hidden;
+      background: transparent;
+      border-bottom-color: rgba(15, 23, 42, 0.06);
     }
 
     .site-logo img {
@@ -343,9 +358,9 @@
     .quick-nav-wrap {
       position: relative;
       width: 100%;
-      max-width: min(1120px, 95vw);
+      max-width: var(--content-width);
       margin: 18px auto 0;
-      padding: 0 46px;
+      padding: 0 44px;
     }
 
     .ai-nav-links {
@@ -420,14 +435,14 @@
     .nav-arrow.right { right: 4px; }
 
     .nav, .categories, .card, .bookmark, .recommend, .section, .section1, .section2, .section3 {
-      max-width: min(1120px, 95vw);
+      max-width: var(--content-width);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-card);
       border: 1px solid rgba(15, 23, 42, 0.04);
     }
 
     .recommend, .section, .section1, .section2, .section3 {
-      padding: 14px 16px;
+      padding: 16px 20px;
     }
 
     .recommend a, .section a, .section1 a, .section2 a, .section3 a {
@@ -502,7 +517,22 @@
       box-shadow: 0 10px 25px rgba(0,0,0,.18);
     }
 
+
+    @media (min-width: 1200px) {
+      .nav, .categories, .card, .bookmark, .recommend, .section, .section1, .section2, .section3 {
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+      .section div, .section1 div, .section2 div, .section3 div {
+        line-height: 1.95;
+      }
+    }
+
     @media (max-width: 768px) {
+      :root { --content-width: calc(100vw - 20px); }
+      body {
+        background: #f5f6f8;
+      }
       header {
         padding-top: 16px;
       }
