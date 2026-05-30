@@ -518,6 +518,43 @@
     }
 
 
+    .floating-share-top {
+      position: fixed;
+      top: 18px;
+      right: max(18px, calc((100vw - var(--content-width)) / 2 + 18px));
+      width: 56px;
+      height: 56px;
+      border: none;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--brand);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.18);
+      cursor: pointer;
+      z-index: 1000;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .floating-share-top:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.22);
+      background: #f8fbff;
+    }
+
+    .floating-share-top svg {
+      width: 26px;
+      height: 26px;
+      stroke: currentColor;
+      stroke-width: 2.4;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+
     @media (min-width: 1200px) {
       .nav, .categories, .card, .bookmark, .recommend, .section, .section1, .section2, .section3 {
         margin-top: 12px;
@@ -537,17 +574,16 @@
         padding-top: 16px;
       }
 
-      .top-actions {
-        position: static;
-        justify-content: center;
-        margin-top: 12px;
-        flex-wrap: wrap;
+      .floating-share-top {
+        top: 14px;
+        right: 14px;
+        width: 50px;
+        height: 50px;
       }
 
-      .top-actions button {
-        min-height: 36px;
-        font-size: 13px;
-        padding: 8px 12px;
+      .floating-share-top svg {
+        width: 24px;
+        height: 24px;
       }
 
       .site-logo img {
@@ -646,15 +682,20 @@
 
 </head>
 <body>
+  <button class="floating-share-top" onclick="shareSite()" aria-label="分享本站" title="分享">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="18" cy="5" r="3"></circle>
+      <circle cx="6" cy="12" r="3"></circle>
+      <circle cx="18" cy="19" r="3"></circle>
+      <path d="M8.7 10.7l6.6-3.4"></path>
+      <path d="M8.7 13.3l6.6 3.4"></path>
+    </svg>
+  </button>
   <header>
     <div class="site-logo">
       <img src="https://openaa.com/logo.png" alt="OpenAA · 美国华人生活入口 openaa.com logo" width="120" height="120" loading="lazy" />
       <div class="main-title">OpenAA · 美国华人生活入口</div>
       <div class="subtitle">OpenAA · 为美国华人提供导航、资讯、服务的一站式平台 </div>
-    </div>
-    <div class="top-actions">
-      <button onclick="addBookmark()" aria-label="收藏本站">⭐ 收藏</button>
-      <button onclick="shareSite()" aria-label="分享本站">📤 分享</button>
     </div>
   </header>
 
@@ -1030,11 +1071,6 @@
   </footer>
 
   <script>
-    // 收藏
-    function addBookmark() {
-      alert('电脑端请按 Ctrl+D 收藏本站；手机端请点浏览器菜单，选择“添加书签”或“添加到主屏幕”。');
-    }
-
     // 分享：手机优先调用系统分享，不支持时复制链接
     function shareSite() {
       const shareData = {
