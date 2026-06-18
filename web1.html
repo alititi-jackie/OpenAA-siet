@@ -167,7 +167,7 @@
     }
     .search form {
       width: 100%;
-      max-width: 760px;
+      max-width: 600px;
       display: flex;
     }
     .search input[type="text"] {
@@ -265,437 +265,18 @@
       color: #0078d4;
       margin-bottom: 2px;
     }
-
-
-    /* ===== OpenAA mobile & navigation polish 2026 ===== */
-    :root {
-      --brand: #0078d4;
-      --brand-dark: #005fa3;
-      --card: #ffffff;
-      --soft: #eef6ff;
-      --text: #1f2937;
-      --muted: #667085;
-      --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.07);
-      --shadow-float: 0 10px 25px rgba(15, 23, 42, 0.18);
-      --radius-lg: 16px;
-      --radius-pill: 999px;
-      --content-width: min(1080px, calc(100vw - 48px));
-      --side-bg: #e4e7eb;
-      --center-bg: #f7f8fa;
-    }
-
-    body {
-      color: var(--text);
-      -webkit-text-size-adjust: 100%;
-      background: linear-gradient(
-        90deg,
-        var(--side-bg) 0,
-        var(--side-bg) calc((100vw - var(--content-width)) / 2 - 18px),
-        var(--center-bg) calc((100vw - var(--content-width)) / 2 - 18px),
-        var(--center-bg) calc((100vw + var(--content-width)) / 2 + 18px),
-        var(--side-bg) calc((100vw + var(--content-width)) / 2 + 18px),
-        var(--side-bg) 100%
-      );
-      background-attachment: fixed;
-    }
-
-    header {
-      padding: 22px 14px 18px;
-      overflow: hidden;
-      background: transparent;
-      border-bottom-color: rgba(15, 23, 42, 0.06);
-    }
-
-    .site-logo img {
-      width: 128px;
-      max-width: 34vw;
-      border-radius: 20px;
-    }
-
-    .main-title {
-      line-height: 1.25;
-    }
-
-    .subtitle {
-      max-width: 760px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
-    }
-
-    .top-actions {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 8px;
-    }
-
-    .top-actions button,
-    .nav-arrow,
-    .floating-action {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .top-actions button {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 8px 13px;
-      border-radius: var(--radius-pill);
-      background: #fff;
-      color: var(--brand);
-      border: 1px solid rgba(0, 120, 212, 0.18);
-      box-shadow: 0 4px 14px rgba(0, 120, 212, 0.12);
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .top-actions button:hover {
-      background: var(--brand);
-      color: #fff;
-    }
-
-    .quick-nav-wrap {
-      position: relative;
-      width: 100%;
-      max-width: var(--content-width);
-      margin: 18px auto 0;
-      padding: 0 44px;
-    }
-
-    .ai-nav-links {
-      justify-content: center;
-      gap: 10px;
-      margin: 0 auto;
-      padding: 4px 2px 10px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      flex-wrap: nowrap;
-      scroll-behavior: smooth;
-      scrollbar-width: thin;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .quick-nav-wrap.is-scrollable .ai-nav-links {
-      justify-content: flex-start;
-    }
-
-    .quick-nav-wrap:not(.is-scrollable) .nav-arrow {
-      display: none;
-    }
-
-    .ai-nav-links::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .ai-nav-links::-webkit-scrollbar-thumb {
-      background: rgba(0, 120, 212, 0.25);
-      border-radius: 999px;
-    }
-
-    .ai-nav-links a,
-    .ai-nav-links button {
-      flex: 0 0 auto;
-      white-space: nowrap;
-      min-height: 36px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .ai-nav-links a {
-      box-shadow: 0 6px 16px rgba(0,120,212,0.12);
-    }
-
-    .nav-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 36px;
-      height: 36px;
-      border: 0;
-      border-radius: 50%;
-      background: #fff;
-      color: var(--brand);
-      box-shadow: var(--shadow-card);
-      cursor: pointer;
-      font-size: 20px;
-      font-weight: 800;
-      z-index: 2;
-      transition: transform .2s ease, background .2s ease, color .2s ease;
-    }
-
-    .nav-arrow:hover {
-      background: var(--brand);
-      color: #fff;
-      transform: translateY(-50%) scale(1.04);
-    }
-
-    .nav-arrow.left { left: 4px; }
-    .nav-arrow.right { right: 4px; }
-
-    .nav, .categories, .card, .bookmark, .recommend, .section, .section1, .section2, .section3 {
-      max-width: var(--content-width);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-card);
-      border: 1px solid rgba(15, 23, 42, 0.04);
-    }
-
-    .recommend, .section, .section1, .section2, .section3 {
-      padding: 16px 20px;
-    }
-
-    .recommend a, .section a, .section1 a, .section2 a, .section3 a {
-      background: #f6f8fb;
-      color: #1f3b57;
-      border: 1px solid rgba(15, 23, 42, 0.05);
-      border-radius: 999px;
-      padding: 6px 11px;
-      margin: 5px 4px;
-      line-height: 1.35;
-    }
-
-    .recommend a:hover, .section a:hover, .section1 a:hover, .section2 a:hover, .section3 a:hover {
-      background: var(--soft);
-      border-color: rgba(0, 120, 212, 0.2);
-      color: var(--brand);
-    }
-
-    .search input[type="text"] {
-      border-radius: 999px;
-      background: #fff;
-    }
-
-    .floating-tools {
-      position: fixed;
-      right: 16px;
-      bottom: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 999;
-    }
-
-    .floating-action,
-    .back-to-top {
-      width: 46px;
-      height: 46px;
-      padding: 0;
-      border: none;
-      border-radius: 50%;
-      background: var(--brand);
-      color: #fff;
-      box-shadow: var(--shadow-float);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 19px;
-      opacity: .94;
-      transition: opacity .2s ease, transform .2s ease, background .2s ease;
-    }
-
-    .back-to-top {
-      position: static;
-      right: auto;
-      bottom: auto;
-    }
-
-    .floating-action:hover,
-    .back-to-top:hover {
-      background: var(--brand-dark);
-      opacity: 1;
-      transform: translateY(-2px);
-    }
-
-    #backToTopBtn {
-      display: none;
-    }
-
-    #copyToast {
-      z-index: 1001 !important;
-      box-shadow: 0 10px 25px rgba(0,0,0,.18);
-    }
-
-
-    .floating-share-top {
-      position: fixed;
-      top: 18px;
-      right: 16px;
-      width: 46px;
-      height: 46px;
-      border: none;
-      border-radius: 50%;
-      background: #fff;
-      color: var(--brand);
-      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.18);
-      cursor: pointer;
-      z-index: 1000;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .floating-share-top:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.22);
-      background: #f8fbff;
-    }
-
-    .floating-share-top svg {
-      width: 22px;
-      height: 22px;
-      stroke: currentColor;
-      stroke-width: 2.4;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-
-    @media (min-width: 1200px) {
-      .nav, .categories, .card, .bookmark, .recommend, .section, .section1, .section2, .section3 {
-        margin-top: 12px;
-        margin-bottom: 12px;
-      }
-      .section div, .section1 div, .section2 div, .section3 div {
-        line-height: 1.95;
-      }
-    }
-
-    @media (max-width: 768px) {
-      :root { --content-width: calc(100vw - 20px); }
-      body {
-        background: #f5f6f8;
-      }
-      header {
-        padding-top: 16px;
-      }
-
-      .floating-share-top {
-        top: 14px;
-        right: 12px;
-        width: 42px;
-        height: 42px;
-      }
-
-      .floating-share-top svg {
-        width: 20px;
-        height: 20px;
-      }
-
-      .site-logo img {
-        width: 84px;
-        max-width: 24vw;
-        margin-bottom: 4px;
-      }
-
-      .main-title {
-        font-size: 1.35rem;
-        letter-spacing: 0;
-      }
-
-      .subtitle {
-        font-size: .92rem;
-        margin-bottom: 0;
-      }
-
-      .quick-nav-wrap {
-        padding: 0;
-        width: calc(100vw - 20px);
-        max-width: calc(100vw - 20px);
-        margin: 12px auto 0;
-      }
-
-      .nav-arrow {
-        display: none;
-      }
-
-      .ai-nav-links {
-        justify-content: flex-start;
-        padding: 2px 12px 12px;
-        gap: 8px;
-      }
-
-      .ai-nav-links a,
-      .ai-nav-links button {
-        font-size: 13px !important;
-        min-height: 34px;
-        padding: 7px 13px !important;
-      }
-
-      .nav, .recommend, .section, .section1, .section2, .section3 {
-        width: calc(100vw - 20px);
-        max-width: calc(100vw - 20px);
-        margin: 10px auto;
-        padding: 12px;
-      }
-
-      .nav p {
-        margin: 0;
-        text-align: left;
-        font-size: 14px;
-      }
-
-      .search {
-        width: calc(100vw - 20px);
-        max-width: calc(100vw - 20px);
-        margin: 12px auto;
-      }
-
-      .search input[type="text"] {
-        padding: 11px 15px;
-        font-size: 15px;
-      }
-
-      .recommend a, .section a, .section1 a, .section2 a, .section3 a {
-        font-size: 13px;
-        margin: 4px 3px;
-        padding: 6px 9px;
-      }
-
-      .section div, .section1 div, .section2 div, .section3 div {
-        line-height: 1.85;
-      }
-
-      .floating-tools {
-        right: 12px;
-        bottom: 14px;
-        gap: 8px;
-      }
-
-      .floating-action,
-      .back-to-top {
-        width: 42px;
-        height: 42px;
-        font-size: 18px;
-      }
-
-      .footer {
-        padding: 18px 14px 76px;
-      }
-    }
-
   </style>
 
 </head>
 <body>
-  <button class="floating-share-top" onclick="shareSite()" aria-label="分享本站" title="分享">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="18" cy="5" r="3"></circle>
-      <circle cx="6" cy="12" r="3"></circle>
-      <circle cx="18" cy="19" r="3"></circle>
-      <path d="M8.7 10.7l6.6-3.4"></path>
-      <path d="M8.7 13.3l6.6 3.4"></path>
-    </svg>
-  </button>
   <header>
     <div class="site-logo">
       <img src="https://openaa.com/logo.png" alt="OpenAA · 美国华人生活入口 openaa.com logo" width="120" height="120" loading="lazy" />
       <div class="main-title">OpenAA · 美国华人生活入口</div>
       <div class="subtitle">OpenAA · 为美国华人提供导航、资讯、服务的一站式平台 </div>
+    </div>
+    <div class="top-actions">
+      <button onclick="addBookmark()" aria-label="收藏本站">📌 收藏本站</button>
     </div>
   </header>
 
@@ -703,9 +284,7 @@
     <p><strong>OpenAA · 美国华人生活入口</strong>，<strong>华人OpenAA</strong> 为 <strong>美国华人</strong> 打造的一站式 <strong>导航、在美华人资讯、服务平台</strong>，覆盖 DMV、移民、找工作、二手市场、银行和地区生活信息（纽约/洛杉矶/旧金山 等）。</p>
   </section>
   <!-- 直达链接区块 -->
-<div class="quick-nav-wrap" aria-label="直达链接区域">
-  <button class="nav-arrow left" type="button" onclick="scrollQuickNav(-1)" aria-label="向左滚动导航">‹</button>
-<nav class="ai-nav-links" id="quickNav" aria-label="直达链接区块">
+<nav class="ai-nav-links" aria-label="直达链接区块">
   <a href="https://openaa.com">手机版</a>
   <a href="https://openaa.com/market/number/">美国手机靓号</a>
   <a href="https://onegobuy.com/">一式站购物</a>
@@ -720,8 +299,6 @@
   </button>
   
 </nav>
-  <button class="nav-arrow right" type="button" onclick="scrollQuickNav(1)" aria-label="向右滚动导航">›</button>
-</div>
 
 <!-- 复制提示 -->
 <div id="copyToast" 
@@ -1058,10 +635,8 @@
     </div>
   </nav>
 
-  <!-- 浮动快捷按钮 -->
-  <div class="floating-tools" aria-label="页面快捷操作">
-    <button class="back-to-top" onclick="scrollToTop()" aria-label="回到顶部" title="回到顶部" id="backToTopBtn">↑</button>
-  </div>
+  <!-- 回到顶部按钮 -->
+  <button class="back-to-top" onclick="scrollToTop()" aria-label="回到顶部" id="backToTopBtn">⬆️ 回到顶部</button>
 
   <!-- 底部 -->
   <footer class="footer">
@@ -1071,56 +646,10 @@
   </footer>
 
   <script>
-    // 分享：手机优先调用系统分享，不支持时复制链接
-    function shareSite() {
-      const shareData = {
-        title: document.title || 'OpenAA · 美国华人生活入口',
-        text: 'OpenAA · 美国华人生活入口，华人导航、DMV、找工作、二手与生活服务。',
-        url: window.location.href
-      };
-
-      if (navigator.share) {
-        navigator.share(shareData).catch(function () {});
-        return;
-      }
-
-      const url = window.location.href;
-      const toast = document.getElementById('copyToast');
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(function () {
-          if (toast) {
-            toast.textContent = '链接已复制';
-            toast.style.visibility = 'visible';
-            setTimeout(function () { toast.style.visibility = 'hidden'; }, 1500);
-          } else {
-            alert('链接已复制');
-          }
-        }).catch(function () {
-          alert('请手动复制网址：' + url);
-        });
-      } else {
-        alert('请手动复制网址：' + url);
-      }
+    // 收藏
+    function addBookmark() {
+      alert('请使用 Ctrl+D (或 Cmd+D) 收藏本网站，或在浏览器菜单中选择“添加书签”');
     }
-
-    // 电脑端导航箭头滚动
-    function updateQuickNavState() {
-      const nav = document.getElementById('quickNav');
-      const wrap = document.querySelector('.quick-nav-wrap');
-      if (!nav || !wrap) return;
-      const isScrollable = nav.scrollWidth > nav.clientWidth + 8;
-      wrap.classList.toggle('is-scrollable', isScrollable);
-    }
-
-    function scrollQuickNav(direction) {
-      const nav = document.getElementById('quickNav');
-      if (!nav) return;
-      const distance = Math.max(260, Math.floor(nav.clientWidth * 0.75));
-      nav.scrollBy({ left: direction * distance, behavior: 'smooth' });
-    }
-
-    window.addEventListener('load', updateQuickNavState);
-    window.addEventListener('resize', updateQuickNavState);
 
     // 回到顶部
     function scrollToTop() {
